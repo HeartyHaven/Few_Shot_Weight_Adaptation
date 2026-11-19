@@ -29,7 +29,15 @@
 {"id": "eval_B2__t2__Qwen3-1.7B__s2", "mem": 20, "after": ["train_B2__t2__Qwen3-1.7B__s2"], "cmd": "$PY -m tdwa.evaluate_vllm --task t2 --student Qwen/Qwen3-1.7B --lora baselines/B2__t2__Qwen3-1.7B__s2/adapter --name B2__t2__Qwen3-1.7B__s2 --mem 0.3"}
 {"id": "train_B2__t1__Qwen3-1.7B__s2", "mem": 32, "cmd": "$PY -m tdwa.baseline_lora --task t1 --student Qwen/Qwen3-1.7B --data few --seed 2"}
 {"id": "eval_B2__t1__Qwen3-1.7B__s2", "mem": 20, "after": ["train_B2__t1__Qwen3-1.7B__s2"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-1.7B --lora baselines/B2__t1__Qwen3-1.7B__s2/adapter --name B2__t1__Qwen3-1.7B__s2 --mem 0.3"}
-{"id": "g27_t1", "gpus": 2, "mem": 40, "wait_file": "cache/hf/hub/models--google--gemma-3-27b-it/.complete", "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student google/gemma-3-27b-it --tp 2 --mem 0.8 --name base__t1__gemma-3-27b-it__vllm"}
-{"id": "g27_t2", "gpus": 2, "mem": 40, "after": ["g27_t1"], "cmd": "$PY -m tdwa.evaluate_vllm --task t2 --student google/gemma-3-27b-it --tp 2 --mem 0.8"}
-{"id": "g27_t3", "gpus": 2, "mem": 40, "after": ["g27_t2"], "cmd": "$PY -m tdwa.evaluate_vllm --task t3 --student google/gemma-3-27b-it --tp 2 --mem 0.8"}
-{"id": "g27_new", "gpus": 2, "mem": 40, "after": ["g27_t3"], "cmd": "$PY -m tdwa.evaluate_vllm --new-tasks --student google/gemma-3-27b-it --tp 2 --mem 0.8"}
+{"id": "g27_t1", "gpus": 2, "mem": 40, "wait_file": "cache/hf/hub/models--google--gemma-3-27b-it/.complete", "cmd": "NCCL_P2P_DISABLE=1 $PY -m tdwa.evaluate_vllm --task t1 --student google/gemma-3-27b-it --tp 2 --mem 0.8 --name base__t1__gemma-3-27b-it__vllm"}
+{"id": "g27_t2", "gpus": 2, "mem": 40, "after": ["g27_t1"], "cmd": "NCCL_P2P_DISABLE=1 $PY -m tdwa.evaluate_vllm --task t2 --student google/gemma-3-27b-it --tp 2 --mem 0.8"}
+{"id": "g27_t3", "gpus": 2, "mem": 40, "after": ["g27_t2"], "cmd": "NCCL_P2P_DISABLE=1 $PY -m tdwa.evaluate_vllm --task t3 --student google/gemma-3-27b-it --tp 2 --mem 0.8"}
+{"id": "g27_new", "gpus": 2, "mem": 40, "after": ["g27_t3"], "cmd": "NCCL_P2P_DISABLE=1 $PY -m tdwa.evaluate_vllm --new-tasks --student google/gemma-3-27b-it --tp 2 --mem 0.8"}
+{"id": "b1_t2_gemma-3-1b-it", "mem": 20, "cmd": "$PY -m tdwa.evaluate_vllm --task t2 --student google/gemma-3-1b-it --b1 --name B1__t2__gemma-3-1b-it__vllm --mem 0.3"}
+{"id": "sample_B5__t2__gemma-3-1b-it__s0", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t2 --student google/gemma-3-1b-it --mem 0.45"}
+{"id": "train_B5__t2__gemma-3-1b-it__s0", "mem": 30, "after": ["sample_B5__t2__gemma-3-1b-it__s0"], "cmd": "$PY -m tdwa.baseline_bake train --task t2 --student google/gemma-3-1b-it"}
+{"id": "eval_B5__t2__gemma-3-1b-it__s0", "mem": 20, "after": ["train_B5__t2__gemma-3-1b-it__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t2 --student google/gemma-3-1b-it --lora baselines/B5__t2__gemma-3-1b-it__s0/adapter --name B5__t2__gemma-3-1b-it__s0 --mem 0.3"}
+{"id": "b1_t2_Qwen3-1.7B", "mem": 20, "cmd": "$PY -m tdwa.evaluate_vllm --task t2 --student Qwen/Qwen3-1.7B --b1 --name B1__t2__Qwen3-1.7B__vllm --mem 0.3"}
+{"id": "sample_B5__t2__Qwen3-1.7B__s0", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t2 --student Qwen/Qwen3-1.7B --mem 0.45"}
+{"id": "train_B5__t2__Qwen3-1.7B__s0", "mem": 30, "after": ["sample_B5__t2__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.baseline_bake train --task t2 --student Qwen/Qwen3-1.7B"}
+{"id": "eval_B5__t2__Qwen3-1.7B__s0", "mem": 20, "after": ["train_B5__t2__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t2 --student Qwen/Qwen3-1.7B --lora baselines/B5__t2__Qwen3-1.7B__s0/adapter --name B5__t2__Qwen3-1.7B__s0 --mem 0.3"}

@@ -38,7 +38,8 @@ class VStudent:
         else:
             self.lora_req = None
         self.llm = LLM(model=src, tokenizer=src, tensor_parallel_size=tp, dtype=dtype, gpu_memory_utilization=mem,
-                       max_model_len=max_len, seed=0, enable_prefix_caching=True, **kw)
+                       max_model_len=max_len, seed=0, enable_prefix_caching=True,
+                       disable_custom_all_reduce=tp > 1, **kw)   # this host has no GPU P2P: custom all-reduce hangs
         self.fwd = 0
 
     def render(self, user):
@@ -94,15 +95,16 @@ def retention(st, out_rows):
     return res
 
 
-def evaluate(st, task, out_dir):
+def evaluate(st, task, out_dir, prefix=""):
+    """prefix: text put before every test question (B1 = procedure in the prompt); retention items never get it."""
     os.makedirs(out_dir, exist_ok=True); res = {}; extra = {}
     for path in sorted(glob.glob(os.path.join(ROOT, "_secret", task, "test*.jsonl"))):
         name = os.path.basename(path)[:-6]; items = [json.loads(l) for l in open(path)]
         t0 = time.time(); f0 = st.fwd
-        outs = st.generate([G.format_prompt(it) for it in items], 2048)
+        outs = st.generate([prefix + G.format_prompt(it) for it in items], 2048)
         rows = [{"id": it["id"], "group": it["group"], "taught": it.get("taught"), "answer": it["answer"], "output": o, **G.grade(it, o)} for it, o in zip(items, outs)]
         if task in G.OPT_TASKS:
-            fp = st.forced([G.format_prompt(it, "direct") for it in items], [it.get("n_options") or it["n_objects"] for it in items])
+            fp = st.forced([prefix + G.format_prompt(it, "direct") for it in items], [it.get("n_options") or it["n_objects"] for it in items])
             for r, p, it in zip(rows, fp, items):
                 r["forced_pred"] = p; r["forced_correct"] = p == it["answer"]
         with open(os.path.join(out_dir, name + ".jsonl"), "w") as f:
@@ -153,6 +155,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--student", required=True); ap.add_argument("--model-path"); ap.add_argument("--lora"); ap.add_argument("--task"); ap.add_argument("--name")
     ap.add_argument("--tp", type=int, default=1); ap.add_argument("--mem", type=float, default=0.85); ap.add_argument("--new-tasks", action="store_true")
+    ap.add_argument("--b1", action="store_true", help="B1: put the procedure text of tdwa/baseline_bake.PROC before each test question")
     ap.add_argument("--meta", default="{}", help="extra JSON merged into the output metadata")
     a = ap.parse_args()
     st = VStudent(a.student, a.model_path, a.tp, mem=a.mem, lora=a.lora)
@@ -162,9 +165,13 @@ def main():
     name = a.name or f"base__{a.task}__{tag}__vllm"
     os.makedirs(os.path.join(ROOT, "eval"), exist_ok=True)
     t0 = time.time()
-    res = evaluate(st, a.task, os.path.join(ROOT, "_secret", "eval", name))
+    prefix = ""
+    if a.b1:
+        from tdwa.baseline_bake import PROC
+        prefix = PROC[a.task]
+    res = evaluate(st, a.task, os.path.join(ROOT, "_secret", "eval", name), prefix)
     meta = {"student": a.student, "task": a.task, "edited": bool(a.model_path or a.lora), "lora": a.lora, "engine": "vllm", "dtype": "bfloat16",
-            "model_path": a.model_path, "wall_seconds": round(time.time() - t0), **json.loads(a.meta)}
+            "model_path": a.model_path, "b1_prefix": bool(a.b1), "wall_seconds": round(time.time() - t0), **json.loads(a.meta)}
     json.dump({**meta, "results": res}, open(os.path.join(ROOT, "eval", name + ".json"), "w"), indent=1, default=str)
     print("wrote", os.path.join("eval", name + ".json"))
 
