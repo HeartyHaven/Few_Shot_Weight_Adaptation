@@ -45,7 +45,7 @@ def main():
         for _, gpus, mem in running.values():
             for g in gpus:
                 reserved[g] = reserved.get(g, 0) + mem
-        free = smi_free()
+        free = smi_free(); launched = set()     # at most one launch per GPU per loop: vLLM profiles memory at start-up
         for j in jobs:
             if j["id"] in st or j["id"] in running:
                 continue
@@ -56,7 +56,7 @@ def main():
                 continue
             if j.get("wait_file") and not os.path.exists(os.path.join(ROOT, j["wait_file"])):
                 continue
-            ok = [g for g in sorted(free, key=lambda g: reserved.get(g, 0)) if CAP - reserved.get(g, 0) >= j["mem"] and free[g] >= j["mem"]]
+            ok = [g for g in sorted(free, key=lambda g: reserved.get(g, 0)) if g not in launched and CAP - reserved.get(g, 0) >= j["mem"] and free[g] >= j["mem"]]
             if len(ok) < j.get("gpus", 1):
                 continue
             gpus = sorted(ok[:j.get("gpus", 1)])
@@ -69,7 +69,7 @@ def main():
                                  stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
             running[j["id"]] = (p, gpus, j["mem"])
             for g in gpus:
-                reserved[g] = reserved.get(g, 0) + j["mem"]; free[g] -= j["mem"]
+                reserved[g] = reserved.get(g, 0) + j["mem"]; free[g] -= j["mem"]; launched.add(g)
             print(time.strftime("%T"), "start", j["id"], "gpus", gpus, flush=True)
         json.dump({**st, **{k: {"status": "running", "gpus": v[1], "mem": v[2]} for k, v in running.items()}}, open(STATE, "w"), indent=1)
         time.sleep(20)
