@@ -370,6 +370,36 @@ td .sub{display:block;font-size:12px;color:var(--muted)}
 </div>
 </section>
 
+<section data-tab="ctrl">
+<div class="col">
+  <h2>对照组：同样的学生，不靠教师能到哪<span class="badge">自动更新</span></h2>
+  <p>为了判断教师改权重值不值，需要和几种不用教师的常规做法比较。下面每张表是同一个学生在同一套隐藏测试题上的结果：</p>
+  <ul class="plain">
+    <li><b>未编辑</b>：原始学生。</li>
+    <li><b>提示</b>（B1）：把一段解题流程写在每道题前面，不改权重。</li>
+    <li><b>LoRA：只用 100 道真题</b>（B2）：教师能看到的同一批 100 道带答案的题，用常规梯度训练一个 LoRA 适配器。训练目标是标准解题过程加答案。跑 3 个种子。</li>
+    <li><b>LoRA：全量训练数据</b>（B4）：医疗评分用 MedCalc 的全部约 1 万条训练题，物体追踪用 5000 道新生成的题。这是“数据不受限”时的参考上限。</li>
+    <li><b>提示烘焙</b>（B5）：让学生带着解题流程作答，再训练 LoRA，使它不带提示时也给出同样的回答分布。</li>
+  </ul>
+  <p>LoRA 的超参数事先固定（秩 16，学习率 2×10⁻⁴），没有用验证集挑选。<b>“通用能力”几列标红的，表示比未编辑下降超过 2 个百分点</b>（困惑度是上升超过 10%），这是本实验给教师定的副作用上限。</p>
+</div>
+<div class="wide panel live">
+  <div class="seg" id="ctrlTask" role="group" aria-label="选择任务"></div>
+  <div class="seg" id="ctrlStu" role="group" aria-label="选择学生"></div>
+  <div id="ctrlChart"></div>
+  <div class="scroll" id="ctrlTable"></div>
+  <p class="note" id="ctrlNote" style="margin:10px 0 0"></p>
+</div>
+<div class="wide panel live">
+  <h3>疾病诊断和大模型的未编辑起点（与对照组同一套评测）</h3>
+  <div class="scroll" id="ctrlBase"></div>
+  <p class="note" id="ctrlQueue" style="margin:10px 0 0"></p>
+</div>
+<div class="col">
+  <p class="dated">评测方式的差别：对照组和本页的“未编辑”都用 vLLM 推理（半精度、贪心解码），表头标为“vLLM”。教师编辑的结果来自主评测（全精度 HF 推理），在表中单独标出。两种方式测出的未编辑学生基本一致（例如 Gemma 1B 医疗评分全部题目都是 6.3%），但逐题输出可能有差别，所以教师编辑与对照组之间小于几个百分点的差距不宜解读。</p>
+</div>
+</section>
+
 <script>
 const $=id=>document.getElementById(id);
 function seg(el,items,onPick,start=0){el.innerHTML='';items.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.setAttribute('aria-pressed',i===start);b.onclick=()=>{[...el.children].forEach((c,j)=>c.setAttribute('aria-pressed',j===i));onPick(i)};el.appendChild(b)});onPick(start)}
@@ -615,7 +645,7 @@ async function renderAr(){const body=$('arBody');if(!arKey){body.innerHTML='<p c
 
 /* ---------- live data ---------- */
 let SUM=null,TAB='home';
-const TABN=[['home','总览'],['t2','物体追踪'],['t1','医疗评分'],['base','新任务与大模型基线']];
+const TABN=[['home','总览'],['t2','物体追踪'],['t1','医疗评分'],['ctrl','对照组'],['base','新任务与大模型基线']];
 const STN={running:'运行中',finished:'已结束',interrupted:'被中断',void:'作废'};
 const TCOL={'Fable 5.2':'var(--fable)','Astra 6':'var(--astra)','Astra 6.2':'var(--bad)'};
 const rlabel=r=>`${r.teacher} · ${r.student} · 第 ${r.seed+1} 次`;
@@ -672,12 +702,43 @@ function setupHome(){$('homeGen').textContent='数据生成时间：'+SUM.genera
  const TN={'gpt-6-astra':'Astra 6','gpt-6.2-astra':'Astra 6.2','claude-fable-5-2':'Fable 5.2'},launched=new Set(SUM.runs.map(r=>r.name));
  const pend=SUM.queue.pending.filter(p=>!launched.has(`${p[1]}__${p[2].split('/').pop()}__${p[3]}__s${p[4]}`));
  $('homeQueue').textContent='排队等待启动：'+(pend.length?pend.map(p=>`${p[1]==='t1'?'医疗评分':'物体追踪'} · ${TN[p[3]]||p[3]} · ${p[2].split('/').pop()}`).join('；'):'无')+'。'}
+/* ---------- control groups (site/baselines.json, built on the second GPU host) ---------- */
+let BL=null;
+const CSET={t1:[['taught','教过的 8 种'],['untaught','没教过的 11 种'],['all','全部 380 题']],t2:[['test_fresh','新出题目'],['test_bbh','BBH 原题'],['test_ood','更难题目']]};
+const MCOL={B0:'var(--base)',B1:'var(--muted)',B2:'var(--bad)',B4:'var(--bad)',B5:'var(--astra)'};
+function setupCtrl(){if(!BL||!SUM)return;const st={task:0,stu:0},tasks=['t1','t2'];
+ const draw=()=>{const task=tasks[st.task],stus=[...new Set(BL.rows.filter(r=>r.task===task).map(r=>r.student_tag))],tag=stus[Math.min(st.stu,stus.length-1)];
+  seg($('ctrlStu'),stus.map(t=>'学生：'+(BL.rows.find(r=>r.student_tag===t)||{}).student),i=>{st.stu=i;render(task,stus[i])},Math.min(st.stu,stus.length-1))};
+ const render=(task,tag)=>{const order=['B0','B1','B2','B4','B5'];const rows=BL.rows.filter(r=>r.task===task&&r.student_tag===tag).sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method));
+  const base=rows.find(r=>r.method==='B0'),sets=CSET[task];
+  const teach=SUM.runs.filter(r=>r.task===task&&r.student_tag===tag&&r.eval&&r.status!=='void').map(r=>({method:'T',label:`${r.teacher} 第 ${r.seed+1} 次${r.status==='interrupted'?'（被中断）':''}`,teacher:r.teacher,seeds:1,sets:r.eval.sets,retention:r.eval.retention||{},hf:true}));
+  const all=rows.concat(teach);
+  const fmt=(v)=>v?`${v.acc}${v.sd!=null?`<span class="sub">±${v.sd}（${v.seeds} 个种子）</span>`:(v.lo!=null?`<span class="sub">${v.lo}–${v.hi}</span>`:'')}`:'—';
+  const rc=(k,v)=>{if(v==null||!base)return `<td class="num">${v??'—'}</td>`;const b=base.retention[k];const bad=k==='ppl'?v>b*1.1:v<b-2;return `<td class="num"${bad?' style="color:var(--bad);font-weight:600"':''}>${v}</td>`};
+  const main=sets[0][0];
+  $('ctrlTable').innerHTML=`<table><tr><th>方法</th>${sets.map(s=>`<th class="num">${s[1]}</th>`).join('')}<th class="num">ARC</th><th class="num">HellaSwag</th><th class="num">算术</th><th class="num">困惑度</th><th>训练</th></tr>`+
+   all.map(r=>`<tr${r.method==='B0'?' style="background:var(--soft)"':''}><td>${r.method==='T'?`<b style="color:${TCOL[r.teacher]||'inherit'}">教师编辑 · ${r.label}</b><span class="sub">主评测（全精度）</span>`:`<b>${r.label}</b><span class="sub">${r.method} · vLLM</span>`}</td>${sets.map(s=>`<td class="num">${fmt(r.sets[s[0]])}</td>`).join('')}${rc('arc',r.retention.arc)}${rc('hs',r.retention.hs)}${rc('arith',r.retention.arith)}${rc('ppl',r.retention.ppl)}<td>${r.train?`${r.train.examples} 条 × ${r.train.epochs} 轮<span class="sub">${r.train.minutes} 分钟</span>`:''}</td></tr>`).join('')+'</table>';
+  const pts=all.filter(r=>r.sets[main]),max=100,W=920,L=260,Rr=60,rh=30,T=26,H=T+pts.length*rh+10,x=v=>L+(W-L-Rr)*v/max;
+  let g=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="各方法在主指标上的正确率">`;
+  for(let v=0;v<=max;v+=10)g+=`<line x1="${x(v)}" x2="${x(v)}" y1="${T-4}" y2="${H-8}" stroke="var(--line)"/><text x="${x(v)}" y="14" text-anchor="middle" font-size="12" fill="var(--muted)">${v}%</text>`;
+  if(base&&base.sets[main])g+=`<line x1="${x(base.sets[main].acc)}" x2="${x(base.sets[main].acc)}" y1="${T-4}" y2="${H-8}" stroke="var(--base)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+  pts.forEach((r,i)=>{const y=T+i*rh+rh/2,v=r.sets[main],col=r.method==='T'?(TCOL[r.teacher]||'var(--ink)'):MCOL[r.method],lo=v.lo!=null?v.lo:(v.sd!=null?v.acc-v.sd:v.acc),hi=v.hi!=null?v.hi:(v.sd!=null?v.acc+v.sd:v.acc);
+   g+=`<text x="${L-12}" y="${y+4}" text-anchor="end" font-size="13" fill="var(--ink)">${r.method==='T'?'教师 · '+r.label:r.label.split('：')[0]+(r.label.includes('：')?'：'+r.label.split('：')[1].slice(0,10):'')}</text><line x1="${x(Math.max(0,lo))}" x2="${x(Math.min(100,hi))}" y1="${y}" y2="${y}" stroke="${col}" stroke-width="3"/><circle cx="${x(v.acc)}" cy="${y}" r="6" fill="${col}"${r.method==='T'?'':' fill-opacity=".85"'}><title>${v.acc}%</title></circle><text x="${x(Math.min(100,hi))+8}" y="${y+4}" font-size="12" fill="var(--ink)" font-family="JetBrains Mono,monospace">${v.acc}</text>`});
+  $('ctrlChart').innerHTML=g+'</svg>';
+  $('ctrlNote').textContent=`图中是主指标（${sets[0][1]}）。横线：单次运行是 95% 置信区间，多个种子是均值 ± 标准差。虚线是未编辑学生（vLLM）。对照组数据更新于 ${BL.generated}。`};
+ seg($('ctrlTask'),['医疗评分','物体追踪'],i=>{st.task=i;st.stu=0;draw()});
+ const P=BL.pilots||{},B3=BL.rows.filter(r=>r.method==='B0'),stus=[...new Set(B3.map(r=>r.student_tag))];
+ const cell=(tag,task,k)=>{const r=B3.find(x=>x.student_tag===tag&&x.task===task);return `<td class="num">${r&&r.sets[k]?r.sets[k].acc+'%':'—'}</td>`};
+ const tags=[...new Set(stus.concat(Object.keys(P)))];
+ $('ctrlBase').innerHTML=`<table><tr><th>学生</th><th class="num">疾病诊断（600 题）</th><th class="num">医疗 · 教过的 8 种</th><th class="num">追踪 · 新出题目</th><th class="num">编程（150）</th><th class="num">数学数论（150）</th></tr>`+tags.map(t=>`<tr><td>${(BL.rows.find(r=>r.student_tag===t)||{}).student||t}</td>${cell(t,'t3','test')}${cell(t,'t1','taught')}${cell(t,'t2','test_fresh')}<td class="num">${P[t]&&P[t].code?P[t].code.acc+'%':'—'}</td><td class="num">${P[t]&&P[t].math?P[t].math.acc+'%':'—'}</td></tr>`).join('')+'</table>';
+ const q=BL.queue||{};$('ctrlQueue').textContent=`疾病诊断用新建的隐藏测试划分（600 题，5 选 1，随机水平 20%）。正在运行：${(q.running||[]).join('、')||'无'}；排队：${(q.waiting||[]).join('、')||'无'}。`}
+fetch('site/baselines.json').then(r=>r.json()).then(d=>{BL=d;setupCtrl()}).catch(e=>{const el=$('ctrlTable');if(el)el.innerHTML='<p class="note">对照组数据还没有发布。</p>'});
 function showTab(t){TAB=TABN.some(x=>x[0]===t)?t:'home';document.querySelectorAll('section[data-tab]').forEach(el=>el.classList.toggle('on',el.dataset.tab.split(' ').includes(TAB)));
  [...$('nav').querySelectorAll('button')].forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===TAB));if(SUM&&(TAB==='t1'||TAB==='t2'))setupArchive();
  try{if(location.hash.slice(1)!==TAB)history.replaceState(null,'','#'+TAB)}catch(e){}}
 (function(){const nav=$('nav');nav.innerHTML=TABN.map(x=>`<button type="button" data-t="${x[0]}">${x[1]}</button>`).join('')+'<a class="navlink" href="atlas.html">编辑图谱 ↗</a><span class="gen" id="navGen"></span>';
  nav.querySelectorAll('button').forEach(b=>b.onclick=()=>{showTab(b.dataset.t);window.scrollTo(0,0)});showTab(location.hash.slice(1)||'home');
  window.addEventListener('hashchange',()=>showTab(location.hash.slice(1)||'home'));
- fetch('site/summary.json').then(r=>r.json()).then(d=>{SUM=d;$('navGen').textContent='数据更新于 '+d.generated;setupHome();setupTask('t2');setupTask('t1');setupMc();setupBase();if(TAB==='t1'||TAB==='t2')setupArchive()})
+ fetch('site/summary.json').then(r=>r.json()).then(d=>{SUM=d;$('navGen').textContent='数据更新于 '+d.generated;setupHome();setupTask('t2');setupTask('t1');setupMc();setupBase();setupCtrl();if(TAB==='t1'||TAB==='t2')setupArchive()})
   .catch(e=>{$('homeTable').innerHTML='<p class="note">数据文件没有加载成功，请刷新页面重试。</p>'})})();
 </script>
