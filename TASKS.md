@@ -1,9 +1,9 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-19 23:46 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 00:14 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（5）
+## 进行中（4）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -11,7 +11,6 @@
 | KERNEL-BF16 | 让沙盒支持半精度学生（8B 以上必需），并检验半精度对微小编辑的影响 |  |  |  | main@ws006344 | 2026-11-19 23:45 +0400 | 代码已改并推送（--dtype bfloat16，默认仍是 float32）；Qwen3-8B 半精度自测排队中，等显卡空出 30 GB |  |
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | Astra 6.2 运行在第 46 步因框架漏洞（超长调用被接口拒收）中止，1 个编辑保留，验证 65.3→78.7%，隐藏测试评测中；漏洞已修。Astra 6 运行中 |  |
 | BL-DISTILL | 对照 B3：用教师写的解题过程做蒸馏 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 19:34 +0400 |  |  |
-| T1-Q4-A62-s2 | 教学运行：MedCalc（第 3 次重复） | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 19:41 +0400 | 教学结束（68 步，保留 2 个编辑，最终验证 53.3%）；vLLM 隐藏测试评测中 |  |
 
 ## 已认领（3）
 
@@ -32,7 +31,7 @@
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
-## 已完成（44）
+## 已完成（45）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -76,6 +75,7 @@
 | ATLAS-PAGE | 编辑图谱子页面：逐步可视化每个运行定位和修改的参数，跨教师/运行对照找共性（GPT Astra / engineer 面板编写） |  |  |  | engineer@ws006344 | 2026-11-19 11:50 +0400 | 已接入网站：本地 http://127.0.0.1:8765/atlas.html，线上主报告顶部“编辑图谱”；29 项逻辑检查通过，未做浏览器实测 | report/atlas.html |
 | BL-LORA-Q4 | 对照 B2/B4 扩到 Qwen3 4B 的 MedCalc（与 Astra 6.2 的 4B 教学结果对比） | Qwen3 4B (Qwen/Qwen3-4B) |  | MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 23:06 +0400 | Qwen3 4B MedCalc 教过的8种：未编辑 26.9；B1 规则提示 71.9；B2 55.2(3种子)；B4 见网页；B5 提示烘焙 71.2 且通用能力无损 | report/site/baselines.json |
 | EVAL-VLLM-WS006344 | 在 ws006344 上装 vLLM，并让教学运行（含编辑后权重）的隐藏测试改用 vLLM；先验证与现有 float32 结果的一致性 |  |  |  | main@ws006344 | 2026-11-19 17:15 +0400 | vLLM 0.11.0 全精度评测可用：与原评测 98% 输出相同、判分 99%+ 相同；Qwen3-4B 一次完整评测约 20 分钟（原来 3 小时以上） | tdwa/eval_fast.py |
+| T1-Q4-A62-s2 | 教学运行：MedCalc（第 3 次重复） | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 00:14 +0400 | 教过的 8 种评分 26.9% → 61.9%（+35.0，区间 54.4–69.4，三次中最高）；没教过的 16.8% → 11.4%；困惑度 10.33→10.80，ARC/HellaSwag/算术不变 | eval/t1__Qwen3-4B__gpt-6.2-astra__s2.json（不在仓库） |
 | T3-Q17-A6-s0 | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6 (gpt-6-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 23:45 +0400 | 隐藏测试 66.7% → 67.3%（无效，保留 1 个编辑）；通用能力不变（算术 49→55.5） | eval/t3__Qwen3-1.7B__gpt-6-astra__s0.json（不在仓库） |
 | SCAFFOLD-CODEX | 框架对照：同一配置下 Astra 6.2 走 Codex 无界面 vs 接口循环（T1 Qwen 1.7B、T2 Gemma 1B 各一次） | Qwen3 1.7B; Gemma 3 1B | Astra 6.2 (gpt-6.2-astra) via codex exec | MedCalc; 物体追踪 | main@ws006343 | 2026-11-19 23:28 +0400 | Codex 框架明显弱于接口循环：T2 Gemma1B 测试 BBH 62.7/新题 63.0/难题 33.3（接口循环 96.7/97.3/84.0，未编辑 57.2/58.0/26.7）；T1 Qwen1.7B 零保留编辑（接口循环 49.4）。两次都在 47–66 步主动结束 | eval/t2__gemma-3-1b-it__codex-gpt-6.2-astra__s0.json |
 | T3-Q17-A62-s0 | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 20:45 +0400 | 隐藏测试 66.7% → 81.0%（+14.3，区间 77.7–84.0）；直接选答案 60.8% → 81.2%；但三位数算术 49% → 12%（副作用检查只用两位数算术，没拦住），ARC 73.7→69.0；第 46 步因框架漏洞中止 | eval/t3__Qwen3-1.7B__gpt-6.2-astra__s0.json（不在仓库） |
