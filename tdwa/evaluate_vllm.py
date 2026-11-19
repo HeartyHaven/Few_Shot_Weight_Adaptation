@@ -101,10 +101,11 @@ def evaluate(st, task, out_dir, prefix=""):
     for path in sorted(glob.glob(os.path.join(ROOT, "_secret", task, "test*.jsonl"))):
         name = os.path.basename(path)[:-6]; items = [json.loads(l) for l in open(path)]
         t0 = time.time(); f0 = st.fwd
-        outs = st.generate([prefix + G.format_prompt(it) for it in items], 2048)
+        pf = prefix if callable(prefix) else (lambda it, p=prefix: p)
+        outs = st.generate([pf(it) + G.format_prompt(it) for it in items], 2048)
         rows = [{"id": it["id"], "group": it["group"], "taught": it.get("taught"), "answer": it["answer"], "output": o, **G.grade(it, o)} for it, o in zip(items, outs)]
         if task in G.OPT_TASKS:
-            fp = st.forced([prefix + G.format_prompt(it, "direct") for it in items], [it.get("n_options") or it["n_objects"] for it in items])
+            fp = st.forced([pf(it) + G.format_prompt(it, "direct") for it in items], [it.get("n_options") or it["n_objects"] for it in items])
             for r, p, it in zip(rows, fp, items):
                 r["forced_pred"] = p; r["forced_correct"] = p == it["answer"]
         with open(os.path.join(out_dir, name + ".jsonl"), "w") as f:
@@ -167,8 +168,8 @@ def main():
     t0 = time.time()
     prefix = ""
     if a.b1:
-        from tdwa.baseline_bake import PROC
-        prefix = PROC[a.task]
+        from tdwa.baseline_bake import prefix_fn
+        prefix = prefix_fn(a.task)
     res = evaluate(st, a.task, os.path.join(ROOT, "_secret", "eval", name), prefix)
     meta = {"student": a.student, "task": a.task, "edited": bool(a.model_path or a.lora), "lora": a.lora, "engine": "vllm", "dtype": "bfloat16",
             "model_path": a.model_path, "b1_prefix": bool(a.b1), "wall_seconds": round(time.time() - t0), **json.loads(a.meta)}

@@ -26,6 +26,33 @@ T2_PROC = ("Procedure to follow:\n1. Write down the starting assignment as a tab
 PROC = {"t2": T2_PROC}
 
 
+def t1_rules():
+    """B1 for MedCalc, as in WP0 (pilot/scripts/baseline.py): the generic criteria list cut from each calculator's
+    one-shot worked explanation in MedCalc-Bench-Verified, plus the absent-if-unmentioned convention."""
+    import re
+    from datasets import load_dataset
+    def extract_rule(e):
+        keep, seen = [], False
+        for line in e.strip().split("\n"):
+            numbered = bool(re.match(r"\s*\d+\.\s", line)); sub = bool(re.match(r"\s+\S|\s*[-*•]", line))
+            if seen and line.strip() and not numbered and not sub:
+                if re.search(r"sum|calculat|total", line, re.I):
+                    keep.append(line)
+                break
+            seen = seen or numbered; keep.append(line)
+        return "\n".join(keep).strip()
+    return {str(r["Calculator ID"]): extract_rule(r["Ground Truth Explanation"]) for r in load_dataset("nsk7153/MedCalc-Bench-Verified")["one_shot"]}
+
+
+def prefix_fn(task):
+    """item -> text put before the question for condition B1."""
+    if task == "t1":
+        R = t1_rules()
+        return lambda it: ("Scoring rule for this calculator:\n" + R[str(it["calc_id"])] +
+                           "\nIf an item is not mentioned in the patient note, assume it is absent.\n\n") if str(it.get("calc_id")) in R else ""
+    return lambda it: PROC[task]
+
+
 def questions(task):
     dev = [json.loads(l) for l in open(os.path.join(ROOT, "data", task, "dev.jsonl"))]
     rng = random.Random(9393); own = []
