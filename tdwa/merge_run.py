@@ -30,19 +30,21 @@ def main():
     edit = {k: v for k, v in edit.items() if k not in bias}
     os.makedirs(out, exist_ok=True)
     for f in os.listdir(snap):
-        if not f.endswith(".safetensors") and not f.endswith(".safetensors.index.json"):
+        if not f.endswith(".safetensors"):          # config, tokenizer, and the shard index (same shard names are written below)
             shutil.copy(os.path.realpath(os.path.join(snap, f)), os.path.join(out, f))
-    dt = getattr(torch, a.dtype); tensors = {}; used = set()
-    for f in sorted(glob.glob(os.path.join(snap, "*.safetensors"))):
+    dt = getattr(torch, a.dtype); used = set(); n = 0
+    for f in sorted(glob.glob(os.path.join(snap, "*.safetensors"))):   # one shard at a time keeps peak RAM at one shard
+        tensors = {}
         with safe_open(f, "pt") as h:
             for k in h.keys():
                 t = edit[k] if k in edit else h.get_tensor(k)
                 used.add(k) if k in edit else None
                 tensors[k] = t.to(dt).contiguous()
+        save_file(tensors, os.path.join(out, os.path.basename(f)), metadata={"format": "pt"}); n += len(tensors); del tensors
     missing = set(edit) - used
     if missing:
         sys.exit(f"edited tensors not found in the checkpoint: {sorted(missing)[:5]}")
-    save_file(tensors, os.path.join(out, "model.safetensors"), metadata={"format": "pt"})
+    tensors = range(n)
     c = json.load(open(os.path.join(out, "config.json")))
     c["torch_dtype"] = a.dtype
     if "text_config" in c:
