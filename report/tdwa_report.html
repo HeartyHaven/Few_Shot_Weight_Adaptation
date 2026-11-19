@@ -382,7 +382,7 @@ td .sub{display:block;font-size:12px;color:var(--muted)}
     <li><b>LoRA：全量训练数据</b>（B4）：医疗评分用 MedCalc 的全部约 1 万条训练题，物体追踪用 5000 道新生成的题。这是“数据不受限”时的参考上限。</li>
     <li><b>提示烘焙</b>（B5）：让学生带着解题流程作答，再训练 LoRA，使它不带提示时也给出同样的回答分布。</li>
   </ul>
-  <p>LoRA 的超参数事先固定（秩 16，学习率 2×10⁻⁴），没有用验证集挑选。<b>“通用能力”几列标红的，表示比未编辑下降超过 2 个百分点</b>（困惑度是上升超过 10%），这是本实验给教师定的副作用上限。</p>
+  <p>LoRA 的超参数事先固定（秩 16，学习率 2×10⁻⁴），没有用验证集挑选。<b>“通用能力”几列标红的，表示比未编辑下降超过 2 个百分点</b>（困惑度是上升超过 10%），这是本实验给教师定的副作用上限。MMLU（57 个学科各 20 题，共 1140 题）和 GSM8K（500 题）是补充的通用能力检查，只测了每组的第一个种子；教师编辑这两项暂未测。</p>
 </div>
 <div class="wide panel live">
   <div class="seg" id="ctrlTask" role="group" aria-label="选择任务"></div>
@@ -717,8 +717,8 @@ function setupCtrl(){if(!BL||!SUM)return;const st={task:0,stu:0},tasks=['t1','t2
   const fmt=(v)=>v?`${v.acc}${v.sd!=null?`<span class="sub">±${v.sd}（${v.seeds} 个种子）</span>`:(v.lo!=null?`<span class="sub">${v.lo}–${v.hi}</span>`:'')}`:'—';
   const rc=(k,v)=>{if(v==null||!base)return `<td class="num">${v??'—'}</td>`;const b=base.retention[k];const bad=k==='ppl'?v>b*1.1:v<b-2;return `<td class="num"${bad?' style="color:var(--bad);font-weight:600"':''}>${v}</td>`};
   const main=sets[0][0];
-  $('ctrlTable').innerHTML=`<table><tr><th>方法</th>${sets.map(s=>`<th class="num">${s[1]}</th>`).join('')}<th class="num">ARC</th><th class="num">HellaSwag</th><th class="num">算术</th><th class="num">困惑度</th><th>训练</th></tr>`+
-   all.map(r=>`<tr${r.method==='B0'?' style="background:var(--soft)"':''}><td>${r.method==='T'?`<b style="color:${TCOL[r.teacher]||'inherit'}">教师编辑 · ${r.label}</b><span class="sub">主评测（全精度）</span>`:`<b>${r.label}</b><span class="sub">${r.method} · vLLM</span>`}</td>${sets.map(s=>`<td class="num">${fmt(r.sets[s[0]])}</td>`).join('')}${rc('arc',r.retention.arc)}${rc('hs',r.retention.hs)}${rc('arith',r.retention.arith)}${rc('ppl',r.retention.ppl)}<td>${r.train?`${r.train.examples} 条 × ${r.train.epochs} 轮<span class="sub">${r.train.minutes} 分钟</span>`:''}</td></tr>`).join('')+'</table>';
+  $('ctrlTable').innerHTML=`<table><tr><th>方法</th>${sets.map(s=>`<th class="num">${s[1]}</th>`).join('')}<th class="num">ARC</th><th class="num">HellaSwag</th><th class="num">算术</th><th class="num">MMLU</th><th class="num">GSM8K</th><th class="num">困惑度</th><th>训练</th></tr>`+
+   all.map(r=>`<tr${r.method==='B0'?' style="background:var(--soft)"':''}><td>${r.method==='T'?`<b style="color:${TCOL[r.teacher]||'inherit'}">教师编辑 · ${r.label}</b><span class="sub">主评测（全精度）</span>`:`<b>${r.label}</b><span class="sub">${r.method} · vLLM</span>`}</td>${sets.map(s=>`<td class="num">${fmt(r.sets[s[0]])}</td>`).join('')}${rc('arc',r.retention.arc)}${rc('hs',r.retention.hs)}${rc('arith',r.retention.arith)}${rc('mmlu',r.retention.mmlu)}${rc('gsm8k',r.retention.gsm8k)}${rc('ppl',r.retention.ppl)}<td>${r.train?`${r.train.examples} 条 × ${r.train.epochs} 轮<span class="sub">${r.train.minutes} 分钟</span>`:''}</td></tr>`).join('')+'</table>';
   const pts=all.filter(r=>r.sets[main]),max=100,W=920,L=260,Rr=60,rh=30,T=26,H=T+pts.length*rh+10,x=v=>L+(W-L-Rr)*v/max;
   let g=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="各方法在主指标上的正确率">`;
   for(let v=0;v<=max;v+=10)g+=`<line x1="${x(v)}" x2="${x(v)}" y1="${T-4}" y2="${H-8}" stroke="var(--line)"/><text x="${x(v)}" y="14" text-anchor="middle" font-size="12" fill="var(--muted)">${v}%</text>`;

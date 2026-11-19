@@ -59,6 +59,11 @@ def build():
                        "lo": first["lo"] if len(accs) == 1 else None, "hi": first["hi"] if len(accs) == 1 else None, "n": first["n"], "seeds": len(accs)}
         r = {"task": task, "student_tag": tag, "student": STUDENT.get(tag, tag), "method": method, "label": METHOD[method], "seeds": len(runs),
              "runs": [n for _, n, _ in runs], "sets": sets, "retention": {k: round(S.mean(x[k] for x in rets), 2 if k == "ppl" else 1) for k in rets[0]}}
+        # broader retention (tdwa/retention_vllm.py): MMLU 1140 + GSM8K 500, measured for the seed-0 run / the base student
+        rp = os.path.join(ROOT, "eval_ret", ("B0__" + tag) if method == "B0" else next((n for n in r["runs"] if n.endswith("__s0")), r["runs"][0])) + ".json"
+        if os.path.exists(rp):
+            rr = json.load(open(rp))["results"]
+            r["retention"].update({k: round(rr[k]["acc"] * 100, 1) for k in ("mmlu", "gsm8k") if k in rr})
         cfgs = [json.load(open(c)) for c in (os.path.join(ROOT, "baselines", n, "config.json") for _, n, _ in runs) if os.path.exists(c)]
         if cfgs:
             c = cfgs[0]
