@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>编辑图谱</title>
+<link rel="icon" href="data:,">
+<style>
+:root{
+  --bg:#f4f6f8;--panel:#fff;--ink:#17212b;--muted:#5b6876;--line:#d5dce3;--soft:#e9edf1;
+  --base:#8593a1;--astra:#b7791f;--fable:#0f6f6a;--bad:#c2372d;--badbg:#fbe9e6;--okbg:#e2f3f0;--warnbg:#fbf1dc;
+  --f-display:"Noto Serif SC","Songti SC",serif;--f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;--f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12171c;--panel:#1b222a;--ink:#e6ebf0;--muted:#9aa7b4;--line:#2f3944;--soft:#232c35;
+  --base:#7d8a97;--astra:#e0a94a;--fable:#45b8b0;--bad:#f0776c;--badbg:#3a1f1c;--okbg:#173330;--warnbg:#372c14;color-scheme:dark
+}}
+:root[data-theme="dark"]{
+  --bg:#12171c;--panel:#1b222a;--ink:#e6ebf0;--muted:#9aa7b4;--line:#2f3944;--soft:#232c35;
+  --base:#7d8a97;--astra:#e0a94a;--fable:#45b8b0;--bad:#f0776c;--badbg:#3a1f1c;--okbg:#173330;--warnbg:#372c14;color-scheme:dark
+}
+:root[data-theme="light"]{color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.75 var(--f-body)}
+a{color:var(--fable);text-underline-offset:3px}button,input,select{font:inherit}
+button,select{color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:5px}
+button{cursor:pointer;padding:7px 12px}button:hover{border-color:var(--fable)}button:disabled{cursor:default;opacity:.5}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--astra);outline-offset:3px}
+select{padding:7px 30px 7px 10px;max-width:100%;min-width:0}input{accent-color:var(--fable)}
+[hidden]{display:none!important}.shell{max-width:1320px;margin:auto;padding:24px max(20px,env(safe-area-inset-left)) 72px}
+.topline,.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.topline{justify-content:space-between;margin-bottom:32px}
+.topline a{font-size:14px}.theme{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.kicker{font-size:12px;letter-spacing:.14em;color:var(--muted)}h1,h2{font-family:var(--f-display);line-height:1.4}
+h1{font-size:clamp(32px,5vw,48px);margin:8px 0 12px}h2{font-size:25px;margin:0}h3{font-size:16px;margin:0 0 10px}
+p{margin:0 0 12px}.lead{font-size:17px;max-width:850px;color:var(--muted)}
+.nav{display:flex;gap:20px;flex-wrap:wrap;padding:16px 0 24px}.nav a{font-size:14px;color:var(--ink);text-decoration:none}
+.nav span,.section-no{font:12px var(--f-mono);color:var(--fable);margin-right:8px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+.filters{display:flex;gap:18px;align-items:flex-end;flex-wrap:wrap;margin:0 0 16px}.field{display:flex;flex-direction:column;gap:5px;min-width:0}
+.field>span{font-size:12px;color:var(--muted)}.field select{min-width:170px}.filter-mode{margin-left:auto;display:flex;align-items:center;gap:8px;padding:8px 0}
+.filter-mode input{width:18px;height:18px}.small,.note{font-size:13px;color:var(--muted)}.note{margin-top:8px}
+.status{border-left:3px solid var(--astra);background:var(--warnbg);padding:10px 14px;margin:14px 0;font-size:13px}
+.status.error{border-color:var(--bad);background:var(--badbg)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin:20px 0 10px;border-block:1px solid var(--line)}
+.stat{padding:16px 20px;border-right:1px solid var(--line)}.stat:first-child{padding-left:0}.stat:last-child{border:0}
+.stat strong{display:block;font:600 28px/1.4 var(--f-mono)}.stat span{font-size:12px;color:var(--muted)}
+section{margin-top:42px}.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.section-title{display:flex;align-items:center}.section-no{font-size:14px}.legend{display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin:12px 0;font-size:12px;color:var(--muted)}
+.swatch{display:inline-block;width:15px;height:15px;vertical-align:-3px;border:1px solid var(--line);border-radius:3px;margin-right:5px}
+.swatch.heat{background:var(--okbg);border-color:var(--fable)}.swatch.probe{border:1px dashed var(--astra);background:var(--warnbg)}
+.overview{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);gap:16px;align-items:start}
+.scroll{overflow:auto;max-width:100%;overscroll-behavior-x:contain}.grid-scroll{max-height:675px;border:1px solid var(--line);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500;color:var(--muted)}caption{text-align:left;padding:10px;color:var(--muted);font-size:12px}
+.matrix{border-collapse:separate;border-spacing:0;width:100%}.matrix th,.matrix td{padding:4px;border-right:1px solid var(--line)}
+.matrix thead th{position:sticky;top:0;z-index:2;background:var(--panel);text-align:center;font:12px var(--f-mono);height:48px}
+.matrix th:first-child{position:sticky;left:0;z-index:1;background:var(--panel);min-width:55px;font-family:var(--f-mono)}
+.matrix thead th:first-child{z-index:3}.matrix .kv{display:block;font:10px/1.5 var(--f-body);color:var(--muted)}
+.cell{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:64px;min-height:61px;width:100%;padding:4px 3px;border:1px solid transparent;border-radius:4px;background:var(--panel);line-height:1.4;font-size:12px}
+.cell strong{font:600 16px/1.3 var(--f-mono)}.cell small{font-size:10px;color:var(--muted)}
+.cell.has-edit{background:color-mix(in srgb,var(--fable) var(--heat),var(--panel))}
+.cell.has-probe{border:1px dashed var(--astra)}.cell[aria-pressed="true"]{outline:2px solid var(--fable);outline-offset:-2px}
+.cell .neuron-count{font-size:10px;white-space:nowrap}.detail{max-height:775px;overflow:auto;scrollbar-gutter:stable}
+.detail-empty{padding:48px 8px;color:var(--muted);text-align:center}.detail-run{border-top:1px solid var(--line);margin-top:18px;padding-top:16px}
+.badge{display:inline-block;border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:11px;line-height:1.6;white-space:nowrap}
+.badge.good{color:var(--fable);background:var(--okbg);border-color:transparent}.badge.bad{color:var(--bad);background:var(--badbg);border-color:transparent}
+.badge.probed{color:var(--astra);background:var(--warnbg);border-style:dashed}.teacher{font-weight:600}.teacher.fable{color:var(--fable)}.teacher.astra{color:var(--astra)}
+.mono,code,pre{font-family:var(--f-mono)}code{font-size:12px;overflow-wrap:anywhere}pre{font-size:12px;white-space:pre-wrap;word-break:break-word;margin:0}
+.empty{padding:28px 16px;text-align:center;color:var(--muted);background:var(--soft);border-radius:6px;font-size:14px}
+.target{border-top:1px solid var(--line);margin-top:10px;padding-top:10px}.target-title{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px}
+.metrics{display:flex;gap:4px 14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:5px 0 8px}
+.units{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px 12px;margin-top:10px}.unit{min-width:0;font:11px var(--f-mono)}
+.unit-line{display:flex;justify-content:space-between;gap:5px}.track{height:4px;border-radius:3px;background:var(--soft);margin-top:4px;overflow:hidden}.fill{height:100%;background:var(--fable)}
+details{border:1px solid var(--line);border-radius:5px;margin-top:10px}summary{padding:8px 10px;cursor:pointer;color:var(--muted);font-size:12px}
+.expanded{border-top:1px solid var(--line);padding:12px;overflow-wrap:anywhere}.expanded h4{font-size:12px;margin:12px 0 5px}.expanded h4:first-child{margin-top:0}
+.role{padding:12px;border-left:2px dashed var(--astra);background:var(--soft);margin:10px 0;font-size:13px;overflow-wrap:anywhere}
+.role p{margin:7px 0 0}.role-source{font-size:11px;color:var(--muted)}.run-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin:16px 0}
+.summary-text{white-space:pre-line;overflow-wrap:anywhere;font-size:14px}.run-id{font:11px var(--f-mono);color:var(--muted);overflow-wrap:anywhere;margin-top:5px}
+.chart{width:100%;min-width:470px;display:block;height:auto}.chart text{fill:var(--muted);font-family:var(--f-body);font-size:11px}.chart .axis{stroke:var(--line)}.chart .series{fill:none;stroke:var(--fable);stroke-width:2.5}.chart circle{fill:var(--fable);stroke:var(--panel);stroke-width:2}
+.curve-score{font:600 20px var(--f-mono);color:var(--fable);margin-bottom:6px}.timeline{list-style:none;padding:0;margin:20px 0 0}
+.event{position:relative;margin:0 0 18px 14px;padding:0 0 0 26px;border-left:1px solid var(--line)}
+.event::before{content:"";position:absolute;left:-5px;top:19px;width:9px;height:9px;border-radius:50%;background:var(--fable);box-shadow:0 0 0 4px var(--bg)}
+.event.probe-event::before{background:var(--astra)}.event-card{border:1px solid var(--line);border-radius:7px;background:var(--panel);padding:18px}
+.event-head{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:10px}.event-head h3{margin:0;font-size:15px}.event-head .step{font:12px var(--f-mono);color:var(--muted)}
+.event-card .val{font-size:14px;margin:10px 0;color:var(--fable)}.target-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px}
+.analysis-sentence{font-family:var(--f-display);font-size:19px;line-height:1.8;border-left:3px solid var(--fable);padding:6px 0 6px 16px;margin:14px 0 20px}
+.rank-table{min-width:670px}.rank-table .num{text-align:right;font-family:var(--f-mono)}.linkbutton{padding:0;border:0;background:none;color:var(--fable);text-align:left;text-decoration:underline;text-underline-offset:3px}
+.more{margin-top:10px;font-size:13px}.subsection{margin-top:28px}.depth-table{min-width:720px}.depth-table th{white-space:nowrap}.depth-table td{padding:6px 8px}
+.depth-cell{background:var(--soft);height:70px;position:relative;min-width:44px;border-radius:3px;display:flex;justify-content:center;align-items:flex-end;overflow:hidden}
+.depth-bar{position:absolute;left:0;bottom:0;right:0;background:var(--fable);opacity:.35}.depth-cell span{z-index:1;font:11px var(--f-mono);padding-bottom:5px}.depth-selected{background:var(--soft)}
+footer{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1000px){.overview{grid-template-columns:minmax(0,1fr)}.detail{max-height:560px}.run-intro{grid-template-columns:1fr}.matrix .cell{min-width:60px}}
+@media(max-width:640px){.shell{padding:16px 14px 48px}.topline{margin-bottom:24px}.panel{padding:14px}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stat{padding:12px!important}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.filters{gap:12px}.field{flex:1}.field select{min-width:0;width:100%}.filter-mode{margin-left:0;width:100%;font-size:14px}.target-grid{grid-template-columns:1fr}.units{grid-template-columns:repeat(2,minmax(0,1fr))}.event{margin-left:5px;padding-left:15px}.event-card{padding:13px}.nav{gap:14px}.nav a{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topline"><a href="./">← 返回主报告</a><label class="theme">外观 <select id="theme" aria-label="外观"><option value="auto">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select></label></div>
+  <header><div class="kicker">教师改权重实验 · 从定位到修改</div><h1>编辑图谱</h1><p class="lead">教师把注意力放在了哪里，又真正改了什么？沿着层、注意力头和神经元，比较每次运行留下的线索。</p></header>
+  <nav class="nav" aria-label="页内导航"><a href="#overview"><span>01</span>部位总图</a><a href="#timeline"><span>02</span>逐步时间线</a><a href="#patterns"><span>03</span>共性分析</a><a href="#depth"><span>04</span>相对深度</a></nav>
+  <div class="panel filters" aria-label="图谱筛选">
+    <label class="field"><span>任务</span><select id="task" disabled><option value="t2">物体追踪</option><option value="t1">医疗评分</option></select></label>
+    <label class="field"><span>学生</span><select id="student" disabled><option>加载中…</option></select></label>
+    <label class="filter-mode"><input type="checkbox" id="kept" checked disabled><span>只看最终保留的编辑</span></label>
+    <button id="reload" type="button">重新读取数据</button>
+  </div>
+  <div id="load-status" class="status" role="status" aria-live="polite">正在读取编辑记录…</div>
+  <div id="roles-status" class="status" role="status" hidden></div>
+  <main id="content" hidden>
+    <p class="small" id="scope-note"></p><div class="stats" id="stats"></div>
+    <section id="overview" aria-labelledby="overview-title">
+      <div class="section-head"><div class="section-title"><span class="section-no">01</span><h2 id="overview-title">部位总图</h2></div><span class="small" id="arch-label"></span></div>
+      <p class="small">颜色越深，涉及改动的运行越多；虚线表示有教师定位或探测过。点击格子查看证据。层号、头号和神经元编号从 0 开始。</p>
+      <div class="legend"><span><i class="swatch heat"></i>有改动记录 · 数字为运行数</span><span><i class="swatch probe"></i>有定位或探测记录</span><span>格内另标教师数</span></div>
+      <div class="overview">
+        <div class="panel"><div class="scroll grid-scroll" id="grid" tabindex="0" aria-label="层与部件网格，可横向和纵向滚动"></div><p class="note" id="head-note"></p><div id="other-parts"></div></div>
+        <aside class="panel detail" id="detail" aria-label="选中部位的详情"><h3>部位详情</h3><p class="detail-empty">点击左侧格子，比较不同教师的解释与改法。</p></aside>
+      </div>
+    </section>
+    <section id="timeline" aria-labelledby="timeline-title">
+      <div class="section-head"><div class="section-title"><span class="section-no">02</span><h2 id="timeline-title">逐步时间线</h2></div></div>
+      <label class="field"><span>选择一次运行</span><select id="run"></select></label>
+      <div id="run-intro" class="panel run-intro"></div>
+      <p class="small">按工具调用步号排列。验证曲线保留完整历史；筛选开关只影响编辑卡片，探测记录始终可见。教师的作用解释是其假设，不等于已经证实的机制。</p>
+      <ol id="events" class="timeline"></ol>
+    </section>
+    <section id="patterns" aria-labelledby="patterns-title">
+      <div class="section-head"><div class="section-title"><span class="section-no">03</span><h2 id="patterns-title">不同运行的共同落点</h2></div><label class="small">排序 <select id="sort"><option value="edits">改动运行数优先</option><option value="roles">定位运行数优先</option><option value="teachers">改动教师数优先</option></select></label></div>
+      <p id="conclusion" class="analysis-sentence"></p>
+      <p class="small">同一部件在同一运行内只计一次。查询头与 KV 头分别统计，MLP 按层汇总；定位数仅来自中文定位说明。共性用于提出待检验的假设，不能单凭次数认定它是症结。</p>
+      <div class="panel"><div class="scroll" id="common-table" tabindex="0" aria-label="共性部件表，可横向滚动"></div><button class="more" id="common-more" hidden>展开全部部件</button></div>
+      <div class="subsection"><h3>反复出现的 MLP 神经元</h3><p class="small">按同一层、同一模块、同一神经元编号比较，以不同运行去重。这里只统计输入数据列出的最多 24 个高改动单元，不代表完整神经元交集，也不表示其他神经元没有改变。</p><div class="panel"><div class="scroll" id="neuron-table" tabindex="0" aria-label="重复神经元表，可横向滚动"></div><button class="more" id="neuron-more" hidden>展开更多神经元</button></div></div>
+    </section>
+    <section id="depth" aria-labelledby="depth-title">
+      <div class="section-head"><div class="section-title"><span class="section-no">04</span><h2 id="depth-title">跨学生看相对深度</h2></div></div>
+      <p class="small">比较当前任务的所有学生，保留相同的编辑筛选。每次编辑在每层计一次，再按“层号 ÷ 总层数”分为十段；柱高为该学生各段占比，不是改动参数量或改动强度。不同学生的层不代表同一功能。</p>
+      <div class="panel"><div class="scroll" id="depth-chart" tabindex="0" aria-label="各学生相对深度分布，可横向滚动"></div></div>
+    </section>
+  </main>
+  <footer>编辑位置与数值来自保存的编辑记录；中文解释来自教学日志。验证分数为隐藏验证集正确率，不是最终测试集结果。没有记录表示资料中未记录，不等于教师从未探测过。</footer>
+</div>
+<noscript><p>此页面需要启用 JavaScript 才能读取图谱数据。</p></noscript>
+<script>
+(function(){
+'use strict';
+const TEACHERS={'claude-fable-5-2':'Fable 5.2','gpt-6-astra':'Astra 6','gpt-6.2-astra':'Astra 6.2'};
+const TASKS={t1:'医疗评分',t2:'物体追踪'};
+const OPS={analytic:'解析计算',forward_observation:'前向观察',closed_form:'公式直接求解',zeroth_order_search:'小范围试探',local_gradient:'局部梯度',new_bias_parameter:'新增偏置'};
+const ACTIONS={edited:'关联编辑',probed:'定位 / 探测',ablated:'消融探测',rejected:'方案未采纳'};
+const arr=x=>Array.isArray(x)?x:[], finite=x=>typeof x==='number'&&Number.isFinite(x);
+const integer=x=>((typeof x==='number'||typeof x==='string')&&/^\d+$/.test(String(x)))?Number(x):null;
+const escape=x=>String(x==null?'':x).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt=x=>finite(x)?x.toLocaleString('zh-CN'):'未记录';
+const pct=x=>finite(x)?x.toFixed(1)+'%':'未验证';
+const teacher=x=>TEACHERS[x]||x||'教师未记录';
+const shortStudent=x=>String(x||'未知学生').replace(/^.*\//,'');
+const keep=e=>e.kept_final===true;
+const editsFor=(r,only)=>arr(r.edits).filter(e=>!only||keep(e));
+function roleItems(roles,r,only){
+  const active=new Set(editsFor(r,only).map(e=>String(e.id)));
+  return arr(roles[r.run]&&roles[r.run].items).filter(i=>i&&typeof i==='object').filter(i=>
+    !only||i.action!=='edited'||!arr(i.edit_ids).length||i.edit_ids.some(id=>active.has(String(id))));
+}
+function slot(layer,kind,index,module){
+  return {layer,kind,index,module:module||'',key:[layer===null?'global':layer,kind,index===null?'':index,module||''].join('|')};
+}
+function slotName(s){
+  const prefix=s.layer===null?'模型全局':'第 '+s.layer+' 层';
+  if(s.kind==='head')return prefix+' · 查询头 H'+s.index;
+  if(s.kind==='kv')return prefix+' · KV 头 '+s.index;
+  if(s.kind==='mlp')return prefix+' · MLP';
+  if(s.kind==='layer')return prefix+' · 整层定位';
+  return prefix+' · '+(s.module||({embedding:'词嵌入',norm:'归一化',bias:'偏置'})[s.kind]||'其他参数');
+}
+function targetSlots(t){
+  const layer=integer(t.layer), mod=String(t.module||t.param||'其他参数');
+  if(t.unit_kind==='head'){
+    const n=integer(t.n_units), changed=integer(t.n_units_changed);
+    // Complete changes can name every head even when top-unit records are truncated.
+    const indices=n!==null&&n===changed&&n<=1024?Array.from({length:n},(_,i)=>i):
+      arr(t.units).map(u=>integer(u[0])).filter(i=>i!==null&&(n===null||i<n));
+    const kind=/(^|[.:_])(?:k|v)_proj/.test(mod)?'kv':'head';
+    const result=Array.from(new Set(indices)).map(i=>slot(layer,kind,i));
+    if(changed!==null&&changed>indices.length)result.push(slot(layer,'other',null,mod+'（未列出的头）'));
+    return result;
+  }
+  if(t.unit_kind==='neuron'||/^(gate_proj|up_proj|down_proj)$/.test(mod)||/mlp/.test(t.param||''))return [slot(layer,'mlp',null)];
+  return [slot(layer,'other',null,mod)];
+}
+function roleSlots(i){
+  const layer=integer(i.layer), mod=String(i.module||'');
+  if(i.kind==='head'){
+    let indices=Array.isArray(i.index)?i.index:[i.index];
+    indices=indices.map(integer).filter(n=>n!==null);
+    if(!indices.length){const m=String(i.label||'').match(/(?:KV|H)(\d+)/i);if(m)indices=[Number(m[1])];}
+    const kind=/(?:k_proj|v_proj)/.test(mod)||/KV\d/i.test(i.label||'')?'kv':'head';
+    return indices.length?indices.map(n=>slot(layer,kind,n)):[slot(layer,'other',null,mod||'注意力（头号未记录）')];
+  }
+  if(i.kind==='mlp'||i.kind==='neurons'||/^(gate_proj|up_proj|down_proj)$/.test(mod))return [slot(layer,'mlp',null)];
+  if(i.kind==='layer')return [slot(layer,'layer',null)];
+  // Normalization, embedding and bias entries join actual tensor records by module.
+  return [slot(layer,'other',null,mod||i.label||i.kind||'其他部件')];
+}
+function buildIndex(runs,roles,only){
+  const map=new Map();
+  function get(s){if(!map.has(s.key))map.set(s.key,{...s,editRuns:new Set(),editTeachers:new Set(),roleRuns:new Set(),roleTeachers:new Set(),edits:[],roles:[]});return map.get(s.key);}
+  for(const r of runs){
+    for(const e of editsFor(r,only))for(const t of arr(e.targets)){
+      if(t.n_units_changed===0||t.n_values===0)continue;
+      for(const s of targetSlots(t)){const c=get(s);c.editRuns.add(r.run);c.editTeachers.add(r.teacher);c.edits.push({r,e,t});}
+    }
+    for(const i of roleItems(roles,r,only))for(const s of roleSlots(i)){
+      const c=get(s);c.roleRuns.add(r.run);c.roleTeachers.add(r.teacher);c.roles.push({r,i});
+    }
+  }
+  return map;
+}
+function gridKeys(layer,head,arch){
+  const keys=[slot(layer,'head',head).key], heads=integer(arch.heads), kv=integer(arch.kv_heads);
+  if(heads&&kv&&heads%kv===0)keys.push(slot(layer,'kv',Math.floor(head/(heads/kv))).key);
+  return keys;
+}
+function merged(index,keys){
+  const result={editRuns:new Set(),editTeachers:new Set(),roleRuns:new Set(),roleTeachers:new Set(),edits:[],roles:[]};
+  const editSeen=new Set(),roleSeen=new Set();
+  for(const key of keys){
+    const c=index.get(key);if(!c)continue;
+    for(const k of ['editRuns','editTeachers','roleRuns','roleTeachers'])for(const x of c[k])result[k].add(x);
+    for(const rec of c.edits){const id=JSON.stringify([rec.r.run,rec.e.id,rec.t.param]);if(!editSeen.has(id)){result.edits.push(rec);editSeen.add(id);}}
+    for(const rec of c.roles){const id=JSON.stringify([rec.r.run,rec.i]);if(!roleSeen.has(id)){result.roles.push(rec);roleSeen.add(id);}}
+  }
+  return result;
+}
+function neuronBounds(records){
+  const ts=records.map(x=>x.t).filter(t=>t.unit_kind==='neuron'), known=new Set();
+  let width=0,lower=0,upper=0,complete=true;
+  for(const t of ts){
+    const n=integer(t.n_units), changed=integer(t.n_units_changed);if(n!==null)width=Math.max(width,n);
+    for(const [id] of arr(t.units))if(integer(id)!==null)known.add(Number(id));
+    if(changed!==null){lower=Math.max(lower,changed);upper+=changed;}else complete=false;
+    if(changed!==arr(t.units).length)complete=false;
+  }
+  if(!ts.length)return null;
+  lower=Math.max(lower,known.size);upper=width?Math.min(width,upper):upper;
+  if(complete)lower=upper=known.size;
+  return {lower,upper:Math.max(lower,upper),exact:lower===upper};
+}
+function recurrentNeurons(runs,only){
+  const map=new Map();
+  for(const r of runs)for(const e of editsFor(r,only))for(const t of arr(e.targets)){
+    if(t.unit_kind!=='neuron')continue;
+    for(const [id,share] of arr(t.units)){
+      if(integer(id)===null||!finite(share)||share<=0)continue;
+      const key=[t.layer,t.module,id].join('|');
+      if(!map.has(key))map.set(key,{layer:t.layer,module:t.module,index:id,runs:new Set(),teachers:new Set(),maxShare:0});
+      const item=map.get(key);item.runs.add(r.run);item.teachers.add(r.teacher);item.maxShare=Math.max(item.maxShare,share);
+    }
+  }
+  return Array.from(map.values()).filter(x=>x.runs.size>=2).sort((a,b)=>b.runs.size-a.runs.size||b.teachers.size-a.teachers.size||Number(a.layer)-Number(b.layer)||a.module.localeCompare(b.module)||Number(a.index)-Number(b.index));
+}
+function depthDistribution(runs,only){
+  const map=new Map();
+  for(const r of runs){
+    if(!map.has(r.student))map.set(r.student,{student:r.student,bins:Array(10).fill(0),total:0,runs:new Set()});
+    const row=map.get(r.student);row.runs.add(r.run);const layers=integer(r.arch&&r.arch.layers);if(!layers)continue;
+    for(const e of editsFor(r,only)){
+      const touched=new Set(arr(e.targets).filter(t=>t.n_values!==0&&t.n_units_changed!==0).map(t=>integer(t.layer)).filter(l=>l!==null&&l<layers));
+      for(const layer of touched){row.bins[Math.min(9,Math.floor(layer/layers*10))]++;row.total++;}
+    }
+  }
+  return Array.from(map.values());
+}
+// Data functions are exposed for reproducible, dependency-free aggregation checks.
+globalThis.AtlasCore={targetSlots,roleSlots,gridKeys,buildIndex,merged,neuronBounds,recurrentNeurons,depthDistribution,roleItems,editsFor,slot,slotName};
+if(typeof document==='undefined')return;
+const $=id=>document.getElementById(id);
+const state={runs:[],roles:{},task:'t2',student:'',only:true,run:'',index:new Map(),commonAll:false,neuronLimit:30,selected:[],rolesMessage:'',request:0};
+const distinct=x=>Array.from(new Set(x));
+const teacherHTML=t=>'<span class="teacher '+(String(t).includes('fable')?'fable':'astra')+'">'+escape(teacher(t))+'</span>';
+function badge(e){if(e.kept_final)return '<span class="badge good">最终保留</span>';if(e.rolled_back)return '<span class="badge bad">已撤回</span>';if(e.accepted===false)return '<span class="badge bad">被副作用检查拒绝</span>';return '<span class="badge">未保留 / 状态未记录</span>';}
+function roleBadge(i){return '<span class="badge probed">'+escape(ACTIONS[i.action]||i.action||'动作未记录')+'</span>';}
+function selectedRuns(){return state.runs.filter(r=>r.task===state.task&&r.student===state.student);}
+function relatedRoles(r,e){return roleItems(state.roles,r,state.only).filter(i=>arr(i.edit_ids).some(id=>String(id)===String(e.id)));}
+function roleHTML(r,i){
+  const ids=arr(i.edit_ids).map(id=>'#'+escape(id)).join('、');
+  return '<div class="role">'+roleBadge(i)+' <b>'+escape(i.label||roleSlots(i).map(slotName).join('、'))+'</b>'+
+    '<span class="small"> · 步 '+escape(i.step==null?'未记录':i.step)+(ids?' · 关联编辑 '+ids:'')+'</span>'+
+    '<p>'+escape(i.role_zh||'该条记录没有中文作用解释。')+'</p>'+
+    (i.evidence_zh?'<p class="small">依据：'+escape(i.evidence_zh)+'</p>':'')+
+    (i.source?'<p class="role-source">来源：'+escape(typeof i.source==='string'?i.source:JSON.stringify(i.source))+'</p>':'')+'</div>';
+}
+function rawHTML(e){
+  const fields=[['教师假设 · hypothesis',e.hypothesis],['改法 · method',e.method],['预期效果 · prediction',e.prediction],['使用的数据 · data_used',e.data_used],['副作用检查 · regression',e.regression],['撤回原因',e.rolled_back_reason]];
+  return '<details><summary>展开教师原文与副作用检查</summary><div class="expanded">'+fields.filter(x=>x[1]!=null&&x[1]!=='').map(([name,value])=>'<h4>'+escape(name)+'</h4><pre>'+escape(typeof value==='string'?value:JSON.stringify(value,null,2))+'</pre>').join('')+'</div></details>';
+}
+function targetHTML(t,compact){
+  const kind=t.unit_kind==='head'?(/(?:k_proj|v_proj)/.test(t.module||'')?'KV 头':'查询头'):t.unit_kind==='neuron'?'神经元':t.unit_kind==='vector'?'向量':'张量';
+  const list=arr(t.units).slice(0,compact?6:24);
+  return '<div class="target"><div class="target-title"><b>'+(t.layer==null?'全局':'L'+escape(t.layer))+'</b><code>'+escape(t.module||t.param)+'</code><span class="badge">'+kind+'</span></div>'+
+    '<div class="metrics"><span>改动 '+fmt(t.n_units_changed)+' / '+fmt(t.n_units)+' 个单元</span><span>相对幅度 '+(finite(t.rel_norm)?(t.rel_norm*100).toFixed(2)+'%':'未记录')+'</span><span>'+fmt(t.n_values)+' 个数值</span><span>秩 '+fmt(t.rank)+'</span></div>'+
+    '<code>'+escape(t.param||'')+'</code>'+
+    (list.length?'<div class="units">'+list.map(([id,share])=>'<div class="unit" title="'+escape(kind+' '+id+'：范数比 '+(finite(share)?(share*100).toFixed(2)+'%':'未记录'))+'"><div class="unit-line"><span>#'+escape(id)+'</span><span>'+(finite(share)?(share*100).toFixed(1)+'%':'—')+'</span></div><div class="track"><div class="fill" style="width:'+(finite(share)?Math.max(0,Math.min(100,share*100)):0)+'%"></div></div></div>').join('')+'</div><div class="note">显示 '+list.length+' 个高改动单元；柱长为单元改动与矩阵改动的范数比，不要求相加为 100%。'+(arr(t.units).length<Number(t.n_units_changed)?'未列出的单元也可能已改变。':'')+'</div>':'')+'</div>';
+}
+function heatCell(keys,label,mlp){
+  const c=merged(state.index,keys), n=c.editRuns.size, teachers=c.editTeachers.size, probe=c.roleRuns.size;
+  const b=mlp?neuronBounds(c.edits):null, count=b?(b.exact?fmt(b.lower):fmt(b.lower)+'–'+fmt(b.upper)):'';
+  const title=label+'；涉及改动的运行 '+n+' 次、教师 '+teachers+' 位；定位运行 '+probe+' 次';
+  const index=state.buttons.push({keys,label})-1;
+  return '<button type="button" class="cell '+(n?'has-edit ':'')+(probe?'has-probe':'')+'" style="--heat:'+(n?12+35*n/Math.max(1,selectedRuns().length):0)+'%" data-cell="'+index+'" aria-label="'+escape(title)+'" aria-pressed="false">'+
+    '<strong>'+(n?n:probe?'探测':'·')+'</strong><small>'+(n?teachers+' 位教师':probe?c.roleTeachers.size+' 位教师':'无记录')+'</small>'+
+    (b?'<span class="neuron-count">'+count+' 个神经元</span>':'')+'</button>';
+}
+function renderGrid(runs){
+  state.buttons=[];const arch=runs[0]&&runs[0].arch||{}, layers=integer(arch.layers)||0, heads=integer(arch.heads)||0, kv=integer(arch.kv_heads)||0;
+  $('arch-label').textContent=layers+' 层 · '+heads+' 个查询头 · '+kv+' 个 KV 头';
+  const extra=new Map();
+  for(const c of state.index.values())if(!['head','kv','mlp'].includes(c.kind)&&c.layer!==null){if(!extra.has(c.layer))extra.set(c.layer,[]);extra.get(c.layer).push(c.key);}
+  let html='<table class="matrix"><thead><tr><th scope="col">层</th>';
+  for(let h=0;h<heads;h++)html+='<th scope="col">H'+h+(heads&&kv&&heads%kv===0?'<span class="kv">共享 KV'+Math.floor(h/(heads/kv))+'</span>':'')+'</th>';
+  html+='<th scope="col">MLP</th>'+(extra.size?'<th scope="col">其他</th>':'')+'</tr></thead><tbody>';
+  const represented=new Set();
+  for(let l=0;l<layers;l++){
+    html+='<tr><th scope="row">L'+l+'</th>';
+    for(let h=0;h<heads;h++){const keys=gridKeys(l,h,arch);keys.forEach(k=>represented.add(k));html+='<td>'+heatCell(keys,'L'+l+' · 查询头 H'+h+(keys.length>1?' / 共享 KV'+Math.floor(h/(heads/kv)):''),false)+'</td>';}
+    const key=slot(l,'mlp',null).key;represented.add(key);html+='<td>'+heatCell([key],'L'+l+' · MLP',true)+'</td>';
+    if(extra.size){const keys=extra.get(l)||[];keys.forEach(k=>represented.add(k));html+='<td>'+heatCell(keys,'L'+l+' · 其他部件',false)+'</td>';}
+    html+='</tr>';
+  }
+  $('grid').innerHTML=layers?html+'</tbody></table>':'<div class="empty">暂无结构信息。</div>';
+  $('head-note').textContent='q/o 投影按查询头编号；k/v 投影按 KV 头编号，并显示在共享它的查询头格子中。共享 KV 的改动不表示每个 q/o 投影都改了；共性表里每个 KV 头只计一次。MLP 神经元数去重；资料不完整时显示可确定的范围。整层定位仅放在“其他”，不推断为每个头都被探测。';
+  const others=Array.from(state.index.values()).filter(c=>!represented.has(c.key));
+  $('other-parts').innerHTML=others.length?'<h3 class="subsection">未归入网格的部位</h3>'+others.map(c=>'<p><button class="linkbutton" data-part="'+escape(c.key)+'">'+escape(slotName(c))+'</button> <span class="small">'+c.editRuns.size+' 次运行有改动 · '+c.roleRuns.size+' 次运行有定位</span></p>').join(''):'';
+  $('detail').innerHTML='<h3>部位详情</h3><p class="detail-empty">点击格子，比较不同教师的解释与改法。</p>';
+}
+function showDetail(keys,label){
+  state.selected=keys;const c=merged(state.index,keys), runNames=distinct(c.edits.map(x=>x.r.run).concat(c.roles.map(x=>x.r.run)));
+  let html='<h3>'+escape(label)+'</h3><div class="metrics"><span>'+c.editRuns.size+' 次运行有改动 · '+c.editTeachers.size+' 位教师</span><span>'+c.roleRuns.size+' 次运行有定位 · '+c.roleTeachers.size+' 位教师</span></div>';
+  if(!runNames.length)html+='<p class="empty">当前筛选下，这个部位没有记录。</p>';
+  for(const name of runNames){
+    const r=state.runs.find(x=>x.run===name), records=c.edits.filter(x=>x.r.run===name), roles=c.roles.filter(x=>x.r.run===name);
+    const editIDs=distinct(records.map(x=>x.e.id));
+    html+='<div class="detail-run"><div class="row">'+teacherHTML(r.teacher)+' <span class="badge">种子 '+escape(r.seed)+'</span><button class="linkbutton" data-jump="'+escape(name)+'">看完整时间线 ↗</button></div><div class="run-id">'+escape(name)+'</div>';
+    if(roles.length)html+=roles.map(x=>roleHTML(r,x.i)).join('');
+    else html+='<p class="note">暂无该部位的中文作用解释；可展开编辑原文。</p>';
+    for(const id of editIDs){
+      const es=records.filter(x=>x.e.id===id),e=es[0].e;
+      html+='<div class="target"><div class="row"><b>编辑 #'+escape(id)+'</b><span class="small">步 '+escape(e.step)+' · '+(finite(e.minute)?fmt(e.minute)+' 分钟':'时间未记录')+'</span>'+badge(e)+'</div><div class="note">'+escape(OPS[e.op_class]||e.op_class||'类别未记录')+' · 编辑后验证 '+pct(e.val_after)+'</div>'+es.map(x=>targetHTML(x.t,true)).join('')+rawHTML(e)+'</div>';
+    }
+    html+='</div>';
+  }
+  $('detail').innerHTML=html;
+  document.querySelectorAll('[data-cell]').forEach(b=>b.setAttribute('aria-pressed',String(state.buttons[Number(b.dataset.cell)].keys.join()===keys.join())));
+}
+function curveHTML(r){
+  const exams=arr(r.exams).filter(x=>Array.isArray(x)&&finite(x[1])), w=680,h=190,left=40,right=25,top=18,bottom=38;
+  if(!exams.length)return '<div class="empty">这次运行没有验证分数记录。</div>';
+  const x=i=>left+(w-left-right)*(exams.length===1?.5:i/(exams.length-1)), y=v=>top+(h-top-bottom)*(1-v/100);
+  let svg='<svg class="chart" viewBox="0 0 '+w+' '+h+'" role="img" aria-label="按验证次序排列的隐藏验证正确率曲线">';
+  for(const v of [0,25,50,75,100])svg+='<line class="axis" x1="'+left+'" y1="'+y(v)+'" x2="'+(w-right)+'" y2="'+y(v)+'"/><text x="'+(left-8)+'" y="'+(y(v)+4)+'" text-anchor="end">'+v+'%</text>';
+  svg+='<polyline class="series" points="'+exams.map((e,i)=>x(i)+','+y(e[1])).join(' ')+'"/>';
+  exams.forEach((e,i)=>{const text='第 '+(i+1)+' 次验证，编辑 #'+e[0]+' 后：'+e[1]+'%';svg+='<circle cx="'+x(i)+'" cy="'+y(e[1])+'" r="4" tabindex="0" aria-label="'+escape(text)+'"><title>'+escape(text)+'</title></circle><text x="'+x(i)+'" y="'+(h-18)+'" text-anchor="middle">'+(i+1)+'</text>';});
+  svg+='</svg>';
+  return '<div class="curve-score">'+pct(exams[0][1])+' → '+pct(exams[exams.length-1][1])+'</div><p class="small">首次 → 末次验证，不一定对应最终保留的权重</p><div class="scroll">'+svg+'</div><p class="small">横轴：验证次序。悬停或聚焦圆点查看关联编辑。</p><details><summary>查看验证分数表</summary><div class="scroll"><table><thead><tr><th>次序</th><th>编辑之后</th><th>正确率</th></tr></thead><tbody>'+exams.map((e,i)=>'<tr><td>'+(i+1)+'</td><td>#'+escape(e[0])+'</td><td>'+pct(e[1])+'</td></tr>').join('')+'</tbody></table></div></details>';
+}
+function renderTimeline(){
+  const r=state.runs.find(x=>x.run===state.run);
+  if(!r){$('run-intro').innerHTML='<div class="empty">没有匹配的运行。</div>';$('events').innerHTML='';return;}
+  const info=state.roles[r.run]||{};
+  $('run-intro').innerHTML='<div><div class="row">'+teacherHTML(r.teacher)+'<span class="badge">种子 '+escape(r.seed)+'</span><span class="badge">'+fmt(r.n_steps)+' 次工具调用</span></div><div class="run-id">'+escape(r.run)+'</div><h3 class="subsection">这次运行做了什么</h3><p class="summary-text">'+escape(info.summary_zh||'中文摘要尚未提供。下方可查看编辑位置、数值与教师原文。')+'</p></div><div>'+curveHTML(r)+'</div>';
+  const events=editsFor(r,state.only).map(e=>({step:finite(e.step)?e.step:Infinity,type:'edit',e})).concat(roleItems(state.roles,r,state.only).map(i=>({step:finite(i.step)?i.step:Infinity,type:'role',i})));
+  events.sort((a,b)=>a.step-b.step||(a.type===b.type?0:a.type==='role'?-1:1));
+  $('events').innerHTML=events.length?events.map(event=>{
+    if(event.type==='role')return '<li class="event probe-event"><div class="event-card"><div class="event-head"><span class="step">步 '+(finite(event.step)?event.step:'未记录')+'</span><h3>'+escape(event.i.label||'部件定位')+'</h3></div>'+roleHTML(r,event.i)+'</div></li>';
+    const e=event.e,roles=relatedRoles(r,e);
+    return '<li class="event"><article class="event-card"><div class="event-head"><span class="step">步 '+escape(e.step==null?'未记录':e.step)+'</span><h3>编辑 #'+escape(e.id)+'</h3>'+badge(e)+'<span class="badge">'+escape(OPS[e.op_class]||e.op_class||'类别未记录')+'</span></div>'+
+      '<div class="metrics"><span>'+(finite(e.minute)?fmt(e.minute)+' 分钟':'时间未记录')+'</span><span>改动 '+fmt(e.n_values)+' 个数值</span></div>'+
+      '<p class="val">编辑后验证：'+pct(e.val_after)+'</p>'+
+      (roles.length?roles.map(i=>'<p class="small"><b>'+escape(i.label||'教师解释')+'：</b>'+escape(i.role_zh||'未提供作用解释')+'</p>').join(''):'')+
+      '<div class="target-grid">'+arr(e.targets).map(t=>targetHTML(t,false)).join('')+'</div>'+rawHTML(e)+'</article></li>';
+  }).join(''):'<li class="empty">当前筛选下没有编辑或定位条目。可取消“只看最终保留的编辑”查看其他尝试。</li>';
+}
+function renderPatterns(runs){
+  const mode=$('sort').value,rows=Array.from(state.index.values()), totalTeachers=new Set(runs.map(r=>r.teacher)).size;
+  rows.sort((a,b)=>(mode==='roles'?b.roleRuns.size-a.roleRuns.size:mode==='teachers'?b.editTeachers.size-a.editTeachers.size:b.editRuns.size-a.editRuns.size)||b.editRuns.size-a.editRuns.size||b.roleRuns.size-a.roleRuns.size||String(a.key).localeCompare(String(b.key),undefined,{numeric:true}));
+  const first=rows[0];
+  if(!first)$('conclusion').textContent='当前筛选下还没有可比较的部件记录。';
+  else if(mode==='roles'&&first.roleRuns.size)$('conclusion').textContent=slotName(first)+' 被 '+totalTeachers+' 位教师中的 '+first.roleTeachers.size+' 位、'+runs.length+' 次运行中的 '+first.roleRuns.size+' 次定位或探测过。';
+  else if(first.editRuns.size)$('conclusion').textContent=slotName(first)+' 被 '+totalTeachers+' 位教师中的 '+first.editTeachers.size+' 位、'+runs.length+' 次运行中的 '+first.editRuns.size+' 次'+(state.only?'留下了保留编辑。':'提交过改动（含撤回和被拒的尝试）。');
+  else $('conclusion').textContent='当前只有定位记录，没有符合筛选的实际改动；可以按定位运行数查看共同关注的部位。';
+  const visible=state.commonAll?rows:rows.slice(0,20);
+  $('common-table').innerHTML=visible.length?'<table class="rank-table"><thead><tr><th>部件</th><th class="num">改动运行</th><th class="num">改动教师</th><th class="num">定位运行</th><th class="num">定位教师</th><th>涉及教师</th></tr></thead><tbody>'+visible.map(c=>'<tr><td><button class="linkbutton" data-part="'+escape(c.key)+'">'+escape(slotName(c))+'</button></td><td class="num">'+c.editRuns.size+'</td><td class="num">'+c.editTeachers.size+'</td><td class="num">'+c.roleRuns.size+'</td><td class="num">'+c.roleTeachers.size+'</td><td>'+distinct([...c.editTeachers,...c.roleTeachers]).map(teacherHTML).join(' / ')+'</td></tr>').join('')+'</tbody></table>':'<div class="empty">暂无可比较记录。</div>';
+  $('common-more').hidden=rows.length<=20;$('common-more').textContent=state.commonAll?'收起到前 20 个部件':'展开全部 '+rows.length+' 个部件';
+  const neurons=recurrentNeurons(runs,state.only), shown=neurons.slice(0,state.neuronLimit);
+  $('neuron-table').innerHTML=shown.length?'<table class="rank-table"><thead><tr><th>层 / 模块</th><th>神经元</th><th class="num">不同运行数</th><th class="num">不同教师数</th><th>出现在哪些运行</th></tr></thead><tbody>'+shown.map(n=>'<tr><td><button class="linkbutton" data-part="'+escape(slot(integer(n.layer),'mlp',null).key)+'">L'+escape(n.layer)+' · '+escape(n.module)+'</button></td><td class="mono">#'+escape(n.index)+'</td><td class="num">'+n.runs.size+'</td><td class="num">'+n.teachers.size+'</td><td><details><summary>'+n.runs.size+' 次运行</summary><div class="expanded">'+Array.from(n.runs).map(name=>'<p><button class="linkbutton" data-jump="'+escape(name)+'">'+escape(name)+'</button></p>').join('')+'</div></details></td></tr>').join('')+'</tbody></table>':'<div class="empty">已记录的高改动单元中，没有同层同模块的神经元出现在两次以上运行里。</div>';
+  $('neuron-more').hidden=shown.length>=neurons.length;$('neuron-more').textContent='再显示 30 个（已显示 '+shown.length+' / '+neurons.length+'）';
+}
+function renderDepth(){
+  const rows=depthDistribution(state.runs.filter(r=>r.task===state.task),state.only);
+  $('depth-chart').innerHTML='<table class="depth-table"><caption>'+escape(TASKS[state.task]||state.task)+' · '+(state.only?'最终保留':'全部尝试')+'编辑的落点分布</caption><thead><tr><th>学生</th>'+Array.from({length:10},(_,i)=>'<th>'+i*10+'–'+(i+1)*10+'%</th>').join('')+'<th>编辑×层次数</th></tr></thead><tbody>'+rows.map(row=>'<tr class="'+(row.student===state.student?'depth-selected':'')+'"><th scope="row">'+escape(shortStudent(row.student))+'<div class="small">'+row.runs.size+' 次运行</div></th>'+row.bins.map((n,i)=>{const v=row.total?n/row.total*100:0;return '<td><div class="depth-cell" title="'+escape(i*10+'–'+(i+1)*10+'% 深度：'+n+' 次，占 '+v.toFixed(1)+'%')+'"><div class="depth-bar" style="height:'+v+'%"></div><span>'+v.toFixed(1)+'%</span></div></td>';}).join('')+'<td class="mono">'+row.total+(row.total?'':'<div class="small">暂无编辑</div>')+'</td></tr>').join('')+'</tbody></table>';
+}
+function render(){
+  const runs=selectedRuns();state.index=buildIndex(runs,state.roles,state.only);state.selected=[];
+  $('scope-note').textContent=(TASKS[state.task]||state.task)+' / '+shortStudent(state.student)+' · '+(state.only?'当前只统计最终保留的编辑。':'当前统计全部改动尝试，包含已撤回和被副作用检查拒绝的编辑。')+' 定位与探测历史不受该开关影响。';
+  const nEdits=runs.reduce((sum,r)=>sum+editsFor(r,state.only).length,0),locations=Array.from(state.index.values()).filter(c=>c.editRuns.size).length;
+  $('stats').innerHTML=[[runs.length,'次运行'],[distinct(runs.map(r=>r.teacher)).length,'位教师'],[nEdits,state.only?'条保留编辑':'条改动尝试'],[locations,'个涉及改动的部件（KV 去重）']].map(([n,label])=>'<div class="stat"><strong>'+n+'</strong><span>'+label+'</span></div>').join('');
+  if(!runs.some(r=>r.run===state.run))state.run=(runs[0]||{}).run||'';
+  $('run').innerHTML=runs.map(r=>'<option value="'+escape(r.run)+'">'+escape(teacher(r.teacher)+' · 种子 '+r.seed+' · '+editsFor(r,state.only).length+' 条编辑')+'</option>').join('');$('run').value=state.run;
+  renderGrid(runs);renderTimeline();renderPatterns(runs);renderDepth();
+  const missing=runs.filter(r=>!state.roles[r.run]).length;
+  $('roles-status').hidden=!state.rolesMessage&&!missing;
+  $('roles-status').textContent=state.rolesMessage||(missing+' / '+runs.length+' 次运行暂缺中文定位说明；编辑记录仍可浏览。');
+}
+function students(){
+  const choices=distinct(state.runs.filter(r=>r.task===state.task).map(r=>r.student));
+  if(!choices.includes(state.student))state.student=choices[0]||'';
+  $('student').innerHTML=choices.map(s=>'<option value="'+escape(s)+'">'+escape(shortStudent(s))+'</option>').join('');$('student').value=state.student;
+}
+async function fetchJSON(url){
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
+  try{const response=await fetch(url,{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error('HTTP '+response.status);return await response.json();}finally{clearTimeout(timer);}
+}
+async function load(){
+  const request=++state.request;$('reload').disabled=true;$('load-status').hidden=false;$('load-status').className='status';$('load-status').textContent='正在读取编辑记录…';
+  try{
+    const [data,roleResult]=await Promise.all([fetchJSON('site/atlas.json'),fetchJSON('site/atlas_roles.json').then(data=>({data}),error=>({error}))]);
+    if(request!==state.request)return;
+    if(!data||!Array.isArray(data.runs))throw new Error('atlas.json 缺少 runs 数组');
+    state.runs=data.runs.filter(r=>r&&typeof r.run==='string'&&typeof r.task==='string'&&typeof r.student==='string');
+    const roles=roleResult.data;
+    state.roles=roles&&typeof roles==='object'&&!Array.isArray(roles)?roles:{};
+    state.rolesMessage=roleResult.error?'中文定位说明暂不可用，当前只展示编辑记录；可以稍后重新读取数据。':'';
+    if(!roleResult.error&&(!roles||typeof roles!=='object'||Array.isArray(roles)))state.rolesMessage='中文定位说明格式不正确，当前只展示编辑记录。';
+    const tasks=distinct(state.runs.map(r=>r.task));if(!tasks.includes(state.task))state.task=tasks[0]||'t2';
+    $('task').innerHTML=tasks.map(t=>'<option value="'+escape(t)+'">'+escape(TASKS[t]||t)+'</option>').join('');$('task').value=state.task;
+    students();render();$('content').hidden=false;$('load-status').hidden=state.runs.length>0;
+    if(!state.runs.length)$('load-status').textContent='数据中还没有运行记录。';
+    for(const id of ['task','student','kept'])$(id).disabled=false;
+    document.documentElement.dataset.ready='true';
+  }catch(error){
+    if(request!==state.request)return;
+    $('load-status').className='status error';$('load-status').textContent='无法读取编辑图谱。请确认页面与 site/ 数据通过同一 HTTP 服务打开，再重新读取。原因：'+error.message;
+    if(!state.runs.length)$('content').hidden=true;
+  }finally{if(request===state.request)$('reload').disabled=false;}
+}
+$('task').addEventListener('change',()=>{state.task=$('task').value;state.commonAll=false;state.neuronLimit=30;students();render();});
+$('student').addEventListener('change',()=>{state.student=$('student').value;state.commonAll=false;state.neuronLimit=30;render();});
+$('kept').addEventListener('change',()=>{state.only=$('kept').checked;state.commonAll=false;state.neuronLimit=30;render();});
+$('run').addEventListener('change',()=>{state.run=$('run').value;renderTimeline();});
+$('sort').addEventListener('change',()=>renderPatterns(selectedRuns()));
+$('common-more').addEventListener('click',()=>{state.commonAll=!state.commonAll;renderPatterns(selectedRuns());});
+$('neuron-more').addEventListener('click',()=>{state.neuronLimit+=30;renderPatterns(selectedRuns());});
+$('reload').addEventListener('click',load);
+document.addEventListener('click',event=>{
+  const cell=event.target.closest('[data-cell]');if(cell){const b=state.buttons[Number(cell.dataset.cell)];if(b)showDetail(b.keys,b.label);return;}
+  const part=event.target.closest('[data-part]');if(part){const c=state.index.get(part.dataset.part);if(c){showDetail([c.key],slotName(c));$('detail').scrollIntoView({block:'nearest'});}return;}
+  const jump=event.target.closest('[data-jump]');if(jump){state.run=jump.dataset.jump;$('run').value=state.run;renderTimeline();$('timeline').scrollIntoView({block:'start'});}
+});
+function theme(value){if(value==='auto')delete document.documentElement.dataset.theme;else document.documentElement.dataset.theme=value;}
+try{const saved=localStorage.getItem('atlas-theme');if(['auto','light','dark'].includes(saved))$('theme').value=saved;}catch(_){}
+theme($('theme').value);$('theme').addEventListener('change',()=>{theme($('theme').value);try{localStorage.setItem('atlas-theme',$('theme').value);}catch(_){}});
+load();
+})();
+</script>
+</body>
+</html>

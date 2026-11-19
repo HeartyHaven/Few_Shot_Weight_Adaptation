@@ -114,6 +114,7 @@ select{font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--line);
 .topnav .in{max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:0;align-items:center}
 .topnav button{font:inherit;font-size:15px;padding:12px 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);cursor:pointer}
 .topnav button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--fable);font-weight:700}
+.topnav .navlink{font-size:15px;padding:12px 16px;color:var(--fable);text-decoration:none;border-bottom:3px solid transparent}.topnav .navlink:hover{border-bottom-color:var(--line)}
 .topnav .gen{margin-left:auto;font-size:12px;color:var(--muted);padding:0 4px}
 section[data-tab]{display:none} section[data-tab].on{display:block}
 .live{border-left:3px solid var(--fable)}
@@ -674,7 +675,7 @@ function setupHome(){$('homeGen').textContent='数据生成时间：'+SUM.genera
 function showTab(t){TAB=TABN.some(x=>x[0]===t)?t:'home';document.querySelectorAll('section[data-tab]').forEach(el=>el.classList.toggle('on',el.dataset.tab.split(' ').includes(TAB)));
  [...$('nav').querySelectorAll('button')].forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===TAB));if(SUM&&(TAB==='t1'||TAB==='t2'))setupArchive();
  try{if(location.hash.slice(1)!==TAB)history.replaceState(null,'','#'+TAB)}catch(e){}}
-(function(){const nav=$('nav');nav.innerHTML=TABN.map(x=>`<button type="button" data-t="${x[0]}">${x[1]}</button>`).join('')+'<span class="gen" id="navGen"></span>';
+(function(){const nav=$('nav');nav.innerHTML=TABN.map(x=>`<button type="button" data-t="${x[0]}">${x[1]}</button>`).join('')+'<a class="navlink" href="atlas.html">编辑图谱 ↗</a><span class="gen" id="navGen"></span>';
  nav.querySelectorAll('button').forEach(b=>b.onclick=()=>{showTab(b.dataset.t);window.scrollTo(0,0)});showTab(location.hash.slice(1)||'home');
  window.addEventListener('hashchange',()=>showTab(location.hash.slice(1)||'home'));
  fetch('site/summary.json').then(r=>r.json()).then(d=>{SUM=d;$('navGen').textContent='数据更新于 '+d.generated;setupHome();setupTask('t2');setupTask('t1');setupMc();setupBase();if(TAB==='t1'||TAB==='t2')setupArchive()})

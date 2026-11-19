@@ -157,7 +157,7 @@ def build():
     json.dump(summary, open(SITE + "/summary.json", "w"), ensure_ascii=False)
     pub = json.load(open(D + "/.published.json")) if os.path.exists(D + "/.published.json") else {}
     changed = []
-    for f in sorted(glob.glob(SITE + "/summary.json") + glob.glob(SITE + "/runs/*.json")):
+    for f in sorted(glob.glob(SITE + "/summary.json") + glob.glob(SITE + "/atlas*.json") + glob.glob(D + "/atlas.html") + glob.glob(SITE + "/runs/*.json")):
         rel = os.path.relpath(f, D); h = hashlib.md5(open(f, "rb").read()).hexdigest()
         if rel == "site/summary.json":
             h = hashlib.md5(json.dumps({k: v for k, v in summary.items() if k != "generated"}, sort_keys=True).encode()).hexdigest()
