@@ -83,3 +83,25 @@ superaris report /mnt/data2/users/lang.gao/Few_Shot_Weight_Adaptation --id wp0-p
 - 2026-11-19 10:30 用户同意缩短教师侧检验以提速，并重申：教师不能访问其他数据，只能用很有限的数据和计算资源来识别和编辑。main 的做法：只把隐藏验证的最长回答降到 1024 token；数据和算力规则（100 道真题 + 至多 300 道自编题、1000 万学生前向 token、显存 ≤ 推理峰值 1.5 倍、断网沙盒、看不到测试和其他目录）全部不变，也不放宽显存上限。
 - 2026-11-19 11:05 应用户要求建立私有 GitHub 仓库 https://github.com/HeartyHaven/Few_Shot_Weight_Adaptation （代码、设计、公开数据划分、报告生成脚本；不含权重、运行记录、隐藏测试和评测结果，见 .gitignore）。项目目录现在是 git 仓库，分支 main。
 - 2026-11-19 11:10 应用户要求在仓库建立任务看板（tasks/board.json → TASKS.md，工具 tdwa/board.py）和 README（模型、数据集型号与链接、多人并行协作规则）；AGENTS.md / CLAUDE.md 末尾加了看板指引。规则：开始任何任务前先看看板，只做 open 的任务，先 claim（git 推送防抢占），完成后 done。main 的定时汇报每 30 分钟同步看板。
+
+## 派给 engineer 的任务：编辑图谱子页面（句柄 atlas-page，看板 ATLAS-PAGE）
+
+用户要求：把每个模型、每次运行“每一步定位并修改了哪些参数、教师认为它们是干什么的、怎么改的”可视化；并能在运行之间、教师之间对照，看修改的位置或教师的理解有没有共性（共性部位很可能就是小模型的症结）。做成报告网站的一个独立子页面。用户指定编程交给 GPT Astra（engineer 面板）。
+
+**只写 `outputs/engineer/atlas/`。** 交付 `outputs/engineer/atlas/atlas.html`（单个自包含 HTML 文件，内联 CSS/JS；如需库只能从 cdnjs.cloudflare.com 加载并写死版本号）。main 会把它复制成 `report/atlas.html` 并在主报告导航里加链接。不需要 GPU，不需要网络，不要调用任何模型 API。
+
+**数据（只读）**，页面用相对路径 `fetch('site/atlas.json')` 和 `fetch('site/atlas_roles.json')` 读取：
+- `report/site/atlas.json`（已存在，由 `report/build_atlas.py` 生成）：`{"runs":[{run, task("t1"=MedCalc 临床评分 | "t2"=物体追踪), student, teacher("claude-fable-5-2"=Fable 5.2 | "gpt-6-astra"=Astra 6 | "gpt-6.2-astra"=Astra 6.2), seed, arch{layers, heads, kv_heads, head_dim, hidden, mlp, layer_types}, n_steps, exams[[after_edit, 验证正确率%]], edits[{id, step(第几次工具调用), minute, accepted(是否通过副作用检查), rolled_back, kept_final(最终是否保留), op_class, n_values, val_after(该编辑后的隐藏验证%或null), hypothesis, method, prediction, data_used(英文原文), regression{ppl,canary...}, targets[{param, layer, module(q_proj/k_proj/v_proj/o_proj/gate_proj/up_proj/down_proj/bias:..), unit_kind("head"|"neuron"|"tensor"|"vector"), n_units, n_units_changed, units[[单元编号, 该单元改动占本矩阵改动的比例(范数比)]]（最多 24 个，按大小排序）, top_share, rel_norm(改动幅度/原矩阵), n_values, rank, top_sv}]}]}]}`。k/v_proj 的 head 编号是 KV 头编号；attention 的 q/o 头编号是查询头编号（Gemma 1B 有 4 个查询头、1 个 KV 头；Qwen3-1.7B 16/8；Qwen3-4B 32/8）。
+- `report/site/atlas_roles.json`（main 稍后生成，结构如下；在它出现之前请自己造 2 条假数据测试，交付时去掉）：`{"<run>": {"summary_zh": "...", "items": [{label("L17H0"等), layer, kind("head"|"mlp"|"neurons"|"layer"|"embedding"|"norm"|"bias"|"other"), module, index, role_zh(教师认为它做什么), evidence_zh, action("edited"|"probed"|"ablated"|"rejected"), edit_ids[], step, source}]}}`。
+
+**页面要有的内容**（中文界面，通俗直白）：
+1. 顶部筛选：任务（物体追踪 / 医疗评分）、学生、开关“只看最终保留的编辑 / 包含撤回和被拒的”。
+2. **部位总图**：选定任务+学生后，画“层 × 部件”网格：每层一行；列是每个注意力头（q/k/v/o 合并到头）和一个 MLP 格（显示被改神经元数）。格子颜色 = 改过它的运行数，标记出自几位不同教师。再叠加“只被定位/探测、没被改”的部件（来自 roles 的 probed/ablated/rejected），用不同样式。点击格子：列出所有涉及它的运行、编辑、步号、教师给出的作用解释（role_zh）和改法（module、改动幅度、改了多少单元）。
+3. **逐步时间线**：选一个运行，按步号排列：每个“识别/探测”条目和每个编辑；编辑卡片显示步号、分钟、改了哪些层/模块/头/神经元（用小条形图显示单元占比）、操作类别中文名（analytic 解析计算 / forward_observation 前向观察 / closed_form 公式直接求解 / zeroth_order_search 小范围试探 / local_gradient 局部梯度 / new_bias_parameter 新增偏置）、编辑后验证分数、是否保留/撤回/被拒；英文 hypothesis/method 折叠展开。顶部显示该运行的 summary_zh 和验证分数曲线。
+4. **共性分析**：对选定任务+学生，按“部件”汇总：被多少次运行、多少位教师改过/定位过，排序成表；给出自动生成的一句结论（例如“第 17 层 0 号头被 3 位教师中的 3 位、8 次运行中的 7 次改过”）。MLP 神经元：统计在不同运行里重复出现的神经元编号（同一层同一模块），列出重复次数最多的。再加一张“相对深度”分布图：不同学生的改动按 层号/总层数 分箱，便于跨学生比较。
+5. 页面标题用 `<title>编辑图谱</title>`；顶部放一个“返回主报告”的链接 `index.html`（线上版 main 会改成正确地址）。
+
+**样式**：沿用主报告的配色和字体（参考 `report/tdwa_report.html` 开头的 CSS 变量：--bg、--panel、--ink、--muted、--line、--soft、--base、--astra、--fable、--bad 等，浅色/深色两套），手机宽度可用，表格和图在自己的容器里横向滚动。这是一个独立 HTML 页面：要写自己的 `<!doctype html>`、charset、viewport。
+
+**验收**：在本机用 `python3 -m http.server` 打开（数据路径用相对路径），四个部分在“物体追踪 + Gemma 1B”和“医疗评分 + Qwen3 1.7B”两种组合下都正常显示，控制台无报错。完成后：
+`superaris report /mnt/data2/users/lang.gao/Few_Shot_Weight_Adaptation --id atlas-page --outcome completed --message '页面在 outputs/engineer/atlas/atlas.html'`；卡住则 `--outcome blocked` 并写原因。
