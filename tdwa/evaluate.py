@@ -40,7 +40,7 @@ class Student:
             new = load_file(os.path.join(edit_dir, "edit.safetensors")); new.pop("_empty", None)
             params = dict(self.model.named_parameters())
             for name, site in summ.get("extra_sites", {}).items():      # bias vectors the teacher added
-                if name not in new:
+                if name not in new or not bool(new[name].abs().sum()):   # an added bias that stayed zero has no effect
                     continue
                 p = torch.nn.Parameter(new[name].cuda(), requires_grad=False); self.model.register_parameter(name, p)
                 mod = self.model
