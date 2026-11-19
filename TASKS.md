@@ -1,0 +1,78 @@
+# 任务看板
+
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：。
+> 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
+
+## 进行中（3）
+
+| ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
+|---|---|---|---|---|---|---|---|---|
+| T1-Q4-A62-s0 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 | 教学已结束（隐藏验证 56.7%），隐藏测试评测中 | runs/ 与 eval/（不在仓库） |
+| T1-Q4-F52-s0 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 | 进行中，32 个编辑，隐藏验证 49.2% | runs/（不在仓库） |
+| T1-Q4-A62-s1 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 | 进行中 | runs/（不在仓库） |
+
+## 已认领（4）
+
+| ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
+|---|---|---|---|---|---|---|---|---|
+| T1-Q4-A6-s0 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 | 在 main 的排队脚本里，等显卡 | logs/queue.txt |
+| BASE-Q8 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Qwen3 8B (Qwen/Qwen3-8B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
+| BASE-G12 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Gemma 3 12B (google/gemma-3-12b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
+| BASE-Q14 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Qwen3 14B (Qwen/Qwen3-14B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
+
+## 未开始（可认领）（15）
+
+| ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
+|---|---|---|---|---|---|---|---|---|
+| BASE-G27 | 未编辑基线：Gemma 3 27B（需两张卡） | Gemma 3 27B (google/gemma-3-27b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 |  |  |  |  |
+| BASE-REGRADE-CODE | 用修好的代码提取逻辑重测 Gemma 1B 与 Qwen 1.7B 的编程基线 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | MBPP sanitized |  |  |  |  |
+| T1-G4 | 教学运行：Gemma 3 4B 学 MedCalc（三位教师各一次） | Gemma 3 4B (google/gemma-3-4b-it) | Astra 6.2 (gpt-6.2-astra); Fable 5.2 (claude-fable-5-2); Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) |  |  |  |  |
+| KERNEL-BF16 | 让沙盒支持半精度学生（8B 以上必需），并检验半精度对微小编辑的影响 |  |  |  |  |  | 全精度 8B 放不进单卡 1.5 倍显存上限 |  |
+| T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) |  |  | 依赖 KERNEL-BF16 |  |
+| DDX-SPLITS | 为 DDXPlus 建立 100 道真题 / 隐藏验证 / 隐藏测试划分 |  |  | DDXPlus (aai530-group6/ddxplus) |  |  |  |  |
+| T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus |  |  | 依赖 DDX-SPLITS |  |
+| BL-LORA-FEW | 对照 B2：只用 100 道真题做 LoRA 微调 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) |  |  |  |  |
+| BL-DISTILL | 对照 B3：用教师写的解题过程做蒸馏 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) |  |  |  |  |
+| BL-LORA-FULL | 对照 B4：用全部训练数据做 LoRA（上限参考） | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) |  |  |  |  |
+| BL-PROMPT-BAKE | 对照 B5：提示烘焙（把解题步骤蒸进权重） | Gemma 3 1B (google/gemma-3-1b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成) |  |  |  |  |
+| RET-FULL | 更完整的通用能力检查：MMLU、GSM8K、IFEval（lm-eval） |  |  |  |  |  |  |  |
+| CHECK-HS | 核查 T1-Q17-A62-s0 编辑后 HellaSwag 54.7→64.3 的异常上升 | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  |  |  |  |  |  |
+| CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
+| DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
+
+## 已完成（25）
+
+| ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
+|---|---|---|---|---|---|---|---|---|
+| SETUP-DESIGN | 设计文档与实验规则 |  |  |  | main@ws006344 | 2026-11-17 | DESIGN.md v1.1 | DESIGN.md |
+| SETUP-HARNESS | 教学沙盒、教师接入、评测、数据划分 |  |  |  | main@ws006344 | 2026-11-18 | tdwa/ 全部模块；崩溃自动重启、懒加载原始权重 | tdwa/ |
+| PILOT-WP0 | WP0 先导：学生结构、编辑可行性、提示基线、显存比 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-17 | 见 pilot/REPORT.md | pilot/REPORT.md |
+| T2-G1-F52-s0 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Fable 5.2 (claude-fable-5-2) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 70.3%（+12.3） | runs/ 与 eval/（不在仓库） |
+| T2-G1-F52-s2 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Fable 5.2 (claude-fable-5-2) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 72.0%（+14.0） | runs/ 与 eval/（不在仓库） |
+| T2-G1-F52-s3 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Fable 5.2 (claude-fable-5-2) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 63.0%（+5.0，额度中断于第 141 步） | runs/ 与 eval/（不在仓库） |
+| T2-G1-A6-s0 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6 (gpt-6-astra) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 63.3%（+5.3，不显著） | runs/ 与 eval/（不在仓库） |
+| T2-G1-A6-s1 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6 (gpt-6-astra) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 58.7% | runs/ 与 eval/（不在仓库） |
+| T2-G1-A6-s2 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6 (gpt-6-astra) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 57.7% | runs/ 与 eval/（不在仓库） |
+| T2-G1-A62-s0 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 97.3%（+39.3；BBH 96.7；更难题目 84.0） | runs/ 与 eval/（不在仓库） |
+| T2-G1-A62-s1 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 隐藏测试新出题目 58.0% → 85.3%（+27.3；BBH 89.3；更难题目 57.3） | runs/ 与 eval/（不在仓库） |
+| T1-G1-A6-s0 | 教学运行：MedCalc | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 5.6% → 10.0%（不显著） | runs/ 与 eval/（不在仓库） |
+| T1-G1-A6-s1 | 教学运行：MedCalc | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 5.6% → 15.0%（算术 44.5→34.0） | runs/ 与 eval/（不在仓库） |
+| T1-G1-A62-s0 | 教学运行：MedCalc | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 5.6% → 21.3%（+15.7） | runs/ 与 eval/（不在仓库） |
+| T1-G1-A62-s1 | 教学运行：MedCalc | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 5.6% → 20.0%（+14.4） | runs/ 与 eval/（不在仓库） |
+| T1-G1-F52-s0 | 教学运行：MedCalc | Gemma 3 1B (google/gemma-3-1b-it) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 5.6% → 14.4%（额度中断于第 108 步，1 个编辑） | runs/ 与 eval/（不在仓库） |
+| T1-G1-F52-s1 | 教学运行：MedCalc | Gemma 3 1B (google/gemma-3-1b-it) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 零编辑结束（教师报告：找到可行流程但未能写入），等同未编辑 | runs/ 与 eval/（不在仓库） |
+| T1-Q17-A62-s0 | 教学运行：MedCalc | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 21.3% → 49.4%（+28.1） | runs/ 与 eval/（不在仓库） |
+| T1-Q17-A62-s1 | 教学运行：MedCalc | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 21.3% → 44.4%（+23.1） | runs/ 与 eval/（不在仓库） |
+| T1-Q17-F52-s0 | 教学运行：MedCalc | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 21.3% → 33.1%（+11.9） | runs/ 与 eval/（不在仓库） |
+| T1-Q17-A6-s0 | 教学运行：MedCalc | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 所有编辑都被教师撤回，等同未编辑 | runs/ 与 eval/（不在仓库） |
+| BASE-G1 | 未编辑基线（追踪、MedCalc、三个新任务） | Gemma 3 1B (google/gemma-3-1b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-18 | 追踪新出题目 58.0；MedCalc 教过 5.6；诊断 37.3 / 编程 58.7 / 数学 51.3 | eval/、pilot/out2/（不在仓库） |
+| BASE-Q17 | 未编辑基线（MedCalc、三个新任务） | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-18 | MedCalc 教过 21.3；诊断 52.0 / 数学 75.3（编程待重测） | eval/、pilot/out2/（不在仓库） |
+| BASE-Q4 | 未编辑基线（全部，含全精度 MedCalc） | Qwen3 4B (Qwen/Qwen3-4B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | MedCalc 教过 26.9（全精度）；追踪 BBH 85.2；诊断 56.0 / 编程 70.0 / 数学 77.3 | eval/、pilot/out2/（不在仓库） |
+| BASE-G4 | 未编辑基线（半精度） | Gemma 3 4B (google/gemma-3-4b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | MedCalc 教过 17.5；追踪 BBH 95.5；诊断 60.0 / 编程 72.7 / 数学 77.3 | eval/、pilot/out2/（不在仓库） |
+
+## 作废（1）
+
+| ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
+|---|---|---|---|---|---|---|---|---|
+| T2-G1-F52-s1 | 教学运行：物体追踪 | Gemma 3 1B (google/gemma-3-1b-it) | Fable 5.2 (claude-fable-5-2) | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006344 | 2026-11-18/19 | 作废：沙盒被显卡错误杀死、当时无恢复机制，零编辑 | runs/ 与 eval/（不在仓库） |
+

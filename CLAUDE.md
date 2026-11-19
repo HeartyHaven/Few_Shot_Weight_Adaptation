@@ -3,3 +3,7 @@
 
 At startup or after compact/restart, read the project recovery pointer [.aris/workbench/RECOVERY.md](.aris/workbench/RECOVERY.md) from the project root. Recover your current role, task, original owner and authorization from the original project instructions and current .aris/workbench/launch.json binding; do not infer a role from this shared entry. Then read that role's navigation, scope, current project state and required SKILL.md/resources before authorized action. LATEST_PREPARED.md locates preparation, not an active or delivered task. Compare it with the current owner and binding before using it. Preserve original goals, paused state, budgets, model/MCP routes, reviewer freshness and merge authorization.
 <!-- ARIS workbench recovery: end -->
+
+## Shared task board (all roles and sessions)
+
+Before starting any task, run `python -m tdwa.board list` (or read TASKS.md on GitHub) and only take tasks marked open. Claim with `python -m tdwa.board claim <ID> --owner <name>@<host>` before starting, mark `start` when running, and `done`/`fail`/`release` when finished. Rules: README.md, section 多人并行协作规则.
