@@ -53,7 +53,14 @@ def _bwd_hook(m, gi, go):
 
 
 model.get_input_embeddings().register_forward_hook(_emb_hook)
-model.model.layers[-1].register_full_backward_hook(_bwd_hook)
+def _decoder_layers(m):
+    """Text decoder layers for plain causal LMs (model.model.layers) and Gemma 3 multimodal checkpoints (4B+), which load as
+    Gemma3ForConditionalGeneration with the text stack at model.model.language_model.layers."""
+    inner = m.model
+    return inner.language_model.layers if hasattr(inner, "language_model") else inner.layers
+
+
+_decoder_layers(model)[-1].register_full_backward_hook(_bwd_hook)
 
 
 @contextlib.contextmanager
@@ -113,20 +120,27 @@ class _LazyBase:
         for h in self.handles:
             for k in h.keys():
                 self.where[k] = h
+        # parameter name -> key in the weight files (Gemma 3 multimodal files use the older 'language_model.model.*' layout)
+        alias = lambda n: next((k for k in (n, n.replace("model.language_model.", "language_model.model.", 1),
+                                            n.replace("model.vision_tower.", "vision_tower.", 1),
+                                            n.replace("model.multi_modal_projector.", "multi_modal_projector.", 1)) if k in self.where), None)
+        self.key = {}
         for n, p in model.named_parameters():
-            cur = p.detach().cpu()
-            if n not in self.where or not torch.equal(self.where[n].get_tensor(n).float(), cur):
+            cur = p.detach().cpu(); k = alias(n)
+            if k is not None:
+                self.key[n] = k
+            if k is None or not torch.equal(self.where[k].get_tensor(k).float(), cur):
                 self.ram[n] = cur.clone()
         self.names = [n for n, _ in model.named_parameters()]
 
     def __contains__(self, n):
-        return n in self.ram or (n in self.where and n in self.names)
+        return n in self.ram or n in self.key
 
     def get(self, n, default=None):
         if n in self.ram:
             return self.ram[n]
-        if n in self.where and n in self.names:
-            return self.where[n].get_tensor(n).float()
+        if n in self.key:
+            k = self.key[n]; return self.where[k].get_tensor(k).float()
         return default
 
     def __getitem__(self, n):

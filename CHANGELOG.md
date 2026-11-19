@@ -7,6 +7,7 @@
 - **vLLM 评测**（`tdwa/evaluate_vllm.py`，新增）：与 `evaluate.py` 相同的提示、判分、隐藏测试和保留能力检查，生成用 vLLM（bf16），强制选择用限定选项字母的一步贪心，困惑度用提示 logprob。Gemma 1B 的 T1 隐藏测试与 HF 全精度结果相同（6.3%）。用它测的编辑/LoRA 学生只与同样用它测的基线比较（文件名带 `__vllm`）。
 - **LoRA 对照**（`tdwa/baseline_lora.py`，新增）：B2（100 道真题）、B4（T1 全部 MedCalc 训练集去掉隐藏验证；T2 新生成 5000 题）。超参事先固定，不看验证集调。产出在 `baselines/`（不入库）。
 - **任务 T3：DDXPlus**（`tdwa/data_ddx.py`，新增；`tdwa/grade.py` 加 `t3`，与 T2 同为选项题，5 个选项）：100 道真题 + 150 道隐藏验证（validate.csv）+ 600 道隐藏测试（test.csv，排除了摸底用过的题）。按疾病轮流抽样。教学沙盒（`kernel.py`/`teach.py`）尚未检查是否有只认 T2 的地方。
+- **Gemma 3 4B 及以上能进沙盒**（`tdwa/kernel.py`）：这些检查点按 Gemma3ForConditionalGeneration 加载，解码层在 `model.model.language_model.layers`，参数名与权重文件键名（`language_model.model.*`）不同。反向记账钩子改为自动找解码层；原始权重的按需读取加了名称映射（4B 上 883 个参数全部对上，内存里不留副本）。之前 4B 沙盒启动即崩溃，ws006343 上三次 T1-G4 启动因此作废（`runs_void/`，零编辑）。
 - **Codex 无界面教师**（`tdwa/codex_teach.py`，新增，ws006343）：Astra 教师可用 `codex exec` 运行，工具与 Fable 的 `mcp_teach` 相同（同一 MCP 服务，经本机 TCP 中继接入）。Codex 自带 shell 无法全部关闭，所以整个 codex 进程放在挂载命名空间里，项目目录、`~/.cache`、`~/.claude`、`~/.codex` 等都被空目录遮住；CODEX_HOME 是只含登录凭据的临时目录（结束后删除），shell 沙盒只读，网页搜索关闭，三个教学工具自动批准。运行名的教师字段为 `codex-<模型>`，与接口循环的 Astra 运行区分。框架不同，结果与接口循环的 Astra 运行不直接可比。
 - **本机调度**（`logs/sched.py`、`logs/env_ws006343.sh`）：按显存把多个作业装进两张卡；所有缓存和大文件放项目目录下的 `cache/`（数据盘），不写系统盘。
 
