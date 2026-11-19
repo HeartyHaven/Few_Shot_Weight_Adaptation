@@ -1,6 +1,6 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-19 13:16 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-19 13:39 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（5）
@@ -13,14 +13,15 @@
 | BASE-Q8 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Qwen3 8B (Qwen/Qwen3-8B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
 | BASE-G27 | 未编辑基线：Gemma 3 27B（需两张卡） | Gemma 3 27B (google/gemma-3-27b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006343 | 2026-11-19 10:56 +0400 |  |  |
 
-## 已认领（2）
+## 已认领（3）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | BASE-G12 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Gemma 3 12B (google/gemma-3-12b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
 | BASE-Q14 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Qwen3 14B (Qwen/Qwen3-14B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
+| BL-PROMPT-BAKE | 对照 B5：提示烘焙（把解题步骤蒸进权重） | Gemma 3 1B (google/gemma-3-1b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成) | main@ws006343 | 2026-11-19 13:39 +0400 |  |  |
 
-## 未开始（可认领）（11）
+## 未开始（可认领）（10）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -30,7 +31,6 @@
 | T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) |  |  | 依赖 KERNEL-BF16 |  |
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus |  |  | 划分已建（DDX-SPLITS）。隐藏划分不入库，在本机运行 python -m tdwa.data_ddx 即可确定性重建。教学沙盒尚未检查对 t3 的支持 |  |
 | BL-DISTILL | 对照 B3：用教师写的解题过程做蒸馏 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) |  |  |  |  |
-| BL-PROMPT-BAKE | 对照 B5：提示烘焙（把解题步骤蒸进权重） | Gemma 3 1B (google/gemma-3-1b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成) |  |  |  |  |
 | RET-FULL | 更完整的通用能力检查：MMLU、GSM8K、IFEval（lm-eval） |  |  |  |  |  |  |  |
 | CHECK-HS | 核查 T1-Q17-A62-s0 编辑后 HellaSwag 54.7→64.3 的异常上升 | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  |  |  |  |  |  |
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
