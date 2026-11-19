@@ -378,6 +378,7 @@ td .sub{display:block;font-size:12px;color:var(--muted)}
     <li><b>未编辑</b>：原始学生。</li>
     <li><b>提示</b>（B1）：把一段解题流程写在每道题前面，不改权重。</li>
     <li><b>LoRA：只用 100 道真题</b>（B2）：教师能看到的同一批 100 道带答案的题，用常规梯度训练一个 LoRA 适配器。训练目标是标准解题过程加答案。跑 3 个种子。</li>
+    <li><b>蒸馏</b>（B3）：教师（Astra 6.2）给 100 道真题写解题过程，再自己出至多 300 道题并写解答（医疗评分是教师新写的病例），只保留答案正确的，用来训练 LoRA。数据量和教师改权重时一样。</li>
     <li><b>LoRA：全量训练数据</b>（B4）：医疗评分用 MedCalc 的全部约 1 万条训练题，物体追踪用 5000 道新生成的题。这是“数据不受限”时的参考上限。</li>
     <li><b>提示烘焙</b>（B5）：让学生带着解题流程作答，再训练 LoRA，使它不带提示时也给出同样的回答分布。</li>
   </ul>
@@ -705,11 +706,11 @@ function setupHome(){$('homeGen').textContent='数据生成时间：'+SUM.genera
 /* ---------- control groups (site/baselines.json, built on the second GPU host) ---------- */
 let BL=null;
 const CSET={t1:[['taught','教过的 8 种'],['untaught','没教过的 11 种'],['all','全部 380 题']],t2:[['test_fresh','新出题目'],['test_bbh','BBH 原题'],['test_ood','更难题目']]};
-const MCOL={B0:'var(--base)',B1:'var(--muted)',B2:'var(--bad)',B4:'var(--bad)',B5:'var(--astra)'};
+const MCOL={B0:'var(--base)',B1:'var(--muted)',B2:'var(--bad)',B3:'var(--fable)',B4:'var(--bad)',B5:'var(--astra)'};
 function setupCtrl(){if(!BL||!SUM)return;const st={task:0,stu:0},tasks=['t1','t2'];
  const draw=()=>{const task=tasks[st.task],stus=[...new Set(BL.rows.filter(r=>r.task===task).map(r=>r.student_tag))],tag=stus[Math.min(st.stu,stus.length-1)];
   seg($('ctrlStu'),stus.map(t=>'学生：'+(BL.rows.find(r=>r.student_tag===t)||{}).student),i=>{st.stu=i;render(task,stus[i])},Math.min(st.stu,stus.length-1))};
- const render=(task,tag)=>{const order=['B0','B1','B2','B4','B5'];const rows=BL.rows.filter(r=>r.task===task&&r.student_tag===tag).sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method));
+ const render=(task,tag)=>{const order=['B0','B1','B2','B3','B4','B5'];const rows=BL.rows.filter(r=>r.task===task&&r.student_tag===tag).sort((a,b)=>order.indexOf(a.method)-order.indexOf(b.method));
   const base=rows.find(r=>r.method==='B0'),sets=CSET[task];
   const teach=SUM.runs.filter(r=>r.task===task&&r.student_tag===tag&&r.eval&&r.status!=='void').map(r=>({method:'T',label:`${r.teacher} 第 ${r.seed+1} 次${r.status==='interrupted'?'（被中断）':''}`,teacher:r.teacher,seeds:1,sets:r.eval.sets,retention:r.eval.retention||{},hf:true}));
   const all=rows.concat(teach);
