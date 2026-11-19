@@ -19,13 +19,13 @@
 | BASE-Q14 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Qwen3 14B (Qwen/Qwen3-14B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
 | BL-LORA-Q4 | 对照 B2/B4 扩到 Qwen3 4B 的 MedCalc（与 Astra 6.2 的 4B 教学结果对比） | Qwen3 4B (Qwen/Qwen3-4B) |  | MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 14:58 +0400 |  |  |
 
-## 未开始（可认领）（11）
+## 未开始（可认领）（12）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | T1-Q4-A6-s0 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) |  |  | 在 main 的排队脚本里，等显卡 | logs/queue.txt |
 | BASE-REGRADE-CODE | 用修好的代码提取逻辑重测 Gemma 1B 与 Qwen 1.7B 的编程基线 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | MBPP sanitized |  |  |  |  |
-| T1-G4 | 教学运行：Gemma 3 4B 学 MedCalc（三位教师各一次） | Gemma 3 4B (google/gemma-3-4b-it) | Astra 6.2 (gpt-6.2-astra); Fable 5.2 (claude-fable-5-2); Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) |  |  |  |  |
+| T1-G4 | 教学运行：Gemma 3 4B 学 MedCalc（三位教师各一次） | Gemma 3 4B (google/gemma-3-4b-it) | Astra 6.2 (gpt-6.2-astra); Fable 5.2 (claude-fable-5-2); Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) |  |  | 需要先改沙盒：gemma-3-4b-it 按多模态结构 Gemma3ForConditionalGeneration 加载，层在 model.language_model.layers 下，沙盒目前假定 model.model.layers |  |
 | KERNEL-BF16 | 让沙盒支持半精度学生（8B 以上必需），并检验半精度对微小编辑的影响 |  |  |  |  |  | 全精度 8B 放不进单卡 1.5 倍显存上限 |  |
 | T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) |  |  | 依赖 KERNEL-BF16 |  |
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus |  |  | 划分已建（DDX-SPLITS）。隐藏划分不入库，在本机运行 python -m tdwa.data_ddx 即可确定性重建。教学沙盒尚未检查对 t3 的支持 |  |
@@ -34,6 +34,7 @@
 | CHECK-HS | 核查 T1-Q17-A62-s0 编辑后 HellaSwag 54.7→64.3 的异常上升 | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  |  |  |  |  |  |
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
+| T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  |  |  |
 
 ## 已完成（35）
 
