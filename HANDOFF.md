@@ -82,3 +82,4 @@ superaris report /mnt/data2/users/lang.gao/Few_Shot_Weight_Adaptation --id wp0-p
 - 2026-11-19 03:50 1B 级教学运行全部结束（物体追踪 Fable s3 被新账号 5 小时上限在第 141 步中断，已 salvage，3 个编辑）。按用户“1B 完成后试 10B/30B 以内、尽量并行”的要求，开始 Qwen3-4B 的 MedCalc 教学：Astra 6.2 s0 已启动，排队中 Fable s0、Astra 6.2 s1、Astra 6 s0。另跑 Qwen3-4B 全精度的 MedCalc 未编辑基线（教学运行是全精度）。
 - 2026-11-19 10:30 用户同意缩短教师侧检验以提速，并重申：教师不能访问其他数据，只能用很有限的数据和计算资源来识别和编辑。main 的做法：只把隐藏验证的最长回答降到 1024 token；数据和算力规则（100 道真题 + 至多 300 道自编题、1000 万学生前向 token、显存 ≤ 推理峰值 1.5 倍、断网沙盒、看不到测试和其他目录）全部不变，也不放宽显存上限。
 - 2026-11-19 11:05 应用户要求建立私有 GitHub 仓库 https://github.com/HeartyHaven/Few_Shot_Weight_Adaptation （代码、设计、公开数据划分、报告生成脚本；不含权重、运行记录、隐藏测试和评测结果，见 .gitignore）。项目目录现在是 git 仓库，分支 main。
+- 2026-11-19 11:10 应用户要求在仓库建立任务看板（tasks/board.json → TASKS.md，工具 tdwa/board.py）和 README（模型、数据集型号与链接、多人并行协作规则）；AGENTS.md / CLAUDE.md 末尾加了看板指引。规则：开始任何任务前先看看板，只做 open 的任务，先 claim（git 推送防抢占），完成后 done。main 的定时汇报每 30 分钟同步看板。
