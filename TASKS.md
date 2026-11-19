@@ -3,12 +3,11 @@
 > 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-19 17:15 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（3）
+## 进行中（2）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | BASE-Q8 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Qwen3 8B (Qwen/Qwen3-8B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
-| EVAL-VLLM-WS006344 | 在 ws006344 上装 vLLM，并让教学运行（含编辑后权重）的隐藏测试改用 vLLM；先验证与现有 float32 结果的一致性 |  |  |  | main@ws006344 | 2026-11-19 16:03 +0400 | vLLM 0.11.0 全精度（Triton 注意力、关闭 CUDA 图）已跑通：未编辑 Gemma 1B 1200 题 98% 输出相同、判分 99%+ 相同；编辑后学生复现原结果；约快 15 倍。tdwa/eval_fast.py 一键评测 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 16:34 +0400 | 进行中：9 步 |  |
 
 ## 已认领（3）
@@ -35,7 +34,7 @@
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
 
-## 已完成（36）
+## 已完成（37）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -75,6 +74,7 @@
 | ATLAS-DATA | 编辑图谱数据：每个编辑落在哪些层/头/神经元（report/build_atlas.py → report/site/atlas.json） |  |  |  | main@ws006344 | 2026-11-19 11:40 | 20 次运行、112 个编辑已解析 | report/build_atlas.py |
 | ATLAS-ROLES | 从教学日志提取每次运行识别过的部件、教师认为它的作用、证据和处理方式（Opus 子任务） |  |  |  | main@ws006344 | 2026-11-19 11:42 +0400 | 20 次运行、297 个部件条目（Opus 从教学日志提取） | report/site/atlas_roles.json |
 | ATLAS-PAGE | 编辑图谱子页面：逐步可视化每个运行定位和修改的参数，跨教师/运行对照找共性（GPT Astra / engineer 面板编写） |  |  |  | engineer@ws006344 | 2026-11-19 11:50 +0400 | 已接入网站：本地 http://127.0.0.1:8765/atlas.html，线上主报告顶部“编辑图谱”；29 项逻辑检查通过，未做浏览器实测 | report/atlas.html |
+| EVAL-VLLM-WS006344 | 在 ws006344 上装 vLLM，并让教学运行（含编辑后权重）的隐藏测试改用 vLLM；先验证与现有 float32 结果的一致性 |  |  |  | main@ws006344 | 2026-11-19 17:15 +0400 | vLLM 0.11.0 全精度评测可用：与原评测 98% 输出相同、判分 99%+ 相同；Qwen3-4B 一次完整评测约 20 分钟（原来 3 小时以上） | tdwa/eval_fast.py |
 
 ## 作废（1）
 
