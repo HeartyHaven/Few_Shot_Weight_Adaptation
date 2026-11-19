@@ -264,6 +264,13 @@ def main():
             skip_fresh = False; last_ctx = pt + ct
             msg = resp.choices[0].message
             tcs = [tc.model_dump() for tc in (msg.tool_calls or [])]
+            MAXARG = 200_000          # the API rejects any history item over 1 MiB; refuse oversized calls instead of replaying them
+            oversized = {}
+            for d in tcs:
+                n = len(d["function"].get("arguments") or "")
+                if n > MAXARG:
+                    oversized[d["id"]] = n
+                    d["function"]["arguments"] = json.dumps({"code": f"# call omitted by the harness: {n} characters (limit {MAXARG})"})
             messages.append({"role": "assistant", "content": msg.content or "", **({"tool_calls": tcs} if tcs else {})})
             log(event="assistant", turn=turns, content=msg.content, tool_calls=tcs, usage={"prompt": pt, "completion": ct}, cumulative=dict(usage))
             if not tcs:
@@ -271,6 +278,12 @@ def main():
                 turns += 1; continue
             done = False
             for tc in msg.tool_calls:
+                if tc.id in oversized:
+                    out = (f"REJECTED by the harness: this call's arguments were {oversized[tc.id]:,} characters; the limit is {MAXARG:,}. "
+                           "Nothing was executed. Do not inline large data in code: build it inside the sandbox or save it to files in "
+                           "the working directory and load it from there.")
+                    log(event="tool_rejected", turn=turns, name=tc.function.name, chars=oversized[tc.id])
+                    messages.append({"role": "tool", "tool_call_id": tc.id, "content": out}); continue
                 try:
                     args = json.loads(tc.function.arguments or "{}")
                 except Exception:
