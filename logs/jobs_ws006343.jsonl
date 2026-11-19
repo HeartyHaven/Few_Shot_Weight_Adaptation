@@ -72,3 +72,42 @@
 {"id": "eval_B3__t1__Qwen3-1.7B__s0", "mem": 20, "after": ["train_B3__t1__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-1.7B --lora baselines/B3__t1__Qwen3-1.7B__s0/adapter --name B3__t1__Qwen3-1.7B__s0 --mem 0.3"}
 {"id": "train_B3__t1__Qwen3-4B__s0", "mem": 40, "cmd": "$PY -m tdwa.baseline_lora --task t1 --student Qwen/Qwen3-4B --data distill", "wait_file": "baselines/B3_data/t1_usage.json"}
 {"id": "eval_B3__t1__Qwen3-4B__s0", "mem": 20, "after": ["train_B3__t1__Qwen3-4B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B3__t1__Qwen3-4B__s0/adapter --name B3__t1__Qwen3-4B__s0 --mem 0.3"}
+{"id": "teach_t1_Q17_codex-gpt-6.2-astra_s0", "mem": 18, "cmd": "$PY -m tdwa.codex_teach --task t1 --student Qwen/Qwen3-1.7B --model gpt-6.2-astra --seed 0 --gpu $CUDA_VISIBLE_DEVICES"}
+{"id": "teach_t2_G1_codex-gpt-6.2-astra_s0", "mem": 12, "cmd": "$PY -m tdwa.codex_teach --task t2 --student google/gemma-3-1b-it --model gpt-6.2-astra --seed 0 --gpu $CUDA_VISIBLE_DEVICES"}
+{"id": "evalrun_t2_G1_codex62_s0", "mem": 14, "cmd": "TDWA_MEM_GB=14 TDWA_BS=16 $PY -m tdwa.evaluate --run runs/t2__gemma-3-1b-it__codex-gpt-6.2-astra__s0"}
+{"id": "evalrun_t1_G4_codex6_s0", "mem": 30, "cmd": "TDWA_MEM_GB=30 TDWA_BS=8 $PY -m tdwa.evaluate --run runs/t1__gemma-3-4b-it__codex-gpt-6-astra__s0"}
+{"id": "evalbase_t1_G4_fp32", "mem": 30, "cmd": "TDWA_MEM_GB=30 TDWA_BS=8 $PY -m tdwa.evaluate --base --task t1 --student google/gemma-3-4b-it"}
+{"id": "sample_B5__t1__Qwen3-4B__s1", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t1 --student Qwen/Qwen3-4B --k 8 --mem 0.45 --seed 1"}
+{"id": "train_B5__t1__Qwen3-4B__s1", "mem": 40, "after": ["sample_B5__t1__Qwen3-4B__s1"], "cmd": "$PY -m tdwa.baseline_bake train --task t1 --student Qwen/Qwen3-4B --seed 1"}
+{"id": "eval_B5__t1__Qwen3-4B__s1", "mem": 22, "after": ["train_B5__t1__Qwen3-4B__s1"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B5__t1__Qwen3-4B__s1/adapter --name B5__t1__Qwen3-4B__s1 --mem 0.4"}
+{"id": "sample_B5__t1__Qwen3-4B__s2", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t1 --student Qwen/Qwen3-4B --k 8 --mem 0.45 --seed 2"}
+{"id": "train_B5__t1__Qwen3-4B__s2", "mem": 40, "after": ["sample_B5__t1__Qwen3-4B__s2"], "cmd": "$PY -m tdwa.baseline_bake train --task t1 --student Qwen/Qwen3-4B --seed 2"}
+{"id": "eval_B5__t1__Qwen3-4B__s2", "mem": 22, "after": ["train_B5__t1__Qwen3-4B__s2"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B5__t1__Qwen3-4B__s2/adapter --name B5__t1__Qwen3-4B__s2 --mem 0.4"}
+{"id": "sample_B5__t1__Qwen3-1.7B__s1", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t1 --student Qwen/Qwen3-1.7B --k 8 --mem 0.45 --seed 1"}
+{"id": "train_B5__t1__Qwen3-1.7B__s1", "mem": 24, "after": ["sample_B5__t1__Qwen3-1.7B__s1"], "cmd": "$PY -m tdwa.baseline_bake train --task t1 --student Qwen/Qwen3-1.7B --seed 1"}
+{"id": "eval_B5__t1__Qwen3-1.7B__s1", "mem": 22, "after": ["train_B5__t1__Qwen3-1.7B__s1"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-1.7B --lora baselines/B5__t1__Qwen3-1.7B__s1/adapter --name B5__t1__Qwen3-1.7B__s1 --mem 0.4"}
+{"id": "sample_B5__t1__Qwen3-1.7B__s2", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t1 --student Qwen/Qwen3-1.7B --k 8 --mem 0.45 --seed 2"}
+{"id": "train_B5__t1__Qwen3-1.7B__s2", "mem": 24, "after": ["sample_B5__t1__Qwen3-1.7B__s2"], "cmd": "$PY -m tdwa.baseline_bake train --task t1 --student Qwen/Qwen3-1.7B --seed 2"}
+{"id": "eval_B5__t1__Qwen3-1.7B__s2", "mem": 22, "after": ["train_B5__t1__Qwen3-1.7B__s2"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-1.7B --lora baselines/B5__t1__Qwen3-1.7B__s2/adapter --name B5__t1__Qwen3-1.7B__s2 --mem 0.4"}
+{"id": "ret_B2__t1__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B2__t1__Qwen3-1.7B__s0/adapter --name B2__t1__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B2__t1__Qwen3-4B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-4B --lora baselines/B2__t1__Qwen3-4B__s0/adapter --name B2__t1__Qwen3-4B__s0 --mem 0.4"}
+{"id": "ret_B2__t1__gemma-3-1b-it__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --lora baselines/B2__t1__gemma-3-1b-it__s0/adapter --name B2__t1__gemma-3-1b-it__s0 --mem 0.4"}
+{"id": "ret_B2__t2__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B2__t2__Qwen3-1.7B__s0/adapter --name B2__t2__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B3__t1__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B3__t1__Qwen3-1.7B__s0/adapter --name B3__t1__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B3__t1__Qwen3-4B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-4B --lora baselines/B3__t1__Qwen3-4B__s0/adapter --name B3__t1__Qwen3-4B__s0 --mem 0.4"}
+{"id": "ret_B3__t1__gemma-3-1b-it__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --lora baselines/B3__t1__gemma-3-1b-it__s0/adapter --name B3__t1__gemma-3-1b-it__s0 --mem 0.4"}
+{"id": "ret_B3__t2__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B3__t2__Qwen3-1.7B__s0/adapter --name B3__t2__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B3__t2__gemma-3-1b-it__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --lora baselines/B3__t2__gemma-3-1b-it__s0/adapter --name B3__t2__gemma-3-1b-it__s0 --mem 0.4"}
+{"id": "ret_B4__t1__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B4__t1__Qwen3-1.7B__s0/adapter --name B4__t1__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B4__t1__Qwen3-4B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-4B --lora baselines/B4__t1__Qwen3-4B__s0/adapter --name B4__t1__Qwen3-4B__s0 --mem 0.4"}
+{"id": "ret_B4__t1__gemma-3-1b-it__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --lora baselines/B4__t1__gemma-3-1b-it__s0/adapter --name B4__t1__gemma-3-1b-it__s0 --mem 0.4"}
+{"id": "ret_B4__t2__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B4__t2__Qwen3-1.7B__s0/adapter --name B4__t2__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B4__t2__gemma-3-1b-it__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --lora baselines/B4__t2__gemma-3-1b-it__s0/adapter --name B4__t2__gemma-3-1b-it__s0 --mem 0.4"}
+{"id": "ret_B5__t1__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B5__t1__Qwen3-1.7B__s0/adapter --name B5__t1__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B5__t1__Qwen3-4B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-4B --lora baselines/B5__t1__Qwen3-4B__s0/adapter --name B5__t1__Qwen3-4B__s0 --mem 0.4"}
+{"id": "ret_B5__t2__Qwen3-1.7B__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --lora baselines/B5__t2__Qwen3-1.7B__s0/adapter --name B5__t2__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "ret_B5__t2__gemma-3-1b-it__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --lora baselines/B5__t2__gemma-3-1b-it__s0/adapter --name B5__t2__gemma-3-1b-it__s0 --mem 0.4"}
+{"id": "ret_B0__Qwen3-1.7B", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-1.7B --name B0__Qwen3-1.7B --mem 0.4"}
+{"id": "ret_B0__Qwen3-4B", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student Qwen/Qwen3-4B --name B0__Qwen3-4B --mem 0.4"}
+{"id": "ret_B0__gemma-3-1b-it", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --name B0__gemma-3-1b-it --mem 0.4"}
+{"id": "ret_B2__t2__gemma-3-1b-it__s0", "mem": 22, "cmd": "$PY -m tdwa.retention_vllm --student google/gemma-3-1b-it --lora baselines/B2__t2__gemma-3-1b-it__s0/adapter --name B2__t2__gemma-3-1b-it__s0 --mem 0.4"}
