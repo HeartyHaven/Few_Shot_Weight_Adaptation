@@ -1,13 +1,12 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-19 12:59 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-19 13:15 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（4）
+## 进行中（3）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
-| T1-Q4-A62-s0 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 | 教学已结束（隐藏验证 56.7%），隐藏测试评测中 | runs/ 与 eval/（不在仓库） |
 | T1-Q4-F52-s0 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 | 进行中，32 个编辑，隐藏验证 49.2% | runs/（不在仓库） |
 | T1-Q4-A62-s1 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 | 进行中 | runs/（不在仓库） |
 | BASE-G27 | 未编辑基线：Gemma 3 27B（需两张卡） | Gemma 3 27B (google/gemma-3-27b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006343 | 2026-11-19 10:56 +0400 |  |  |
@@ -37,7 +36,7 @@
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
 
-## 已完成（31）
+## 已完成（32）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -62,6 +61,7 @@
 | T1-Q17-A62-s1 | 教学运行：MedCalc | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 21.3% → 44.4%（+23.1） | runs/ 与 eval/（不在仓库） |
 | T1-Q17-F52-s0 | 教学运行：MedCalc | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 教过的 8 种评分 21.3% → 33.1%（+11.9） | runs/ 与 eval/（不在仓库） |
 | T1-Q17-A6-s0 | 教学运行：MedCalc | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-18/19 | 所有编辑都被教师撤回，等同未编辑 | runs/ 与 eval/（不在仓库） |
+| T1-Q4-A62-s0 | 教学运行：MedCalc | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 13:15 +0400 | 教过的 8 种评分 26.9% → 55.6%（+28.7，区间 48.1–63.1）；没教过的 16.8% → 10.5%（下降）；困惑度 10.33→10.93 | eval/t1__Qwen3-4B__gpt-6.2-astra__s0.json（不在仓库） |
 | BASE-G1 | 未编辑基线（追踪、MedCalc、三个新任务） | Gemma 3 1B (google/gemma-3-1b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-18 | 追踪新出题目 58.0；MedCalc 教过 5.6；诊断 37.3 / 编程 58.7 / 数学 51.3 | eval/、pilot/out2/（不在仓库） |
 | BASE-Q17 | 未编辑基线（MedCalc、三个新任务） | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-18 | MedCalc 教过 21.3；诊断 52.0 / 数学 75.3（编程待重测） | eval/、pilot/out2/（不在仓库） |
 | BASE-Q4 | 未编辑基线（全部，含全精度 MedCalc） | Qwen3 4B (Qwen/Qwen3-4B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | MedCalc 教过 26.9（全精度）；追踪 BBH 85.2；诊断 56.0 / 编程 70.0 / 数学 77.3 | eval/、pilot/out2/（不在仓库） |
