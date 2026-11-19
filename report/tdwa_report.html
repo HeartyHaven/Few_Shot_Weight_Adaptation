@@ -649,7 +649,7 @@ const TABN=[['home','总览'],['t2','物体追踪'],['t1','医疗评分'],['ctrl
 const STN={running:'运行中',finished:'已结束',interrupted:'被中断',void:'作废'};
 const TCOL={'Fable 5.2':'var(--fable)','Astra 6':'var(--astra)','Astra 6.2':'var(--bad)'};
 const rlabel=r=>`${r.teacher} · ${r.student} · 第 ${r.seed+1} 次`;
-const prim=r=>r.task==='t2'?'test_fresh':'taught';
+const prim=r=>r.task==='t2'?'test_fresh':(r.task==='t3'?'all':'taught');
 const baseOf=r=>SUM.base[r.task+'|'+r.student_tag];
 function runTable(runs){if(!runs.length)return '<p class="note">还没有运行。</p>';
  return `<table><tr><th>运行</th><th>状态</th><th class="num">步数</th><th>保留的编辑</th><th>隐藏验证</th><th class="num">隐藏测试（主指标）</th><th class="num">提升</th><th>副作用检查</th><th class="num">学生 token</th></tr>`+runs.map(r=>{
@@ -696,9 +696,9 @@ function setupBase(){const P=SUM.pilots,tn={ddx:'疾病诊断',code:'编程',mat
  const cell=(t,s2,k)=>{const b=B[t+'|'+s2];return `<td class="num">${b&&b.sets[k]?b.sets[k].acc+'%':'—'}</td>`};
  $('baseTable').innerHTML=`<table><tr><th>学生</th><th class="num">追踪 · 新出题目</th><th class="num">追踪 · BBH 原题</th><th class="num">追踪 · 更难题目</th><th class="num">医疗 · 教过的 8 种</th><th class="num">医疗 · 没教过的 11 种</th></tr>`+stus.map(s2=>`<tr><td>${s2.replace('|bf16','（半精度）')}</td>${cell('t2',s2,'test_fresh')}${cell('t2',s2,'test_bbh')}${cell('t2',s2,'test_ood')}${cell('t1',s2,'taught')}${cell('t1',s2,'untaught')}</tr>`).join('')+'</table>';
  const q=SUM.queue;$('bigQueue').innerHTML=`计划测试的学生：${q.big_pending.join('、')}。`+(q.big.length?'<br>进度记录：'+q.big.map(esc).join('；'):'<br>还没有开始。')}
-function setupHome(){$('homeGen').textContent='数据生成时间：'+SUM.generated+'。主指标：物体追踪是新出题目的正确率，医疗评分是教过的 8 种评分的正确率。';
- const order={t1:0,t2:1};const runs=[...SUM.runs].sort((a,b)=>(order[a.task]-order[b.task])||a.student.localeCompare(b.student)||a.teacher.localeCompare(b.teacher)||a.seed-b.seed);
- $('homeTable').innerHTML=['t1','t2'].map(t=>`<h3 style="margin-top:14px">${t==='t1'?'医疗评分（MedCalc）':'物体追踪'}</h3>`+runTable(runs.filter(r=>r.task===t))).join('');
+function setupHome(){$('homeGen').textContent='数据生成时间：'+SUM.generated+'。主指标：物体追踪是新出题目的正确率，医疗评分是教过的 8 种评分的正确率，疾病诊断是 600 道隐藏测试题的正确率。';
+ const order={t1:0,t3:1,t2:2};const runs=[...SUM.runs].sort((a,b)=>(order[a.task]-order[b.task])||a.student.localeCompare(b.student)||a.teacher.localeCompare(b.teacher)||a.seed-b.seed);
+ $('homeTable').innerHTML=['t1','t3','t2'].filter(t=>runs.some(r=>r.task===t)).map(t=>`<h3 style="margin-top:14px">${{t1:'医疗评分（MedCalc）',t2:'物体追踪',t3:'疾病诊断（DDXPlus，5 选 1）'}[t]}</h3>`+runTable(runs.filter(r=>r.task===t))).join('');
  const TN={'gpt-6-astra':'Astra 6','gpt-6.2-astra':'Astra 6.2','claude-fable-5-2':'Fable 5.2'},launched=new Set(SUM.runs.map(r=>r.name));
  const pend=SUM.queue.pending.filter(p=>!launched.has(`${p[1]}__${p[2].split('/').pop()}__${p[3]}__s${p[4]}`));
  $('homeQueue').textContent='排队等待启动：'+(pend.length?pend.map(p=>`${p[1]==='t1'?'医疗评分':'物体追踪'} · ${TN[p[3]]||p[3]} · ${p[2].split('/').pop()}`).join('；'):'无')+'。'}

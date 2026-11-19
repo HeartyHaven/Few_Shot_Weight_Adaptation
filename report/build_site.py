@@ -30,6 +30,11 @@ def pack_eval(res, task):
             if s in res:
                 out["sets"][s] = c(res[s]["free"]); out["groups"][s] = {g: c(v["free"]) for g, v in res[s]["by_group"].items()}
                 out.setdefault("forced", {})[s] = c(res[s]["forced"])
+    elif task == "t3":
+        t = res["test"]; out["sets"] = {"all": c(t["free"])}
+        if "forced" in t:
+            out["forced"] = {"all": c(t["forced"])}
+        out["groups"] = {g: c(v["free"]) for g, v in t["by_group"].items()}
     else:
         t = res["test"]; out["sets"] = {"taught": c(t["taught"]), "untaught": c(t["untaught"]), "all": c(t["free"])}
         out["groups"] = {g: c(v["free"]) for g, v in t["by_group"].items()}; out["mean_chars"] = t.get("mean_output_chars")
