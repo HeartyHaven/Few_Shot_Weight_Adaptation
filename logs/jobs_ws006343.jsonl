@@ -59,3 +59,6 @@
 {"id": "sample_B5__t1__Qwen3-1.7B__s0", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t1 --student Qwen/Qwen3-1.7B --k 8 --mem 0.45"}
 {"id": "train_B5__t1__Qwen3-1.7B__s0", "mem": 40, "after": ["sample_B5__t1__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.baseline_bake train --task t1 --student Qwen/Qwen3-1.7B"}
 {"id": "eval_B5__t1__Qwen3-1.7B__s0", "mem": 22, "after": ["train_B5__t1__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-1.7B --lora baselines/B5__t1__Qwen3-1.7B__s0/adapter --name B5__t1__Qwen3-1.7B__s0 --mem 0.4"}
+{"id": "teach_t1_G4_codex-gpt-6.2-astra_s0", "mem": 36, "wait_file": "cache/hf/hub/models--google--gemma-3-4b-it/.complete", "cmd": "$PY -m tdwa.codex_teach --task t1 --student google/gemma-3-4b-it --model gpt-6.2-astra --seed 0 --gpu $CUDA_VISIBLE_DEVICES"}
+{"id": "teach_t1_G4_codex-gpt-6-astra_s0", "mem": 36, "wait_file": "cache/hf/hub/models--google--gemma-3-4b-it/.complete", "cmd": "$PY -m tdwa.codex_teach --task t1 --student google/gemma-3-4b-it --model gpt-6-astra --seed 0 --gpu $CUDA_VISIBLE_DEVICES"}
+{"id": "teach_t1_G4_claude-fable-5-2_s0", "mem": 36, "wait_file": "cache/hf/hub/models--google--gemma-3-4b-it/.complete", "cmd": "$PY -m tdwa.mcp_teach run --task t1 --student google/gemma-3-4b-it --teacher claude-fable-5-2 --seed 0 --gpu $CUDA_VISIBLE_DEVICES"}
