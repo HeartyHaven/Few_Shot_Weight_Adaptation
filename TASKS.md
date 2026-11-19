@@ -8,7 +8,7 @@
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | BASE-G12 | 未编辑基线（半精度，三个新任务 + 追踪 + MedCalc） | Gemma 3 12B (google/gemma-3-12b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006344 | 2026-11-19 | 在 main 的大模型基线队列 logs/bigpilot.txt 里，等显卡 | logs/bigpilot.txt |
-| T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 01:47 +0400 | 依赖 KERNEL-BF16 |  |
+| T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 01:47 +0400 | Astra 6.2 s0 已启动（bf16，GPU1），基线：已教48.8/未教12.3 |  |
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | Astra 6.2 运行在第 46 步因框架漏洞（超长调用被接口拒收）中止，1 个编辑保留，验证 65.3→78.7%，隐藏测试评测中；漏洞已修。Astra 6 运行中 |  |
 
 ## 已认领（2）
