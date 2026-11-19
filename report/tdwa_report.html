@@ -1,0 +1,682 @@
+<title>教师改权重实验报告</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* layout: one reading column (max 760px); wide interactive panels break out to 980px */
+:root{
+  --bg:#f4f6f8; --panel:#ffffff; --ink:#17212b; --muted:#5b6876; --line:#d5dce3; --soft:#e9edf1;
+  --base:#8593a1; --astra:#b7791f; --fable:#0f6f6a; --bad:#c2372d; --badbg:#fbe9e6; --okbg:#e2f3f0; --warnbg:#fbf1dc;
+  --f-display:"Noto Serif SC","Songti SC",serif; --f-body:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif; --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12171c; --panel:#1b222a; --ink:#e6ebf0; --muted:#9aa7b4; --line:#2f3944; --soft:#232c35;
+  --base:#7d8a97; --astra:#e0a94a; --fable:#45b8b0; --bad:#f0776c; --badbg:#3a1f1c; --okbg:#173330; --warnbg:#372c14; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#12171c; --panel:#1b222a; --ink:#e6ebf0; --muted:#9aa7b4; --line:#2f3944; --soft:#232c35;
+  --base:#7d8a97; --astra:#e0a94a; --fable:#45b8b0; --bad:#f0776c; --badbg:#3a1f1c; --okbg:#173330; --warnbg:#372c14; color-scheme:dark }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.8;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 80px}
+.col{max-width:760px;margin:0 auto}
+.wide{max-width:980px;margin:0 auto}
+h1{font-family:var(--f-display);font-size:clamp(28px,5vw,40px);line-height:1.3;margin:0 0 12px;text-wrap:balance}
+h2{font-family:var(--f-display);font-size:24px;line-height:1.4;margin:64px 0 12px;text-wrap:balance}
+h3{font-size:17px;margin:0 0 8px}
+p{margin:0 0 14px}
+.kicker{font-size:13px;letter-spacing:.12em;color:var(--muted);margin-bottom:10px}
+.lead{font-size:18px}
+.note{color:var(--muted);font-size:14px}
+b.f{color:var(--fable)} b.a{color:var(--astra)} b.x{color:var(--bad)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:20px;margin:20px auto}
+.verdict{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:6px;background:var(--panel);margin:24px 0}
+.verdict div{padding:16px 18px;border-left:1px solid var(--line)} .verdict div:first-child{border-left:0}
+.verdict .n{font-family:var(--f-mono);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums;line-height:1.2}
+.verdict .l{font-size:13px;color:var(--muted)} .verdict .d{font-size:13px}
+@media(max-width:640px){.verdict{grid-template-columns:1fr}.verdict div{border-left:0;border-top:1px solid var(--line)}.verdict div:first-child{border-top:0}}
+.seg{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.seg button,.btn{font:inherit;font-size:14px;padding:5px 12px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:4px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button:focus-visible{outline:2px solid var(--fable);outline-offset:2px}
+.btn:disabled{opacity:.4;cursor:default}
+pre,.mono{font-family:var(--f-mono);font-size:13px;line-height:1.6}
+.quiz{white-space:pre-wrap;background:var(--soft);border-radius:4px;padding:12px 14px;margin:0 0 14px;font-family:var(--f-mono);font-size:13px;line-height:1.65}
+table{border-collapse:collapse;width:100%;font-size:14px;font-variant-numeric:tabular-nums}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:500;color:var(--muted);font-size:13px}
+td.num,th.num{text-align:right;font-family:var(--f-mono)}
+.scroll{overflow-x:auto}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media(max-width:700px){.grid3,.grid2{grid-template-columns:1fr}}
+.state{border:1px solid var(--line);border-radius:4px;padding:10px 12px;min-width:0}
+.state h4{margin:0 0 6px;font-size:13px;font-weight:500;color:var(--muted)}
+.state .r{font-family:var(--f-mono);font-size:13px;padding:2px 6px;border-radius:3px}
+.state .r.wrong{background:var(--badbg);color:var(--bad)} .state .r.moved{background:var(--okbg)}
+.chip{display:inline-block;font-size:12px;padding:1px 8px;border-radius:10px;border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.chip.ok{background:var(--okbg);color:var(--fable);border-color:transparent}
+.chip.no{background:var(--badbg);color:var(--bad);border-color:transparent}
+.chip.wa{background:var(--warnbg);color:var(--astra);border-color:transparent}
+.tl{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:16px}
+@media(max-width:760px){.tl{grid-template-columns:1fr}}
+.tl ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;max-height:520px;overflow-y:auto}
+.tl li button{width:100%;text-align:left;font:inherit;font-size:14px;line-height:1.5;padding:8px 10px;border:1px solid transparent;border-radius:4px;background:transparent;color:var(--ink);cursor:pointer;display:flex;gap:8px;align-items:baseline}
+.tl li button[aria-current="true"]{background:var(--soft);border-color:var(--line)}
+.tl .idx{font-family:var(--f-mono);font-size:12px;color:var(--muted);flex:none;width:20px}
+.tl .detail{min-width:0}
+.tl .detail dl{margin:10px 0 0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 14px;font-size:14px}
+.tl .detail dt{color:var(--muted);white-space:nowrap}
+.tl .detail dd{margin:0}
+.heads{display:grid;grid-template-columns:auto repeat(26,minmax(0,1fr));gap:3px;align-items:center;min-width:620px}
+.heads .lab{font-family:var(--f-mono);font-size:11px;color:var(--muted);padding-right:6px;text-align:right}
+.heads .cell{aspect-ratio:1;border-radius:2px;background:var(--soft);border:0;padding:0}
+.heads button.cell{cursor:pointer}
+.heads .cell.fa{background:var(--fable)} .heads .cell.as{background:var(--astra)} .heads .cell.both{background:linear-gradient(135deg,var(--fable) 50%,var(--astra) 50%)}
+.heads .cell[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.heads .ln{font-family:var(--f-mono);font-size:10px;color:var(--muted);text-align:center}
+.ans{white-space:pre-wrap;font-family:var(--f-mono);font-size:12.5px;line-height:1.6;margin:0}
+.ans .w{background:var(--badbg);color:var(--bad)} .ans .g{background:var(--okbg)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--muted);margin-bottom:8px}
+.legend i{display:inline-block;width:11px;height:11px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+svg text{font-family:var(--f-body)}
+ul.plain{margin:0 0 14px;padding-left:20px} ul.plain li{margin-bottom:6px}
+.flow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px;margin:6px 0 14px}
+.flow span{border:1px solid var(--line);background:var(--panel);border-radius:4px;padding:4px 10px}
+.flow em{font-style:normal;color:var(--muted)}
+
+.tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--line);margin:0 0 16px}
+.tabs button{font:inherit;font-size:14px;padding:8px 14px;border:0;border-bottom:2px solid transparent;background:transparent;color:var(--muted);cursor:pointer}
+.tabs button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--fable);font-weight:500}
+.md h1{font-family:var(--f-display);font-size:20px;margin:0 0 12px} .md h2{font-family:var(--f-body);font-size:16px;font-weight:700;margin:22px 0 8px} .md h3{font-size:15px;margin:14px 0 6px}
+.md ul,.md ol{margin:0 0 12px;padding-left:22px} .md li{margin-bottom:5px} .md p{margin:0 0 10px}
+.md code,code.i{font-family:var(--f-mono);font-size:.88em;background:var(--soft);padding:1px 5px;border-radius:3px}
+.md{font-size:15px;line-height:1.75;max-width:820px}
+.rec{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:16px}
+@media(max-width:800px){.rec{grid-template-columns:1fr}}
+.rec .list{max-height:640px;overflow-y:auto;display:flex;flex-direction:column;gap:2px;border:1px solid var(--line);border-radius:4px;padding:4px}
+@media(max-width:800px){.rec .list{max-height:260px}}
+.rec .list button{font:inherit;font-size:13.5px;line-height:1.45;text-align:left;padding:6px 8px;border:0;border-radius:3px;background:transparent;color:var(--ink);cursor:pointer;display:flex;gap:8px;align-items:baseline}
+.rec .list button[aria-current="true"]{background:var(--soft)}
+.rec .list .idx{font-family:var(--f-mono);font-size:11.5px;color:var(--muted);flex:none;width:26px;text-align:right}
+.rec .pane{min-width:0}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 14px;font-size:14.5px;margin:10px 0}
+.kv dt{color:var(--muted);white-space:nowrap} .kv dd{margin:0}
+details{border:1px solid var(--line);border-radius:4px;margin:8px 0;background:var(--panel)}
+details summary{cursor:pointer;padding:7px 12px;font-size:13.5px;color:var(--muted)}
+details pre{margin:0;padding:10px 12px;border-top:1px solid var(--line);overflow-x:auto;max-height:420px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}
+.stat{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin:6px 0}
+select{font:inherit;font-size:14px;padding:5px 8px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--ink);max-width:100%}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:12px}
+.ecard{border:1px solid var(--line);border-radius:6px;padding:16px;margin-bottom:14px}
+.ecard h3{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.loading{color:var(--muted);font-size:14px;padding:20px 0}
+
+.topnav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin:0 0 8px}
+.topnav .in{max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:0;align-items:center}
+.topnav button{font:inherit;font-size:15px;padding:12px 16px;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);cursor:pointer}
+.topnav button[aria-pressed="true"]{color:var(--ink);border-bottom-color:var(--fable);font-weight:700}
+.topnav .gen{margin-left:auto;font-size:12px;color:var(--muted);padding:0 4px}
+section[data-tab]{display:none} section[data-tab].on{display:block}
+.live{border-left:3px solid var(--fable)}
+.badge{font-size:12px;color:var(--fable);border:1px solid var(--fable);border-radius:3px;padding:0 6px;margin-left:8px;font-weight:400;font-family:var(--f-body);vertical-align:2px}
+.st-running{color:var(--astra)} .st-finished{color:var(--fable)} .st-void,.st-interrupted{color:var(--bad)}
+td .sub{display:block;font-size:12px;color:var(--muted)}
+.dated{font-size:13px;color:var(--muted);border:1px dashed var(--line);border-radius:4px;padding:6px 10px;margin:0 0 14px}
+</style>
+
+<nav class="topnav"><div class="in" id="nav" role="group" aria-label="切换内容"></div></nav>
+<section data-tab="home">
+<div class="col">
+  <div class="kicker">实验进展报告 · 数据自动更新</div>
+  <h1>只靠大模型当“教师”直接改权重，能让小模型把一类题做得更好吗？</h1>
+  <p class="lead">目前的答案：<b class="f">能，而且已经在两个任务上各看到一次达到或接近预定成功线的提升；但不是每位教师都做得到，学生的绝对水平也还不高。</b>物体追踪任务上，Claude Fable 5.2 两次有效运行把隐藏测试正确率从 58.0% 提到 70.3% 和 72.0%。医疗评分任务上，新的 Astra 6.2 把教过的评分从 5.6% 提到 21.3%。全程没有对模型做端到端训练，也没有看到通用能力明显受损。旧版 GPT Astra 6 在两个任务上基本无效或效果很小。</p>
+
+  <div class="verdict">
+    <div><div class="l">物体追踪 · Fable（2 次有效运行）</div><div class="n" style="color:var(--fable)">+12.3 / +14.0</div><div class="d">58.0% → 70.3% 和 72.0%，置信区间都不重叠</div></div>
+    <div><div class="l">物体追踪 · Astra 6（3 次运行）</div><div class="n" style="color:var(--astra);font-size:24px">+5.3 / +0.7 / −0.3</div><div class="d">都在误差范围内，算没有效果</div></div>
+    <div><div class="l">医疗评分 · Astra 6.2（1 次运行）</div><div class="n" style="color:var(--fable)">+15.7</div><div class="d">教过的评分 5.6% → 21.3%，达到 +15 的成功线</div></div>
+  </div>
+  <p class="note">单位是百分点，都是教师看不到的隐藏测试题上的正确率变化。学生是 Gemma 3 1B。本页的 “Astra 6” 指旧版 GPT Astra（gpt-6-astra），“Astra 6.2” 是新模型（gpt-6.2-astra）。预先定的成功线是提高 15 个百分点。更多运行（Qwen 学生、各教师的重复运行）仍在进行。</p>
+
+</div>
+<div class="wide panel live">
+  <h3>所有运行的最新状态<span class="badge">自动更新</span></h3>
+  <p class="note" id="homeGen"></p>
+  <div class="scroll" id="homeTable"></div>
+  <p class="note" id="homeQueue" style="margin:10px 0 0"></p>
+</div>
+<div class="col">
+  <p class="dated">上面这张表由运行日志自动生成，每次更新页面都是最新的。本页其余的文字结论是人工撰写的，写于 2026-11-18 晚，之后出的结果以表格为准。各任务的详细结果在顶部切换。</p>
+  <h2>实验在做什么</h2>
+  <p>有两个角色。<b>学生</b>是一个 10 亿参数的小模型（Gemma 3 1B）。<b>教师</b>是一个很强的大模型（Fable 5.2 或 GPT Astra 6）。教师不是用数据训练学生，而是像老师带学生那样工作：</p>
+  <div class="flow"><span>写教学大纲</span><em>→</em><span>出题摸底</span><em>→</em><span>在模型内部找出错的位置</span><em>→</em><span>算出要改的数值并写进权重</span><em>→</em><span>考试检验</span><em>→</em><span>没用就撤回</span></div>
+  <p>为了让结论可信，给教师定了几条硬规则：</p>
+  <ul class="plain">
+    <li><b>不许训练。</b>不能对模型跑梯度下降。只能用观察、公式直接求解、小范围试探这类办法得到新数值。</li>
+    <li><b>数据很少。</b>教师只能看到 100 道带答案的真题，另外最多自己出 300 道。</li>
+    <li><b>算力很少。</b>显存不能超过学生正常推理时的 1.5 倍；学生总共只能处理 1000 万个 token。</li>
+    <li><b>考题保密。</b>最终测试题教师完全看不到；验证题只能查 10 次总分。教师的代码在断网的隔离环境里运行。</li>
+    <li><b>不能伤到别的能力。</b>每次改动后自动检查通用文本和一组常识、算术题，变差就自动撤销。</li>
+  </ul>
+  <p>测试时题目里不带任何解题步骤或例题。所以学生如果变好了，只能是因为权重被改了。</p>
+
+</div>
+</section>
+<section data-tab="t2">
+<div class="col">
+  <h2>任务：物体交换追踪</h2>
+  <p>题目说几个人各拿一样东西，然后两两交换若干次，问最后某人手里是什么。解法是固定流程：记下初始状态，每次交换改两行，最后查表。下面是一道真实测试题，可以逐步看正确做法，以及学生在编辑前、编辑后各自写了什么。</p>
+</div>
+
+<div class="wide panel" id="stepper">
+  <div class="quiz">Alice、Bob、Claire 在跳方块舞。开始时：Alice 的舞伴是 Quinn，Bob 的舞伴是 Priya，Claire 的舞伴是 Marco。
+第 1 步：Claire 和 Bob 交换舞伴。第 2 步：Claire 和 Bob 再交换舞伴。第 3 步：Alice 和 Claire 交换舞伴。
+问：最后 Alice 的舞伴是谁？ (A) Quinn  (B) Priya  (C) Marco      正确答案 (C)</div>
+  <div class="seg" id="stepBtns" role="group" aria-label="选择步骤"></div>
+  <div class="grid3" id="stepStates"></div>
+  <p class="note" id="stepNote" style="margin:12px 0 0"></p>
+</div>
+
+<div class="col">
+  <p>未编辑的学生其实知道规则，每一步都会写出完整的表。它的问题是<b>执行出错</b>：有时该换的没换，有时最后查错了行，有时东西说对了但选项字母选错。题目越长，出错机会越多，所以 3 人题能做对 80%，7 人题只有 36%。</p>
+
+  <h2>最新结果：隐藏测试题上的前后对比<span class="badge">自动更新</span></h2>
+  <p>三套测试题教师都没见过。下图每一行是一次运行，圆点是正确率，横线是 95% 置信区间，竖虚线是未编辑学生的水平。横线整体在虚线右边、不与灰色带重叠，才能比较有把握地说有提升。</p>
+</div>
+<div class="wide panel live">
+  <div class="seg" id="t2Set" role="group" aria-label="选择测试集"></div>
+  <div class="seg" id="t2Stu" role="group" aria-label="选择学生"></div>
+  <div id="t2Forest"></div>
+  <p class="note" id="t2Note" style="margin:8px 0 0"></p>
+</div>
+<div class="wide panel live">
+  <h3>物体追踪：全部运行<span class="badge">自动更新</span></h3>
+  <div class="scroll" id="t2Table"></div>
+</div>
+<div class="col">
+  <p class="dated">以下解读写于 2026-11-18 晚，基于当时已完成的运行（Fable 5.2 两次有效、Astra 6 三次）。</p>
+  <ul class="plain">
+    <li><b>Fable 的第 3 次运行重复出了第 1 次的结果</b>：两次是互相独立的运行，主测试集分别提高 12.3 和 14.0 个百分点，更难题目都到 47–48%。（Fable 的第 2 次运行因实验框架崩溃作废，不计入。）</li>
+    <li><b>Fable 的编辑在三套题上都有提升</b>，而且在更难的题（多 4 次交换、9 个人）上提升最大：26.7% → 47.3%。教师没见过 9 人的真题，这说明改动学到的是通用做法，而不是背题。</li>
+    <li><b>并非只对不错：</b>在 300 道新题里，Fable 的编辑让 58 道由错变对，也让 21 道由对变错，净增 37 道。</li>
+    <li><b>Astra 6 第 2 次和第 3 次运行</b>在新出题目上分别是 58.7% 和 57.7%，BBH 原题 56.0% 和 58.5%，更难题目都是 28.7%，与未编辑没有差别。</li>
+    <li><b>必须写步骤才有效。</b>如果不让学生写过程、直接选答案，编辑前后都是随机水平（约 20%）。</li>
+  </ul>
+</div>
+</section>
+<section data-tab="t1">
+<div class="col">
+  <h2>任务：医疗评分（MedCalc）</h2>
+  <p>这个任务比物体追踪难得多。题目是一段真实的病历，问一个临床评分是多少，例如肺炎严重程度的 CURB-65 评分。学生需要知道这个评分有哪几条标准、每条的阈值是多少，从病历里找出对应的数值，逐条判断，再加总。教师要教 8 种评分；隐藏测试另外包含 11 种没教过的评分，用来看有没有连带影响。</p>
+  <p>未编辑的 Gemma 在这上面几乎不会：教过的 8 种评分只对 5.6%。把评分规则直接写进提示也只到约 9%。所以这是“提示也救不了”的情况，只能靠改权重。</p>
+</div>
+<div class="col">
+  <h2>最新结果：隐藏测试题上的前后对比<span class="badge">自动更新</span></h2>
+  <p>主指标是教过的 8 种评分上的正确率（160 题）。没教过的 11 种评分（220 题）用来看有没有连带影响。图的读法同物体追踪。</p>
+</div>
+<div class="wide panel live">
+  <div class="seg" id="t1Set" role="group" aria-label="选择指标"></div>
+  <div class="seg" id="t1Stu" role="group" aria-label="选择学生"></div>
+  <div id="t1Forest"></div>
+  <p class="note" id="t1Note" style="margin:8px 0 0"></p>
+</div>
+<div class="wide panel live">
+  <h3>医疗评分：全部运行<span class="badge">自动更新</span></h3>
+  <div class="scroll" id="t1Table"></div>
+</div>
+<div class="wide panel live">
+  <h3>逐个评分看：编辑前后各答对几道<span class="badge">自动更新</span></h3>
+  <div class="row"><label for="mcSel" class="note">选择运行</label><select id="mcSel"></select></div>
+  <p class="note" id="mcSum"></p>
+  <div class="legend"><span><i style="background:var(--base)"></i>未编辑</span><span><i style="background:var(--fable)"></i>编辑后</span><span>每种评分 20 道隐藏测试题，条的长度是答对的题数</span></div>
+  <div class="grid2"><div><h3>教过的 8 种评分</h3><div id="mcT"></div></div><div><h3>没教过的 11 种评分</h3><div id="mcU"></div></div></div>
+</div>
+<div class="col">
+  <p class="dated">以下解读写于 2026-11-18 晚，基于当时已完成的 4 次运行（学生都是 Gemma）。之后 Astra 6.2 的第 2 次运行重复出了相近的结果（教过的评分 20.0%）。</p>
+  <ul class="plain">
+    <li><b>Astra 6.2 是这里唯一明确有效的</b>：教过的评分从 5.6% 到 21.3%（160 题里 9 → 34 题），置信区间不重叠，提高 15.7 个百分点。它教学生不带提示就写出对应评分的逐条打分表，每行先写病历里的数值，再紧跟着写这一条得几分。</li>
+    <li><b>Fable 的做法最特别，但运行被中断</b>：它把第 8 层里 108 个最不重要的神经元改造成“记忆单元”，把每种评分的逐行解题模板存进去。只改了 37 万个数值，教过的评分到 14.4%。这次运行在第 108 步被订阅用量上限打断，教师只做完了第一个编辑。</li>
+    <li><b>Astra 6 的提升不可靠</b>：它把标准答案直接拟合进最后一层，学生变成不写过程直接报一个数。第 1 次教过和没教过的评分一起小涨，更像是在猜常见分数；第 2 次算术能力从 44.5% 掉到 34.0%，是所有运行里副作用最明显的。</li>
+    <li><b>离“学会”还很远</b>：最好的一次也只是五道对一道。Astra 6.2 的教师自己在报告里写明：学生学会了写出对应的打分表，但没有学会可靠地算对。</li>
+    <li><b>验证分数会缩水</b>：Astra 6.2 在隐藏验证上是 27.5%，到隐藏测试是 21.3%；Astra 6 第 1 次从 15.8% 缩到 10.0%。所以正在跑的运行里的验证分数只能当参考。</li>
+  </ul>
+</div>
+</section>
+<section data-tab="t2">
+<div class="col">
+  <h2>教师具体做了什么</h2>
+  <p>下面是每次运行的完整过程，按时间顺序。点左边的步骤看细节。这里是我整理的概要；教学大纲、教学日志全文和每一步操作的原始记录在下一节。</p>
+</div>
+
+<div class="wide panel">
+  <div class="seg" id="runBtns" role="group" aria-label="选择运行"></div>
+  <p class="note" id="runSummary"></p>
+  <div class="tl"><ol id="tlList"></ol><div class="detail" id="tlDetail"></div></div>
+</div>
+
+
+</section>
+<section data-tab="t2 t1" id="arSection">
+<div class="col">
+  <h2>全套教学记录<span class="badge">自动更新</span></h2>
+  <p>当前任务下每次运行的完整档案，全部来自自动保存的日志，包括还在进行中的运行。先选一次运行，再选要看的部分。“逐步操作”列出教师的每一次工具调用，包括它运行的代码和原始输出。物体追踪最早的三次运行有中文全文翻译和逐步中文说明；其余运行目前是教师写的英文原文。</p>
+</div>
+<div class="wide panel" id="archive">
+  <div class="row"><label for="arSel" class="note">选择运行</label><select id="arSel"></select></div>
+  <div class="tabs" id="arTabs" role="group" aria-label="选择内容"></div>
+  <div id="arBody"><div class="loading">正在加载记录…</div></div>
+</div>
+</section>
+<section data-tab="t2">
+<div class="col">
+  <p>两位教师的差别很清楚。<b class="a">Astra 6</b> 的做法是把某几个注意力头的输出整体调大或调小，再用小测验挑一个最好的倍数。<b class="f">Fable</b> 先查明学生“知道该读哪一行、但注意力没有对准那一行”，然后用最小二乘公式算出一组新数值，让负责查表的注意力头更准地对准目标行。Fable 自己也试过 Astra 6 那种调倍数的办法，结论是不行，原因是注意力看错了行，放大缩小都没用。</p>
+
+  <h2>改了模型里的哪些位置</h2>
+  <p>Gemma 3 1B 有 26 层，每层 4 个注意力头。下图每个方块是一个头，有颜色的是被改动并保留下来的。点击有颜色的方块看改动内容。</p>
+</div>
+
+<div class="wide panel">
+  <div class="legend"><span><i style="background:var(--fable)"></i>Fable 第 1 次</span><span><i style="background:var(--astra)"></i>Astra 6 第 1 次</span><span><i style="background:linear-gradient(135deg,var(--fable) 50%,var(--astra) 50%)"></i>两者都改了</span></div>
+  <div class="scroll"><div class="heads" id="heads"></div></div>
+  <div id="headDetail" style="margin-top:14px"></div>
+</div>
+
+<div class="col">
+  <p>两位教师各自独立地找到了同一批位置（第 13、16、17 层附近），说明这类题的“查表”功能确实集中在这里。Fable 改动的数值总共 481,536 个，占模型全部参数的约 0.05%。</p>
+
+  <h2>学生的答卷：编辑前和编辑后</h2>
+  <p>同一道隐藏测试题，左边是未编辑学生的原始回答，右边是 Fable 编辑后的回答。红色是出错的地方。</p>
+</div>
+
+<div class="wide panel">
+  <div class="seg" id="exBtns" role="group" aria-label="选择例题"></div>
+  <p id="exWhat"></p>
+  <div class="quiz" id="exQ"></div>
+  <div class="grid2">
+    <div class="state"><h4>编辑前 <span id="exB" class="chip"></span></h4><pre class="ans" id="exBefore"></pre></div>
+    <div class="state"><h4>Fable 编辑后 <span id="exA" class="chip"></span></h4><pre class="ans" id="exAfter"></pre></div>
+  </div>
+</div>
+
+<div class="col">
+  <p class="dated">下面两张表是 2026-11-18 的人工整理，只含最早的几次运行。每次运行的成本和副作用数字以上方“全部运行”表为准。</p>
+  <h2>花了多少</h2>
+  <div class="scroll"><table>
+    <tr><th></th><th class="num">Fable 第 1 次</th><th class="num">Astra 6 第 1 次</th><th class="num">Astra 6 第 2 次</th></tr>
+    <tr><td>总用时</td><td class="num">88 分钟</td><td class="num">59 分钟</td><td class="num">44 分钟</td></tr>
+    <tr><td>教师调用工具次数</td><td class="num">119</td><td class="num">35</td><td class="num">40</td></tr>
+    <tr><td>学生处理的 token（前向）</td><td class="num">857 万</td><td class="num">249 万</td><td class="num">498 万</td></tr>
+    <tr><td>学生反向传播的 token</td><td class="num">2.2 万</td><td class="num">0</td><td class="num">0</td></tr>
+    <tr><td>显存峰值 ÷ 正常推理峰值</td><td class="num">1.48</td><td class="num">1.49</td><td class="num">1.48</td></tr>
+    <tr><td>教师输出 token</td><td class="num">20.7 万</td><td class="num">2.5 万</td><td class="num">2.7 万</td></tr>
+    <tr><td>教师费用</td><td class="num">约 16.7 美元</td><td class="num">未计价</td><td class="num">未计价</td></tr>
+    <tr><td>用到的带答案题目</td><td class="num">100 真题 + 210 自编</td><td class="num">100 真题</td><td class="num">100 真题</td></tr>
+    <tr><td>最终保留的改动数值</td><td class="num">481,536</td><td class="num">884,736</td><td class="num">294,912</td></tr>
+  </table></div>
+  <p class="note">Fable 第 3 次运行：121 分钟，120 次工具调用，597 万前向 token，0 反向 token，教师费用约 15.0 美元，保留改动 287,994 个数值（只改了一个注意力头）。</p>
+  <p class="note">Fable 那 2.2 万反向 token 是一次只用于诊断的归因分析，没有任何数值由它写入学生。和 LoRA 微调、蒸馏的成本对比还没有做，所以目前不能说“比微调便宜多少”。</p>
+
+  <h2>有没有伤到别的能力</h2>
+  <div class="scroll"><table>
+    <tr><th></th><th class="num">未编辑</th><th class="num">Fable 第 1 次</th><th class="num">Astra 6 第 1 次</th></tr>
+    <tr><td>通用文本困惑度（越低越好）</td><td class="num">11.60</td><td class="num">11.32</td><td class="num">11.73</td></tr>
+    <tr><td>科学常识题 ARC-Challenge（300 题）</td><td class="num">47.0%</td><td class="num">50.3%</td><td class="num">45.3%</td></tr>
+    <tr><td>情景续写题 HellaSwag（300 题）</td><td class="num">33.7%</td><td class="num">31.7%</td><td class="num">32.0%</td></tr>
+    <tr><td>加减法（200 题）</td><td class="num">44.5%</td><td class="num">42.5%</td><td class="num">45.0%</td></tr>
+  </table></div>
+  <p>所有差别都在这些小测试的误差范围内（每项误差约 ±5 到 6 个百分点），没有看到明显损伤。这套检查还比较粗，更完整的通用能力测试还没有接入。</p>
+
+</div>
+</section>
+<section data-tab="home">
+<div class="col">
+  <h2>现在能说什么，不能说什么</h2>
+  <ul class="plain">
+    <li><b>能说：</b>大模型教师不做端到端训练，只靠分析学生内部、直接计算并写入权重，可以让小模型在没见过的题上真实变好。物体追踪上 Fable 两次独立运行结果一致，并且能延伸到更难的题；医疗评分上 Astra 6.2 一次运行达到了预定的成功线。</li>
+    <li><b>能说：</b>效果强烈依赖教师。同样的规则和预算下，Astra 6 在物体追踪上三次都无效，在医疗评分上要么无效要么带副作用。</li>
+    <li><b>不能说“学生学会了”：</b>物体追踪的 7 人题仍只有约 50%，不写步骤时没有任何提升；医疗评分最好也只有约 21%。</li>
+    <li><b>不能说“比微调好或便宜”：</b>LoRA 微调、蒸馏这些对照组还没有跑。</li>
+    <li><b>医疗评分的结论还薄：</b>有效的只有 Astra 6.2 的 1 次运行，它的重复运行和 Qwen 学生上的运行还在进行。Fable 那次是被中断的不完整运行。</li>
+    <li><b>教师的运行方式不完全相同：</b>两个 Astra 通过接口循环调用，Fable 通过无界面的 Claude Code 调用，并受订阅用量上限影响。教师之间的差距不能全部归因于模型本身。</li>
+    <li><b>规则上的一点放宽：</b>允许在单个位置或少量向量上用优化器做小规模迭代（数据量小、算力在预算内、不是端到端训练）。Fable 在医疗评分上的“记忆单元”用了这种做法，反向传播的 token 已计入成本。</li>
+  </ul>
+
+  <h2>接下来</h2>
+  <ul class="plain">
+    <li><b>正在跑：</b>医疗评分上 Astra 6.2 的第 2 次（Gemma），以及 Qwen3 1.7B 学生上 Fable、Astra 6.2、Astra 6 各 1 次。</li>
+    <li><b>排队中：</b>医疗评分上 Fable 的重跑（Gemma），物体追踪上 Astra 6.2 两次和 Fable 一次补充。</li>
+    <li><b>随后：</b>LoRA 和蒸馏对照组；更完整的通用能力检查；更复杂的任务（疾病诊断、编程、数学）；10B 和 30B 以内的更大学生，检验“学生越强越好教”。</li>
+  </ul>
+</div>
+</section>
+<section data-tab="base">
+<div class="col">
+  <h2>新任务和更大的学生：基线摸底<span class="badge">自动更新</span></h2>
+  <p>这一页是还没有开始教学的部分。先测未编辑的学生在各任务上的起点，用来决定哪个学生配哪个任务最值得教：接近 0% 说明基础太差，已经很高则没有提升空间，中间档位最合适。</p>
+</div>
+<div class="wide panel live">
+  <h3>三个候选新任务上的起点（每项 150 题，未编辑）</h3>
+  <div class="scroll" id="pilotTable"></div>
+  <p class="note" style="margin:10px 0 0">疾病诊断：DDXPlus，给出年龄、性别和问诊结果，从 5 个候选疾病里选（随机水平 20%）。编程：MBPP 人工校对版，运行单元测试判分。数学：MATH 数据集数论题 1–3 级，按最终答案判分。带 * 的数字是用改进后的评分办法对已保存回答重新判分的结果；带 † 的是旧评分办法得到的、已知偏低的数字，等待重测。</p>
+</div>
+<div class="wide panel live">
+  <h3>现有两个任务上的起点（隐藏测试，未编辑）</h3>
+  <div class="scroll" id="baseTable"></div>
+  <p class="note" style="margin:10px 0 0">1B 级学生用全精度测，更大的学生用半精度测。</p>
+</div>
+<div class="wide panel live">
+  <h3>大模型基线队列</h3>
+  <p id="bigQueue" class="note"></p>
+</div>
+</section>
+
+<script>
+const $=id=>document.getElementById(id);
+function seg(el,items,onPick,start=0){el.innerHTML='';items.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.setAttribute('aria-pressed',i===start);b.onclick=()=>{[...el.children].forEach((c,j)=>c.setAttribute('aria-pressed',j===i));onPick(i)};el.appendChild(b)});onPick(start)}
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+/* ---------- stepper ---------- */
+const P=['Alice','Bob','Claire'];
+const STEPS=[
+ {t:'开始',truth:['Quinn','Priya','Marco'],before:['Quinn','Priya','Marco'],after:['Quinn','Priya','Marco'],mv:[],note:'三者都正确抄下了初始状态。'},
+ {t:'第 1 步',truth:['Quinn','Marco','Priya'],before:['Quinn','Marco','Priya'],after:['Quinn','Marco','Priya'],mv:[1,2],note:'Claire 和 Bob 交换。三者都做对了。'},
+ {t:'第 2 步',truth:['Quinn','Priya','Marco'],before:['Quinn','Marco','Priya'],after:['Quinn','Priya','Marco'],mv:[1,2],note:'Claire 和 Bob 再交换，应该换回去。编辑前的学生把上一张表原样抄了一遍，没有执行交换。编辑后的学生换对了。'},
+ {t:'第 3 步',truth:['Marco','Priya','Quinn'],before:['Priya','Marco','Quinn'],after:['Marco','Priya','Quinn'],mv:[0,2],note:'Alice 和 Claire 交换。编辑前的学生这一步本身换对了，但它是在第 2 步的错表上换的，所以 Alice 得到 Priya，最终答 (A)，错。编辑后答 (C)，对。'}];
+function stateBox(title,vals,truth,mv){return `<div class="state"><h4>${title}</h4>`+P.map((p,i)=>`<div class="r ${vals[i]!==truth[i]?'wrong':(mv.includes(i)?'moved':'')}">${p} — ${vals[i]}</div>`).join('')+`</div>`}
+seg($('stepBtns'),STEPS.map(s=>s.t),i=>{const s=STEPS[i];$('stepStates').innerHTML=stateBox('正确做法',s.truth,s.truth,s.mv)+stateBox('编辑前的学生',s.before,s.truth,s.mv)+stateBox('Fable 编辑后的学生',s.after,s.truth,s.mv);$('stepNote').textContent=s.note},2);
+
+/* ---------- medcalc ---------- */
+const MCT=['CHA2DS2-VASc（房颤卒中风险）','CURB-65（肺炎严重程度）','Centor（链球菌咽炎）','Child-Pugh（肝硬化）','HAS-BLED（出血风险）','PERC（排除肺栓塞）','SIRS（全身炎症反应）','Wells（肺栓塞）'];
+const MCU=['APACHE II','Caprini（静脉血栓）','Charlson 合并症指数','FeverPAIN（咽炎）','Glasgow 昏迷评分','Glasgow-Blatchford（出血）','HEART（心脏事件）','PSI（肺炎严重指数）','修订心脏风险指数','SOFA（器官衰竭）','Wells（深静脉血栓）'];
+/* ---------- timelines ---------- */
+const C={quiz:['出题诊断',''],loc:['内部定位',''],ok:['编辑·保留','ok'],no:['失败·放弃','no'],rb:['撤回','no'],exam:['隐藏验证','wa'],end:['结束','']};
+const RUNS=[
+{name:'Fable 第 1 次',sum:'119 次工具调用，88 分钟。保留 2 个编辑。教师可见的 100 道真题上：54% → 76%。隐藏验证：68.7%。',steps:[
+ ['quiz','摸底考试：100 道真题','正确率 54%（3 人 80%，5 人 62.5%，7 人 32.5%）。100 份答卷全部写出了“初始表 + 每次交换一张表”，说明学生知道规则。','逐步核对学生写的表：512 个交换步骤里 64 步写错（12.5%）；56 份过程全对的答卷里仍有 19 份答案错，多数是最后读了别人的那一行。','归类为“知道但执行不好”，问题集中在两个子技能：交换两行、最后查表。'],
+ ['quiz','把解题步骤写进提示，看有没有用','在 30 道题上：不加提示 43%，加文字步骤 23%，加一道例题 33%。','提示帮不上忙，反而更差。','问题不在“不知道规则”，所以靠提示解决不了，需要改执行环节。'],
+ ['quiz','逐个决策点测验（自编 100 道题）','把正确的解题过程喂给学生，在每个该写答案的位置看它写对的概率：不参与交换的行 99.5%，参与交换的行 92%，最后查表只有 70%（7 人题 57%）。','最弱的是“最后查表”和“交换的两行”。','接下来在模型内部找负责“查表”的部件。'],
+ ['loc','找到负责查表的注意力头','第 17 层 0 号头在答对时把 46% 的注意力放在正确那一行上，答错时只有 9%。第 13、14 层的 2 号头有同样规律。','另用线性探针确认：学生内部其实以 97–99% 的准确度“知道”该读哪一行。','诊断：学生知道该读哪行，但注意力头没有用好这个信息。应该改这几个头的“查询”权重。'],
+ ['no','尝试：整体调大调小某些头的输出','对 24 个可调倍数逐个试探。','最好的一个只让查表提高 13 个百分点，多数反而变差。','放弃。注意力看错了行，放大缩小解决不了。'],
+ ['no','编辑 1 的第一版：被安全检查拦下','做法有效（真题 54% → 70%），但算术检查题从 55% 掉到 35%。','原因：新加的通道在无关文本上也会被触发。','没有提交。改进：加入 111 条自编的普通文本作为“这里不该有反应”的约束。'],
+ ['ok','编辑 1：让查表的头对准正确的行','改第 13 层 2 号头、第 14 层 2 号头、第 17 层 0 号头的查询权重，共 368,640 个数值。新数值由带正则的最小二乘公式一次算出，用的是 121 道自编题上的内部激活。','教师事先预测真题正确率会到 72–76%。实测 74%。通用文本和检查题没有变差。','提交并保留。预测成立。'],
+ ['exam','隐藏验证第 1 次','67.3%（3 人 96.7%，5 人 68.3%，7 人 51.7%）。','未编辑时同一套验证题是 53.3%（来自 Astra 6 运行里的同一测量）。','继续分析剩下的错误。'],
+ ['quiz','编辑 1 之后的错题分析','查错行的错误：23 → 6。现在最大的丢分项变成“东西说对了但选项字母选错”，13 道。','长题里字母选错更多：题目选项在 512 个 token 之外，只有少数几层能看到。','下一步试着教“选对字母”。'],
+ ['no','教“选对字母”：两种办法都失败','办法 A 离线看起来 93% 准确，但放进模型后字母一致率只从 84.7% 到 86.7%。办法 B 直接让结果变差。','查明原因：在第 17 层，学生内部并没有可靠地保存“这个东西对应哪个字母”。','放弃。这是缺一个机制，不是把现有机制调准一点能解决的。'],
+ ['ok','编辑 2：让学生按顺序执行每一次交换','长题里学生会跳步、重复或提前停。改第 11 层 1 号头的查询权重，共 112,896 个数值，方法同编辑 1。','教师预测：长题的步骤顺序会更准，但普通题正确率变化不超过 ±3 个百分点。实测真题 74% → 76%，长题顺序全对的从 36/76 到 48/76。','提交并保留。同一做法加在第 17 层 0 号头上的版本会干扰编辑 1，被放弃。'],
+ ['exam','隐藏验证第 2 次','68.7%（3 人 96.7%，5 人 70%，7 人 53.3%）。','与预测一致。',''],
+ ['rb','编辑 3：提交后撤回','目标是修多词物品名被写乱的问题（例如把两本书名拼在一起）。子技能指标变好了，写乱的行从 21 降到 6。','但隐藏验证掉到 62.7%，低于教师事先定的保留线 66%。','撤回到编辑 2。教训：这几个头同时承担好几项工作，每多加一个通道都会干扰其他工作。'],
+ ['no','其余尝试：都没有净收益','只针对短题的字母通道、最后查表的加强通道、对手名字通道，都没有带来净提升，或者伤到检查题。','','全部放弃，没有提交。'],
+ ['end','结束','最终状态是编辑 1 + 编辑 2。真题 54% → 76%，隐藏验证 68.7%。用掉 857 万 / 1000 万学生 token，4 / 10 次验证机会。','教师在报告里列出没教会的部分：选项字母、多词物品名、9 人以上长题的执行错误。','']]},
+{name:'Astra 6 第 1 次',sum:'35 次工具调用，59 分钟，42 次小测。保留 2 个编辑。隐藏验证：53.3% → 57.3%。',steps:[
+ ['quiz','摸底','30 道真题 50%；48 道分项技能题 58%。','',''],
+ ['exam','隐藏验证第 1 次（未编辑）','53.3%（3 人 93.3%，5 人 56.7%，7 人 30%）。','这是未编辑学生在验证集上的基准。',''],
+ ['loc','逐个关掉注意力头，看影响','在 12 道题上，关掉第 13 层 1 号头和第 16 层 1 号头后，学生写对正确过程的损失下降。','说明这两个头在帮倒忙。',''],
+ ['ok','编辑 1：把两个头的输出减半','第 13、16 层 1 号头的输出权重乘以 0.5，共 589,824 个数值。从 5 个候选倍数里用 30 道题挑出。','预测真题提高 5–10 个百分点。隐藏验证实际没变：53.3%。','保留，但预测没有在验证集上兑现。'],
+ ['ok','编辑 2：把负责抄写的头放大','第 17 层 0 号头的输出权重乘以 1.5，共 294,912 个数值。试了 1.5、2、3 倍，1.5 倍最好。','隐藏验证：57.3%。','保留。'],
+ ['rb','编辑 3：提交后撤回','用公式修正第 17 层 0 号头的查询权重，让它选对选项字母。在用来拟合的 30 道题上 80%，在其余 70 道题上反而少对 5 道。','隐藏验证 56.7%，不如编辑 2。','教师判断为过拟合，撤回。'],
+ ['end','结束','最终状态是编辑 1 + 编辑 2。隐藏测试 58.0% → 63.3%，在误差范围内。','','']]},
+{name:'Astra 6 第 2 次',sum:'40 次工具调用，44 分钟。保留 1 个编辑。隐藏验证：53.3% → 54.0%。隐藏测试：58.7%（未编辑 58.0%）。',steps:[
+ ['quiz','摸底','100 道真题 54%；36 道分项技能题 72%。','逐项看：给定正确过程时，交换的行 95.6%、不变的行 99.2% 写对，但最后取结果只有 66%，选字母 82%。',''],
+ ['loc','逐个关掉 104 个注意力头','筛出 7 个候选，再缩小到第 16 层 1 号头。','',''],
+ ['ok','编辑 1：把一个头的输出调到 0.75 倍','第 16 层 1 号头输出权重乘以 0.75，共 294,912 个数值。','18 道挑选用的题上 12 → 15 道对；其余 82 道没有变化。隐藏验证 53.3% → 54.0%（150 题多对 1 道）。','保留。'],
+ ['end','结束','教师自己在报告里写明：学生没有学会，证据不足以说明有泛化提升。','','']]},
+{name:'Fable 第 2 次（作废）',sum:'42 次工具调用，23 分钟。零编辑。不计入结果。',steps:[
+ ['quiz','摸底和诊断','100 道真题 54%。诊断结论和第 1 次一致：学生会写表，错在查表。','',''],
+ ['loc','定位到第 17 层 0 号头','再次独立找到同一个头。试了一个未提交的修正，在探针上有效。','',''],
+ ['no','运行环境崩溃','教师的一段代码在显卡上用了越界的索引，触发显卡错误，整个学生进程被杀。','当时框架没有重启机制，教师连续 6 次重试都失败，只能以零编辑结束。','这是实验框架的缺陷，不是教学结果。现已修复：进程崩溃后自动重启并恢复已提交的编辑。']]}];
+let curRun=0;
+function showStep(r,i){const s=RUNS[r].steps[i];[...$('tlList').querySelectorAll('button')].forEach((b,j)=>b.setAttribute('aria-current',j===i));
+ const c=C[s[0]];$('tlDetail').innerHTML=`<span class="chip ${c[1]}">${c[0]}</span><h3 style="margin-top:8px">${s[1]}</h3><dl>${[['做了什么',s[2]],['看到什么',s[3]],['结论',s[4]]].filter(x=>x[1]).map(x=>`<dt>${x[0]}</dt><dd>${x[1]}</dd>`).join('')}</dl>`}
+seg($('runBtns'),RUNS.map(r=>r.name),r=>{curRun=r;$('runSummary').textContent=RUNS[r].sum;$('tlList').innerHTML=RUNS[r].steps.map((s,i)=>`<li><button type="button" data-i="${i}"><span class="idx">${i+1}</span><span>${s[1]} <span class="chip ${C[s[0]][1]}">${C[s[0]][0]}</span></span></button></li>`).join('');
+ $('tlList').querySelectorAll('button').forEach(b=>b.onclick=()=>showStep(r,+b.dataset.i));showStep(r,0)});
+
+/* ---------- head map ---------- */
+const HD={
+ '11-1':{who:'fa',t:'第 11 层 1 号头',rows:[['Fable 编辑 2','查询权重（q_proj）的 98 行','112,896','11%','让学生在写每一步的标题时，按题目里的顺序找到下一次交换的两个人。']]},
+ '13-2':{who:'fa',t:'第 13 层 2 号头',rows:[['Fable 编辑 1','查询权重的 88 行','101,376','83%','写表的每一行时，对准上一张表里应该抄的那一行（交换的行抄对方的，其余抄自己的）。']]},
+ '14-2':{who:'fa',t:'第 14 层 2 号头',rows:[['Fable 编辑 1','查询权重的 88 行','101,376','89%','同上。']]},
+ '17-0':{who:'both',t:'第 17 层 0 号头',rows:[['Fable 编辑 1','查询权重的 144 行','165,888','58%','同上，另外负责最后查表：在最后一张表里对准被问的那个人。'],['Astra 6 编辑 2','输出权重（o_proj）的 256 列','294,912','28%','把这个头的输出整体乘以 1.5。']]},
+ '13-1':{who:'as',t:'第 13 层 1 号头',rows:[['Astra 6 编辑 1','输出权重的 256 列','294,912','26%','把这个头的输出整体乘以 0.5。']]},
+ '16-1':{who:'as',t:'第 16 层 1 号头',rows:[['Astra 6 编辑 1','输出权重的 256 列','294,912','23%','把这个头的输出整体乘以 0.5。Astra 6 第 2 次运行里对同一个头乘以 0.75。']]}};
+(function(){let h='<div class="lab"></div>';for(let l=0;l<26;l++)h+=`<div class="ln">${l}</div>`;
+ for(let k=0;k<4;k++){h+=`<div class="lab">${k} 号头</div>`;for(let l=0;l<26;l++){const d=HD[l+'-'+k];h+=d?`<button type="button" class="cell ${d.who}" data-k="${l}-${k}" aria-pressed="false" aria-label="${d.t}"></button>`:`<div class="cell"></div>`}}
+ $('heads').innerHTML=h;const pick=k=>{$('heads').querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.k===k));const d=HD[k];
+  $('headDetail').innerHTML=`<h3>${d.t}</h3><div class="scroll"><table><tr><th>谁改的</th><th>改了哪里</th><th class="num">数值个数</th><th class="num">改动幅度</th><th>作用</th></tr>${d.rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td class="num">${r[2]}</td><td class="num">${r[3]}</td><td>${r[4]}</td></tr>`).join('')}</table></div><p class="note" style="margin:8px 0 0">横轴是层号（0–25）。“改动幅度”是改动量的大小除以该层整个权重矩阵原来的大小。每次改动的每个位置、旧值和新值都已存档。</p>`};
+ $('heads').querySelectorAll('button').forEach(b=>b.onclick=()=>pick(b.dataset.k));pick('17-0')})();
+
+/* ---------- examples ---------- */
+const EX=[
+{n:'修好了：漏做的交换',what:'编辑前，学生在第 2 步没有执行交换，把上一张表照抄了一遍。编辑后这一步做对了。',q:`Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Priya, and Claire is dancing with Marco.
+Throughout the song, the dancers often trade partners. First, Claire and Bob switch partners. Then, Claire and Bob switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Alice is dancing with
+Options: (A) Quinn (B) Priya (C) Marco        正确答案 (C)`,bok:false,aok:true,
+b:`Initially:
+- Alice - Quinn
+- Bob - Priya
+- Claire - Marco
+
+Step 1: Claire and Bob switch partners.
+- Alice - Quinn
+- Bob - Marco
+- Claire - Priya
+
+Step 2: Claire and Bob switch partners.
+- Alice - Quinn
+§- Bob - Marco
+§- Claire - Priya
+
+Step 3: Alice and Claire switch partners.
+§- Alice - Priya
+§- Bob - Marco
+- Claire - Quinn
+
+§At the end of the dance, Alice is dancing with Priya. So the answer is (A).
+
+§Final answer: (A)`,
+a:`Initially:
+- Alice - Quinn
+- Bob - Priya
+- Claire - Marco
+
+Step 1: Claire and Bob switch partners.
+- Alice - Quinn
+- Bob - Marco
+- Claire - Priya
+
+Step 2: Claire and Bob switch partners.
+- Alice - Quinn
+¶- Bob - Priya
+¶- Claire - Marco
+
+Step 3: Alice and Claire switch partners.
+¶- Alice - Marco
+- Bob - Priya
+- Claire - Quinn
+
+At the end of the dance, Alice is dancing with Marco. So the answer is (C).
+
+¶Final answer: (C)`},
+{n:'修好了：字母选错',what:'编辑前，学生整个过程都对，也说出了“Bob 拿着黄球”，但选项字母选成了 (B)。编辑后选对了 (C)。两份答卷的过程完全一样，只差最后一行。',q:`Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a black ball, Bob has a gold ball, Claire has a yellow ball, Dave has a orange ball, and Eve has a blue ball.
+As the game progresses, pairs of players trade balls. First, Claire and Bob swap balls. Then, Eve and Dave swap balls. Then, Eve and Claire swap balls. Then, Alice and Claire swap balls. Finally, Eve and Claire swap balls. At the end of the game, Bob has the
+Options: (A) black ball (B) gold ball (C) yellow ball (D) orange ball (E) blue ball        正确答案 (C)`,bok:false,aok:true,
+b:`（前 5 张表全部正确，此处省略）
+
+6. **Eve and Claire swap:**
+   - Alice: Orange
+   - Bob: Yellow
+   - Claire: Gold
+   - Dave: Blue
+   - Eve: Black
+
+At the end of the game, Bob has the yellow ball.
+
+§Final answer: (B)`,
+a:`（前 5 张表全部正确，此处省略）
+
+6. **Eve and Claire swap:**
+   - Alice: Orange
+   - Bob: Yellow
+   - Claire: Gold
+   - Dave: Blue
+   - Eve: Black
+
+At the end, Bob has the yellow ball.
+
+¶Final answer: (C)`},
+{n:'改坏了：原来对的变错',what:'这是 21 道“由对变错”的题之一。编辑后学生的过程仍然全对，也说出了“Bob 拿着红色礼物”，但字母选成了 (B)。选项字母这个环节教师没有教会，它的出错有随机性。',q:`Alice, Bob, and Claire are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a red present, Bob has a silver present, and Claire has a blue present.
+As the event progresses, pairs of people swap gifts. First, Bob and Alice swap their gifts. Then, Alice and Claire swap their gifts. Finally, Claire and Alice swap their gifts. At the end of the event, Bob has the
+Options: (A) red present (B) silver present (C) blue present        正确答案 (A)`,bok:true,aok:false,
+b:`（前 3 张表全部正确，此处省略）
+
+4. **Claire and Alice swap:**
+   - Alice: Silver
+   - Bob: Red
+   - Claire: Blue
+
+At the end of the event, Bob has the red present.
+
+Final answer: (A)`,
+a:`（前 3 张表全部正确，此处省略）
+
+4. **Claire and Alice swap:**
+   - Alice: Silver
+   - Bob: Red
+   - Claire: Blue
+
+At the end, Bob has the red present.
+
+§Final answer: (B)`}];
+const mark=t=>t.split('\n').map(l=>l[0]==='§'?`<span class="w">${esc(l.slice(1))}</span>`:l[0]==='¶'?`<span class="g">${esc(l.slice(1))}</span>`:esc(l)).join('\n');
+const chip=(el,ok)=>{el.textContent=ok?'答对':'答错';el.className='chip '+(ok?'ok':'no')};
+seg($('exBtns'),EX.map(e=>e.n),i=>{const e=EX[i];$('exWhat').textContent=e.what;$('exQ').textContent=e.q;$('exBefore').innerHTML=mark(e.b);$('exAfter').innerHTML=mark(e.a);chip($('exB'),e.bok);chip($('exA'),e.aok)});
+
+/* ---------- full archive ---------- */
+function md(t){const inl=x=>esc(x).replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>');
+ const L=t.split('\n');let h='',i=0,stack=[];const close=n=>{while(stack.length>n)h+='</li></ul>',stack.pop()};
+ while(i<L.length){let l=L[i];
+  if(/^\s*\|/.test(l)){close(0);const rows=[];while(i<L.length&&/^\s*\|/.test(L[i])){rows.push(L[i].trim().replace(/^\||\|$/g,'').split('|').map(c=>c.trim()));i++}
+   h+='<div class="scroll"><table>'+rows.filter(r=>!r.every(c=>/^[-: ]*$/.test(c))).map((r,k)=>'<tr>'+r.map(c=>k?`<td>${inl(c)}</td>`:`<th>${inl(c)}</th>`).join('')+'</tr>').join('')+'</table></div>';continue}
+  let m;
+  if(m=l.match(/^(#{1,4})\s+(.*)/)){close(0);const n=Math.min(3,m[1].length);h+=`<h${n}>${inl(m[2])}</h${n}>`}
+  else if(m=l.match(/^(\s*)([-*]|\d+\.)\s+(.*)/)){const d=Math.floor(m[1].length/2)+1,tx=(/\d/.test(m[2])?'<b>'+m[2]+'</b> ':'')+inl(m[3]);if(d>stack.length){while(stack.length<d)h+='<ul><li>',stack.push(1);h+=tx}else{close(d);h+='</li><li>'+tx}}
+  else if(!l.trim()){close(0)}
+  else if(stack.length&&/^\s+/.test(l)){h+=' '+inl(l.trim())}
+  else{close(0);h+=`<p>${inl(l)}</p>`}
+  i++}
+ close(0);return '<div class="md">'+h+'</div>'}
+const AR_OLD=[['fable_s0','追踪 · Fable 第 1 次'],['fable_s2','追踪 · Fable 第 3 次'],['astra_s0','追踪 · Astra 6 第 1 次'],['astra_s1','追踪 · Astra 6 第 2 次'],['astra_s2','追踪 · Astra 6 第 3 次'],['t1_astra62_s0','医疗 · Astra 6.2 第 1 次'],['t1_fable_s0','医疗 · Fable 第 1 次'],['t1_astra6_s0','医疗 · Astra 6 第 1 次'],['t1_astra6_s1','医疗 · Astra 6 第 2 次']],cache={};
+const TABS=['教学大纲','教学日志','逐步操作','小测答卷','编辑档案','隐藏验证','教师的总结报告','教师拿到的任务说明'];
+let arKey=null,arTab=0;
+const PH={'提交编辑':'ok','撤回':'no','隐藏验证':'wa','出错重试':'no'};
+async function get(f){if(!cache[f])cache[f]=fetch('site/runs/'+f+'.json').then(r=>{if(!r.ok)throw new Error(r.status);return r.json()});return cache[f]}
+const fold=(title,body)=>body?`<details><summary>${title}</summary><pre class="mono">${esc(body)}</pre></details>`:'';
+function bil(zh,en){return (zh?md(zh):'<p class="note">这份文件还没有中文翻译，下面是教师写的原文。</p>')+(zh?fold('展开教师写的原文（英文）',en):`<pre class="mono" style="white-space:pre-wrap">${esc(en)}</pre>`)}
+function viewSteps(d,body){const phases=[...new Set(d.steps.map(s=>s.cap?s.cap.phase:(s.tool==='official_validation'?'隐藏验证':'未标注')))];
+ body.innerHTML=`<div class="row"><label for="phSel" class="note">筛选阶段</label><select id="phSel"><option value="">全部 ${d.steps.length} 步</option>${phases.map(p=>`<option>${p}</option>`).join('')}</select><button class="btn" id="stPrev" type="button">上一步</button><button class="btn" id="stNext" type="button">下一步</button></div><div class="rec"><div class="list" id="stList"></div><div class="pane" id="stPane"></div></div>`;
+ let shown=[],cur=0;const ph=s=>s.cap?s.cap.phase:(s.tool==='official_validation'?'隐藏验证':'未标注');
+ const show=k=>{cur=k;const s=shown[k];[...$('stList').children].forEach((b,j)=>b.setAttribute('aria-current',j===k));const c=s.cap||{};const st=s.stat||{};
+  $('stPane').innerHTML=`<span class="chip ${PH[ph(s)]||''}">${ph(s)}</span> <span class="note">第 ${s.n} 步 · 开始后 ${s.min} 分钟</span><h3 style="margin-top:8px">${esc(c.title||(s.tool==='official_validation'?'隐藏验证':'运行代码'))}</h3>
+  <dl class="kv">${c.did?`<dt>做了什么</dt><dd>${esc(c.did)}</dd>`:''}${c.saw?`<dt>看到什么</dt><dd>${esc(c.saw)}</dd>`:''}${s.why?`<dt>教师说明</dt><dd>${esc(s.why)}</dd>`:''}</dl>
+  ${s.stat?`<div class="stat"><span>学生前向 token ${(st.fwd_tokens||0).toLocaleString()}</span><span>反向 token ${(st.bwd_tokens||0).toLocaleString()}</span><span>显存比 ${st.peak_mem_ratio}</span><span>耗时 ${st.sec} 秒</span><span>${s.ok?'代码正常结束':'代码报错'}</span></div>`:''}
+  ${fold('教师当时写的话（原文）',s.note)}${fold('教师运行的代码',s.code)}${fold('原始输出',s.out)}${fold('报错信息',s.err)}`};
+ const fill=()=>{const f=$('phSel').value;shown=d.steps.filter(s=>!f||ph(s)===f);$('stList').innerHTML=shown.map((s,k)=>`<button type="button" data-k="${k}"><span class="idx">${s.n}</span><span>${esc(s.cap?s.cap.title:(s.tool==='official_validation'?'隐藏验证':'运行代码'))} <span class="chip ${PH[ph(s)]||''}">${ph(s)}</span></span></button>`).join('');
+  $('stList').querySelectorAll('button').forEach(b=>b.onclick=()=>show(+b.dataset.k));if(shown.length)show(0)};
+ $('phSel').onchange=fill;$('stPrev').onclick=()=>cur>0&&show(cur-1);$('stNext').onclick=()=>cur<shown.length-1&&show(cur+1);fill()}
+async function viewQuiz(key,body){body.innerHTML='<div class="loading">正在加载答卷…</div>';const q=await get(key+'_quizzes');
+ body.innerHTML=`<p class="note">教师通过官方格式给学生出的每一次小测。每道题都保存了题目、学生的完整回答和判分。“未提交的试探状态”表示当时权重里有还没提交的临时改动。</p><div class="row"><select id="qSel">${q.map((x,i)=>`<option value="${i}">小测 ${x.quiz}：${esc(x.label)}（${x.n} 题，${(x.acc*100).toFixed(1)}%）</option>`).join('')}</select><span class="note" id="qMeta"></span></div><div class="rec"><div class="list" id="qList"></div><div class="pane" id="qPane"></div></div>`;
+ const pick=i=>{const x=q[i];$('qMeta').textContent=`在编辑 ${x.after_edit} 之后${x.uncommitted?'，未提交的试探状态':''} · 题目来源：${x.source==='dev'?'真题':x.source||'未注明'}${x.skill?' · 考查：'+x.skill:''}`;
+  $('qList').innerHTML=x.items.map((it,k)=>`<button type="button" data-k="${k}"><span class="idx">${it.ok?'✓':'✗'}</span><span>${esc(String(it.id||'自编题 '+(k+1)))} <span class="chip">${esc(String(it.group||''))}</span></span></button>`).join('');
+  const show=k=>{const it=x.items[k];[...$('qList').children].forEach((b,j)=>b.setAttribute('aria-current',j===k));$('qPane').innerHTML=`<span class="chip ${it.ok?'ok':'no'}">${it.ok?'答对':'答错'}</span> <span class="note">标准答案 ${esc(String(it.gold))} · 学生答 ${esc(String(it.pred))}</span><h3 style="margin-top:10px">题目</h3><div class="quiz">${esc(it.q)}</div><h3>学生的回答</h3><div class="quiz">${esc(it.out)}</div>`};
+  $('qList').querySelectorAll('button').forEach(b=>b.onclick=()=>show(+b.dataset.k));show(0)};
+ $('qSel').onchange=e=>pick(+e.target.value);pick(0)}
+function viewEdits(d,body){const rb=d.rollbacks||[];body.innerHTML=`<p class="note">每一次提交的权重改动。提交时系统自动保存每个被改位置的旧值和新值，并跑一次副作用检查；检查不过会自动撤销。</p>`+d.edits.map(e=>{const z=e.zh||{},b=e.regression_before||{},a=e.regression_after||{},base=e.regression_baseline||{};
+  return `<div class="ecard"><h3>编辑 ${e.edit_id}${z.what?'：'+z.what:''} <span class="chip ${e.rolled_back?'no':'ok'}">${e.rolled_back?'后来撤回':'最终保留'}</span><span class="chip">${e.op_class}</span></h3>
+  <dl class="kv">${z.why?`<dt>为什么改</dt><dd>${z.why}</dd>`:''}${z.how?`<dt>怎么算的</dt><dd>${z.how}</dd>`:''}${z.pred?`<dt>事先预测</dt><dd>${z.pred}</dd>`:''}${z.result?`<dt>实际结果</dt><dd>${z.result}</dd>`:''}<dt>提交时间</dt><dd>${e.time}</dd><dt>当时累计成本</dt><dd>前向 ${(e.cost_so_far.fwd_tokens||0).toLocaleString()} token，反向 ${(e.cost_so_far.bwd_tokens||0).toLocaleString()} token</dd></dl>
+  <div class="scroll"><table><tr><th>被改的权重矩阵</th><th class="num">矩阵形状</th><th class="num">改动的数值个数</th><th class="num">改动幅度</th><th class="num">最大单值改动</th><th class="num">改动的秩</th></tr>${e.targets.map(t=>`<tr><td class="mono">${t.param}</td><td class="num">${t.shape.join('×')}</td><td class="num">${t.n_changed.toLocaleString()}</td><td class="num">${(t.rel_norm*100).toFixed(1)}%</td><td class="num">${t.max_abs_delta.toFixed(4)}</td><td class="num">${t.rank==null?'':t.rank}</td></tr>`).join('')}</table></div>
+  <div class="scroll" style="margin-top:10px"><table><tr><th>副作用检查</th><th class="num">原始学生</th><th class="num">改之前</th><th class="num">改之后</th><th class="num">允许范围</th></tr>
+  <tr><td>通用文本困惑度</td><td class="num">${base.ppl}</td><td class="num">${b.ppl}</td><td class="num">${a.ppl}</td><td class="num">≤ ${(base.ppl*1.1).toFixed(2)}</td></tr>
+  <tr><td>检查题正确率（100 题）</td><td class="num">${base.canary}</td><td class="num">${b.canary}</td><td class="num">${a.canary}</td><td class="num">≥ ${(base.canary-0.03).toFixed(2)}</td></tr>
+  <tr><td>其中常识选择题（60 题）</td><td class="num">${base.canary_mc}</td><td class="num">${b.canary_mc}</td><td class="num">${a.canary_mc}</td><td class="num"></td></tr>
+  <tr><td>其中算术题（40 题）</td><td class="num">${base.canary_arith}</td><td class="num">${b.canary_arith}</td><td class="num">${a.canary_arith}</td><td class="num"></td></tr></table></div>
+  ${fold('教师提交时填写的原文（假设、方法、预测、所用数据）','【hypothesis】\n'+e.hypothesis+'\n\n【method】\n'+e.method+'\n\n【prediction】\n'+e.prediction+'\n\n【data_used】\n'+e.data_used)}</div>`}).join('')+
+  (rb.length?`<h3>撤回记录</h3>`+rb.map(r=>`<p>撤回到编辑 ${r.to}，移除编辑 ${r.removed.join('、')}。</p>${fold('教师写的撤回理由（原文）',r.reason)}`).join(''):'')+
+  `<p class="note">“改动幅度”是改动量的大小除以整个矩阵原来的大小。“改动的秩”可以理解为这次改动包含多少个独立的方向。每个位置的旧值和新值保存在运行目录的 edits 文件夹里。</p>`}
+function viewExams(d,body){body.innerHTML=`<p class="note">隐藏验证集有 150 道题，教师看不到题目，每次只拿到下面这些分数，最多查 ${d.val_looks||10} 次。</p><div class="scroll"><table><tr><th>第几次</th><th>当时的状态</th><th class="num">总正确率</th>${Object.keys((d.exams[0]||{by_group:{}}).by_group).map(g=>`<th class="num">${g.replace('obj',' 人题')}</th>`).join('')}<th>教师说明查分的原因</th></tr>${d.exams.map(x=>`<tr><td>${x.look}</td><td>${x.after_edit?'编辑 '+x.after_edit+' 之后':'未编辑'}</td><td class="num">${(x.accuracy*100).toFixed(1)}%</td>${Object.values(x.by_group).map(v=>`<td class="num">${(v*100).toFixed(1)}%</td>`).join('')}<td>${esc(x.note||'')}</td></tr>`).join('')}</table></div>`}
+async function renderAr(){const body=$('arBody');if(!arKey){body.innerHTML='<p class="note">这个任务下还没有运行记录。</p>';return}body.innerHTML='<div class="loading">正在加载记录…</div>';let d;try{d=await get(arKey)}catch(e){body.innerHTML='<p class="note">记录文件没有加载成功，请刷新页面重试。</p>';return}
+ if(arTab===0)body.innerHTML=bil(d.syllabus_zh,d.syllabus);
+ else if(arTab===1)body.innerHTML=bil(d.log_zh,d.log);
+ else if(arTab===2)viewSteps(d,body);
+ else if(arTab===3)viewQuiz(arKey,body);
+ else if(arTab===4)viewEdits(d,body);
+ else if(arTab===5)viewExams(d,body);
+ else if(arTab===6)body.innerHTML='<p class="note">运行结束时教师提交的总结报告，原文。</p>'+md(d.report);
+ else body.innerHTML=`<p class="note">这是运行开始时发给教师的全部说明（原文）。每次运行的说明相同，教师只能通过其中列出的三个工具操作学生。</p><pre class="mono" style="white-space:pre-wrap">${esc(d.system_prompt)}</pre>`}
+
+(function(){const el=$('arTabs');TABS.forEach((t,i)=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.setAttribute('aria-pressed',i===0);b.onclick=()=>{[...el.children].forEach((c,j)=>c.setAttribute('aria-pressed',j===i));arTab=i;renderAr()};el.appendChild(b)})})();
+
+/* ---------- live data ---------- */
+let SUM=null,TAB='home';
+const TABN=[['home','总览'],['t2','物体追踪'],['t1','医疗评分'],['base','新任务与大模型基线']];
+const STN={running:'运行中',finished:'已结束',interrupted:'被中断',void:'作废'};
+const TCOL={'Fable 5.2':'var(--fable)','Astra 6':'var(--astra)','Astra 6.2':'var(--bad)'};
+const rlabel=r=>`${r.teacher} · ${r.student} · 第 ${r.seed+1} 次`;
+const prim=r=>r.task==='t2'?'test_fresh':'taught';
+const baseOf=r=>SUM.base[r.task+'|'+r.student_tag];
+function runTable(runs){if(!runs.length)return '<p class="note">还没有运行。</p>';
+ return `<table><tr><th>运行</th><th>状态</th><th class="num">步数</th><th>保留的编辑</th><th>隐藏验证</th><th class="num">隐藏测试（主指标）</th><th class="num">提升</th><th>副作用检查</th><th class="num">学生 token</th></tr>`+runs.map(r=>{
+  const b=baseOf(r),k=prim(r),e=r.eval&&r.eval.sets[k],b0=b&&b.sets[k];
+  const d=e&&b0?(e.acc-b0.acc):null,sig=e&&b0?(e.lo>b0.hi?'区间不重叠':(e.hi<b0.lo?'显著下降':'误差范围内')):'';
+  const rolled=r.edits.filter(x=>x.rolled_back).length,rej=r.edits.filter(x=>!x.accepted).length;
+  const ret=r.eval&&r.eval.retention,br=b&&b.retention;
+  return `<tr><td><b style="color:${TCOL[r.teacher]||'inherit'}">${r.teacher}</b> · ${r.student}<span class="sub">第 ${r.seed+1} 次${r.note?' · '+esc(r.note):''}</span></td>
+  <td class="st-${r.status}">${STN[r.status]}${r.status==='running'&&r.idle_min!=null?`<span class="sub">${r.idle_min} 分钟前有动作</span>`:''}${r.wall_min?`<span class="sub">用时 ${r.wall_min} 分钟</span>`:''}</td>
+  <td class="num">${r.calls}${r.restarts?`<span class="sub">重启 ${r.restarts} 次</span>`:''}</td>
+  <td>${r.kept} 个${rolled||rej?`<span class="sub">${rolled?'撤回 '+rolled+' 个 ':''}${rej?'被拒 '+rej+' 个':''}</span>`:''}${r.values?`<span class="sub">${r.values.toLocaleString()} 个数值</span>`:''}</td>
+  <td>${r.exams.length?r.exams.map(x=>x[1]+'%').join(' → '):'还没查'}</td>
+  <td class="num">${e?`${b0?b0.acc+'% → ':''}<b>${e.acc}%</b><span class="sub">区间 ${e.lo}–${e.hi}</span>`:(r.status==='void'?'—':(r.status==='running'?'运行中':(r.kept===0?'没有保留编辑<span class="sub">等同未编辑</span>':'评测中')))}</td>
+  <td class="num">${d!=null?`<b>${d>=0?'+':''}${d.toFixed(1)}</b><span class="sub">${sig}</span>`:''}</td>
+  <td>${ret?`困惑度 ${br?br.ppl+' → ':''}${ret.ppl}<span class="sub">ARC ${ret.arc}% · HellaSwag ${ret.hs}% · 算术 ${ret.arith}%</span>`:''}</td>
+  <td class="num">${(r.fwd/1e6).toFixed(2)}M 前向${r.bwd?`<span class="sub">${(r.bwd/1e6).toFixed(2)}M 反向</span>`:''}${r.mem?`<span class="sub">显存比 ${r.mem}</span>`:''}</td></tr>`}).join('')+'</table>'}
+function forest(task,setKey,stuTag,el,noteEl){const runs=SUM.runs.filter(r=>r.task===task&&r.student_tag===stuTag&&r.eval&&r.eval.sets[setKey]);const b=SUM.base[task+'|'+stuTag];
+ if(!b||!b.sets[setKey]){el.innerHTML='<p class="note">这个学生的未编辑基线还在评测中，暂时无法画图。</p>';noteEl.textContent='';return}
+ const b0=b.sets[setKey],rows=[{lab:'未编辑',e:b0,col:'var(--base)'}].concat(runs.map(r=>({lab:`${r.teacher} 第 ${r.seed+1} 次${r.status==='interrupted'?'（被中断）':''}`,e:r.eval.sets[setKey],col:TCOL[r.teacher]||'var(--ink)'})));
+ const max=Math.min(100,Math.ceil((Math.max(...rows.map(r=>r.e.hi))+5)/10)*10),W=920,L=230,Rr=70,rh=34,T=26,H=T+rows.length*rh+10,x=v=>L+(W-L-Rr)*v/max;
+ let g=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="各次运行的正确率和置信区间">`;
+ for(let v=0;v<=max;v+=10)g+=`<line x1="${x(v)}" x2="${x(v)}" y1="${T-4}" y2="${H-8}" stroke="var(--line)" stroke-width="1"/><text x="${x(v)}" y="14" text-anchor="middle" font-size="12" fill="var(--muted)">${v}%</text>`;
+ g+=`<rect x="${x(b0.lo)}" y="${T-4}" width="${x(b0.hi)-x(b0.lo)}" height="${H-T-4}" fill="var(--base)" fill-opacity=".16"/><line x1="${x(b0.acc)}" x2="${x(b0.acc)}" y1="${T-4}" y2="${H-8}" stroke="var(--base)" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+ rows.forEach((r,i)=>{const y=T+i*rh+rh/2;g+=`<text x="${L-12}" y="${y+4}" text-anchor="end" font-size="13" fill="var(--ink)">${r.lab}</text><line x1="${x(r.e.lo)}" x2="${x(r.e.hi)}" y1="${y}" y2="${y}" stroke="${r.col}" stroke-width="3"/><circle cx="${x(r.e.acc)}" cy="${y}" r="6" fill="${r.col}"><title>${r.e.acc}%（95% 区间 ${r.e.lo}–${r.e.hi}，${r.e.n} 题）</title></circle><text x="${x(r.e.hi)+8}" y="${y+4}" font-size="12" fill="var(--ink)" font-family="JetBrains Mono,monospace">${r.e.acc}</text>`});
+ el.innerHTML=g+'</svg>';noteEl.textContent=runs.length?`灰色带是未编辑学生的 95% 置信区间（${b0.lo}–${b0.hi}%）。共 ${runs.length} 次已评测的运行。`:'这个学生上还没有评测完的运行。'}
+const SETN={t2:[['test_fresh','新出题目（300 道，主指标）'],['test_bbh','BBH 原题（750 道）'],['test_ood','更难题目（150 道）']],t1:[['taught','教过的 8 种评分（160 题，主指标）'],['untaught','没教过的 11 种评分（220 题）'],['all','全部（380 题）']]};
+function setupTask(task){const stus=[...new Set(SUM.runs.filter(r=>r.task===task).map(r=>r.student_tag))].sort((x,y)=>(SUM.base[task+'|'+y]?1:0)-(SUM.base[task+'|'+x]?1:0));const st={set:0,stu:0};
+ const draw=()=>forest(task,SETN[task][st.set][0],stus[st.stu],$(task+'Forest'),$(task+'Note'));
+ seg($(task+'Set'),SETN[task].map(x=>x[1]),i=>{st.set=i;draw()});
+ seg($(task+'Stu'),stus.map(t=>'学生：'+((SUM.runs.find(r=>r.student_tag===t)||{}).student||t)),i=>{st.stu=i;draw()});
+ $(task+'Table').innerHTML=runTable(SUM.runs.filter(r=>r.task===task))}
+const MCZH={'CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk':'CHA2DS2-VASc（房颤卒中风险）','CURB-65 Score for Pneumonia Severity':'CURB-65（肺炎严重程度）','Centor Score (Modified/McIsaac) for Strep Pharyngitis':'Centor（链球菌咽炎）','Child-Pugh Score for Cirrhosis Mortality':'Child-Pugh（肝硬化）','HAS-BLED Score for Major Bleeding Risk':'HAS-BLED（出血风险）','PERC Rule for Pulmonary Embolism':'PERC（排除肺栓塞）','SIRS Criteria':'SIRS（全身炎症反应）',"Wells' Criteria for Pulmonary Embolism":'Wells（肺栓塞）','APACHE II Score':'APACHE II','Caprini Score for Venous Thromboembolism (2005)':'Caprini（静脉血栓）','Charlson Comorbidity Index (CCI)':'Charlson 合并症指数','FeverPAIN Score for Strep Pharyngitis':'FeverPAIN（咽炎）','Glasgow Coma Score (GCS)':'Glasgow 昏迷评分','Glasgow-Blatchford Bleeding Score (GBS)':'Glasgow-Blatchford（出血）','HEART Score for Major Cardiac Events':'HEART（心脏事件）','PSI Score: Pneumonia Severity Index for CAP':'PSI（肺炎严重指数）','Revised Cardiac Risk Index for Pre-Operative Risk':'修订心脏风险指数','Sequential Organ Failure Assessment (SOFA) Score':'SOFA（器官衰竭）',"Wells' Criteria for DVT":'Wells（深静脉血栓）'};
+function mcBars(keys,b,a){return keys.map(k=>{const nm=MCZH[k.slice(k.indexOf('/')+1)]||k,bv=b&&b[k]?Math.round(b[k].acc/5):0,av=Math.round(a[k].acc/5);return `<div style="margin-bottom:9px"><div style="font-size:13px;display:flex;justify-content:space-between;gap:8px"><span>${nm}</span><span class="mono" style="color:var(--muted)">${bv} → ${av} / 20</span></div><div style="height:7px;background:var(--soft);border-radius:2px;margin-top:3px"><div style="height:7px;width:${bv*5}%;background:var(--base);border-radius:2px"></div></div><div style="height:7px;background:var(--soft);border-radius:2px;margin-top:2px"><div style="height:7px;width:${av*5}%;background:var(--fable);border-radius:2px"></div></div></div>`}).join('')}
+function setupMc(){const runs=SUM.runs.filter(r=>r.task==='t1'&&r.eval);const sel=$('mcSel');sel.innerHTML=runs.map((r,i)=>`<option value="${i}">${rlabel(r)}</option>`).join('');
+ const show=i=>{const r=runs[i];if(!r){$('mcSum').textContent='还没有评测完的运行。';return}const b=baseOf(r),e=r.eval.sets,g=r.eval.groups,ks=Object.keys(g);
+  $('mcSum').textContent=`教过的 ${b?b.sets.taught.acc+'% → ':''}${e.taught.acc}%；没教过的 ${b?b.sets.untaught.acc+'% → ':''}${e.untaught.acc}%。${r.calls} 步，保留 ${r.kept} 个编辑${r.values?'，改动 '+r.values.toLocaleString()+' 个数值':''}。${r.note||''}`;
+  $('mcT').innerHTML=mcBars(ks.filter(k=>k.startsWith('taught/')),b&&b.groups,g);$('mcU').innerHTML=mcBars(ks.filter(k=>k.startsWith('untaught/')),b&&b.groups,g)};
+ sel.onchange=()=>show(+sel.value);show(0)}
+function setupArchive(){const runs=SUM.runs.filter(r=>r.task===TAB&&r.calls>0);const sel=$('arSel');sel.innerHTML=runs.map(r=>`<option value="${r.name}">${rlabel(r)}（${STN[r.status]}，${r.calls} 步${r.caps?'，有中文说明':''}）</option>`).join('');
+ arKey=runs.length?runs[0].name:null;sel.onchange=()=>{arKey=sel.value;renderAr()};renderAr()}
+function setupBase(){const P=SUM.pilots,tn={ddx:'疾病诊断',code:'编程',math:'数学'};const tags=Object.keys(P);
+ $('pilotTable').innerHTML=tags.length?`<table><tr><th>学生</th>${Object.values(tn).map(t=>`<th class="num">${t}</th>`).join('')}</tr>`+tags.map(t=>`<tr><td>${t}</td>${Object.keys(tn).map(k=>{const v=P[t][k];return `<td class="num">${v?(v.acc*100).toFixed(1)+'%'+(v.regraded?' *':'')+(v.stale?' †':''):'—'}</td>`}).join('')}</tr>`).join('')+'</table>':'<p class="note">还没有结果。</p>';
+ const B=SUM.base,keys=Object.keys(B);const stus=[...new Set(keys.map(k=>k.split('|').slice(1).join('|')))];
+ const cell=(t,s2,k)=>{const b=B[t+'|'+s2];return `<td class="num">${b&&b.sets[k]?b.sets[k].acc+'%':'—'}</td>`};
+ $('baseTable').innerHTML=`<table><tr><th>学生</th><th class="num">追踪 · 新出题目</th><th class="num">追踪 · BBH 原题</th><th class="num">追踪 · 更难题目</th><th class="num">医疗 · 教过的 8 种</th><th class="num">医疗 · 没教过的 11 种</th></tr>`+stus.map(s2=>`<tr><td>${s2.replace('|bf16','（半精度）')}</td>${cell('t2',s2,'test_fresh')}${cell('t2',s2,'test_bbh')}${cell('t2',s2,'test_ood')}${cell('t1',s2,'taught')}${cell('t1',s2,'untaught')}</tr>`).join('')+'</table>';
+ const q=SUM.queue;$('bigQueue').innerHTML=`计划测试的学生：${q.big_pending.join('、')}。`+(q.big.length?'<br>进度记录：'+q.big.map(esc).join('；'):'<br>还没有开始。')}
+function setupHome(){$('homeGen').textContent='数据生成时间：'+SUM.generated+'。主指标：物体追踪是新出题目的正确率，医疗评分是教过的 8 种评分的正确率。';
+ const order={t1:0,t2:1};const runs=[...SUM.runs].sort((a,b)=>(order[a.task]-order[b.task])||a.student.localeCompare(b.student)||a.teacher.localeCompare(b.teacher)||a.seed-b.seed);
+ $('homeTable').innerHTML=['t1','t2'].map(t=>`<h3 style="margin-top:14px">${t==='t1'?'医疗评分（MedCalc）':'物体追踪'}</h3>`+runTable(runs.filter(r=>r.task===t))).join('');
+ const TN={'gpt-6-astra':'Astra 6','gpt-6.2-astra':'Astra 6.2','claude-fable-5-2':'Fable 5.2'},launched=new Set(SUM.runs.map(r=>r.name));
+ const pend=SUM.queue.pending.filter(p=>!launched.has(`${p[1]}__${p[2].split('/').pop()}__${p[3]}__s${p[4]}`));
+ $('homeQueue').textContent='排队等待启动：'+(pend.length?pend.map(p=>`${p[1]==='t1'?'医疗评分':'物体追踪'} · ${TN[p[3]]||p[3]} · ${p[2].split('/').pop()}`).join('；'):'无')+'。'}
+function showTab(t){TAB=TABN.some(x=>x[0]===t)?t:'home';document.querySelectorAll('section[data-tab]').forEach(el=>el.classList.toggle('on',el.dataset.tab.split(' ').includes(TAB)));
+ [...$('nav').querySelectorAll('button')].forEach(b=>b.setAttribute('aria-pressed',b.dataset.t===TAB));if(SUM&&(TAB==='t1'||TAB==='t2'))setupArchive();
+ try{if(location.hash.slice(1)!==TAB)history.replaceState(null,'','#'+TAB)}catch(e){}}
+(function(){const nav=$('nav');nav.innerHTML=TABN.map(x=>`<button type="button" data-t="${x[0]}">${x[1]}</button>`).join('')+'<span class="gen" id="navGen"></span>';
+ nav.querySelectorAll('button').forEach(b=>b.onclick=()=>{showTab(b.dataset.t);window.scrollTo(0,0)});showTab(location.hash.slice(1)||'home');
+ window.addEventListener('hashchange',()=>showTab(location.hash.slice(1)||'home'));
+ fetch('site/summary.json').then(r=>r.json()).then(d=>{SUM=d;$('navGen').textContent='数据更新于 '+d.generated;setupHome();setupTask('t2');setupTask('t1');setupMc();setupBase();if(TAB==='t1'||TAB==='t2')setupArchive()})
+  .catch(e=>{$('homeTable').innerHTML='<p class="note">数据文件没有加载成功，请刷新页面重试。</p>'})})();
+</script>
