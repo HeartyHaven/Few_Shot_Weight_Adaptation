@@ -56,6 +56,8 @@ def prefix_fn(task):
 def questions(task):
     dev = [json.loads(l) for l in open(os.path.join(ROOT, "data", task, "dev.jsonl"))]
     rng = random.Random(9393); own = []
+    if task != "t2":                      # t1: only the 100 dev cases (no generator for new patient notes)
+        return dev
     for n, c in ((3, 60), (5, 120), (7, 120)):
         own += [D.make_item(rng, n, None, f"own-{n}-{i}") for i in range(c)]
     return dev + own
@@ -81,7 +83,8 @@ def main():
         from vllm import LLM, SamplingParams
         from vllm.inputs import TokensPrompt
         llm = LLM(model=a.student, dtype="bfloat16", gpu_memory_utilization=a.mem, max_model_len=4096, seed=a.seed)
-        ps = [TokensPrompt(prompt_token_ids=tok.encode(render(tok, a.student, PROC[a.task] + G.format_prompt(q)), add_special_tokens=False)) for q in qs]
+        pf = prefix_fn(a.task)
+        ps = [TokensPrompt(prompt_token_ids=tok.encode(render(tok, a.student, pf(q) + G.format_prompt(q)), add_special_tokens=False)) for q in qs]
         outs = llm.generate(ps, SamplingParams(n=a.k, temperature=0.8, max_tokens=768, seed=a.seed))
         n_ok = 0
         with open(os.path.join(out, "samples.jsonl"), "w") as f:
@@ -96,11 +99,11 @@ def main():
     from transformers import AutoModelForCausalLM, get_cosine_schedule_with_warmup
     from peft import LoraConfig, get_peft_model
     torch.manual_seed(a.seed)
-    byid = {q["id"]: q for q in qs}
+    byid = {q["id"]: q for q in qs}; pf = prefix_fn(a.task)
     exs = []
     for l in open(os.path.join(out, "samples.jsonl")):
         s = json.loads(l); q = byid[s["id"]]
-        t_prompt = tok.encode(render(tok, a.student, PROC[a.task] + G.format_prompt(q)), add_special_tokens=False)
+        t_prompt = tok.encode(render(tok, a.student, pf(q) + G.format_prompt(q)), add_special_tokens=False)
         s_prompt = tok.encode(render(tok, a.student, G.format_prompt(q)), add_special_tokens=False)
         reply = tok.encode(s["reply"], add_special_tokens=False) + [tok.convert_tokens_to_ids("<end_of_turn>") if "gemma" in a.student.lower() else tok.convert_tokens_to_ids("<|im_end|>")]
         exs.append((t_prompt, s_prompt, reply))

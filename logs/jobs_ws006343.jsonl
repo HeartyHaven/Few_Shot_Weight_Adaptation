@@ -41,3 +41,21 @@
 {"id": "sample_B5__t2__Qwen3-1.7B__s0", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t2 --student Qwen/Qwen3-1.7B --mem 0.45"}
 {"id": "train_B5__t2__Qwen3-1.7B__s0", "mem": 30, "after": ["sample_B5__t2__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.baseline_bake train --task t2 --student Qwen/Qwen3-1.7B"}
 {"id": "eval_B5__t2__Qwen3-1.7B__s0", "mem": 20, "after": ["train_B5__t2__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t2 --student Qwen/Qwen3-1.7B --lora baselines/B5__t2__Qwen3-1.7B__s0/adapter --name B5__t2__Qwen3-1.7B__s0 --mem 0.3"}
+{"id": "vbase_t1_Qwen3-4B", "mem": 22, "wait_file": "cache/hf/hub/models--Qwen--Qwen3-4B/.complete", "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --mem 0.4"}
+{"id": "train_B2__t1__Qwen3-4B__s0", "mem": 40, "wait_file": "cache/hf/hub/models--Qwen--Qwen3-4B/.complete", "cmd": "$PY -m tdwa.baseline_lora --task t1 --student Qwen/Qwen3-4B --data few --seed 0"}
+{"id": "eval_B2__t1__Qwen3-4B__s0", "mem": 22, "after": ["train_B2__t1__Qwen3-4B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B2__t1__Qwen3-4B__s0/adapter --name B2__t1__Qwen3-4B__s0 --mem 0.4"}
+{"id": "train_B2__t1__Qwen3-4B__s1", "mem": 40, "wait_file": "cache/hf/hub/models--Qwen--Qwen3-4B/.complete", "cmd": "$PY -m tdwa.baseline_lora --task t1 --student Qwen/Qwen3-4B --data few --seed 1"}
+{"id": "eval_B2__t1__Qwen3-4B__s1", "mem": 22, "after": ["train_B2__t1__Qwen3-4B__s1"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B2__t1__Qwen3-4B__s1/adapter --name B2__t1__Qwen3-4B__s1 --mem 0.4"}
+{"id": "train_B2__t1__Qwen3-4B__s2", "mem": 40, "wait_file": "cache/hf/hub/models--Qwen--Qwen3-4B/.complete", "cmd": "$PY -m tdwa.baseline_lora --task t1 --student Qwen/Qwen3-4B --data few --seed 2"}
+{"id": "eval_B2__t1__Qwen3-4B__s2", "mem": 22, "after": ["train_B2__t1__Qwen3-4B__s2"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B2__t1__Qwen3-4B__s2/adapter --name B2__t1__Qwen3-4B__s2 --mem 0.4"}
+{"id": "train_B4__t1__Qwen3-4B__s0", "mem": 44, "wait_file": "cache/hf/hub/models--Qwen--Qwen3-4B/.complete", "cmd": "$PY -m tdwa.baseline_lora --task t1 --student Qwen/Qwen3-4B --data full"}
+{"id": "eval_B4__t1__Qwen3-4B__s0", "mem": 22, "after": ["train_B4__t1__Qwen3-4B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B4__t1__Qwen3-4B__s0/adapter --name B4__t1__Qwen3-4B__s0 --mem 0.4"}
+{"id": "b1_t1_gemma-3-1b-it", "mem": 22, "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student google/gemma-3-1b-it --b1 --name B1__t1__gemma-3-1b-it__vllm --mem 0.4"}
+{"id": "b1_t1_Qwen3-1.7B", "mem": 22, "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-1.7B --b1 --name B1__t1__Qwen3-1.7B__vllm --mem 0.4"}
+{"id": "b1_t1_Qwen3-4B", "mem": 22, "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --b1 --name B1__t1__Qwen3-4B__vllm --mem 0.4"}
+{"id": "sample_B5__t1__Qwen3-4B__s0", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t1 --student Qwen/Qwen3-4B --k 8 --mem 0.45"}
+{"id": "train_B5__t1__Qwen3-4B__s0", "mem": 40, "after": ["sample_B5__t1__Qwen3-4B__s0"], "cmd": "$PY -m tdwa.baseline_bake train --task t1 --student Qwen/Qwen3-4B"}
+{"id": "eval_B5__t1__Qwen3-4B__s0", "mem": 22, "after": ["train_B5__t1__Qwen3-4B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-4B --lora baselines/B5__t1__Qwen3-4B__s0/adapter --name B5__t1__Qwen3-4B__s0 --mem 0.4"}
+{"id": "sample_B5__t1__Qwen3-1.7B__s0", "mem": 24, "cmd": "$PY -m tdwa.baseline_bake sample --task t1 --student Qwen/Qwen3-1.7B --k 8 --mem 0.45"}
+{"id": "train_B5__t1__Qwen3-1.7B__s0", "mem": 40, "after": ["sample_B5__t1__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.baseline_bake train --task t1 --student Qwen/Qwen3-1.7B"}
+{"id": "eval_B5__t1__Qwen3-1.7B__s0", "mem": 22, "after": ["train_B5__t1__Qwen3-1.7B__s0"], "cmd": "$PY -m tdwa.evaluate_vllm --task t1 --student Qwen/Qwen3-1.7B --lora baselines/B5__t1__Qwen3-1.7B__s0/adapter --name B5__t1__Qwen3-1.7B__s0 --mem 0.4"}
