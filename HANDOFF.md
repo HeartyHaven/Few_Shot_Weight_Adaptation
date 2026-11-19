@@ -106,3 +106,4 @@ superaris report /mnt/data2/users/lang.gao/Few_Shot_Weight_Adaptation --id wp0-p
 **验收**：在本机用 `python3 -m http.server` 打开（数据路径用相对路径），四个部分在“物体追踪 + Gemma 1B”和“医疗评分 + Qwen3 1.7B”两种组合下都正常显示，控制台无报错。完成后：
 `superaris report /mnt/data2/users/lang.gao/Few_Shot_Weight_Adaptation --id atlas-page --outcome completed --message '页面在 outputs/engineer/atlas/atlas.html'`；卡住则 `--outcome blocked` 并写原因。
 - 2026-11-19 13:00（main@ws006343，第二台机器，2×49 GB）：用户要求“灵活调用模型、尽量让 GPU 利用率到 100%、用 vLLM 加速生成”，大文件只放数据盘的项目目录（`cache/`），不写系统盘。数据盘用户配额 1 TB 已接近用满，LoRA 只存适配器。完成 DDX-SPLITS、BL-LORA-FEW、BL-LORA-FULL（结果见 `pilot/BL_LORA.md`：LoRA 任务分数远高于教师编辑，但通用能力全部大幅下降）。Gemma 27B 基线（BASE-G27）正在本机两卡上跑。本机调度：`logs/sched.py` + `logs/jobs_ws006343.jsonl`，环境 `logs/env_ws006343.sh`。
+- 2026-11-19 17:57 用户提供 callback，代理的 Codex 重新登录成功（新凭证在 ~/.cli-proxy-api/），Astra 6 和 Astra 6.2 恢复可用。登录时因 1455 端口被用户自己的 Codex 占用，用 -oauth-callback-port 1458 起本地监听、手动转交 callback。Qwen3-4B 上 Astra 6 重新排队。
