@@ -1,0 +1,97 @@
+{
+ "run": "t1__gemma-3-1b-it__gpt-6-astra__s1",
+ "summary_zh": "教师认为学生编造计算器定义，而且即使给出规则也不会组合执行（如把98当成小于95、数错年龄档），基线只有4/100，给规则后也只有5/100。它只改了最后一层（第25层）MLP的输出权重，用闭式解把答案位置的激活直接导向正确的数字分数和结束符。最终开发集93/100但隐藏验证只有22.5%，教师承认这只是数字读出的联想记忆，不是学会了临床计算。",
+ "items": [
+  {
+   "label": "L20 MLP",
+   "layer": 20,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "回答位置的MLP输入里部分含有分数信息，是线性解码效果最好的层之一",
+   "evidence_zh": "四折线性解码金标准分数达到23–27%，而生成答案只有4%，最佳层为20/23",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 7,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L23 MLP",
+   "layer": 23,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "回答位置的MLP输入里部分含有分数信息，是线性解码效果最好的层之一",
+   "evidence_zh": "四折线性解码金标准分数达到23–27%，而生成答案只有4%，最佳层为20/23",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 7,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L25 MLP",
+   "layer": 25,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "最后一层MLP，答案位置已有分数信息但被临床上下文带去写长篇解释",
+   "evidence_zh": "第25层回答位置的键可做24-25%交叉验证线性解码；15个数字照抄全部正确，但最终MLP处上下文选择了散文开头",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 9,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L25 MLP",
+   "layer": 25,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在最终MLP输出上直接加反归一化的数字方向，测试能否推出目标数字",
+   "evidence_zh": "强度5/10/20/40的反RMS扰动都没能让目标数字排第一（归一化和残差抵消使其失效），未改权重",
+   "action": "ablated",
+   "edit_ids": [],
+   "step": 9,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "final norm",
+   "layer": null,
+   "kind": "norm",
+   "module": null,
+   "index": null,
+   "role_zh": "最终归一化会抵消直接加在残差上的数字方向，使简单的反嵌入加法无效",
+   "evidence_zh": "检查了最终norm权重；反RMS扰动5/10/20/40均失败，原因记为归一化和残差抵消",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 9,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L25 MLP",
+   "layer": 25,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "数字读出位置：改写后把散文开头换成直接输出数字分数和结束符（四次都是对同一矩阵的替换式改写）",
+   "evidence_zh": "编辑A后验证19.17%，D后22.50%（开发98/100），E后21.67%，最终F（E的增量乘0.95）验证22.50%、开发93/100，PPL从11.5951升到12.2659",
+   "action": "edited",
+   "edit_ids": [1, 2, 3, 4],
+   "step": 13,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L25 MLP",
+   "layer": 25,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "同一读出位置的其他改法（加224个合成病例、按词均值收缩目标）被丢弃",
+   "evidence_zh": "方案B留出只有3/25（12%）且PPL 14.1954（+22.4%）、canary .50，未提交；加强保护后仍12–16%；方案C收缩结果5/25、2/25、2/25，丢弃",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": 18,
+   "source": "curriculum_log"
+  }
+ ]
+}

@@ -1,0 +1,198 @@
+{
+ "run": "t1__Qwen3-1.7B__gpt-6.2-astra__s0",
+ "summary_zh": "教师认为学生常记错规则和分值，即使给了规则也会漏项、把没有的发现算分、比较出错、加总出错。它几乎所有改动都在最后一层（第27层）：把一批不常用的MLP神经元改成门控检测器，让学生自己写出编号的逐条清单（先抄入院数值再给分值词），并把第27层的若干注意力头改成“读取前几位数字”和“汇总分值词”的专用头。最终保留编辑6，验证从18.33%升到44.17%，编辑7、8验证下降被回滚。",
+ "items": [
+  {
+   "label": "L22 MLP",
+   "layer": 22,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "后层MLP激活能区分不同计算器在同一清单位置上的下一个词",
+   "evidence_zh": "前3个共享清单词上，最近同计算器激活胜出：L22为7/8",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 13,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L25 MLP",
+   "layer": 25,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在计算器信息和输出控制之间折中的位置，被选为第一个写入清单的地方",
+   "evidence_zh": "最近同计算器激活胜出：L25为6/8；基线目标词logit差最多26",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 13,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L25 MLP",
+   "layer": 25,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "在第25层输出权重写入正确清单续写的岭回归记忆（未采用）",
+   "evidence_zh": "1倍时几乎不开始写清单，2.5倍时写出“Scoring”后接“the”而非“rule:”；留出第三个词仍差6-10，丢弃",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": 15,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27 MLP",
+   "layer": 27,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "最后一层MLP，到输出的映射最直接，但计算器区分度较低；后来发现它把数字线性外推成全角数字",
+   "evidence_zh": "最近同计算器激活胜出L27为5/8；第27层审查显示注意力标记正确，但线性外推的logit激活了全角数字（如６）",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 13,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27 MLP",
+   "layer": 27,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "对已活跃神经元做线性改写过于分散，几种写法被丢弃",
+   "evidence_zh": "最后一层归一化岭回归在2.1倍时8/8开头正确但ppl 51.17、canary .52；无门控路由器ppl 247；近邻键改进ppl 32.4，均未保留",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": 17,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27 MLP",
+   "layer": 27,
+   "kind": "neurons",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "把最省事的611个神经元清零，检验它们能否被安全挪用",
+   "evidence_zh": "仅把611个最低能耗的L27 MLP神经元置零，ppl 12.28",
+   "action": "ablated",
+   "edit_ids": [],
+   "step": 24,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27 MLP",
+   "layer": 27,
+   "kind": "neurons",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "被挪用的低能耗神经元改成门控检测器：选出计算器和字段、提示抄写数值、写出分值词并做阈值判断（编辑7、8后被回滚到编辑6）",
+   "evidence_zh": "验证依次为22.50%、25.00%、30.83%、38.33%、35.83%、44.17%（编辑6），编辑7为42.50%、编辑8为40.0%，回滚到编辑6",
+   "action": "edited",
+   "edit_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "step": 24,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L27H2/H3",
+   "layer": 27,
+   "kind": "head",
+   "module": "attn",
+   "index": [
+    2,
+    3
+   ],
+   "role_zh": "最后一层的第1组注意力（键值头1）对通用语言不重要，先消融检验",
+   "evidence_zh": "消融最后一层GQA第1组后ppl 11.864，canary与基线相同",
+   "action": "ablated",
+   "edit_ids": [],
+   "step": 88,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27H2/H3",
+   "layer": 27,
+   "kind": "head",
+   "module": "attn",
+   "index": [
+    2,
+    3
+   ],
+   "role_zh": "改成汇总头：在答案位置读取各行分值词，把分值的平均值和个数送给最后的MLP算出总分（编辑7、8中的改动已回滚）",
+   "evidence_zh": "编辑4后验证38.33%（之前30.83%）；最后两条笔记教师强制14/16完全正确，ppl 12.122",
+   "action": "edited",
+   "edit_ids": [
+    4,
+    5,
+    6,
+    7,
+    8
+   ],
+   "step": 88,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L27H0/H1",
+   "layer": 27,
+   "kind": "head",
+   "module": "attn",
+   "index": [
+    0,
+    1
+   ],
+   "role_zh": "数字读取头之一：用固定的相对位置看前1-4个字符，让年龄等数值的各位数字可被阈值判断读取",
+   "evidence_zh": "编辑5后PERC从.20升到.60、Child从.20到.33，但HAS从.67降到.20，总体35.83%低于编辑4",
+   "action": "edited",
+   "edit_ids": [
+    5
+   ],
+   "step": 120,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L27H8/H9",
+   "layer": 27,
+   "kind": "head",
+   "module": "attn",
+   "index": [
+    8,
+    9
+   ],
+   "role_zh": "数字读取头之二：与H0/H1一起提供前1-4位字符的读取",
+   "evidence_zh": "4个局部数字读取器放在2个额外的最后层注意力组中；一个近零键维度使位置选择失效（softmax权重.00086），换成常规维度",
+   "action": "edited",
+   "edit_ids": [
+    5
+   ],
+   "step": 120,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L27H12/H13",
+   "layer": 27,
+   "kind": "head",
+   "module": "attn",
+   "index": [
+    12,
+    13
+   ],
+   "role_zh": "改成证据查找头：从病历中找到对应临床发现的提及（编辑8，已回滚）",
+   "evidence_zh": "预言查询读证据Wells 92%、Centor 75%、Child 75%、CHA 92%；作者挑战集8/12，但官方验证40.0%，回滚",
+   "action": "edited",
+   "edit_ids": [
+    8
+   ],
+   "step": 166,
+   "source": "curriculum_log"
+  }
+ ]
+}

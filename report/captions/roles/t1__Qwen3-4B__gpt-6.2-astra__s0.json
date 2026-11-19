@@ -1,0 +1,123 @@
+{
+ "run": "t1__Qwen3-4B__gpt-6.2-astra__s0",
+ "summary_zh": "教师认为学生的主要问题是编造规则（PERC里算胸痛、把Centor当成心内膜炎评估、Child-Pugh给21分），给了规则后又暴露出取证和给分错误。十次编辑全部在最后一层（第35层）MLP：先把清单位置的输入键绑定到正确规则词，再改成按位置门控、激活有上限的神经元组，让学生自己背出清单、留出空位抄写病人数值再逐条给分。验证从24.17%（编辑1）逐步升到56.67%（编辑10），中间编辑4-6因验证下降被回滚。",
+ "items": [
+  {
+   "label": "L35 MLP",
+   "layer": 35,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "最后一层MLP在清单各位置收到的输入键在不同病例间很稳定，但原模型输出的规则词常常不对",
+   "evidence_zh": "留出病例上教师强制清单的最后MLP键平均余弦.991，而top-1词一致率只有49–69%",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 11,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L35 MLP",
+   "layer": 35,
+   "kind": "neurons",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "先用线性绑定、后用按计算器和位置门控的低活跃神经元组，让学生背出正确清单、在空位抄写病人数值并逐条给分（编辑4、5、6被回滚）",
+   "evidence_zh": "验证依次24.17%、42.5%、49.17%、40.83%（回滚）、48.33%、39.17%（回滚到编辑3）、47.50%、51.67%、52.5%、56.67%（编辑10，68/120）",
+   "action": "edited",
+   "edit_ids": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+   "step": 11,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L35 MLP",
+   "layer": 35,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "几种未采用的方案：所有计算器共用一个开头检测器、以及只用1800列的小规模修补",
+   "evidence_zh": "共用开头检测器在模拟中16条完整轨迹里8条失败，改用分组检测器；1800列方案把性别空位和句号混淆，改为加入硬负例",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": 34,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L12 residual",
+   "layer": 12,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "较早层对逐条给分的校准不如后层",
+   "evidence_zh": "层比较（12/20/27/32/35）显示后层表示更好；最后一层校准使PERC全部判断正确率从.31到.69、CHA从.33到.67",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 64,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L20 residual",
+   "layer": 20,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "中层对逐条给分的校准不如后层",
+   "evidence_zh": "层比较（12/20/27/32/35）显示后层表示更好",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 64,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27 residual",
+   "layer": 27,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "参与比较的后层之一",
+   "evidence_zh": "层比较（12/20/27/32/35）显示后层表示更好",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 64,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L32 residual",
+   "layer": 32,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "参与比较的后层之一",
+   "evidence_zh": "层比较（12/20/27/32/35）显示后层表示更好",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 64,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L35 residual",
+   "layer": 35,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "最后一层里与具体条件相关的激活变化能预测原生分值词的错误，可用来校准逐条给分",
+   "evidence_zh": "留一法下全部判断正确率PERC .31→.69、CHA .33→.67（最后一层残差校准）",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 64,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L35 MLP",
+   "layer": 35,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在执行阶段临时撤掉编辑3的神经元组，检查它是否干扰病人数值的推理：干扰不大，关键在于准确背出规则",
+   "evidence_zh": "同一参考前缀后只在执行阶段撤掉整个编辑，8组中7组的正确数不变（38例）",
+   "action": "ablated",
+   "edit_ids": [],
+   "step": 86,
+   "source": "curriculum_log"
+  }
+ ]
+}

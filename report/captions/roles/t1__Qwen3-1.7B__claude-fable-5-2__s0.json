@@ -1,0 +1,123 @@
+{
+ "run": "t1__Qwen3-1.7B__claude-fable-5-2__s0",
+ "summary_zh": "教师认为学生最主要的问题是不知道各计算器的规则（如把PERC说成5条病史、Child-Pugh里加血小板），其次是逐条执行时比较和映射出错。它主要改第8层MLP的输出权重：在问题里计算器名称的词上写入向量，让学生先背出正确规则清单再逐条套用；另用第27层MLP的一个秩1改动消除字面“Final answer: <number>”的格式错误。官方验证从18.3%升到33.3%，规则基本学会，但阈值比较和类别映射仍未学会。",
+ "items": [
+  {
+   "label": "L3 MLP",
+   "layer": 3,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在计算器名称词上的MLP输出可以控制学生背出哪套规则",
+   "evidence_zh": "在名称词的MLP输出上加优化向量，留出病例教师强制准确率L3为0.92/0.99（Centor/Child-Pugh）",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 20,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L6 MLP",
+   "layer": 6,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在计算器名称词上的MLP输出可以控制学生背出哪套规则",
+   "evidence_zh": "层扫描中L6为0.89/0.99（Centor/Child-Pugh）",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 20,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L10 MLP",
+   "layer": 10,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在计算器名称词上的MLP输出可以控制学生背出哪套规则",
+   "evidence_zh": "层扫描中L10为0.92/0.99（Centor/Child-Pugh）",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 20,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L14 MLP",
+   "layer": 14,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "从这一层起，在名称词上控制背诵规则的效果开始下降",
+   "evidence_zh": "层扫描中L14为0.79/0.96（Centor/Child-Pugh）",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 20,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L18 MLP",
+   "layer": 18,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "较晚的层，在名称词上控制背诵规则的效果明显变差",
+   "evidence_zh": "层扫描中L18为0.60/0.86（Centor/Child-Pugh），因此规则身份在早中层从名称词读出",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 20,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L8 MLP",
+   "layer": 8,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "从问题中计算器名称词读出该用哪套规则；改写后学生先背出正确规则清单和逐条套用的开头",
+   "evidence_zh": "编辑1后开发29/100（基线18），编辑2后验证21.7%，编辑4后30.0%，编辑6（Wells）后33.3%；开发集100条中83条逐字背对规则",
+   "action": "edited",
+   "edit_ids": [1, 2, 4, 5, 6],
+   "step": 70,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L8 MLP",
+   "layer": 8,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "同一位置的其他写法被放弃：只背规则后接“Applying these to the patient:”会让学生每条都给+1；用纠正后的Child-Pugh续写重拟向量也不稳",
+   "evidence_zh": "提案1在开发前34题只有4/34（基线8/34），未提交；Child-Pugh纠正版1/7正确但平均误差5.1（原为2.3），丢弃",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": 56,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27 MLP",
+   "layer": 27,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在“Final answer: <”之后决定输出字面“number”还是数字",
+   "evidence_zh": "在该位置第27层MLP输出上减去300倍“number”反嵌入方向，13/14个留出例子变成数字",
+   "action": "ablated",
+   "edit_ids": [],
+   "step": 92,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L27 MLP",
+   "layer": 27,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "秩1改动：在答案模板处压低“number”、抬高数字，消除无法解析的答案",
+   "evidence_zh": "留出位置28/28变成数字；验证无答案率从9.2%降到0%；守护ppl 12.30，canary 0.91",
+   "action": "edited",
+   "edit_ids": [3],
+   "step": 98,
+   "source": "edit_meta"
+  }
+ ]
+}

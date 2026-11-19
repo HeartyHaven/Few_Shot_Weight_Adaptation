@@ -1,0 +1,123 @@
+{
+ "run": "t1__gemma-3-1b-it__claude-fable-5-2__s0",
+ "summary_zh": "教师认为学生根本不知道这 8 个临床评分规则（基线 3/100，会编造标准），把规则写进提示也没用（6/100），因为它几乎每条都答“是”，而且数值阈值比较做不对。它在第8层 MLP 里改造了 108 个“记忆神经元”（同时改输入门、上投影和输出权重），每个神经元只在答题草稿的某一行特定位置触发，让学生逐行背出各评分的标准和规范的“Is a > b?”比较；整层线性改写和单个向量的方法都因泄漏到无关文本或记不住整条规则被否定。运行因额度用尽中断，没有最终报告。",
+ "items": [
+  {
+   "label": "L8 MLP neurons",
+   "layer": 8,
+   "kind": "neurons",
+   "module": "mlp",
+   "index": [2, 174, 197, 255, 262, 287, 309, 428, 508, 518, 520, 542, 552, 667, 809, 955, 1052, 1155, 1369, 1370, 1397, 1509, 1532, 1699, 1818, 1945, 2052, 2089, 2102, 2118, 2147, 2184, 2212, 2217, 2284, 2315, 2497, 2575, 2600, 2617, 2665, 2772, 2831, 3006, 3061, 3063, 3180, 3197, 3328, 3528, 3559, 3585, 3591, 3635, 3651, 3784, 3946, 3969, 3998, 4041, 4094, 4167, 4229, 4271, 4377, 4398, 4430, 4621, 4678, 4720, 4807, 4919, 4976, 5000, 5053, 5065, 5091, 5099, 5152, 5201, 5202, 5348, 5385, 5472, 5813, 5817, 5901, 5922, 5929, 5938, 5953, 5961, 6048, 6072, 6109, 6153, 6173, 6279, 6291, 6303, 6306, 6398, 6467, 6547, 6594, 6696, 6735, 6877],
+   "role_zh": "把第8层 MLP 中 108 个最不重要的神经元改造成“记忆神经元”：每个只在草稿某一行的特定位置触发，写出该行的评分标准、阈值和规范比较句",
+   "evidence_zh": "留出自有题教师强制固定词准确率 0.98-1.00；开发验证集自由生成 10/50（20%）；在通用/哨兵类文本上激活恰为 0，哨兵 0.57、PPL 11.31",
+   "action": "edited",
+   "edit_ids": [1],
+   "step": 104,
+   "source": "edit_meta"
+  },
+  {
+   "label": "L16 residual stream",
+   "layer": 16,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "数值比较的结果已线性存在于后层残差中，只是没有被读出成 yes/no",
+   "evidence_zh": "决策位置的 ridge 探针 0.96 准确率 / 0.99 AUC，而学生自身读出只有 0.774",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 24,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "final-layer residual stream",
+   "layer": null,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "最终层残差同样含有比较结果，教师据此认为问题在最后的读出",
+   "evidence_zh": "日志中 layer 26 (final) 探针 0.96 / 0.99，学生自身读出 0.774",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 24,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L2-L20 residual stream",
+   "layer": null,
+   "kind": "layer",
+   "module": null,
+   "index": null,
+   "role_zh": "用“用户提问模式减去续写模式”的均值差向量做引导，检验比较能力是否是单一“答题模式”方向",
+   "evidence_zh": "第2到20层引导最好只到 0.72，结论为否定",
+   "action": "ablated",
+   "edit_ids": [],
+   "step": 26,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L25 MLP down_proj",
+   "layer": 25,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "用最后一层 MLP 输出的闭式最小二乘改写来背诵规则，未提交",
+   "evidence_zh": "试验A 留出背诵 0.62→0.97 但 PPL 11.6→7476（漏算了输出后归一化）；试验B 在 PPL 上限内只有 0.90-0.94，自由生成从不开始草稿",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": 31,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L8 MLP",
+   "layer": 8,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "在评分名称词上插入单个类 ROME 目标向量，以及每行一个向量、线性键选择器等早期方案，未提交",
+   "evidence_zh": "单向量首词 0.83-1.0 但留出背诵只 0.78-0.85、自由生成跑偏；每行 ROME 向量修复率 0.81；线性键选择器使哨兵 0.58→0.46",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": 51,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L5 MLP",
+   "layer": 5,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "与 L8、L11 叠加三个 ROME 位置以记住整条规则，过拟合未提交",
+   "evidence_zh": "训练损失 0.22，但留出 NLL 0.56-0.76",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": null,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L11 MLP",
+   "layer": 11,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "叠加 ROME 位置之一，也被试作行记忆的层，均未减少泄漏",
+   "evidence_zh": "三位置叠加留出 NLL 0.56-0.76；第11/14层行记忆的留出泄漏最大值 0.36-0.62",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": null,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L14 MLP",
+   "layer": 14,
+   "kind": "mlp",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "试作放置行记忆的层，未减少对无关文本的泄漏",
+   "evidence_zh": "第11/14层留出泄漏最大值 0.36-0.62",
+   "action": "rejected",
+   "edit_ids": [],
+   "step": null,
+   "source": "curriculum_log"
+  }
+ ]
+}

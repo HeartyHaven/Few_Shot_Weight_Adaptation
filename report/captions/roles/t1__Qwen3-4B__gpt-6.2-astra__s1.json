@@ -1,0 +1,71 @@
+{
+ "run": "t1__Qwen3-4B__gpt-6.2-astra__s1",
+ "summary_zh": "（运行尚未结束，以下为目前进度）教师认为学生主要是编造规则（PERC首字母乱编、CURB里出现溃疡、Wells权重错、Child-Pugh分档错），其次是取证和阈值比较出错。它在最后一层（第35层）MLP里把842个输出能量最低的神经元改成按清单位置门控的检测器，让学生在回答开头自己写出正确的计分清单，再自行对病例取证；早先一次宽泛的线性改写因通用困惑度过高被拒。编辑2后验证从27/120升到62/120。",
+ "items": [
+  {
+   "label": "L20 MLP",
+   "layer": 20,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "中后层MLP输入在清单位置上已能区分计算器",
+   "evidence_zh": "第4个清单词处组内/组间down输入余弦L20为.973/.808",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 13,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L28 MLP",
+   "layer": 28,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "后层MLP输入在清单位置上能区分计算器",
+   "evidence_zh": "第4个清单词处组内/组间余弦L28为.977/.875",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 13,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L35 MLP",
+   "layer": 35,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "最后一层区分度最低，但到输出词的映射可以经最终RMSNorm精确计算，被选为写入位置",
+   "evidence_zh": "组内/组间余弦L35为.982/.951；基线只有63.9%的下一个清单词正确；简单岭回归在留出第六个病例上强制准确率83.6%",
+   "action": "probed",
+   "edit_ids": [],
+   "step": 13,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L35 MLP",
+   "layer": 35,
+   "kind": "mlp",
+   "module": "down_proj",
+   "index": null,
+   "role_zh": "在6144列上做线性插值写入清单词，对通用文本不够有选择性",
+   "evidence_zh": "增益2时自由预览3/8、精确清单3/8，且出现Centor重复和虚构的Wells 3分条目；提交尝试1被拒，PPL 15.7868、canary .95",
+   "action": "rejected",
+   "edit_ids": [1],
+   "step": 14,
+   "source": "curriculum_log"
+  },
+  {
+   "label": "L35 MLP",
+   "layer": 35,
+   "kind": "neurons",
+   "module": "mlp",
+   "index": null,
+   "role_zh": "842个低能量神经元改成按清单位置门控的检测器，让学生在回答开头写出正确的计分清单",
+   "evidence_zh": "留出第六个病例强制准确率97.9%；增益2.5时第7-8个病例15/16清单精确；编辑2后PPL 10.6358、canary .95，验证62/120（之前27/120）",
+   "action": "edited",
+   "edit_ids": [2],
+   "step": 31,
+   "source": "edit_meta"
+  }
+ ]
+}
