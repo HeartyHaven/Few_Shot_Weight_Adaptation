@@ -26,13 +26,14 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("run", nargs="?"); ap.add_argument("--base", action="store_true"); ap.add_argument("--task"); ap.add_argument("--student")
     ap.add_argument("--gpu", default="0"); ap.add_argument("--mem", default="0.28"); ap.add_argument("--keep", action="store_true")
+    ap.add_argument("--b1", action="store_true", help="also put the rule/procedure text before each test question (B1 prompt); result name gets __b1")
     a = ap.parse_args()
     env = dict(ENV, CUDA_VISIBLE_DEVICES=str(a.gpu))
     if a.base:
         snap = glob.glob(os.path.join(HF, "models--" + a.student.replace("/", "--"), "snapshots", "*"))[0]
         name = f"base__{a.task}__{a.student.split('/')[-1]}__vllm32"
         cmd = [VPY, "-m", "tdwa.evaluate_vllm", "--task", a.task, "--student", a.student, "--model-path", snap, "--dtype", "float32",
-               "--mem", a.mem, "--name", name]
+               "--mem", a.mem, "--name", name + ("__b1" if a.b1 else "")] + (["--b1"] if a.b1 else [])
         sys.exit(subprocess.call(cmd, cwd=ROOT, env=env))
     run = os.path.abspath(a.run.rstrip("/")); name = os.path.basename(run)
     cfg = json.load(open(os.path.join(run, "config.json")))
@@ -45,7 +46,7 @@ def main():
             "teacher_usage": cfg.get("teacher_usage"), "turns": cfg.get("turns"), "wall_seconds": cfg.get("wall_seconds"),
             "validation_looks": cfg.get("validation_looks")}
     cmd = [VPY, "-m", "tdwa.evaluate_vllm", "--task", cfg["task"], "--student", cfg["student"], "--model-path", merged, "--dtype", "float32",
-           "--mem", a.mem, "--name", name, "--meta", json.dumps(meta, default=str)]
+           "--mem", a.mem, "--name", name + ("__b1" if a.b1 else ""), "--meta", json.dumps(meta, default=str)] + (["--b1"] if a.b1 else [])
     r = subprocess.call(cmd, cwd=ROOT, env=env)
     if not a.keep:
         shutil.rmtree(merged, ignore_errors=True)
