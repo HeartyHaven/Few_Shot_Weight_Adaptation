@@ -122,14 +122,14 @@ def run():
     ap.add_argument("--max-turns", type=int, default=250); ap.add_argument("--fte-budget", type=int, default=10_000_000)
     ap.add_argument("--val-looks", type=int, default=10); ap.add_argument("--mem-ratio", type=float, default=1.5)
     ap.add_argument("--exec-timeout", type=int, default=1200); ap.add_argument("--token-budget", type=int, default=2_000_000)
-    ap.add_argument("--effort", default="high"); ap.add_argument("--val-max-new-tokens", type=int, default=1024)
+    ap.add_argument("--effort", default="high"); ap.add_argument("--dtype", default="float32"); ap.add_argument("--val-max-new-tokens", type=int, default=1024)
     a = ap.parse_args()
     name = f"{a.task}__{a.student.split('/')[-1]}__{a.teacher}__s{a.seed}"
     run_dir = os.path.join(ROOT, "runs", name)
     if os.path.exists(run_dir):
         sys.exit(f"{run_dir} exists; refusing to overwrite")
     os.makedirs(os.path.join(run_dir, "work")); os.makedirs(os.path.join(run_dir, "exams"))
-    cfg = {"task": a.task, "student": a.student, "teacher": a.teacher, "seed": a.seed, "fte_budget": a.fte_budget, "mem_ratio": a.mem_ratio,
+    cfg = {"task": a.task, "student": a.student, "teacher": a.teacher, "seed": a.seed, "fte_budget": a.fte_budget, "mem_ratio": a.mem_ratio, "dtype": a.dtype,
            "token_budget": a.token_budget, "max_turns": a.max_turns, "val_looks": a.val_looks, "gpu": a.gpu, "exec_timeout": a.exec_timeout,
            "scaffold": "claude -p (headless Claude Code), tools via MCP only", "val_max_new_tokens": a.val_max_new_tokens, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
     json.dump(cfg, open(os.path.join(run_dir, "config.json"), "w"), indent=1)

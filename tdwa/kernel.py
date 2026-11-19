@@ -30,7 +30,8 @@ tok = AutoTokenizer.from_pretrained(CFG["model_dir"])
 tok.padding_side = "left"
 if tok.pad_token is None:
     tok.pad_token = tok.eos_token
-model = AutoModelForCausalLM.from_pretrained(CFG["model_dir"], dtype=torch.float32).cuda().eval()
+DTYPE = getattr(torch, CFG.get("dtype", "float32"))       # float32 for students up to 4B; bfloat16 for 8B+ (memory)
+model = AutoModelForCausalLM.from_pretrained(CFG["model_dir"], dtype=DTYPE).cuda().eval()
 for _p in model.parameters():
     _p.requires_grad_(False)
 IS_QWEN = "qwen" in CFG["student"].lower()
@@ -129,7 +130,7 @@ class _LazyBase:
             cur = p.detach().cpu(); k = alias(n)
             if k is not None:
                 self.key[n] = k
-            if k is None or not torch.equal(self.where[k].get_tensor(k).float(), cur):
+            if k is None or not torch.equal(self.where[k].get_tensor(k).to(cur.dtype), cur):
                 self.ram[n] = cur.clone()
         self.names = [n for n, _ in model.named_parameters()]
 
@@ -140,7 +141,7 @@ class _LazyBase:
         if n in self.ram:
             return self.ram[n]
         if n in self.key:
-            k = self.key[n]; return self.where[k].get_tensor(k).float()
+            k = self.key[n]; return self.where[k].get_tensor(k).to(DTYPE)
         return default
 
     def __getitem__(self, n):
@@ -167,7 +168,7 @@ def _add_bias(site):
     if key in dict(model.named_parameters()):
         return key
     mod = _module(site)
-    p = torch.nn.Parameter(torch.zeros(model.config.hidden_size, device="cuda"), requires_grad=False)
+    p = torch.nn.Parameter(torch.zeros(model.config.hidden_size, device="cuda", dtype=DTYPE), requires_grad=False)
     model.register_parameter(key, p)
 
     def hook(m, i, o):
@@ -255,7 +256,7 @@ def _ledger(**kw):
 
 # ------------------------------------------------------------------ StudentAPI
 class StudentAPI:
-    """Everything the teacher may use. `S.model` / `S.tok` are the raw HF model (float32, on cuda) and tokenizer."""
+    """Everything the teacher may use. `S.model` / `S.tok` are the raw HF model (float32, or bfloat16 for large students; on cuda) and tokenizer."""
     model = model
     tok = tok
     op_classes = OP_CLASSES
