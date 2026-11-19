@@ -12,7 +12,7 @@
 | BL-DISTILL | 对照 B3：用教师写的解题过程做蒸馏 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 19:34 +0400 |  |  |
 | T1-Q4-A62-s2 | 教学运行：MedCalc（第 3 次重复） | Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-19 19:41 +0400 | 进行中：20 步，2 个编辑 |  |
 
-## 已认领（7）
+## 已认领（6）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -22,7 +22,6 @@
 | BL-LORA-Q4 | 对照 B2/B4 扩到 Qwen3 4B 的 MedCalc（与 Astra 6.2 的 4B 教学结果对比） | Qwen3 4B (Qwen/Qwen3-4B) |  | MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 14:58 +0400 |  |  |
 | T3-Q17-A6-s0 | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6 (gpt-6-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 19:42 +0400 | Fable 额度用尽期间用 Astra 填满显卡 |  |
 | SCAFFOLD-CODEX | 框架对照：同一配置下 Astra 6.2 走 Codex 无界面 vs 接口循环（T1 Qwen 1.7B、T2 Gemma 1B 各一次） | Qwen3 1.7B; Gemma 3 1B | Astra 6.2 (gpt-6.2-astra) via codex exec | MedCalc; 物体追踪 | main@ws006343 | 2026-11-19 20:28 +0400 | 检验 Codex 框架下的 4B 结果能否与接口循环结果对比 |  |
-| T3-Q17-A62-s0 | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 20:45 +0400 |  |  |
 
 ## 未开始（可认领）（7）
 
@@ -36,7 +35,7 @@
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
-## 已完成（39）
+## 已完成（40）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -79,6 +78,7 @@
 | ATLAS-ROLES | 从教学日志提取每次运行识别过的部件、教师认为它的作用、证据和处理方式（Opus 子任务） |  |  |  | main@ws006344 | 2026-11-19 11:42 +0400 | 20 次运行、297 个部件条目（Opus 从教学日志提取） | report/site/atlas_roles.json |
 | ATLAS-PAGE | 编辑图谱子页面：逐步可视化每个运行定位和修改的参数，跨教师/运行对照找共性（GPT Astra / engineer 面板编写） |  |  |  | engineer@ws006344 | 2026-11-19 11:50 +0400 | 已接入网站：本地 http://127.0.0.1:8765/atlas.html，线上主报告顶部“编辑图谱”；29 项逻辑检查通过，未做浏览器实测 | report/atlas.html |
 | EVAL-VLLM-WS006344 | 在 ws006344 上装 vLLM，并让教学运行（含编辑后权重）的隐藏测试改用 vLLM；先验证与现有 float32 结果的一致性 |  |  |  | main@ws006344 | 2026-11-19 17:15 +0400 | vLLM 0.11.0 全精度评测可用：与原评测 98% 输出相同、判分 99%+ 相同；Qwen3-4B 一次完整评测约 20 分钟（原来 3 小时以上） | tdwa/eval_fast.py |
+| T3-Q17-A62-s0 | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 20:45 +0400 | 隐藏测试 66.7% → 81.0%（+14.3，区间 77.7–84.0）；直接选答案 60.8% → 81.2%；但三位数算术 49% → 12%（副作用检查只用两位数算术，没拦住），ARC 73.7→69.0；第 46 步因框架漏洞中止 | eval/t3__Qwen3-1.7B__gpt-6.2-astra__s0.json（不在仓库） |
 
 ## 作废（1）
 
