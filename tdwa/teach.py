@@ -9,9 +9,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from tdwa import grade as G  # noqa: E402
 
-HF = "/mnt/data2/users/lang.gao/huggingface_cache"
-VENV = "/mnt/data2/users/lang.gao/Weight_Programming_Eval/.venv"
-USER_ROOT = "/mnt/data2/users/lang.gao"
+HF = os.environ.get("TDWA_HF", "/mnt/data2/users/lang.gao/huggingface_cache")   # per-host override
+VENV = os.environ.get("TDWA_VENV", "/mnt/data2/users/lang.gao/Weight_Programming_Eval/.venv")
+USER_ROOT = os.environ.get("TDWA_USER_ROOT", "/mnt/data2/users/lang.gao")
 
 TASK_TEXT = {
     "t2": ("Object-state tracking. Each item lists N people each holding one object, then a sequence of pairwise swaps, and asks what "

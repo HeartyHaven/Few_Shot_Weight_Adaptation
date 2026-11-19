@@ -2,6 +2,13 @@
 
 记录实验框架（`tdwa/`、排队脚本、报告）的每次改动，以及它影响哪些运行。学生权重的修改记录不在这里，在各运行目录的 `edits/`、`ledger.jsonl` 里。
 
+## 2026-11-19（ws006343，main@ws006343）
+- **路径可按机器配置**（`tdwa/evaluate.py`、`tdwa/teach.py`、`pilot/scripts/baseline2.py`）：`TDWA_HF`、`TDWA_VENV`、`TDWA_USER_ROOT` 环境变量可覆盖原来写死的 `/mnt/data2/...`；不设时与原来完全相同，ws006344 上的运行不受影响。
+- **vLLM 评测**（`tdwa/evaluate_vllm.py`，新增）：与 `evaluate.py` 相同的提示、判分、隐藏测试和保留能力检查，生成用 vLLM（bf16），强制选择用限定选项字母的一步贪心，困惑度用提示 logprob。Gemma 1B 的 T1 隐藏测试与 HF 全精度结果相同（6.3%）。用它测的编辑/LoRA 学生只与同样用它测的基线比较（文件名带 `__vllm`）。
+- **LoRA 对照**（`tdwa/baseline_lora.py`，新增）：B2（100 道真题）、B4（T1 全部 MedCalc 训练集去掉隐藏验证；T2 新生成 5000 题）。超参事先固定，不看验证集调。产出在 `baselines/`（不入库）。
+- **任务 T3：DDXPlus**（`tdwa/data_ddx.py`，新增；`tdwa/grade.py` 加 `t3`，与 T2 同为选项题，5 个选项）：100 道真题 + 150 道隐藏验证（validate.csv）+ 600 道隐藏测试（test.csv，排除了摸底用过的题）。按疾病轮流抽样。教学沙盒（`kernel.py`/`teach.py`）尚未检查是否有只认 T2 的地方。
+- **本机调度**（`logs/sched.py`、`logs/env_ws006343.sh`）：按显存把多个作业装进两张卡；所有缓存和大文件放项目目录下的 `cache/`（数据盘），不写系统盘。
+
 ## 2026-11-18
 - **沙盒崩溃自动重启**（`tdwa/kernel.py`、`tdwa/teach.py`）：教师代码触发显卡错误或超时后，沙盒自动重启，从 `kstate.json` 和 `edits/` 恢复已提交的编辑、新增偏置位置和成本计数；未提交改动和教师的 Python 变量丢失，并在返回信息里告知教师。起因：T2 Fable s1 因显卡索引越界后进程无法恢复而作废。影响：15:00 之后启动的所有运行。
 - **内存占用**（`tdwa/kernel.py`）：不再在 RAM 里保留原始权重和已提交权重两份完整副本。原始权重改为从模型文件按需读取（bf16 转 fp32，与加载结果逐张量核对一致）；已提交状态只保存与原始不同的张量。新沙盒启动时约 6 GB（之前 12–14 GB）。影响：15:09 之后启动的运行。15:02 启动的 T2 Astra 6 s2、T2 Fable s2 用的是只去掉一份副本的中间版本。

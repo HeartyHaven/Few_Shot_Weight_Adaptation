@@ -7,6 +7,8 @@ MODE = {
     "t2": {"free": "Work step by step, then finish with a line 'Final answer: (X)'.",
            "direct": "Answer with only the option letter in parentheses, for example (A)."},
 }
+MODE["t3"] = MODE["t2"]                 # DDXPlus: same multiple-choice answer format (5 options)
+OPT_TASKS = ("t2", "t3")
 NUM = re.compile(r"-?\d+(?:\.\d+)?")
 OPT = re.compile(r"\(([A-I])\)")
 
@@ -20,12 +22,12 @@ def parse(task, text, mode="free"):
     free = mode == "free"
     if free and "final answer" in text.lower():
         tail = text[text.lower().rindex("final answer"):]
-        if task == "t2":
+        if task in OPT_TASKS:
             m = OPT.search(tail) or re.search(r"\b([A-I])\b", tail[len("final answer"):])
             return f"({m.group(1)})" if m else None
         m = NUM.search(tail.replace(",", ""))
         return float(m.group()) if m else None
-    if task == "t2":
+    if task in OPT_TASKS:
         ms = OPT.findall(text)
         if not ms:
             m = re.match(r"\s*([A-I])\b", text)
@@ -38,7 +40,7 @@ def parse(task, text, mode="free"):
 def is_correct(item, pred):
     if pred is None:
         return False
-    if item["task"] == "t2":
+    if item["task"] in OPT_TASKS:
         return pred == item["answer"]
     lo = item.get("lower", float(item["answer"])); hi = item.get("upper", float(item["answer"]))
     return lo <= pred <= hi

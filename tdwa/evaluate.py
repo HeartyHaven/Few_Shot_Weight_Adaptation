@@ -17,7 +17,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 from tdwa import grade as G  # noqa: E402
 
-HF = "/mnt/data2/users/lang.gao/huggingface_cache"
+HF = os.environ.get("TDWA_HF", "/mnt/data2/users/lang.gao/huggingface_cache")   # per-host override
 os.environ.setdefault("HF_HOME", HF)
 
 
@@ -138,8 +138,8 @@ def evaluate(st, task, out_dir):
         t0 = time.time(); f0 = st.fwd
         outs = st.generate([G.format_prompt(it) for it in items], 2048)
         rows = [{"id": it["id"], "group": it["group"], "taught": it.get("taught"), "answer": it["answer"], "output": o, **G.grade(it, o)} for it, o in zip(items, outs)]
-        if task == "t2":
-            fp = st.forced([G.format_prompt(it, "direct") for it in items], [it["n_objects"] for it in items])
+        if task in G.OPT_TASKS:
+            fp = st.forced([G.format_prompt(it, "direct") for it in items], [it.get("n_options") or it["n_objects"] for it in items])
             for r, p, it in zip(rows, fp, items):
                 r["forced_pred"] = p; r["forced_correct"] = p == it["answer"]
         with open(os.path.join(out_dir, name + ".jsonl"), "w") as f:
@@ -147,13 +147,13 @@ def evaluate(st, task, out_dir):
                 f.write(json.dumps(r, ensure_ascii=False) + "\n")
         d = {"free": ci([r["correct"] for r in rows]), "no_final_answer_rate": round(sum(r["pred"] is None for r in rows) / len(rows), 4),
              "mean_output_chars": round(sum(len(r["output"]) for r in rows) / len(rows)), "sec": round(time.time() - t0), "forward_tokens": st.fwd - f0, "by_group": {}}
-        if task == "t2":
+        if task in G.OPT_TASKS:
             d["forced"] = ci([r["forced_correct"] for r in rows])
         keyf = (lambda r: ("taught/" if r["taught"] else "untaught/") + r["group"]) if task == "t1" else (lambda r: r["group"])
         for g in sorted({keyf(r) for r in rows}):
             sub = [r for r in rows if keyf(r) == g]
             d["by_group"][g] = {"free": ci([r["correct"] for r in sub])}
-            if task == "t2":
+            if task in G.OPT_TASKS:
                 d["by_group"][g]["forced"] = ci([r["forced_correct"] for r in sub])
         if task == "t1":
             for k, flag in (("taught", True), ("untaught", False)):

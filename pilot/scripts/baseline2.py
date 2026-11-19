@@ -8,7 +8,7 @@ import ast, json, os, random, re, subprocess, sys, tempfile
 import pandas as pd, torch
 from huggingface_hub import hf_hub_download
 from transformers import AutoModelForCausalLM, AutoTokenizer
-HF = "/mnt/data2/users/lang.gao/huggingface_cache"; os.environ["HF_HOME"] = HF
+HF = os.environ.get("TDWA_HF", "/mnt/data2/users/lang.gao/huggingface_cache"); os.environ["HF_HOME"] = HF
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 repo = sys.argv[1]; N = int(sys.argv[2]) if len(sys.argv) > 2 else 150; tag = repo.split("/")[-1]
 BS = int(os.environ.get("PILOT_BS", "16"))
