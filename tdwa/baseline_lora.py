@@ -1,8 +1,8 @@
 """Gradient baselines B2 (few-shot LoRA on the 100 teacher-visible dev items) and B4 (LoRA on all training data).
 
 Usage: python -m tdwa.baseline_lora --task t1 --student google/gemma-3-1b-it --data few|full [--epochs N]
-Writes baselines/<name>/{config.json, train_log.jsonl, adapter/, merged/}; evaluate afterwards with
-  python -m tdwa.evaluate_vllm --task t1 --student <repo> --model-path baselines/<name>/merged --name <name>
+Writes baselines/<name>/{config.json, train_log.jsonl, adapter/} (+ merged/ with --merge); evaluate afterwards with
+  python -m tdwa.evaluate_vllm --task t1 --student <repo> --lora baselines/<name>/adapter --name <name>
 
 Training targets (assistant turn, loss on the reply only; prompt = the exact evaluation prompt, free mode):
   t1: MedCalc 'Ground Truth Explanation' + "\nFinal answer: <answer>"
@@ -61,7 +61,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--task", required=True); ap.add_argument("--student", required=True); ap.add_argument("--data", choices=["few", "full"], required=True)
     ap.add_argument("--epochs", type=float); ap.add_argument("--lr", type=float, default=2e-4); ap.add_argument("--r", type=int, default=16)
-    ap.add_argument("--max-len", type=int, default=3072); ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--max-len", type=int, default=3072); ap.add_argument("--merge", action="store_true"); ap.add_argument("--seed", type=int, default=0)
     a = ap.parse_args()
     torch.manual_seed(a.seed); random.seed(a.seed)
     tag = a.student.split("/")[-1]; bname = {"few": "B2", "full": "B4"}[a.data]
@@ -115,8 +115,9 @@ def main():
                 rec = {"step": step, "of": steps, "loss": round(loss.item() * accum, 4), "lr": sch.get_last_lr()[0], "sec": round(time.time() - t0)}
                 log.write(json.dumps(rec) + "\n"); log.flush(); print(rec, flush=True)
     model.save_pretrained(os.path.join(out, "adapter"))
-    merged = model.merge_and_unload().to(torch.bfloat16)
-    merged.save_pretrained(os.path.join(out, "merged")); tok.save_pretrained(os.path.join(out, "merged"))
+    if a.merge:                                  # default off: the vLLM evaluator loads the adapter directly (disk quota)
+        merged = model.merge_and_unload().to(torch.bfloat16)
+        merged.save_pretrained(os.path.join(out, "merged")); tok.save_pretrained(os.path.join(out, "merged"))
     json.dump({"baseline": bname, "task": a.task, "student": a.student, "data": a.data, "n_examples": len(exs), "skipped_too_long": skipped,
                "epochs": epochs, "lr": a.lr, "r": a.r, "alpha": 2 * a.r, "batch": bs * accum, "steps": steps, "train_tokens": tokens,
                "backward_token_cost": 3 * tokens, "train_seconds": round(time.time() - t0), "peak_mem_gb": round(torch.cuda.max_memory_allocated() / 2**30, 2),

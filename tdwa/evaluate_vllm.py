@@ -26,11 +26,19 @@ from vllm.inputs import TokensPrompt  # noqa: E402
 
 
 class VStudent:
-    def __init__(self, repo, path=None, tp=1, dtype="bfloat16", mem=0.85, max_len=8192):
+    def __init__(self, repo, path=None, tp=1, dtype="bfloat16", mem=0.85, max_len=8192, lora=None):
         self.repo = repo; src = path or repo
         self.tok = AutoTokenizer.from_pretrained(src)
+        kw = {}
+        if lora:                                   # unmerged LoRA adapter (saves writing a merged copy of the model)
+            from vllm.lora.request import LoRARequest
+            r = json.load(open(os.path.join(lora, "adapter_config.json")))["r"]
+            kw = dict(enable_lora=True, max_lora_rank=max(8, r), max_loras=1)
+            self.lora_req = LoRARequest("adapter", 1, os.path.abspath(lora))
+        else:
+            self.lora_req = None
         self.llm = LLM(model=src, tokenizer=src, tensor_parallel_size=tp, dtype=dtype, gpu_memory_utilization=mem,
-                       max_model_len=max_len, seed=0, enable_prefix_caching=True)
+                       max_model_len=max_len, seed=0, enable_prefix_caching=True, **kw)
         self.fwd = 0
 
     def render(self, user):
@@ -42,7 +50,7 @@ class VStudent:
 
     def generate(self, users, max_new):
         ps = [TokensPrompt(prompt_token_ids=self._ids(self.render(u))) for u in users]
-        outs = self.llm.generate(ps, SamplingParams(temperature=0, max_tokens=max_new), use_tqdm=False)
+        outs = self.llm.generate(ps, SamplingParams(temperature=0, max_tokens=max_new), use_tqdm=False, lora_request=self.lora_req)
         self.fwd += sum(len(p["prompt_token_ids"]) + len(o.outputs[0].token_ids) for p, o in zip(ps, outs))
         return [o.outputs[0].text for o in outs]
 
@@ -50,13 +58,13 @@ class VStudent:
         L = [self.tok.encode(c, add_special_tokens=False)[0] for c in "ABCDEFGHI"]
         ps = [TokensPrompt(prompt_token_ids=self._ids(self.render(u) + "(")) for u in users]
         sp = [SamplingParams(temperature=0, max_tokens=1, allowed_token_ids=L[:n]) for n in n_opts]
-        outs = self.llm.generate(ps, sp, use_tqdm=False)
+        outs = self.llm.generate(ps, sp, use_tqdm=False, lora_request=self.lora_req)
         self.fwd += sum(len(p["prompt_token_ids"]) for p in ps)
         return ["(" + "ABCDEFGHI"[L.index(o.outputs[0].token_ids[0])] + ")" for o in outs]
 
     def ppl(self, text):
         ids = self.tok(text).input_ids             # same ids as HF tok(text) in evaluate.py (special tokens added)
-        o = self.llm.generate([TokensPrompt(prompt_token_ids=ids)], SamplingParams(max_tokens=1, prompt_logprobs=0), use_tqdm=False)[0]
+        o = self.llm.generate([TokensPrompt(prompt_token_ids=ids)], SamplingParams(max_tokens=1, prompt_logprobs=0), use_tqdm=False, lora_request=self.lora_req)[0]
         lp = [d[t].logprob for t, d in zip(ids[1:], o.prompt_logprobs[1:])]
         return math.exp(-sum(lp) / len(lp))
 
@@ -143,11 +151,11 @@ def new_tasks(st, tag, n=150):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--student", required=True); ap.add_argument("--model-path"); ap.add_argument("--task"); ap.add_argument("--name")
+    ap.add_argument("--student", required=True); ap.add_argument("--model-path"); ap.add_argument("--lora"); ap.add_argument("--task"); ap.add_argument("--name")
     ap.add_argument("--tp", type=int, default=1); ap.add_argument("--mem", type=float, default=0.85); ap.add_argument("--new-tasks", action="store_true")
     ap.add_argument("--meta", default="{}", help="extra JSON merged into the output metadata")
     a = ap.parse_args()
-    st = VStudent(a.student, a.model_path, a.tp, mem=a.mem)
+    st = VStudent(a.student, a.model_path, a.tp, mem=a.mem, lora=a.lora)
     tag = a.student.split("/")[-1]
     if a.new_tasks:
         new_tasks(st, tag); return
@@ -155,7 +163,7 @@ def main():
     os.makedirs(os.path.join(ROOT, "eval"), exist_ok=True)
     t0 = time.time()
     res = evaluate(st, a.task, os.path.join(ROOT, "_secret", "eval", name))
-    meta = {"student": a.student, "task": a.task, "edited": a.model_path is not None, "engine": "vllm", "dtype": "bfloat16",
+    meta = {"student": a.student, "task": a.task, "edited": bool(a.model_path or a.lora), "lora": a.lora, "engine": "vllm", "dtype": "bfloat16",
             "model_path": a.model_path, "wall_seconds": round(time.time() - t0), **json.loads(a.meta)}
     json.dump({**meta, "results": res}, open(os.path.join(ROOT, "eval", name + ".json"), "w"), indent=1, default=str)
     print("wrote", os.path.join("eval", name + ".json"))
