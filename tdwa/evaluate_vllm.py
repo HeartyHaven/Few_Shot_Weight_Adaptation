@@ -39,7 +39,7 @@ class VStudent:
             self.lora_req = None
         self.llm = LLM(model=src, tokenizer=src, tensor_parallel_size=tp, dtype=dtype, gpu_memory_utilization=mem,
                        max_model_len=max_len, seed=0, enable_prefix_caching=True,
-                       disable_custom_all_reduce=tp > 1, **kw)   # this host has no GPU P2P: custom all-reduce hangs
+                       disable_custom_all_reduce=tp > 1, enforce_eager=os.environ.get("TDWA_VLLM_EAGER") == "1", **kw)   # this host has no GPU P2P: custom all-reduce hangs
         self.fwd = 0
 
     def render(self, user):
@@ -155,11 +155,11 @@ def new_tasks(st, tag, n=150):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--student", required=True); ap.add_argument("--model-path"); ap.add_argument("--lora"); ap.add_argument("--task"); ap.add_argument("--name")
-    ap.add_argument("--tp", type=int, default=1); ap.add_argument("--mem", type=float, default=0.85); ap.add_argument("--new-tasks", action="store_true")
+    ap.add_argument("--tp", type=int, default=1); ap.add_argument("--mem", type=float, default=0.85); ap.add_argument("--dtype", default="bfloat16", help="float32 keeps small weight edits exactly (use for teaching runs)"); ap.add_argument("--new-tasks", action="store_true")
     ap.add_argument("--b1", action="store_true", help="B1: put the procedure text of tdwa/baseline_bake.PROC before each test question")
     ap.add_argument("--meta", default="{}", help="extra JSON merged into the output metadata")
     a = ap.parse_args()
-    st = VStudent(a.student, a.model_path, a.tp, mem=a.mem, lora=a.lora)
+    st = VStudent(a.student, a.model_path, a.tp, dtype=a.dtype, mem=a.mem, lora=a.lora)
     tag = a.student.split("/")[-1]
     if a.new_tasks:
         new_tasks(st, tag); return
@@ -171,7 +171,7 @@ def main():
         from tdwa.baseline_bake import prefix_fn
         prefix = prefix_fn(a.task)
     res = evaluate(st, a.task, os.path.join(ROOT, "_secret", "eval", name), prefix)
-    meta = {"student": a.student, "task": a.task, "edited": bool(a.model_path or a.lora), "lora": a.lora, "engine": "vllm", "dtype": "bfloat16",
+    meta = {"student": a.student, "task": a.task, "edited": bool(a.model_path or a.lora), "lora": a.lora, "engine": "vllm", "dtype": a.dtype,
             "model_path": a.model_path, "b1_prefix": bool(a.b1), "wall_seconds": round(time.time() - t0), **json.loads(a.meta)}
     json.dump({**meta, "results": res}, open(os.path.join(ROOT, "eval", name + ".json"), "w"), indent=1, default=str)
     print("wrote", os.path.join("eval", name + ".json"))
