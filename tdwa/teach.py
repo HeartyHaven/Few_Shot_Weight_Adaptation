@@ -21,6 +21,10 @@ TASK_TEXT = {
            "calculators you must teach are: CURB-65, SIRS criteria, PERC rule, Wells' criteria for PE, Centor (modified/McIsaac), "
            "Child-Pugh, HAS-BLED and CHA2DS2-VASc. The answer is an integer (Wells: may be x.5). The hidden test covers these 8 and, "
            "as a side-effect check, 11 other calculators you are not asked to teach."),
+    "t3": ("Differential diagnosis from DDXPlus (synthetic patients). Each item gives age, sex and the findings from a structured "
+           "patient interview, and asks which of 5 diseases is most likely (multiple choice, A-E). The options are the true disease "
+           "plus the 4 most likely alternatives from the case's own differential, so distractors are close. There are 49 possible "
+           "diseases; the dev set has about 2 cases per disease, and the hidden test covers the same disease list with new patients."),
 }
 
 SYSTEM = """You are the TEACHER in a research experiment on teaching a small language model by editing its weights directly.
