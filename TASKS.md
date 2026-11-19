@@ -22,7 +22,7 @@
 | BL-LORA-Q4 | 对照 B2/B4 扩到 Qwen3 4B 的 MedCalc（与 Astra 6.2 的 4B 教学结果对比） | Qwen3 4B (Qwen/Qwen3-4B) |  | MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 14:58 +0400 |  |  |
 | T3-Q17-A6-s0 | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6 (gpt-6-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 19:42 +0400 | Fable 额度用尽期间用 Astra 填满显卡 |  |
 
-## 未开始（可认领）（7）
+## 未开始（可认领）（8）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -33,6 +33,7 @@
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
+| SCAFFOLD-CODEX | 框架对照：同一配置下 Astra 6.2 走 Codex 无界面 vs 接口循环（T1 Qwen 1.7B、T2 Gemma 1B 各一次） | Qwen3 1.7B; Gemma 3 1B | Astra 6.2 (gpt-6.2-astra) via codex exec | MedCalc; 物体追踪 |  |  | 检验 Codex 框架下的 4B 结果能否与接口循环结果对比 |  |
 
 ## 已完成（39）
 
