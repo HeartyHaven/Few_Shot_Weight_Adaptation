@@ -39,6 +39,8 @@ def t1_target(it):
 
 
 def load_items(task, which):
+    if which == "distill":                   # B3: teacher-written solutions (tdwa/distill_gen.py), only those that reach the gold answer
+        return [dict(r, explanation=r["solution"]) for r in map(json.loads, open(os.path.join(ROOT, "baselines", "B3_data", task + ".jsonl"))) if r["kept"]]
     if which == "few":
         return [json.loads(l) for l in open(os.path.join(ROOT, "data", task, "dev.jsonl"))]
     if task == "t2":
@@ -59,19 +61,20 @@ def load_items(task, which):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--task", required=True); ap.add_argument("--student", required=True); ap.add_argument("--data", choices=["few", "full"], required=True)
+    ap.add_argument("--task", required=True); ap.add_argument("--student", required=True); ap.add_argument("--data", choices=["few", "full", "distill"], required=True)
     ap.add_argument("--epochs", type=float); ap.add_argument("--lr", type=float, default=2e-4); ap.add_argument("--r", type=int, default=16)
     ap.add_argument("--max-len", type=int, default=3072); ap.add_argument("--merge", action="store_true"); ap.add_argument("--seed", type=int, default=0)
     a = ap.parse_args()
     torch.manual_seed(a.seed); random.seed(a.seed)
-    tag = a.student.split("/")[-1]; bname = {"few": "B2", "full": "B4"}[a.data]
+    tag = a.student.split("/")[-1]; bname = {"few": "B2", "full": "B4", "distill": "B3"}[a.data]
     name = f"{bname}__{a.task}__{tag}__s{a.seed}"; out = os.path.join(ROOT, "baselines", name); os.makedirs(out, exist_ok=True)
-    epochs = a.epochs or (10 if a.data == "few" else 1)
-    bs, accum = ((8, 1) if a.task == "t2" else (2, 4)) if a.data == "few" else (2, 8)   # t1 prompts are long; Gemma vocab is 262k
+    epochs = a.epochs or {"few": 10, "full": 1, "distill": 5}[a.data]
+    bs, accum = ((8, 1) if a.task == "t2" else (2, 4)) if a.data in ("few", "distill") else (2, 8)   # t1 prompts are long; Gemma vocab is 262k
 
     tok = AutoTokenizer.from_pretrained(a.student)
     kw = {"enable_thinking": False} if "qwen" in a.student.lower() else {}
-    items = load_items(a.task, a.data); tgt = t1_target if a.task == "t1" else t2_target
+    items = load_items(a.task, a.data)
+    tgt = (lambda it: it["solution"].strip()) if a.data == "distill" else (t1_target if a.task == "t1" else t2_target)
     exs, skipped = [], 0
     for it in items:
         user = G.format_prompt(it)
