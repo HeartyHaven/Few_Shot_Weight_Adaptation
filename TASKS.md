@@ -1,6 +1,6 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 17:03 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 17:14 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（4）
