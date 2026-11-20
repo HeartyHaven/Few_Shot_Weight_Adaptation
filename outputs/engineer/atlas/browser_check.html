@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>编辑图谱 · 本地浏览器验收</title>
+<link rel="icon" href="data:,">
+<style>
+body{font:14px/1.6 sans-serif;margin:20px;background:#f4f6f8;color:#17212b}
+pre{white-space:pre-wrap}iframe{display:block;border:1px solid #d5dce3;background:white;width:1100px;height:760px;max-width:none}
+.frame{overflow:auto}h1{font-size:22px}#result{font-family:monospace}
+</style>
+<h1>编辑图谱 · 本地浏览器验收</h1>
+<p>只读取同目录的 atlas.html 和相对路径 site/ 数据。测试桌面与手机宽度、两组真实数据、编辑筛选和点击交互；此文件不是交付页面，不需要复制到主报告。</p>
+<pre id="result">正在执行…</pre>
+<div class="frame"><iframe id="app" title="编辑图谱测试实例"></iframe></div>
+<script>
+(async function(){
+  'use strict';
+  const output=document.getElementById('result'),frame=document.getElementById('app'),messages=[];
+  const tick=()=>new Promise(resolve=>setTimeout(resolve,40));
+  function check(name,condition){if(!condition)throw Error(name);messages.push('PASS '+name);output.textContent=messages.join('\n');}
+  async function waitFor(fn){const deadline=Date.now()+20000;while(!fn()){if(Date.now()>deadline)throw Error('等待图谱读取超时');await tick();}}
+  try{
+    const response=await fetch('atlas.html',{cache:'no-store'});check('单文件页面可通过 HTTP 读取',response.ok);
+    let html=await response.text();
+    const diagnostics="window.__qaErrors=[];window.addEventListener('error',e=>window.__qaErrors.push(e.message));window.addEventListener('unhandledrejection',e=>window.__qaErrors.push(String(e.reason)));const originalError=console.error;console.error=(...args)=>{window.__qaErrors.push(args.map(String).join(' '));originalError(...args);};";
+    html=html.replace('<head>','<head><base href="'+new URL('atlas.html',location.href).href+'"><script>'+diagnostics+'<\/script>');
+    frame.srcdoc=html;
+    await waitFor(()=>frame.contentDocument&&frame.contentDocument.documentElement.dataset.ready==='true');
+    const win=frame.contentWindow,doc=frame.contentDocument,$=id=>doc.getElementById(id);
+    function change(id,value){$(id).value=value;$(id).dispatchEvent(new win.Event('change',{bubbles:true}));}
+    for(const [task,student] of [['t2','google/gemma-3-1b-it'],['t1','Qwen/Qwen3-1.7B']]){
+      change('task',task);change('student',student);await tick();
+      check(task+' / '+student+' 筛选有效',$('student').value===student);
+      check('总图、时间线、共性和深度均有内容',['grid','events','common-table','depth-chart'].every(id=>$(id).textContent.trim().length>10));
+      const keptCount=$('events').querySelectorAll('article').length;
+      $('kept').checked=false;$('kept').dispatchEvent(new win.Event('change'));await tick();
+      check('全部尝试不小于最终保留的编辑数',$('events').querySelectorAll('article').length>=keptCount);
+      const cell=$('grid').querySelector('button.has-edit');check('存在可点击的改动格子',!!cell);cell.click();
+      check('点击格子展开运行与编辑详情',!!$('detail').querySelector('.detail-run'));
+      change('sort','roles');check('共性排序后仍显示部件表',!!$('common-table').querySelector('table'));
+      const more=$('common-more');if(!more.hidden)more.click();
+      const raw=$('events').querySelector('details');if(raw){raw.open=true;check('教师原文可展开',raw.textContent.includes('hypothesis'));}
+      for(const width of [1100,390]){
+        frame.style.width=width+'px';await tick();
+        check('页面宽度 '+width+'px 时无整页横向溢出',doc.documentElement.scrollWidth<=doc.documentElement.clientWidth+1);
+        check('网格在独立容器内滚动',win.getComputedStyle($('grid')).overflowX==='auto');
+      }
+      change('theme','dark');check('深色主题已应用',doc.documentElement.dataset.theme==='dark');
+      change('theme','light');
+      $('kept').checked=true;$('kept').dispatchEvent(new win.Event('change'));change('sort','edits');
+    }
+    check('无 JavaScript 异常或 console.error',win.__qaErrors.length===0);
+    const optionalMissing=!$('roles-status').hidden;
+    messages.push(optionalMissing?'NOTE 部分中文定位说明缺失；该状态已在页面提示。':'PASS 中文定位说明已加载。');
+    messages.push('PASS 浏览器验收完成。另请在开发者工具 Network / Console 确认真实数据请求均成功。');
+    output.textContent=messages.join('\n');document.documentElement.dataset.result='passed';
+  }catch(error){messages.push('FAIL '+error.message);output.textContent=messages.join('\n');document.documentElement.dataset.result='failed';}
+})();
+</script>
+</html>
