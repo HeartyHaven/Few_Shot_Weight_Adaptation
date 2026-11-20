@@ -73,11 +73,16 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--task", required=True); ap.add_argument("--model", default="gpt-6.2-astra"); ap.add_argument("--effort", default="medium")
     ap.add_argument("--workers", type=int, default=6); ap.add_argument("--batch", type=int, default=10)
+    ap.add_argument("--style", default="free", choices=["free", "table"], help="table (t2 only): require the full state table after every swap")
     a = ap.parse_args()
     out_dir = os.path.join(ROOT, "baselines", "B3_data"); os.makedirs(out_dir, exist_ok=True)
     dev = [json.loads(l) for l in open(os.path.join(ROOT, "data", a.task, "dev.jsonl"))]
     jobs = []
     fmt = "<number>" if a.task == "t1" else "(X)"
+    style = ("" if a.style == "free" else
+             "REQUIRED FORMAT: first write the initial assignment of every person, then for EVERY swap in order write the full "
+             "assignment of every person after that swap (one line per person), then state what the asked person has and match it "
+             "to the option letter. Do not skip swaps and do not trace backwards.\n\n")
     if a.task == "t2":
         rng = random.Random(7171); own = []
         for n, c in ((3, 60), (5, 120), (7, 120)):
@@ -88,7 +93,7 @@ def main():
     for i in range(0, len(items), a.batch):
         b = items[i:i + a.batch]
         body = "\n\n".join(f"### Problem id={it['id']}\n{G.format_prompt(it)}\nCorrect answer: {it['answer']}" for it in b)
-        jobs.append(("solve", b, SOLVE.format(fmt=fmt) + body))
+        jobs.append(("solve", b, SOLVE.format(fmt=fmt) + style + body))
     if a.task == "t1":                       # 300 teacher-written cases: 38 per calculator (8 x 38 = 304, trimmed to 300)
         per = {cid: 38 for cid in CALCS}
         for cid, n in per.items():
@@ -130,11 +135,11 @@ def main():
                     rows.append({"id": f"own-{j[1]}-{len(rows)}", "source": "teacher_written", "task": "t1", "group": CALCS[j[1]],
                                  "question": f"Patient note:\n{g.get('note', '')}\n\nQuestion: {g.get('question', '')}", "answer": ans, "solution": sol, "kept": ok})
             print(f"{len(rows)} rows, {sum(r['kept'] for r in rows)} kept, {round(time.time() - t0)} s, usage {usage}", flush=True)
-    with open(os.path.join(out_dir, f"{a.task}.jsonl"), "w") as f:
+    with open(os.path.join(out_dir, f"{a.task}{'' if a.style == 'free' else '_' + a.style}.jsonl"), "w") as f:
         for r in rows:
             f.write(json.dumps(r, ensure_ascii=False) + "\n")
     json.dump({"task": a.task, "model": a.model, "effort": a.effort, "calls": len(jobs), "rows": len(rows), "kept": sum(r["kept"] for r in rows),
-               "usage": usage, "seconds": round(time.time() - t0)}, open(os.path.join(out_dir, f"{a.task}_usage.json"), "w"), indent=1)
+               "usage": usage, "seconds": round(time.time() - t0)}, open(os.path.join(out_dir, f"{a.task}{'' if a.style == 'free' else '_' + a.style}_usage.json"), "w"), indent=1)
     print("done", len(rows), sum(r["kept"] for r in rows))
 
 

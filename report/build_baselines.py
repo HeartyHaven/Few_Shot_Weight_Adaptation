@@ -10,7 +10,7 @@ import glob, hashlib, json, os, re, socket, statistics as S, time
 D = os.path.dirname(os.path.abspath(__file__)); ROOT = os.path.dirname(D); SITE = os.path.join(D, "site")
 STUDENT = {"gemma-3-1b-it": "Gemma 3 1B", "Qwen3-1.7B": "Qwen3 1.7B", "Qwen3-4B": "Qwen3 4B", "gemma-3-4b-it": "Gemma 3 4B",
            "Qwen3-8B": "Qwen3 8B", "gemma-3-12b-it": "Gemma 3 12B", "Qwen3-14B": "Qwen3 14B", "gemma-3-27b-it": "Gemma 3 27B"}
-METHOD = {"B0": "未编辑", "B1": "提示：把解题流程写进题目前", "B2": "LoRA：只用 100 道真题", "B3": "蒸馏：教师写解题过程 + LoRA", "B4": "LoRA：全量训练数据",
+METHOD = {"B0": "未编辑", "B1": "提示：把解题流程写进题目前", "B2": "LoRA：只用 100 道真题", "B3": "蒸馏：教师写解题过程 + LoRA", "B3t": "蒸馏（要求逐步写表）+ LoRA", "B4": "LoRA：全量训练数据",
           "B5": "提示烘焙：把流程蒸进 LoRA"}
 SETS = {"t1": ["taught", "untaught", "all"], "t2": ["test_fresh", "test_bbh", "test_ood"], "t3": ["test"]}
 
@@ -43,7 +43,7 @@ def build():
         if name.endswith("__adapter"):            # consistency check run (adapter vs merged), not a separate result
             continue
         tag = e["student"].split("/")[-1]; task = e["task"]
-        m = re.match(r"(B\d)__", name); method = m.group(1) if m else "B0"
+        m = re.match(r"(B\dt?)__", name); method = m.group(1) if m else "B0"
         if method == "B0" and e.get("b1_prefix"):
             method = "B1"
         seed = int(re.search(r"__s(\d+)$", name).group(1)) if re.search(r"__s(\d+)$", name) else None
