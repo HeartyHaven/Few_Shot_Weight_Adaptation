@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 07:15 +0400",
+ "updated": "2026-11-20 07:34 +0400",
  "owners_note": "负责者写成 名字@机器名，例如 main@ws006344",
  "tasks": [
   {
@@ -672,7 +672,7 @@
    "finished_at": null,
    "result": "",
    "output": "",
-   "note": "07:25 GPU0 上测 8B bf16 小测（32 题、1024 token）在默认与 expandable_segments 分配器下的耗时和分配重试次数"
+   "note": "测量（8B bf16，RTX 6000 Ada）：沙盒内 32 题小测 377 秒，分配器零重试，expandable_segments 无改善（396 秒）。沙盒外同样的长提示一样慢：最长 16 题（2573 token）157 ms/步，无填充 98 ms/步，短提示 35 ms/步。慢在长上下文+填充掩码，以及整批要等最长输出到 1024 token。改进方向：连续批处理或按输出提前出队；无 flash-attn 包"
   },
   {
    "id": "ATLAS-DATA",
