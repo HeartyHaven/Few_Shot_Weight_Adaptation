@@ -111,12 +111,19 @@ class Sandbox:
         if self.restarts >= self.max_restarts:
             return False
         self.restarts += 1
-        try:
-            self.proc.kill(); self.proc.wait(timeout=30)
-        except Exception:
-            pass
-        self.proc = self._launch()
-        return bool(self._read(900).get("ready"))
+        # A killed large student can take well over 30 s to release its GPU memory; launching before that makes the new
+        # kernel run out of memory while loading (2026-11-20, Qwen3-14B). Wait longer, and retry the launch a few times.
+        for attempt in range(3):
+            try:
+                self.proc.kill(); self.proc.wait(timeout=300)
+            except Exception:
+                pass
+            if attempt:
+                time.sleep(90)
+            self.proc = self._launch()
+            if self._read(900).get("ready"):
+                return True
+        return False
 
     def _read(self, timeout):
         res = {}
