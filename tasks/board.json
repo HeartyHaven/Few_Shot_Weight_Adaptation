@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 17:15 +0400",
+ "updated": "2026-11-20 17:50 +0400",
  "owners_note": "负责者写成 名字@机器名，例如 main@ws006344",
  "tasks": [
   {
@@ -672,7 +672,7 @@
    "finished_at": null,
    "result": "",
    "output": "",
-   "note": "测量（8B bf16，RTX 6000 Ada）：沙盒内 32 题小测 377 秒，分配器零重试，expandable_segments 无改善（396 秒）。沙盒外同样的长提示一样慢：最长 16 题（2573 token）157 ms/步，无填充 98 ms/步，短提示 35 ms/步。慢在长上下文+填充掩码，以及整批要等最长输出到 1024 token。改进方向：连续批处理或按输出提前出队；无 flash-attn 包"
+   "note": "19:30 试 transformers 5.22 自带连续批处理 generate_batch（Qwen3-1.7B，32 道 MedCalc 题，512 token）：耗时 42 秒对 43 秒无提速，显存 10.9 对 7.0 GB 更高，且仅 1/32 输出与现有 generate 相同，不能直接替换。14B 一次 100 题小测已超过 60 分钟"
   },
   {
    "id": "ATLAS-DATA",
