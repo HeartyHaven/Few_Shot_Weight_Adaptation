@@ -108,3 +108,9 @@ superaris report /mnt/data2/users/lang.gao/Few_Shot_Weight_Adaptation --id wp0-p
 - 2026-11-19 13:00（main@ws006343，第二台机器，2×49 GB）：用户要求“灵活调用模型、尽量让 GPU 利用率到 100%、用 vLLM 加速生成”，大文件只放数据盘的项目目录（`cache/`），不写系统盘。数据盘用户配额 1 TB 已接近用满，LoRA 只存适配器。完成 DDX-SPLITS、BL-LORA-FEW、BL-LORA-FULL（结果见 `pilot/BL_LORA.md`：LoRA 任务分数远高于教师编辑，但通用能力全部大幅下降）。Gemma 27B 基线（BASE-G27）正在本机两卡上跑。本机调度：`logs/sched.py` + `logs/jobs_ws006343.jsonl`，环境 `logs/env_ws006343.sh`。
 - 2026-11-19 17:57 用户提供 callback，代理的 Codex 重新登录成功（新凭证在 ~/.cli-proxy-api/），Astra 6 和 Astra 6.2 恢复可用。登录时因 1455 端口被用户自己的 Codex 占用，用 -oauth-callback-port 1458 起本地监听、手动转交 callback。Qwen3-4B 上 Astra 6 重新排队。
 - 2026-11-19 19:40 新账号的 Fable 周额度也已用尽（重置于 11-22 15:00）：T1 Qwen3-4B Fable s1（53 步）和 T3 Qwen 1.7B Fable s0（30 步）零编辑中断，移入 runs_void/。显卡 0 因此空了约 20 分钟，用户指出后改排 Astra 6.2（T1 Qwen3-4B s2）和 Astra 6（T3 Qwen 1.7B）。在 Fable 恢复前只用 Astra 教学。
+- 2026-11-20 16:00（main@ws006343）：本机工作告一段落，用户要求暂不开新工作。
+  - 完成：全部对照组（B1/B2/B3/B3t/B4/B5，Gemma 1B、Qwen 1.7B、Qwen 4B、Gemma 4B，T1/T2），MMLU/GSM8K 保留检查（RET-FULL 前半），框架对照（Astra 走 Codex 明显弱于接口循环），Gemma 27B 基线，DDXPlus 划分。结果在网页“对照组”标签和 `pilot/BL_LORA.md`。
+  - 关键结论：Qwen3 4B MedCalc 规则类上，提示烘焙 B5 71.6±0.5%（通用能力无损）高于教师编辑 55.6%；物体追踪 B3 失败是因为教师写倒推捷径，要求逐步写表后（B3t）与 B2 持平。
+  - 任务与模型方案：`report/TASK_MODEL_PLAN.md`，已写入用户的项目文档（Experiments → Setup 后三个小节）。主表建议：物体追踪 + MedCalc（规则类 + 公式类）+ MATH Level 5 + CRUXEval-O；学生 Qwen3 1.7B/4B/14B，全部可从 ModelScope 免申请下载。
+  - 未完成：T1-G4 的 Fable 运行（Fable 额度 11-22 15:00 恢复）；Codex 框架是否加“提前结束自动续轮”待用户决定；RET-FULL 的 IFEval 和教师编辑模型的 MMLU/GSM8K。
+  - 本机不提交 `.aris/workbench/context/*/LATEST_PREPARED.md`（远程版本指向 ws006344 路径）。
