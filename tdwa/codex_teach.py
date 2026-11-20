@@ -66,9 +66,11 @@ def main():
     ap.add_argument("--val-looks", type=int, default=10); ap.add_argument("--mem-ratio", type=float, default=1.5)
     ap.add_argument("--exec-timeout", type=int, default=1200); ap.add_argument("--token-budget", type=int, default=2_000_000)
     ap.add_argument("--effort", default="high"); ap.add_argument("--val-max-new-tokens", type=int, default=1024)
+    ap.add_argument("--tag", default="", help="suffix for the run name, e.g. e-low (effort sweep)")
+    ap.add_argument("--web", action="store_true", help="enable Codex web search (web-search condition only)")
     a = ap.parse_args()
     teacher = f"codex-{a.model}"
-    name = f"{a.task}__{a.student.split('/')[-1]}__{teacher}__s{a.seed}"
+    name = f"{a.task}__{a.student.split('/')[-1]}__{teacher}{('_' + a.tag) if a.tag else ''}__s{a.seed}"
     run_dir = os.path.join(ROOT, "runs", name)
     if os.path.exists(run_dir):
         sys.exit(f"{run_dir} exists; refusing to overwrite")
@@ -77,7 +79,7 @@ def main():
            "mem_ratio": a.mem_ratio, "token_budget": a.token_budget, "max_turns": a.max_turns, "val_looks": a.val_looks, "gpu": a.gpu,
            "exec_timeout": a.exec_timeout, "val_max_new_tokens": a.val_max_new_tokens, "effort": a.effort, "host": socket.gethostname(),
            "scaffold": "codex exec (headless Codex CLI) in a mount namespace hiding the project; teaching tools via MCP only (TCP relay); "
-                       "codex shell sandbox read-only, web search off", "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
+                       "codex shell sandbox read-only, web search " + ("on" if a.web else "off"), "web": a.web, "tag": a.tag, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
     json.dump(cfg, open(os.path.join(run_dir, "config.json"), "w"), indent=1)
     n_dev = sum(1 for _ in open(os.path.join(ROOT, "data", a.task, "dev.jsonl")))
     system = SYSTEM.format(student=a.student, task_text=TASK_TEXT[a.task], n_dev=n_dev, val_looks=a.val_looks, mem_ratio=a.mem_ratio,
@@ -100,7 +102,7 @@ def main():
         time.sleep(0.05)
     port = port_box[0]
     codex = ["codex", "exec", "-m", a.model, "--skip-git-repo-check", "--sandbox", "read-only", "--json", "-C", cwd,
-             "-c", f"model_reasoning_effort={a.effort}", "-c", "tools.web_search=false", "-c", "web_search=\"disabled\"",
+             "-c", f"model_reasoning_effort={a.effort}", "-c", "tools.web_search=" + ("true" if a.web else "false"), "-c", "web_search=" + ('"live"' if a.web else '"disabled"'),
              "-c", 'mcp_servers.tdwa.command="/usr/bin/python3"', "-c", f'mcp_servers.tdwa.args=["{relay}","{port}"]',
              "-c", "mcp_servers.tdwa.startup_timeout_sec=900", "-c", 'mcp_servers.tdwa.default_tools_approval_mode="approve"', "-c", "mcp_servers.tdwa.tool_timeout_sec=7500", prompt]
     hide = [h for h in HIDE if os.path.isdir(h)]
