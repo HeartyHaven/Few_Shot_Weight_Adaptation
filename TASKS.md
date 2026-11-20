@@ -1,6 +1,6 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 11:46 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 11:47 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（5）
@@ -11,7 +11,7 @@
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | Astra 6.2 运行在第 46 步因框架漏洞（超长调用被接口拒收）中止，1 个编辑保留，验证 65.3→78.7%，隐藏测试评测中；漏洞已修。Astra 6 运行中 |  |
 | RET-FULL | 更完整的通用能力检查：MMLU、GSM8K、IFEval（lm-eval） |  |  |  | main@ws006343 | 2026-11-20 03:28 +0400 | 第一部分完成：MMLU(1140)+GSM8K(500) 已测 B0/B2/B3/B4/B5（三个学生，s0），结果在网页“对照组”标签。未做：IFEval；教师编辑后的模型（需 HF 加载编辑，记录在 ws006344） |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  | main@ws006344 | 2026-11-20 07:14 +0400 | 测量（8B bf16，RTX 6000 Ada）：沙盒内 32 题小测 377 秒，分配器零重试，expandable_segments 无改善（396 秒）。沙盒外同样的长提示一样慢：最长 16 题（2573 token）157 ms/步，无填充 98 ms/步，短提示 35 ms/步。慢在长上下文+填充掩码，以及整批要等最长输出到 1024 token。改进方向：连续批处理或按输出提前出队；无 flash-attn 包 |  |
-| T1-Q14 | 教学运行：Qwen3 14B 学 MedCalc（检验更大模型是否更可教） | Qwen3 14B (Qwen/Qwen3-14B, https://huggingface.co/Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 09:45 +0400 | 12:20 s0 运行 86 分钟、16 次调用，尚无编辑 |  |
+| T1-Q14 | 教学运行：Qwen3 14B 学 MedCalc（检验更大模型是否更可教） | Qwen3 14B (Qwen/Qwen3-14B, https://huggingface.co/Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 09:45 +0400 | 12:55 s0 运行 116 分钟、23 次调用，零编辑；未编辑隐藏验证 35.8 |  |
 
 ## 已认领（1）
 
