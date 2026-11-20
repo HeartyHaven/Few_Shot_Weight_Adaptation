@@ -1,13 +1,12 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 14:45 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 15:15 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（5）
+## 进行中（4）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
-| T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 01:47 +0400 | 14:55 s2 结束（6 小时、48 次调用、4 次验证）：保留编辑2（第 32 层 down_proj 闭式修改 + 若干新增偏置），隐藏验证 35.8（干净基线 39.2）；隐藏测试评测（HF bf16）已在 GPU0 启动 |  |
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | Astra 6.2 运行在第 46 步因框架漏洞（超长调用被接口拒收）中止，1 个编辑保留，验证 65.3→78.7%，隐藏测试评测中；漏洞已修。Astra 6 运行中 |  |
 | RET-FULL | 更完整的通用能力检查：MMLU、GSM8K、IFEval（lm-eval） |  |  |  | main@ws006343 | 2026-11-20 03:28 +0400 | 第一部分完成：MMLU(1140)+GSM8K(500) 已测 B0/B2/B3/B4/B5（三个学生，s0），结果在网页“对照组”标签。未做：IFEval；教师编辑后的模型（需 HF 加载编辑，记录在 ws006344） |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  | main@ws006344 | 2026-11-20 07:14 +0400 | 测量（8B bf16，RTX 6000 Ada）：沙盒内 32 题小测 377 秒，分配器零重试，expandable_segments 无改善（396 秒）。沙盒外同样的长提示一样慢：最长 16 题（2573 token）157 ms/步，无填充 98 ms/步，短提示 35 ms/步。慢在长上下文+填充掩码，以及整批要等最长输出到 1024 token。改进方向：连续批处理或按输出提前出队；无 flash-attn 包 |  |
@@ -27,7 +26,7 @@
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
-## 已完成（50）
+## 已完成（51）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -66,6 +65,7 @@
 | BASE-G27 | 未编辑基线：Gemma 3 27B（需两张卡） | Gemma 3 27B (google/gemma-3-27b-it) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分); 三个候选新任务：DDXPlus / MBPP / MATH 数论 | main@ws006343 | 2026-11-19 14:58 +0400 | vLLM bf16 两卡：MedCalc 教过的 53.8%/全部 30.8%；追踪 BBH 99.3%；DDXPlus 71.5%；摸底 ddx 70.0 / 编程 84.7 / 数学 84.7 | report/site/baselines.json |
 | BASE-REGRADE-CODE | 用修好的代码提取逻辑重测 Gemma 1B 与 Qwen 1.7B 的编程基线 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | MBPP sanitized | main@ws006344 | 2026-11-19 17:46 +0400 | Gemma 1B：诊断 37.3 / 编程 58.7 / 数学 51.3；Qwen 1.7B：诊断 52.0 / 编程 60.0（原 28.0，代码提取问题已修）/ 数学 75.3 | pilot/out2/ |
 | KERNEL-BF16 | 让沙盒支持半精度学生（8B 以上必需），并检验半精度对微小编辑的影响 |  |  |  | main@ws006344 | 2026-11-20 01:47 +0400 | 沙盒支持 --dtype bfloat16：Qwen3-8B 自检通过（提交/守门/测验/回滚正常，显存峰值 1.05 倍）；修复 bf16 下 SVD 摘要报错 | tdwa/kernel.py |
+| T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 15:15 +0400 | Qwen3-8B（bf16）Astra 6.2 三个种子均无提升：s0 零编辑；s1 已教 48.8→46.9、未教 12.3→13.2；s2 已教 48.8→46.2、未教 12.3→13.2；通用能力不变 | eval/t1__Qwen3-8B__gpt-6.2-astra__s2.json |
 | DDX-SPLITS | 为 DDXPlus 建立 100 道真题 / 隐藏验证 / 隐藏测试划分 |  |  | DDXPlus (aai530-group6/ddxplus) | main@ws006343 | 2026-11-19 11:19 +0400 | t3: 100 道真题 / 150 隐藏验证 / 600 隐藏测试，按疾病轮流抽样；tdwa/data_ddx.py；grade.py 加 t3 | data/t3/dev.jsonl |
 | BL-LORA-FEW | 对照 B2：只用 100 道真题做 LoRA 微调 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 12:59 +0400 | 3 种子：T2 G1 56.9→92.9、Q17 58.7→98.5；T1 G1 6.3→16.2、Q17 13.4→22.9；ARC-C 降 14–35 点 | pilot/BL_LORA.md |
 | BL-DISTILL | 对照 B3：用教师写的解题过程做蒸馏 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-20 01:28 +0400 | B3（Astra 6.2 经隔离 Codex 写解题过程，100 真题+≤300 自编，LoRA）：追踪 G1 56.9→18.3、Q17 58.7→29.2（教师写倒推捷径，小模型学不会）；MedCalc 教过的 G1 4.4→18.1、Q17 21.9→25.0、Q4 26.9→32.5；通用能力均下降 | report/site/baselines.json |
