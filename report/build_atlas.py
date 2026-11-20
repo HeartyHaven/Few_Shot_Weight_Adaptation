@@ -154,7 +154,7 @@ def main():
     only = sys.argv[1:]
     out = []
     for R in sorted(glob.glob(ROOT + "/runs/*")):
-        if only and not any(o in R for o in only):
+        if (only and not any(o in R for o in only)) or "__selftest__" in R:
             continue
         try:
             a = run_atlas(R)

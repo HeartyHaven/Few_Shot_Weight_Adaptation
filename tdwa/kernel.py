@@ -53,7 +53,7 @@ def _bwd_hook(m, gi, go):
         ACC["bwd_tokens"] += int(go[0].shape[0] * go[0].shape[1])
 
 
-model.get_input_embeddings().register_forward_hook(_emb_hook)
+_HARNESS_HOOKS = [model.get_input_embeddings().register_forward_hook(_emb_hook)]
 def _decoder_layers(m):
     """Text decoder layers for plain causal LMs (model.model.layers) and Gemma 3 multimodal checkpoints (4B+), which load as
     Gemma3ForConditionalGeneration with the text stack at model.model.language_model.layers."""
@@ -61,7 +61,9 @@ def _decoder_layers(m):
     return inner.language_model.layers if hasattr(inner, "language_model") else inner.layers
 
 
-_decoder_layers(model)[-1].register_full_backward_hook(_bwd_hook)
+_HARNESS_HOOKS.append(_decoder_layers(model)[-1].register_full_backward_hook(_bwd_hook))
+_CLASS_FORWARD = {type(m): type(m).forward for m in model.modules()}   # to detect monkeypatched forward methods
+_GENERATE = type(model).generate
 
 
 @contextlib.contextmanager
@@ -178,6 +180,30 @@ def _add_bias(site):
     _hooks[key] = mod.register_forward_hook(hook)
     EXTRA_SITES[key] = site
     return key
+
+
+def _foreign_state():
+    """Hooks or patches the teacher left on the student. They change what the student computes but are never saved,
+    so official validation refuses to run while any is present (2026-11-20: a run validated with stale hooks)."""
+    ok = {h.id for h in _HARNESS_HOOKS} | {h.id for h in _hooks.values()}
+    bad = []
+    for name, m in model.named_modules():
+        for kind in ("_forward_hooks", "_forward_pre_hooks", "_backward_hooks", "_backward_pre_hooks"):
+            extra = [k for k in getattr(m, kind, {}) if k not in ok]
+            if extra:
+                bad.append(f"{name or 'model'}.{kind}[{len(extra)}]")
+        if "forward" in m.__dict__:
+            bad.append(f"{name or 'model'}.forward (instance override)")
+    for cls, fwd in _CLASS_FORWARD.items():
+        if cls.forward is not fwd:
+            bad.append(f"{cls.__name__}.forward (class patched)")
+    if type(model).generate is not _GENERATE or "generate" in model.__dict__:
+        bad.append("model.generate (patched)")
+    import torch.nn.modules.module as _mm
+    for g in ("_global_forward_hooks", "_global_forward_pre_hooks", "_global_backward_hooks", "_global_backward_pre_hooks"):
+        if getattr(_mm, g, None):
+            bad.append(f"torch {g}[{len(getattr(_mm, g))}]")
+    return bad
 
 
 def _ref(n, state=None):
@@ -336,7 +362,7 @@ class StudentAPI:
         d = os.path.join(RUN, "edits", f"{eid:03d}"); os.makedirs(d)
         tensors, targets, shapes = {}, [], {}
         for n, (ref, cur) in diff.items():
-            delta = cur - ref; nz = delta != 0; cnt = int(nz.sum())
+            delta = cur.float() - ref.float(); nz = cur != ref; cnt = int(nz.sum())   # summary in float32 (bf16 runs: SVD has no bf16 kernel)
             t = {"param": n, "shape": list(cur.shape), "n_changed": cnt, "frob_before": float(ref.norm()), "frob_delta": float(delta.norm()),
                  "rel_norm": float(delta.norm() / (ref.norm() + 1e-12)), "max_abs_delta": float(delta.abs().max()),
                  "new_parameter": n in EXTRA_SITES and n not in BASE, "site": EXTRA_SITES.get(n)}
@@ -437,8 +463,12 @@ for line in sys.stdin:
         _OUT.write(json.dumps({"ok": True, "accepted_edits": EDITS}) + "\n"); _OUT.flush()
         break
     if req.get("cmd") == "generate":
+        foreign = _foreign_state()
         if _diff():
             resp = {"ok": False, "error": "uncommitted weight changes present; commit_edit or discard first"}
+        elif foreign:
+            resp = {"ok": False, "error": "hooks or patched methods are attached to the student (they are not part of the saved edits); "
+                                          "remove them before official validation: " + "; ".join(foreign[:8])}
         else:
             with internal():
                 outs = _generate([render(p) for p in req["prompts"]], req["max_new_tokens"])

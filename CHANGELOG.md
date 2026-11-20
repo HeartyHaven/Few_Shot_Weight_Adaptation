@@ -41,3 +41,19 @@
 - 2026-11-19 13:45 `tdwa/evaluate.py`：教师新增但始终为零的偏置向量不再挂到模型上（零向量不改变输出）。起因：Qwen3-4B Astra 6.2 s1 在 gate_proj 输出上加了一个从未赋值、形状也不匹配的零偏置，评测时报形状错误。
 - 2026-11-19 16:30 评测加速（用户要求“测试时用 vLLM 加速”）：本机装 vLLM 0.11.0（`.venv-vllm`，torch 2.8 cu128；0.34 需要更新的显卡驱动），transformers 4.57.1、datasets 4.0.0。全精度需要 `VLLM_ATTENTION_BACKEND=TRITON_ATTN`、关闭 CUDA 图（`TDWA_VLLM_EAGER=1`）、`VLLM_USE_FLASHINFER_SAMPLER=0`（本机无 nvcc）。新脚本 `tdwa/merge_run.py`（把编辑合进全精度模型目录）和 `tdwa/eval_fast.py`（合并→vLLM 评测→清理）。一致性：未编辑 Gemma 1B 物体追踪 1200 题 98% 输出完全相同、99.3–99.7% 判分相同；Astra 6.2 s0 编辑后两套测试结果完全相同，第三套 83.3 对 84.0。速度约 15 倍。之后的评测默认用它，结果文件里 engine=vllm、dtype=float32。
 - 2026-11-19 20:15 `tdwa/teach.py`：教师单次调用参数超过 20 万字符时不执行，并在历史里用占位符替代、回给教师错误说明。起因：T3 Qwen 1.7B Astra 6.2 s0 的教师在第 46 步塞入 169 万字符的代码，接口拒收含它的整段历史（单项上限 1 MiB），框架原样重试 6 次后中止（已提交的 1 个编辑保留，按正常结束评测）。只对之后启动的运行生效。
+
+## 2026-11-20 01:40 main@ws006344
+- tdwa/kernel.py commit_edit: change summary (norms, SVD rank) computed in float32; bf16 students failed on `svdvals` (no bf16 CUDA kernel). Stored old/new values unchanged. Qwen3-8B bf16 scripted self-test passed (commit, guard, quiz, rollback; peak 1.05x of inference). Started T1-Q8: Qwen3-8B MedCalc, Astra 6.2 s0, --dtype bfloat16.
+
+## 2026-11-20 03:15 main@ws006344
+- T1-Q8 Qwen3-8B (bf16) Astra 6.2 s0 finished with zero committed edits (50 turns, 1 hidden-validation look: 39.2 on the clean student); student = base, no separate test eval. Started s1 on GPU1.
+
+## 2026-11-20 08:00 main@ws006344
+- report/build_site.py, report/build_atlas.py: skip harness self-test runs (teacher "selftest").
+- DECODE-SPEED measurements (Qwen3-8B bf16): sandbox quiz slowness is not the allocator (0 retries; expandable_segments no gain). Plain HF generate on real MedCalc prompts: 157 ms/step (16 longest, 2573 tok, padded), 98 ms/step unpadded, 35 ms/step short prompts. Fix needs continuous batching / early exit of finished sequences.
+- Qwen3-14B baselines done; started T1-Q8 s2 (Astra 6.2) on GPU0.
+- Observation (not changed): kernel.py caps GPU memory at 1.5 x 1.08 of the batch-1/1024-token inference peak; 17 runs peaked at 1.505-1.595x (largest: t1__Qwen3-4B__gpt-6-astra__s0 1.595). README states a strict 1.5x. Raised with the user.
+- 10:45 T1-Q8 s1 hidden test (HF bf16): taught 48.8 -> 46.9, untaught 12.3 -> 13.2, retention unchanged. Added board task T1-Q14 (Qwen3-14B MedCalc, Astra 6.2) and started s0 on GPU1.
+
+## 2026-11-20 13:00 main@ws006344
+- tdwa/kernel.py: official validation now also refuses while teacher-made hooks or patches are attached to the student (module forward/pre/backward hooks other than the harness's own, instance or class `forward` overrides, patched `generate`, torch global module hooks). Before, it only refused uncommitted weight changes, so hooks (never saved) could change validation scores. Found in T1-Q8 s2: two looks on the same clean weights gave 39.2 and 34.2 (generation is otherwise deterministic: s0/s1/s2 clean looks all 39.17); the teacher's note says earlier probes were contaminated by stale hooks. A refused validation costs no look. Hidden-test results are unaffected (they use saved weights only). Running sandboxes pick this up only on restart. Tested with a scripted Qwen3-1.7B session (6 cases detected, harness bias hooks allowed).

@@ -118,6 +118,8 @@ def build():
     runs = []
     for R in sorted(glob.glob(ROOT + "/runs/*")):
         name = os.path.basename(R); cfg = json.load(open(R + "/config.json"))
+        if cfg.get("teacher") == "selftest":          # harness self-tests are not teaching runs
+            continue
         stag = cfg["student"].split("/")[-1]
         led = jl(R + "/ledger.jsonl"); rb = [x for x in led if x["event"] == "rollback"]; removed = {e for r in rb for e in r["removed"]}
         metas = [json.load(open(m)) for m in sorted(glob.glob(R + "/edits/*/meta.json"))]
