@@ -11,19 +11,19 @@
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | Astra 6.2 运行在第 46 步因框架漏洞（超长调用被接口拒收）中止，1 个编辑保留，验证 65.3→78.7%，隐藏测试评测中；漏洞已修。Astra 6 运行中 |  |
 | RET-FULL | 更完整的通用能力检查：MMLU、GSM8K、IFEval（lm-eval） |  |  |  | main@ws006343 | 2026-11-20 03:28 +0400 | 第一部分完成：MMLU(1140)+GSM8K(500) 已测 B0/B2/B3/B4/B5（三个学生，s0），结果在网页“对照组”标签。未做：IFEval；教师编辑后的模型（需 HF 加载编辑，记录在 ws006344） |  |
 
-## 已认领（1）
+## 已认领（2）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | T1-G4 | 教学运行：Gemma 3 4B 学 MedCalc（三位教师各一次） | Gemma 3 4B (google/gemma-3-4b-it) | Astra 6.2 (gpt-6.2-astra); Fable 5.2 (claude-fable-5-2); Astra 6 (gpt-6-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 17:58 +0400 | kernel.py 修复后 4B 沙盒可用（提交见 CHANGELOG）；本机两个 Astra 走 Codex 无界面（codex-<模型>），Fable 走 claude -p；当前 GPU 被他人占约 24 GB/卡，等显存 |  |
+| DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  | main@ws006344 | 2026-11-20 07:14 +0400 | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
 
-## 未开始（可认领）（4）
+## 未开始（可认领）（3）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | CHECK-HS | 核查 T1-Q17-A62-s0 编辑后 HellaSwag 54.7→64.3 的异常上升 | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  |  |  |  |  |  |
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
-| DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 实测 MedCalc 每批只有 24–35% 的解码计算有效 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
 ## 已完成（50）
