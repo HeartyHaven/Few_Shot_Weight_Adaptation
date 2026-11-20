@@ -12,7 +12,7 @@
 | T1-Q14 | 教学运行：Qwen3 14B 学 MedCalc（检验更大模型是否更可教） | Qwen3 14B (Qwen/Qwen3-14B, https://huggingface.co/Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 09:45 +0400 | 00:00 s0 运行 349 分钟、25 次调用、重启 2 次，零编辑 |  |
 | T1-G12 | 教学运行：Gemma 3 12B 学 MedCalc（换模型家族检验 8B/14B 的结论） | Gemma 3 12B (google/gemma-3-12b-it, https://huggingface.co/google/gemma-3-12b-it，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 16:44 +0400 | 00:00 s0 运行 302 分钟、46 次调用，零编辑；未编辑隐藏验证 39.2 |  |
 
-## 未开始（可认领）（5）
+## 未开始（可认领）（7）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -21,6 +21,8 @@
 | CHECK-HS | 核查 T1-Q17-A62-s0 编辑后 HellaSwag 54.7→64.3 的异常上升 | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  |  |  |  |  |  |
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
+| AN-TEACHER | 分析 1：教师能力对编辑的影响（换不同教师教同一学生，医疗任务） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.1 Sol、GPT-6 Astra、GPT-6.2 Astra、Claude Fable 5.2、Claude Fable 5.1、Gemini 4 Argon、3 个开源模型、1 个普通/小模型 | MedCalc-Bench Verified（8 种规则评分） |  |  | 用户大纲标注 mbz 服务器（ws006343） |  |
+| AN-EFFORT | 分析 2：教师思考强度对编辑的影响（low/medium/high/xhigh，及最高强度+联网） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.2 Astra、Claude Fable 5.2 | MedCalc-Bench Verified（8 种规则评分） |  |  | 用户大纲标注 mbz 服务器（ws006343） |  |
 
 ## 已完成（51）
 

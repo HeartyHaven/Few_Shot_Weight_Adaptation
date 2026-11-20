@@ -123,15 +123,17 @@ def run():
     ap.add_argument("--val-looks", type=int, default=10); ap.add_argument("--mem-ratio", type=float, default=1.5)
     ap.add_argument("--exec-timeout", type=int, default=1200); ap.add_argument("--token-budget", type=int, default=2_000_000)
     ap.add_argument("--effort", default="high"); ap.add_argument("--dtype", default="float32"); ap.add_argument("--val-max-new-tokens", type=int, default=1024)
+    ap.add_argument("--tag", default="", help="suffix for the run name, e.g. e-low (effort sweep)")
+    ap.add_argument("--web", action="store_true", help="also give the teacher WebSearch and WebFetch (web-search condition only)")
     a = ap.parse_args()
-    name = f"{a.task}__{a.student.split('/')[-1]}__{a.teacher}__s{a.seed}"
+    name = f"{a.task}__{a.student.split('/')[-1]}__{a.teacher}{('_' + a.tag) if a.tag else ''}__s{a.seed}"
     run_dir = os.path.join(ROOT, "runs", name)
     if os.path.exists(run_dir):
         sys.exit(f"{run_dir} exists; refusing to overwrite")
     os.makedirs(os.path.join(run_dir, "work")); os.makedirs(os.path.join(run_dir, "exams"))
     cfg = {"task": a.task, "student": a.student, "teacher": a.teacher, "seed": a.seed, "fte_budget": a.fte_budget, "mem_ratio": a.mem_ratio, "dtype": a.dtype,
            "token_budget": a.token_budget, "max_turns": a.max_turns, "val_looks": a.val_looks, "gpu": a.gpu, "exec_timeout": a.exec_timeout,
-           "scaffold": "claude -p (headless Claude Code), tools via MCP only", "val_max_new_tokens": a.val_max_new_tokens, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
+           "scaffold": "claude -p (headless Claude Code), tools via MCP only" + (" + WebSearch/WebFetch" if a.web else ""), "effort": a.effort, "web": a.web, "tag": a.tag, "val_max_new_tokens": a.val_max_new_tokens, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
     json.dump(cfg, open(os.path.join(run_dir, "config.json"), "w"), indent=1)
     n_dev = sum(1 for _ in open(os.path.join(ROOT, "data", a.task, "dev.jsonl")))
     system = SYSTEM.format(student=a.student, task_text=TASK_TEXT[a.task], n_dev=n_dev, val_looks=a.val_looks, mem_ratio=a.mem_ratio,
@@ -142,9 +144,9 @@ def run():
     mcp = {"mcpServers": {"tdwa": {"command": sys.executable, "args": ["-m", "tdwa.mcp_teach", "serve", run_dir], "cwd": ROOT,
                                    "env": {"PYTHONPATH": ROOT}}}}
     mcp_path = os.path.join(cwd, "mcp.json"); json.dump(mcp, open(mcp_path, "w"))
-    tools = "mcp__tdwa__run_python,mcp__tdwa__official_validation,mcp__tdwa__finish"
+    tools = "mcp__tdwa__run_python,mcp__tdwa__official_validation,mcp__tdwa__finish" + (",WebSearch,WebFetch" if a.web else "")
     cmd = ["claude", "-p", "Begin teaching. Start by calling S.info() through run_python.", "--model", a.teacher, "--system-prompt", system,
-           "--tools", "", "--mcp-config", mcp_path, "--strict-mcp-config", "--allowedTools", tools, "--setting-sources", "",
+           "--tools", ("WebSearch,WebFetch" if a.web else ""), "--mcp-config", mcp_path, "--strict-mcp-config", "--allowedTools", tools, "--setting-sources", "",
            "--output-format", "stream-json", "--verbose", "--effort", a.effort, "--no-session-persistence"]
     env = dict(os.environ, MCP_TOOL_TIMEOUT="7500000", MCP_TIMEOUT="120000", MAX_MCP_OUTPUT_TOKENS="20000")
     usage = None
