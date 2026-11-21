@@ -1,13 +1,13 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 16:14 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 16:44 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（1）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
-| T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | 16:40 Qwen3-4B Astra 6.2 s0 运行约 3 小时、34 次调用；编辑1 后隐藏验证 69.3（未测干净基线），又提交编辑2（零阶搜索），保留 2 个编辑 |  |
+| T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | 17:10 Qwen3-4B Astra 6.2 s0 正常结束（3 小时、38 次调用、2 次验证）：保留编辑1（第 35 层 MLP 新增偏置），隐藏验证 69.3（编辑1+2 为 66.7，编辑2 已撤销）；ppl 10.33→10.46，检查题不变。GPU1 依次评测：该运行、4B 同协议基线（HF fp32 batch16） |  |
 
 ## 已认领（2）
 
