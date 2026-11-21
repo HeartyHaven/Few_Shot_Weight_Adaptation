@@ -663,16 +663,16 @@
   {
    "id": "DECODE-SPEED",
    "title": "在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致",
-   "status": "running",
+   "status": "open",
    "student": "",
    "teacher": "",
    "dataset": "",
-   "owner": "main@ws006344",
-   "claimed_at": "2026-11-20 07:14 +0400",
+   "owner": null,
+   "claimed_at": null,
    "finished_at": null,
    "result": "",
    "output": "",
-   "note": "19:30 试 transformers 5.22 自带连续批处理 generate_batch（Qwen3-1.7B，32 道 MedCalc 题，512 token）：耗时 42 秒对 43 秒无提速，显存 10.9 对 7.0 GB 更高，且仅 1/32 输出与现有 generate 相同，不能直接替换。14B 一次 100 题小测已超过 60 分钟"
+   "note": "交还：已排除分配器和沙盒本身（0 次重试；沙盒外同样慢），慢在长提示+填充掩码和整批等最长输出；transformers 自带 generate_batch 不提速且输出不一致。需要连续批处理或提前出队的实现，详见 CHANGELOG 2026-11-20"
   },
   {
    "id": "ATLAS-DATA",

@@ -3,12 +3,11 @@
 > 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 13:23 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（3）
+## 进行中（2）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | Astra 6.2 运行在第 46 步因框架漏洞（超长调用被接口拒收）中止，1 个编辑保留，验证 65.3→78.7%，隐藏测试评测中；漏洞已修。Astra 6 运行中 |  |
-| DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  | main@ws006344 | 2026-11-20 07:14 +0400 | 19:30 试 transformers 5.22 自带连续批处理 generate_batch（Qwen3-1.7B，32 道 MedCalc 题，512 token）：耗时 42 秒对 43 秒无提速，显存 10.9 对 7.0 GB 更高，且仅 1/32 输出与现有 generate 相同，不能直接替换。14B 一次 100 题小测已超过 60 分钟 |  |
 | T1-G12 | 教学运行：Gemma 3 12B 学 MedCalc（换模型家族检验 8B/14B 的结论） | Gemma 3 12B (google/gemma-3-12b-it, https://huggingface.co/google/gemma-3-12b-it，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 16:44 +0400 | 同协议复核（batch16）：Gemma-12B 基线 46.2/16.4（与 batch4 相同），编辑后 41.2/11.8 |  |
 
 ## 已认领（2）
@@ -18,7 +17,7 @@
 | AN-TEACHER | 分析 1：教师能力对编辑的影响（换不同教师教同一学生，医疗任务） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.1 Sol、GPT-6 Astra、GPT-6.2 Astra、Claude Fable 5.2、Claude Fable 5.1、Gemini 4 Argon、3 个开源模型、1 个普通/小模型 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
 | AN-EFFORT | 分析 2：教师思考强度对编辑的影响（low/medium/high/xhigh，及最高强度+联网） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.2 Astra、Claude Fable 5.2 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
 
-## 未开始（可认领）（5）
+## 未开始（可认领）（6）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -26,6 +25,7 @@
 | RET-FULL | 更完整的通用能力检查：MMLU、GSM8K、IFEval（lm-eval） |  |  |  |  |  | MMLU(1140)+GSM8K(500) 已测全部对照组（结果在网页“对照组”标签）；未做：IFEval、教师编辑后的模型。用户要求暂停新工作，交还 |  |
 | CHECK-HS | 核查 T1-Q17-A62-s0 编辑后 HellaSwag 54.7→64.3 的异常上升 | Qwen3 1.7B (Qwen/Qwen3-1.7B) |  |  |  |  |  |  |
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
+| DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 交还：已排除分配器和沙盒本身（0 次重试；沙盒外同样慢），慢在长提示+填充掩码和整批等最长输出；transformers 自带 generate_batch 不提速且输出不一致。需要连续批处理或提前出队的实现，详见 CHANGELOG 2026-11-20 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
 ## 已完成（52）
