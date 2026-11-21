@@ -1,15 +1,14 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-20 23:14 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 13:23 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（4）
+## 进行中（3）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | Astra 6.2 运行在第 46 步因框架漏洞（超长调用被接口拒收）中止，1 个编辑保留，验证 65.3→78.7%，隐藏测试评测中；漏洞已修。Astra 6 运行中 |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  | main@ws006344 | 2026-11-20 07:14 +0400 | 19:30 试 transformers 5.22 自带连续批处理 generate_batch（Qwen3-1.7B，32 道 MedCalc 题，512 token）：耗时 42 秒对 43 秒无提速，显存 10.9 对 7.0 GB 更高，且仅 1/32 输出与现有 generate 相同，不能直接替换。14B 一次 100 题小测已超过 60 分钟 |  |
-| T1-Q14 | 教学运行：Qwen3 14B 学 MedCalc（检验更大模型是否更可教） | Qwen3 14B (Qwen/Qwen3-14B, https://huggingface.co/Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 09:45 +0400 | 01:00 s0 运行 409 分钟、27 次调用；保留编辑1（新增偏置），尚未验证 |  |
 | T1-G12 | 教学运行：Gemma 3 12B 学 MedCalc（换模型家族检验 8B/14B 的结论） | Gemma 3 12B (google/gemma-3-12b-it, https://huggingface.co/google/gemma-3-12b-it，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 16:44 +0400 | 01:00 s0 运行 362 分钟、47 次调用，零编辑；沙盒重启完成 |  |
 
 ## 已认领（2）
@@ -29,7 +28,7 @@
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
-## 已完成（51）
+## 已完成（52）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -84,6 +83,7 @@
 | SCAFFOLD-CODEX | 框架对照：同一配置下 Astra 6.2 走 Codex 无界面 vs 接口循环（T1 Qwen 1.7B、T2 Gemma 1B 各一次） | Qwen3 1.7B; Gemma 3 1B | Astra 6.2 (gpt-6.2-astra) via codex exec | MedCalc; 物体追踪 | main@ws006343 | 2026-11-19 23:28 +0400 | Codex 框架明显弱于接口循环：T2 Gemma1B 测试 BBH 62.7/新题 63.0/难题 33.3（接口循环 96.7/97.3/84.0，未编辑 57.2/58.0/26.7）；T1 Qwen1.7B 零保留编辑（接口循环 49.4）。两次都在 47–66 步主动结束 | eval/t2__gemma-3-1b-it__codex-gpt-6.2-astra__s0.json |
 | T3-Q17-A62-s0 | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 20:45 +0400 | 隐藏测试 66.7% → 81.0%（+14.3，区间 77.7–84.0）；直接选答案 60.8% → 81.2%；但三位数算术 49% → 12%（副作用检查只用两位数算术，没拦住），ARC 73.7→69.0；第 46 步因框架漏洞中止 | eval/t3__Qwen3-1.7B__gpt-6.2-astra__s0.json（不在仓库） |
 | T3-Q17-A62-s1 | 教学运行：疾病诊断 DDXPlus（重复运行） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 22:45 +0400 | 零保留编辑（唯一的编辑使验证 65.3→58.0%，已撤回），教师在 40 步主动结束；学生等同未编辑（隐藏测试 66.7%）。与第 1 次（81.0%）差别很大，说明这个任务上的成功依赖教师在那次运行里找到的具体改法 |  |
+| T1-Q14 | 教学运行：Qwen3 14B 学 MedCalc（检验更大模型是否更可教） | Qwen3 14B (Qwen/Qwen3-14B, https://huggingface.co/Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-21 13:23 +0400 | Qwen3-14B（bf16）Astra 6.2 三个种子，同协议（HF bf16 batch16）已教：基线 46.9 → s0 50.0、s1 47.5、s2 零编辑；未教 19.1 → 21.4 / 20.9；通用能力不变。差异在 bf16 批大小噪声内（同一 8B 基线 batch8 与 batch16 相差 5.7 分），无可确认提升 | eval/t1__Qwen3-14B__gpt-6.2-astra__s1.json |
 
 ## 作废（1）
 

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-20 23:14 +0400",
+ "updated": "2026-11-21 13:23 +0400",
  "owners_note": "负责者写成 名字@机器名，例如 main@ws006344",
  "tasks": [
   {
@@ -831,15 +831,15 @@
   {
    "id": "T1-Q14",
    "title": "教学运行：Qwen3 14B 学 MedCalc（检验更大模型是否更可教）",
-   "status": "running",
+   "status": "done",
    "student": "Qwen3 14B (Qwen/Qwen3-14B, https://huggingface.co/Qwen/Qwen3-14B，半精度)",
    "teacher": "Astra 6.2 (gpt-6.2-astra)",
    "dataset": "MedCalc-Bench Verified (8 种规则评分)",
    "owner": "main@ws006344",
    "claimed_at": "2026-11-20 09:45 +0400",
-   "finished_at": null,
-   "result": "",
-   "output": "",
+   "finished_at": "2026-11-21 13:23 +0400",
+   "result": "Qwen3-14B（bf16）Astra 6.2 三个种子，同协议（HF bf16 batch16）已教：基线 46.9 → s0 50.0、s1 47.5、s2 零编辑；未教 19.1 → 21.4 / 20.9；通用能力不变。差异在 bf16 批大小噪声内（同一 8B 基线 batch8 与 batch16 相差 5.7 分），无可确认提升",
+   "output": "eval/t1__Qwen3-14B__gpt-6.2-astra__s1.json",
    "note": "01:00 s0 运行 409 分钟、27 次调用；保留编辑1（新增偏置），尚未验证"
   },
   {
