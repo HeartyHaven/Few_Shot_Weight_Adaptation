@@ -1,13 +1,7 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 19:14 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 21:45 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
-
-## 进行中（1）
-
-| ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
-|---|---|---|---|---|---|---|---|---|
-| T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | 19:20 Qwen3-4B Astra 6.2 s0 隐藏测试（HF fp32 batch 8）：73.7%（600 题）；通用能力 ARC 85.0、HS 80.7、算术 78.0（未降）。同协议 4B 基线评测进行中 |  |
 
 ## 已认领（2）
 
@@ -27,7 +21,7 @@
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 交还：已排除分配器和沙盒本身（0 次重试；沙盒外同样慢），慢在长提示+填充掩码和整批等最长输出；transformers 自带 generate_batch 不提速且输出不一致。需要连续批处理或提前出队的实现，详见 CHANGELOG 2026-11-20 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
-## 已完成（53）
+## 已完成（54）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -68,6 +62,7 @@
 | KERNEL-BF16 | 让沙盒支持半精度学生（8B 以上必需），并检验半精度对微小编辑的影响 |  |  |  | main@ws006344 | 2026-11-20 01:47 +0400 | 沙盒支持 --dtype bfloat16：Qwen3-8B 自检通过（提交/守门/测验/回滚正常，显存峰值 1.05 倍）；修复 bf16 下 SVD 摘要报错 | tdwa/kernel.py |
 | T1-Q8 | 教学运行：Qwen3 8B 学 MedCalc | Qwen3 8B (Qwen/Qwen3-8B) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-20 15:15 +0400 | Qwen3-8B（bf16）Astra 6.2 三个种子均无提升：s0 零编辑；s1 已教 48.8→46.9、未教 12.3→13.2；s2 已教 48.8→46.2、未教 12.3→13.2；通用能力不变 | eval/t1__Qwen3-8B__gpt-6.2-astra__s2.json |
 | DDX-SPLITS | 为 DDXPlus 建立 100 道真题 / 隐藏验证 / 隐藏测试划分 |  |  | DDXPlus (aai530-group6/ddxplus) | main@ws006343 | 2026-11-19 11:19 +0400 | t3: 100 道真题 / 150 隐藏验证 / 600 隐藏测试，按疾病轮流抽样；tdwa/data_ddx.py；grade.py 加 t3 | data/t3/dev.jsonl |
+| T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-21 21:45 +0400 | DDXPlus：Qwen3-1.7B Astra 6.2 s0 66.7→81.0（但三位数算术 49→12、ARC 73.7→69.0），s1 零编辑，Astra 6 无效（67.3）；Qwen3-4B Astra 6.2 s0 同协议（HF fp32 batch 8）73.5→73.7（无效），通用能力不变 | eval/t3__Qwen3-4B__gpt-6.2-astra__s0.json |
 | BL-LORA-FEW | 对照 B2：只用 100 道真题做 LoRA 微调 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 12:59 +0400 | 3 种子：T2 G1 56.9→92.9、Q17 58.7→98.5；T1 G1 6.3→16.2、Q17 13.4→22.9；ARC-C 降 14–35 点 | pilot/BL_LORA.md |
 | BL-DISTILL | 对照 B3：用教师写的解题过程做蒸馏 | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-20 01:28 +0400 | B3（Astra 6.2 经隔离 Codex 写解题过程，100 真题+≤300 自编，LoRA）：追踪 G1 56.9→18.3、Q17 58.7→29.2（教师写倒推捷径，小模型学不会）；MedCalc 教过的 G1 4.4→18.1、Q17 21.9→25.0、Q4 26.9→32.5；通用能力均下降 | report/site/baselines.json |
 | BL-LORA-FULL | 对照 B4：用全部训练数据做 LoRA（上限参考） | Gemma 3 1B (google/gemma-3-1b-it); Qwen3 1.7B (Qwen/Qwen3-1.7B) |  | 物体追踪 (BBH tracking_shuffled_objects + 自生成); MedCalc-Bench Verified (8 种规则评分) | main@ws006343 | 2026-11-19 12:59 +0400 | T2 两学生 99.9；T1 G1 6.3→26.3、Q17 13.4→36.0；ARC-C 降 17–42 点，全部过不了副作用标准 | pilot/BL_LORA.md |
