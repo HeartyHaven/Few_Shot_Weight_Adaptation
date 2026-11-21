@@ -1,13 +1,13 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 17:45 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-21 19:14 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（1）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
-| T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | 17:50 Qwen3-4B 编辑后隐藏测试进行中（GPU1 与他人共用，显存不足后降到 batch 8）；4B 基线改为同样 batch 8，排在其后 |  |
+| T3-DDX | 教学运行：疾病诊断 DDXPlus | Qwen3 1.7B (Qwen/Qwen3-1.7B); Qwen3 4B (Qwen/Qwen3-4B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus | main@ws006344 | 2026-11-19 18:05 +0400 | 19:20 Qwen3-4B Astra 6.2 s0 隐藏测试（HF fp32 batch 8）：73.7%（600 题）；通用能力 ARC 85.0、HS 80.7、算术 78.0（未降）。同协议 4B 基线评测进行中 |  |
 
 ## 已认领（2）
 
