@@ -68,6 +68,7 @@ def main():
     ap.add_argument("--effort", default="high"); ap.add_argument("--val-max-new-tokens", type=int, default=1024)
     ap.add_argument("--tag", default="", help="suffix for the run name, e.g. e-low (effort sweep)")
     ap.add_argument("--web", action="store_true", help="enable Codex web search (web-search condition only)")
+    ap.add_argument("--finish-nudges", type=int, default=0, help="defer an early finish up to N times while budget remains")
     a = ap.parse_args()
     teacher = f"codex-{a.model}"
     name = f"{a.task}__{a.student.split('/')[-1]}__{teacher}{('_' + a.tag) if a.tag else ''}__s{a.seed}"
@@ -79,7 +80,7 @@ def main():
            "mem_ratio": a.mem_ratio, "token_budget": a.token_budget, "max_turns": a.max_turns, "val_looks": a.val_looks, "gpu": a.gpu,
            "exec_timeout": a.exec_timeout, "val_max_new_tokens": a.val_max_new_tokens, "effort": a.effort, "host": socket.gethostname(),
            "scaffold": "codex exec (headless Codex CLI) in a mount namespace hiding the project; teaching tools via MCP only (TCP relay); "
-                       "codex shell sandbox read-only, web search " + ("on" if a.web else "off"), "web": a.web, "tag": a.tag, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
+                       "codex shell sandbox read-only, web search " + ("on" if a.web else "off"), "web": a.web, "tag": a.tag, "finish_nudges": a.finish_nudges, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
     json.dump(cfg, open(os.path.join(run_dir, "config.json"), "w"), indent=1)
     n_dev = sum(1 for _ in open(os.path.join(ROOT, "data", a.task, "dev.jsonl")))
     system = SYSTEM.format(student=a.student, task_text=TASK_TEXT[a.task], n_dev=n_dev, val_looks=a.val_looks, mem_ratio=a.mem_ratio,

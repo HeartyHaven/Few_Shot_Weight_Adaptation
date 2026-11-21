@@ -82,6 +82,14 @@ def serve(run_dir):
             log(event="tool", turn=turn, name="official_validation", note=args.get("note"), result=res)
             return json.dumps(res) + note
         if tool == "finish":
+            looks_left = cfg["val_looks"] - state["looks"]; calls_left = cfg["max_turns"] - turn
+            if state.setdefault("nudged", 0) < cfg.get("finish_nudges", 0) and looks_left > 0 and calls_left > 20:
+                state["nudged"] += 1
+                log(event="finish_deferred", turn=turn, nudge=state["nudged"], looks_left=looks_left, calls_left=calls_left)
+                return (f"Not finished yet: you still have {looks_left} official validation looks and {calls_left} tool calls. "
+                        "Keep teaching: commit the edits your evidence supports, check them with the quiz and official_validation, "
+                        "roll back what does not help, and call finish again only when further edits stop improving validation "
+                        f"or the budget is spent. (reminder {state['nudged']} of {cfg.get('finish_nudges', 0)})")
             log(event="finish", turn=turn); finalize(args.get("report", ""))
             return "submitted; the run is over. Reply with one short closing line and stop."
         return f"unknown tool {tool}"
@@ -125,6 +133,7 @@ def run():
     ap.add_argument("--effort", default="high"); ap.add_argument("--dtype", default="float32"); ap.add_argument("--val-max-new-tokens", type=int, default=1024)
     ap.add_argument("--tag", default="", help="suffix for the run name, e.g. e-low (effort sweep)")
     ap.add_argument("--web", action="store_true", help="also give the teacher WebSearch and WebFetch (web-search condition only)")
+    ap.add_argument("--finish-nudges", type=int, default=0, help="defer an early finish up to N times while budget remains")
     a = ap.parse_args()
     name = f"{a.task}__{a.student.split('/')[-1]}__{a.teacher}{('_' + a.tag) if a.tag else ''}__s{a.seed}"
     run_dir = os.path.join(ROOT, "runs", name)
@@ -133,7 +142,7 @@ def run():
     os.makedirs(os.path.join(run_dir, "work")); os.makedirs(os.path.join(run_dir, "exams"))
     cfg = {"task": a.task, "student": a.student, "teacher": a.teacher, "seed": a.seed, "fte_budget": a.fte_budget, "mem_ratio": a.mem_ratio, "dtype": a.dtype,
            "token_budget": a.token_budget, "max_turns": a.max_turns, "val_looks": a.val_looks, "gpu": a.gpu, "exec_timeout": a.exec_timeout,
-           "scaffold": "claude -p (headless Claude Code), tools via MCP only" + (" + WebSearch/WebFetch" if a.web else ""), "effort": a.effort, "web": a.web, "tag": a.tag, "val_max_new_tokens": a.val_max_new_tokens, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
+           "scaffold": "claude -p (headless Claude Code), tools via MCP only" + (" + WebSearch/WebFetch" if a.web else ""), "effort": a.effort, "web": a.web, "tag": a.tag, "finish_nudges": a.finish_nudges, "val_max_new_tokens": a.val_max_new_tokens, "started": time.strftime("%Y-%m-%dT%H:%M:%S")}
     json.dump(cfg, open(os.path.join(run_dir, "config.json"), "w"), indent=1)
     n_dev = sum(1 for _ in open(os.path.join(ROOT, "data", a.task, "dev.jsonl")))
     system = SYSTEM.format(student=a.student, task_text=TASK_TEXT[a.task], n_dev=n_dev, val_looks=a.val_looks, mem_ratio=a.mem_ratio,

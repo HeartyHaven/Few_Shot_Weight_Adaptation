@@ -234,6 +234,7 @@ def main():
     ap.add_argument("--dtype", default="float32"); ap.add_argument("--val-max-new-tokens", type=int, default=1024)
     ap.add_argument("--nudges", type=int, default=3, help="max 'continue' messages if agy ends a turn without calling finish")
     ap.add_argument("--tag", default="", help="suffix for the run name, e.g. smoke")
+    ap.add_argument("--finish-nudges", type=int, default=0, help="defer an early finish up to N times while budget remains")
     a = ap.parse_args()
     teacher = f"agy-{a.model}"
     name = f"{a.task}__{a.student.split('/')[-1]}__{teacher}{('_' + a.tag) if a.tag else ''}__s{a.seed}"
@@ -241,7 +242,7 @@ def main():
     if os.path.exists(run_dir):
         sys.exit(f"{run_dir} exists; refusing to overwrite")
     os.makedirs(os.path.join(run_dir, "work")); os.makedirs(os.path.join(run_dir, "exams"))
-    cfg = {"task": a.task, "student": a.student, "teacher": teacher, "teacher_model": a.model, "seed": a.seed, "fte_budget": a.fte_budget,
+    cfg = {"finish_nudges": a.finish_nudges, "task": a.task, "student": a.student, "teacher": teacher, "teacher_model": a.model, "seed": a.seed, "fte_budget": a.fte_budget,
            "mem_ratio": a.mem_ratio, "dtype": a.dtype, "token_budget": a.token_budget, "max_turns": a.max_turns, "val_looks": a.val_looks, "gpu": a.gpu,
            "exec_timeout": a.exec_timeout, "val_max_new_tokens": a.val_max_new_tokens, "effort": a.effort, "host": socket.gethostname(),
            "scaffold": "agy --print (headless Antigravity CLI, stream-json) in a user+mount+pid namespace hiding the user tree and home; private agy HOME "
