@@ -1,6 +1,6 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-22 17:13 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-22 17:48 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（3）
@@ -8,7 +8,7 @@
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | REPRO-Q17 | 复现：Qwen3 1.7B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 12:42 +0400 | 只补缺：已有 s0、s1，补 s100（12:51 起，GPU0） |  |
-| T2-Q17 | 教学运行：Qwen3 1.7B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 结束（218 分钟，133 轮）：保留 6 处编辑，隐藏验证 58.7 → 93.3（9 次查看）；隐藏测试排队 |  |
+| T2-Q17 | 教学运行：Qwen3 1.7B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 隐藏测试（HF fp32；评测中途显存不足一次，批大小由 16 降为 8）：BBH 59.5→92.1、新题 58.0→94.0、更难题 36.7→76.7；副作用 ARC 74.0→72.3、HellaSwag 54.7→49.0、算术 49.0→38.5、困惑度 +3.1% |  |
 | T2-Q4 | 教学运行：Qwen3 4B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 隐藏测试（HF fp32 批16）：BBH 98.9、新题 99.7、更难题 96.7；半精度基线 85.2 / 85.0 / 71.3（全精度基线评测中）；通用能力 ARC 85.3→85.0、HellaSwag 80.7→81.3、算术 76→72、困惑度 +1.9% |  |
 
 ## 已认领（7）
