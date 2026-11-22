@@ -7,7 +7,7 @@
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
-| REPRO-Q17 | 复现：Qwen3 1.7B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 12:42 +0400 | 12:43 起按 experiment_plan.md 复现：c343b08 代码快照、接口循环、effort high；4B s100/s101，1.7B s100–s102，4B s102 排队 |  |
+| REPRO-Q17 | 复现：Qwen3 1.7B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 12:42 +0400 | 只补缺：已有 s0、s1，补 s100（12:51 起，GPU0） |  |
 | T2-Q17 | 教学运行：Qwen3 1.7B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | 12:56 全精度基线评测起（GPU1）；s100–s102 排队 |  |
 | T2-Q4 | 教学运行：Qwen3 4B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | 12:56 s100 起（GPU1），s101、s102 排队；全精度基线排队 |  |
 
