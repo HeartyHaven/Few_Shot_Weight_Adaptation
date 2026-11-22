@@ -1,9 +1,9 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-22 21:46 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-22 21:56 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（5）
+## 进行中（6）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -11,16 +11,16 @@
 | T2-Q17 | 教学运行：Qwen3 1.7B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 隐藏测试（HF fp32；评测中途显存不足一次，批大小由 16 降为 8）：BBH 59.5→92.1、新题 58.0→94.0、更难题 36.7→76.7；副作用 ARC 74.0→72.3、HellaSwag 54.7→49.0、算术 49.0→38.5、困惑度 +3.1% |  |
 | T2-Q4 | 教学运行：Qwen3 4B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | 全精度基线（HF fp32；评测中显存不足，批大小降为 4）：BBH 84.8、新题 84.0、更难题 68.0；对比 s100：98.9 / 99.7 / 96.7；通用能力 ARC 85.0→85.0、HellaSwag 81.3→81.3、算术 78→72、困惑度 +2.0% |  |
 | T4-Q17 | 教学运行：Qwen3 1.7B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 全精度基线（HF fp32 批16，已按修正后的答案提取重判）：MATH L5 43.3（数论 47.4、计数与概率 38.2；16% 输出在 2048 token 处截断未给答案）；教学排队 |  |
+| T4-Q4 | 教学运行：Qwen3 4B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 全精度基线（HF fp32；评测中显存不足一次，批大小降为 8）：MATH L5 64.6（数论 70.1、计数与概率 57.7；14.8% 在 2048 token 内未给答案）；教学排队 |  |
 | T5-Q17 | 教学运行：Qwen3 1.7B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | s100 结束（124 分钟，39 轮，只用 2 次验证）：保留 1 处编辑（第 20–27 层 MLP 输出偏置，把原始提示下的激活推向“只输出答案”模式），隐藏验证 62.0（未给答案 2%）；隐藏测试中 |  |
 
-## 已认领（5）
+## 已认领（4）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | AN-TEACHER | 分析 1：教师能力对编辑的影响（换不同教师教同一学生，医疗任务） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.1 Sol、GPT-6 Astra、GPT-6.2 Astra、Claude Fable 5.2、Claude Fable 5.1、Gemini 4 Argon、3 个开源模型、1 个普通/小模型 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
 | AN-EFFORT | 分析 2：教师思考强度对编辑的影响（low/medium/high/xhigh，及最高强度+联网） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.2 Astra、Claude Fable 5.2 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
 | REPRO-G1-T2 | 复现：Gemma 3 1B 学物体追踪，原样复现成功运行（c343b08 代码快照），2 次 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:42 +0400 | 只补缺：已有 s0、s1，补 s100（排队） |  |
-| T4-Q4 | 教学运行：Qwen3 4B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 数据划分 tdwa/data_mathcode.py；方案见 experiment_plan.md |  |
 | T5-Q4 | 教学运行：Qwen3 4B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | 数据划分 tdwa/data_mathcode.py；方案见 experiment_plan.md |  |
 
 ## 未开始（可认领）（6）
