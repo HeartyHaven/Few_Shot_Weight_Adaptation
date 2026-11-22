@@ -3,13 +3,12 @@
 > 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-23 03:29 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（5）
+## 进行中（4）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
 | T2-Q17 | 教学运行：Qwen3 1.7B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 隐藏测试（HF fp32；评测中途显存不足一次，批大小由 16 降为 8）：BBH 59.5→92.1、新题 58.0→94.0、更难题 36.7→76.7；副作用 ARC 74.0→72.3、HellaSwag 54.7→49.0、算术 49.0→38.5、困惑度 +3.1% |  |
 | T2-Q4 | 教学运行：Qwen3 4B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | 全精度基线（HF fp32；评测中显存不足，批大小降为 4）：BBH 84.8、新题 84.0、更难题 68.0；对比 s100：98.9 / 99.7 / 96.7；通用能力 ARC 85.0→85.0、HellaSwag 81.3→81.3、算术 78→72、困惑度 +2.0% |  |
-| T4-Q17 | 教学运行：Qwen3 1.7B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | s102 隐藏测试已出（见 eval/t4__Qwen3-1.7B__gpt-6.2-astra__s102.json）；数学 1.7B 三次运行完成 |  |
 | T4-Q4 | 教学运行：Qwen3 4B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 全精度基线（HF fp32；评测中显存不足一次，批大小降为 8）：MATH L5 64.6（数论 70.1、计数与概率 57.7；14.8% 在 2048 token 内未给答案）；教学排队 |  |
 | T5-Q17 | 教学运行：Qwen3 1.7B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | s102 隐藏测试：54.2 → 54.2（与基线逐项相同）：保留的编辑只是第 27 层 MLP 输出上最大 0.0035 的偏置，几乎不改变输出；教师看到的验证 65.3 是验证集本身的水平（没有编辑前的对照）。代码 1.7B 三次：52.0 / 49.5 / 54.2，无提升 |  |
 
@@ -34,7 +33,7 @@
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 交还：已排除分配器和沙盒本身（0 次重试；沙盒外同样慢），慢在长提示+填充掩码和整批等最长输出；transformers 自带 generate_batch 不提速且输出不一致。需要连续批处理或提前出队的实现，详见 CHANGELOG 2026-11-20 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
-## 已完成（56）
+## 已完成（57）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -94,6 +93,7 @@
 | T1-G12 | 教学运行：Gemma 3 12B 学 MedCalc（换模型家族检验 8B/14B 的结论） | Gemma 3 12B (google/gemma-3-12b-it, https://huggingface.co/google/gemma-3-12b-it，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-21 13:23 +0400 | Gemma-3-12B（bf16）Astra 6.2 s0：保留 1 个新增偏置；同协议（batch16）已教 46.2→41.2、未教 16.4→11.8（区间重叠，无提升）；通用能力不变 | eval/t1__gemma-3-12b-it__gpt-6.2-astra__s0.json |
 | REPRO-Q17 | 复现：Qwen3 1.7B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 22:25 +0400 | 复现成立：s100（c343b08 原代码）隐藏测试教过的 8 种 21.2 → 51.2（置信区间 43.8–59.4），与原 s0 49.4、s1 44.4 一致；三次均值 48.3 ± 3.6。没教过的 11 种 5.9 → 2.7，未给答案率 1% → 22%（集中在没教过的评分）。副作用：ARC 74.0→76.0、HellaSwag 54.7→60.7、算术 49.0→42.5、困惑度 −0.4% | eval/t1__Qwen3-1.7B__gpt-6.2-astra__s100.json |
 | REPRO-Q4 | 复现：Qwen3 4B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 12:57 +0400 | 不补跑：Qwen3 4B MedCalc 已有 3 次原代码运行（s0–s2，教过的 26.9 → 55.6 / 56.2 / 61.9）。12:43 误启动的 s100/s101 已停止并移入 runs_void/ |  |
+| T4-Q17 | 教学运行：Qwen3 1.7B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-23 03:29 +0400 | Qwen3-1.7B MATH L5（原代码、验证上限 1024 token）：基线 43.3 → s100 46.2、s101 44.4、s102 44.0，均在置信区间内，无确认提升；副作用近零。教学验证 55–60% 在 1024 token 处截断，教师看到的分数一直约 20% | eval/t4__Qwen3-1.7B__gpt-6.2-astra__s102.json |
 
 ## 作废（1）
 
