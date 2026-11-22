@@ -3,11 +3,10 @@
 > 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-22 22:25 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（6）
+## 进行中（5）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
-| REPRO-Q17 | 复现：Qwen3 1.7B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 12:42 +0400 | s100 结束（363 分钟，194 轮）：保留 7 处编辑，隐藏验证 18.3 → 53.3（原 s0 最终 44.2、s1 39.2）；隐藏测试排队 |  |
 | T2-Q17 | 教学运行：Qwen3 1.7B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 隐藏测试（HF fp32；评测中途显存不足一次，批大小由 16 降为 8）：BBH 59.5→92.1、新题 58.0→94.0、更难题 36.7→76.7；副作用 ARC 74.0→72.3、HellaSwag 54.7→49.0、算术 49.0→38.5、困惑度 +3.1% |  |
 | T2-Q4 | 教学运行：Qwen3 4B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | 全精度基线（HF fp32；评测中显存不足，批大小降为 4）：BBH 84.8、新题 84.0、更难题 68.0；对比 s100：98.9 / 99.7 / 96.7；通用能力 ARC 85.0→85.0、HellaSwag 81.3→81.3、算术 78→72、困惑度 +2.0% |  |
 | T4-Q17 | 教学运行：Qwen3 1.7B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 全精度基线（HF fp32 批16，已按修正后的答案提取重判）：MATH L5 43.3（数论 47.4、计数与概率 38.2；16% 输出在 2048 token 处截断未给答案）；教学排队 |  |
@@ -35,7 +34,7 @@
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 交还：已排除分配器和沙盒本身（0 次重试；沙盒外同样慢），慢在长提示+填充掩码和整批等最长输出；transformers 自带 generate_batch 不提速且输出不一致。需要连续批处理或提前出队的实现，详见 CHANGELOG 2026-11-20 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
 
-## 已完成（55）
+## 已完成（56）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -93,6 +92,7 @@
 | T3-Q17-A62-s1 | 教学运行：疾病诊断 DDXPlus（重复运行） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | Astra 6.2 (gpt-6.2-astra) | DDXPlus (aai530-group6/ddxplus) | main@ws006344 | 2026-11-19 22:45 +0400 | 零保留编辑（唯一的编辑使验证 65.3→58.0%，已撤回），教师在 40 步主动结束；学生等同未编辑（隐藏测试 66.7%）。与第 1 次（81.0%）差别很大，说明这个任务上的成功依赖教师在那次运行里找到的具体改法 |  |
 | T1-Q14 | 教学运行：Qwen3 14B 学 MedCalc（检验更大模型是否更可教） | Qwen3 14B (Qwen/Qwen3-14B, https://huggingface.co/Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-21 13:23 +0400 | Qwen3-14B（bf16）Astra 6.2 三个种子，同协议（HF bf16 batch16）已教：基线 46.9 → s0 50.0、s1 47.5、s2 零编辑；未教 19.1 → 21.4 / 20.9；通用能力不变。差异在 bf16 批大小噪声内（同一 8B 基线 batch8 与 batch16 相差 5.7 分），无可确认提升 | eval/t1__Qwen3-14B__gpt-6.2-astra__s1.json |
 | T1-G12 | 教学运行：Gemma 3 12B 学 MedCalc（换模型家族检验 8B/14B 的结论） | Gemma 3 12B (google/gemma-3-12b-it, https://huggingface.co/google/gemma-3-12b-it，半精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-21 13:23 +0400 | Gemma-3-12B（bf16）Astra 6.2 s0：保留 1 个新增偏置；同协议（batch16）已教 46.2→41.2、未教 16.4→11.8（区间重叠，无提升）；通用能力不变 | eval/t1__gemma-3-12b-it__gpt-6.2-astra__s0.json |
+| REPRO-Q17 | 复现：Qwen3 1.7B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 22:25 +0400 | 复现成立：s100（c343b08 原代码）隐藏测试教过的 8 种 21.2 → 51.2（置信区间 43.8–59.4），与原 s0 49.4、s1 44.4 一致；三次均值 48.3 ± 3.6。没教过的 11 种 5.9 → 2.7，未给答案率 1% → 22%（集中在没教过的评分）。副作用：ARC 74.0→76.0、HellaSwag 54.7→60.7、算术 49.0→42.5、困惑度 −0.4% | eval/t1__Qwen3-1.7B__gpt-6.2-astra__s100.json |
 | REPRO-Q4 | 复现：Qwen3 4B 学 MedCalc，原样复现成功运行（c343b08 代码快照、接口循环、effort high），3 次 | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | MedCalc-Bench Verified (8 种规则评分) | main@ws006344 | 2026-11-22 12:57 +0400 | 不补跑：Qwen3 4B MedCalc 已有 3 次原代码运行（s0–s2，教过的 26.9 → 55.6 / 56.2 / 61.9）。12:43 误启动的 s100/s101 已停止并移入 runs_void/ |  |
 
 ## 作废（1）
