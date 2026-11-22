@@ -17,7 +17,7 @@
 |---|---|---|---|---|---|---|---|---|
 | AN-TEACHER | 分析 1：教师能力对编辑的影响（换不同教师教同一学生，医疗任务） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.1 Sol、GPT-6 Astra、GPT-6.2 Astra、Claude Fable 5.2、Claude Fable 5.1、Gemini 4 Argon、3 个开源模型、1 个普通/小模型 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
 | AN-EFFORT | 分析 2：教师思考强度对编辑的影响（low/medium/high/xhigh，及最高强度+联网） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.2 Astra、Claude Fable 5.2 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
-| REPRO-G1-T2 | 复现：Gemma 3 1B 学物体追踪，原样复现成功运行（c343b08 代码快照），2 次 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:42 +0400 | 方案见 experiment_plan.md |  |
+| REPRO-G1-T2 | 复现：Gemma 3 1B 学物体追踪，原样复现成功运行（c343b08 代码快照），2 次 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:42 +0400 | 只补缺：已有 s0、s1，补 s100（排队） |  |
 
 ## 未开始（可认领）（6）
 
