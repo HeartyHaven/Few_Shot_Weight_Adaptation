@@ -11,7 +11,7 @@
 | T2-Q17 | 教学运行：Qwen3 1.7B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 结束（218 分钟，133 轮）：保留 6 处编辑，隐藏验证 58.7 → 93.3（9 次查看）；隐藏测试排队 |  |
 | T2-Q4 | 教学运行：Qwen3 4B 学物体追踪（原代码 c343b08，3 次，并补全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:56 +0400 | s100 隐藏测试（HF fp32 批16）：BBH 98.9、新题 99.7、更难题 96.7；半精度基线 85.2 / 85.0 / 71.3（全精度基线评测中）；通用能力 ARC 85.3→85.0、HellaSwag 80.7→81.3、算术 76→72、困惑度 +1.9% |  |
 
-## 已认领（6）
+## 已认领（7）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -21,8 +21,9 @@
 | T4-Q17 | 教学运行：Qwen3 1.7B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 数据划分 tdwa/data_mathcode.py；方案见 experiment_plan.md |  |
 | T4-Q4 | 教学运行：Qwen3 4B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 数据划分 tdwa/data_mathcode.py；方案见 experiment_plan.md |  |
 | T5-Q17 | 教学运行：Qwen3 1.7B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | 数据划分 tdwa/data_mathcode.py；方案见 experiment_plan.md |  |
+| T5-Q4 | 教学运行：Qwen3 4B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | 数据划分 tdwa/data_mathcode.py；方案见 experiment_plan.md |  |
 
-## 未开始（可认领）（7）
+## 未开始（可认领）（6）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -32,7 +33,6 @@
 | CAPTIONS-ZH | 为最早三次以外的运行补中文逐步说明和日志翻译（用 Opus，不用 Fable） |  |  |  |  |  |  |  |
 | DECODE-SPEED | 在 1.5 倍显存上限内实现更快的解码（如小页缓存的连续批处理），并验证输出与现有一致 |  |  |  |  |  | 交还：已排除分配器和沙盒本身（0 次重试；沙盒外同样慢），慢在长提示+填充掩码和整批等最长输出；transformers 自带 generate_batch 不提速且输出不一致。需要连续批处理或提前出队的实现，详见 CHANGELOG 2026-11-20 |  |
 | T1-Q4-F52-s1 | 教学运行：MedCalc（重复运行，Astra 额度用尽期间用 Fable） | Qwen3 4B (Qwen/Qwen3-4B) | Fable 5.2 (claude-fable-5-2) | MedCalc-Bench Verified (8 种规则评分) |  |  | 18:5x 新账号 Fable 周额度用尽（重置于 11-22 15:00），在第 53 步零编辑中断，已移入 runs_void/；额度恢复后重跑 |  |
-| T5-Q4 | 教学运行：Qwen3 4B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O |  |  | 数据划分 tdwa/data_mathcode.py；方案见 experiment_plan.md |  |
 
 ## 已完成（55）
 
