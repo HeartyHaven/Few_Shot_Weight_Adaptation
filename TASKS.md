@@ -1,6 +1,6 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-23 16:59 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-23 17:26 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（5）
@@ -20,7 +20,7 @@
 | AN-TEACHER | 分析 1：教师能力对编辑的影响（换不同教师教同一学生，医疗任务） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.1 Sol、GPT-6 Astra、GPT-6.2 Astra、Claude Fable 5.2、Claude Fable 5.1、Gemini 4 Argon、3 个开源模型、1 个普通/小模型 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
 | AN-EFFORT | 分析 2：教师思考强度对编辑的影响（low/medium/high/xhigh，及最高强度+联网） | Qwen3 1.7B (Qwen/Qwen3-1.7B) | GPT-6.2 Astra、Claude Fable 5.2 | MedCalc-Bench Verified（8 种规则评分） | main@ws006343 | 2026-11-20 22:39 +0400 | 用户大纲标注 mbz 服务器（ws006343） |  |
 | REPRO-G1-T2 | 复现：Gemma 3 1B 学物体追踪，原样复现成功运行（c343b08 代码快照），2 次 | Gemma 3 1B (google/gemma-3-1b-it) | Astra 6.2 (gpt-6.2-astra) | BBH tracking_shuffled_objects | main@ws006344 | 2026-11-22 12:42 +0400 | 只补缺：已有 s0、s1，补 s100（排队） |  |
-| MAIN-Q14 | 主表第三个学生：Qwen3 14B（半精度）在 MedCalc、数学、代码各教 1 次（原代码 c343b08 + 半精度选项），并补数学/代码半精度基线；追踪最后（基线已 98.7） | Qwen3 14B (Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra)；GPT 额度用尽时改派 Gemini 4 Argon / Claude Fable 5.2 | MedCalc / MATH L5 / CRUXEval-O / 追踪 | main@ws006344 | 2026-11-22 22:25 +0400 | 分析 2 新增点 Qwen3 0.6B（MedCalc，GPT，加速模式）s101：隐藏测试教过的 8 种 8.8 → 47.5（vLLM），没教过 0.9 → 3.2；ARC 49→56、HellaSwag 38.3→43.3、算术不变、困惑度 +8%；该运行在第 198 轮因 GPU 显存不足中断，用 salvage 收尾 |  |
+| MAIN-Q14 | 主表第三个学生：Qwen3 14B（半精度）在 MedCalc、数学、代码各教 1 次（原代码 c343b08 + 半精度选项），并补数学/代码半精度基线；追踪最后（基线已 98.7） | Qwen3 14B (Qwen/Qwen3-14B，半精度) | Astra 6.2 (gpt-6.2-astra)；GPT 额度用尽时改派 Gemini 4 Argon / Claude Fable 5.2 | MedCalc / MATH L5 / CRUXEval-O / 追踪 | main@ws006344 | 2026-11-22 22:25 +0400 | 17:30 GPT-6.2 Astra 额度用尽，GPT 运行暂停（用户通知后开启）；期间 Claude Fable 5.2 先教 14B 的 MedCalc / 数学 / 代码 / 追踪各 1 次（不计入主表 Ours） |  |
 
 ## 未开始（可认领）（6）
 
