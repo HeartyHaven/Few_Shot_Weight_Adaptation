@@ -1,6 +1,6 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-23 10:37 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-23 11:32 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
 ## 进行中（6）
@@ -12,7 +12,7 @@
 | T4-Q4 | 教学运行：Qwen3 4B 学数学 MATH Level 5（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | MATH Level 5（数论、计数与概率） | main@ws006344 | 2026-11-22 17:13 +0400 | 全精度基线（HF fp32；评测中显存不足一次，批大小降为 8）：MATH L5 64.6（数论 70.1、计数与概率 57.7；14.8% 在 2048 token 内未给答案）；教学排队 |  |
 | T5-Q17 | 教学运行：Qwen3 1.7B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | s102 隐藏测试：54.2 → 54.2（与基线逐项相同）：保留的编辑只是第 27 层 MLP 输出上最大 0.0035 的偏置，几乎不改变输出；教师看到的验证 65.3 是验证集本身的水平（没有编辑前的对照）。代码 1.7B 三次：52.0 / 49.5 / 54.2，无提升 |  |
 | T5-Q4 | 教学运行：Qwen3 4B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | 全精度基线（HF fp32；显存不足一次，批大小降为 8）：CRUXEval-O 550 题 76.4（未给答案 1.1%）；GPT 额度用尽期间 4B 先由 Claude Fable 5.2 教（不计入主表） |  |
-| TEACHER-CLAUDE-MAIN | 教师对照：Claude Fable 5.2 在主表设置上各教 1 次（1.7B / 4B × 追踪、MedCalc、数学、代码；原代码、同一接口循环），GPT 额度用尽期间填满空闲 GPU | Qwen3 1.7B / 4B | Claude Fable 5.2 (claude-fable-5-2，经 CLIProxyAPI) | 追踪 / MedCalc / MATH L5 / CRUXEval-O | main@ws006344 | 2026-11-23 10:37 +0400 | 已完成：追踪 1.7B 97.9（GPT 92.1）；进行中：数学 4B、代码 4B、MedCalc 1.7B（10:36 起）；排队：数学 1.7B、代码 1.7B、追踪 4B、MedCalc 4B |  |
+| TEACHER-CLAUDE-MAIN | 教师对照：Claude Fable 5.2 在主表设置上各教 1 次（1.7B / 4B × 追踪、MedCalc、数学、代码；原代码、同一接口循环），GPT 额度用尽期间填满空闲 GPU | Qwen3 1.7B / 4B | Claude Fable 5.2 (claude-fable-5-2，经 CLIProxyAPI) | 追踪 / MedCalc / MATH L5 / CRUXEval-O | main@ws006344 | 2026-11-23 10:37 +0400 | 数学 4B（Claude）隐藏测试（vLLM，362 秒；HF 基线用了 7612 秒）：64.6 → 66.8（置信区间 61.0–72.2），未给答案 14.8% → 2.2%；计数与概率 57.7→64.2、数论 70.1→68.8；算术 78→73.5 |  |
 
 ## 已认领（4）
 
