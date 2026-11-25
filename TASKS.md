@@ -1,9 +1,9 @@
 # 任务看板
 
-> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-23 21:58 +0400。
+> 由 `python -m tdwa.board render` 从 `tasks/board.json` 生成，请不要手改本文件。最后更新：2026-11-25 13:51 +0400。
 > 认领和完成任务的规则见 [README.md](README.md#多人并行协作规则)。
 
-## 进行中（5）
+## 进行中（6）
 
 | ID | 任务 | 学生 | 教师 | 数据 | 负责者 | 时间 | 结果 / 备注 | 产出位置 |
 |---|---|---|---|---|---|---|---|---|
@@ -12,6 +12,7 @@
 | T5-Q17 | 教学运行：Qwen3 1.7B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 1.7B (Qwen/Qwen3-1.7B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | s102 隐藏测试：54.2 → 54.2（与基线逐项相同）：保留的编辑只是第 27 层 MLP 输出上最大 0.0035 的偏置，几乎不改变输出；教师看到的验证 65.3 是验证集本身的水平（没有编辑前的对照）。代码 1.7B 三次：52.0 / 49.5 / 54.2，无提升 |  |
 | T5-Q4 | 教学运行：Qwen3 4B 学代码输出预测 CRUXEval-O（原代码 c343b08，3 次，并测全精度基线） | Qwen3 4B (Qwen/Qwen3-4B，全精度) | Astra 6.2 (gpt-6.2-astra) | CRUXEval-O | main@ws006344 | 2026-11-22 17:13 +0400 | 全精度基线（HF fp32；显存不足一次，批大小降为 8）：CRUXEval-O 550 题 76.4（未给答案 1.1%）；GPT 额度用尽期间 4B 先由 Claude Fable 5.2 教（不计入主表） |  |
 | TEACHER-CLAUDE-MAIN | 教师对照：Claude Fable 5.2 在主表设置上各教 1 次（1.7B / 4B × 追踪、MedCalc、数学、代码；原代码、同一接口循环），GPT 额度用尽期间填满空闲 GPU | Qwen3 1.7B / 4B | Claude Fable 5.2 (claude-fable-5-2，经 CLIProxyAPI) | 追踪 / MedCalc / MATH L5 / CRUXEval-O | main@ws006344 | 2026-11-23 10:37 +0400 | 追踪 1.7B（Claude，加速模式 s110，保留 1 处编辑）隐藏测试（vLLM）：BBH 59.5→88.4、新题 58.0→87.7、更难题 36.7→82.7；算术 49→49.5、ARC 74→73.3、HellaSwag 54.7→55.7。同设置全精度 s100 为 97.9（3 处编辑） |  |
+| MIGRATE-FSWA-8H200-20261125 | 按用户要求暂停本项目实验、保留源目录并完整复制到 8H200 MedBoundary-project，校验完整性 |  |  |  | codex-transfer@ws006344 | 2026-11-25 13:51 +0400 |  |  |
 
 ## 已认领（4）
 
