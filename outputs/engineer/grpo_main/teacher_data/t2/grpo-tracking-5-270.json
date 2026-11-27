@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-270",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Vera, Bob is dancing with Priya, Claire is dancing with Stefan, Dave is dancing with Karl, and Eve is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Eve and Bob switch partners. Then, Eve and Alice switch partners. Then, Dave and Claire switch partners. Then, Claire and Bob switch partners. Finally, Claire and Eve switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Vera\n(B) Priya\n(C) Stefan\n(D) Karl\n(E) Nadia",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Vera",
+      "Bob": "Priya",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Nadia",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Nadia",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Nadia",
+      "Claire": "Karl",
+      "Dave": "Stefan",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Karl",
+      "Claire": "Nadia",
+      "Dave": "Stefan",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Karl",
+      "Claire": "Vera",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Dancer order: Alice | Bob | Claire | Dave | Eve\nInitial partners: Vera | Priya | Stefan | Karl | Nadia\n1. Eve ↔ Bob: Vera | Nadia | Stefan | Karl | Priya\n2. Eve ↔ Alice: Priya | Nadia | Stefan | Karl | Vera\n3. Dave ↔ Claire: Priya | Nadia | Karl | Stefan | Vera\n4. Claire ↔ Bob: Priya | Karl | Nadia | Stefan | Vera\n5. Claire ↔ Eve: Priya | Karl | Vera | Stefan | Nadia\nAlice dances with Priya, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1247,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

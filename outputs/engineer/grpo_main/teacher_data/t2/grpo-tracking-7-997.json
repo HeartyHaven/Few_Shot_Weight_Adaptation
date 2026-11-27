@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-997",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing cheerleader, Bob is playing left winger, Claire is playing center midfielder, Dave is playing left back, Eve is playing sweeper, Fred is playing right winger, and Gertrude is playing goalkeeper.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Eve trade positions. Then, Claire and Eve trade positions. Then, Claire and Alice trade positions. Then, Fred and Eve trade positions. Then, Bob and Claire trade positions. Then, Claire and Eve trade positions. Finally, Dave and Bob trade positions. At the end of the match, Fred is playing\nOptions:\n(A) cheerleader\n(B) left winger\n(C) center midfielder\n(D) left back\n(E) sweeper\n(F) right winger\n(G) goalkeeper",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "cheerleader",
+      "Bob": "left winger",
+      "Claire": "center midfielder",
+      "Dave": "left back",
+      "Eve": "sweeper",
+      "Fred": "right winger",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "sweeper",
+      "Claire": "center midfielder",
+      "Dave": "left back",
+      "Eve": "left winger",
+      "Fred": "right winger",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "sweeper",
+      "Claire": "left winger",
+      "Dave": "left back",
+      "Eve": "center midfielder",
+      "Fred": "right winger",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "sweeper",
+      "Claire": "cheerleader",
+      "Dave": "left back",
+      "Eve": "center midfielder",
+      "Fred": "right winger",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "sweeper",
+      "Claire": "cheerleader",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "center midfielder",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "cheerleader",
+      "Claire": "sweeper",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "center midfielder",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "cheerleader",
+      "Claire": "right winger",
+      "Dave": "left back",
+      "Eve": "sweeper",
+      "Fred": "center midfielder",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "left back",
+      "Claire": "right winger",
+      "Dave": "cheerleader",
+      "Eve": "sweeper",
+      "Fred": "center midfielder",
+      "Gertrude": "goalkeeper"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Position order: (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (cheerleader, left winger, center midfielder, left back, sweeper, right winger, goalkeeper)\n1. Bob ↔ Eve: (cheerleader, sweeper, center midfielder, left back, left winger, right winger, goalkeeper)\n2. Claire ↔ Eve: (cheerleader, sweeper, left winger, left back, center midfielder, right winger, goalkeeper)\n3. Claire ↔ Alice: (left winger, sweeper, cheerleader, left back, center midfielder, right winger, goalkeeper)\n4. Fred ↔ Eve: (left winger, sweeper, cheerleader, left back, right winger, center midfielder, goalkeeper)\n5. Bob ↔ Claire: (left winger, cheerleader, sweeper, left back, right winger, center midfielder, goalkeeper)\n6. Claire ↔ Eve: (left winger, cheerleader, right winger, left back, sweeper, center midfielder, goalkeeper)\n7. Dave ↔ Bob: (left winger, left back, right winger, cheerleader, sweeper, center midfielder, goalkeeper)\nFred is playing center midfielder, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1285,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

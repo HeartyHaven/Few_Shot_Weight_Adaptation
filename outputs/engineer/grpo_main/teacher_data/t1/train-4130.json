@@ -1,0 +1,22 @@
+{
+  "id": "train-4130",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 50-year-old man visits his physician after 20 years of not seeking any medical care. He is concerned about his health after a colleague recently had a heart attack. The patient has no active complaints and says he feels healthy; however, he does not exercise regularly and lives a sedentary lifestyle. He is employed as an administrative position at a local college, and is seated at a desk most of the day. His father had a heart attack at age 54 and his mother is still alive with no health concerns. He does not smoke, only drinks socially, and does not use drugs. Today, his blood pressure is 130/90 mm Hg, pulse is 84/min, and respiratory rate is 14/min. Physical examination reveals an obese male with no significant findings.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 238,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors, and troponin. It is intended for suspected acute coronary syndrome, not asymptomatic screening, so this calculation is conditional:\n- History: no chest pain or other ischemic symptoms → 0.\n- ECG: not reported; assume normal for this estimate → 0.\n- Age: 50 years (45–64) → 1.\n- Risk factors: obesity and premature coronary disease in his father (MI at 54). Counting the diastolic BP of 90 mm Hg as hypertension gives three risk factors → 2. One reading alone does not establish chronic hypertension.\n- Troponin: not reported; assume at or below the upper reference limit → 0.\nUnder those assumptions, total = 0 + 0 + 1 + 2 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 685,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

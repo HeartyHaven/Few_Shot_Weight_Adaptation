@@ -1,0 +1,22 @@
+{
+  "id": "train-733",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 62-year-old female with a history of ESRD and on hemodialysis was referred to our electrophysiology department due to paroxysmal AF. Anticoagulation therapy with warfarin was started because her CHADS2-VASc score was 4 (hypertension, diabetes, congestive heart failure, and female gender), as well as amiodarone therapy for rhythm control. Transthoracic echocardiography demonstrated enlarged left atrium (LA) with a reduced left ventricular ejection fraction (25%). The coronary angiogram demonstrated no significant stenosis at the epicardial coronary artery. Transesophageal echocardiography (TEE) revealed a thrombus in the LAA ( & ). We targeted an INR of 2.0–2.5 with a monthly check up; however, labile INR was documented with time in a therapeutic range (TTR) of 45.8%. With maintaining warfarin and amiodarone, the patient experienced syncope. Tachycardia–bradycardia syndrome was documented, and therefore, a catheter ablation was planned. However, after approximately 2 years of warfarin anticoagulation therapy, TEE detected remaining thrombus (). Therefore, warfarin was switched to a direct factor Xa inhibitor, apixaban at 5mg bid. Patient’s PT and INR values were 19.4 and 1.78, respectively, at the time of replacement. Apixaban was initially prescribed at 2.5 mg bid as opposed to 5 mg bid recommended by the package labeling for fear of bleeding complications, and it was increased to 5 mg bid a month later. After 4 months of apixaban treatment, TEE revealed complete resolution of the LAA thrombus ( & ). Finally, catheter ablation was performed without complications, and the patient has since been in the sinus rhythm under continued anticoagulant treatment with apixaban. No thromboembolic or bleeding event occurred during the 26 months of the follow-up after the catheter ablation.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 520,
+  "solution": "Apply CHA2DS2-VASc to the patient's baseline stroke risk with paroxysmal atrial fibrillation:\n- Congestive heart failure/LV dysfunction: established heart failure with EF 25% = 1.\n- Hypertension: present = 1.\n- Age: 2 points for ≥75 or 1 for 65–74; at 62 she receives 0.\n- Diabetes mellitus: present = 1.\n- Prior stroke, TIA, or systemic embolism (2 points): none documented = 0. A thrombus within the left atrial appendage is not a prior systemic embolic event.\n- Vascular disease (1 point): no qualifying coronary or peripheral arterial disease or aortic plaque documented = 0.\n- Female sex category = 1.\nDialysis is not a CHA2DS2-VASc criterion. Total = 1 + 1 + 0 + 1 + 0 + 0 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 699,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-593",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing fullback, Bob is playing benchwarmer, and Claire is playing goalkeeper.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Alice trade positions. Then, Alice and Bob trade positions. Finally, Alice and Bob trade positions. At the end of the match, Alice is playing\nOptions:\n(A) fullback\n(B) benchwarmer\n(C) goalkeeper",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "fullback",
+      "Bob": "benchwarmer",
+      "Claire": "goalkeeper"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "benchwarmer",
+      "Claire": "fullback"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "goalkeeper",
+      "Claire": "fullback"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "benchwarmer",
+      "Claire": "fullback"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Position order in every row: Alice, Bob, Claire.\nInitial: fullback | benchwarmer | goalkeeper\n1. Claire and Alice swap: goalkeeper | benchwarmer | fullback\n2. Alice and Bob swap: benchwarmer | goalkeeper | fullback\n3. Alice and Bob swap: goalkeeper | benchwarmer | fullback\nAlice is playing goalkeeper, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1282,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

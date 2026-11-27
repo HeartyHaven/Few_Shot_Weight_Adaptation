@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-540",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Persuasion, Claire gets The Hobbit, Dave gets Dune, Eve gets The Trial, Fred gets Siddhartha, and Gertrude gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Alice and Gertrude swap books. Then, Bob and Eve swap books. Then, Alice and Bob swap books. Then, Gertrude and Eve swap books. Then, Claire and Fred swap books. Finally, Eve and Bob swap books. At the end of the semester, Fred has\nOptions:\n(A) Middlemarch\n(B) Persuasion\n(C) The Hobbit\n(D) Dune\n(E) The Trial\n(F) Siddhartha\n(G) Ivanhoe",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Persuasion",
+      "Claire": "The Hobbit",
+      "Dave": "Dune",
+      "Eve": "The Trial",
+      "Fred": "Siddhartha",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "The Trial",
+      "Fred": "Siddhartha",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Hobbit",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "The Trial",
+      "Fred": "Siddhartha",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Trial",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "The Hobbit",
+      "Fred": "Siddhartha",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "The Hobbit",
+      "Fred": "Siddhartha",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Siddhartha",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Persuasion",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Middlemarch",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Ivanhoe",
+      "Fred": "Persuasion",
+      "Gertrude": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Middlemarch | Persuasion | The Hobbit | Dune | The Trial | Siddhartha | Ivanhoe\n1. Bob swaps with Claire: Middlemarch | The Hobbit | Persuasion | Dune | The Trial | Siddhartha | Ivanhoe\n2. Alice swaps with Gertrude: Ivanhoe | The Hobbit | Persuasion | Dune | The Trial | Siddhartha | Middlemarch\n3. Bob swaps with Eve: Ivanhoe | The Trial | Persuasion | Dune | The Hobbit | Siddhartha | Middlemarch\n4. Alice swaps with Bob: The Trial | Ivanhoe | Persuasion | Dune | The Hobbit | Siddhartha | Middlemarch\n5. Gertrude swaps with Eve: The Trial | Ivanhoe | Persuasion | Dune | Middlemarch | Siddhartha | The Hobbit\n6. Claire swaps with Fred: The Trial | Ivanhoe | Siddhartha | Dune | Middlemarch | Persuasion | The Hobbit\n7. Eve swaps with Bob: The Trial | Middlemarch | Siddhartha | Dune | Ivanhoe | Persuasion | The Hobbit\nFred holds Persuasion, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1208,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-880",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 70-year-old male was admitted with skin rash on the trunk, back, and limbs (). He suffered from nonvalvular atrial fibrillation. The patient did not report any allergies from the past. He took diltiazem 60 mg × 2 in order to lower his heart rate, alprazolam 0,25 mg at bedtime, and dabigatran 150 mg × 2. He was starting taking dabigatran in the previous week. The skin rash developed during the last three days on the trunk and limbs with no response to levocetirizine dihydrochloride which was prescribed by his doctor. He suffered from itching and burning. Conjunctiva, mouth, and genital regions were not involved. On clinical examination, he was found to have arterial pressure 125/85 mmHg, oxygen saturation 95%, heart rate 76 bpm, and normal heart lung auscultation. He did not have fever and his general condition was good. His electrocardiogram showed atrial fibrillation, X-ray was normal, and his hematological and biochemical results were normal. The patient was transferred to the internal medicine department in order to be treated with methylprednisolon 80 mg × 2, dimethindene maleate iv, and H2 antagonists. The eruption was resistant to our therapeutic choices. Immunologic tests were ordered to rule out autoimmune disorders. On the third day of hospitalization skin biopsy was performed, which revealed neutrophilic infiltrates and leukocytoclastic vasculitis. Prednisolon was given 1 mg/kgr as well as colchicine 1 mg/day. On the fifth day of hospitalization the rash was diminished. He was able to leave our clinic two days later. Dabigatran was replaced with enoxaparin 0,6 mL/kgr/12 hours on hospitalization day 1.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 480,
+  "solution": "CHA₂DS₂-VASc assesses stroke risk in atrial fibrillation. Apply each component at admission:\n- Congestive heart failure and hypertension (1 each if present): neither is documented, so 0 + 0. Diltiazem is for rate control, not evidence of hypertension.\n- Age (65–74: 1; ≥75: 2): age 70 gives 1.\n- Diabetes (1 if present): not documented, 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): not documented, 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque; 1 if present): not documented, 0.\n- Female sex (1 if present): male, 0.\nTotal = 0 + 0 + 1 + 0 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 649,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

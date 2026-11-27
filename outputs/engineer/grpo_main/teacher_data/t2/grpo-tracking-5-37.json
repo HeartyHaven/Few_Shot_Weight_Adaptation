@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-37",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Umar, Claire is dancing with Stefan, Dave is dancing with Vera, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Claire and Dave switch partners. Then, Claire and Eve switch partners. Then, Dave and Eve switch partners. Finally, Bob and Dave switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Oscar\n(B) Umar\n(C) Stefan\n(D) Vera\n(E) Wade",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Stefan",
+      "Dave": "Vera",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Wade",
+      "Dave": "Vera",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Vera",
+      "Dave": "Wade",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Stefan",
+      "Dave": "Wade",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Stefan",
+      "Dave": "Vera",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Vera",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists the partners of (Alice, Bob, Claire, Dave, Eve), in that order.\nStart: (Oscar, Umar, Stefan, Vera, Wade)\n1. Eve swaps with Claire: (Oscar, Umar, Wade, Vera, Stefan)\n2. Claire swaps with Dave: (Oscar, Umar, Vera, Wade, Stefan)\n3. Claire swaps with Eve: (Oscar, Umar, Stefan, Wade, Vera)\n4. Dave swaps with Eve: (Oscar, Umar, Stefan, Vera, Wade)\n5. Bob swaps with Dave: (Oscar, Vera, Stefan, Umar, Wade)\nDave's partner is Umar, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1006,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

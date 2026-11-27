@@ -1,0 +1,22 @@
+{
+  "id": "train-2989",
+  "task": "t1",
+  "group": "Wells' Criteria for Pulmonary Embolism",
+  "question": "Patient note:\nA 35-year-old G4P1 woman presents for follow-up after her 3rd miscarriage. All 3 miscarriages occurred during the 2nd trimester. Past medical history is significant for systemic lupus erythematosus (SLE) and a deep vein thrombosis (DVT) in her right lower leg 3 years ago. Her current medication is hydroxychloroquine. The patient denies any tobacco, alcohol, and illicit substance use. Her vitals include: temperature 36.8℃ (98.2℉), blood pressure 114/76 mm Hg, pulse 84/min, respiration rate 12/min. Physical examination reveals a lacy, violaceous discoloration on her lower legs.\n\nQuestion: What is the patient's score of Wells' criteria for Pulmonary Embolism? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1.5",
+  "lower": 1.5,
+  "upper": 1.5,
+  "calc_id": 8,
+  "prompt_tokens": 236,
+  "solution": "Apply the Wells score for pulmonary embolism (PE):\n- Clinical signs of current DVT (3 points): lacy skin discoloration without reported leg swelling or deep venous tenderness does not qualify, 0.\n- PE more likely than an alternative diagnosis (3): no presenting features suggest acute PE, 0.\n- Heart rate >100/min (1.5): pulse 84/min, 0.\n- Immobilization for at least 3 days or surgery in the preceding 4 weeks (1.5): neither reported, 0.\n- Previous DVT or PE (1.5): right-leg DVT three years ago, 1.5.\n- Hemoptysis (1): none reported, 0.\n- Active malignancy (1): none reported, 0.\nSLE and recurrent pregnancy loss suggest an underlying thrombotic predisposition but are not separate Wells criteria. Total = 0 + 0 + 0 + 0 + 1.5 + 0 + 0 = 1.5.\nFinal answer: 1.5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 927,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.5,
+    "correct": true
+  }
+}

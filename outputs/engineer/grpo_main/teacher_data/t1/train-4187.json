@@ -1,0 +1,22 @@
+{
+  "id": "train-4187",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 52-year-old man presents to the emergency department with sudden-onset dyspnea, tachycardia, tachypnea, and chest pain. He works as a long-haul truck driver, and he informs you that he recently returned to the west coast from a trip to Tennessee. His medical history is significant for gout, hypertension, hypercholesterolemia, diabetes mellitus type 2, and mild intellectual disability. He currently smokes 2 packs of cigarettes/day, drinks a 6-pack of beer/day, and he endorses a past history of injection drug use but currently denies any illicit drug use. The vital signs include: temperature 36.7°C (98.0°F), blood pressure 126/74 mm Hg, heart rate 87/min, and respiratory rate 23/min. His physical examination shows minimal bibasilar rales, but otherwise clear lungs on auscultation, grade 2/6 holosystolic murmur, and a benign abdominal physical examination. A computed tomography angiography (CTA) demonstrates a segmental pulmonary embolism (PE).\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 18,
+  "prompt_tokens": 309,
+  "solution": "HEART estimates acute coronary syndrome risk using five components, each worth 0–2 points:\n- History: slightly, moderately, or highly suspicious for coronary ischemia scores 0, 1, or 2. Assigning 2 requires interpreting the chest pain with dyspnea as highly suspicious before CTA; the note does not describe the pain well enough to establish this rating.\n- ECG: normal = 0, nonspecific repolarization disturbance = 1, significant ST depression = 2. No ECG is reported; assume normal for this calculation → 0.\n- Age: <45 = 0, 45–64 = 1, ≥65 = 2. Age 52 → 1.\n- Risk factors: none = 0, one or two = 1, at least three or known atherosclerotic disease = 2. Hypertension, hypercholesterolemia, diabetes, and current smoking → 2.\n- Troponin: at or below the upper limit of normal = 0, above normal through 3 times the limit = 1, higher = 2. No result is reported; assume normal → 0.\nConditional total = 2 + 0 + 1 + 2 + 0 = 5. The confirmed PE does not itself earn HEART points, and the exact score cannot be verified from the note.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 886,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

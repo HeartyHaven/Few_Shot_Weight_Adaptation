@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-314",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Beloved, Claire gets Jane Eyre, Dave gets Candide, and Eve gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Claire and Alice swap books. Then, Bob and Dave swap books. Then, Dave and Eve swap books. Finally, Claire and Alice swap books. At the end of the semester, Dave has\nOptions:\n(A) Siddhartha\n(B) Beloved\n(C) Jane Eyre\n(D) Candide\n(E) The Hobbit",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "The Hobbit",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Book order in each row: Alice, Bob, Claire, Dave, Eve.\nInitial: Siddhartha, Beloved, Jane Eyre, Candide, The Hobbit\n1. Dave and Bob swap: Siddhartha, Candide, Jane Eyre, Beloved, The Hobbit\n2. Claire and Alice swap: Jane Eyre, Candide, Siddhartha, Beloved, The Hobbit\n3. Bob and Dave swap: Jane Eyre, Beloved, Siddhartha, Candide, The Hobbit\n4. Dave and Eve swap: Jane Eyre, Beloved, Siddhartha, The Hobbit, Candide\n5. Claire and Alice swap: Siddhartha, Beloved, Jane Eyre, The Hobbit, Candide\nDave has The Hobbit, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1229,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

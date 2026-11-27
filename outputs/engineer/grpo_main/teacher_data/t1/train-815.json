@@ -1,0 +1,22 @@
+{
+  "id": "train-815",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 81-year-old male with a past medical history of hypertension, diabetes mellitus type 2, coronary artery disease, atrial fibrillation, and myasthenia gravis presented to the hospital with complaints of left-sided abdominal pain for few hours. He denied any trauma or fall. The abdominal pain had an intensity of 6 out of 10 on the pain scale, with no aggravating or relieving factors. It was associated with dry cough without any fever. He underwent left main coronary artery stenting 60 days prior to the presentation and was taking apixaban, clopidogrel, and aspirin for the management of the atrial fibrillation and coronary artery disease. He had minimal left upper quadrant tenderness on palpation without any guarding or rigidity. A CT of the abdomen () revealed splenic laceration, hemoperitoneum, and grade 2 perisplenic hematoma according to the American Association for the Surgery of Trauma splenic injury scale. Serum hemoglobin ranged from 8.1 to 9.3 g/dL throughout the hospital stay. He was monitored in the critical care unit for hemodynamic instability and surgical intervention was deferred due to stable hematoma. The patient’s apixaban, aspirin, and clopidogrel were held during the hospital stay. Repeat CT of the abdomen showed interval resolution of the perisplenic hematoma. At discharge, only clopidogrel was resumed.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 373,
+  "solution": "CHA₂DS₂-VASc assesses thromboembolic risk in atrial fibrillation. Using the admission history:\n- Congestive heart failure or LV systolic dysfunction: none reported → 0.\n- Hypertension: present → 1.\n- Age: 81 years. Age ≥75 scores 2; the alternative 65–74 category is not added → 2.\n- Diabetes mellitus: type 2 diabetes → 1.\n- Prior stroke, TIA, or systemic embolism: none reported → 0 of 2.\n- Vascular disease: established coronary artery disease requiring left main coronary stenting → 1.\n- Sex category: male → 0.\nTotal: 0 + 1 + 2 + 1 + 0 + 1 + 0 = 5. Antithrombotic treatment and the splenic bleed do not change these points.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 807,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

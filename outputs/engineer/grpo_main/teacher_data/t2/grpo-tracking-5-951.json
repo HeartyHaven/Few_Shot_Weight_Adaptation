@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-951",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Rosa, Claire is dancing with Umar, Dave is dancing with Tara, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Dave and Bob switch partners. Then, Alice and Dave switch partners. Then, Alice and Dave switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Stefan\n(B) Rosa\n(C) Umar\n(D) Tara\n(E) Marco",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Rosa",
+      "Claire": "Umar",
+      "Dave": "Tara",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Rosa",
+      "Claire": "Marco",
+      "Dave": "Tara",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Marco",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Tara",
+      "Claire": "Marco",
+      "Dave": "Stefan",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Marco",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Stefan",
+      "Claire": "Marco",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Stefan, Rosa, Umar, Tara, Marco\n1. Eve ↔ Claire: Stefan, Rosa, Marco, Tara, Umar\n2. Dave ↔ Bob: Stefan, Tara, Marco, Rosa, Umar\n3. Alice ↔ Dave: Rosa, Tara, Marco, Stefan, Umar\n4. Alice ↔ Dave: Stefan, Tara, Marco, Rosa, Umar\n5. Bob ↔ Alice: Tara, Stefan, Marco, Rosa, Umar\nAlice's final partner is Tara, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1311,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

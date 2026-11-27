@@ -1,0 +1,22 @@
+{
+  "id": "train-1074",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 66-year-old man, who had received a renal transplant 5 months before, and was on tritherapy [prednisolone (1 mg/kg/day); cyclosporine A (7 mg/kg/day); azathioprine (1 mg/kg/day)], was admitted to the hospital with hemoptysia. A computed tomographic scan of the chest showed a not well-circumscribed and excavated mass mass involving the pulmonary inferior left lobe, bilateral pleural effusions, and a small parenchyma nodule in the pulmonary inferior right lobe (Fig. et ). An analysis of the BAL was quickly performed due to the presence of Aspergillus fumigatus in sputum: cytopathological examination showed filamentous hyphae corresponding to aspergillosis (Fig. ). These filaments were subsequently identified by culture as A. fumigatus. In addition, pyocyanic bacteria were isolated from the BAL. Treatment associating voriconazole, ceftazidime and ciprofloxacine was started. However, the absence of a clinically improved status and repeated massive hemoptysia, led to surgical resection of the pulmonary left inferior lobe one week later. Gross macroscopy demonstrated a diffuse hemorrhagic infarct of the lung (Fig. ). A specimen of lung tissue was sent to the mycology laboratory. The patients died of cardio-pulmonary failure two days after surgery.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 376,
+  "solution": "CHA2DS2-VASc uses the following admission risk factors:\n- Congestive heart failure: not documented at admission, 0. Later cardiopulmonary failure does not count.\n- Hypertension: not documented, 0.\n- Age: 66 years, so 1 for age 65–74; the 2-point category for age ≥75 does not apply.\n- Diabetes: not documented, 0.\n- Prior stroke, TIA, or systemic arterial embolism: not documented, 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): not documented, 0.\n- Sex category: male, 0.\nTotal = 0 + 0 + 1 + 0 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 938,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

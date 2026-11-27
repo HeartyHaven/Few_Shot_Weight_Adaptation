@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-513",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $a_n$ be the number obtained by writing the integers 1 to $n$ from left to right. Therefore, $a_4 = 1234$ and \\[a_{12} = 123456789101112.\\]For $1 \\le k \\le 100$, how many $a_k$ are divisible by 9?",
+  "answer": "22",
+  "solution": "Since 10 is congruent to 1 modulo 9, appending an integer to the decimal string adds that integer to the residue modulo 9. Thus a_k is congruent to 1 + 2 + ... + k = k(k+1)/2 modulo 9.\nSince 2 is coprime to 9, divisibility by 9 requires and suffices that 9 divide k(k+1). The consecutive factors are coprime, so both factors of 3 in 9 must divide the same one. Hence k is congruent to 0 or 8 modulo 9.\nThe integers 1 through 99 form 11 blocks of nine, each containing two such values. The remaining integer 100 is congruent to 1. The count is 11 × 2 = 22.\nFinal answer: 22",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 23,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "22",
+    "correct": true
+  }
+}

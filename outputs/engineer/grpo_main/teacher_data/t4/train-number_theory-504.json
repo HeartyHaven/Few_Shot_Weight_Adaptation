@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-504",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Find the absolute value of the difference of single-digit integers $A$ and $B$ such that  $$ \\begin{array}{c@{}c@{\\;}c@{}c@{}c@{}c} & & & B& B & A_6\\\\ & & & \\mathbf{4} & \\mathbf{1} & B_6\\\\& & + & A & \\mathbf{1} & \\mathbf{5_6}\\\\ \\cline{2-6} & & A & \\mathbf{1} & \\mathbf{5} & \\mathbf{2_6} \\\\ \\end{array} $$Express your answer in base $6$.",
+  "answer": "1_6",
+  "prompt_tokens": 176,
+  "solution": "Let c be the carry from the units column. Its output digit is 2, so A + B + 5 = 6c + 2. Since A and B are base-6 digits, the column sum is between 5 and 15, giving c = 1 or 2.\nThe next column sums to B + 1 + 1 + c and has output digit 5. Its sum is at most 5 + 2 + 2 = 9, so it must equal 5 rather than 11. Thus B = 3 − c. Substituting into the units equation gives A + 3 − c + 5 = 6c + 2, or A = 7c − 6. If c = 2, then A = 8 is not a base-6 digit. Hence c = 1, A = 1, and B = 2.\nThe hundreds column gives 2 + 4 + 1 = 7, writing 1 and carrying 1 as required. The absolute difference is |1 − 2| = 1.\nFinal answer: 1_6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1411,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "1_6",
+    "correct": true
+  }
+}

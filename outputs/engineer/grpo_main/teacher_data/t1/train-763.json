@@ -1,0 +1,22 @@
+{
+  "id": "train-763",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 77-year-old man presents to the emergency department complaining of feeling like “his heart was racing” for the last 8 days. He denies any chest pain, dizziness, or fainting but complains of fatigue, difficulty breathing with exertion, and swelling of his legs bilaterally for the last 2 weeks. He has had hypertension for the last 25 years. He has a long history of heavy alcohol consumption but denies smoking. His blood pressure is 145/70 mm Hg and the pulse is irregular at the rate of 110/min. On examination of his lower limbs, mild pitting edema is noted of his ankles bilaterally. On cardiac auscultation, heart sounds are irregular. Bibasilar crackles are heard with auscultation of the lungs. An ECG is ordered and the result is shown in the image. Transesophageal echocardiography shows a reduced ejection fraction of 32% and dilatation of all chambers of the heart without any obvious intracardiac thrombus.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 294,
+  "solution": "CHA2DS2-VASc scores stroke risk in atrial fibrillation. Apply its criteria at admission:\n- Heart failure or left ventricular dysfunction: ejection fraction 32% with exertional dyspnea, edema, and bibasilar crackles = 1.\n- Hypertension: 25-year history = 1.\n- Age (65–74 = 1; ≥75 = 2): 77 years = 2.\n- Diabetes: not documented = 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): none documented = 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): none documented = 0.\n- Sex category (female = 1): male = 0.\nTotal = 1 + 1 + 2 + 0 + 0 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 775,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

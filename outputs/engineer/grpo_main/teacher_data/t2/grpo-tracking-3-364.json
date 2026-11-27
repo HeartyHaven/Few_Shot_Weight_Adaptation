@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-364",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Emma, and Claire gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Alice swap books. Finally, Alice and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Middlemarch\n(B) Emma\n(C) Walden",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "Walden"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Middlemarch",
+      "Claire": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Emma"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Emma"
+    }
+  ],
+  "prompt_tokens": 140,
+  "solution": "Books are listed in holder order: Alice, Bob, Claire.\nInitial: Middlemarch, Emma, Walden.\n1. Bob and Alice swap: Emma, Middlemarch, Walden.\n2. Claire and Alice swap: Walden, Middlemarch, Emma.\n3. Alice and Bob swap: Middlemarch, Walden, Emma.\nClaire has Emma, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1345,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

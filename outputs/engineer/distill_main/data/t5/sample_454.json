@@ -1,0 +1,17 @@
+{
+  "id": "sample_454",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(d, count):\n    new_dict = {}\n    for _ in range(count):\n        d = d.copy()\n        new_dict = {**d, **new_dict}\n    return new_dict\n```\n\nInput: f({'a': 2, 'b': [], 'c': {}}, 0)",
+  "answer": "{}",
+  "solution": "Initialize new_dict = {}. Since count = 0, range(count) is empty: d is never copied, and no entries are merged into new_dict. The function returns new_dict, not d.\nFinal answer: {}",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 44,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "{}",
+    "correct": true
+  }
+}

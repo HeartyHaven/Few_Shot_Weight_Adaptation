@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-192",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Marco, Claire is dancing with Vera, Dave is dancing with Tara, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Bob and Alice switch partners. Then, Eve and Alice switch partners. Then, Dave and Eve switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Quinn\n(B) Marco\n(C) Vera\n(D) Tara\n(E) Karl",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Marco",
+      "Claire": "Vera",
+      "Dave": "Tara",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Marco",
+      "Claire": "Quinn",
+      "Dave": "Tara",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Tara",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Tara",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Karl",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Quinn, Marco, Vera, Tara, Karl.\n1. Alice–Claire: Vera, Marco, Quinn, Tara, Karl.\n2. Bob–Alice: Marco, Vera, Quinn, Tara, Karl.\n3. Eve–Alice: Karl, Vera, Quinn, Tara, Marco.\n4. Dave–Eve: Karl, Vera, Quinn, Marco, Tara.\n5. Alice–Bob: Vera, Karl, Quinn, Marco, Tara.\nBob is dancing with Karl, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1158,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

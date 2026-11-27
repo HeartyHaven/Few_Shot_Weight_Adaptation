@@ -1,0 +1,22 @@
+{
+  "id": "train-725",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 71-year-old man presented to the ED with a two-day history of bilateral lower extremity pain. He initially experienced left lower extremity pain and cold sensation which progressed to the right lower extremity. Pertinent past medical history included type 2 diabetes mellitus, hypertension, coronary artery disease with percutaneous coronary intervention (PCI) to the right coronary artery (RCA) 18 years prior, peripheral arterial disease (PAD) with bilateral superficial femoral artery stenting two years prior and atrial fibrillation with recent ablation.\nPhysical exam revealed cold lower limbs and there was bilateral absence of dorsalis pedis and posterior tibial pulses. He had decreased sensation to light touch with preserved strength. The remainder of the physical exam including heart and lung auscultation was unremarkable. Arterial Doppler studies showed occluded stent grafts in the superficial femoral arteries and popliteal arteries bilaterally. A subsequent CT angiogram of his lower extremities confirmed these findings, revealing minimal flow within the dorsal right calf arteries, with no flow being identified within the left calf arteries (Figure ).\nHis initial laboratory results were remarkable for hemoglobin 12.4 g/dL, mean corpuscular volume 104.3, white blood cell (WBC) count 4.6 k/uL, and platelet count 46 k/uL. He was incidentally noted to have 30% peripheral blasts with features consistent with APL on peripheral smear review for thrombocytopenia which prompted a hematology consultation (Figure ). Coagulation panel showed prothrombin time 17.9, international normalized ratio (INR) 1.5, D-dimer >20 ug/mL, and fibrinogen 86 mg/dL. He subsequently underwent bone marrow biopsy which revealed a t(15:17) promyelocytic leukemia/retinoic acid receptor alpha (PML-RARA) positive and 66% confirming diagnosis of APL (Figure ).\nAfter a multidisciplinary discussion with vascular surgery and hematology, the patient was deemed to be very high risk for any surgical intervention and was continued on heparin drip. The following day, the patient reported numbness and weakness in his right lower extremity which resolved spontaneously, and the patient opted for continued observation and chemotherapy. Given the possibility of emergent intervention and concern for poor wound healing, the patient was started only on single agent all-trans retinoic acid (ATRA) alone instead of full-regimen chemotherapy.\nHis hospital course was complicated by atrial fibrillation with rapid ventricular response and subsequently developed ST elevation myocardial infarction (STEMI) needing emergency balloon angioplasty, subsequently sustained a cardiopulmonary arrest (Figure ). Despite a brief return of spontaneous circulation, the patient deteriorated rapidly and expired.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 664,
+  "solution": "CHA₂DS₂-VASc sums stroke risk factors in atrial fibrillation. Using the admission history:\n- Congestive heart failure: Not documented → 0.\n- Hypertension: Present → 1.\n- Age: 71 years, in the 65–74 band (1 point) rather than the ≥75 band (2 points) → 1.\n- Diabetes mellitus: Type 2 → 1.\n- Prior stroke, TIA, or systemic embolism: None documented. Occluded PAD stents do not by themselves establish prior embolism → 0.\n- Vascular disease: Established PAD with bilateral femoral artery stents → 1.\n- Sex category: Male → 0.\nTotal: 0 + 1 + 1 + 1 + 0 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 831,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

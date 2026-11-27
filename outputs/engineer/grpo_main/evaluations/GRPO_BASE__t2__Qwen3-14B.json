@@ -1,0 +1,251 @@
+{
+  "name": "GRPO_BASE__t2__Qwen3-14B",
+  "task": "t2",
+  "student": "Qwen/Qwen3-14B",
+  "seed": null,
+  "baseline": "Base-matched",
+  "teacher": null,
+  "dtype": "bfloat16",
+  "engine": "vllm",
+  "max_new_tokens": 2048,
+  "gsm8k_max_new_tokens": 512,
+  "enable_thinking": false,
+  "test_fingerprints": {
+    "_secret/t2/test_bbh.jsonl": "23859eafb992bd72105e5f315aebc7a85b345d9f4eac41bd22d93af00ba4ce25",
+    "_secret/t2/test_fresh.jsonl": "f51176d5d0c76280b19f1fdba234c28ed8bd4379d6b934e910bb54b5b93914d3",
+    "_secret/t2/test_ood.jsonl": "e9e9b184aad0b4d51365671b0ef23abb150c7888003975bad2c37905901fcf54"
+  },
+  "grader_sha256": "4518d21bd6f70e77e12984145e631e576981d0c90d191291d24ab95e781f52a6",
+  "evaluator_sha256": "ad7bf2e18d9e8b57e70e16cca4ef07034143e0951c0b8dd3b579d8e104b11dd5",
+  "worker_sha256": "3babb908d5016dc3def948d9314159927d627c61dc5492a0d44a1d6800c68f0f",
+  "gpu": "7",
+  "evaluation_protocol": 2,
+  "kv_cache_gib": 24,
+  "max_num_seqs": 64,
+  "max_num_batched_tokens": 8192,
+  "wall_seconds": 367.26,
+  "finished": 1795692082.156864,
+  "results": {
+    "test_bbh": {
+      "free": {
+        "acc": 0.984,
+        "lo": 0.9747,
+        "hi": 0.992,
+        "n": 750
+      },
+      "no_final_answer_rate": 0.0,
+      "mean_output_chars": 1485,
+      "sec": 164,
+      "forward_tokens": 593611,
+      "by_group": {
+        "3obj": {
+          "free": {
+            "acc": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "n": 250
+          },
+          "forced": {
+            "acc": 0.348,
+            "lo": 0.288,
+            "hi": 0.408,
+            "n": 250
+          }
+        },
+        "5obj": {
+          "free": {
+            "acc": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "n": 250
+          },
+          "forced": {
+            "acc": 0.212,
+            "lo": 0.164,
+            "hi": 0.264,
+            "n": 250
+          }
+        },
+        "7obj": {
+          "free": {
+            "acc": 0.952,
+            "lo": 0.924,
+            "hi": 0.976,
+            "n": 250
+          },
+          "forced": {
+            "acc": 0.196,
+            "lo": 0.148,
+            "hi": 0.244,
+            "n": 250
+          }
+        }
+      },
+      "forced": {
+        "acc": 0.252,
+        "lo": 0.2227,
+        "hi": 0.2827,
+        "n": 750
+      }
+    },
+    "test_fresh": {
+      "free": {
+        "acc": 0.9933,
+        "lo": 0.9833,
+        "hi": 1.0,
+        "n": 300
+      },
+      "no_final_answer_rate": 0.0,
+      "mean_output_chars": 1450,
+      "sec": 60,
+      "forward_tokens": 236412,
+      "by_group": {
+        "3obj": {
+          "free": {
+            "acc": 1.0,
+            "lo": 1.0,
+            "hi": 1.0,
+            "n": 100
+          },
+          "forced": {
+            "acc": 0.3,
+            "lo": 0.21,
+            "hi": 0.4,
+            "n": 100
+          }
+        },
+        "5obj": {
+          "free": {
+            "acc": 0.99,
+            "lo": 0.97,
+            "hi": 1.0,
+            "n": 100
+          },
+          "forced": {
+            "acc": 0.13,
+            "lo": 0.07,
+            "hi": 0.1902,
+            "n": 100
+          }
+        },
+        "7obj": {
+          "free": {
+            "acc": 0.99,
+            "lo": 0.97,
+            "hi": 1.0,
+            "n": 100
+          },
+          "forced": {
+            "acc": 0.23,
+            "lo": 0.15,
+            "hi": 0.32,
+            "n": 100
+          }
+        }
+      },
+      "forced": {
+        "acc": 0.22,
+        "lo": 0.1733,
+        "hi": 0.2667,
+        "n": 300
+      }
+    },
+    "test_ood": {
+      "free": {
+        "acc": 0.8933,
+        "lo": 0.84,
+        "hi": 0.94,
+        "n": 150
+      },
+      "no_final_answer_rate": 0.02,
+      "mean_output_chars": 2275,
+      "sec": 53,
+      "forward_tokens": 174289,
+      "by_group": {
+        "5obj": {
+          "free": {
+            "acc": 0.96,
+            "lo": 0.9,
+            "hi": 1.0,
+            "n": 50
+          },
+          "forced": {
+            "acc": 0.22,
+            "lo": 0.12,
+            "hi": 0.34,
+            "n": 50
+          }
+        },
+        "7obj": {
+          "free": {
+            "acc": 0.8,
+            "lo": 0.68,
+            "hi": 0.9,
+            "n": 50
+          },
+          "forced": {
+            "acc": 0.1,
+            "lo": 0.02,
+            "hi": 0.2,
+            "n": 50
+          }
+        },
+        "9obj": {
+          "free": {
+            "acc": 0.92,
+            "lo": 0.84,
+            "hi": 0.98,
+            "n": 50
+          },
+          "forced": {
+            "acc": 0.26,
+            "lo": 0.14,
+            "hi": 0.4,
+            "n": 50
+          }
+        }
+      },
+      "forced": {
+        "acc": 0.1933,
+        "lo": 0.1333,
+        "hi": 0.2533,
+        "n": 150
+      }
+    },
+    "retention": {
+      "ppl_generic": 6.5867,
+      "arc_challenge": {
+        "acc": 0.9233,
+        "lo": 0.8933,
+        "hi": 0.9501,
+        "n": 300
+      },
+      "hellaswag": {
+        "acc": 0.89,
+        "lo": 0.8567,
+        "hi": 0.9233,
+        "n": 300
+      },
+      "arithmetic": {
+        "acc": 0.99,
+        "lo": 0.975,
+        "hi": 1.0,
+        "n": 200
+      },
+      "mmlu": {
+        "acc": 0.7518,
+        "lo": 0.7281,
+        "hi": 0.7772,
+        "n": 1140
+      },
+      "gsm8k": {
+        "acc": 0.94,
+        "lo": 0.918,
+        "hi": 0.96,
+        "n": 500
+      }
+    }
+  },
+  "reused_from": "outputs/engineer/distill_main/evaluations/B3_BASE__t2__Qwen3-14B.json",
+  "reused_source_sha256": "cc9d2b12202094faf0601729f8867c797c8311f09e474d5af5c062e5ed442a15"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-685",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "In the geoboard shown, the points are evenly spaced vertically and horizontally. Segment $AB$ is drawn using two points, as shown. Point $C$ is to be chosen from the remaining $23$ points. How many of these $23$ points will result in triangle $ABC$ being isosceles? [asy]\ndraw((0,0)--(0,6)--(6,6)--(6,0)--cycle,linewidth(1));\nfor(int i=1;i<6;++i)\n{for(int j=1;j<6;++j)\n{dot((i,j));}\n}\ndraw((2,2)--(4,2),linewidth(1));\nlabel(\"A\",(2,2),SW);\nlabel(\"B\",(4,2),SE);\n[/asy]",
+  "answer": "6",
+  "prompt_tokens": 196,
+  "solution": "Use grid coordinates 1 through 5 in each direction, so A = (2,2), B = (4,2), and AB = 2. If AC = BC, then C lies on the perpendicular bisector x = 3. Of its five grid points, (3,2) is collinear with A and B, so four give triangles.\nIf AC = AB or BC = AB, then C is two units from A or B. The integer offsets whose squares sum to 4 are (±2,0) and (0,±2). From A, the horizontal moves reach B or leave the grid; the only vertical move on the grid reaches (2,4). From B, the horizontal moves reach A or leave the grid; the only vertical move on the grid reaches (4,4). These two new points are distinct and neither has x = 3. Thus the total is 4 + 2 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1424,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "6",
+    "correct": true
+  }
+}

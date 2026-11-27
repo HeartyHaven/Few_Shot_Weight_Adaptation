@@ -1,0 +1,22 @@
+{
+  "id": "train-699",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 63-year-old female presented to the emergency department with a two-day history of cough, neck swelling, dysphagia, and dysphonia. She was taking warfarin for atrial fibrillation. Vital signs were normal, and she was not in respiratory distress. Further examination revealed hoarseness and multiple ecchymoses over the anterior aspect of her neck (), as well as a sublingual haematoma ().\nImmediate anesthesiology and otorhinolaryngology consultations were requested. Non-contrast computed tomography and endoscopic examination revealed a hematoma extending from the retropharyngeal space of the suprahyoid neck, down into the infrahyoid neck to the level of the thyroid cartilage, causing significant mass effect on the airway and right vocal cord ().\nThe patient’s international normalised ratio (INR) was supratherapeutic, measuring greater than 10. She was managed conservatively, with 10 mg of vitamin K, 3000 units of prothrombin complex concentrate (PCC), as well as 10 milligrams of dexamethasone, and observed in the intensive care unit (ICU). She was transferred to the surgical observation unit the following day, and discharged home six days later.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 339,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Score the admission history as follows:\n- Congestive heart failure (1 if present): not documented → 0.\n- Hypertension (1): not documented → 0.\n- Age 65–74 (1) or ≥75 (2): age 63 → 0.\n- Diabetes mellitus (1): not documented → 0.\n- Prior stroke, TIA, or systemic embolism (2): not documented → 0.\n- Vascular disease such as prior myocardial infarction or peripheral artery disease (1): not documented → 0.\n- Female sex (1): present → 1.\nThe elevated INR and hematoma are not scoring criteria. Total = 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 949,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

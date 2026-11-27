@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-13",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Hamlet, Claire gets The Hobbit, Dave gets Beloved, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Dave and Claire swap books. Then, Claire and Eve swap books. Then, Dave and Eve swap books. Finally, Eve and Alice swap books. At the end of the semester, Eve has\nOptions:\n(A) Siddhartha\n(B) Hamlet\n(C) The Hobbit\n(D) Beloved\n(E) The Trial",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Beloved",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "The Trial",
+      "Dave": "Beloved",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "The Trial",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Siddhartha, Hamlet, The Hobbit, Beloved, The Trial.\n1. Bob and Claire swap: Siddhartha, The Hobbit, Hamlet, Beloved, The Trial.\n2. Dave and Claire swap: Siddhartha, The Hobbit, Beloved, Hamlet, The Trial.\n3. Claire and Eve swap: Siddhartha, The Hobbit, The Trial, Hamlet, Beloved.\n4. Dave and Eve swap: Siddhartha, The Hobbit, The Trial, Beloved, Hamlet.\n5. Eve and Alice swap: Hamlet, The Hobbit, The Trial, Beloved, Siddhartha.\nEve has Siddhartha, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

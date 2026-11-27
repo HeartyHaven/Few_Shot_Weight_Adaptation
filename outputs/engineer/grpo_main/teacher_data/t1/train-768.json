@@ -1,0 +1,22 @@
+{
+  "id": "train-768",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 64-year-old female presented to the emergency department after an episode of syncope and sudden onset right hemiplegia. One week prior, she had experienced a syncopal episode that resulted in a minor car accident without serious injury. On further history, the patient reported having experienced several pre-syncopal events, discoordination and episodic loss of fine motor skills in the previous 2 weeks. There was no associated history of fevers or weight loss and there were no significant risk factors for bacterial endocarditis such as intravenous drug use, implantable cardiac devices, rheumatic fever or dental decay.\nThe patient had a history of achondroplasia/metaphyseal dysplasia and a family history of multiple sclerosis. There was no history of hypertension, dyslipidaemia, diabetes mellitus or prior vascular disease.\nOn examination, tone was increased in the right upper and lower limbs and muscular power in the right limbs was reduced to movement against gravity. There was reduced sensation to pinprick and fine touch on the right side of the body. Knee and elbow reflexes were brisker on the right than the left and the right plantar reflex was upgoing.\nThe cardiovascular, respiratory and gastrointestinal examinations were normal except for very prominent splinter haemorrhages ().\nInitial investigations were as follows: haemoglobin 137 g/L, WCC 9.3 × 109, neutrophils 8.0 × 109, platelet count 147 × 109, D-dimer 18.5 (NR < 0.5), troponin 1621 ng/L (NR < 11), PT 12.3 secs (NR 10.0–14.0), APTT 29 secs (NR 26–36), creatinine 48 umol/L and eGFR > 90.\nThe patient was admitted for further investigation. MRI brain demonstrated multiple sites of ischaemic change in both the anterior and posterior circulation (). A cardiac embolic source was considered and TTE demonstrated a small hypoechoic focus 6 mm ×3 mm on the aortic annulus reported as representing either thrombus or atheroma. Further serological testing ruled out autoimmune and inflammatory conditions. A CT aortogram + coronary angiogram to exclude dissection or coronary artery disease given the rise in troponin noted an incidental pelvic mass () thought to be arising from the adnexa. A confirmatory pelvic ultrasound reported a lesion arising from the right ovary with complex and vascular structure. CA 125 was >1500 (normal ref < 100). The patient was transferred to a tertiary centre with specialist onco-gynaecological and general surgical services for biopsy, which confirmed stage III high-grade serous ovarian cancer.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 666,
+  "solution": "Apply CHA₂DS₂-VASc to the conditions present at admission:\n- Congestive heart failure (1): not documented → 0.\n- Hypertension (1): no history → 0.\n- Age 65–74 (1) or ≥75 (2): age 64 → 0.\n- Diabetes (1): no history → 0.\n- Stroke, TIA, or systemic embolism (2): right hemiplegia was present on arrival, and MRI confirmed ischemic stroke → 2.\n- Vascular disease (1): no established prior MI, peripheral arterial disease, or aortic plaque; elevated troponin alone does not establish MI → 0.\n- Female sex (1): yes → 1.\nTotal: 0 + 0 + 0 + 0 + 2 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 948,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

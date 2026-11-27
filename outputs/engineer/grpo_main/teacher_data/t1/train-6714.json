@@ -1,0 +1,22 @@
+{
+  "id": "train-6714",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 33-year-old male with no significant past medical history presented to the emergency room with a chief complaint of a sore throat. He noted the symptoms began one week prior and were associated with dysphagia, decreased oral intake, and intermittent fevers. He denied symptoms of shortness of breath, chest pain, myalgias, joint pains, nausea, vomiting, or diarrhea. Vital signs upon admission revealed a temperature of 98.4 degrees F, blood pressure of 135/65 mmHg, heart rate of 81 beats per minute, a respiratory rate of 20 breaths per minute, and an oxygen saturation of 99% on ambient air. Physical exam upon admission revealed a comfortable, awake, alert, and oriented patient. Cardiac examination revealed a regular rate and rhythm with normal S1 and S2 and no murmurs. The pulmonary exam revealed clear lungs to anterior and posterior auscultation with no wheezes, rales, or diminished breath sounds. Abdominal exam revealed normal bowel sounds, and a soft, non-tender, non-distended abdomen. Oral and neck exam was significant for an erythematous and swollen right tonsil and tenderness to palpation of the right anterior neck with associated submandibular and supraclavicular lymphadenopathy, respectively. Laboratory findings were significant for a leukocytosis to 16.5 K/UL. A CT scan of the head and neck was obtained and was significant for right peritonsillar edema with tracking along the lateral pharyngeal wall consistent with phlegmon (Figure ).\nAssociated lymphadenopathy included the involvement of the internal jugular chain, posterior triangle, bilateral supraclavicular, and submandibular lymph nodes. The epiglottis was without enlargement. The paranasal sinuses and mastoid air cells were clear. A throat swab was obtained for bacterial culture, and meanwhile, clindamycin was started. Blood cultures were obtained too. When the cultures came back negative, the empiric antibiotic was stopped. A monospot was obtained which was negative. A nasopharyngeal swab for COVID-19 was positive for SARS-CoV-2 ribonucleic acid (RNA). The patient was discharged after one day in the hospital and was instructed to remain in quarantine. Upon telemedicine follow-up one week later, the patient reported marked improvement in dysphagia and denied fevers after symptomatic treatment and rest.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 51,
+  "prompt_tokens": 590,
+  "solution": "Count each adult systemic inflammatory response syndrome (SIRS) criterion met on admission:\n- Temperature >38°C or <36°C: 98.4°F (36.9°C) meets neither threshold (+0).\n- Heart rate >90/min: 81/min (+0).\n- Respiratory rate >20/min or PaCO₂ <32 mm Hg: the rate is exactly 20/min, not above 20, and no low PaCO₂ is documented (+0).\n- WBC >12,000/µL, <4,000/µL, or >10% bands: WBC 16,500/µL meets the upper threshold (+1).\nSum: 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 634,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

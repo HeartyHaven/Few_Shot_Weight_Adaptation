@@ -1,0 +1,128 @@
+{
+  "id": "dev-7-39",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Hamlet, Claire gets The Trial, Dave gets Ivanhoe, Eve gets Persuasion, Fred gets Candide, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Claire and Eve swap books. Then, Bob and Dave swap books. Then, Fred and Gertrude swap books. Then, Alice and Claire swap books. Then, Claire and Dave swap books. Finally, Eve and Dave swap books. At the end of the semester, Eve has\nOptions:\n(A) The Hobbit\n(B) Hamlet\n(C) The Trial\n(D) Ivanhoe\n(E) Persuasion\n(F) Candide\n(G) Emma",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "The Trial",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "The Trial",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Persuasion",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Emma",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Emma",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "The Trial",
+      "Fred": "Emma",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Hamlet",
+      "Fred": "Emma",
+      "Gertrude": "Candide"
+    }
+  ],
+  "prompt_tokens": 228,
+  "solution": "Books are listed for Alice, Bob, Claire, Dave, Eve, Fred, Gertrude, in that order.\nInitial: The Hobbit, Hamlet, The Trial, Ivanhoe, Persuasion, Candide, Emma\n1. Alice ↔ Bob: Hamlet, The Hobbit, The Trial, Ivanhoe, Persuasion, Candide, Emma\n2. Claire ↔ Eve: Hamlet, The Hobbit, Persuasion, Ivanhoe, The Trial, Candide, Emma\n3. Bob ↔ Dave: Hamlet, Ivanhoe, Persuasion, The Hobbit, The Trial, Candide, Emma\n4. Fred ↔ Gertrude: Hamlet, Ivanhoe, Persuasion, The Hobbit, The Trial, Emma, Candide\n5. Alice ↔ Claire: Persuasion, Ivanhoe, Hamlet, The Hobbit, The Trial, Emma, Candide\n6. Claire ↔ Dave: Persuasion, Ivanhoe, The Hobbit, Hamlet, The Trial, Emma, Candide\n7. Eve ↔ Dave: Persuasion, Ivanhoe, The Hobbit, The Trial, Hamlet, Emma, Candide\nEve has Hamlet, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

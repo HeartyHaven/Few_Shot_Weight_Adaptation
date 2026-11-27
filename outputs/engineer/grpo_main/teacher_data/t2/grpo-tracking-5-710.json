@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-710",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a teal ball, Bob has a silver ball, Claire has a blue ball, Dave has a gold ball, and Eve has a green ball.\nAs the game progresses, pairs of players trade balls. First, Eve and Bob swap balls. Then, Dave and Alice swap balls. Then, Dave and Claire swap balls. Then, Claire and Alice swap balls. Finally, Eve and Alice swap balls. At the end of the game, Claire has the\nOptions:\n(A) teal ball\n(B) silver ball\n(C) blue ball\n(D) gold ball\n(E) green ball",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "teal",
+      "Bob": "silver",
+      "Claire": "blue",
+      "Dave": "gold",
+      "Eve": "green"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "green",
+      "Claire": "blue",
+      "Dave": "gold",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "green",
+      "Claire": "blue",
+      "Dave": "teal",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "green",
+      "Claire": "teal",
+      "Dave": "blue",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "green",
+      "Claire": "gold",
+      "Dave": "blue",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "green",
+      "Claire": "gold",
+      "Dave": "blue",
+      "Eve": "teal"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the ball colors held by (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (teal, silver, blue, gold, green)\n1. Eve–Bob: (teal, green, blue, gold, silver)\n2. Dave–Alice: (gold, green, blue, teal, silver)\n3. Dave–Claire: (gold, green, teal, blue, silver)\n4. Claire–Alice: (teal, green, gold, blue, silver)\n5. Eve–Alice: (silver, green, gold, blue, teal)\nClaire has the gold ball, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1031,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-4439",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 7-year-old boy is brought to his pediatrician's office by his mother with a new onset rash. His mother says that the rash appeared suddenly yesterday. He is otherwise well. His medical history is unremarkable except for a recent upper respiratory infection that resolved without intervention two weeks ago. His temperature is 98.2°F (36.8°C), blood pressure is 110/74 mmHg, pulse is 84/min, and respirations are 18/min. Physical exam shows a well appearing child with a diffuse petechial rash.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 20,
+  "prompt_tokens": 188,
+  "solution": "Use the age-adjusted Centor (McIsaac) score. It is intended for acute pharyngitis, which is not described here. Applying its criteria to the initial note:\n- Fever >38°C: temperature 36.8°C, no fever reported → 0.\n- Absence of cough: no current cough is reported; treating it as absent → 1.\n- Tonsillar swelling or exudate: not reported → 0.\n- Tender anterior cervical nodes: not reported → 0.\n- Age adjustment (3–14 years: +1; 15–44: 0; ≥45: −1): age 7 → 1.\nTotal = 0 + 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 874,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-774",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Ivanhoe, Claire gets Beloved, Dave gets Candide, and Eve gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Alice and Eve swap books. Then, Bob and Eve swap books. Then, Eve and Claire swap books. Finally, Eve and Alice swap books. At the end of the semester, Dave has\nOptions:\n(A) Persuasion\n(B) Ivanhoe\n(C) Beloved\n(D) Candide\n(E) The Hobbit",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Persuasion",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Persuasion",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Persuasion, Ivanhoe, Beloved, Candide, The Hobbit\n1. Bob ↔ Alice: Ivanhoe, Persuasion, Beloved, Candide, The Hobbit\n2. Alice ↔ Eve: The Hobbit, Persuasion, Beloved, Candide, Ivanhoe\n3. Bob ↔ Eve: The Hobbit, Ivanhoe, Beloved, Candide, Persuasion\n4. Eve ↔ Claire: The Hobbit, Ivanhoe, Persuasion, Candide, Beloved\n5. Eve ↔ Alice: Beloved, Ivanhoe, Persuasion, Candide, The Hobbit\nDave has Candide, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1044,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

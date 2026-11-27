@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-728",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Umar, Claire is dancing with Nadia, Dave is dancing with Wade, and Eve is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Eve and Alice switch partners. Then, Dave and Bob switch partners. Then, Eve and Claire switch partners. Finally, Claire and Eve switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Stefan\n(B) Umar\n(C) Nadia\n(D) Wade\n(E) Vera",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Wade",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Stefan",
+      "Dave": "Wade",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Umar",
+      "Claire": "Stefan",
+      "Dave": "Wade",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Nadia",
+      "Dave": "Umar",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: (Stefan, Umar, Nadia, Wade, Vera)\n1. Alice ↔ Claire: (Nadia, Umar, Stefan, Wade, Vera)\n2. Eve ↔ Alice: (Vera, Umar, Stefan, Wade, Nadia)\n3. Dave ↔ Bob: (Vera, Wade, Stefan, Umar, Nadia)\n4. Eve ↔ Claire: (Vera, Wade, Nadia, Umar, Stefan)\n5. Claire ↔ Eve: (Vera, Wade, Stefan, Umar, Nadia)\nAlice is dancing with Vera, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1281,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-950",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Ivanhoe, Claire gets Middlemarch, Dave gets The Trial, Eve gets Dracula, Fred gets Walden, and Gertrude gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Gertrude and Eve swap books. Then, Dave and Fred swap books. Then, Claire and Bob swap books. Then, Fred and Claire swap books. Then, Gertrude and Alice swap books. Then, Bob and Alice swap books. Finally, Dave and Fred swap books. At the end of the semester, Bob has\nOptions:\n(A) Persuasion\n(B) Ivanhoe\n(C) Middlemarch\n(D) The Trial\n(E) Dracula\n(F) Walden\n(G) Dune",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "The Trial",
+      "Eve": "Dracula",
+      "Fred": "Walden",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Dune",
+      "Fred": "The Trial",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "Walden",
+      "Eve": "Dune",
+      "Fred": "The Trial",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Dune",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Dune",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dracula",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Dune",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dracula",
+      "Claire": "The Trial",
+      "Dave": "Ivanhoe",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Persuasion, Ivanhoe, Middlemarch, The Trial, Dracula, Walden, Dune\n1. Gertrude–Eve: Persuasion, Ivanhoe, Middlemarch, The Trial, Dune, Walden, Dracula\n2. Dave–Fred: Persuasion, Ivanhoe, Middlemarch, Walden, Dune, The Trial, Dracula\n3. Claire–Bob: Persuasion, Middlemarch, Ivanhoe, Walden, Dune, The Trial, Dracula\n4. Fred–Claire: Persuasion, Middlemarch, The Trial, Walden, Dune, Ivanhoe, Dracula\n5. Gertrude–Alice: Dracula, Middlemarch, The Trial, Walden, Dune, Ivanhoe, Persuasion\n6. Bob–Alice: Middlemarch, Dracula, The Trial, Walden, Dune, Ivanhoe, Persuasion\n7. Dave–Fred: Middlemarch, Dracula, The Trial, Ivanhoe, Dune, Walden, Persuasion\nBob has Dracula, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1161,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-670",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 53-year-old male with a history of atrial fibrillation and an aortic aneurysm presented to our ED by Emergency Medical Services (EMS) with acute onset of right-sided weakness. Per EMS report, he was found to have right-sided weakness, aphasia, and left gaze preference approximately one hour prior to arrival. Initial vital signs upon arrival included an irregular heart rate (HR) of 99 beats per minute (bpm), blood pressure (BP) of 155/78 mmHg, a respiratory rate (RR) of 21 breaths per minute, a temperature of 97.4⁰F, and an oxygen saturation of 100%. A National Institutes of Health Stroke Scale (NIHSS) of 16 was calculated during initial evaluation with points given for inability to perform simultaneous tasks, aphasia, right upper extremity weakness, right lower extremity weakness, and gaze deviation. A stroke alert was called, and the neurology service was consulted. The patient’s electrocardiogram (ECG) showed atrial fibrillation with a rate of 83 without other significant features (Figure ).\nChest x-ray showed a widened mediastinum with enlarged aortic contour (Figure ). CT noncontrast of the head and CT angiography (CTA) of the head and neck showed findings consistent with an early middle cerebral artery (MCA) infarct with an embolus to the M1 segment of the left MCA with extension to the proximal M2 segments, in addition to dissection of the left internal carotid artery extending into the left subclavian artery (Figure ).\nGiven concern for an AD based on the chest X-ray and left internal carotid artery dissection, CTA of the aorta was obtained. CTA showed an ascending thoracic aneurysm with Stanford type A dissection from the aortic valve to the level of the renal arteries with extension to the left internal carotid artery (Figures , ).\nThe patient was started on esmolol and nicardipine intravenous drips to optimize heart rate and BP with a goal heart rate of 60 bpm and goal systolic BP of 120 mmHg. The case was discussed with the neurology and cardiothoracic surgery services. Given the finding of an LVO stroke, the interventional neurology service was also consulted. The consulting physicians did not think the patient was an optimal candidate for either immediate endovascular therapy or surgical aortic repair. In conjunction with cardiothoracic surgery, the decision was made to transfer the patient to a center with an aortic specialist for operative repair. The patient was maintained on the esmolol and nicardipine infusions and in stable condition until the time of transfer. While in the ED, the patient’s neurologic exam was unchanged with persistence of his right hemiplegia, aphasia, and left gaze preference. He was ultimately transferred to a center for potential definitive care of his AD and was lost to follow-up.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 705,
+  "solution": "CHA₂DS₂-VASc scores stroke risk in atrial fibrillation. Using the findings present on arrival:\n- Congestive heart failure: not documented → 0.\n- Hypertension: no established diagnosis; a single BP of 155/78 mmHg does not establish one → 0.\n- Age (65–74: 1; ≥75: 2): 53 → 0.\n- Diabetes: not documented → 0.\n- Stroke, TIA, or systemic arterial embolism (2): left MCA ischemic stroke already present → 2.\n- Vascular disease (1): counting the known aortic aneurysm as vascular disease → 1. This assumes a broader definition than prior MI, peripheral artery disease, or aortic plaque.\n- Female sex (1): male → 0.\nTotal under that vascular-disease interpretation: 0 + 0 + 0 + 0 + 2 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 746,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

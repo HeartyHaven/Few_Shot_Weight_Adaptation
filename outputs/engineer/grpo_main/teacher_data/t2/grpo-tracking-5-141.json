@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-141",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Yuki, Claire is dancing with Umar, Dave is dancing with Priya, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Bob and Alice switch partners. Then, Dave and Claire switch partners. Then, Bob and Eve switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Quinn\n(B) Yuki\n(C) Umar\n(D) Priya\n(E) Marco",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Yuki",
+      "Claire": "Umar",
+      "Dave": "Priya",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Umar",
+      "Dave": "Priya",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Yuki",
+      "Claire": "Umar",
+      "Dave": "Priya",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Yuki",
+      "Claire": "Priya",
+      "Dave": "Umar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Marco",
+      "Claire": "Priya",
+      "Dave": "Umar",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Marco",
+      "Claire": "Quinn",
+      "Dave": "Umar",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Each row lists the partners of (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (Quinn, Yuki, Umar, Priya, Marco)\n1. Alice and Bob swap: (Yuki, Quinn, Umar, Priya, Marco)\n2. Bob and Alice swap: (Quinn, Yuki, Umar, Priya, Marco)\n3. Dave and Claire swap: (Quinn, Yuki, Priya, Umar, Marco)\n4. Bob and Eve swap: (Quinn, Marco, Priya, Umar, Yuki)\n5. Claire and Alice swap: (Priya, Marco, Quinn, Umar, Yuki)\nEve's final partner is Yuki, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1214,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

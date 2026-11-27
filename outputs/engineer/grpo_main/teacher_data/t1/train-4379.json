@@ -1,0 +1,22 @@
+{
+  "id": "train-4379",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nAn otherwise healthy 27-year-old man presents to the Emergency Department with dark urine and left flank pain. He has had a fever, sore throat, and malaise for the last 2 days. Vital signs reveal a temperature of 38.1°C (100.5°F), blood pressure of 120/82 mm Hg, and a pulse of 95/min. His family history is noncontributory. Physical examination reveals enlarged tonsils with tender anterior cervical lymphadenopathy. Urinalysis shows pink urine with 20–25 red cells/high power field and 2+ protein.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 20,
+  "prompt_tokens": 197,
+  "solution": "Using modified Centor (McIsaac) criteria at presentation:\n- Temperature >38°C: 38.1°C → 1.\n- Tender anterior cervical nodes: present → 1.\n- Tonsillar swelling or exudate: enlarged tonsils → 1 for swelling.\n- Absence of cough: cough status is not documented → no point assigned.\n- Age adjustment: age 27 is in the 15–44 range → 0.\nSum of documented findings: 1 + 1 + 1 + 0 + 0 = 3. This uses the modified tonsillar criterion; the original Centor rule specifies exudate rather than enlargement alone.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 821,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

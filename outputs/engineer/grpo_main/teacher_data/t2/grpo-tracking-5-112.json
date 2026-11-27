@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-112",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Stefan, Claire is dancing with Lena, Dave is dancing with Karl, and Eve is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Alice and Bob switch partners. Then, Bob and Dave switch partners. Then, Alice and Claire switch partners. Finally, Eve and Bob switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Umar\n(B) Stefan\n(C) Lena\n(D) Karl\n(E) Priya",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Stefan",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Stefan",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Karl",
+      "Claire": "Lena",
+      "Dave": "Stefan",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Karl",
+      "Claire": "Umar",
+      "Dave": "Stefan",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Priya",
+      "Claire": "Umar",
+      "Dave": "Stefan",
+      "Eve": "Karl"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Umar | Stefan | Lena | Karl | Priya\nAfter the first Alice–Bob swap: Stefan | Umar | Lena | Karl | Priya\nAfter the second Alice–Bob swap: Umar | Stefan | Lena | Karl | Priya\nAfter Bob–Dave: Umar | Karl | Lena | Stefan | Priya\nAfter Alice–Claire: Lena | Karl | Umar | Stefan | Priya\nAfter Eve–Bob: Lena | Priya | Umar | Stefan | Karl\nDave is dancing with Stefan, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1226,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

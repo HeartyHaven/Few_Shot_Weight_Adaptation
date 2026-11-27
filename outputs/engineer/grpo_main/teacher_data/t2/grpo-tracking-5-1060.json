@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1060",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Wade, Bob is dancing with Vera, Claire is dancing with Tara, Dave is dancing with Rosa, and Eve is dancing with Lena.\nThroughout the song, the dancers often trade partners. First, Dave and Bob switch partners. Then, Alice and Claire switch partners. Then, Claire and Eve switch partners. Then, Bob and Alice switch partners. Finally, Bob and Eve switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Wade\n(B) Vera\n(C) Tara\n(D) Rosa\n(E) Lena",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Wade",
+      "Bob": "Vera",
+      "Claire": "Tara",
+      "Dave": "Rosa",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Rosa",
+      "Claire": "Tara",
+      "Dave": "Vera",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Rosa",
+      "Claire": "Wade",
+      "Dave": "Vera",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Rosa",
+      "Claire": "Lena",
+      "Dave": "Vera",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Tara",
+      "Claire": "Lena",
+      "Dave": "Vera",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Wade",
+      "Claire": "Lena",
+      "Dave": "Vera",
+      "Eve": "Tara"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Each row lists partners in the order Alice, Bob, Claire, Dave, Eve.\nInitial: Wade, Vera, Tara, Rosa, Lena\n1. Dave ↔ Bob: Wade, Rosa, Tara, Vera, Lena\n2. Alice ↔ Claire: Tara, Rosa, Wade, Vera, Lena\n3. Claire ↔ Eve: Tara, Rosa, Lena, Vera, Wade\n4. Bob ↔ Alice: Rosa, Tara, Lena, Vera, Wade\n5. Bob ↔ Eve: Rosa, Wade, Lena, Vera, Tara\nDave dances with Vera, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1067,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

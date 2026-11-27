@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-886",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Middlemarch, Claire gets Dune, Dave gets Siddhartha, and Eve gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Eve and Bob swap books. Then, Claire and Dave swap books. Then, Claire and Dave swap books. Then, Claire and Dave swap books. Finally, Alice and Dave swap books. At the end of the semester, Claire has\nOptions:\n(A) Hamlet\n(B) Middlemarch\n(C) Dune\n(D) Siddhartha\n(E) The Hobbit",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Middlemarch",
+      "Claire": "Dune",
+      "Dave": "Siddhartha",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha",
+      "Dave": "Hamlet",
+      "Eve": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Hamlet, Middlemarch, Dune, Siddhartha, The Hobbit\n1. Eve–Bob: Hamlet, The Hobbit, Dune, Siddhartha, Middlemarch\n2. Claire–Dave: Hamlet, The Hobbit, Siddhartha, Dune, Middlemarch\n3. Claire–Dave: Hamlet, The Hobbit, Dune, Siddhartha, Middlemarch\n4. Claire–Dave: Hamlet, The Hobbit, Siddhartha, Dune, Middlemarch\n5. Alice–Dave: Dune, The Hobbit, Siddhartha, Hamlet, Middlemarch\nClaire has Siddhartha, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1328,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

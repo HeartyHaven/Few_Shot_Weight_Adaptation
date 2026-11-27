@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-425",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets The Hobbit, and Claire gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Alice and Bob swap books. Finally, Bob and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Walden\n(B) The Hobbit\n(C) Beloved",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "The Hobbit",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Hobbit",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire).\nInitial: (Walden, The Hobbit, Beloved)\n1. Alice ↔ Bob: (The Hobbit, Walden, Beloved)\n2. Alice ↔ Bob: (Walden, The Hobbit, Beloved)\n3. Bob ↔ Claire: (Walden, Beloved, The Hobbit)\nClaire has The Hobbit, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1174,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

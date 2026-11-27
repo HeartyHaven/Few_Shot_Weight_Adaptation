@@ -1,0 +1,17 @@
+{
+  "id": "sample_98",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(s):\n    return sum([s.istitle() for s in s.split()])\n```\n\nInput: f('SOME OF THIS Is uknowN!')",
+  "answer": "1",
+  "solution": "s.split() gives ['SOME', 'OF', 'THIS', 'Is', 'uknowN!']. The comprehension tests each word with istitle(). 'SOME', 'OF', and 'THIS' are False because each has uppercase letters after the first. 'Is' is True: uppercase I is followed by lowercase s. 'uknowN!' is False because it starts with lowercase u. The list is [False, False, False, True, False], so sum returns 0 + 0 + 0 + 1 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 4,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "1",
+    "correct": true
+  }
+}

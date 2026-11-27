@@ -1,0 +1,22 @@
+{
+  "id": "train-4377",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 16-year-old male presents to his pediatrician with a sore throat. He reports a severely painful throat preceded by several days of malaise and fatigue. He has a history of seasonal allergies and asthma. The patient is a high school student and is on the school wrestling team. He takes cetirizine and albuterol. His temperature is 100.9°F (38.3°C), blood pressure is 100/70 mmHg, pulse is 100/min, and respirations are 20/min. Physical examination reveals splenomegaly and posterior cervical lymphadenopathy.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 20,
+  "prompt_tokens": 200,
+  "solution": "Centor assigns 1 point each for fever >38°C, tonsillar exudate, tender anterior cervical nodes, and absence of cough. At presentation:\n- Temperature 38.3°C: 1.\n- No tonsillar exudate described: 0.\n- The enlarged nodes are posterior, not anterior: 0.\n- No cough is reported; treating it as absent: 1.\nAge 16 adds 0 if using the modified Centor score. Total = 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 721,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

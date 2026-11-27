@@ -1,0 +1,22 @@
+{
+  "id": "train-4159",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nIn May 2020, a 54-year-old woman was hospitalized with a chief complaint of exertional chest pain for more than 10 years.\nChest pain was located in the upper part of the sternum, lasted for approximately a few seconds, and could be relieved after rest. The symptoms worsened 6 mo prior, with chest pain occurring after mild activity and more frequently than before.\nThe patient had a history of hypertension for more than 5 years and took drugs regularly to control her blood pressure, and her blood pressure was acceptable.\nThe patient had no significant prior personal or family history.\nThe patient’s blood pressure was 159/104 mmHg on admission, and the remainder of the physical examination showed no obvious abnormalities.\nThe low-density lipoprotein cholesterol was 4.18 mmol/L (normal reference range: 1.10-3.50 mmol/L), cardiac biomarkers such as troponin and N-terminal pro-brain natriuretic peptide were normal, and the other blood tests were also approximately normal.\nElectrocardiogram showed abnormal Q waves in leads II, III, aVF, V5-V6, and V7-V9 and slight elevation of the ST segment in leads II, III, aVF, and V1-V4. There were no remarkable findings on ultrasonic cardiogram.\nSubsequent coronary angiography (CAG) revealed a normal right coronary artery and circumflex artery without any anomalies or sign of atherosclerosis. In the proximal to middle part of the left anterior descending artery (LAD), there was a near 25 mm long tumor-like aneurysm. The diameter of this aneurysm varied with the cardiac cycle. During cardiac systole, the aneurism was compressed by approximately 70% (Figure and ). There was no obvious sign of atherosclerosis within other segments of LAD. Following intravascular ultrasound (IVUS) examination showed that the maximum diameter of the CAA during systole was 7.7 mm, the minimum diameter during systole was 4.02 mm, and the muscle bridge was clearly visible above the coronary artery (Figure and ).\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 526,
+  "solution": "The HEART Score assigns 0–2 points each for history, ECG, age, risk factors, and troponin at presentation.\n- History (slightly, moderately, or highly suspicious = 0, 1, or 2): exertional substernal pain relieved by rest suggests ischemia, but episodes lasted only seconds. Moderately suspicious = 1.\n- ECG (normal = 0, nonspecific repolarization abnormality = 1, significant ST depression = 2): the tracing showed abnormal Q waves and slight ST elevation, not ST depression = 1.\n- Age (<45 = 0, 45–64 = 1, ≥65 = 2): age 54 = 1.\n- Risk factors (none = 0, 1–2 = 1, ≥3 or known atherosclerotic disease = 2): hypertension and elevated LDL, with no known atherosclerotic disease at admission = 1.\n- Troponin (at or below the upper reference limit = 0, >1–3 times the limit = 1, >3 times = 2): normal = 0.\nTotal: 1 + 1 + 1 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 751,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

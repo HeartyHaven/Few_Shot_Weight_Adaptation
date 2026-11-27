@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-579",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Hamlet, Claire gets Candide, Dave gets Dune, and Eve gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Eve and Bob swap books. Then, Claire and Dave swap books. Then, Dave and Eve swap books. Then, Alice and Bob swap books. Finally, Claire and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) The Trial\n(B) Hamlet\n(C) Candide\n(D) Dune\n(E) The Hobbit",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (The Trial, Hamlet, Candide, Dune, The Hobbit)\n1. Eve and Bob swap: (The Trial, The Hobbit, Candide, Dune, Hamlet)\n2. Claire and Dave swap: (The Trial, The Hobbit, Dune, Candide, Hamlet)\n3. Dave and Eve swap: (The Trial, The Hobbit, Dune, Hamlet, Candide)\n4. Alice and Bob swap: (The Hobbit, The Trial, Dune, Hamlet, Candide)\n5. Claire and Bob swap: (The Hobbit, Dune, The Trial, Hamlet, Candide)\nBob has Dune, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1191,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

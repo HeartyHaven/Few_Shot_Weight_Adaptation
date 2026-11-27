@@ -1,0 +1,20 @@
+{
+  "id": "sample_275",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(dic):\n    dic2 = dict(zip(dic.values(), dic.keys()))\n    return dic2\n```\n\nInput: f({-1: \"a\", 0: \"b\", 1: \"c\"})",
+  "answer": "{'a': -1, 'b': 0, 'c': 1}",
+  "prompt_tokens": 105,
+  "solution": "dic.values() yields 'a', 'b', 'c' in insertion order, while dic.keys() yields -1, 0, 1 in the same order. zip pairs each value with its original key: ('a', -1), ('b', 0), then ('c', 1). dict uses the first item of each pair as a key and the second as its value. The resulting dictionary is assigned to dic2 and returned.\nFinal answer: {'a': -1, 'b': 0, 'c': 1}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "{'a': -1, 'b': 0, 'c': 1}",
+    "correct": true
+  }
+}

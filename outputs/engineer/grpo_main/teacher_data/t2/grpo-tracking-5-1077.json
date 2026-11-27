@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1077",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Tara, Claire is dancing with Wade, Dave is dancing with Nadia, and Eve is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Dave and Bob switch partners. Then, Eve and Claire switch partners. Then, Claire and Eve switch partners. Finally, Dave and Eve switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Yuki\n(B) Tara\n(C) Wade\n(D) Nadia\n(E) Quinn",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Tara",
+      "Claire": "Wade",
+      "Dave": "Nadia",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Tara",
+      "Claire": "Quinn",
+      "Dave": "Nadia",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Tara",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Wade",
+      "Dave": "Tara",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Tara",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Wade",
+      "Eve": "Tara"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Yuki, Tara, Wade, Nadia, Quinn\n1. Eve ↔ Claire: Yuki, Tara, Quinn, Nadia, Wade\n2. Dave ↔ Bob: Yuki, Nadia, Quinn, Tara, Wade\n3. Eve ↔ Claire: Yuki, Nadia, Wade, Tara, Quinn\n4. Claire ↔ Eve: Yuki, Nadia, Quinn, Tara, Wade\n5. Dave ↔ Eve: Yuki, Nadia, Quinn, Wade, Tara\nClaire's partner is Quinn, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1040,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

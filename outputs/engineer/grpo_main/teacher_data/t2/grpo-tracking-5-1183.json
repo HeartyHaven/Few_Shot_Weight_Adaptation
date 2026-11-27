@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1183",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Siddhartha, Claire gets Persuasion, Dave gets Ivanhoe, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Dave and Eve swap books. Then, Dave and Alice swap books. Then, Claire and Eve swap books. Finally, Claire and Dave swap books. At the end of the semester, Alice has\nOptions:\n(A) Jane Eyre\n(B) Siddhartha\n(C) Persuasion\n(D) Ivanhoe\n(E) Candide",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Ivanhoe",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Ivanhoe",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Siddhartha",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "Siddhartha",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Reader order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Jane Eyre, Siddhartha, Persuasion, Ivanhoe, Candide.\n1. Bob ↔ Alice: Siddhartha, Jane Eyre, Persuasion, Ivanhoe, Candide.\n2. Dave ↔ Eve: Siddhartha, Jane Eyre, Persuasion, Candide, Ivanhoe.\n3. Dave ↔ Alice: Candide, Jane Eyre, Persuasion, Siddhartha, Ivanhoe.\n4. Claire ↔ Eve: Candide, Jane Eyre, Ivanhoe, Siddhartha, Persuasion.\n5. Claire ↔ Dave: Candide, Jane Eyre, Siddhartha, Ivanhoe, Persuasion.\nAlice has Candide, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1370,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

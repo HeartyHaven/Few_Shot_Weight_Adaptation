@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-522",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Oscar, and Claire is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Alice switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Stefan\n(B) Oscar\n(C) Wade",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Oscar",
+      "Claire": "Wade"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Stefan",
+      "Claire": "Wade"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Stefan",
+      "Claire": "Oscar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Stefan",
+      "Claire": "Wade"
+    }
+  ],
+  "prompt_tokens": 135,
+  "solution": "Partner order in every row: Alice, Bob, Claire.\nInitial: Stefan, Oscar, Wade\n1. Alice/Bob: Oscar, Stefan, Wade\n2. Claire/Alice: Wade, Stefan, Oscar\n3. Alice/Claire: Oscar, Stefan, Wade\nBob's partner is Stefan, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1220,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

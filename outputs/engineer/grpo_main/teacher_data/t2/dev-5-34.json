@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-34",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a purple present, Bob has a pink present, Claire has a silver present, Dave has a black present, and Eve has a gold present.\nAs the event progresses, pairs of people swap gifts. First, Alice and Dave swap their gifts. Then, Bob and Claire swap their gifts. Then, Dave and Bob swap their gifts. Then, Bob and Claire swap their gifts. Finally, Dave and Claire swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) purple present\n(B) pink present\n(C) silver present\n(D) black present\n(E) gold present",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "purple",
+      "Bob": "pink",
+      "Claire": "silver",
+      "Dave": "black",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "black",
+      "Bob": "pink",
+      "Claire": "silver",
+      "Dave": "purple",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "black",
+      "Bob": "silver",
+      "Claire": "pink",
+      "Dave": "purple",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "black",
+      "Bob": "purple",
+      "Claire": "pink",
+      "Dave": "silver",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "black",
+      "Bob": "pink",
+      "Claire": "purple",
+      "Dave": "silver",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "black",
+      "Bob": "pink",
+      "Claire": "silver",
+      "Dave": "purple",
+      "Eve": "gold"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Gift holders in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (purple, pink, silver, black, gold)\n1. Alice and Dave swap: (black, pink, silver, purple, gold)\n2. Bob and Claire swap: (black, silver, pink, purple, gold)\n3. Dave and Bob swap: (black, purple, pink, silver, gold)\n4. Bob and Claire swap: (black, pink, purple, silver, gold)\n5. Dave and Claire swap: (black, pink, silver, purple, gold)\nBob's final gift is the pink present, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

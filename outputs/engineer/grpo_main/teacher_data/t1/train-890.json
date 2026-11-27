@@ -1,0 +1,22 @@
+{
+  "id": "train-890",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 55-year-old man with known longstanding hypertension and diabetes mellitus type 2 presented with acute onset of dizziness, slurred speech, and unsteady gait. On admission, his blood pressure was 178/100 mmHg and heart rate was 92 beats/min. He was dispirited but oriented. Additionally, he did not take the initiative to speak but could answer simple questions in a whisper with a few words. Neurological examination revealed severe dysphagia, dysarthria, mild tetraplegia (Medical Research Council Grade 4-5), and ataxia of the trunk and all four limbs. Pupillary reflexes and extraocular movements (both vertical and horizontal) were intact. Bilateral Babinski signs were positive. Meanwhile, he also showed spasmodic crying and laughing on examination. Magnetic resonance imaging (MRI) of the brain performed 36 hours after the onset of symptoms revealed acute, bilateral, symmetric, cerebral peduncular infarcts (BCPI), which showed increased signal intensity on diffusion-weighted imaging (DWI) with low values on apparent diffusion coefficient (ADC) map (Figures and ), in line with acute infarction. T1-weighted images (T1WI) demonstrated the lesion mainly involving the central portion of the cerebral peduncle with low signal intensity (). Magnetic resonance angiography (MRA) disclosed the vertebrobasilar artery occlusion and the absence of flow signals of bilateral PCA without collateral patency of the posterior communicating artery (). The patient was given antiplatelet and hypervolemic therapy, with no further deterioration of his condition. He was transferred to the rehabilitation ward for rehabilitation treatment of swallowing function twenty days after his admission.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 431,
+  "solution": "Apply the CHA₂DS₂-VASc criteria to the patient's status, counting the ischemic stroke already present at admission:\n- Congestive heart failure: none documented → 0.\n- Hypertension: longstanding diagnosis → 1.\n- Age: 55 years → 0 (65–74 years = 1; ≥75 years = 2).\n- Diabetes mellitus: known type 2 diabetes → 1.\n- Stroke, TIA, or systemic embolism: MRI confirms that the presenting deficits were caused by bilateral cerebral peduncular infarcts → 2.\n- Vascular disease: no separate history of myocardial infarction, peripheral arterial disease, or aortic plaque; the cerebral infarcts are not counted twice → 0.\n- Sex category: male → 0.\nSum: 0 + 1 + 0 + 1 + 2 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 660,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

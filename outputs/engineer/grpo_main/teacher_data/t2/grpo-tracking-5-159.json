@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-159",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Karl, Claire is dancing with Nadia, Dave is dancing with Vera, and Eve is dancing with Oscar.\nThroughout the song, the dancers often trade partners. First, Claire and Eve switch partners. Then, Bob and Alice switch partners. Then, Alice and Claire switch partners. Then, Claire and Eve switch partners. Finally, Claire and Eve switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Umar\n(B) Karl\n(C) Nadia\n(D) Vera\n(E) Oscar",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Karl",
+      "Claire": "Nadia",
+      "Dave": "Vera",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Karl",
+      "Claire": "Oscar",
+      "Dave": "Vera",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Umar",
+      "Claire": "Oscar",
+      "Dave": "Vera",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Karl",
+      "Dave": "Vera",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Vera",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Karl",
+      "Dave": "Vera",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Karl, Nadia, Vera, Oscar\n1. Claire ↔ Eve: Umar, Karl, Oscar, Vera, Nadia\n2. Bob ↔ Alice: Karl, Umar, Oscar, Vera, Nadia\n3. Alice ↔ Claire: Oscar, Umar, Karl, Vera, Nadia\n4. Claire ↔ Eve: Oscar, Umar, Nadia, Vera, Karl\n5. Claire ↔ Eve: Oscar, Umar, Karl, Vera, Nadia\nDave dances with Vera, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1013,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-472",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Quinn, Claire is dancing with Stefan, Dave is dancing with Oscar, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Alice and Dave switch partners. Then, Claire and Dave switch partners. Then, Dave and Eve switch partners. Finally, Bob and Eve switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Umar\n(B) Quinn\n(C) Stefan\n(D) Oscar\n(E) Tara",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Quinn",
+      "Claire": "Stefan",
+      "Dave": "Oscar",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Quinn",
+      "Claire": "Umar",
+      "Dave": "Oscar",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Quinn",
+      "Claire": "Umar",
+      "Dave": "Stefan",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Quinn",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Quinn",
+      "Claire": "Stefan",
+      "Dave": "Tara",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Stefan",
+      "Dave": "Tara",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Quinn, Stefan, Oscar, Tara\n1. Claire and Alice swap: Stefan, Quinn, Umar, Oscar, Tara\n2. Alice and Dave swap: Oscar, Quinn, Umar, Stefan, Tara\n3. Claire and Dave swap: Oscar, Quinn, Stefan, Umar, Tara\n4. Dave and Eve swap: Oscar, Quinn, Stefan, Tara, Umar\n5. Bob and Eve swap: Oscar, Umar, Stefan, Tara, Quinn\nClaire is dancing with Stefan, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1267,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

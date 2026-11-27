@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-379",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Wade, Bob is dancing with Karl, Claire is dancing with Nadia, Dave is dancing with Oscar, and Eve is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Dave and Bob switch partners. Then, Bob and Claire switch partners. Then, Alice and Claire switch partners. Then, Alice and Claire switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Wade\n(B) Karl\n(C) Nadia\n(D) Oscar\n(E) Quinn",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Wade",
+      "Bob": "Karl",
+      "Claire": "Nadia",
+      "Dave": "Oscar",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Oscar",
+      "Claire": "Nadia",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Nadia",
+      "Claire": "Oscar",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Nadia",
+      "Claire": "Wade",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Nadia",
+      "Claire": "Oscar",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Nadia",
+      "Claire": "Oscar",
+      "Dave": "Karl",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Wade, Karl, Nadia, Oscar, Quinn\n1. Dave ↔ Bob: Wade, Oscar, Nadia, Karl, Quinn\n2. Bob ↔ Claire: Wade, Nadia, Oscar, Karl, Quinn\n3. Alice ↔ Claire: Oscar, Nadia, Wade, Karl, Quinn\n4. Alice ↔ Claire: Wade, Nadia, Oscar, Karl, Quinn\n5. Alice ↔ Eve: Quinn, Nadia, Oscar, Karl, Wade\nBob is dancing with Nadia, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1033,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

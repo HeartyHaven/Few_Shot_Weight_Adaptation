@@ -1,0 +1,22 @@
+{
+  "id": "train-648",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 55-year-old woman with no past medical problems was referred to our ED from a local hospital with acute pulmonary edema. She was seen in that hospital twice previously with episodes of acute pulmonary edema that was treated with intravenous diuretics. She had an appointment with cardiologist after a month. Clinical examination revealed normal vital signs, normal JVP, bibasilar rales and a very faint mid-diastolic murmur heard at the apex of the heart without an opening snap. Her ECG was normal. Chest X-ray showed no cardiomegaly but there was pulmonary congestion. In view of recurrent pulmonary edema in the absence of obvious causes for pulmonary edema and a long waiting for cardiologist consultation, a bedside transthoracic echocardiographic examination of the heart was performed using the ATL HDI 5000 machine to rule out any gross abnormalities in the heart. Bedside transthoracic echocardiographic examination showed a large rounded mass protruding from the left atrium into the left ventricle [Figures and ]. This mass was relatively fixed at mitral valve causing diastolic obstruction of mitral inflow and ‘functional’ mitral stenosis leading to recurrent pulmonary edema. The mass seemed to be attached to lower part of interatrial septum and the echocardiographic appearance of the mass was pathognomic of atrial myxoma. The patient underwent urgent surgery to remove the mass. At surgery interatrial septum was intact with an 8×4 cm mass seen attached from low interatrial septum with a small pedicle and occupying whole of mitral annulus. The mass was excised from the atrial septum which was secured by a patch closure. It weighed 64 gm and the histology of the specimen showed abundant hyaline and myxoid stroma containing small groups of tumor cells, compatible with the diagnosis of atrial myxoma.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 474,
+  "solution": "CHA₂DS₂-VASc is a stroke-risk score for atrial fibrillation. AF is not documented here, but the requested components can be counted:\n- Congestive heart failure or LV dysfunction (1): neither is documented; the pulmonary edema is attributed to mechanical obstruction of mitral inflow → 0.\n- Hypertension (1): not reported → 0.\n- Age (2 if ≥75, 1 if 65–74): 55 years → 0.\n- Diabetes (1): not reported → 0.\n- Prior stroke, TIA, or systemic embolism (2): not reported → 0.\n- Vascular disease (1): not reported; an atrial myxoma does not qualify → 0.\n- Female sex (1): woman → 1.\nTotal = 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 819,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

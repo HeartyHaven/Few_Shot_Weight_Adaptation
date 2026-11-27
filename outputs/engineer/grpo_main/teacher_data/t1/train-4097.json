@@ -1,0 +1,22 @@
+{
+  "id": "train-4097",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 43-year-old nonalcoholic male, on treatment for type 2 diabetes for more than 6 years with oral hypoglycemic drugs, presented with worsening of glycemic control, weight loss (5 kg), and fatigability. However, due to these symptoms, he stopped all his medications about 6 months ago. The patient's body mass index was 19.5 kg/m2 with HbA1c ~ 12. Other investigations done showed that hemoglobin level, total leukocyte count, lipid profile, and renal function test were within normal limits except for mild elevation of liver function test (total bilirubin – 1.7; direct – 0.7; indirect – 1.0, and serum glutamic oxaloacetic transaminase – 54).\nSince he was found to be a lean diabetic with no family history of type 2 DM, C-peptide level along with other routine investigations was done. Serum C-peptide at fasting (using chemiluminescence Immunoassay method) was 0.37 ng/ml (normal value: 0.8–3.5 ng/ml), so a possibility of autoimmune DM was thought and anti-insulin and anti-islet cell antibodies were tested which turned out to be negative. No excessive insulin resistance was noted as evidenced by HOMA-IR of 0.4. Further evaluation of pancreatic function revealed normal amylase and lipase levels. Deranged liver function prompted us to do an ultrasound abdomen to rule out the possibility of hepatic or gallbladder pathologies [].\nSurprisingly, ultrasound showed atrophic pancreas, multiple tiny hyperechogenic foci with postacoustic shadowing noted in the head and body of the pancreas (suggestive of calcifications). The main pancreatic duct appeared dilated with an intraductal calculus seen []. No peripancreatic fat stranding or fluid collection was seen. Computed tomography (CT) confirmed chronic calcific pancreatitis [Figures and ].\nThe expensiveness of fecal elastase for evaluation of the exocrine function of the pancreas precluded the patient from doing it. However, indirect tests of pancreatic functions showed low Vitamin D level (25-hydroxycholecalciferol), i.e., 10.1 ng/ml (normal: 30–100), slightly increased prothrombin time (an indirect measure of Vitamin K) ~14.5 s (normal 10–14), and marginally lower spectrum of triglyceride to high-density lipoprotein ratio ~ 1.1, indicating fat malabsorption.\nThere was an ambiguity in classifying him as type I or II, as his anti-insulin and anti-islet cell autoantibodies were negative and he also did not have evidence of insulin resistance. Identification of CP by ultrasound made the diagnosis of pancreatogenic DM-type 3c possible. Henceforth, the management protocol was modified with addition of insulin, withdrawing oral hypoglycemic agents. He was also started on a modified low carbohydrate diet with Vitamin D and omega-3 supplements. The patient's glycemic control improved (HbA1c ~ 6) and weight increased by 5 kg within the next 4 months. Further follow-up after 2 months showed sustained glycemic control and weight gain.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 773,
+  "solution": "HEART scores History, ECG, Age, Risk factors and Troponin from 0 to 2 each. It is intended for possible acute coronary syndrome, not isolated metabolic symptoms.\n- History: no chest pain or other history suspicious for ischemia described → 0.\n- ECG: normal = 0, nonspecific repolarization changes = 1, significant ST depression = 2. No ECG is reported → unknown.\n- Age: <45 = 0, 45–64 = 1, ≥65 = 2. Age 43 → 0.\n- Risk factors: none = 0, one or two = 1, three or more or known atherosclerotic disease = 2. Diabetes is the only documented factor → 1.\n- Troponin: at or below the assay upper limit = 0, above the limit through 3 times the limit = 1, higher = 2. No troponin is reported → unknown.\nThe exact score cannot be established. Assuming normal ECG and troponin, the minimum total is 0 + 0 + 0 + 1 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 674,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

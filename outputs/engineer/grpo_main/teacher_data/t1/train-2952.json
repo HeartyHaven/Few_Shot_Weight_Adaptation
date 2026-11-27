@@ -1,0 +1,22 @@
+{
+  "id": "train-2952",
+  "task": "t1",
+  "group": "Wells' Criteria for Pulmonary Embolism",
+  "question": "Patient note:\nA 63-year-old man with a history of stage 4 chronic kidney disease (CKD) has started to develop refractory anemia. He denies any personal history of blood clots in his past, but he says that his mother has also had to be treated for deep venous thromboembolism in the past. His past medical history is significant for diabetes mellitus type 2, hypertension, non-seminomatous testicular cancer, and hypercholesterolemia. He currently smokes 1 pack of cigarettes per day, drinks a glass of wine per day, and he currently denies any illicit drug use. The vital signs include: temperature 36.7°C (98.0°F), blood pressure 126/74 mm Hg, heart rate 87/min, and respiratory rate 17/min. On physical examination, the pulses are bounding, the complexion is pale, but breath sounds remain clear. Oxygen saturation was initially 91% on room air, with a new oxygen requirement of 2 L by nasal cannula. His primary care physician refers him to a hematologist, who is considering initiating the erythropoietin-stimulating agent (ESA), darbepoetin.\n\nQuestion: What is the patient's score of Wells' criteria for Pulmonary Embolism? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 8,
+  "prompt_tokens": 333,
+  "solution": "Apply the Wells score for PE at presentation:\n- Clinical signs of DVT (3 points): none described → 0.\n- PE judged more likely than an alternative diagnosis (3): no such judgment documented; hypoxaemia alone does not establish it → 0.\n- Heart rate >100/min (1.5): pulse 87/min → 0.\n- Immobilization for ≥3 days or surgery within 4 weeks (1.5): neither reported → 0.\n- Prior DVT or PE (1.5): no personal history; his mother's DVT does not count → 0.\n- Haemoptysis (1): none reported → 0.\n- Malignancy (1): count the testicular cancer → 1, assuming it is under treatment, was treated within 6 months, or is receiving palliative care. Treatment timing is not specified; remote cancer alone would not qualify.\nUnder that malignancy assumption, the sum is 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 691,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

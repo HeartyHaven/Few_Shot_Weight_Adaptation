@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-139",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Quinn, Claire is dancing with Karl, Dave is dancing with Rosa, and Eve is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Dave and Claire switch partners. Then, Bob and Dave switch partners. Then, Alice and Dave switch partners. Then, Dave and Claire switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Oscar\n(B) Quinn\n(C) Karl\n(D) Rosa\n(E) Umar",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Quinn",
+      "Claire": "Karl",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Quinn",
+      "Claire": "Rosa",
+      "Dave": "Karl",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Karl",
+      "Claire": "Rosa",
+      "Dave": "Quinn",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Karl",
+      "Claire": "Rosa",
+      "Dave": "Oscar",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Karl",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Quinn",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Oscar, Quinn, Karl, Rosa, Umar)\n1. Dave and Claire swap: (Oscar, Quinn, Rosa, Karl, Umar)\n2. Bob and Dave swap: (Oscar, Karl, Rosa, Quinn, Umar)\n3. Alice and Dave swap: (Quinn, Karl, Rosa, Oscar, Umar)\n4. Dave and Claire swap: (Quinn, Karl, Oscar, Rosa, Umar)\n5. Bob and Alice swap: (Karl, Quinn, Oscar, Rosa, Umar)\nClaire's final partner is Oscar, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1258,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

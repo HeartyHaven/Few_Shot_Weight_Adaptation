@@ -1,0 +1,22 @@
+{
+  "id": "train-4131",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 54-year-old male with a medical history of hypertension and transient ischemic attack, presented to the emergency department (ED) for evaluation of dyspnea on exertion. The patient reported that his dyspnea started one week prior to ED visit. He also endorsed orthopnea and intermittent chest pain. He also endorsed mild orthopnea and lightheadedness, though he denied any syncopal event. Vital signs were found within normal limits on arrival. He clinically appeared to be volume overloaded which improved quickly with IV furosemide. The physical examination also revealed a loud 3/6 systolic harsh murmur appreciated on the apex with radiation to the axillae. Laboratory testing was notable for an elevated troponin I of 0.10 ng/ml with a flat trend, elevated BNP of 301 pg/mL, lactate of 0.9 mmol/L, potassium of 3.8 mEq/L, sodium of 130 mEq/L, and magnesium of 2.1 mg/dl. The electrocardiogram showed sinus tachycardia with no ischemic changes and otherwise unremarkable. He underwent a 2D echocardiogram (Figure ) with a subsequent transesophageal echocardiogram (TEE) with 3D image acquisition which was significant for hyper-dynamic LV function and evidence of isolated flailed P3 scallop of the MV leaflet resulting in a severe eccentric, anteriorly directed MR jet (Figure ). The MV leaflets did not appear thickened and there was no evidence of mitral or aortic stenosis. Cardiac catheterization showed multivessel disease (Figures and 4) for which the patient underwent coronary artery bypass grafting and MV repair.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 437,
+  "solution": "The HEART score grades five features from 0 to 2 using the presentation before treatment.\n- History (slightly/moderately/highly suspicious): intermittent chest pain and exertional dyspnea raise concern for ischemia, but orthopnea, volume overload and a loud murmur suggest a valvular cause. Moderately suspicious = 1.\n- ECG (normal repolarization/nonspecific changes/significant ST depression): sinus tachycardia without ischemic or other repolarization changes = 0.\n- Age (<45/45–64/≥65 years): 54 years = 1.\n- Risk factors (none/1–2/≥3 or established atherosclerotic disease): hypertension is documented; the prior TIA has no stated atherosclerotic cause. Do not count coronary disease discovered later on catheterization = 1.\n- Troponin (≤1, >1–3, or >3 times the assay upper limit): initial troponin I was 0.10 ng/mL. Assuming an upper limit of 0.04 ng/mL, since the local limit is not given, this is 2.5 times the limit = 1.\nTotal: 1 + 0 + 1 + 1 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 951,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

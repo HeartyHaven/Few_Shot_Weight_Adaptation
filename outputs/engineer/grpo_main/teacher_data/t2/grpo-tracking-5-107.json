@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-107",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Yuki, Claire is dancing with Lena, Dave is dancing with Rosa, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Eve and Alice switch partners. Then, Alice and Claire switch partners. Then, Alice and Eve switch partners. Then, Dave and Bob switch partners. Finally, Dave and Eve switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Stefan\n(B) Yuki\n(C) Lena\n(D) Rosa\n(E) Karl",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Lena",
+      "Dave": "Rosa",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Yuki",
+      "Claire": "Lena",
+      "Dave": "Rosa",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Karl",
+      "Dave": "Rosa",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Karl",
+      "Dave": "Rosa",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Rosa",
+      "Claire": "Karl",
+      "Dave": "Yuki",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Rosa",
+      "Claire": "Karl",
+      "Dave": "Lena",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners in each row are listed in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Stefan, Yuki, Lena, Rosa, Karl\n1. Eve ↔ Alice: Karl, Yuki, Lena, Rosa, Stefan\n2. Alice ↔ Claire: Lena, Yuki, Karl, Rosa, Stefan\n3. Alice ↔ Eve: Stefan, Yuki, Karl, Rosa, Lena\n4. Dave ↔ Bob: Stefan, Rosa, Karl, Yuki, Lena\n5. Dave ↔ Eve: Stefan, Rosa, Karl, Lena, Yuki\nAlice is dancing with Stefan, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1039,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

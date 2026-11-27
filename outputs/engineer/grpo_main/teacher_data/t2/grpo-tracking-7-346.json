@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-346",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Siddhartha, Claire gets Hamlet, Dave gets The Trial, Eve gets Beloved, Fred gets Dune, and Gertrude gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Claire and Eve swap books. Then, Claire and Fred swap books. Then, Alice and Bob swap books. Then, Eve and Claire swap books. Then, Gertrude and Claire swap books. Then, Fred and Dave swap books. Finally, Gertrude and Eve swap books. At the end of the semester, Fred has\nOptions:\n(A) The Hobbit\n(B) Siddhartha\n(C) Hamlet\n(D) The Trial\n(E) Beloved\n(F) Dune\n(G) Ivanhoe",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Siddhartha",
+      "Claire": "Hamlet",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Dune",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved",
+      "Dave": "The Trial",
+      "Eve": "Hamlet",
+      "Fred": "Dune",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Siddhartha",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Hamlet",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "Dune",
+      "Fred": "The Trial",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "Hamlet",
+      "Fred": "The Trial",
+      "Gertrude": "Dune"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: The Hobbit, Siddhartha, Hamlet, The Trial, Beloved, Dune, Ivanhoe.\n1. Claire ↔ Eve: The Hobbit, Siddhartha, Beloved, The Trial, Hamlet, Dune, Ivanhoe.\n2. Claire ↔ Fred: The Hobbit, Siddhartha, Dune, The Trial, Hamlet, Beloved, Ivanhoe.\n3. Alice ↔ Bob: Siddhartha, The Hobbit, Dune, The Trial, Hamlet, Beloved, Ivanhoe.\n4. Eve ↔ Claire: Siddhartha, The Hobbit, Hamlet, The Trial, Dune, Beloved, Ivanhoe.\n5. Gertrude ↔ Claire: Siddhartha, The Hobbit, Ivanhoe, The Trial, Dune, Beloved, Hamlet.\n6. Fred ↔ Dave: Siddhartha, The Hobbit, Ivanhoe, Beloved, Dune, The Trial, Hamlet.\n7. Gertrude ↔ Eve: Siddhartha, The Hobbit, Ivanhoe, Beloved, Hamlet, The Trial, Dune.\nFred has The Trial, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1266,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

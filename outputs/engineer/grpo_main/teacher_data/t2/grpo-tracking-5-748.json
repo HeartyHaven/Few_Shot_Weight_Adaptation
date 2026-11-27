@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-748",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets The Hobbit, Claire gets Walden, Dave gets Dracula, and Eve gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Dave and Bob swap books. Then, Dave and Eve swap books. Then, Dave and Claire swap books. Finally, Alice and Dave swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) The Hobbit\n(C) Walden\n(D) Dracula\n(E) Emma",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Dracula",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Walden",
+      "Dave": "Dracula",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "Ivanhoe",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dracula",
+      "Claire": "Emma",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Reader order in every row: Alice, Bob, Claire, Dave, Eve. Each row lists their books in that order.\nInitial: Ivanhoe, The Hobbit, Walden, Dracula, Emma.\n1. Bob ↔ Alice: The Hobbit, Ivanhoe, Walden, Dracula, Emma.\n2. Dave ↔ Bob: The Hobbit, Dracula, Walden, Ivanhoe, Emma.\n3. Dave ↔ Eve: The Hobbit, Dracula, Walden, Emma, Ivanhoe.\n4. Dave ↔ Claire: The Hobbit, Dracula, Emma, Walden, Ivanhoe.\n5. Alice ↔ Dave: Walden, Dracula, Emma, The Hobbit, Ivanhoe.\nClaire's book is Emma, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1199,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

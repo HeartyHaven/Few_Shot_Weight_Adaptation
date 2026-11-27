@@ -1,0 +1,17 @@
+{
+  "id": "sample_55",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(array):\n    array_2 = []\n    for i in array:\n        if i>0:\n            array_2 += [i]\n    array_2.sort(reverse=True)\n    return array_2\n```\n\nInput: f([4, 8, 17, 89, 43, 14])",
+  "answer": "[89, 43, 17, 14, 8, 4]",
+  "solution": "array_2 starts as []. Each i is positive, so each iteration adds [i] to the end:\ni=4 → [4]\ni=8 → [4, 8]\ni=17 → [4, 8, 17]\ni=89 → [4, 8, 17, 89]\ni=43 → [4, 8, 17, 89, 43]\ni=14 → [4, 8, 17, 89, 43, 14]\nsort(reverse=True) orders array_2 from largest to smallest in place. The function returns the sorted list.\nFinal answer: [89, 43, 17, 14, 8, 4]",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 40,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[89, 43, 17, 14, 8, 4]",
+    "correct": true
+  }
+}

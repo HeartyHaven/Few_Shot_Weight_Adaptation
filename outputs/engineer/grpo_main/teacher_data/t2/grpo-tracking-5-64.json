@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-64",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Yuki, Claire is dancing with Wade, Dave is dancing with Lena, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Bob and Eve switch partners. Then, Claire and Alice switch partners. Then, Dave and Eve switch partners. Finally, Alice and Dave switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Tara\n(B) Yuki\n(C) Wade\n(D) Lena\n(E) Karl",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Yuki",
+      "Claire": "Wade",
+      "Dave": "Lena",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Yuki",
+      "Claire": "Karl",
+      "Dave": "Lena",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Wade",
+      "Claire": "Karl",
+      "Dave": "Lena",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Lena",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Karl",
+      "Eve": "Lena"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists the partners of (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (Tara, Yuki, Wade, Lena, Karl)\n1. Eve and Claire swap: (Tara, Yuki, Karl, Lena, Wade)\n2. Bob and Eve swap: (Tara, Wade, Karl, Lena, Yuki)\n3. Claire and Alice swap: (Karl, Wade, Tara, Lena, Yuki)\n4. Dave and Eve swap: (Karl, Wade, Tara, Yuki, Lena)\n5. Alice and Dave swap: (Yuki, Wade, Tara, Karl, Lena)\nDave is dancing with Karl, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1072,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

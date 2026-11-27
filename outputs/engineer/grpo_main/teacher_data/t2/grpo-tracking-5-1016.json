@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1016",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Lena, Claire is dancing with Marco, Dave is dancing with Tara, and Eve is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Claire and Dave switch partners. Then, Eve and Claire switch partners. Then, Bob and Alice switch partners. Then, Alice and Claire switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Quinn\n(B) Lena\n(C) Marco\n(D) Tara\n(E) Umar",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Lena",
+      "Claire": "Marco",
+      "Dave": "Tara",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Lena",
+      "Claire": "Tara",
+      "Dave": "Marco",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Lena",
+      "Claire": "Umar",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Quinn",
+      "Claire": "Umar",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Quinn",
+      "Claire": "Lena",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Quinn",
+      "Claire": "Tara",
+      "Dave": "Marco",
+      "Eve": "Lena"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in order: Alice | Bob | Claire | Dave | Eve.\nInitial: Quinn | Lena | Marco | Tara | Umar\n1. Claire swaps with Dave: Quinn | Lena | Tara | Marco | Umar\n2. Eve swaps with Claire: Quinn | Lena | Umar | Marco | Tara\n3. Bob swaps with Alice: Lena | Quinn | Umar | Marco | Tara\n4. Alice swaps with Claire: Umar | Quinn | Lena | Marco | Tara\n5. Eve swaps with Claire: Umar | Quinn | Tara | Marco | Lena\nEve is dancing with Lena, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1270,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-279",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Priya, Bob is dancing with Rosa, and Claire is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Claire and Alice switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Priya\n(B) Rosa\n(C) Karl",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Priya",
+      "Bob": "Rosa",
+      "Claire": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Rosa",
+      "Claire": "Priya"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Rosa",
+      "Claire": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Rosa",
+      "Claire": "Priya"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Partner order in every row: Alice, Bob, Claire.\nInitial: Priya, Rosa, Karl.\n1. Swap Claire and Alice: Karl, Rosa, Priya.\n2. Swap Claire and Alice: Priya, Rosa, Karl.\n3. Swap Claire and Alice: Karl, Rosa, Priya.\nAlice is dancing with Karl, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1011,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

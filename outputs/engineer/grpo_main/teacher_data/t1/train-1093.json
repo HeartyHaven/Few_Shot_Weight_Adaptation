@@ -1,0 +1,22 @@
+{
+  "id": "train-1093",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 47-year-old Caucasian female with a known medical history of essential hypertension being treated with labetalol came to the emergency department (ED) with complaints of non-exertional, intermittent (lasting one to two minutes), 3/10, left-sided chest pain which started three days ago. At the time of presentation, the patient was asymptomatic. She was afebrile with a blood pressure of 188/90 mmHg, heart rate of 73 beats per minute, respiratory rate of 16 per minute and normal oxygen saturation levels. Physical examination revealed a faint 1/6 systolic murmur which accentuated to 2/6 in intensity when she was made to go from crouching to standing. The remainder of the physical exam was unremarkable. The patient denied any pertinent family history. She was a former smoker and reported no allergies. Laboratory studies disclosed normal serum chemistry with normal troponin and brain natriuretic peptide (BNP) levels. Electrocardiogram (EKG) showed normal sinus rhythm with no ST-T wave changes. A chest radiograph identified borderline cardiomegaly with no evidence of infection or pulmonary vascular congestion.\nA transthoracic echocardiogram (TTE) was pursued, which revealed normal left ventricular (LV) size and function. LVOT appeared normal without sub-valvular ridge or asymmetric septal hypertrophy. Mitral valve demonstrated normal-appearing leaflets; however, there was a large centrally echolucent sub-valvular chordal cyst greater than 1 cm in the largest diameter (Figure ). Due to concerns of possible exertional LVOT obstruction, an exercise stress echocardiography was scheduled. Labetalol was switched to carvedilol due to the latter’s negative inotropy and better heart rate control. During exercise stress echocardiography, the patient exercised to stage five Bruce protocol achieving 14.5 metabolic equivalents (METs). There was no suggestion of obstruction on doppler at rest however, transient LVOT obstruction was noted with exercise. The patient had an appropriate heart rate and blood pressure response to stress with no signs of coronary ischemia or regional wall motion abnormalities. (Figures -).\nA cardiac magnetic resonance imaging (MRI) showed no evidence of increased enhancement confirming the diagnosis of a benign subvalvular blood cyst of the mitral apparatus. In light of asymptomatic nature of the condition, mild to moderate LVOT obstruction at peak exertion in a beta-blocker deprived state, a conservative strategy was opted after multidisciplinary discussion with cardiothoracic surgery. The patient was resumed on carvedilol and was advised to maintain adequate hydration to avoid worsening of LVOT obstruction due to dehydration. A surveillance stress echocardiogram done during six months follow-up visit showed stable exertional hemodynamics.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 658,
+  "solution": "Apply CHA₂DS₂-VASc to the admission findings:\n- Congestive heart failure or LV systolic dysfunction (1 if present): neither documented; LV function was normal → 0.\n- Hypertension (1): known hypertension treated with labetalol → 1.\n- Age (1 for 65–74; 2 for ≥75): 47 years → 0.\n- Diabetes mellitus (1): not documented → 0.\n- Prior stroke, TIA, or systemic embolism (2): not documented → 0.\n- Vascular disease (1): no prior MI, peripheral arterial disease, or aortic plaque documented → 0.\n- Female sex (1): female → 1.\nTotal = 0 + 1 + 0 + 0 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 717,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

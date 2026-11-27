@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1049",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Ivanhoe, Claire gets Jane Eyre, Dave gets Middlemarch, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Alice and Claire swap books. Then, Alice and Dave swap books. Then, Bob and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Emma\n(B) Ivanhoe\n(C) Jane Eyre\n(D) Middlemarch\n(E) Candide",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Middlemarch",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Middlemarch",
+      "Dave": "Emma",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Emma, Ivanhoe, Jane Eyre, Middlemarch, Candide\n1. Claire ↔ Alice: Jane Eyre, Ivanhoe, Emma, Middlemarch, Candide\n2. Alice ↔ Claire: Emma, Ivanhoe, Jane Eyre, Middlemarch, Candide\n3. Alice ↔ Dave: Middlemarch, Ivanhoe, Jane Eyre, Emma, Candide\n4. Bob ↔ Alice: Ivanhoe, Middlemarch, Jane Eyre, Emma, Candide\n5. Bob ↔ Claire: Ivanhoe, Jane Eyre, Middlemarch, Emma, Candide\nClaire has Middlemarch, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1000,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

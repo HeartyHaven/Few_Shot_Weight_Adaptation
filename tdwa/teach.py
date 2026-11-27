@@ -12,6 +12,7 @@ from tdwa import grade as G  # noqa: E402
 HF = os.environ.get("TDWA_HF", "/mnt/data2/users/lang.gao/huggingface_cache")   # per-host override
 VENV = os.environ.get("TDWA_VENV", "/mnt/data2/users/lang.gao/Weight_Programming_Eval/.venv")
 USER_ROOT = os.environ.get("TDWA_USER_ROOT", "/mnt/data2/users/lang.gao")
+START_TIMEOUT = int(os.environ.get("TDWA_START_TIMEOUT", "2400"))   # sandbox load can take >15 min for 14B students on a busy disk
 
 TASK_TEXT = {
     "t2": ("Object-state tracking. Each item lists N people each holding one object, then a sequence of pairwise swaps, and asks what "
@@ -25,6 +26,15 @@ TASK_TEXT = {
            "patient interview, and asks which of 5 diseases is most likely (multiple choice, A-E). The options are the true disease "
            "plus the 4 most likely alternatives from the case's own differential, so distractors are close. There are 49 possible "
            "diseases; the dev set has about 2 cases per disease, and the hidden test covers the same disease list with new patients."),
+    "t4": ("Competition mathematics: MATH Level 5 (the hardest level) in two subjects, Number Theory and Counting & Probability. Each "
+           "item is a problem statement; the answer is a number or short expression (integers, fractions such as \\frac{3}{16}, numbers "
+           "in another base such as 1011_2, occasionally a word). It is graded by equivalence after normalisation (e.g. 1/3 = \\frac{1}{3}). "
+           "The dev set and the hidden validation set come from the MATH training split, the hidden test from the MATH test split, "
+           "all Level 5 and half from each subject."),
+    "t5": ("Python output prediction (CRUXEval-O). Each item shows a short Python function f and an input, and asks for the exact value "
+           "f returns. The answer must be written as a Python literal (strings quoted, lists/dicts/tuples in Python syntax) and is graded "
+           "by comparing the parsed literal with the true output. The functions use string, list and dict operations, loops and "
+           "conditionals; the hidden test has new functions of the same kind."),
 }
 
 SYSTEM = """You are the TEACHER in a research experiment on teaching a small language model by editing its weights directly.
@@ -104,7 +114,7 @@ class Sandbox:
                                                 stderr=open(os.path.join(run_dir, "kernel.stderr"), "a"), text=True, env=env)
         self.restarts = 0; self.max_restarts = 8
         self.proc = self._launch()
-        self.ready = self._read(900)
+        self.ready = self._read(START_TIMEOUT)
 
     def _restart(self):
         """Start a fresh kernel after a crash/timeout. The kernel restores accepted edits and cost counters from disk."""
@@ -121,7 +131,7 @@ class Sandbox:
             if attempt:
                 time.sleep(90)
             self.proc = self._launch()
-            if self._read(900).get("ready"):
+            if self._read(START_TIMEOUT).get("ready"):
                 return True
         return False
 

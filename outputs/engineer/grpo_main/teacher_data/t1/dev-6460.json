@@ -1,0 +1,24 @@
+{
+  "id": "dev-6460",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "calc_id": 45,
+  "question": "Patient note:\nA 28-year-old woman presents to the emergency department with shortness of breath. She immigrated from Uganda two months ago. She reports cough with occasional blood-tinged sputum and night sweats for the past week. She denies any chest pain or discomfort currently. The patient denies any sexual activity or intravenous drug use. She denies any history of cancer in her family. She currently lives in an apartment with several other female migrant workers. She received a vaccination against tuberculosis when she lived in Uganda. Her temperature is 99°F (37.2°C), blood pressure is 110/70 mmHg, pulse is 100/min, respirations are 20/min, and oxygen saturation is 94% on room air. Breath sounds are decreased in the left posterior lower and middle lung fields; egophony is present on the left middle lung field. The remainder of the physical exam is unremarkable. A complete blood count and basic metabolic panel are obtained:\n\nSerum:\nNa+: 135 mEq/L\nCl-: 100 mEq/L\nK+: 3.5 mEq/L\nHCO3-: 26 mEq/L\nBUN: 10 mg/dL\nGlucose: 105 mg/dL\nCreatinine: 0.6 mg/dL\n\nLeukocyte count: 20,000/mm^3\nSegmented neutrophils: 69 %\nBands: 10 %\nEosinophils: 2 %\nBasophils: 1 %\nLymphocytes: 25 %\nMonocytes: 3 %\n\nHemoglobin: 11 g/dL\nHematocrit: 33 %\nPlatelet count: 400,000/mm^3\n\nAn electrocardiogram reveals sinus tachycardia without acute ST-T wave changes. Chest radiography is obtained in Figure A.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "0",
+  "lower": 0.0,
+  "upper": 0.0,
+  "explanation": "The CURB-65 Score criteria are listed below:\n\n1. Confusion: No = 0 points, Yes = +1 point\n2. BUN >19 mg/dL (>7 mmol/L urea): No = 0 points, Yes = +1 point\n3. Respiratory Rate ≥30: No = 0 points, Yes = +1 point\n4. Systolic BP <90 mmHg or Diastolic BP ≤60 mmHg: No = 0 points, Yes = +1 point\n5. Age ≥65: No = 0 points, Yes = +1 point\n\nThe total CURB-65 score is calculated by summing the points for each criterion.\n\nThe CURB-65 score is current at 0 points.\nThe patient is 28 years old. The patient's age is less than 65 years, and so we add 0 points to the score, keeping the current total at 0.\nBecause the patient does not have confusion, 0 points are added to the score, keeping the score at 0.\nThe concentration of BUN is 10.0 mg/dL. The patient's BUN concentration is less than or equal to 19 mg/dL and so 0 points are added to score, keeping the current total at 0.\nThe patient's respiratory rate is 20 breaths per minute. Because the respiratory rate is less than 30 breaths per minute, 0 points are added to the score, keeping the current total at 0.\nThe patient's systiolic blood pressure is 110 mm Hg. The patient's diastolic blood pressure is 70 mm Hg. For a point a point to be added, the systiolic blood pressure must be less than 90 mm Hg or the diastolic blood pressure must be less than or equal to 60 mm Hg. Because neither of these statements are true, 0 points are added to score, keeping the current total to 0.\nThe patient's CURB-65 score is 0.",
+  "prompt_tokens": 483,
+  "solution": "CURB-65 assigns 1 point for each criterion met. At presentation:\n- New confusion: not documented; 0 points.\n- BUN >19 mg/dL: 10 mg/dL; 0 points.\n- Respiratory rate ≥30/min: 20/min; 0 points.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: 110/70 mmHg meets neither threshold; 0 points.\n- Age ≥65 years: 28 years; 0 points.\nTotal: 0 + 0 + 0 + 0 + 0 = 0.\nFinal answer: 0",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "reused_from": "outputs/engineer/distill_main/data/t1.jsonl",
+  "reused_source_sha256": "986c157b1c67e1e15f790a8591252e01848729b0d9e5eaec2af974849a7ae226",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": 0.0,
+    "correct": true
+  }
+}

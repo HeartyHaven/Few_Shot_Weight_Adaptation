@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-50",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing cheerleader, Bob is playing right back, and Claire is playing center midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Alice trade positions. Then, Bob and Alice trade positions. Finally, Claire and Alice trade positions. At the end of the match, Claire is playing\nOptions:\n(A) cheerleader\n(B) right back\n(C) center midfielder",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "cheerleader",
+      "Bob": "right back",
+      "Claire": "center midfielder"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "right back",
+      "Claire": "cheerleader"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "center midfielder",
+      "Claire": "cheerleader"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "center midfielder",
+      "Claire": "right back"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Each row lists positions in the order (Alice, Bob, Claire).\nInitial: (cheerleader, right back, center midfielder)\n1. Claire ↔ Alice: (center midfielder, right back, cheerleader)\n2. Bob ↔ Alice: (right back, center midfielder, cheerleader)\n3. Claire ↔ Alice: (cheerleader, center midfielder, right back)\nClaire is playing right back, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1221,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

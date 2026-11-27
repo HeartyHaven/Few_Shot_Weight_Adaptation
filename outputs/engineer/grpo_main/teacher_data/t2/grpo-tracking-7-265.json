@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-265",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Ivanhoe, Claire gets Emma, Dave gets The Trial, Eve gets Dune, Fred gets Candide, and Gertrude gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Claire and Fred swap books. Then, Claire and Bob swap books. Then, Eve and Alice swap books. Then, Eve and Bob swap books. Then, Claire and Bob swap books. Then, Eve and Gertrude swap books. Finally, Claire and Bob swap books. At the end of the semester, Fred has\nOptions:\n(A) Jane Eyre\n(B) Ivanhoe\n(C) Emma\n(D) The Trial\n(E) Dune\n(F) Candide\n(G) The Hobbit",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Candide",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Candide",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Candide",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "The Hobbit",
+      "Fred": "Emma",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "The Hobbit",
+      "Fred": "Emma",
+      "Gertrude": "Candide"
+    }
+  ],
+  "prompt_tokens": 228,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Jane Eyre | Ivanhoe | Emma | The Trial | Dune | Candide | The Hobbit\n1. Claire–Fred: Jane Eyre | Ivanhoe | Candide | The Trial | Dune | Emma | The Hobbit\n2. Claire–Bob: Jane Eyre | Candide | Ivanhoe | The Trial | Dune | Emma | The Hobbit\n3. Eve–Alice: Dune | Candide | Ivanhoe | The Trial | Jane Eyre | Emma | The Hobbit\n4. Eve–Bob: Dune | Jane Eyre | Ivanhoe | The Trial | Candide | Emma | The Hobbit\n5. Claire–Bob: Dune | Ivanhoe | Jane Eyre | The Trial | Candide | Emma | The Hobbit\n6. Eve–Gertrude: Dune | Ivanhoe | Jane Eyre | The Trial | The Hobbit | Emma | Candide\n7. Claire–Bob: Dune | Jane Eyre | Ivanhoe | The Trial | The Hobbit | Emma | Candide\nFred has Emma, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1023,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

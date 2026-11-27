@@ -1,0 +1,22 @@
+{
+  "id": "train-4142",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 28-year-old female comes to the physician’s office with a complaint of episodic chest pain. She describes the pain as squeezing and tightness in her chest. This pain has been happening every few days for 3 months. She says there is no association of the pain with food or exercise. She is able to climb up to her fourth floor apartment daily without issue. Her only past medical history is migraines for which she takes appropriate medication. Here temperature is 98.6°F (37°C), blood pressure is 120/68 mmHg, pulse is 60/min, respirations are 16/min, and oxygen saturation is 98% on room air. She has no known family history. The patient is not in pain on presentation and EKG in the office is normal. 24-hour ECG monitoring shows transient ST elevations during the episodes of pain that resolve completely.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "0",
+  "lower": 0.0,
+  "upper": 0.0,
+  "calc_id": 18,
+  "prompt_tokens": 262,
+  "solution": "The HEART score assigns 0–2 points each for history, presenting ECG, age, coronary risk factors, and troponin.\n- History: the recurrent, nonexertional pattern over 3 months with preserved exercise tolerance is scored as slightly suspicious for acute coronary syndrome → 0.\n- ECG: the initial office ECG is normal → 0. The transient ST elevations were captured on later monitoring, not on the presenting ECG.\n- Age: 28 years is <45 → 0.\n- Risk factors: no coronary risk factors or established atherosclerotic disease documented → 0.\n- Troponin: not reported. A value at or below the assay's upper reference limit would contribute 0.\nThe documented subtotal is 0 + 0 + 0 + 0 = 0. The full score is conditional on a normal troponin: 0 + 0 = 0.\nFinal answer: 0",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 945,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 0.0,
+    "correct": true
+  }
+}

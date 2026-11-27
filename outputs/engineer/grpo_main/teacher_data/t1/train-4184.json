@@ -1,0 +1,22 @@
+{
+  "id": "train-4184",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nFemale patient, 52 years old, presenting atypical chest pain, witha 26.5 body mass\nindex, diabetic, hypertensive, dyslipidemic, usingASA, ARBS, Insulin, Metformin. She\nwas forwarded to the nuclear medicine sector with a Myocardial Scintigraphy request\nfor ischemia survey.\nThe patient was invited to participate in the research project, approved by the\nethics committee no. 392,966, which aims to compare the perfusion findings of the\nnuclear medicine exam to those from the angiotomography of the coronary arteriesat\nrest and under stress. The patient performed a specific myocardial scintigraphy\nprocedure () on a 1-collimator Gamma\nCamera device (Millennium MPR, GE) and acomputed tomography scan of 64 detectors\n(Brilliance, Philips), to evaluate the calcium score, myocardial perfusion at rest\nand under stress associated with coronary anatomical evaluation. The stress\nacquisition was conducted following dipyridamole infusion at a dose of 0.56 mg/kg,\nin 4 minutes. On the sixth minute, 25 mCi of 2-methoxyl-isobuthyl-isonitrile-99 m Tc\n(sestamibi-99mTc) was administered. In the same minute, the perfusion images under\npharmacological stress by angiotomography () were acquired, with infusion of iodinated contrast at a 70 ml dose\nunder a 5 ml per second flow rate. The myocardial perfusion scintigraphy images,\nstress stage, were acquired 30 to 90 minutes after the administration of the\nradiopharmaceutical.\nThe stress scintigraphic images demonstrated reversible perfusion defectswithin the\nterritory of the anterior descending artery. Theperfusion computerized tomography\nconfirmed the presence of perfusion defects and did not evidence a presence of\natherosclerotic lesion in coronary arteries. A significant myocardial bridge\nconstricting the anterior descending artery was diagnosed by the angiotomography of\ncoronary arteries (), configuring the\nmost probable mechanism for the observed perfusion defects.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 539,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, Risk factors, and Troponin at presentation.\n- History: atypical chest pain with no typical ischemic features described; scored as slightly suspicious = 0.\n- ECG: no presenting ECG result is reported. Assuming a normal ECG = 0.\n- Age: 52 years falls in the 45–64 band = 1.\n- Risk factors: diabetes, hypertension, and dyslipidemia meet the threshold of ≥3 = 2.\n- Troponin: no value is reported. Assuming an initial value at or below the upper reference limit = 0.\nConditional sum: 0 + 0 + 1 + 2 + 0 = 3. The later perfusion defects do not substitute for the missing ECG or troponin, so the exact score cannot be confirmed.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 884,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

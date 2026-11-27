@@ -1,0 +1,17 @@
+{
+  "id": "sample_521",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(nums):\n    m = max(nums)\n    for i in range(m):\n        nums.reverse()\n    return nums\n```\n\nInput: f([43, 0, 4, 77, 5, 2, 0, 9, 77])",
+  "answer": "[77, 9, 0, 2, 5, 77, 4, 0, 43]",
+  "solution": "Set m = max(nums) = 77, so i runs from 0 through 76. At i = 0, reverse() changes nums to [77, 9, 0, 2, 5, 77, 4, 0, 43]. At i = 1, it restores the original list. Each successive pair of reversals likewise restores the original order. Thus i = 0 through 75 complete 38 pairs, and i = 76 reverses the original list once more. Return nums in that reversed order.\nFinal answer: [77, 9, 0, 2, 5, 77, 4, 0, 43]",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 44,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[77, 9, 0, 2, 5, 77, 4, 0, 43]",
+    "correct": true
+  }
+}

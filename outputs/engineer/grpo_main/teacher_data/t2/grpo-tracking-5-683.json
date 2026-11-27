@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-683",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a pink ball, Bob has a grey ball, Claire has a teal ball, Dave has a white ball, and Eve has a black ball.\nAs the game progresses, pairs of players trade balls. First, Dave and Claire swap balls. Then, Claire and Alice swap balls. Then, Alice and Dave swap balls. Then, Bob and Alice swap balls. Finally, Eve and Dave swap balls. At the end of the game, Claire has the\nOptions:\n(A) pink ball\n(B) grey ball\n(C) teal ball\n(D) white ball\n(E) black ball",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "pink",
+      "Bob": "grey",
+      "Claire": "teal",
+      "Dave": "white",
+      "Eve": "black"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "grey",
+      "Claire": "white",
+      "Dave": "teal",
+      "Eve": "black"
+    },
+    {
+      "Alice": "white",
+      "Bob": "grey",
+      "Claire": "pink",
+      "Dave": "teal",
+      "Eve": "black"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "grey",
+      "Claire": "pink",
+      "Dave": "white",
+      "Eve": "black"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "teal",
+      "Claire": "pink",
+      "Dave": "white",
+      "Eve": "black"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "teal",
+      "Claire": "pink",
+      "Dave": "black",
+      "Eve": "white"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the ball colors for (Alice, Bob, Claire, Dave, Eve), in that order.\nStart: (pink, grey, teal, white, black)\n1. Dave swaps with Claire: (pink, grey, white, teal, black)\n2. Claire swaps with Alice: (white, grey, pink, teal, black)\n3. Alice swaps with Dave: (teal, grey, pink, white, black)\n4. Bob swaps with Alice: (grey, teal, pink, white, black)\n5. Eve swaps with Dave: (grey, teal, pink, black, white)\nClaire has the pink ball, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1006,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

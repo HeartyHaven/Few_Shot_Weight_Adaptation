@@ -1,0 +1,22 @@
+{
+  "id": "train-790",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 56-year-old El-Salvadorian male with no past medical history presented to our hospital with new-onset left-sided weakness involving the upper and lower extremities with difficulty speaking of 2 h duration. Upon arrival at the hospital, his vital signs were unremarkable. On physical examination, he scored 9 points on the NIH stroke scale (left facial droop, left upper extremity weakness, left lower extremity weakness, left-sided paresthesia, dysarthria, and extinction to bilateral simultaneous stimulation). Laboratory investigations showed LDL of 115 mg/dL and a normal hemoglobin A1C. Brain magnetic resonance imaging (MRI) with gadolinium showed an acute infarct in the right middle cerebral artery territory (shown in Fig. ) along with old cortical infarcts in the left frontal, parietal, and occipital lobes and an old left cerebellar infarct (shown in Fig. ). Brain magnetic resonance arteriogram without contrast showed no large vessel occlusion/stenosis or aneurysmal changes. The patient subsequently received intravenous alteplase and was admitted to the hospital for monitoring and further stroke workup. His electrocardiogram (ECG) showed normal sinus rhythm with bifascicular block. Carotid duplex was unremarkable. A 2D echocardiogram was obtained and demonstrated borderline reduced left ventricular ejection fraction of 50–55%; the apex was not well imaged, and no signs for left ventricular hypertrophy were seen. Repeat echocardiogram with contrast suggested a possible focal apical aneurysm, but the study was suboptimal to assess. Because of the suboptimal apical imaging by echocardiogram, cardiac MRI with gadolinium was obtained and showed near transmural late gadolinium enhancement of the lateral wall with a focal apical aneurysm (shown in Fig. ). Laboratory assessment for thrombophilia was negative, and an implantable loop recorder was placed to assess for occult atrial fibrillation. Upon review of his clinical picture, country of origin, and imaging studies, his risk for CCC became apparent, and Trypanosoma cruzi IgG testing was performed. Both commercial serologic testing and CDC confirmation with ELISA and TESA blot assays confirmed this diagnosis. By the end of his hospitalization, his neurological symptoms resolved except for a mild left facial droop.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 577,
+  "solution": "Calculate the CHA2DS2-VASc components from the presentation:\n- Congestive heart failure or significant LV systolic dysfunction (1 point): no clinical heart failure; LVEF 50–55% → 0.\n- Hypertension (1 point): no history → 0.\n- Age 65–74 (1 point) or ≥75 (2 points): age 56 → 0.\n- Diabetes mellitus (1 point): no history and normal HbA1c → 0.\n- Stroke, TIA, or systemic thromboembolism (2 points): MRI shows old cerebral infarcts as well as the acute right MCA infarct. This category is counted only once → 2.\n- Vascular disease (1 point): no documented myocardial infarction, peripheral arterial disease, or aortic plaque → 0.\n- Female sex (1 point): male → 0.\nSum: 0 + 0 + 0 + 0 + 2 + 0 + 0 = 2. The index is used for atrial fibrillation risk assessment; atrial fibrillation was being investigated, not established.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 932,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

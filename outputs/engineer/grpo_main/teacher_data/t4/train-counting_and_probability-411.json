@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-411",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "At a certain university, the division of mathematical sciences consists of the departments of mathematics, statistics, and computer science. There are two male and two female professors in each department. A committee of six professors is to contain three men and three women and must also contain two professors from each of the three departments. Find the number of possible committees that can be formed subject to these requirements.\n",
+  "answer": "88",
+  "prompt_tokens": 105,
+  "solution": "Each department contributes two professors, so its number of men is 0, 1, or 2. To total three men, the three counts must be either (1,1,1) or a permutation of (2,1,0). The other three professors are then women.\nFor (1,1,1), each department has \\(2\\cdot2=4\\) ways to choose one man and one woman, giving \\(4^3=64\\) committees.\nFor (2,1,0), there are \\(3\\cdot2=6\\) ways to assign the all-male and all-female departments. Their pairs are forced, and the remaining department has 4 mixed pairs, giving \\(6\\cdot4=24\\) committees.\nThe cases are disjoint, so the total is \\(64+24=88\\).\nFinal answer: 88",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1393,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "88",
+    "correct": true
+  }
+}

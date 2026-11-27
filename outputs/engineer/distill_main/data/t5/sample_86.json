@@ -1,0 +1,17 @@
+{
+  "id": "sample_86",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(instagram, imgur, wins):\n    photos = [instagram, imgur]\n    if instagram == imgur:\n        return wins\n    if wins == 1:\n        return photos.pop()\n    else:\n        photos.reverse()\n        return photos.pop()\n```\n\nInput: f(['sdfs', 'drcr', '2e'], ['sdfs', 'dr2c', 'QWERTY'], 0)",
+  "answer": "['sdfs', 'drcr', '2e']",
+  "solution": "photos starts as [instagram, imgur]. The lists differ at index 1 ('drcr' versus 'dr2c'), so instagram == imgur is False. Since wins is 0, wins == 1 is also False. photos.reverse() changes the order to [imgur, instagram]. photos.pop() removes and returns the last element, instagram.\nFinal answer: ['sdfs', 'drcr', '2e']",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 68,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "['sdfs', 'drcr', '2e']",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-800",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Rosa, Claire is dancing with Nadia, Dave is dancing with Marco, and Eve is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Eve and Bob switch partners. Then, Bob and Dave switch partners. Then, Eve and Dave switch partners. Then, Bob and Dave switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Yuki\n(B) Rosa\n(C) Nadia\n(D) Marco\n(E) Vera",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Rosa",
+      "Claire": "Nadia",
+      "Dave": "Marco",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Vera",
+      "Claire": "Nadia",
+      "Dave": "Marco",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Nadia",
+      "Dave": "Vera",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Nadia",
+      "Dave": "Rosa",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Rosa",
+      "Claire": "Nadia",
+      "Dave": "Marco",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Rosa",
+      "Claire": "Vera",
+      "Dave": "Marco",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Yuki, Rosa, Nadia, Marco, Vera).\n1. Eve and Bob swap: (Yuki, Vera, Nadia, Marco, Rosa).\n2. Bob and Dave swap: (Yuki, Marco, Nadia, Vera, Rosa).\n3. Eve and Dave swap: (Yuki, Marco, Nadia, Rosa, Vera).\n4. Bob and Dave swap: (Yuki, Rosa, Nadia, Marco, Vera).\n5. Eve and Claire swap: (Yuki, Rosa, Vera, Marco, Nadia).\nEve is dancing with Nadia, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1354,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

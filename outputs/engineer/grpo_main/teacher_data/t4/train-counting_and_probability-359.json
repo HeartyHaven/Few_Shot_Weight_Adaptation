@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-359",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Two mathematicians take a morning coffee break each day. They arrive at the cafeteria independently, at random times between 9 a.m. and 10 a.m., and stay for exactly $m$ minutes. The probability that either one arrives while the other is in the cafeteria is $40 \\%,$ and $m = a - b\\sqrt {c},$ where $a, b,$ and $c$ are positive integers, and $c$ is not divisible by the square of any prime. Find $a + b + c.$\n",
+  "answer": "87",
+  "prompt_tokens": 141,
+  "solution": "Let x and y be the arrival times in minutes after 9. Independence and uniformity make (x,y) uniform on a 60-by-60 square. The mathematicians miss each other when |x−y| > m. This region consists of two right triangles, one above y = x+m and one below y = x−m, each with legs 60−m. Their combined area is (60−m)².\nThe probability of missing is 1−0.40 = 3/5, so (60−m)²/60² = 3/5. Since the meeting probability is less than 1, m < 60. Taking the positive root gives 60−m = 60√(3/5) = 12√15. Thus m = 60−12√15. Since 15 = 3 × 5 is squarefree, a+b+c = 60+12+15 = 87.\nFinal answer: 87",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "87",
+    "correct": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-430",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Two quadrilaterals are considered the same if one can be obtained from the other by a rotation and a translation. How many different convex cyclic quadrilaterals are there with integer sides and perimeter equal to 32?\n$\\textbf{(A)}\\ 560 \\qquad \\textbf{(B)}\\ 564 \\qquad \\textbf{(C)}\\ 568 \\qquad \\textbf{(D)}\\ 1498 \\qquad \\textbf{(E)}\\ 2255$\n",
+  "answer": "568",
+  "prompt_tokens": 144,
+  "solution": "List the sides clockwise as $(a,b,c,d)$. A rotation can change the starting side but not the clockwise order, so we count lists up to cyclic shifts, not reversal.\n\nA nondegenerate quadrilateral requires each side to be shorter than the sum of the other three, so each must be less than $16$. Conversely, this condition ensures that the possible diagonal lengths $x$ for triangles with sides $(a,b,x)$ and $(c,d,x)$ overlap: $\\max(|a-b|,|c-d|)<\\min(a+b,c+d)$. As $x$ increases across this interval, the angles opposite $x$ both increase continuously by the cosine law. At the lower endpoint one angle is $0$ and the other is less than $\\pi$; at the upper endpoint one is $\\pi$ and the other is positive. Thus there is exactly one $x$ for which the angles sum to $\\pi$. Joining the triangles on opposite sides of this diagonal gives the unique convex cyclic quadrilateral with that clockwise list, up to rotation and translation.\n\nBy stars and bars there are $\\binom{31}{3}=4495$ ordered positive lists summing to $32$. For a specified side at least $16$, subtracting $15$ from it leaves a positive list summing to $17$, giving $\\binom{16}{3}=560$ lists. Two sides cannot both be at least $16$, so $4495-4(560)=2255$ lists are valid.\n\nApply Burnside's lemma to the four cyclic shifts. The identity fixes all $2255$ lists. Each one-place or three-place shift fixes only $(8,8,8,8)$. A two-place shift fixes lists $(a,b,a,b)$ with $a+b=16$, giving $15$ choices. The number of classes is $(2255+1+15+1)/4=568$.\nFinal answer: 568",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1432,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "568",
+    "correct": true
+  }
+}

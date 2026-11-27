@@ -1,0 +1,22 @@
+{
+  "id": "train-996",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 57-year-old, right-handed man presented with mild cellulitis over the dorsum of his left lower limb. He was involved in a road traffic accident a week prior to his admission, resulting in an abrasion over the dorsum of his left foot. On further questioning, the patient admitted to an episode of syncope while riding his bike, which caused him to hit a car at the traffic light. He had no prodrome and made full recovery after a brief loss of consciousness, lasting for 2-3 minutes. He did not complain of any other alarming symptoms prior to or after his accident. He did not have any significant past medical history or family history of note.\nOn examination, he was apyrexial and his blood pressure was 148/96 mm Hg, but this settled subsequently to less than 130/80 mm Hg. There were no focal neurological findings. However, his heart rate was irregularly irregular and his electrocardiograms (Figure , ) revealed AF, which was confirmed on a 24-hour Holter monitor. Echocardiography demonstrated normal valve morphology and no other abnormality was revealed.\nAll his laboratory tests were normal, including electrolytes, renal, liver, and thyroid function. Complete blood counts and inflammatory markers were within normal limits, with a slight elevation of the C-reactive protein (CRP) of 13.3 mg/L (reference range, 0.2-9.1 mg/L). A computed tomography (CT) scan of the head (Figure , ) demonstrated a suspected mass lesion centered in the left temporal lobe. Magnetic resonance imaging (MRI) (Figure , ) of the brain confirmed the presence of a well-defined, avidly enhancing extra-axial mass lesion over the left temporal lobe. This patient’s care was transferred to the neurosurgery department for further management.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 462,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. The components are:\n- Congestive heart failure or LV dysfunction: none documented → 0.\n- Hypertension: counting the admission BP of 148/96 mmHg as hypertension → 1. This is an assumption: a single elevated reading that subsequently normalized does not establish chronic hypertension.\n- Age ≥75 (2 points) or 65–74 (1 point): age 57 → 0.\n- Diabetes: none documented → 0.\n- Prior stroke, TIA, or systemic embolism (2 points): none documented; syncope alone does not qualify → 0.\n- Vascular disease: none documented → 0.\n- Female sex: male → 0.\nSum under the stated hypertension assumption: 0 + 1 + 0 + 0 + 0 + 0 + 0 = 1. Without that assumption, the documented score is 0.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 815,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

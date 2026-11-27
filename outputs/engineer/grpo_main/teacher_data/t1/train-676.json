@@ -1,0 +1,22 @@
+{
+  "id": "train-676",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 85-year old lady presented as an emergency with sudden onset of severe left sided abdominal pain and vomiting for two days. This was associated with constipation for 3 days. She had a past medical history of atrial fibrillation, angina, and pulmonary embolism for which she was anticoagulated with warfarin. There was no history of trauma.\nOn examination she was haemodynamically stable. Her abdomen was generally tender, maximal tenderness being in the left hypochondrium and left lumbar region, associated with some guarding and rigidity. Bowel sounds were present and the rectal examination was unremarkable.\nThe blood tests revealed normal haemoglobin, marginally raised white cell count (12.5) and C- reactive protein (25.3), and a grossly deranged International Normalised Ratio (INR) of 8.9. Her renal and liver functions function tests were within normal limits. An erect Chest X-ray and supine abdominal films were both unremarkable. Computed Tomography (CT) Scan showed a long abnormal loop of thick walled jejunum with a small amount of free fluid in the intraperitoneal cavity (Figure and ).\nA diagnosis of spontaneous intramural haematoma of the jejunum was made. She was treated conservatively with nil by mouth, intravenous fluids, and nasogastric suction. Fresh frozen plasma and vitamin K were given to normalise her clotting parameters. Her symptoms subsided gradually over the next couple of days and she was gradually started on fluid and diet. The clotting parameters normalized and she was discharged home on normal diet six days later.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 416,
+  "solution": "CHA₂DS₂-VASc scores stroke risk factors in atrial fibrillation. Using the scoring convention that includes pulmonary embolism under prior thromboembolism and angina under vascular disease:\n- Congestive heart failure: not reported, 0.\n- Hypertension: not reported, 0.\n- Age: 85 years meets the ≥75 tier, +2; the 65–74 tier is not added.\n- Diabetes: not reported, 0.\n- Prior stroke, TIA, or thromboembolism: prior pulmonary embolism, +2.\n- Vascular disease: history of angina, +1.\n- Sex category: female, +1.\nThe admission INR and warfarin use are not score components. Total = 0 + 0 + 2 + 0 + 2 + 1 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 632,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

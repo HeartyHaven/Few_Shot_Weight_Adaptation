@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1181",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing goalkeeper, Bob is playing left winger, Claire is playing left back, Dave is playing fullback, Eve is playing cheerleader, Fred is playing right midfielder, and Gertrude is playing striker.\nAs the game progresses, pairs of players occasionally swap positions. First, Alice and Claire trade positions. Then, Fred and Bob trade positions. Then, Eve and Bob trade positions. Then, Alice and Claire trade positions. Then, Alice and Bob trade positions. Then, Alice and Fred trade positions. Finally, Gertrude and Claire trade positions. At the end of the match, Bob is playing\nOptions:\n(A) goalkeeper\n(B) left winger\n(C) left back\n(D) fullback\n(E) cheerleader\n(F) right midfielder\n(G) striker",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "goalkeeper",
+      "Bob": "left winger",
+      "Claire": "left back",
+      "Dave": "fullback",
+      "Eve": "cheerleader",
+      "Fred": "right midfielder",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "left winger",
+      "Claire": "goalkeeper",
+      "Dave": "fullback",
+      "Eve": "cheerleader",
+      "Fred": "right midfielder",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "right midfielder",
+      "Claire": "goalkeeper",
+      "Dave": "fullback",
+      "Eve": "cheerleader",
+      "Fred": "left winger",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "cheerleader",
+      "Claire": "goalkeeper",
+      "Dave": "fullback",
+      "Eve": "right midfielder",
+      "Fred": "left winger",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "cheerleader",
+      "Claire": "left back",
+      "Dave": "fullback",
+      "Eve": "right midfielder",
+      "Fred": "left winger",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "goalkeeper",
+      "Claire": "left back",
+      "Dave": "fullback",
+      "Eve": "right midfielder",
+      "Fred": "left winger",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "goalkeeper",
+      "Claire": "left back",
+      "Dave": "fullback",
+      "Eve": "right midfielder",
+      "Fred": "cheerleader",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "goalkeeper",
+      "Claire": "striker",
+      "Dave": "fullback",
+      "Eve": "right midfielder",
+      "Fred": "cheerleader",
+      "Gertrude": "left back"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: goalkeeper, left winger, left back, fullback, cheerleader, right midfielder, striker\n1. Alice ↔ Claire: left back, left winger, goalkeeper, fullback, cheerleader, right midfielder, striker\n2. Fred ↔ Bob: left back, right midfielder, goalkeeper, fullback, cheerleader, left winger, striker\n3. Eve ↔ Bob: left back, cheerleader, goalkeeper, fullback, right midfielder, left winger, striker\n4. Alice ↔ Claire: goalkeeper, cheerleader, left back, fullback, right midfielder, left winger, striker\n5. Alice ↔ Bob: cheerleader, goalkeeper, left back, fullback, right midfielder, left winger, striker\n6. Alice ↔ Fred: left winger, goalkeeper, left back, fullback, right midfielder, cheerleader, striker\n7. Gertrude ↔ Claire: left winger, goalkeeper, striker, fullback, right midfielder, cheerleader, left back\nBob's final position is goalkeeper, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1304,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

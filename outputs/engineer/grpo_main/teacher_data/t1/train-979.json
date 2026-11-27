@@ -1,0 +1,22 @@
+{
+  "id": "train-979",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 68-year-old man present at hospital after a sudden onset of visual disturbances, dizziness and slight headache. Neurological examination 25 min later revealed right-sided homonymous hemianopsia and marginal evidence of non-fluent aphasia from a stroke 20 months earlier. Brain MRI revealed restricted diffusion on diffusion-weighted imaging in the medial part of the left occipital lobe without demarcation in FLAIR.\nThe patient’s medical history included recurrent transient ischemic attacks. He had been taking dabigatran 110 mg b.i.d. for NVAF. At the time of treatment initiation, his renal function was slightly impaired; however, the prescribed dose regimen may have been inappropriate given the patient’s age and medical history. Laboratory examinations revealed an eGFR of 102 mL/min, a dTT of 34 ng/mL and an aPTT of 34 s. It was decided to neutralize the anticoagulant activity of dabigatran and to perform thrombolysis with rt-PA, considering hemianopsia as a functionally relevant deficit (mRS of 3).\nThe patient received a rapid i.v infusion of idarucizumab (5 g), which was followed, after 10 min (and a total of 110 min from symptom onset), by intravenous thrombolysis with rt-PA (70 mg). Transcranial Doppler sonography shortly after rt-PA infusion showed regular blood flow in both posterior cerebral arteries. Transthoracic echocardiography on day 2 did not reveal cardiac thrombi or structural heart disease. The patient was discharged on day 3 with slightly improved hemianopsia (NIHSS 3, mRS 2). Dabigatran treatment was resumed at the higher dosage (150 mg b.i.d.) as renal function tests were normal.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 467,
+  "solution": "CHA2DS2-VASc scores stroke risk in atrial fibrillation. Using the history before treatment:\n- Congestive heart failure or LV systolic dysfunction: not documented → 0.\n- Hypertension: not documented → 0.\n- Age: 68 is in the 65–74 band (1 point), not the ≥75 band (2 points) → 1.\n- Diabetes mellitus: not documented → 0.\n- Prior stroke, TIA, or systemic embolism: stroke 20 months earlier and recurrent TIAs qualify, but this category is scored only once → 2.\n- Vascular disease: no qualifying coronary, peripheral arterial, or aortic disease documented → 0.\n- Sex category: male → 0.\nTotal: 0 + 0 + 1 + 0 + 2 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 909,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

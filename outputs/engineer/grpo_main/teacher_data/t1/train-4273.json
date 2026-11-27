@@ -1,0 +1,22 @@
+{
+  "id": "train-4273",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 56-year-old man presents to the emergency department with increasing shortness of breath and mild chest discomfort. One week ago he developed cold-like symptoms, including a mild fever, headache, and occasional night sweats. He noticed that he required 2 additional pillows in order to sleep comfortably. Approximately 1-2 nights ago, he was severely short of breath, causing him to awaken from sleep which frightened him. He reports gaining approximately 6 pounds over the course of the week without any significant alteration to his diet. He says that he feels short of breath after climbing 1 flight of stairs or walking less than 1 block. Previously, he was able to climb 4 flights of stairs and walk 6-7 blocks with mild shortness of breath. Medical history is significant for coronary artery disease (requiring a left anterior descending artery stent 5 years ago and dual antiplatelet therapy), heart failure with reduced ejection fraction, hypertension, hyperlipidemia, and type II diabetes. He drinks 2 alcoholic beverages daily and has smoked 1 pack of cigarettes daily for the past 35 years. His temperature is 98.6°F (37°C), blood pressure is 145/90 mmHg, pulse is 102/min, and respirations are 20/min. On physical exam, the patient has a positive hepatojugular reflex, a third heart sound, crackles in the lung bases, and pitting edema up to the mid-thigh bilaterally.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 18,
+  "prompt_tokens": 385,
+  "solution": "HEART scores history, ECG, age, risk factors, and troponin from 0 to 2 each.\nH — Slightly/moderately/highly suspicious history = 0/1/2. A high-suspicion interpretation of new chest discomfort and marked exertional dyspnea gives 2, although orthopnea, weight gain, crackles, and edema support decompensated heart failure as an alternative.\nE — Normal ECG/nonspecific repolarization changes/significant ST depression = 0/1/2. No ECG is reported; assume 0 for the calculation.\nA — Age <45/45–64/≥65 = 0/1/2. At 56, he scores 1.\nR — No risk factors/one or two/three or more or established atherosclerotic disease = 0/1/2. Prior LAD stenting establishes CAD, so score 2. Hypertension, hyperlipidemia, diabetes, and smoking do not add points beyond 2.\nT — Troponin ≤1/>1 to 3/>3 times the upper reference limit = 0/1/2. No troponin is reported; assume 0.\nConditional total: 2 + 0 + 1 + 2 + 0 = 5. ECG and troponin results are needed for a definitive score.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 784,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

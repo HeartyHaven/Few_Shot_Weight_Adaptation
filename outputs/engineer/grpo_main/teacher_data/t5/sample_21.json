@@ -1,0 +1,20 @@
+{
+  "id": "sample_21",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(array):\n    n = array.pop()\n    array.extend([n, n])\n    return array\n```\n\nInput: f([1, 1, 2, 2])",
+  "answer": "[1, 1, 2, 2, 2]",
+  "prompt_tokens": 98,
+  "solution": "array.pop() removes the last 2, so n = 2 and array becomes [1, 1, 2].\narray.extend([n, n]) appends the two elements of [2, 2], giving [1, 1, 2, 2, 2].\nFinal answer: [1, 1, 2, 2, 2]",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "[1, 1, 2, 2, 2]",
+    "correct": true
+  }
+}

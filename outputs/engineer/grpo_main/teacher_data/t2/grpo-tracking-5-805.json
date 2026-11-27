@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-805",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Dune, Claire gets Emma, Dave gets Persuasion, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Eve and Bob swap books. Then, Claire and Alice swap books. Then, Bob and Dave swap books. Then, Bob and Alice swap books. Finally, Alice and Dave swap books. At the end of the semester, Eve has\nOptions:\n(A) Siddhartha\n(B) Dune\n(C) Emma\n(D) Persuasion\n(E) The Trial",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Persuasion",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Persuasion",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Persuasion",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "The Trial",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "The Trial",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Persuasion",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books in holder order: Alice, Bob, Claire, Dave, Eve.\nInitial: (Siddhartha, Dune, Emma, Persuasion, The Trial)\n1. Eve and Bob swap: (Siddhartha, The Trial, Emma, Persuasion, Dune)\n2. Claire and Alice swap: (Emma, The Trial, Siddhartha, Persuasion, Dune)\n3. Bob and Dave swap: (Emma, Persuasion, Siddhartha, The Trial, Dune)\n4. Bob and Alice swap: (Persuasion, Emma, Siddhartha, The Trial, Dune)\n5. Alice and Dave swap: (The Trial, Emma, Siddhartha, Persuasion, Dune)\nEve has Dune, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1192,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

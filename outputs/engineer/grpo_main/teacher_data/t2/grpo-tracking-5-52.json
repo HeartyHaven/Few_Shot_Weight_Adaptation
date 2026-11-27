@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-52",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Jane Eyre, Claire gets Ivanhoe, Dave gets Hamlet, and Eve gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Alice and Bob swap books. Then, Bob and Alice swap books. Then, Eve and Alice swap books. Finally, Eve and Dave swap books. At the end of the semester, Bob has\nOptions:\n(A) Candide\n(B) Jane Eyre\n(C) Ivanhoe\n(D) Hamlet\n(E) Dracula",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Candide, Jane Eyre, Ivanhoe, Hamlet, Dracula)\n1. Dave and Bob swap: (Candide, Hamlet, Ivanhoe, Jane Eyre, Dracula)\n2. Alice and Bob swap: (Hamlet, Candide, Ivanhoe, Jane Eyre, Dracula)\n3. Bob and Alice swap: (Candide, Hamlet, Ivanhoe, Jane Eyre, Dracula)\n4. Eve and Alice swap: (Dracula, Hamlet, Ivanhoe, Jane Eyre, Candide)\n5. Eve and Dave swap: (Dracula, Hamlet, Ivanhoe, Candide, Jane Eyre)\nBob has Hamlet, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1080,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

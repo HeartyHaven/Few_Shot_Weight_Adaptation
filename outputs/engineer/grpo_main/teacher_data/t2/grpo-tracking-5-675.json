@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-675",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Hamlet, Claire gets Walden, Dave gets Emma, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Claire swap books. Then, Dave and Eve swap books. Then, Dave and Claire swap books. Finally, Claire and Dave swap books. At the end of the semester, Alice has\nOptions:\n(A) Dracula\n(B) Hamlet\n(C) Walden\n(D) Emma\n(E) The Trial",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "The Trial",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dracula",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "The Trial",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 178,
+  "solution": "Books in (Alice, Bob, Claire, Dave, Eve) order:\nInitial: (Dracula, Hamlet, Walden, Emma, The Trial)\n1. Alice and Claire swap: (Walden, Hamlet, Dracula, Emma, The Trial)\n2. Bob and Claire swap: (Walden, Dracula, Hamlet, Emma, The Trial)\n3. Dave and Eve swap: (Walden, Dracula, Hamlet, The Trial, Emma)\n4. Dave and Claire swap: (Walden, Dracula, The Trial, Hamlet, Emma)\n5. Claire and Dave swap: (Walden, Dracula, Hamlet, The Trial, Emma)\nAlice has Walden, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1034,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

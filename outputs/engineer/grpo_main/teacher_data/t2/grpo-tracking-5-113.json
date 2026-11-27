@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-113",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Priya, Bob is dancing with Nadia, Claire is dancing with Tara, Dave is dancing with Wade, and Eve is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Dave and Bob switch partners. Then, Alice and Dave switch partners. Then, Claire and Eve switch partners. Finally, Eve and Dave switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Priya\n(B) Nadia\n(C) Tara\n(D) Wade\n(E) Umar",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Priya",
+      "Bob": "Nadia",
+      "Claire": "Tara",
+      "Dave": "Wade",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Tara",
+      "Claire": "Nadia",
+      "Dave": "Wade",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Wade",
+      "Claire": "Nadia",
+      "Dave": "Tara",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Wade",
+      "Claire": "Nadia",
+      "Dave": "Priya",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Wade",
+      "Claire": "Umar",
+      "Dave": "Priya",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Wade",
+      "Claire": "Umar",
+      "Dave": "Nadia",
+      "Eve": "Priya"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Priya, Nadia, Tara, Wade, Umar.\n1. Bob ↔ Claire: Priya, Tara, Nadia, Wade, Umar.\n2. Dave ↔ Bob: Priya, Wade, Nadia, Tara, Umar.\n3. Alice ↔ Dave: Tara, Wade, Nadia, Priya, Umar.\n4. Claire ↔ Eve: Tara, Wade, Umar, Priya, Nadia.\n5. Eve ↔ Dave: Tara, Wade, Umar, Nadia, Priya.\nClaire's partner is Umar, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1326,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

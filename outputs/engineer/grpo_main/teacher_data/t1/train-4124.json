@@ -1,0 +1,22 @@
+{
+  "id": "train-4124",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 36-year-old Caucasian gentleman with no past medical history presented to the ED for management of nephrolithiasis. Upon arrival, the patient was given ketorolac and Hyoscyamine immediately after which he developed chest pressure, severe shortness of breath with desaturation to 83% on RA, hypertensive emergency with BP of 188/122, sinus tachycardia with HR as high as 130 bpm. At this time, CT chest with contrast was performed which showed left ventricular dilatation and bilateral airspace disease representing pulmonary edema. EKG revealed diffuse ST-T wave elevations, which prompted troponins that were peaked at 2.16. A follow-up echocardiogram as seen in and revealed diffuse hypokinesis, RVSP of 45 mmHg and LVEF of 35%. The patient was taken for cardiac catheterization and was found to have no coronary artery disease, however, did have ballooning of the basal myocardium with a hyperdynamic apex; findings consistent with reverse Takotsubo cardiomyopathy. This case illustrates one of the rare cases of reverse Takotsubo cardiomyopathy in the setting of anticholinergic toxicity. Hyoscyamine, which is used as an antispasmodic commonly, results in anticholinergic side effects on the cardiovascular system causing tachycardia which in this case resulted in reverse Takotsubo cardiomyopathy. Clinicians should remain cognizant of the effect of anticholinergic medications, particularly the cardiovascular system as it may result in the aforementioned findings.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 18,
+  "prompt_tokens": 411,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, Risk factors, and Troponin. At arrival for nephrolithiasis, before medication, no chest symptoms, ECG, or troponin were documented, so a pretreatment HEART score cannot be established. For the subsequent chest-pressure episode:\n- History: acute chest pressure with severe dyspnea, judged highly suspicious at presentation = 2.\n- ECG: diffuse ST-T elevation is a repolarization abnormality = 1; significant ST depression, the 2-point criterion, was not reported.\n- Age: 36 years (<45) = 0.\n- Risk factors: no established coronary risk factors documented = 0. The acute blood pressure rise does not establish chronic hypertension.\n- Troponin: peak 2.16 = 2 if >3 times the assay's upper reference limit; the assay limit and initial value are not stated.\nConditional episode score using the peak: 2 + 1 + 0 + 0 + 2 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 695,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

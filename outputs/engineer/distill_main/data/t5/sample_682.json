@@ -1,0 +1,17 @@
+{
+  "id": "sample_682",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, length, index):\n    ls = text.rsplit(None, index)\n    return '_'.join([l[:length] for l in ls])\n```\n\nInput: f('hypernimovichyp', 2, 2)",
+  "answer": "'hy'",
+  "solution": "rsplit(None, 2) looks for whitespace, making at most two splits from the right. There is no whitespace, so ls = ['hypernimovichyp']. Slicing its only item with [:2] gives 'hy'. Joining ['hy'] inserts no underscore because there is only one item.\nFinal answer: 'hy'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 24,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'hy'",
+    "correct": true
+  }
+}

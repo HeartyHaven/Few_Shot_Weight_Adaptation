@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1122",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Emma, Claire gets The Hobbit, Dave gets Hamlet, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Dave and Bob swap books. Then, Eve and Claire swap books. Then, Claire and Bob swap books. Finally, Alice and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) Beloved\n(B) Emma\n(C) The Hobbit\n(D) Hamlet\n(E) The Trial",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "The Trial",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Trial",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Beloved | Emma | The Hobbit | Hamlet | The Trial\n1. Bob ↔ Alice: Emma | Beloved | The Hobbit | Hamlet | The Trial\n2. Dave ↔ Bob: Emma | Hamlet | The Hobbit | Beloved | The Trial\n3. Eve ↔ Claire: Emma | Hamlet | The Trial | Beloved | The Hobbit\n4. Claire ↔ Bob: Emma | The Trial | Hamlet | Beloved | The Hobbit\n5. Alice ↔ Eve: The Hobbit | The Trial | Hamlet | Beloved | Emma\nBob's book is The Trial, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1159,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

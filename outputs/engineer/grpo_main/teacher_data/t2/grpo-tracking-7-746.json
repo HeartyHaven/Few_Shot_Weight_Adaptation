@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-746",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Dune, Claire gets Jane Eyre, Dave gets Ivanhoe, Eve gets Hamlet, Fred gets Middlemarch, and Gertrude gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Bob and Dave swap books. Then, Gertrude and Alice swap books. Then, Claire and Eve swap books. Then, Fred and Gertrude swap books. Then, Bob and Fred swap books. Then, Dave and Alice swap books. Finally, Eve and Gertrude swap books. At the end of the semester, Fred has\nOptions:\n(A) Candide\n(B) Dune\n(C) Jane Eyre\n(D) Ivanhoe\n(E) Hamlet\n(F) Middlemarch\n(G) Walden",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet",
+      "Fred": "Middlemarch",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Hamlet",
+      "Fred": "Middlemarch",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Hamlet",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Hamlet",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Hamlet",
+      "Dave": "Walden",
+      "Eve": "Middlemarch",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists books in holder order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Candide | Dune | Jane Eyre | Ivanhoe | Hamlet | Middlemarch | Walden\n1. Bob ↔ Dave: Candide | Ivanhoe | Jane Eyre | Dune | Hamlet | Middlemarch | Walden\n2. Gertrude ↔ Alice: Walden | Ivanhoe | Jane Eyre | Dune | Hamlet | Middlemarch | Candide\n3. Claire ↔ Eve: Walden | Ivanhoe | Hamlet | Dune | Jane Eyre | Middlemarch | Candide\n4. Fred ↔ Gertrude: Walden | Ivanhoe | Hamlet | Dune | Jane Eyre | Candide | Middlemarch\n5. Bob ↔ Fred: Walden | Candide | Hamlet | Dune | Jane Eyre | Ivanhoe | Middlemarch\n6. Dave ↔ Alice: Dune | Candide | Hamlet | Walden | Jane Eyre | Ivanhoe | Middlemarch\n7. Eve ↔ Gertrude: Dune | Candide | Hamlet | Walden | Middlemarch | Ivanhoe | Jane Eyre\nFred has Ivanhoe, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1014,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

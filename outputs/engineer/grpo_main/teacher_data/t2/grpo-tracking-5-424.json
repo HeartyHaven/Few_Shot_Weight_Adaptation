@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-424",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Umar, Claire is dancing with Oscar, Dave is dancing with Priya, and Eve is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Claire and Eve switch partners. Then, Dave and Alice switch partners. Then, Alice and Claire switch partners. Then, Claire and Bob switch partners. Finally, Bob and Eve switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Yuki\n(B) Umar\n(C) Oscar\n(D) Priya\n(E) Nadia",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Umar",
+      "Claire": "Oscar",
+      "Dave": "Priya",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Priya",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Priya",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Priya",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Oscar",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Priya"
+    }
+  ],
+  "prompt_tokens": 183,
+  "solution": "Partners in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Yuki, Umar, Oscar, Priya, Nadia)\n1. Claire and Eve swap: (Yuki, Umar, Nadia, Priya, Oscar)\n2. Dave and Alice swap: (Priya, Umar, Nadia, Yuki, Oscar)\n3. Alice and Claire swap: (Nadia, Umar, Priya, Yuki, Oscar)\n4. Claire and Bob swap: (Nadia, Priya, Umar, Yuki, Oscar)\n5. Bob and Eve swap: (Nadia, Oscar, Umar, Yuki, Priya)\nClaire is dancing with Umar, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1112,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

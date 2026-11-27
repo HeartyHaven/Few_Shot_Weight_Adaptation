@@ -1,0 +1,20 @@
+{
+  "id": "sample_442",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(lst):\n    res = []\n    for i in range(len(lst)):\n        if lst[i] % 2 == 0:\n            res.append(lst[i])\n\n    return lst.copy()\n```\n\nInput: f([1, 2, 3, 4])",
+  "answer": "[1, 2, 3, 4]",
+  "prompt_tokens": 115,
+  "solution": "res starts as []. The loop visits indices 0 through 3.\ni = 0: 1 is odd, so res stays [].\ni = 1: 2 is even, so appending it gives res = [2].\ni = 2: 3 is odd, so res stays [2].\ni = 3: 4 is even, so appending it gives res = [2, 4].\nOnly res changed. The return statement copies lst, not res, so the returned list has all four original elements.\nFinal answer: [1, 2, 3, 4]",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "[1, 2, 3, 4]",
+    "correct": true
+  }
+}

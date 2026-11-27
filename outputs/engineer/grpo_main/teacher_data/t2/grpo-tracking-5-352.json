@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-352",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Ivanhoe, Claire gets Persuasion, Dave gets Candide, and Eve gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Alice and Dave swap books. Then, Alice and Claire swap books. Then, Bob and Claire swap books. Then, Bob and Dave swap books. Finally, Bob and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) Beloved\n(B) Ivanhoe\n(C) Persuasion\n(D) Candide\n(E) Dune",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Beloved",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Beloved",
+      "Claire": "Ivanhoe",
+      "Dave": "Candide",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Candide",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve).\nInitial: (Beloved, Ivanhoe, Persuasion, Candide, Dune)\n1. Alice swaps with Dave: (Candide, Ivanhoe, Persuasion, Beloved, Dune)\n2. Alice swaps with Claire: (Persuasion, Ivanhoe, Candide, Beloved, Dune)\n3. Bob swaps with Claire: (Persuasion, Candide, Ivanhoe, Beloved, Dune)\n4. Bob swaps with Dave: (Persuasion, Beloved, Ivanhoe, Candide, Dune)\n5. Bob swaps with Eve: (Persuasion, Dune, Ivanhoe, Candide, Beloved)\nBob has Dune, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1307,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

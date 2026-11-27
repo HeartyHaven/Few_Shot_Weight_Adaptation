@@ -1,0 +1,42 @@
+{
+  "task": "t4",
+  "ids": [
+    "train-number_theory-83",
+    "train-counting_and_probability-722",
+    "train-number_theory-133",
+    "train-number_theory-446",
+    "train-counting_and_probability-547"
+  ],
+  "attempt": 1,
+  "teacher": "gpt-6.2-astra",
+  "started": 1795712382.5182242,
+  "request": "Write worked solutions for distillation into a small language model. These are authorized training examples, not evaluation questions. The gold answer is provided to check your work; do not mention it was provided. Use English, concise steps, preferably under 650 tokens per solution (up to 1400 if necessary). Each solution MUST end with exactly one line \"Final answer: ...\", matching the provided gold answer. Explain the mathematical method and every essential algebraic/counting step. Give a concise, checkable worked solution, not merely a restatement of the answer.\nReturn ONLY a JSON array of objects with exactly the fields \"id\" and \"solution\". Preserve each id. No tools, external retrieval or additional problems.\n\n[{\"id\": \"train-number_theory-83\", \"question\": \"Let $m$ be the smallest positive, three-digit integer congruent to 5 (mod 11). Let $n$ be the smallest positive, four-digit integer congruent to 5 (mod 11). What is $n-m$?\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"902\"}, {\"id\": \"train-counting_and_probability-722\", \"question\": \"Consider the dark square in an array of unit squares, part of which is shown. The first ring of squares around this center square contains 8 unit squares. The second ring contains 16 unit squares. If we continue this process, then what is the number of unit squares in the $100^{th}$ ring?\\n\\n[asy]\\nfill((2,2)--(7,2)--(7,7)--(2,7)--cycle,gray(0.8));\\nfill((3,3)--(6,3)--(6,6)--(3,6)--cycle,gray(0.6));\\nfill((4,4)--(4,5)--(5,5)--(5,4)--cycle,black);\\nfor (int i=0; i<10; ++i) {\\ndraw((0,i)--(9,i));\\ndraw((i,0)--(i,9));\\n}\\n[/asy]\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"800\"}, {\"id\": \"train-number_theory-133\", \"question\": \"A whole number, $N$, is chosen so that $\\\\frac{N}{3}$ is strictly between 7.5 and 8. What is the value of $N$ ?\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"23\"}, {\"id\": \"train-number_theory-446\", \"question\": \"How many odd whole numbers are factors of 180?\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"6\"}, {\"id\": \"train-counting_and_probability-547\", \"question\": \"Two integers are relatively prime if they have no common factors other than 1 or -1. What is the probability that a positive integer less than or equal to 30 is relatively prime to 30? Express your answer as a common fraction.\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"\\\\frac{4}{15}\"}]",
+  "reserved_tokens": 16809,
+  "response": "[\n  {\n    \"id\": \"train-number_theory-83\",\n    \"solution\": \"Numbers congruent to 5 modulo 11 are 11 apart. Since 99 is a multiple of 11, 99 + 5 = 104 qualifies, and the preceding candidate is 104 − 11 = 93. Thus 104 is the smallest three-digit candidate.\\nSimilarly, 1001 = 11 × 91, so 1001 + 5 = 1006 qualifies. The preceding candidate is 1006 − 11 = 995, so 1006 is the smallest four-digit candidate.\\nTherefore n − m = 1006 − 104 = 902.\\nFinal answer: 902\"\n  },\n  {\n    \"id\": \"train-counting_and_probability-722\",\n    \"solution\": \"Each ring adds one unit to both ends of each side length. Starting from the center square of side 1, the square through ring 100 therefore has side 1 + 2 × 100 = 201. The square through ring 99 has side 1 + 2 × 99 = 199.\\nSubtract their areas to count only the unit squares in ring 100: 201² − 199² = (201 − 199)(201 + 199) = 2 × 400 = 800.\\nFinal answer: 800\"\n  },\n  {\n    \"id\": \"train-number_theory-133\",\n    \"solution\": \"Multiply all parts of 7.5 < N/3 < 8 by 3. Since 3 is positive, the inequalities keep their direction, giving 22.5 < N < 24. The only whole number strictly between these bounds is 23.\\nFinal answer: 23\"\n  },\n  {\n    \"id\": \"train-number_theory-446\",\n    \"solution\": \"Factor 180 = 2² × 3² × 5. An odd factor cannot contain a factor of 2, so it has the form 3ᵃ × 5ᵇ. There are three choices for a (0, 1, or 2) and two for b (0 or 1). Each pair gives a distinct odd factor, so the count is 3 × 2 = 6.\\nFinal answer: 6\"\n  },\n  {\n    \"id\": \"train-counting_and_probability-547\",\n    \"solution\": \"Since 30 = 2 × 3 × 5, an integer is relatively prime to 30 exactly when it is divisible by none of 2, 3, and 5. Among the 30 integers from 1 to 30, the odd ones not divisible by 5 are 1, 3, 7, 9, 11, 13, 17, 19, 21, 23, 27, and 29. Removing the multiples of 3 (3, 9, 21, and 27) leaves 12 − 4 = 8 favorable choices.\\nThe probability is 8/30 = 4/15.\\nFinal answer: \\\\frac{4}{15}\"\n  }\n]",
+  "finish_reason": "stop",
+  "returned_model": "gpt-6.2-astra",
+  "usage": {
+    "completion_tokens": 671,
+    "prompt_tokens": 722,
+    "total_tokens": 1393,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "image_tokens": null,
+      "text_tokens": null,
+      "cached_creation_tokens": 0
+    }
+  },
+  "kept": 5,
+  "seconds": 15.21,
+  "charged_tokens": 1393,
+  "finished": 1795712397.7309463
+}

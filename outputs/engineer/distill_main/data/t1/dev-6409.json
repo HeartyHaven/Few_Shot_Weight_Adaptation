@@ -1,0 +1,21 @@
+{
+  "id": "dev-6409",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "calc_id": 45,
+  "question": "Patient note:\nA 71-year-old African American man is brought to the emergency department with a worsening productive cough and dyspnea for 2 days. He has had generalized bone pain for 2 months. He was admitted for pyelonephritis last month. He also received outpatient treatment for pneumonia almost 2 months ago. Over the past 2 months, he has been taking over-the-counter ibuprofen for pain as needed. He appears anxious. The vital signs include: temperature 38.8°C (101.8°F), pulse 95/min, respiratory rate 20/min, and blood pressure 155/90 mm Hg. The conjunctivae are pale. Crackles are heard in the right lower lobe. The cardiac examination shows no abnormalities. The laboratory studies show the following:\nHemoglobin 9 g/dL\nMean corpuscular volume 95 μm3\nLeukocyte count 13,500/mm3\nSegmented neutrophils 75%\nLymphocytes 25%\nPlatelet count 240,000/mm3\nESR 85 mm/hr\nSerum\nNa+ 135 mEq/L\nK+ 4.2 mEq/L\nCl− 113 mEq/L\nHCO3− 20 mEq/L\nCa+ 12.4 mg/dL\nAlbumin 4 g/dL\nUrea nitrogen 38 mg/dL\nCreatinine 2.2 mg/dL\nA chest X-ray shows a right lower lobe opacity and blurring of the ipsilateral diaphragmatic dome. Skull and pelvic X-rays are performed (see image).\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "explanation": "The CURB-65 Score criteria are listed below:\n\n1. Confusion: No = 0 points, Yes = +1 point\n2. BUN >19 mg/dL (>7 mmol/L urea): No = 0 points, Yes = +1 point\n3. Respiratory Rate ≥30: No = 0 points, Yes = +1 point\n4. Systolic BP <90 mmHg or Diastolic BP ≤60 mmHg: No = 0 points, Yes = +1 point\n5. Age ≥65: No = 0 points, Yes = +1 point\n\nThe total CURB-65 score is calculated by summing the points for each criterion.\n\nThe CURB-65 score is current at 0 points.\nThe patient is 71 years old. The patient's age is greater than or equal to 65 years, and so we add 1 point to the score, making the current total 0 + 1 = 1.\nWhether the patient has confusion is not reported in the note. Hence, we assume this to be false, and so 0 points are added to the score, making the current total 1.\nThe concentration of BUN is 38.0 mg/dL. The patient's BUN concentration is greater than 19 mg/dL and so we add 1 point to score making the current total 1 + 1 = 2.\nThe patient's respiratory rate is 20 breaths per minute. Because the respiratory rate is less than 30 breaths per minute, 0 points are added to the score, keeping the current total at 2.\nThe patient's systiolic blood pressure is 155 mm Hg. The patient's diastolic blood pressure is 90 mm Hg. For a point a point to be added, the systiolic blood pressure must be less than 90 mm Hg or the diastolic blood pressure must be less than or equal to 60 mm Hg. Because neither of these statements are true, 0 points are added to score, keeping the current total to 2.\nThe patient's CURB-65 score is 2.",
+  "solution": "CURB-65 assigns 1 point for each criterion met at presentation:\n- Confusion: Anxiety was noted, but no confusion was reported → 0.\n- BUN >19 mg/dL: Urea nitrogen was 38 mg/dL → 1.\n- Respiratory rate ≥30/min: Rate was 20/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: BP was 155/90 mmHg; neither threshold was met → 0.\n- Age ≥65 years: Age was 71 → 1.\nTotal: 0 + 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "8b9a3e561e15e11dac4347cef51c8be2946c533d751cd80486ae510d65212049",
+  "call_id": 1,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

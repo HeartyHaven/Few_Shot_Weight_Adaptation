@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-365",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Let $S$ be the set of points whose coordinates $x,$ $y,$ and $z$ are integers that satisfy $0\\le x\\le2,$ $0\\le y\\le3,$ and $0\\le z\\le4.$ Two distinct points are randomly chosen from $S.$ The probability that the midpoint of the segment they determine also belongs to $S$ is $m/n,$ where $m$ and $n$ are relatively prime positive integers. Find $m + n.$\n",
+  "answer": "200",
+  "prompt_tokens": 134,
+  "solution": "The midpoint stays within the coordinate bounds, so it belongs to $S$ exactly when all its coordinates are integers. This requires the two points to have matching parity in each coordinate.\n\nThe counts of even and odd choices are $(2,1)$ for $x$, $(2,2)$ for $y$, and $(3,2)$ for $z$. For either fixed parity of $y$, the four choices of parities for $(x,z)$ give class sizes $2\\cdot2\\cdot3=12$, $2\\cdot2\\cdot2=8$, $1\\cdot2\\cdot3=6$, and $1\\cdot2\\cdot2=4$. Choosing two points within one class gives $2\\left(\\binom{12}{2}+\\binom{8}{2}+\\binom{6}{2}+\\binom{4}{2}\\right)=2(66+28+15+6)=230$ favorable pairs.\n\nThere are $3\\cdot4\\cdot5=60$ points, hence $\\binom{60}{2}=1770$ total pairs. The probability is $230/1770=23/177$, so $m+n=23+177=200$.\nFinal answer: 200",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "200",
+    "correct": true
+  }
+}

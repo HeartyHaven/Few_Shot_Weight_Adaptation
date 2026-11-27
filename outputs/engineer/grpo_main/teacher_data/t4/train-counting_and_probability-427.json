@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-427",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "A scanning code consists of a $7 \\times 7$ grid of squares, with some of its squares colored black and the rest colored white. There must be at least one square of each color in this grid of $49$ squares. A scanning code is called $\\textit{symmetric}$ if its look does not change when the entire square is rotated by a multiple of $90 ^{\\circ}$ counterclockwise around its center, nor when it is reflected across a line joining opposite corners or a line joining midpoints of opposite sides. What is the total number of possible symmetric scanning codes?\n$\\textbf{(A)} \\text{ 510} \\qquad \\textbf{(B)} \\text{ 1022} \\qquad \\textbf{(C)} \\text{ 8190} \\qquad \\textbf{(D)} \\text{ 8192} \\qquad \\textbf{(E)} \\text{ 65,534}$\n",
+  "answer": "1022",
+  "prompt_tokens": 243,
+  "solution": "Label each square by coordinates \\((x,y)\\) relative to the center, where both coordinates run from \\(-3\\) to 3. The grid symmetries allow independent sign changes and swapping of coordinates. Thus two squares are related by symmetry exactly when their absolute coordinates, sorted in increasing order, give the same pair \\((a,b)\\).\n\nFor \\(0\\le a\\le b\\le3\\), there are \\(b+1\\) choices of \\(a\\) for each \\(b\\), giving \\(1+2+3+4=10\\) classes. Each class must be monochromatic, and choosing its color independently guarantees symmetry. Of the \\(2^{10}\\) colorings, exclude the all-black and all-white grids, leaving \\(2^{10}-2=1022\\).\nFinal answer: 1022",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "1022",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-784",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 72-year-old male with a medical history of peripheral arterial disease (PAD), mesenteric ischemia status post superior mesenteric and celiac artery stents, gastroesophageal reflux disease, hypertension, diabetes, chronic kidney disease, hypothyroidism and chronic obstructive pulmonary disease, presented with one-day history of epigastric pain, nausea and hematemesis. The patient denied any prior episodes of melena or bright red blood per rectum and reported no personal history of rectal or colon cancer. He also denied the use of nonsteroidal anti-inflammatory drugs, iron supplements or bismuth subsalicylate. He denied the use of alcohol, tobacco or recreational drugs. His medications included aspirin, clopidogrel, amlodipine, hydralazine, hydrochlorothiazide, atorvastatin, levothyroxine, furosemide and baclofen.\nOn admission, the patient was hemodynamically stable, his hemoglobin (HgB) was 9.2 with mean corpuscular volume (MCV) of 93.2. Eight months ago, his HgB was 11.4 with MCV of 89.9. Iron studies, level of folate and vitamin B12 were all within normal limits. Digital rectal exam showed dark stool. His aspirin and clopidogrel were held and he was started on intravenous pantoprazole 40 mg twice daily. Patient underwent upper endoscopy to identify the source of his gastrointestinal bleeding. It was unremarkable with no blood seen or identifiable source of bleeding. The esophagus, gastric mucosa and gastroesophageal junction were all normal in appearance. Dark pigmentation of the duodenal mucosa was noted and subsequently biopsied (Figure ). Evaluation of the biopsied sample was consistent with intestinal PM (Figure ) with no evidence of dysplasia or malignancy. Patient’s initial complains of nausea and hematemesis resolved without any additional intervention. He was transitioned to oral proton-pump inhibitor. Given his history of PAD, he was continued on aspirin, but his clopidogrel was discontinued upon discharge.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 531,
+  "solution": "CHA₂DS₂-VASc uses the following admission findings:\n- Congestive heart failure or left ventricular dysfunction (1): not documented → 0.\n- Hypertension (1): known hypertension → 1.\n- Age (65–74 = 1; ≥75 = 2): 72 years → 1.\n- Diabetes mellitus (1): present → 1.\n- Prior stroke, TIA, or systemic embolism (2): none documented → 0.\n- Vascular disease (1): peripheral arterial disease → 1.\n- Female sex (1): male → 0.\nTotal = 0 + 1 + 1 + 1 + 0 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 813,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

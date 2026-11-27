@@ -1,0 +1,22 @@
+{
+  "id": "train-1021",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA right-handed 81-year-old man with a past medical history of ischemic stroke, hypertension, hyperlipidemia, type-II diabetes mellitus, and paroxysmal atrial fibrillation presented to the hospital with symptoms of unsteadiness, mild dysphagia, and sharp stabbing right-sided facial pain. Neurological examination revealed decreased pin-prick sensation on the right side of the face. The patient had normal strength bilaterally. Coordination examination showed finger-to-nose dysmetria bilaterally, but more pronounced on the right. Ataxia with swaying to the right was observed on gait examination.\nMRI of the brain revealed an area of restricted diffusion within the right posterior lateral medulla consistent with an acute or subacute infarction (). Coagulation studies revealed an international normalized ratio of 2 while on warfarin; the patient endorsed some noncompliance with the recommended regimen.\nThe patient noted the concomitant onset of right “sharp-stabbing” intermittent pain merely hours after the onset of unsteadiness. The pain occurred in the ophthalmic and maxillary distribution of the trigeminal nerve and was acutely worsened by cold temperature. He was diagnosed with central facial pain secondary to lateral medullary infarct. The pain initially improved with the administration of carbamazepine, which was discontinued after hospital discharge due to adverse reactions. He was subsequently started on gabapentin 100 mg by mouth three times a day with some relief, but stopped the medication secondary to an adverse reaction of dizziness. The patient still experienced recurrent episodes of right-sided facial pain. Several months after the initial event, he was evaluated in the office and was found to have a nonfocal examination. He continues to complain of brief episodes of right-sided lancinating pain in the forehead, cheek, nose, and periorbital region occurring on average three times a day. Symptoms were aggravated by cold temperature. The patient denied any associated symptoms of lacrimation or sweating.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 486,
+  "solution": "The CHA2DS2-VASc score applies to paroxysmal atrial fibrillation. Using the admission history:\n- Congestive heart failure: not documented → 0.\n- Hypertension: present → 1.\n- Age: 81 years → 2 (age ≥75; do not also count the 65–74 category).\n- Diabetes: type 2 diabetes present → 1.\n- Prior stroke, TIA, or systemic embolism: prior ischemic stroke → 2. The new medullary infarct does not add another 2 points.\n- Vascular disease: no documented myocardial infarction, peripheral arterial disease, or aortic plaque; hyperlipidemia alone does not qualify → 0.\n- Sex: male → 0.\nSum: 0 + 1 + 2 + 1 + 2 + 0 + 0 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 924,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-475",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "What is the largest integer that is a divisor of \\[\n(n+1)(n+3)(n+5)(n+7)(n+9)\n\\]for all positive even integers $n$?",
+  "answer": "15",
+  "prompt_tokens": 72,
+  "solution": "The factors increase by 2. Modulo 3, the first three factors cover all three residues; modulo 5, all five factors cover all five residues, since 2 is coprime to both 3 and 5. Thus every product contains a multiple of 3 and a multiple of 5, so 15 divides every product.\nTo show no larger divisor always works, take \\(n=2\\). Its product is \\(3\\cdot5\\cdot7\\cdot9\\cdot11=3^3\\cdot5\\cdot7\\cdot11\\). For \\(n=64\\), the factors are \\(65,67,69,71,73\\). None is divisible by 7 or 11, and only \\(69=3\\cdot23\\) is divisible by 3. Hence the gcd of these two products is exactly \\(3\\cdot5=15\\), and any universal divisor must divide it.\nFinal answer: 15",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1378,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "15",
+    "correct": true
+  }
+}

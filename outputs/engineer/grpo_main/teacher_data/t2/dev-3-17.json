@@ -1,0 +1,60 @@
+{
+  "id": "dev-3-17",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Wade, and Claire is dancing with Stefan.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Bob and Alice switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Quinn\n(B) Wade\n(C) Stefan",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Wade",
+      "Claire": "Stefan"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Quinn",
+      "Claire": "Stefan"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Wade",
+      "Claire": "Stefan"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Wade",
+      "Claire": "Quinn"
+    }
+  ],
+  "prompt_tokens": 135,
+  "solution": "Initial: Alice = Quinn, Bob = Wade, Claire = Stefan.\n1. Bob and Alice switch: Alice = Wade, Bob = Quinn, Claire = Stefan.\n2. Bob and Alice switch: Alice = Quinn, Bob = Wade, Claire = Stefan.\n3. Alice and Claire switch: Alice = Stefan, Bob = Wade, Claire = Quinn.\nClaire is dancing with Quinn, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

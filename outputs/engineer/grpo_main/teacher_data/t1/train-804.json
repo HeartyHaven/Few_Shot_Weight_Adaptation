@@ -1,0 +1,22 @@
+{
+  "id": "train-804",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 60-year-old man with a history of diabetes mellitus, coronary artery disease, ischemic cardiomyopathy, moderate left ventricular dysfunction, severe right ventricular dysfunction, and severe pulmonary artery hypertension had presented to orthopedic department following trauma sustained over the left leg 1 week back, which had progressed to gangrene and was planned for above knee amputation. Patient had four episodes of angina over the period of last 2 years of which the last attack was 4 weeks back, and was on tablet aspirin 75 mg OD. He was classified under American Society of Anesthesiologist (ASA) III, New York Heart Association (NYHA) grade III with MPC III. He was a chronic smoker with 40 pack years.\nLaboratory parameters were within normal limits. Chest X-ray revealed bilateral nonhomogeneous opacities with enlarged cardiac shadow. Two D ECHO revealed regional wall motion abnormality along with global hypokinesia and ejection fraction of 25%, and Grade II diastolic dysfunction. Patient was started on injection furosemide 40 mg BD, tablet amiodarone 6.25 mg BD, tablet digoxin 0.25 mg BD, tablet spironolactone 25 mg OD, and injection human albumin 20%.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 348,
+  "solution": "CHA₂DS₂-VASc assigns points for heart failure, systemic hypertension, age, diabetes, prior stroke/TIA/systemic embolism, vascular disease, and female sex.\n- Heart failure or LV dysfunction (1): ischemic cardiomyopathy with EF 25% → 1.\n- Hypertension (1): no systemic hypertension documented; pulmonary hypertension does not count → 0.\n- Age (1 for 65–74, 2 for ≥75): age 60 → 0.\n- Diabetes (1): present → 1.\n- Prior stroke/TIA/systemic embolism (2): none reported → 0.\n- Vascular disease (1): established coronary artery disease with angina → 1.\n- Female sex (1): male → 0.\nTotal = 1 + 0 + 0 + 1 + 0 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 823,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

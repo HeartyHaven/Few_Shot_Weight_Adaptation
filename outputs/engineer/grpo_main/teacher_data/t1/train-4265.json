@@ -1,0 +1,22 @@
+{
+  "id": "train-4265",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 55-year-old white British man very fit and well, presented with complaints of central chest tightness. It was non-radiating and lasted about 30 minutes. He usually walks two miles and does frequent cycling and swimming. He has not had chest pain previously and has always been in excellent health. He had a day case surgery for nasal polyp removal one week previously. He did not have any medical problems in the past and was not on any medications. He was a non-smoker. On examination all observations were normal and systematic examination was normal. All blood tests were normal. Electrocardiogram (ECG) and chest X-ray were normal. The Troponin-T test later came back raised at 0.14 micrograms per litre. A diagnosis of NSTEMI (non-ST elevated myocardial infarction) was made and he was started on appropriate treatment. The next day he had an in-patient coronary angiogram, which was normal (). The cardiologist concluded that a diagnosis of myocardial infarction was unlikely in his case, all treatment was stopped and the patient was allowed to go home with no further follow-up.\nFour weeks later the patient again presented, this time with a history of left-sided chest pain. He described a sharp stabbing pain initially in the left rib cage and then in both sides later. Pain was made worse on inspiration, not related to posture or exertion and was only partially relieved with analgesics. He felt short of breath on walking which was unusual for a man of his fitness. On examination his observations were all normal. Systemic examination was normal. ECG and chest X-ray were normal. Arterial blood gases (ABG) showed- pH of 7.45, pCO2 of 4.3, PaO2 of 10.4, bicarbonate of 26 and saturation of 96%. Initially it was thought by the attending physician that the pain may be musculoskeletal. A diagnosis of pulmonary embolism (PE) was considered very unlikely in his case as he had no risk factors and was very fit, but in view of a slightly low PaO2 (though pCO2 was not low as would be expected in PE) for his level of fitness it was decided to do a CT pulmonary angiogram (CTPA) the next day. A troponin level on this occasion was normal but D-dimer came back as positive. No prediction score like Wells or Geneva was used at time of admission to determine the probability of PE. It is likely that even any such score had been used it would have shown a low probability given the absence of any risk factors for thromboembolism. To our surprise the CTPA showed bilateral pulmonary emboli in both the main pulmonary arteries and the segmental branches ( and ). The patient was started on warfarin following initial low molecular weight heparin. Once the INR was therapeutic, the patient was allowed to go home and was advised to continue on warfarin for 6 months.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 695,
+  "solution": "The HEART score grades History, ECG, Age, Risk factors and Troponin from 0 to 2 each. Use the first chest-pain visit, not the later PE admission.\n- History (slightly/moderately/highly suspicious): central tightness lasting 30 minutes, without radiation or a stated exertional trigger, is moderately suspicious → 1.\n- ECG (normal/nonspecific repolarization changes/significant ST depression): normal → 0.\n- Age (<45, 45–64, ≥65 years): 55 → 1.\n- Coronary risk factors (none, 1–2, ≥3 or known atherosclerotic disease): none documented → 0.\n- Troponin (≤1, >1 to 3, or >3 times the assay upper limit): initial troponin T was elevated at 0.14 µg/L. Scoring it as 1 assumes it was no more than 3 times the upper limit; the note does not specify that limit.\nUnder that assumption, HEART = 1 + 0 + 1 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 906,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

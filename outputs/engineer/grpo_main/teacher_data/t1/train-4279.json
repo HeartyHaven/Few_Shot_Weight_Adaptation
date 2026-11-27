@@ -1,0 +1,22 @@
+{
+  "id": "train-4279",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA healthy 41-year-old male with no past medical history apart from alcoholism and smoking presented with chest pain after a high-speed motor vehicle accident and steering wheel trauma to the chest. On admission, his vitals were stable and physical examination was unremarkable. EKG showed ST elevations in leads II, III and aVF consistent with inferior wall MI and troponin was elevated at 5.38 ng/ml (Figure ).\nBefore any other diagnostic tests could be performed, the patient developed severe substernal chest pain and soon became confused. EKG showed a complete heart block causing hemodynamic instability that required immediate transcutaneous pacing. An urgent bedside echocardiogram showed right ventricular akinesia with no evidence of pericardial effusion or other structural injuries to the heart. The patient was urgently taken to the cardiac catheterization laboratory. Coronary angiography revealed a long intimal flap in the RCA resulting in a 99% stenosis of the vessel, without resolution on intracoronary nitroglycerin administration (Figure ). The remaining coronaries were normal.\nHe underwent percutaneous coronary intervention, with the subsequent deployment of four drug-eluting stents with improvement from initial 99% stenosis (TIMI 1flow) to final 0% stenosis with TIMI 3 flow (Figure ). Further imaging showed no evidence of other forms of blunt trauma injury like a cardiac contusion, hemopericardium, hemothorax or pneumothorax. The patient was monitored in the cardiac ICU and once medically stable, was discharged on dual antiplatelet therapy and a beta-blocker.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 18,
+  "prompt_tokens": 410,
+  "solution": "HEART scores history, ECG, age, risk factors, and troponin from 0 to 2 each. The admission ECG already indicates an inferior STEMI, so HEART is not needed for clinical triage. For the requested calculation:\n- History: moderately suspicious chest pain, with direct steering-wheel trauma as a competing explanation = 1.\n- ECG: marked ischemic ST deviation (elevation in II, III, and aVF), counted in the highest ECG category = 2.\n- Age: 41 years, below 45 = 0.\n- Risk factors: smoking is the only documented coronary risk factor; 1–2 factors = 1.\n- Troponin: 5.38 ng/mL, markedly elevated and consistent with the >3 times upper reference limit category = 2.\nTotal = 1 + 2 + 0 + 1 + 2 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 744,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

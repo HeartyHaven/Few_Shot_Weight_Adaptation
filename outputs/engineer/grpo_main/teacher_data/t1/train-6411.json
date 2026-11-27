@@ -1,0 +1,22 @@
+{
+  "id": "train-6411",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 70-year-old man with history of asthma and chronic obstructive pulmonary disease presents to the emergency department with resting dyspnea for the past 2 hours after watching his granddaughter play soccer. Despite albuterol, ipratropium, magnesium, methylprednisolone, and high flow nasal cannula, the patient agrees to elective intubation and is transferred to the intensive care unit. His hospital course is prolonged by pneumonia, which is managed with vancomycin, pipercillin-tazobactam, and gentamicin to cover for ventilator-associated etiologies. He is maintained on nasogastric tube feeds, lactated ringer fluid boluses, and subcutaneous heparin for deep vein thrombosis prophylaxis. On hospital day 7, the patient proves difficult to wean from his ventilator due to labored tachypnea. As the nurse rotates the patient to change his sacral pressure ulcer dressing, the patient's peak airway pressure increases sharply to 55 cm H2O. The nurse noted that the patient was wincing at the time. His temperature is 100.1°F (38.1°C), blood pressure is 100/50 mmHg, and pulse is 100/min. His respirations are 22/min on the ventilator despite a set respiratory rate of 14/min. His laboratory results are shown below:\n\nLeukocyte count and differential:\nLeukocyte count: 18,000/mm^3\nSegmented neutrophils: 90%\nBands: 10%\nEosinophils: 5%\nBasophils: 2%\nLymphocytes: 2%\nMonocytes: 1%\n\nSerum:\nNa+: 135 mEq/L\nCl-: 107 mEq/L\nK+: 3.2 mEq/L\nHCO3-: 18 mEq/L\nUrea nitrogen: 45 mg/dL\nGlucose: 89 mg/dL\nCreatinine: 1.3 mg/dL\nAlkaline phosphatase: 100 U/L\nAspartate aminotransferase (AST, GOT): 250 U/L\nAlanine aminotransferase (ALT, GPT): 300 U/L\nGamma-Glutamyltransferase (GGT): 2 U/L\nAmylase: 10 IU/dL\nLipase: 5 IU/dL\n\nBedside ultrasound imaging is shown in Figure A.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 45,
+  "prompt_tokens": 621,
+  "solution": "CURB-65 assigns 1 point for each of five pneumonia severity criteria. The note gives vital signs and laboratory values from hospital day 7, not admission, so the pretreatment score cannot be confirmed. Using the reported values:\n- Confusion: no new confusion documented = 0.\n- Urea >7 mmol/L (BUN >19 mg/dL): BUN 45 mg/dL = 1.\n- Respiratory rate ≥30/min: observed rate 22/min = 0.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: BP 100/50 meets the diastolic criterion = 1.\n- Age ≥65 years: age 70 = 1.\nTotal from available values: 0 + 1 + 0 + 1 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 711,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

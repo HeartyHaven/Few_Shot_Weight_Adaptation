@@ -1,0 +1,20 @@
+{
+  "id": "sample_621",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, encoding):\n    try:\n        return text.encode(encoding)\n    except LookupError:\n        return str(LookupError)\n```\n\nInput: f('13:45:56', 'shift_jis')",
+  "answer": "b'13:45:56'",
+  "prompt_tokens": 107,
+  "solution": "In the try block, '13:45:56'.encode('shift_jis') uses a recognized encoding. Each digit and colon encodes as its single ASCII byte, giving b'13:45:56'. The return succeeds, so the except block is skipped.\nFinal answer: b'13:45:56'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "b'13:45:56'",
+    "correct": true
+  }
+}

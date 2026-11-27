@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-19",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Persuasion, Claire gets Jane Eyre, Dave gets Walden, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Eve and Bob swap books. Then, Alice and Bob swap books. Then, Dave and Alice swap books. Finally, Eve and Dave swap books. At the end of the semester, Alice has\nOptions:\n(A) Siddhartha\n(B) Persuasion\n(C) Jane Eyre\n(D) Walden\n(E) The Trial",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Persuasion",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Siddhartha, Persuasion, Jane Eyre, Walden, The Trial\n1. Bob and Eve swap: Siddhartha, The Trial, Jane Eyre, Walden, Persuasion\n2. Eve and Bob swap: Siddhartha, Persuasion, Jane Eyre, Walden, The Trial\n3. Alice and Bob swap: Persuasion, Siddhartha, Jane Eyre, Walden, The Trial\n4. Dave and Alice swap: Walden, Siddhartha, Jane Eyre, Persuasion, The Trial\n5. Eve and Dave swap: Walden, Siddhartha, Jane Eyre, The Trial, Persuasion\nAlice has Walden, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1316,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

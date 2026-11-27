@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-77",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets The Trial, Claire gets Siddhartha, Dave gets Candide, Eve gets Walden, Fred gets Beloved, and Gertrude gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Dave and Eve swap books. Then, Alice and Claire swap books. Then, Claire and Bob swap books. Then, Claire and Gertrude swap books. Then, Bob and Dave swap books. Then, Bob and Alice swap books. Finally, Dave and Gertrude swap books. At the end of the semester, Alice has\nOptions:\n(A) Hamlet\n(B) The Trial\n(C) Siddhartha\n(D) Candide\n(E) Walden\n(F) Beloved\n(G) Dracula",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "Walden",
+      "Fred": "Beloved",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Walden",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Hamlet",
+      "Dave": "Walden",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "Walden",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Book owner order in each row: (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (Hamlet, The Trial, Siddhartha, Candide, Walden, Beloved, Dracula)\n1. Dave and Eve swap: (Hamlet, The Trial, Siddhartha, Walden, Candide, Beloved, Dracula)\n2. Alice and Claire swap: (Siddhartha, The Trial, Hamlet, Walden, Candide, Beloved, Dracula)\n3. Claire and Bob swap: (Siddhartha, Hamlet, The Trial, Walden, Candide, Beloved, Dracula)\n4. Claire and Gertrude swap: (Siddhartha, Hamlet, Dracula, Walden, Candide, Beloved, The Trial)\n5. Bob and Dave swap: (Siddhartha, Walden, Dracula, Hamlet, Candide, Beloved, The Trial)\n6. Bob and Alice swap: (Walden, Siddhartha, Dracula, Hamlet, Candide, Beloved, The Trial)\n7. Dave and Gertrude swap: (Walden, Siddhartha, Dracula, The Trial, Candide, Beloved, Hamlet)\nAlice's final book is Walden, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1258,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-437",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Five people are sitting at a round table. Let $f\\geq 0$ be the number of people sitting next to at least 1 female and $m\\geq0$ be the number of people sitting next to at least one male. The number of possible ordered pairs $(f,m)$ is\n$\\mathrm{(A) \\ 7 } \\qquad \\mathrm{(B) \\ 8 } \\qquad \\mathrm{(C) \\ 9 } \\qquad \\mathrm{(D) \\ 10 } \\qquad \\mathrm{(E) \\ 11 }$\n",
+  "answer": "8",
+  "prompt_tokens": 154,
+  "solution": "Number the seats 1 through 5 cyclically. First consider at most two females; exchanging female and male afterward swaps f and m.\nWith no females, the pair is (0,5). With one female, only her two neighbors sit next to a female, and everyone has a male neighbor, giving (2,5).\nWith two females, they are either adjacent or nonadjacent. If they occupy seats 1 and 2, their neighbors together occupy seats 5, 2, 1, and 3. No one has two female neighbors, so everyone has a male neighbor. This gives (4,5).\nIf the females are nonadjacent, label their seats 1 and 3. Their neighbors together occupy seats 5, 2, and 4. Only seat 2 has no male neighbor, giving (3,4).\nSwapping the sexes gives (5,0), (5,2), (5,4), and (4,3) for the remaining cases. These four are distinct from each other and from the first four, for 8 pairs total.\nFinal answer: 8",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "8",
+    "correct": true
+  }
+}

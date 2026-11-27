@@ -1,0 +1,22 @@
+{
+  "id": "train-754",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 68-year-old woman with a history of rheumatic mitral stenosis and atrial fibrillation presented with dyspnea NYHA class III, palpitations, and ankle edema for 3 months. She had worsened during the past 6 days. She had been diagnosed with rheumatic mitral stenosis 30 years back, on irregular follow-up and not compliant with injectable penicillin. Physical examination revealed a blood pressure of 100/80 mm Hg and an irregular heart rate of 136 beats/min. Auscultation revealed a loud S1 at the apex, a diastolic rumble at the apex, and a holosystolic murmur at the lower left sternal border. Chest radiography revealed a marked cardiomegaly with a cardiothoracic ratio of 95% suggesting massively dilated right atrium (RA) and left atrium (LA).\nTwo-dimensional echocardiogram [Figures and ] revealed a giant LA measuring 15.2 cm × 10.1 cm, an area of 170 cm2, and a volume of 1326 mL. RA was 13.1 cm × 7.05 cm, with a volume of 760 ml. The mitral valve was thickened with a planimetered mitral valve area of 1.2 cm2. The mean LA-left ventricular diastolic gradient was 4.5 mm Hg. The left ventricular size was small with an ejection fraction of 60%. The right ventricle was small with right ventricular dysfunction which was evident from a reduced tricuspid annular plane systolic excursion of 10 mm and a right ventricular ejection fraction of 35%. Tricuspid valve was thickened with noncoaptating leaflets and severe tricuspid regurgitation as evident from vena contracta width of 0.8 cm and hepatic vein systolic flow reversal [Video –].\nThe patient was stabilized with intravenous furosemide, amiodarone, oral digoxin, warfarin, and spironolactone. The patient did not consent to surgery and hence was discharged home after medical stabilization.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 547,
+  "solution": "Apply CHA2DS2-VASc to the admission findings. Using documented heart failure or LV systolic dysfunction for the C item: no explicit heart-failure diagnosis and LVEF 60% = 0. She does have RV dysfunction and congestion; if these are classified as clinical heart failure, that item becomes 1 and the total becomes 3.\nHypertension: not documented = 0. Age: 68 is in the 65–74 band = 1 (age ≥75 would score 2 instead). Diabetes = 0; prior stroke/TIA/systemic embolism = 0 of 2; vascular disease = 0, with none reported. Female sex = 1. Rheumatic mitral stenosis adds no points, although it affects anticoagulation decisions independently of this score.\nSum without a separate heart-failure diagnosis: 0 + 0 + 1 + 0 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 661,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

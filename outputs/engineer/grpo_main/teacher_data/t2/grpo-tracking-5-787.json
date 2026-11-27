@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-787",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Candide, Claire gets Dracula, Dave gets The Trial, and Eve gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Eve and Bob swap books. Then, Alice and Dave swap books. Then, Dave and Eve swap books. Then, Dave and Eve swap books. Finally, Claire and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Middlemarch\n(B) Candide\n(C) Dracula\n(D) The Trial\n(E) Beloved",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Candide",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "Candide",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Beloved",
+      "Claire": "The Trial",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Middlemarch, Candide, Dracula, The Trial, Beloved)\n1. Eve and Bob swap: (Middlemarch, Beloved, Dracula, The Trial, Candide)\n2. Alice and Dave swap: (The Trial, Beloved, Dracula, Middlemarch, Candide)\n3. Dave and Eve swap: (The Trial, Beloved, Dracula, Candide, Middlemarch)\n4. Dave and Eve swap again: (The Trial, Beloved, Dracula, Middlemarch, Candide)\n5. Claire and Alice swap: (Dracula, Beloved, The Trial, Middlemarch, Candide)\nBob has Beloved, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1373,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

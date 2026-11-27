@@ -1,0 +1,17 @@
+{
+  "id": "sample_550",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(nums):\n    for i in range(len(nums)):\n        nums.insert(i, nums[i]**2)\n    return nums\n```\n\nInput: f([1, 2, 4])",
+  "answer": "[1, 1, 1, 1, 2, 4]",
+  "solution": "len(nums) is 3 when range(len(nums)) is evaluated, so i takes only 0, 1, and 2. Each insertion shifts the original first 1 one position to the right.\ni = 0: nums[0] is 1. Insert 1**2 at index 0: [1, 1, 2, 4].\ni = 1: nums[1] is 1. Insert 1**2 at index 1: [1, 1, 1, 2, 4].\ni = 2: nums[2] is 1. Insert 1**2 at index 2: [1, 1, 1, 1, 2, 4].\nFinal answer: [1, 1, 1, 1, 2, 4]",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 60,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[1, 1, 1, 1, 2, 4]",
+    "correct": true
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id": "dev-7-9",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a purple present, Bob has a yellow present, Claire has a pink present, Dave has a gold present, Eve has a blue present, Fred has a black present, and Gertrude has a silver present.\nAs the event progresses, pairs of people swap gifts. First, Claire and Alice swap their gifts. Then, Eve and Gertrude swap their gifts. Then, Alice and Gertrude swap their gifts. Then, Eve and Bob swap their gifts. Then, Gertrude and Claire swap their gifts. Then, Alice and Eve swap their gifts. Finally, Eve and Claire swap their gifts. At the end of the event, Gertrude has the\nOptions:\n(A) purple present\n(B) yellow present\n(C) pink present\n(D) gold present\n(E) blue present\n(F) black present\n(G) silver present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "purple",
+      "Bob": "yellow",
+      "Claire": "pink",
+      "Dave": "gold",
+      "Eve": "blue",
+      "Fred": "black",
+      "Gertrude": "silver"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "yellow",
+      "Claire": "purple",
+      "Dave": "gold",
+      "Eve": "blue",
+      "Fred": "black",
+      "Gertrude": "silver"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "yellow",
+      "Claire": "purple",
+      "Dave": "gold",
+      "Eve": "silver",
+      "Fred": "black",
+      "Gertrude": "blue"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "yellow",
+      "Claire": "purple",
+      "Dave": "gold",
+      "Eve": "silver",
+      "Fred": "black",
+      "Gertrude": "pink"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "silver",
+      "Claire": "purple",
+      "Dave": "gold",
+      "Eve": "yellow",
+      "Fred": "black",
+      "Gertrude": "pink"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "silver",
+      "Claire": "pink",
+      "Dave": "gold",
+      "Eve": "yellow",
+      "Fred": "black",
+      "Gertrude": "purple"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "silver",
+      "Claire": "pink",
+      "Dave": "gold",
+      "Eve": "blue",
+      "Fred": "black",
+      "Gertrude": "purple"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "silver",
+      "Claire": "blue",
+      "Dave": "gold",
+      "Eve": "pink",
+      "Fred": "black",
+      "Gertrude": "purple"
+    }
+  ],
+  "prompt_tokens": 247,
+  "solution": "Present colors in each row are listed in holder order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: purple, yellow, pink, gold, blue, black, silver\n1. Claire ↔ Alice: pink, yellow, purple, gold, blue, black, silver\n2. Eve ↔ Gertrude: pink, yellow, purple, gold, silver, black, blue\n3. Alice ↔ Gertrude: blue, yellow, purple, gold, silver, black, pink\n4. Eve ↔ Bob: blue, silver, purple, gold, yellow, black, pink\n5. Gertrude ↔ Claire: blue, silver, pink, gold, yellow, black, purple\n6. Alice ↔ Eve: yellow, silver, pink, gold, blue, black, purple\n7. Eve ↔ Claire: yellow, silver, blue, gold, pink, black, purple\nGertrude has the purple present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

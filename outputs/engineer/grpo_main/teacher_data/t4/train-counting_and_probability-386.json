@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-386",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "The cards in a stack of $2n$ cards are numbered consecutively from 1 through $2n$ from top to bottom. The top $n$ cards are removed, kept in order, and form pile $A.$ The remaining cards form pile $B.$ The cards are then restacked by taking cards alternately from the tops of pile $B$ and $A,$ respectively. In this process, card number $(n+1)$ becomes the bottom card of the new stack, card number 1 is on top of this card, and so on, until piles $A$ and $B$ are exhausted. If, after the restacking process, at least one card from each pile occupies the same position that it occupied in the original stack, the stack is named magical. For example, eight cards form a magical stack because cards number 3 and number 6 retain their original positions. Find the number of cards in the magical stack in which card number 131 retains its original position.\n",
+  "answer": "392",
+  "prompt_tokens": 235,
+  "solution": "Because the new stack is built from the bottom, the t-th card placed ends in position 2n + 1 − t from the top. Card i from pile A is placed at step 2i, so it stays fixed when i = 2n + 1 − 2i, or 3i = 2n + 1. The j-th card from pile B, numbered n + j, is placed at step 2j − 1. It stays fixed when n + j = 2n + 2 − 2j, or 3j = n + 2.\nIf card 131 were fixed in B, then 131 = n + (n + 2)/3, giving 4n = 391, impossible for integer n. Thus it is fixed in A, so 3 × 131 = 2n + 1 and n = 196. This puts card 131 in A as required. In B, j = (196 + 2)/3 = 66 is also a valid fixed card index. Hence the stack is magical and contains 2 × 196 = 392 cards.\nFinal answer: 392",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1409,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "392",
+    "correct": true
+  }
+}

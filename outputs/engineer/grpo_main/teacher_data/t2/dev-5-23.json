@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-23",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Rosa, Bob is dancing with Yuki, Claire is dancing with Quinn, Dave is dancing with Marco, and Eve is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Eve and Bob switch partners. Then, Dave and Claire switch partners. Then, Dave and Claire switch partners. Then, Dave and Alice switch partners. Finally, Dave and Alice switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Rosa\n(B) Yuki\n(C) Quinn\n(D) Marco\n(E) Priya",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Rosa",
+      "Bob": "Yuki",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Marco",
+      "Dave": "Quinn",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Priya",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Rosa, Yuki, Quinn, Marco, Priya)\n1. Eve ↔ Bob: (Rosa, Priya, Quinn, Marco, Yuki)\n2. Dave ↔ Claire: (Rosa, Priya, Marco, Quinn, Yuki)\n3. Dave ↔ Claire: (Rosa, Priya, Quinn, Marco, Yuki)\n4. Dave ↔ Alice: (Marco, Priya, Quinn, Rosa, Yuki)\n5. Dave ↔ Alice: (Rosa, Priya, Quinn, Marco, Yuki)\nDave is dancing with Marco, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

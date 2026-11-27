@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-591",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a white ball, Bob has a green ball, Claire has a orange ball, Dave has a pink ball, and Eve has a yellow ball.\nAs the game progresses, pairs of players trade balls. First, Eve and Dave swap balls. Then, Claire and Bob swap balls. Then, Bob and Dave swap balls. Then, Dave and Eve swap balls. Finally, Dave and Alice swap balls. At the end of the game, Dave has the\nOptions:\n(A) white ball\n(B) green ball\n(C) orange ball\n(D) pink ball\n(E) yellow ball",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "white",
+      "Bob": "green",
+      "Claire": "orange",
+      "Dave": "pink",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "white",
+      "Bob": "green",
+      "Claire": "orange",
+      "Dave": "yellow",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "white",
+      "Bob": "orange",
+      "Claire": "green",
+      "Dave": "yellow",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "white",
+      "Bob": "yellow",
+      "Claire": "green",
+      "Dave": "orange",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "white",
+      "Bob": "yellow",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "yellow",
+      "Claire": "green",
+      "Dave": "white",
+      "Eve": "orange"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists ball colors in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: white, green, orange, pink, yellow\n1. Eve–Dave: white, green, orange, yellow, pink\n2. Claire–Bob: white, orange, green, yellow, pink\n3. Bob–Dave: white, yellow, green, orange, pink\n4. Dave–Eve: white, yellow, green, pink, orange\n5. Dave–Alice: pink, yellow, green, white, orange\nDave's ball is white, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1241,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

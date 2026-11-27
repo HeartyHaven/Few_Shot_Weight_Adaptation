@@ -1,0 +1,22 @@
+{
+  "id": "train-6530",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "question": "Patient note:\nAn eighty-five-year-old female presented to the emergency room with complaints of sudden onset substernal chest pain and dizziness. Her past medical history was significant for atrial fibrillation. She had a pacemaker inserted at another facility 2 weeks before. No perioperative complications were reported and patient had been doing well without any complaints till the day of presentation. Medications included dabigatran for her atrial fibrillation. On examination, the patient was diaphoretic but in no respiratory distress. Temperature was 97°F, pulse 96/minute, irregular; systolic blood pressure was 70 mm Hg; respiratory rate was 22/minute; and oxygen saturation was 95% on room air. No jugular venous distension was noted. Cardiac examination revealed irregular rhythm, no murmur or rub. Lung auscultation revealed slightly diminished breath sounds at left base. Chest X-ray showed a mild-to-moderate left-sided pleural effusion; pacemaker leads appeared to be in the right ventricle (). Electrocardiogram (EKG) showed trioventricular (AV) sequential pacing (). Echocardiogram (ECHO) revealed no wall motion abnormality with normal ejection fraction. Pacemaker leads were visualized in the right ventricle (RV) on ECHO. Her hemoglobin was 8 gm%; prothrombin time (PT) was 19 seconds; and INR was 2.9.\nNo pacing or sensing failure was noted on device interrogation. The patient's hypotension persisted despite vigorous intravenous fluid resuscitation including transfusion of 2 units of blood cell and 6 units of fresh frozen plasma and improvement in her hemoglobin to 11 gm%. A computed tomogram (CT) of the chest was performed which showed a moderate left pleural effusion, with the pacemaker wire extending to the left pleural cavity and a small localized pericardial effusion adjoining the pleural effusion (). The patient's hemodynamic instability was not due to tamponade effect as the pericardial effusion was small but due to continued hemorrhage into the pleural cavity due to her coagulopathic state from being on dabigatran for her atrial fibrillation, which was not fully corrected by fresh frozen plasma infusion.\nThe patient was taken to the operating room where she underwent a median sternotomy. The pacemaker lead was found to be protruding out of the right ventricle (). The external portion was cut with the remaining intracardiac portion of the pacemaker lead left in place. The perforation of the RV wall was repaired. The hemothorax and hemopericardium were evacuated. Subsequently, the patient's hemodynamic status improved. Two days later, the remaining portion of the pacemaker lead was removed transvenously. A new pacemaker was inserted transvenously and placed on the right ventricular septum. The patient did not have further complications and was discharged home subsequently. On follow-up 6 weeks later, she was doing well.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 48,
+  "prompt_tokens": 713,
+  "solution": "Count the eight positive PERC findings at admission, one per criterion:\n- Age ≥50 years: age 85 → 1.\n- Pulse ≥100/min: pulse 96 → 0.\n- Room-air oxygen saturation <95%: saturation exactly 95% → 0.\n- Unilateral leg swelling: not reported → 0.\n- Hemoptysis: not reported; blood in the pleural space is not hemoptysis → 0.\n- Recent surgery or significant trauma within four weeks: pacemaker implantation two weeks earlier → 1.\n- Prior DVT or PE: not reported → 0.\n- Exogenous estrogen use: not reported → 0.\nTotal positive criteria = 1 + 0 + 0 + 0 + 0 + 1 + 0 + 0 = 2. This count does not rule out PE in a hemodynamically unstable patient.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 954,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

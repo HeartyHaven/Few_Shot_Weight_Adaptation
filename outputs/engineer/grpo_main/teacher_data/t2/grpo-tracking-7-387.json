@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-387",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Jane Eyre, Claire gets Ivanhoe, Dave gets Emma, Eve gets Middlemarch, Fred gets The Trial, and Gertrude gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Fred and Gertrude swap books. Then, Gertrude and Dave swap books. Then, Alice and Fred swap books. Then, Eve and Bob swap books. Then, Bob and Fred swap books. Then, Fred and Dave swap books. Finally, Eve and Gertrude swap books. At the end of the semester, Alice has\nOptions:\n(A) Walden\n(B) Jane Eyre\n(C) Ivanhoe\n(D) Emma\n(E) Middlemarch\n(F) The Trial\n(G) Siddhartha",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Middlemarch",
+      "Fred": "The Trial",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Middlemarch",
+      "Fred": "Siddhartha",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch",
+      "Fred": "Siddhartha",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch",
+      "Fred": "Walden",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Walden",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Middlemarch",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Middlemarch",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Middlemarch",
+      "Eve": "Emma",
+      "Fred": "The Trial",
+      "Gertrude": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Books in holder order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Walden, Jane Eyre, Ivanhoe, Emma, Middlemarch, The Trial, Siddhartha.\n1. Fred ↔ Gertrude: Walden, Jane Eyre, Ivanhoe, Emma, Middlemarch, Siddhartha, The Trial.\n2. Gertrude ↔ Dave: Walden, Jane Eyre, Ivanhoe, The Trial, Middlemarch, Siddhartha, Emma.\n3. Alice ↔ Fred: Siddhartha, Jane Eyre, Ivanhoe, The Trial, Middlemarch, Walden, Emma.\n4. Eve ↔ Bob: Siddhartha, Middlemarch, Ivanhoe, The Trial, Jane Eyre, Walden, Emma.\n5. Bob ↔ Fred: Siddhartha, Walden, Ivanhoe, The Trial, Jane Eyre, Middlemarch, Emma.\n6. Fred ↔ Dave: Siddhartha, Walden, Ivanhoe, Middlemarch, Jane Eyre, The Trial, Emma.\n7. Eve ↔ Gertrude: Siddhartha, Walden, Ivanhoe, Middlemarch, Emma, The Trial, Jane Eyre.\nAlice holds Siddhartha, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1264,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

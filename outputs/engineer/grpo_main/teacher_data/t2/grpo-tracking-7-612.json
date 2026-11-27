@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-612",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Vera, Claire is dancing with Tara, Dave is dancing with Yuki, Eve is dancing with Wade, Fred is dancing with Lena, and Gertrude is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Bob and Fred switch partners. Then, Alice and Bob switch partners. Then, Gertrude and Eve switch partners. Then, Alice and Dave switch partners. Then, Fred and Gertrude switch partners. Then, Eve and Claire switch partners. Finally, Eve and Alice switch partners. At the end of the dance, Gertrude is dancing with\nOptions:\n(A) Quinn\n(B) Vera\n(C) Tara\n(D) Yuki\n(E) Wade\n(F) Lena\n(G) Priya",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Vera",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Wade",
+      "Fred": "Lena",
+      "Gertrude": "Priya"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Lena",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Wade",
+      "Fred": "Vera",
+      "Gertrude": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Quinn",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Wade",
+      "Fred": "Vera",
+      "Gertrude": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Quinn",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Priya",
+      "Fred": "Vera",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Tara",
+      "Dave": "Lena",
+      "Eve": "Priya",
+      "Fred": "Vera",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Tara",
+      "Dave": "Lena",
+      "Eve": "Priya",
+      "Fred": "Wade",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Priya",
+      "Dave": "Lena",
+      "Eve": "Tara",
+      "Fred": "Wade",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Quinn",
+      "Claire": "Priya",
+      "Dave": "Lena",
+      "Eve": "Yuki",
+      "Fred": "Wade",
+      "Gertrude": "Vera"
+    }
+  ],
+  "prompt_tokens": 229,
+  "solution": "Partners in order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude):\nInitial: (Quinn, Vera, Tara, Yuki, Wade, Lena, Priya)\n1. Bob swaps with Fred: (Quinn, Lena, Tara, Yuki, Wade, Vera, Priya)\n2. Alice swaps with Bob: (Lena, Quinn, Tara, Yuki, Wade, Vera, Priya)\n3. Gertrude swaps with Eve: (Lena, Quinn, Tara, Yuki, Priya, Vera, Wade)\n4. Alice swaps with Dave: (Yuki, Quinn, Tara, Lena, Priya, Vera, Wade)\n5. Fred swaps with Gertrude: (Yuki, Quinn, Tara, Lena, Priya, Wade, Vera)\n6. Eve swaps with Claire: (Yuki, Quinn, Priya, Lena, Tara, Wade, Vera)\n7. Eve swaps with Alice: (Tara, Quinn, Priya, Lena, Yuki, Wade, Vera)\nGertrude is dancing with Vera, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1340,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

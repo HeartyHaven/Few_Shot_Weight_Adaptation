@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1189",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Ivanhoe, Claire gets Candide, Dave gets Hamlet, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Eve and Bob swap books. Then, Alice and Bob swap books. Then, Dave and Eve swap books. Finally, Claire and Dave swap books. At the end of the semester, Bob has\nOptions:\n(A) Middlemarch\n(B) Ivanhoe\n(C) Candide\n(D) Hamlet\n(E) Siddhartha",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "Candide",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Middlemarch",
+      "Claire": "Candide",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Books in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Middlemarch, Ivanhoe, Candide, Hamlet, Siddhartha\n1. Bob and Claire swap: Middlemarch, Candide, Ivanhoe, Hamlet, Siddhartha\n2. Eve and Bob swap: Middlemarch, Siddhartha, Ivanhoe, Hamlet, Candide\n3. Alice and Bob swap: Siddhartha, Middlemarch, Ivanhoe, Hamlet, Candide\n4. Dave and Eve swap: Siddhartha, Middlemarch, Ivanhoe, Candide, Hamlet\n5. Claire and Dave swap: Siddhartha, Middlemarch, Candide, Ivanhoe, Hamlet\nBob has Middlemarch, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1361,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

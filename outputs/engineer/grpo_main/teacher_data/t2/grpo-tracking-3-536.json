@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-536",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets The Trial, and Claire gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Alice swap books. Finally, Alice and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) Beloved\n(B) The Trial\n(C) The Hobbit",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "The Trial",
+      "Claire": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "The Hobbit",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Beloved"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Books in order (Alice, Bob, Claire):\nInitial: (Beloved, The Trial, The Hobbit)\n1. Alice and Claire swap: (The Hobbit, The Trial, Beloved)\n2. Bob and Alice swap: (The Trial, The Hobbit, Beloved)\n3. Alice and Bob swap: (The Hobbit, The Trial, Beloved)\nAlice has The Hobbit, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1203,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

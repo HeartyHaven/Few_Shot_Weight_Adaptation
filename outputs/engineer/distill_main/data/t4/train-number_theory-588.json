@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-588",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "In a rectangular array of points, with 5 rows and $N$ columns, the points are numbered consecutively from left to right beginning with the top row. Thus the top row is numbered 1 through $N,$ the second row is numbered $N + 1$ through $2N,$ and so forth. Five points, $P_1, P_2, P_3, P_4,$ and $P_5,$ are selected so that each $P_i$ is in row $i.$ Let $x_i$ be the number associated with $P_i.$ Now renumber the array consecutively from top to bottom, beginning with the first column. Let $y_i$ be the number associated with $P_i$ after the renumbering. It is found that $x_1 = y_2,$ $x_2 = y_1,$ $x_3 = y_4,$ $x_4 = y_5,$ and $x_5 = y_3.$ Find the smallest possible value of $N.$\n",
+  "answer": "149",
+  "solution": "Let aᵢ be the column index of Pᵢ counted from 0, so 0 ≤ aᵢ < N. Then xᵢ = (i−1)N + aᵢ + 1 and yᵢ = 5aᵢ + i.\nThe first two equalities give a₁ = 5a₂ + 1 and N + a₂ = 5a₁. Substitution yields N = 24a₂ + 5.\nThe last three equalities give 5a₄ = a₃ + 2N − 3, 5a₅ = a₄ + 3N − 4, and 5a₃ = a₅ + 4N − 2. Multiplying the second by 5 and substituting the first gives 25a₅ = a₃ + 17N − 23. Multiplying the third by 25 and substituting this result gives 125a₃ = a₃ + 117N − 73. Thus\n124a₃ = 117N − 73 = 2808a₂ + 512.\nDividing by 4 gives 31a₃ = 702a₂ + 128, so 20a₂ + 4 ≡ 0 modulo 31. Since 20·6 + 4 = 124 and 20 is coprime to 31, a₂ ≡ 6 modulo 31. The smallest nonnegative candidate is a₂ = 6, giving N = 149.\nAt N = 149, the equations give a₁ = 31, a₃ = (117·149 − 73)/124 = 140, a₄ = (140 + 298 − 3)/5 = 87, and a₅ = (87 + 447 − 4)/5 = 106. These satisfy the closing equation 5·140 = 106 + 4·149 − 2, and all five indices lie between 0 and 148, so the minimum is attained.\nFinal answer: 149",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 31,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "149",
+    "correct": true
+  }
+}

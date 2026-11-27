@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-545",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Stefan, Claire is dancing with Oscar, Dave is dancing with Rosa, Eve is dancing with Umar, Fred is dancing with Quinn, and Gertrude is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Claire and Gertrude switch partners. Then, Claire and Gertrude switch partners. Then, Claire and Alice switch partners. Then, Bob and Claire switch partners. Then, Claire and Fred switch partners. Then, Bob and Gertrude switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Yuki\n(B) Stefan\n(C) Oscar\n(D) Rosa\n(E) Umar\n(F) Quinn\n(G) Tara",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Quinn",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Tara",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Quinn",
+      "Gertrude": "Oscar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Quinn",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Quinn",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Yuki",
+      "Claire": "Stefan",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Quinn",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Yuki",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Stefan",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Tara",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Stefan",
+      "Gertrude": "Yuki"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Oscar",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Umar",
+      "Fred": "Stefan",
+      "Gertrude": "Yuki"
+    }
+  ],
+  "prompt_tokens": 229,
+  "solution": "Partners in dancer order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Yuki, Stefan, Oscar, Rosa, Umar, Quinn, Tara\n1. Claire ↔ Gertrude: Yuki, Stefan, Tara, Rosa, Umar, Quinn, Oscar\n2. Claire ↔ Gertrude: Yuki, Stefan, Oscar, Rosa, Umar, Quinn, Tara\n3. Claire ↔ Alice: Oscar, Stefan, Yuki, Rosa, Umar, Quinn, Tara\n4. Bob ↔ Claire: Oscar, Yuki, Stefan, Rosa, Umar, Quinn, Tara\n5. Claire ↔ Fred: Oscar, Yuki, Quinn, Rosa, Umar, Stefan, Tara\n6. Bob ↔ Gertrude: Oscar, Tara, Quinn, Rosa, Umar, Stefan, Yuki\n7. Bob ↔ Alice: Tara, Oscar, Quinn, Rosa, Umar, Stefan, Yuki\nAlice is dancing with Tara, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1223,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

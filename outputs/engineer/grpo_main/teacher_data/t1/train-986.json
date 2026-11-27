@@ -1,0 +1,22 @@
+{
+  "id": "train-986",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 69-year-old Caucasian woman with a past medical history of atrial fibrillation presented to Baylor University Medical Center, Waxahachie, TX, USA after having substernal chest pain following a motor vehicle accident. Her initial electrocardiogram showed atrial fibrillation with a heart rate of 60 to 70 beats per minute with no S-T-wave changes. Her initial level of troponin was 0.85ng/mL and trended up to a peak level of 4.58ng/mL. She was loaded with clopidogrel bisulfate (Plavix®) started on a heparin drip and taken to emergent cardiac catheterization at Baylor University Medical Center, Dallas, TX, USA.\nCatheterization showed her to have a depressed left ventricular ejection fraction of 40% with moderate inferior and anterolateral hypokinesis with a 30% mid stenosis of her right coronary artery but otherwise unremarkable coronaries. She was discharged home on metoprolol tartrate (Lopressor®) aspirin and ramipril. Our patient’s subsequent transthoracic echocardiogram demonstrated normal left ventricular systolic function with an estimated ejection fraction of 55%.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 339,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Use the findings from the acute presentation rather than the recovered ejection fraction.\n- Heart failure or LV systolic dysfunction: initial LVEF 40% → 1.\n- Hypertension: not documented → 0.\n- Age: 69, in the 65–74 band → 1 (age ≥75 would score 2 instead).\n- Diabetes: not documented → 0.\n- Prior stroke, TIA, or systemic embolism: none documented → 0.\n- Vascular disease: counting the angiographically documented right coronary artery disease → 1. This uses a broad coronary-disease interpretation; the troponin rise alone does not establish a prior MI.\n- Female sex → 1.\nSum: 1 + 0 + 1 + 0 + 0 + 1 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 765,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

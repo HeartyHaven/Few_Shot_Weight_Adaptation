@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-775",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Dracula, Claire gets Ivanhoe, Dave gets Persuasion, Eve gets Siddhartha, Fred gets Middlemarch, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Alice and Dave swap books. Then, Bob and Alice swap books. Then, Eve and Claire swap books. Then, Fred and Alice swap books. Then, Alice and Fred swap books. Finally, Fred and Dave swap books. At the end of the semester, Fred has\nOptions:\n(A) Hamlet\n(B) Dracula\n(C) Ivanhoe\n(D) Persuasion\n(E) Siddhartha\n(F) Middlemarch\n(G) Candide",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Siddhartha",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Siddhartha",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Dracula",
+      "Eve": "Siddhartha",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "Dracula",
+      "Eve": "Siddhartha",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Ivanhoe",
+      "Fred": "Dracula",
+      "Gertrude": "Candide"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Book holders, in column order: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude\nInitial: Hamlet | Dracula | Ivanhoe | Persuasion | Siddhartha | Middlemarch | Candide\n1. Bob ↔ Alice: Dracula | Hamlet | Ivanhoe | Persuasion | Siddhartha | Middlemarch | Candide\n2. Alice ↔ Dave: Persuasion | Hamlet | Ivanhoe | Dracula | Siddhartha | Middlemarch | Candide\n3. Bob ↔ Alice: Hamlet | Persuasion | Ivanhoe | Dracula | Siddhartha | Middlemarch | Candide\n4. Eve ↔ Claire: Hamlet | Persuasion | Siddhartha | Dracula | Ivanhoe | Middlemarch | Candide\n5. Fred ↔ Alice: Middlemarch | Persuasion | Siddhartha | Dracula | Ivanhoe | Hamlet | Candide\n6. Alice ↔ Fred: Hamlet | Persuasion | Siddhartha | Dracula | Ivanhoe | Middlemarch | Candide\n7. Fred ↔ Dave: Hamlet | Persuasion | Siddhartha | Middlemarch | Ivanhoe | Dracula | Candide\nFred has Dracula, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1127,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

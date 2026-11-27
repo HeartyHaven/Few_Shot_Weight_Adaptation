@@ -1,0 +1,22 @@
+{
+  "id": "train-6690",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 60-year-old man presents to his physician as part of his routine annual medical check-up. He has no specific complaints but mentions that he has often experienced fatigue over the past few months. His past medical history is noncontributory. On physical examination, his temperature is 37.2°C (98.8°F), pulse rate is 84/min, blood pressure is 130/86 mm Hg, and respiratory rate is 18/min. On general examination, mild pallor is present. Palpation of the abdomen reveals splenomegaly, which extends 6.35 cm (2.5 in) below the left costal margin. There is no hepatomegaly. Laboratory studies show the following values:\nHemoglobin 9.7 g/dL\nTotal leukocyte count 30,000/mm3\nGranulocytes 83%\nLymphocytes 10%\nEosinophils 5%\nBasophils 1%\nMonocytes 1%\nPlatelet count 700,000/mm3\nThe physician orders a bone marrow biopsy analysis of hematopoietic cells. The report shows the presence of a t(9;22)(q34; q11) translocation.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 51,
+  "prompt_tokens": 343,
+  "solution": "SIRS counts each of four physiologic criteria once:\n- Temperature >38°C or <36°C: 37.2°C → 0.\n- Heart rate >90/min: 84/min → 0.\n- Respiratory rate >20/min or PaCO₂ <32 mmHg: rate 18/min, with no low PaCO₂ reported → 0.\n- WBC >12,000/mm³, <4,000/mm³, or >10% bands: WBC 30,000/mm³ meets the criterion regardless of the cause of leukocytosis → 1.\nSum: 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 641,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-865",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "The number $1000!$ has a long tail of zeroes. How many zeroes are there?  (Reminder: The number $n!$ is the product of the integers from 1 to $n$.  For example, $5!=5\\cdot 4\\cdot3\\cdot2\\cdot 1= 120$.)",
+  "answer": "249",
+  "prompt_tokens": 103,
+  "solution": "Each trailing zero requires a factor of $10=2\\cdot5$. There are at least 500 factors of 2 from the 500 even numbers in $1000!$. To count factors of 5, count one for each multiple of 5, another for each multiple of 25, and so on. The total is $\\lfloor1000/5\\rfloor+\\lfloor1000/25\\rfloor+\\lfloor1000/125\\rfloor+\\lfloor1000/625\\rfloor=200+40+8+1=249$. The next power of 5 exceeds 1000. Since every factor of 5 can be paired with a factor of 2, there are 249 trailing zeroes.\nFinal answer: 249",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1374,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "249",
+    "correct": true
+  }
+}

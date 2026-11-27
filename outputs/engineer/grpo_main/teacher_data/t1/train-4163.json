@@ -1,0 +1,22 @@
+{
+  "id": "train-4163",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 42-year-old male patient presented to the emergency department with severe retrosternal chest pain radiating to the left arm for two hours. The pain was associated with sweating and vomiting. Patient was a febrile with no cough, no dyspnea and no other cardiac symptoms. The patient is smoker (I pack/day for 20 years), no hypertension, or diabetes mellitus. He has a past history of right nephrectomy due to renal stones.\nOn examination the patient was conscious, oriented with heart rates of 80 beats/minute, respiratory rate of 17 cycle/minute, and blood pressure= 118/80 mmHg. Normal oxygen saturation (SpO2= 100%), normal jugular venous pressure and no carotid bruits. Chest: normal vesicular breathing. Heart: normal first and second sounds with no additional sounds. Abdomen: soft, no organomegaly, no bruit at renal artery site auscultation. Lower limbs were intact with normal pulse and no edema.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 291,
+  "solution": "The HEART score rates History, ECG, Age, Risk factors, and initial Troponin from 0 to 2 points each.\n- History: severe retrosternal pain radiating to the left arm with sweating and vomiting is highly suspicious for acute coronary syndrome: 2.\n- ECG: not reported. A normal ECG would score 0, nonspecific repolarization changes 1, and significant ST depression 2.\n- Age: 42 years (<45): 0.\n- Risk factors: smoking is the only documented coronary risk factor. One or two factors score 1; nephrectomy for stones does not count: 1.\n- Troponin: not reported. A value at or below the assay upper limit scores 0, above the limit through 3 times the limit scores 1, and >3 times the limit scores 2.\nAssuming a normal ECG and normal initial troponin, the sum is 2 + 0 + 0 + 1 + 0 = 3. This is the minimum score; the two missing results prevent a definitive total.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 729,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

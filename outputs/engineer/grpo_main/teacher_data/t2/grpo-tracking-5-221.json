@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-221",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Dune, Claire gets The Trial, Dave gets Candide, and Eve gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Alice and Dave swap books. Then, Alice and Dave swap books. Then, Eve and Dave swap books. Finally, Alice and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Walden\n(B) Dune\n(C) The Trial\n(D) Candide\n(E) Ivanhoe",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books in reader order: Alice, Bob, Claire, Dave, Eve.\nInitial: Walden, Dune, The Trial, Candide, Ivanhoe.\n1. Bob–Claire: Walden, The Trial, Dune, Candide, Ivanhoe.\n2. Alice–Dave: Candide, The Trial, Dune, Walden, Ivanhoe.\n3. Alice–Dave: Walden, The Trial, Dune, Candide, Ivanhoe.\n4. Eve–Dave: Walden, The Trial, Dune, Ivanhoe, Candide.\n5. Alice–Eve: Candide, The Trial, Dune, Ivanhoe, Walden.\nAlice has Candide, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1294,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

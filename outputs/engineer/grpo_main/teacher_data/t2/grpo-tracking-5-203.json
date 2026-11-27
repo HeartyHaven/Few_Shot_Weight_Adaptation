@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-203",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a brown ball, Bob has a purple ball, Claire has a green ball, Dave has a pink ball, and Eve has a blue ball.\nAs the game progresses, pairs of players trade balls. First, Claire and Eve swap balls. Then, Alice and Dave swap balls. Then, Eve and Alice swap balls. Then, Bob and Alice swap balls. Finally, Alice and Claire swap balls. At the end of the game, Alice has the\nOptions:\n(A) brown ball\n(B) purple ball\n(C) green ball\n(D) pink ball\n(E) blue ball",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "brown",
+      "Bob": "purple",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "purple",
+      "Claire": "blue",
+      "Dave": "pink",
+      "Eve": "green"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "purple",
+      "Claire": "blue",
+      "Dave": "brown",
+      "Eve": "green"
+    },
+    {
+      "Alice": "green",
+      "Bob": "purple",
+      "Claire": "blue",
+      "Dave": "brown",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "green",
+      "Claire": "blue",
+      "Dave": "brown",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "green",
+      "Claire": "purple",
+      "Dave": "brown",
+      "Eve": "pink"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors are listed in player order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (brown, purple, green, pink, blue).\n1. Claire and Eve swap: (brown, purple, blue, pink, green).\n2. Alice and Dave swap: (pink, purple, blue, brown, green).\n3. Eve and Alice swap: (green, purple, blue, brown, pink).\n4. Bob and Alice swap: (purple, green, blue, brown, pink).\n5. Alice and Claire swap: (blue, green, purple, brown, pink).\nAlice has the blue ball, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1036,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

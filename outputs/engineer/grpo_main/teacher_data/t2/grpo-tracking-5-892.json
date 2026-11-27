@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-892",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left back, Bob is playing striker, Claire is playing benchwarmer, Dave is playing goalkeeper, and Eve is playing cheerleader.\nAs the game progresses, pairs of players occasionally swap positions. First, Dave and Eve trade positions. Then, Eve and Alice trade positions. Then, Alice and Eve trade positions. Then, Dave and Eve trade positions. Finally, Dave and Eve trade positions. At the end of the match, Alice is playing\nOptions:\n(A) left back\n(B) striker\n(C) benchwarmer\n(D) goalkeeper\n(E) cheerleader",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "cheerleader"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "cheerleader",
+      "Eve": "goalkeeper"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "cheerleader",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "cheerleader",
+      "Eve": "goalkeeper"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "cheerleader"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "cheerleader",
+      "Eve": "goalkeeper"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Position order in every row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (left back, striker, benchwarmer, goalkeeper, cheerleader)\n1. Dave ↔ Eve: (left back, striker, benchwarmer, cheerleader, goalkeeper)\n2. Eve ↔ Alice: (goalkeeper, striker, benchwarmer, cheerleader, left back)\n3. Alice ↔ Eve: (left back, striker, benchwarmer, cheerleader, goalkeeper)\n4. Dave ↔ Eve: (left back, striker, benchwarmer, goalkeeper, cheerleader)\n5. Dave ↔ Eve: (left back, striker, benchwarmer, cheerleader, goalkeeper)\nAlice plays left back, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1255,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

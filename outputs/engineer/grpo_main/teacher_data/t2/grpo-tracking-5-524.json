@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-524",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Wade, Claire is dancing with Priya, Dave is dancing with Rosa, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Eve and Bob switch partners. Then, Eve and Claire switch partners. Then, Eve and Claire switch partners. Finally, Eve and Bob switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Umar\n(B) Wade\n(C) Priya\n(D) Rosa\n(E) Karl",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Wade",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Wade",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Umar",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Umar",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Umar",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Wade",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Wade, Priya, Rosa, Karl\n1. Alice ↔ Eve: Karl, Wade, Priya, Rosa, Umar\n2. Eve ↔ Bob: Karl, Umar, Priya, Rosa, Wade\n3. Eve ↔ Claire: Karl, Umar, Wade, Rosa, Priya\n4. Eve ↔ Claire: Karl, Umar, Priya, Rosa, Wade\n5. Eve ↔ Bob: Karl, Wade, Priya, Rosa, Umar\nClaire is dancing with Priya, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1178,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

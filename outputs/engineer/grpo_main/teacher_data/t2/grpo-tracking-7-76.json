@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-76",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Yuki, Claire is dancing with Vera, Dave is dancing with Rosa, Eve is dancing with Wade, Fred is dancing with Lena, and Gertrude is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Dave and Eve switch partners. Then, Eve and Fred switch partners. Then, Gertrude and Bob switch partners. Then, Gertrude and Claire switch partners. Then, Eve and Fred switch partners. Then, Eve and Claire switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Stefan\n(B) Yuki\n(C) Vera\n(D) Rosa\n(E) Wade\n(F) Lena\n(G) Tara",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Vera",
+      "Dave": "Rosa",
+      "Eve": "Wade",
+      "Fred": "Lena",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Vera",
+      "Dave": "Wade",
+      "Eve": "Rosa",
+      "Fred": "Lena",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Vera",
+      "Dave": "Wade",
+      "Eve": "Lena",
+      "Fred": "Rosa",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Vera",
+      "Dave": "Wade",
+      "Eve": "Lena",
+      "Fred": "Rosa",
+      "Gertrude": "Yuki"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Yuki",
+      "Dave": "Wade",
+      "Eve": "Lena",
+      "Fred": "Rosa",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Yuki",
+      "Dave": "Wade",
+      "Eve": "Rosa",
+      "Fred": "Lena",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Yuki",
+      "Fred": "Lena",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Tara",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Stefan",
+      "Fred": "Lena",
+      "Gertrude": "Vera"
+    }
+  ],
+  "prompt_tokens": 225,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Stefan, Yuki, Vera, Rosa, Wade, Lena, Tara\n1. Dave and Eve swap: Stefan, Yuki, Vera, Wade, Rosa, Lena, Tara\n2. Eve and Fred swap: Stefan, Yuki, Vera, Wade, Lena, Rosa, Tara\n3. Gertrude and Bob swap: Stefan, Tara, Vera, Wade, Lena, Rosa, Yuki\n4. Gertrude and Claire swap: Stefan, Tara, Yuki, Wade, Lena, Rosa, Vera\n5. Eve and Fred swap: Stefan, Tara, Yuki, Wade, Rosa, Lena, Vera\n6. Eve and Claire swap: Stefan, Tara, Rosa, Wade, Yuki, Lena, Vera\n7. Alice and Eve swap: Yuki, Tara, Rosa, Wade, Stefan, Lena, Vera\nDave's final partner is Wade, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1094,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

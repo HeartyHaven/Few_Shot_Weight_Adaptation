@@ -1,0 +1,22 @@
+{
+  "id": "train-6424",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 77-year-old man presents to the emergency department for shortness of breath. The patient states that over the past month he has felt short of breath when doing everyday tasks, and today he even felt short of breath while taking a nap. The patient has a past medical history of obesity, diabetes, hypertension, and asthma. His current medications include lisinopril, insulin, metformin, and an albuterol inhaler. His temperature is 99.5°F (37.5°C), blood pressure is 130/90 mmHg, pulse is 85/min, respirations are 11/min, and oxygen saturation is 96% on room air. An EKG is ordered as seen in Figure A. A chest radiograph is ordered as seen in Figure B. Laboratory studies are ordered as seen below:\n\nSerum:\nNa+: 137 mEq/L\nK+: 3.9 mEq/L\nCl-: 100 mEq/L\nHCO3-: 24 mEq/L\nUrea nitrogen: 9 mg/dL\nGlucose: 122 mg/dL\nCreatinine: 1.5 mg/dL\nCa2+: 10.2 mg/dL\nMg2+: 1.5 mEq/L\nAST: 15 U/L\nALT: 9 U/L\nAlkaline phosphatase: 32 U/L\nGlutamyltransferase (GGT): 12 U/L\nAlbumin: 3.9 g/dL\nTotal protein: 6.9 g/dL\nTotal bilirubin: 0.9 mg/dL\nDirect bilirubin: 0.2 mg/dL\n\nOn physical exam the patient appears obese and in distress. He has bilateral lower extremity pitting edema and yellowing of his toenails. Pulmonary exam is notable for bilateral crackles. Cardiac exam demonstrates a normal rate and rhythm with a displaced cardiac apex. There is JVD to the angle of the mandible.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 511,
+  "solution": "CURB-65 assigns 1 point for each criterion present on admission:\n- New confusion: None reported → 0.\n- Urea >7 mmol/L (BUN >19 mg/dL): BUN 9 mg/dL → 0.\n- Respiratory rate ≥30/min: 11/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: 130/90 mmHg → 0.\n- Age ≥65 years: 77 years → 1.\nTotal: 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 831,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

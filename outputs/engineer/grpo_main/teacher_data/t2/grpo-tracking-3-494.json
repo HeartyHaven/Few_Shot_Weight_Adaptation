@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-494",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Rosa, and Claire is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Bob and Claire switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Oscar\n(B) Rosa\n(C) Umar",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Rosa",
+      "Claire": "Umar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Rosa",
+      "Claire": "Oscar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Rosa"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Oscar",
+      "Claire": "Umar"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Each row lists the partners of (Alice, Bob, Claire), in that order.\nInitial: (Oscar, Rosa, Umar)\n1. Alice ↔ Claire: (Umar, Rosa, Oscar)\n2. Bob ↔ Claire: (Umar, Oscar, Rosa)\n3. Claire ↔ Alice: (Rosa, Oscar, Umar)\nClaire is dancing with Umar, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1202,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

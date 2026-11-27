@@ -1,0 +1,22 @@
+{
+  "id": "train-6582",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "question": "Patient note:\nA 49-year-old woman is brought to the emergency department with progressive dyspnea and cough which she developed approx. 8 hours ago. 2 weeks ago she had a prophylactic ovariectomy because of a family history of ovarian cancer. She is known to have type 2 diabetes mellitus and stage 1 hypertension, but she does not take her antihypertensives because she is not concerned about her blood pressure. Also, she has a history of opioid abuse. She takes metformin 1000 mg and aspirin 81 mg. She has been smoking 1 pack of cigarettes per day for 22 years. Her vital signs are as follows: blood pressure 155/80 mm Hg, heart rate 101/min, respiratory rate 31/min, and temperature 37.9℃ (100.2℉). Blood saturation on room air is 89%. On examination, the patient is dyspneic and acrocyanotic. Lung auscultation reveals bilateral rales over the lower lobes. A cardiac examination is significant for S2 accentuation best heard in the second intercostal space at the left sternal border and S3 presence. There is no leg edema. Neurological examination is within normal limits.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 48,
+  "prompt_tokens": 352,
+  "solution": "Count positive findings on the Pulmonary Embolism Rule-out Criteria (PERC), 1 per finding:\n- Age ≥50 years: age 49 → 0.\n- Heart rate ≥100/min: 101/min → 1.\n- Room-air oxygen saturation <95%: 89% → 1.\n- Unilateral leg swelling: no leg edema → 0.\n- Hemoptysis: cough, but no hemoptysis reported → 0.\n- Surgery or significant trauma within 4 weeks: ovariectomy 2 weeks ago → 1.\n- Prior DVT or PE: none reported → 0.\n- Exogenous estrogen use: none reported → 0.\nTotal: 0 + 1 + 1 + 0 + 0 + 1 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 948,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

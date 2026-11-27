@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-449",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a pink ball, Bob has a black ball, Claire has a gold ball, Dave has a red ball, and Eve has a purple ball.\nAs the game progresses, pairs of players trade balls. First, Bob and Claire swap balls. Then, Alice and Eve swap balls. Then, Bob and Alice swap balls. Then, Dave and Bob swap balls. Finally, Alice and Dave swap balls. At the end of the game, Eve has the\nOptions:\n(A) pink ball\n(B) black ball\n(C) gold ball\n(D) red ball\n(E) purple ball",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "pink",
+      "Bob": "black",
+      "Claire": "gold",
+      "Dave": "red",
+      "Eve": "purple"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "gold",
+      "Claire": "black",
+      "Dave": "red",
+      "Eve": "purple"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "gold",
+      "Claire": "black",
+      "Dave": "red",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "purple",
+      "Claire": "black",
+      "Dave": "red",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "red",
+      "Claire": "black",
+      "Dave": "purple",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "red",
+      "Claire": "black",
+      "Dave": "gold",
+      "Eve": "pink"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball color order in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (pink, black, gold, red, purple)\n1. Bob and Claire swap: (pink, gold, black, red, purple)\n2. Alice and Eve swap: (purple, gold, black, red, pink)\n3. Bob and Alice swap: (gold, purple, black, red, pink)\n4. Dave and Bob swap: (gold, red, black, purple, pink)\n5. Alice and Dave swap: (purple, red, black, gold, pink)\nEve has the pink ball, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1130,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

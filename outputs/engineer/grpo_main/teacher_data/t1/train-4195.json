@@ -1,0 +1,22 @@
+{
+  "id": "train-4195",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 28-year old man, with no known previous medical history, was admitted to the emergency department with a 6-day history of pleuritic chest pain and gradual-onset shortness of breath. The patient also noted going through upper respiratory tract infection symptoms (fever, malaise and rhinorrhea) a couple of days before the onset of above-mentioned symptoms which had got better gradually without seeking medical advice. Moreover, he reported new onset anosmia from one week before admission. The patient’s history of smoking was remarkable in his record.\nUpon admission, his blood pressure was measured at 95/60 mmHg and he had tachycardia with heart rate of 125 beats per minute.\nHe was afebrile (temperature: 36.8 degree centigrade) and in respiratory distress with oxygen saturation of 85% in room air.\nOn physical examination heart sounds were determined to be muffled, no gallop or heart murmurs were detected and only tachycardia was noticed. The Jugular Venous Pressure (JVP) was also prominent (10 cm H2o) and lung auscultation revealed normal vesicular breath sounds.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 320,
+  "solution": "HEART assigns 0–2 points each for history, ECG, age, risk factors, and troponin.\n- History: pleuritic pain after a viral prodrome is only slightly suspicious for coronary ischemia → 0.\n- ECG: not reported; 0 only if there are no scoring abnormalities.\n- Age: 28 years (<45) → 0.\n- Risk factors: smoking is the only reported factor; 1–2 factors score 1 → 1.\n- Troponin: not reported; 0 only if at or below the upper reference limit.\nThe documented subtotal is 1. Assuming the missing ECG and troponin each score 0, the sum is 0 + 0 + 0 + 1 + 0 = 1; the complete score cannot be confirmed without those results.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 758,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

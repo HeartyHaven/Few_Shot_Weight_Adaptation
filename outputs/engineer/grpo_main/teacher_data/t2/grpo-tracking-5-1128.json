@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1128",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Middlemarch, Claire gets Persuasion, Dave gets Ivanhoe, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Claire and Bob swap books. Then, Dave and Alice swap books. Then, Dave and Eve swap books. Finally, Alice and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Candide\n(B) Middlemarch\n(C) Persuasion\n(D) Ivanhoe\n(E) Walden",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Middlemarch",
+      "Claire": "Persuasion",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Middlemarch",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Book holders, in order: Alice | Bob | Claire | Dave | Eve\nInitial: Candide | Middlemarch | Persuasion | Ivanhoe | Walden\n1. Eve ↔ Dave: Candide | Middlemarch | Persuasion | Walden | Ivanhoe\n2. Claire ↔ Bob: Candide | Persuasion | Middlemarch | Walden | Ivanhoe\n3. Dave ↔ Alice: Walden | Persuasion | Middlemarch | Candide | Ivanhoe\n4. Dave ↔ Eve: Walden | Persuasion | Middlemarch | Ivanhoe | Candide\n5. Alice ↔ Eve: Candide | Persuasion | Middlemarch | Ivanhoe | Walden\nAlice has Candide, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1104,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

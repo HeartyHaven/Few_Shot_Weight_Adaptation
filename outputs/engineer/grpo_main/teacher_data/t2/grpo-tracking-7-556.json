@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-556",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Walden, Claire gets Dracula, Dave gets Beloved, Eve gets Persuasion, Fred gets Jane Eyre, and Gertrude gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Alice and Claire swap books. Then, Dave and Alice swap books. Then, Alice and Bob swap books. Then, Bob and Gertrude swap books. Then, Alice and Dave swap books. Finally, Gertrude and Dave swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Candide\n(B) Walden\n(C) Dracula\n(D) Beloved\n(E) Persuasion\n(F) Jane Eyre\n(G) Ivanhoe",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dracula",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "Candide",
+      "Dave": "Walden",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Beloved",
+      "Claire": "Candide",
+      "Dave": "Walden",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "Walden",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "Dracula",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (Candide, Walden, Dracula, Beloved, Persuasion, Jane Eyre, Ivanhoe)\n1. Swap Claire and Bob: (Candide, Dracula, Walden, Beloved, Persuasion, Jane Eyre, Ivanhoe)\n2. Swap Alice and Claire: (Walden, Dracula, Candide, Beloved, Persuasion, Jane Eyre, Ivanhoe)\n3. Swap Dave and Alice: (Beloved, Dracula, Candide, Walden, Persuasion, Jane Eyre, Ivanhoe)\n4. Swap Alice and Bob: (Dracula, Beloved, Candide, Walden, Persuasion, Jane Eyre, Ivanhoe)\n5. Swap Bob and Gertrude: (Dracula, Ivanhoe, Candide, Walden, Persuasion, Jane Eyre, Beloved)\n6. Swap Alice and Dave: (Walden, Ivanhoe, Candide, Dracula, Persuasion, Jane Eyre, Beloved)\n7. Swap Gertrude and Dave: (Walden, Ivanhoe, Candide, Beloved, Persuasion, Jane Eyre, Dracula)\nGertrude has Dracula, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1196,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

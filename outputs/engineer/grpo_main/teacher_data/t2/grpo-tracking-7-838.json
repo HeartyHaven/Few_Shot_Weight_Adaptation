@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-838",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Ivanhoe, Claire gets Emma, Dave gets Walden, Eve gets Jane Eyre, Fred gets Siddhartha, and Gertrude gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Claire and Eve swap books. Then, Eve and Fred swap books. Then, Eve and Bob swap books. Then, Dave and Claire swap books. Then, Gertrude and Claire swap books. Then, Dave and Bob swap books. Finally, Dave and Eve swap books. At the end of the semester, Fred has\nOptions:\n(A) Hamlet\n(B) Ivanhoe\n(C) Emma\n(D) Walden\n(E) Jane Eyre\n(F) Siddhartha\n(G) Persuasion",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Emma",
+      "Fred": "Siddhartha",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Siddhartha",
+      "Fred": "Emma",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe",
+      "Fred": "Emma",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "Jane Eyre",
+      "Eve": "Ivanhoe",
+      "Fred": "Emma",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Jane Eyre",
+      "Eve": "Ivanhoe",
+      "Fred": "Emma",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Siddhartha",
+      "Eve": "Ivanhoe",
+      "Fred": "Emma",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha",
+      "Fred": "Emma",
+      "Gertrude": "Walden"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Row order: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude\nInitial: Hamlet | Ivanhoe | Emma | Walden | Jane Eyre | Siddhartha | Persuasion\n1. Claire ↔ Eve: Hamlet | Ivanhoe | Jane Eyre | Walden | Emma | Siddhartha | Persuasion\n2. Eve ↔ Fred: Hamlet | Ivanhoe | Jane Eyre | Walden | Siddhartha | Emma | Persuasion\n3. Eve ↔ Bob: Hamlet | Siddhartha | Jane Eyre | Walden | Ivanhoe | Emma | Persuasion\n4. Dave ↔ Claire: Hamlet | Siddhartha | Walden | Jane Eyre | Ivanhoe | Emma | Persuasion\n5. Gertrude ↔ Claire: Hamlet | Siddhartha | Persuasion | Jane Eyre | Ivanhoe | Emma | Walden\n6. Dave ↔ Bob: Hamlet | Jane Eyre | Persuasion | Siddhartha | Ivanhoe | Emma | Walden\n7. Dave ↔ Eve: Hamlet | Jane Eyre | Persuasion | Ivanhoe | Siddhartha | Emma | Walden\nFred has Emma, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1298,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

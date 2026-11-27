@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1196",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Middlemarch, Claire gets Jane Eyre, Dave gets Ivanhoe, Eve gets Hamlet, Fred gets The Hobbit, and Gertrude gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Dave and Alice swap books. Then, Eve and Dave swap books. Then, Claire and Dave swap books. Then, Alice and Dave swap books. Then, Dave and Bob swap books. Finally, Gertrude and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Dracula\n(B) Middlemarch\n(C) Jane Eyre\n(D) Ivanhoe\n(E) Hamlet\n(F) The Hobbit\n(G) Walden",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Middlemarch",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet",
+      "Fred": "The Hobbit",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet",
+      "Fred": "The Hobbit",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Middlemarch",
+      "Eve": "Hamlet",
+      "Fred": "The Hobbit",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Hamlet",
+      "Eve": "Middlemarch",
+      "Fred": "The Hobbit",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Jane Eyre",
+      "Eve": "Middlemarch",
+      "Fred": "The Hobbit",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Middlemarch",
+      "Fred": "The Hobbit",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "Middlemarch",
+      "Fred": "The Hobbit",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "Middlemarch",
+      "Fred": "The Hobbit",
+      "Gertrude": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Reader order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude\nInitial: Dracula | Middlemarch | Jane Eyre | Ivanhoe | Hamlet | The Hobbit | Walden\n1. Alice ↔ Bob: Middlemarch | Dracula | Jane Eyre | Ivanhoe | Hamlet | The Hobbit | Walden\n2. Dave ↔ Alice: Ivanhoe | Dracula | Jane Eyre | Middlemarch | Hamlet | The Hobbit | Walden\n3. Eve ↔ Dave: Ivanhoe | Dracula | Jane Eyre | Hamlet | Middlemarch | The Hobbit | Walden\n4. Claire ↔ Dave: Ivanhoe | Dracula | Hamlet | Jane Eyre | Middlemarch | The Hobbit | Walden\n5. Alice ↔ Dave: Jane Eyre | Dracula | Hamlet | Ivanhoe | Middlemarch | The Hobbit | Walden\n6. Dave ↔ Bob: Jane Eyre | Ivanhoe | Hamlet | Dracula | Middlemarch | The Hobbit | Walden\n7. Gertrude ↔ Bob: Jane Eyre | Walden | Hamlet | Dracula | Middlemarch | The Hobbit | Ivanhoe\nBob has Walden, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1012,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

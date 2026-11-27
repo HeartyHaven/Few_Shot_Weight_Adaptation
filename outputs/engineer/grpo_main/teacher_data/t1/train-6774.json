@@ -1,0 +1,22 @@
+{
+  "id": "train-6774",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 70-year-old man with a history of hypertension and paroxysmal atrial fibrillation presented with high fever and general fatigue 4 days before hospital admission (). He visited our hospital due to experiencing continued fever and general malaise with mild cough. His vital signs were as follows: heart rate (HR), 92 beats/min; respiratory rate (RR), 20 breaths/min; axillary temperature, 38.3°C; SaO2 97% (room air); and blood pressure, 161/91 mmHg. Chest computed tomography (CT) scan revealed progressive interstitial pneumonia with bilateral patchy ground-glass opacities on admission (). The patient was diagnosed with COVID-19 pneumonia after a positive severe acute respiratory syndrome–coronavirus (SARS-CoV)-2 real-time polymerase chain reaction (PCR) test and admitted to the general ward at our hospital.\nCiclesonide inhalation was started on day 1 of hospitalization. Due to continued fever, the patient received favipiravir on day 3 (at a dose of 3600 mg/day on day 3 and 1600 mg/day on days 4–16). On day 5, the patient experienced dyspnea, his SpO2 was 89% at room air, and his PaO2/FIO2 (P/F) ratio was 338. Oxygen was administered as was azithromycin. On day 6, the patient’s SpO2 was under 90% (reservoir mask oxygen, 8 L/min) with dyspnea, leading to the administration of a single dose (8 mg/kg) of tocilizumab. Blood C-reactive protein (CRP) levels decreased after tocilizumab administration. Nevertheless, the patient’s symptoms did not improve, and his P/F ratio was 92 and accompanied by dyspnea and tachypnea. The patient was admitted to the ICU on day 7. On day 8, the patient’s P/F ratio decreased to 73 and his RR was 27/min. The other blood tests before PMX-DHP on day 8 are follows: white blood cell count (WBC): 6800/µL, lymphocyte: 5.6% (absolute lymphocyte count: 526/µL), troponin I: 0.03 ng/mL, NT-pro BNP: 58 pg/mL, ferritin: 913 ng/mL, LDH 604 U/L, AST 44 U/L, procalcitonin 0.20 ng/mL. The patient then received the initial round PMX-DHP therapy for 6 h, with continued monitoring of blood cytokine levels. However, his condition did not improve, with the P/F ratio of 89 and RR of 25/min on day 10. He received the second round of PMX-DHP therapy over 6 h. The following day (on day 11, 10 h after the second round of PMX-DHP), the patient’s dyspnea improved, and his RR decreased to 22/min. On day 14, his P/F ratio was 149 and RR was 19/min. On day 18, both his P/F ratio and RR values reached 310 and 17/min, respectively, and oxygen therapy was discontinued. On day 20, the patient was discharged from the ICU. There was no decrease in blood pressure during the course of the ICU and hemodynamics were stable On day 95, his lungs recovered without the evidence of lung fibrosis on a chest CT scan (). The patient recovered without requiring mechanical ventilation during his hospitalization.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 51,
+  "prompt_tokens": 877,
+  "solution": "Adult SIRS counts one point per criterion. Using admission findings only:\n- Temperature >38°C or <36°C: 38.3°C = 1.\n- Heart rate >90/min: 92/min = 1.\n- Respiratory rate >20/min or PaCO₂ <32 mmHg: rate exactly 20/min, with no admission PaCO₂ reported = 0 documented.\n- WBC >12,000/µL or <4,000/µL, or >10% bands: no admission WBC or band count reported = 0 documented. The day-8 count does not apply.\nDocumented criteria met: 1 + 1 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 695,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

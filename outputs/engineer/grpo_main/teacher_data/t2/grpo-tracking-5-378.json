@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-378",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Emma, Claire gets Persuasion, Dave gets Walden, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Dave and Bob swap books. Then, Eve and Dave swap books. Then, Alice and Claire swap books. Finally, Bob and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Ivanhoe\n(B) Emma\n(C) Persuasion\n(D) Walden\n(E) Siddhartha",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Siddhartha",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Emma",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Ivanhoe | Emma | Persuasion | Walden | Siddhartha\n1. Bob ↔ Eve: Ivanhoe | Siddhartha | Persuasion | Walden | Emma\n2. Dave ↔ Bob: Ivanhoe | Walden | Persuasion | Siddhartha | Emma\n3. Eve ↔ Dave: Ivanhoe | Walden | Persuasion | Emma | Siddhartha\n4. Alice ↔ Claire: Persuasion | Walden | Ivanhoe | Emma | Siddhartha\n5. Bob ↔ Claire: Persuasion | Ivanhoe | Walden | Emma | Siddhartha\nBob has Ivanhoe, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1055,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

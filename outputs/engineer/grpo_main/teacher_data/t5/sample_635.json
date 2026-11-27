@@ -1,0 +1,20 @@
+{
+  "id": "sample_635",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    valid_chars = ['-', '_', '+', '.', '/', ' ']\n    text = text.upper()\n    for char in text:\n        if char.isalnum() == False and char not in valid_chars:\n            return False\n    return True\n```\n\nInput: f(\"9.twCpTf.H7 HPeaQ^ C7I6U,C:YtW\")",
+  "answer": "False",
+  "prompt_tokens": 142,
+  "solution": "text.upper() gives '9.TWCPTF.H7 HPEAQ^ C7I6U,C:YTW'. The loop accepts '9' as alphanumeric, '.' as a valid character, each letter in 'TWCPTF' as alphanumeric, and the next '.' as valid. It then accepts 'H' and '7' as alphanumeric, the space as valid, and each letter in 'HPEAQ' as alphanumeric. The next character, '^', is neither alphanumeric nor in valid_chars, so the function returns immediately.\nFinal answer: False",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "False",
+    "correct": true
+  }
+}

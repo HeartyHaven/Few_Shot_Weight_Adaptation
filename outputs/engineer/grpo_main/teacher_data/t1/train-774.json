@@ -1,0 +1,22 @@
+{
+  "id": "train-774",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 78-year-old man is brought to the emergency department because of a 1-day history of painful enlarging bruises and skin ulceration over his thighs and external genitalia. He has type 2 diabetes mellitus, mitral regurgitation, and atrial fibrillation. Three days ago, he was started on treatment with warfarin. His only other medications are metformin and lisinopril. His temperature is 37.8°C (100.0°F), pulse is 108/min and irregularly irregular, and blood pressure is 155/89 mm Hg. Examination of the skin shows large purpura, hemorrhagic bullae, and areas of skin necrosis over his anterior legs, gluteal region, and penis.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 237,
+  "solution": "CHA₂DS₂-VASc, using admission findings:\n- Heart failure or LV dysfunction: none documented; mitral regurgitation alone does not qualify (0).\n- Hypertension: BP 155/89 mm Hg while taking lisinopril supports counting treated hypertension (+1).\n- Age: 78 years, so use the ≥75 category (+2), not the 65–74 category.\n- Diabetes: type 2 diabetes (+1).\n- Prior stroke, TIA, or systemic embolism: none documented (0 of 2).\n- Vascular disease: no prior MI, peripheral arterial disease, or aortic plaque documented (0). The acute skin necrosis does not qualify.\n- Sex category: male (0).\nTotal = 0 + 1 + 2 + 1 + 0 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 668,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-645",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Siddhartha, Claire gets Jane Eyre, Dave gets Persuasion, and Eve gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Alice and Dave swap books. Then, Eve and Alice swap books. Then, Dave and Claire swap books. Finally, Alice and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Emma\n(B) Siddhartha\n(C) Jane Eyre\n(D) Persuasion\n(E) The Hobbit",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Persuasion",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Persuasion",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Persuasion",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Jane Eyre",
+      "Eve": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve).\nInitial: (Emma, Siddhartha, Jane Eyre, Persuasion, The Hobbit)\n1. Dave ↔ Alice: (Persuasion, Siddhartha, Jane Eyre, Emma, The Hobbit)\n2. Alice ↔ Dave: (Emma, Siddhartha, Jane Eyre, Persuasion, The Hobbit)\n3. Eve ↔ Alice: (The Hobbit, Siddhartha, Jane Eyre, Persuasion, Emma)\n4. Dave ↔ Claire: (The Hobbit, Siddhartha, Persuasion, Jane Eyre, Emma)\n5. Alice ↔ Eve: (Emma, Siddhartha, Persuasion, Jane Eyre, The Hobbit)\nAlice has Emma, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1221,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

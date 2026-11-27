@@ -1,0 +1,22 @@
+{
+  "id": "train-1029",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 72 year-old-male with known past medical history inclusive of right lower extremity deep vein thrombosis currently on the DOAC rivaroxaban, myelodysplastic syndrome status post stem cell transplant complicated by graft versus host disease (GVHD), hyperlipidemia, stage three chronic kidney disease, and type II non-insulin dependent diabetes mellitus presented to the ED with right buccal mucosa bleed after undergoing punch biopsy by dermatology six hours prior. The last administered dose of rivaroxaban was earlier the same morning, as he was not instructed to hold the dose because the diagnostic punch biopsy for GVHD workup was scheduled ad hoc while he was in the hospital for routine follow-up. Despite manually holding direct pressure with a paper towel over the bleeding site, the patient stated that he had been unable to achieve hemostasis, which was affecting his ability to speak and sleep due to the continuous need to spit out blood, prompting his visit to the ED. A single, folded, paper towel sheet became saturated and required exchange every 15 minutes.\nReview of systems was notable for oral bleeding, minor post-procedural pain (2/10 in severity) at the biopsy site, and three days of acute on chronic constipation, believed to be unrelated to his chief complaint. The patient denied shortness of breath, cough, hemoptysis, and dysphagia. On physical examination, the airway was intact, and there was an active, continual oozing of dark blood from a five-millimeter biopsy site along the right buccal mucosa. Due to the duration of bleeding and reported amount of saturated dressings, a complete blood count, general chemistry panel, and coagulation panel were drawn, which was notable for a hemoglobin and hematocrit of 12.9 grams per deciliter (g/dL) [14–17.4g/dL] and 37.6% [42–54%], respectively, with prothrombin time and international normalized ratio of 10.1 seconds [9.2–11.9 seconds] and 0.91 [0.8–1.2], respectively. The patient was placed in an examination room with continuous wall suctioning and given a Yankauer suction tip to clear his oropharynx.\nGiven the wide base of the biopsy site and lack of overlapping tissue, the wound was not amenable to hemostasis through placement of sutures. Thus, along with emergency pharmacy guidance and approval, a sterile 4-inch × 4-inch gauze dressing was soaked with 500 mg [5 milliliter (mL)] of 100 mg/mL TXA and placed over the bleeding site. The soaked gauze was held in place with pressure applied by two tongue depressors taped on one end with medical tape and held to the patient’s cheek with an adhesive dressing (). After 30 minutes, the device and gauze were removed, and a clot was visualized (). Due to the possibility of recurrent bleeding and impending airway compromise, the patient was admitted under the otolaryngology service for observation and was discharged from the hospital eight hours later without any significant rebleeding events. There was no 72-hour ED return visit noted within the health system’s electronic health records.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 771,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation, which is not documented here. Using the admission history:\n- Congestive heart failure and hypertension: neither documented = 0 + 0.\n- Age 72: in the 65–74 band (1 point), not the ≥75 band (2 points) = 1.\n- Type II diabetes = 1.\n- Prior stroke/TIA/thromboembolism: a broad interpretation counting his right-leg DVT gives 2. No stroke, TIA or systemic arterial embolism is documented.\n- Vascular disease: no prior MI, peripheral arterial disease or aortic plaque documented = 0.\n- Sex category: male = 0.\nTotal with DVT counted: 0 + 0 + 1 + 1 + 2 + 0 + 0 = 4. Under the usual arterial-embolism interpretation, DVT does not qualify and the total would be 2.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 728,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

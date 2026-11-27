@@ -1,0 +1,22 @@
+{
+  "id": "train-4255",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 23-year-old man presents to the emergency department presenting with sudden-onset dyspnea and left-sided chest pain over the last hour. This event started when he was in class sitting for an exam. He reports that the pain is worse with inspiration and does not radiate. He says he has anxiety and takes alprazolam as needed. He smokes half a pack of cigarettes a day and drinks alcohol socially. The temperature is 36.7°C (98.0°F), the blood pressure is 130/80 mm Hg, the pulse is 82/min, and the respiratory rate is 14/min. Pulse oximetry shows 97% on room air. The patient’s weight is 63.5 kg (140 lb), height is 185 cm (6 ft 1 in), and he has a BMI of 18.5 kg/m2. A chest X-ray is taken (see exhibit). After an hour of supplemental oxygen, rest, and careful monitoring his dyspnea improves and chest pain resolves without medication.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 300,
+  "solution": "HEART scores five components from 0 to 2 each, using the presentation before oxygen therapy:\n- History (slightly/moderately/highly suspicious): sudden pleuritic pain at rest with dyspnea is only slightly suspicious for acute coronary syndrome → 0.\n- ECG (normal/nonspecific repolarization changes/significant ST depression): no ECG result is reported; assume a normal tracing → 0.\n- Age (<45/45–64/≥65): 23 years → 0.\n- Risk factors (none/1–2/≥3 or established atherosclerotic disease): cigarette smoking is one risk factor → 1.\n- Troponin (≤1, >1–3, or >3 times the upper reference limit): no result is reported; assume no elevation → 0.\nSum assuming normal ECG and troponin: 0 + 0 + 0 + 1 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 905,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

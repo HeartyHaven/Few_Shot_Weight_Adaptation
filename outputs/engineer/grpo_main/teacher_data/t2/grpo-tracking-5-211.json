@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-211",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Walden, Claire gets Emma, Dave gets Hamlet, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Eve and Alice swap books. Then, Alice and Bob swap books. Then, Eve and Alice swap books. Finally, Alice and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) The Hobbit\n(B) Walden\n(C) Emma\n(D) Hamlet\n(E) Siddhartha",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "Siddhartha",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: The Hobbit | Walden | Emma | Hamlet | Siddhartha\n1. Eve–Dave: The Hobbit | Walden | Emma | Siddhartha | Hamlet\n2. Eve–Alice: Hamlet | Walden | Emma | Siddhartha | The Hobbit\n3. Alice–Bob: Walden | Hamlet | Emma | Siddhartha | The Hobbit\n4. Eve–Alice: The Hobbit | Hamlet | Emma | Siddhartha | Walden\n5. Alice–Claire: Emma | Hamlet | The Hobbit | Siddhartha | Walden\nDave has Siddhartha, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1186,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

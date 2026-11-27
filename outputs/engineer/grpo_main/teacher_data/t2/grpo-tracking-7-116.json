@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-116",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Beloved, Claire gets Jane Eyre, Dave gets Ivanhoe, Eve gets Siddhartha, Fred gets The Trial, and Gertrude gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Alice and Eve swap books. Then, Claire and Dave swap books. Then, Gertrude and Bob swap books. Then, Dave and Eve swap books. Then, Alice and Eve swap books. Then, Alice and Eve swap books. Finally, Gertrude and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Emma\n(B) Beloved\n(C) Jane Eyre\n(D) Ivanhoe\n(E) Siddhartha\n(F) The Trial\n(G) Hamlet",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha",
+      "Fred": "The Trial",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Emma",
+      "Fred": "The Trial",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Beloved",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma",
+      "Fred": "The Trial",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma",
+      "Fred": "The Trial",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Siddhartha",
+      "Fred": "The Trial",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Reader order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Emma, Beloved, Jane Eyre, Ivanhoe, Siddhartha, The Trial, Hamlet.\n1. Alice ↔ Eve: Siddhartha, Beloved, Jane Eyre, Ivanhoe, Emma, The Trial, Hamlet.\n2. Claire ↔ Dave: Siddhartha, Beloved, Ivanhoe, Jane Eyre, Emma, The Trial, Hamlet.\n3. Gertrude ↔ Bob: Siddhartha, Hamlet, Ivanhoe, Jane Eyre, Emma, The Trial, Beloved.\n4. Dave ↔ Eve: Siddhartha, Hamlet, Ivanhoe, Emma, Jane Eyre, The Trial, Beloved.\n5. Alice ↔ Eve: Jane Eyre, Hamlet, Ivanhoe, Emma, Siddhartha, The Trial, Beloved.\n6. Alice ↔ Eve: Siddhartha, Hamlet, Ivanhoe, Emma, Jane Eyre, The Trial, Beloved.\n7. Gertrude ↔ Claire: Siddhartha, Hamlet, Beloved, Emma, Jane Eyre, The Trial, Ivanhoe.\nAlice has Siddhartha, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1357,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

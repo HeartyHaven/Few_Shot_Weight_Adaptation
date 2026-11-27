@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-490",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Ivanhoe, Claire gets Siddhartha, Dave gets The Hobbit, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Bob and Dave swap books. Then, Claire and Eve swap books. Then, Eve and Alice swap books. Then, Dave and Bob swap books. Finally, Eve and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) Walden\n(B) Ivanhoe\n(C) Siddhartha\n(D) The Hobbit\n(E) Jane Eyre",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha",
+      "Dave": "Ivanhoe",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "The Hobbit",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Walden, Ivanhoe, Siddhartha, The Hobbit, Jane Eyre)\n1. Bob and Dave swap: (Walden, The Hobbit, Siddhartha, Ivanhoe, Jane Eyre)\n2. Claire and Eve swap: (Walden, The Hobbit, Jane Eyre, Ivanhoe, Siddhartha)\n3. Eve and Alice swap: (Siddhartha, The Hobbit, Jane Eyre, Ivanhoe, Walden)\n4. Dave and Bob swap: (Siddhartha, Ivanhoe, Jane Eyre, The Hobbit, Walden)\n5. Eve and Alice swap: (Walden, Ivanhoe, Jane Eyre, The Hobbit, Siddhartha)\nClaire has Jane Eyre, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1175,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

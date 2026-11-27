@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-155",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Walden, Claire gets Dune, Dave gets Middlemarch, Eve gets Candide, Fred gets The Hobbit, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Fred and Eve swap books. Then, Dave and Eve swap books. Then, Fred and Bob swap books. Then, Eve and Gertrude swap books. Then, Gertrude and Eve swap books. Then, Claire and Alice swap books. Finally, Eve and Gertrude swap books. At the end of the semester, Claire has\nOptions:\n(A) Siddhartha\n(B) Walden\n(C) Dune\n(D) Middlemarch\n(E) Candide\n(F) The Hobbit\n(G) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Middlemarch",
+      "Eve": "Candide",
+      "Fred": "The Hobbit",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Middlemarch",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Middlemarch",
+      "Fred": "Walden",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Beloved",
+      "Fred": "Walden",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Middlemarch",
+      "Fred": "Walden",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Middlemarch",
+      "Fred": "Walden",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Beloved",
+      "Fred": "Walden",
+      "Gertrude": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Siddhartha, Walden, Dune, Middlemarch, Candide, The Hobbit, Beloved\n1. Fred and Eve swap: Siddhartha, Walden, Dune, Middlemarch, The Hobbit, Candide, Beloved\n2. Dave and Eve swap: Siddhartha, Walden, Dune, The Hobbit, Middlemarch, Candide, Beloved\n3. Fred and Bob swap: Siddhartha, Candide, Dune, The Hobbit, Middlemarch, Walden, Beloved\n4. Eve and Gertrude swap: Siddhartha, Candide, Dune, The Hobbit, Beloved, Walden, Middlemarch\n5. Gertrude and Eve swap: Siddhartha, Candide, Dune, The Hobbit, Middlemarch, Walden, Beloved\n6. Claire and Alice swap: Dune, Candide, Siddhartha, The Hobbit, Middlemarch, Walden, Beloved\n7. Eve and Gertrude swap: Dune, Candide, Siddhartha, The Hobbit, Beloved, Walden, Middlemarch\nClaire's final book is Siddhartha, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1094,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

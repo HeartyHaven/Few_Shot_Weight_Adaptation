@@ -1,0 +1,17 @@
+{
+  "id": "train-counting_and_probability-432",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Eight congruent equilateral triangles, each of a different color, are used to construct a regular octahedron. How many distinguishable ways are there to construct the octahedron? (Two colored octahedrons are distinguishable if neither can be rotated to look just like the other.)\n[asy] import three; import math; unitsize(1.5cm); currentprojection=orthographic(2,0.2,1);  triple A=(0,0,1); triple B=(sqrt(2)/2,sqrt(2)/2,0); triple C=(sqrt(2)/2,-sqrt(2)/2,0); triple D=(-sqrt(2)/2,-sqrt(2)/2,0); triple E=(-sqrt(2)/2,sqrt(2)/2,0); triple F=(0,0,-1); draw(A--B--E--cycle); draw(A--C--D--cycle); draw(F--C--B--cycle); draw(F--D--E--cycle,dotted+linewidth(0.7)); [/asy]\n$\\textbf {(A)}\\ 210 \\qquad \\textbf {(B)}\\ 560 \\qquad \\textbf {(C)}\\ 840 \\qquad \\textbf {(D)}\\ 1260 \\qquad \\textbf {(E)}\\ 1680$\n",
+  "answer": "1680",
+  "solution": "With the octahedron held fixed, its eight distinct face colors can be arranged in 8! ways. To count rotations, choose where a reference face goes (8 choices), then where one marked vertex of that face goes (3 choices). Every such placement is possible by symmetry, and it determines the rotation: the other two vertices must keep their cyclic order. Thus there are 8 × 3 = 24 rotations.\nSince every face has a different color, no nonidentity rotation preserves a coloring. Each distinguishable coloring is therefore counted 24 times, giving 8!/24 = 40320/24 = 1680.\nFinal answer: 1680",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 51,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "1680",
+    "correct": true
+  }
+}

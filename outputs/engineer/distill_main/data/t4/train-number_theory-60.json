@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-60",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "A positive number is called $n$-primable if it is divisible by $n$ and each of its digits is a one-digit prime number. How many 3-primable positive integers are there that are less than 1000?",
+  "answer": "28",
+  "solution": "Divisibility by 3 requires the digit sum to be 0 modulo 3. Among the allowed digits, the residue classes 0, 1, 2 contain {3}, {7}, {2,5}, respectively.\nOne digit: only 3 works, giving 1 number.\nTwo digits: the ordered residue pairs are (0,0), (1,2), (2,1), giving 1 + 2 + 2 = 5 numbers.\nThree digits: a sum of 0 modulo 3 requires either three equal residues or three distinct residues (if two residues equal r, the third must be −2r ≡ r). Equal residues give 1³ + 1³ + 2³ = 10 numbers. Distinct residues give 3! orders and 1·1·2 digit choices per order, hence 12 numbers.\nAll digits are nonzero, so the total below 1000 is 1 + 5 + 10 + 12 = 28.\nFinal answer: 28",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 31,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "28",
+    "correct": true
+  }
+}

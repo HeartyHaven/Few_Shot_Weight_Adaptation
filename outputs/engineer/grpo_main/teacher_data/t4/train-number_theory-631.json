@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-631",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "For a positive integer $p$, define the positive integer $n$ to be $p$-safe if $n$ differs in absolute value by more than $2$ from all multiples of $p$. For example, the set of $10$-safe numbers is $\\{ 3, 4, 5, 6, 7, 13, 14, 15, 16, 17, 23, \\ldots\\}$. Find the number of positive integers less than or equal to $10,000$ which are simultaneously $7$-safe, $11$-safe, and $13$-safe.\n",
+  "answer": "958",
+  "prompt_tokens": 175,
+  "solution": "If \\(r\\) is the remainder of \\(n\\) modulo \\(p\\), safety requires both \\(r>2\\) and \\(p-r>2\\). Thus the allowed remainders are 3 through \\(p-3\\), giving \\(p-5\\) choices. For 7, 11, and 13 there are respectively 2, 6, and 8 choices.\nSince the moduli are pairwise coprime, the Chinese remainder theorem gives exactly one residue modulo \\(7\\cdot11\\cdot13=1001\\) for each allowed triple. Thus every block of 1001 consecutive integers contains \\(2\\cdot6\\cdot8=96\\) simultaneously safe numbers. From 1 through 10,010 there are ten blocks, giving 960.\nTo stop at 10,000, remove the numbers \\(10010-k\\) for \\(0\\le k\\le9\\). Since 10,010 is a multiple of all three moduli, their distances from the nearest multiples are the same as for \\(k\\). Only \\(k=3,4\\) are 7-safe in this range, and both are also 11-safe and 13-safe. Subtracting these two gives \\(960-2=958\\).\nFinal answer: 958",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1384,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "958",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1062",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 73-year-old woman is brought to the physician by her son because of increasing forgetfulness over the past 2 years. Initially, she used to misplace keys and forget her dog's name or her phone number. Now, she often forgets about what she has seen on television or read about the day before. She used to go for a walk every morning but stopped one month ago after she became lost on her way back home. Her son has prevented her from cooking because she has had episodes of leaving the gas stove oven on after making a meal. She becomes agitated when asked questions directly but is unconcerned when her son reports her history and says he is overprotective of her. She has hypertension, coronary artery disease, and hypercholesterolemia. Current medications include aspirin, enalapril, carvedilol, and atorvastatin. She is alert and oriented to place and person but not to time. Vital signs are within normal limits. Short- and long-term memory deficits are present. Her speech rhythm is normal but is frequently interrupted as she thinks of words to frame her sentences. She makes multiple errors while performing serial sevens. Her clock drawing is impaired and she draws 14 numbers.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 327,
+  "solution": "CHA₂DS₂-VASc assigns points for heart failure, hypertension, age, diabetes, prior stroke/TIA/systemic embolism, vascular disease, and sex.\n- Congestive heart failure: not documented = 0.\n- Hypertension: established diagnosis = 1, even though admission blood pressure is normal.\n- Age: 73 falls in the 65–74 band = 1; the 2-point band begins at 75.\n- Diabetes: not documented = 0.\n- Prior stroke, TIA, or systemic embolism: not documented = 0 of 2. Cognitive decline alone does not qualify.\n- Vascular disease: coronary artery disease = 1.\n- Female sex = 1.\nSum: 0 + 1 + 1 + 0 + 0 + 1 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 763,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

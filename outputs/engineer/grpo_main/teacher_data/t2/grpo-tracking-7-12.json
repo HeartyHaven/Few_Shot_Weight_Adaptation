@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-12",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a purple present, Bob has a green present, Claire has a white present, Dave has a blue present, Eve has a silver present, Fred has a brown present, and Gertrude has a pink present.\nAs the event progresses, pairs of people swap gifts. First, Bob and Gertrude swap their gifts. Then, Gertrude and Fred swap their gifts. Then, Claire and Gertrude swap their gifts. Then, Fred and Gertrude swap their gifts. Then, Alice and Fred swap their gifts. Then, Bob and Dave swap their gifts. Finally, Alice and Fred swap their gifts. At the end of the event, Gertrude has the\nOptions:\n(A) purple present\n(B) green present\n(C) white present\n(D) blue present\n(E) silver present\n(F) brown present\n(G) pink present",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "purple",
+      "Bob": "green",
+      "Claire": "white",
+      "Dave": "blue",
+      "Eve": "silver",
+      "Fred": "brown",
+      "Gertrude": "pink"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "pink",
+      "Claire": "white",
+      "Dave": "blue",
+      "Eve": "silver",
+      "Fred": "brown",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "pink",
+      "Claire": "white",
+      "Dave": "blue",
+      "Eve": "silver",
+      "Fred": "green",
+      "Gertrude": "brown"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "pink",
+      "Claire": "brown",
+      "Dave": "blue",
+      "Eve": "silver",
+      "Fred": "green",
+      "Gertrude": "white"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "pink",
+      "Claire": "brown",
+      "Dave": "blue",
+      "Eve": "silver",
+      "Fred": "white",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "white",
+      "Bob": "pink",
+      "Claire": "brown",
+      "Dave": "blue",
+      "Eve": "silver",
+      "Fred": "purple",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "white",
+      "Bob": "blue",
+      "Claire": "brown",
+      "Dave": "pink",
+      "Eve": "silver",
+      "Fred": "purple",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "brown",
+      "Dave": "pink",
+      "Eve": "silver",
+      "Fred": "white",
+      "Gertrude": "green"
+    }
+  ],
+  "prompt_tokens": 249,
+  "solution": "Gift colors in every row are listed for (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (purple, green, white, blue, silver, brown, pink)\n1. Bob and Gertrude swap: (purple, pink, white, blue, silver, brown, green)\n2. Gertrude and Fred swap: (purple, pink, white, blue, silver, green, brown)\n3. Claire and Gertrude swap: (purple, pink, brown, blue, silver, green, white)\n4. Fred and Gertrude swap: (purple, pink, brown, blue, silver, white, green)\n5. Alice and Fred swap: (white, pink, brown, blue, silver, purple, green)\n6. Bob and Dave swap: (white, blue, brown, pink, silver, purple, green)\n7. Alice and Fred swap: (purple, blue, brown, pink, silver, white, green)\nGertrude has the green present, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1334,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-686",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Walden, Claire gets Middlemarch, Dave gets Emma, Eve gets Dune, Fred gets Jane Eyre, and Gertrude gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Gertrude swap books. Then, Alice and Claire swap books. Then, Fred and Eve swap books. Then, Alice and Fred swap books. Then, Fred and Claire swap books. Finally, Dave and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Beloved\n(B) Walden\n(C) Middlemarch\n(D) Emma\n(E) Dune\n(F) Jane Eyre\n(G) Persuasion",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "Middlemarch",
+      "Dave": "Emma",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch",
+      "Dave": "Emma",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Persuasion",
+      "Dave": "Emma",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Beloved",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Beloved",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre",
+      "Fred": "Dune",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Beloved",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre",
+      "Fred": "Persuasion",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Beloved",
+      "Claire": "Persuasion",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre",
+      "Fred": "Walden",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Walden",
+      "Gertrude": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Beloved, Walden, Middlemarch, Emma, Dune, Jane Eyre, Persuasion.\n1. Bob swaps with Alice: Walden, Beloved, Middlemarch, Emma, Dune, Jane Eyre, Persuasion.\n2. Claire swaps with Gertrude: Walden, Beloved, Persuasion, Emma, Dune, Jane Eyre, Middlemarch.\n3. Alice swaps with Claire: Persuasion, Beloved, Walden, Emma, Dune, Jane Eyre, Middlemarch.\n4. Fred swaps with Eve: Persuasion, Beloved, Walden, Emma, Jane Eyre, Dune, Middlemarch.\n5. Alice swaps with Fred: Dune, Beloved, Walden, Emma, Jane Eyre, Persuasion, Middlemarch.\n6. Fred swaps with Claire: Dune, Beloved, Persuasion, Emma, Jane Eyre, Walden, Middlemarch.\n7. Dave swaps with Alice: Emma, Beloved, Persuasion, Dune, Jane Eyre, Walden, Middlemarch.\nBob has Beloved, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1153,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

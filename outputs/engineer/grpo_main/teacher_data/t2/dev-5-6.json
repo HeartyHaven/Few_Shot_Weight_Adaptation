@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-6",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Walden, Claire gets Persuasion, Dave gets The Trial, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Eve and Claire swap books. Then, Alice and Dave swap books. Then, Bob and Dave swap books. Then, Claire and Eve swap books. Finally, Claire and Eve swap books. At the end of the semester, Eve has\nOptions:\n(A) Emma\n(B) Walden\n(C) Persuasion\n(D) The Trial\n(E) Candide",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "The Trial",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "The Trial",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Emma",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books in order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Emma, Walden, Persuasion, The Trial, Candide)\n1. Eve and Claire swap: (Emma, Walden, Candide, The Trial, Persuasion)\n2. Alice and Dave swap: (The Trial, Walden, Candide, Emma, Persuasion)\n3. Bob and Dave swap: (The Trial, Emma, Candide, Walden, Persuasion)\n4. Claire and Eve swap: (The Trial, Emma, Persuasion, Walden, Candide)\n5. Claire and Eve swap: (The Trial, Emma, Candide, Walden, Persuasion)\nEve has Persuasion, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

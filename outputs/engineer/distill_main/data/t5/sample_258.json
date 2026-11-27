@@ -1,0 +1,17 @@
+{
+  "id": "sample_258",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\nthigh_o_one = [1, 2, 7, 8, 9]\nthigh_o_two = [1, 2, 7, 9]\ndef f(L, m, start, step):\n    L.insert(start, m)\n    for x in range(start-1, 0, -step):\n        start -= 1\n        L.insert(start, L.pop(L.index(m)-1))\n    return L\n```\n\nInput: f(thigh_o_two[:], 3, 3, 2)",
+  "answer": "[1, 2, 7, 3, 9]",
+  "solution": "L starts as a copy of [1, 2, 7, 9]. Inserting m = 3 at index 3 gives [1, 2, 7, 3, 9]. The loop range is range(2, 0, -2), so x = 2 is the only iteration. start decreases from 3 to 2. L.index(3) is 3, so pop(3 - 1) removes 7 from index 2, leaving [1, 2, 3, 9]. Inserting that 7 at start = 2 restores [1, 2, 7, 3, 9]. The function returns L.\nFinal answer: [1, 2, 7, 3, 9]",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 36,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[1, 2, 7, 3, 9]",
+    "correct": true
+  }
+}

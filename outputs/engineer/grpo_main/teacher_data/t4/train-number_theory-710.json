@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-710",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $f(n)$ be a function that, given an integer $n$, returns an integer $k$, where $k$ is the smallest possible integer such that $k!$ is divisible by $n$. Given that $n$ is a multiple of 15, what is the smallest value of $n$ such that $f(n) > 15$?",
+  "answer": "n = 255",
+  "prompt_tokens": 106,
+  "solution": "Since each factorial up to 15! divides 15!, we have f(n) > 15 exactly when n does not divide 15!. Write n = 15m. Because 15! = 15·14!, this is equivalent to m not dividing 14!.\nEvery m from 1 through 14 is a factor of 14!. Also, 15 = 3·5 and 16 = 2·8 both divide 14!, since each product uses distinct factors of 14!. But 17 is prime and divides none of 1 through 14, so it does not divide 14!. Thus the smallest qualifying multiplier is 17, giving 15·17 = 255.\nFinal answer: n = 255",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "n = 255",
+    "correct": true
+  }
+}

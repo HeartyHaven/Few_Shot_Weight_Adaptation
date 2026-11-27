@@ -1,0 +1,22 @@
+{
+  "id": "train-779",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 88-year-old male presented to our emergency department (ED) with an acute onset of a painless loss of vision to his right eye. His past medical history was significant for hypertension, coronary artery disease and atrial fibrillation (on apixaban). He stated he was lying in bed reading when he had a sudden painless loss of vision to his right eye, described as a curtain closing, for which he presented to our ED ~24 h later. He denied any other symptoms including headache, scalp pain, jaw claudication, focal weakness, numbness, angina or shortness of breath.\nVitals on arrival to the ED were as follows: 36.9°C, heart rate of 62 beats/min, respiratory rate of 16 breaths/min, blood pressure of 123/53 mmHg and pulse oximetry of 99% on room air. His cardiopulmonary exam was unremarkable. His neurologic exam was notable for a National Institute of Health Stroke Scale score of +2 for complete unilateral vision loss to the right eye. Intraocular pressures were 14 mmHg bilaterally. His remaining physical exam was notable for a right afferent pupillary defect (APD). To further assess the eye and its structures, a point-of-care ultrasound (POCUS) was then performed. Utilizing the high-frequency linear probe to the right eye, a transverse view demonstrated a retrobulbar spot sign (RBSS) in the distal portion of the central retinal artery within the optic nerve sheath (, red arrow). He had normal blood flow in his left eye (), and no blood flow was seen to the central retinal artery of the right eye, with the yellow arrow pointing to the RBSS (). The patient was then transferred to our tertiary referral center (TRC) for specialist consultation.\nOphthalmology visualized a plaque on the dilated fundoscopic exam with associated retinal ischemia. Given the onset of ~24 h prior to arrival, the risks of tissue plasminogen activator (tPA) outweighed the benefits, as such, the patient was medically managed. His head computed tomography (CT) was unremarkable for acute changes. A magnetic resonance imaging MRI could not be done, secondary to his pacemaker not being compatible. His carotid duplex was without severe stenosis or thrombus. His echocardiography showed left ventricular diastolic dysfunction with an ejection fraction of 40%, which was similar to previous studies.\nOverall, his workup was without evidence of carotid artery disease or vasculitis and it was suspected to be cardioembolic in origin related to his atrial fibrillation. On further questioning, it was found that the patient’s family member had passed away 2 weeks prior, leading to depression and multiple missed doses of his anticoagulation. Compliance of his anticoagulation was stressed on discharge. At his 1-month follow-up after his hospital admission, he has regained light perception and 15% of his vision.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 713,
+  "solution": "Apply CHA₂DS₂-VASc to the patient's baseline risk factors in atrial fibrillation, using the traditional vascular-disease definition:\n- Heart failure or LV systolic dysfunction: baseline LVEF 40% meets the ≤40% threshold → +1.\n- Hypertension: known history, despite normal admission BP → +1.\n- Age: 88 years → +2 for age ≥75; the 65–74 category is not added.\n- Diabetes: not documented → 0.\n- Prior stroke, TIA, or systemic embolism: none documented before the presenting retinal artery occlusion → 0.\n- Vascular disease: coronary artery disease is noted, but no prior MI, peripheral arterial disease, or aortic plaque is documented → 0 under the traditional definition.\n- Sex category: male → 0.\nTotal = 1 + 1 + 2 + 0 + 0 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 864,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

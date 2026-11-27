@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1059",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Vera, Claire is dancing with Lena, Dave is dancing with Wade, and Eve is dancing with Rosa.\nThroughout the song, the dancers often trade partners. First, Claire and Eve switch partners. Then, Dave and Claire switch partners. Then, Alice and Bob switch partners. Then, Bob and Dave switch partners. Finally, Claire and Eve switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Umar\n(B) Vera\n(C) Lena\n(D) Wade\n(E) Rosa",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Vera",
+      "Claire": "Lena",
+      "Dave": "Wade",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Vera",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Vera",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Umar",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Rosa",
+      "Claire": "Wade",
+      "Dave": "Umar",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Rosa",
+      "Claire": "Lena",
+      "Dave": "Umar",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Vera, Lena, Wade, Rosa\n1. Claire and Eve: Umar, Vera, Rosa, Wade, Lena\n2. Dave and Claire: Umar, Vera, Wade, Rosa, Lena\n3. Alice and Bob: Vera, Umar, Wade, Rosa, Lena\n4. Bob and Dave: Vera, Rosa, Wade, Umar, Lena\n5. Claire and Eve: Vera, Rosa, Lena, Umar, Wade\nClaire's partner is Lena, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1251,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

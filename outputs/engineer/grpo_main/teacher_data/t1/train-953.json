@@ -1,0 +1,22 @@
+{
+  "id": "train-953",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nPatient complained of a 20-year history of fatigue after activities, which was aggravated over the previous 2 mo.\nA 53-year-old male was admitted to hospital with complaints of a 20-year history of fatigue after activities, which was aggravated over the previous 2 mo.\nHe had a more than 2-year history of diabetes.\nThere was no history of rheumatic fever and family history of cardiac tumor or sudden death.\nOn admission, there was a diastolic rumbling pathological murmur of grade III/VI in the apical region. Grade IV/VI systolic ejection murmur and III/VI diastolic sighing murmur in the second intercostal space near the right margin of sternum were heard. Electrocardiogram showed atrial fibrillation with rapid ventricular rate.\nLaboratory data revealed slightly elevated glutamic oxaloacetic transaminase (45 U/L, normal level < 40 U/L) and total bilirubin (56 μmol/L, normal range < 23 μmol/L) and remarkably increased brain natriuretic peptide (692.7 pg/mL, normal range 0-100 pg/mL). Erythrocyte sedimentation rate was 6 mm/h. There were unremarkable abnormalities in circulation levels of serum tumor markers.\nChest computed tomography revealed bilateral emphysema with mild pulmonary edema, generally enlarged heart, and calcification of the aortic and mitral valves. Transesophageal echocardiography (TEE) demonstrated enlarged left atrium (50 mm), left ventricle (60 mm), and right atrium (64 mm × 57 mm). Mitral, aortic, and tricuspid valves were thickened and adhered, similar to rheumatic valve lesions. The mitral and aortic valve orifices exhibited severe stenosis, and the areas were 0.64 cm2 and 0.87 cm2, respectively. Multiple abnormal echo masses were found in the left ventricle (Figure ), with the largest mass (about 23 mm × 15 mm in diameter) located in the left ventricular cavity at the junction of the anterior septum and the posterior papillary muscle.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 545,
+  "solution": "Apply CHA₂DS₂-VASc to the admission findings in this man with atrial fibrillation:\n- Congestive heart failure (1): exertional fatigue, pulmonary edema, cardiomegaly, and BNP 692.7 pg/mL support clinical heart failure → 1.\n- Hypertension (1): not documented → 0.\n- Age 65–74 (1) or ≥75 (2): age 53 → 0.\n- Diabetes (1): present for more than two years → 1.\n- Prior stroke, TIA, or systemic embolism (2): not documented → 0.\n- Vascular disease (1): no prior MI, peripheral arterial disease, or aortic plaque documented; valvular stenosis does not count → 0.\n- Female sex (1): male → 0.\nSum = 1 + 0 + 0 + 1 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 835,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

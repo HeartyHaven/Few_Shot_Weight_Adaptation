@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-380",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Define a regular $n$-pointed star to be the union of $n$ line segments $P_1P_2, P_2P_3,\\ldots, P_nP_1$ such that\nthe points $P_1, P_2,\\ldots, P_n$ are coplanar and no three of them are collinear,\neach of the $n$ line segments intersects at least one of the other line segments at a point other than an endpoint,\nall of the angles at $P_1, P_2,\\ldots, P_n$ are congruent,\nall of the $n$ line segments $P_2P_3,\\ldots, P_nP_1$ are congruent, and\nthe path $P_1P_2, P_2P_3,\\ldots, P_nP_1$ turns counterclockwise at an angle of less than 180 degrees at each vertex.\nThere are no regular 3-pointed, 4-pointed, or 6-pointed stars. All regular 5-pointed stars are similar, but there are two non-similar regular 7-pointed stars. How many non-similar regular 1000-pointed stars are there?\n",
+  "answer": "199",
+  "prompt_tokens": 294,
+  "solution": "Congruent vertex angles and counterclockwise turns give a constant turning angle θ with 0 < θ < 180°. After 1000 turns the edge direction returns to its start, so 1000θ = 360°k for an integer 1 ≤ k ≤ 499.\nBecause the edges have equal length, the rotation through θ taking P₁ to P₂ also takes P₂ to P₃: it rotates the first edge vector into the second. Repeating this shows that the path advances k positions at a time around a regular 1000-gon. It visits all 1000 vertices before repeating exactly when gcd(k,1000) = 1, since the first return occurs at the smallest positive m for which 1000 divides mk.\nThe step k = 1 gives a convex polygon with no crossings. For each coprime k > 1 in range, the chords from position 0 to k and from 1 to k+1 cross because their endpoints alternate around the circle. By rotational symmetry every edge has a crossing. Each such k determines one shape up to similarity, and distinct k give different vertex angles.\nSince 1000 = 2³ · 5³, count the odd integers from 1 to 499 that are not multiples of 5. There are 250 odd integers, of which 50 are odd multiples of 5 (5, 15, …, 495). Removing those and then k = 1 leaves 250 − 50 − 1 = 199.\nFinal answer: 199",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1425,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "199",
+    "correct": true
+  }
+}

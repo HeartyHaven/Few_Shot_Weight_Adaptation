@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-401",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lena, Bob is dancing with Stefan, Claire is dancing with Vera, Dave is dancing with Karl, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Dave and Eve switch partners. Then, Dave and Bob switch partners. Then, Alice and Dave switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Lena\n(B) Stefan\n(C) Vera\n(D) Karl\n(E) Tara",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Lena",
+      "Bob": "Stefan",
+      "Claire": "Vera",
+      "Dave": "Karl",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Stefan",
+      "Claire": "Vera",
+      "Dave": "Karl",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Stefan",
+      "Claire": "Vera",
+      "Dave": "Lena",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Lena",
+      "Claire": "Vera",
+      "Dave": "Stefan",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Lena",
+      "Claire": "Vera",
+      "Dave": "Tara",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Lena",
+      "Claire": "Vera",
+      "Dave": "Tara",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Lena, Stefan, Vera, Karl, Tara\n1. Alice ↔ Eve: Tara, Stefan, Vera, Karl, Lena\n2. Dave ↔ Eve: Tara, Stefan, Vera, Lena, Karl\n3. Dave ↔ Bob: Tara, Lena, Vera, Stefan, Karl\n4. Alice ↔ Dave: Stefan, Lena, Vera, Tara, Karl\n5. Alice ↔ Eve: Karl, Lena, Vera, Tara, Stefan\nBob's final partner is Lena, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1043,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

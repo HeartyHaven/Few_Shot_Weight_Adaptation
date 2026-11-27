@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-738",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a yellow ball, Bob has a gold ball, Claire has a blue ball, Dave has a grey ball, and Eve has a red ball.\nAs the game progresses, pairs of players trade balls. First, Claire and Eve swap balls. Then, Bob and Dave swap balls. Then, Alice and Dave swap balls. Then, Claire and Alice swap balls. Finally, Bob and Eve swap balls. At the end of the game, Bob has the\nOptions:\n(A) yellow ball\n(B) gold ball\n(C) blue ball\n(D) grey ball\n(E) red ball",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "yellow",
+      "Bob": "gold",
+      "Claire": "blue",
+      "Dave": "grey",
+      "Eve": "red"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "gold",
+      "Claire": "red",
+      "Dave": "grey",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "grey",
+      "Claire": "red",
+      "Dave": "gold",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "red",
+      "Dave": "yellow",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "red",
+      "Bob": "grey",
+      "Claire": "gold",
+      "Dave": "yellow",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "red",
+      "Bob": "blue",
+      "Claire": "gold",
+      "Dave": "yellow",
+      "Eve": "grey"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors in each row are listed for Alice, Bob, Claire, Dave, Eve, in that order.\nInitial: yellow, gold, blue, grey, red.\n1. Claire–Eve: yellow, gold, red, grey, blue.\n2. Bob–Dave: yellow, grey, red, gold, blue.\n3. Alice–Dave: gold, grey, red, yellow, blue.\n4. Claire–Alice: red, grey, gold, yellow, blue.\n5. Bob–Eve: red, blue, gold, yellow, grey.\nBob has the blue ball, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1225,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

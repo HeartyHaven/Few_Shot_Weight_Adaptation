@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-772",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Jane Eyre, Claire gets Candide, Dave gets Hamlet, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Eve and Alice swap books. Then, Eve and Claire swap books. Then, Claire and Alice swap books. Finally, Alice and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Dracula\n(B) Jane Eyre\n(C) Candide\n(D) Hamlet\n(E) Walden",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Hamlet",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Hamlet",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Walden",
+      "Dave": "Hamlet",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Hamlet",
+      "Eve": "Dracula"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Dracula, Jane Eyre, Candide, Hamlet, Walden\n1. Alice ↔ Claire: Candide, Jane Eyre, Dracula, Hamlet, Walden\n2. Eve ↔ Alice: Walden, Jane Eyre, Dracula, Hamlet, Candide\n3. Eve ↔ Claire: Walden, Jane Eyre, Candide, Hamlet, Dracula\n4. Claire ↔ Alice: Candide, Jane Eyre, Walden, Hamlet, Dracula\n5. Alice ↔ Claire: Walden, Jane Eyre, Candide, Hamlet, Dracula\nClaire has Candide, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1324,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-270",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Persuasion, Claire gets Dune, Dave gets Siddhartha, Eve gets Candide, Fred gets Hamlet, and Gertrude gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Fred and Claire swap books. Then, Claire and Dave swap books. Then, Alice and Claire swap books. Then, Claire and Gertrude swap books. Then, Fred and Eve swap books. Then, Alice and Bob swap books. Finally, Fred and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) Beloved\n(B) Persuasion\n(C) Dune\n(D) Siddhartha\n(E) Candide\n(F) Hamlet\n(G) Middlemarch",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Dune",
+      "Dave": "Siddhartha",
+      "Eve": "Candide",
+      "Fred": "Hamlet",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Hamlet",
+      "Dave": "Siddhartha",
+      "Eve": "Candide",
+      "Fred": "Dune",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Dune",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Beloved",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Dune",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Dune",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch",
+      "Dave": "Hamlet",
+      "Eve": "Dune",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Middlemarch",
+      "Dave": "Hamlet",
+      "Eve": "Dune",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Middlemarch",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Dune",
+      "Gertrude": "Beloved"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Beloved, Persuasion, Dune, Siddhartha, Candide, Hamlet, Middlemarch\n1. Fred ↔ Claire: Beloved, Persuasion, Hamlet, Siddhartha, Candide, Dune, Middlemarch\n2. Claire ↔ Dave: Beloved, Persuasion, Siddhartha, Hamlet, Candide, Dune, Middlemarch\n3. Alice ↔ Claire: Siddhartha, Persuasion, Beloved, Hamlet, Candide, Dune, Middlemarch\n4. Claire ↔ Gertrude: Siddhartha, Persuasion, Middlemarch, Hamlet, Candide, Dune, Beloved\n5. Fred ↔ Eve: Siddhartha, Persuasion, Middlemarch, Hamlet, Dune, Candide, Beloved\n6. Alice ↔ Bob: Persuasion, Siddhartha, Middlemarch, Hamlet, Dune, Candide, Beloved\n7. Fred ↔ Eve: Persuasion, Siddhartha, Middlemarch, Hamlet, Candide, Dune, Beloved\nBob has Siddhartha, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1043,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -85,11 +85,18 @@ def change(tid, fn, msg, push=True, tries=5):
         b = load(); t = find(b, tid); fn(t); save(b)
         if not push:
             return t
-        git("add", BOARD, MD); git("commit", "-q", "-m", f"board: {msg}", check=False)
+        git("add", BOARD, MD); c = git("commit", "-q", "-m", f"board: {msg}", check=False)
         r = git("push", "-q", check=False)
         if r.returncode == 0:
             return t
-        git("reset", "-q", "--hard", "HEAD~1"); time.sleep(2 + 3 * i)          # lost the race: re-read and re-check
+        # Undo only our board commit and the two board files; never `reset --hard` (it wiped uncommitted code before).
+        if c.returncode == 0:
+            git("reset", "-q", "--soft", "HEAD~1")
+        git("reset", "-q", "HEAD", "--", BOARD, MD); git("checkout", "-q", "--", BOARD, MD)
+        if not any(s in r.stderr for s in ("rejected", "fetch first", "non-fast-forward")):   # no access, network, auth: not a race
+            sys.exit(f"board push failed (not a race), change not saved: {r.stderr.strip()[:300]}\n"
+                     "On a host without repo access use --no-push (local board only).")
+        time.sleep(2 + 3 * i)          # lost the race: re-read and re-check
     sys.exit("could not push the board after several tries")
 
 

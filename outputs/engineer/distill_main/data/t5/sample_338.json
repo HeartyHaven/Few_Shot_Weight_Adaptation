@@ -1,0 +1,17 @@
+{
+  "id": "sample_338",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(my_dict):\n    result = {v: k for k, v in my_dict.items()}\n    return result\n```\n\nInput: f({'a': 1, 'b': 2, 'c': 3, 'd': 2})",
+  "answer": "{1: 'a', 2: 'd', 3: 'c'}",
+  "solution": "The comprehension reads each (k, v) in insertion order and assigns result[v] = k.\n('a', 1) gives {1: 'a'}.\n('b', 2) gives {1: 'a', 2: 'b'}.\n('c', 3) gives {1: 'a', 2: 'b', 3: 'c'}.\n('d', 2) overwrites 'b' with 'd' at key 2 without changing the key's position.\nFinal answer: {1: 'a', 2: 'd', 3: 'c'}",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 8,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "{1: 'a', 2: 'd', 3: 'c'}",
+    "correct": true
+  }
+}

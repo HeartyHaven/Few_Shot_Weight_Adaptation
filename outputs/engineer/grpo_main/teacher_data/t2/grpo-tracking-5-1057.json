@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1057",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Candide, Claire gets Beloved, Dave gets The Hobbit, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Alice swap books. Then, Bob and Claire swap books. Then, Dave and Alice swap books. Finally, Claire and Bob swap books. At the end of the semester, Eve has\nOptions:\n(A) Dune\n(B) Candide\n(C) Beloved\n(D) The Hobbit\n(E) Hamlet",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "Beloved",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Dune | Candide | Beloved | The Hobbit | Hamlet\n1. Bob–Alice: Candide | Dune | Beloved | The Hobbit | Hamlet\n2. Claire–Alice: Beloved | Dune | Candide | The Hobbit | Hamlet\n3. Bob–Claire: Beloved | Candide | Dune | The Hobbit | Hamlet\n4. Dave–Alice: The Hobbit | Candide | Dune | Beloved | Hamlet\n5. Claire–Bob: The Hobbit | Dune | Candide | Beloved | Hamlet\nEve has Hamlet, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1186,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

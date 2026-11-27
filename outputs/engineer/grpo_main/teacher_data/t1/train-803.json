@@ -1,0 +1,22 @@
+{
+  "id": "train-803",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nOur patient is a 54-year-old male with a past medical history of end stage renal disease on hemodialysis, diabetes mellitus type 2, hypertension, and hepatitis C who presented for altered mental status. The patient had a recent internal medicine clinic visit with concern for pain due to paraspinal muscle spasm. The patient was started on baclofen 10 mg b.i.d. and tramadol 50 mg b.i.d. On the day of admission, the patient was found to be lying on the ground and speaking incoherently by an acquaintance. He was brought to the hospital and admitted to the intensive care unit for altered mental status.\nThe vital signs were the following: temperature 99.1°F, respiratory rate 21 breaths/minute, pulse 83 beats/minute, blood pressure 138/64 mmhg, and pulse oxygenation 99% on room air. On initial presentation, the patient was lethargic but arousable and unable to answer questions. The remainder of the exam was consistent with his known comorbidities including a left upper extremity arteriovenous fistula and right lower extremity transmetatarsal amputation. Laboratory tests showed the following: sodium 141 mEq/L, potassium 5.2 mEq/L, chloride 101 mEq/L, bicarbonate 26 mEq/L, blood urea nitrogen 55 mg/dL, creatinine 10.98 mg/dL. A white blood cell count was 12.4 mg/dL, hemoglobin 11.3 mg/dL, and platelet count 155/mm3. A venous blood gas included a pH of 7.41 and carbon dioxide 44 mmHg. A hepatic function panel had a total bilirubin of 0.8 mg/dL, AST 45 u/L, ALT 26 u/L, alkaline phosphatase 52 u/L, creatine kinase 1738 u/L, and ammonia 52 u/L. A head computed tomography was performed with no acute intracranial abnormalities. An abdominal ultrasound found hepatomegaly with fatty infiltration. A urine toxicology screen was negative. The patient's pharmacy confirmed fulfillment of the baclofen and tramadol prescription 3 days prior to admission. Compliance with his last hemodialysis session was confirmed. With high suspicion for baclofen-induced encephalopathy, the patient was immediately dialyzed. He received hemodialysis for two sessions with significant improvement in mental status without any residual symptoms. Upon discharge, the patient had baclofen discontinued with no similar episodes since the present hospitalization.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 644,
+  "solution": "Apply CHA₂DS₂-VASc to the admission history:\n- Heart failure or LV dysfunction (1 if present): not documented → 0.\n- Hypertension: established diagnosis → 1.\n- Age (65–74 = 1; ≥75 = 2): age 54 → 0.\n- Diabetes: known type 2 diabetes → 1.\n- Prior stroke, TIA, or systemic embolism (2 if present): not documented → 0.\n- Vascular disease (1 if present): count 1 on the assumption that the prior transmetatarsal amputation reflects peripheral arterial disease. The indication for amputation is not explicitly stated.\n- Sex category (1 for female): male → 0.\nTotal under that assumption = 0 + 1 + 0 + 1 + 0 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 803,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

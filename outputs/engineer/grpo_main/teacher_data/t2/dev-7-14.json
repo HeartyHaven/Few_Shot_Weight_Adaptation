@@ -1,0 +1,128 @@
+{
+  "id": "dev-7-14",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets The Hobbit, Claire gets Candide, Dave gets Dune, Eve gets Dracula, Fred gets Siddhartha, and Gertrude gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Eve and Gertrude swap books. Then, Dave and Claire swap books. Then, Dave and Fred swap books. Then, Dave and Bob swap books. Then, Gertrude and Alice swap books. Finally, Claire and Dave swap books. At the end of the semester, Dave has\nOptions:\n(A) Persuasion\n(B) The Hobbit\n(C) Candide\n(D) Dune\n(E) Dracula\n(F) Siddhartha\n(G) Walden",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "Dracula",
+      "Fred": "Siddhartha",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Dracula",
+      "Fred": "Siddhartha",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Walden",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Persuasion",
+      "Eve": "Walden",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Siddhartha",
+      "Eve": "Walden",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Siddhartha",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Persuasion",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "The Hobbit",
+      "Dave": "Dune",
+      "Eve": "Walden",
+      "Fred": "Persuasion",
+      "Gertrude": "Candide"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists books in reader order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Persuasion, The Hobbit, Candide, Dune, Dracula, Siddhartha, Walden\n1. Alice ↔ Claire: Candide, The Hobbit, Persuasion, Dune, Dracula, Siddhartha, Walden\n2. Eve ↔ Gertrude: Candide, The Hobbit, Persuasion, Dune, Walden, Siddhartha, Dracula\n3. Dave ↔ Claire: Candide, The Hobbit, Dune, Persuasion, Walden, Siddhartha, Dracula\n4. Dave ↔ Fred: Candide, The Hobbit, Dune, Siddhartha, Walden, Persuasion, Dracula\n5. Dave ↔ Bob: Candide, Siddhartha, Dune, The Hobbit, Walden, Persuasion, Dracula\n6. Gertrude ↔ Alice: Dracula, Siddhartha, Dune, The Hobbit, Walden, Persuasion, Candide\n7. Claire ↔ Dave: Dracula, Siddhartha, The Hobbit, Dune, Walden, Persuasion, Candide\nDave has Dune, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

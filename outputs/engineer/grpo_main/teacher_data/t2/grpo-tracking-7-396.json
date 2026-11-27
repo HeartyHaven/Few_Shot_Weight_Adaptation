@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-396",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Walden, Claire gets Jane Eyre, Dave gets Ivanhoe, Eve gets Beloved, Fred gets Dune, and Gertrude gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Alice and Fred swap books. Then, Eve and Claire swap books. Then, Eve and Alice swap books. Then, Fred and Bob swap books. Then, Dave and Gertrude swap books. Then, Fred and Alice swap books. Finally, Eve and Bob swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Middlemarch\n(B) Walden\n(C) Jane Eyre\n(D) Ivanhoe\n(E) Beloved\n(F) Dune\n(G) The Hobbit",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Beloved",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Beloved",
+      "Fred": "Middlemarch",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "Ivanhoe",
+      "Eve": "Jane Eyre",
+      "Fred": "Middlemarch",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "Ivanhoe",
+      "Eve": "Dune",
+      "Fred": "Middlemarch",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "Ivanhoe",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Middlemarch",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude), in that order.\nInitial: (Middlemarch, Walden, Jane Eyre, Ivanhoe, Beloved, Dune, The Hobbit)\n1. Alice–Fred: (Dune, Walden, Jane Eyre, Ivanhoe, Beloved, Middlemarch, The Hobbit)\n2. Eve–Claire: (Dune, Walden, Beloved, Ivanhoe, Jane Eyre, Middlemarch, The Hobbit)\n3. Eve–Alice: (Jane Eyre, Walden, Beloved, Ivanhoe, Dune, Middlemarch, The Hobbit)\n4. Fred–Bob: (Jane Eyre, Middlemarch, Beloved, Ivanhoe, Dune, Walden, The Hobbit)\n5. Dave–Gertrude: (Jane Eyre, Middlemarch, Beloved, The Hobbit, Dune, Walden, Ivanhoe)\n6. Fred–Alice: (Walden, Middlemarch, Beloved, The Hobbit, Dune, Jane Eyre, Ivanhoe)\n7. Eve–Bob: (Walden, Dune, Beloved, The Hobbit, Middlemarch, Jane Eyre, Ivanhoe)\nGertrude has Ivanhoe, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1031,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

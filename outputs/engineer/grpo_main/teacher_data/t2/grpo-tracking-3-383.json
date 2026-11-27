@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-383",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Ivanhoe, and Claire gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Claire and Bob swap books. Finally, Alice and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Beloved\n(B) Ivanhoe\n(C) Dracula",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Beloved",
+      "Claire": "Ivanhoe"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 140,
+  "solution": "Reader order (each row): Alice, Bob, Claire.\nInitial: Beloved, Ivanhoe, Dracula.\n1. Claire ↔ Alice: Dracula, Ivanhoe, Beloved.\n2. Claire ↔ Bob: Dracula, Beloved, Ivanhoe.\n3. Alice ↔ Bob: Beloved, Dracula, Ivanhoe.\nClaire has Ivanhoe, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1008,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

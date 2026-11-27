@@ -1,0 +1,22 @@
+{
+  "id": "train-981",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 76-year-old female patient presented at the emergency department with dyspnea, a productive cough, and a fever for several days. She had experienced exacerbations of congestive heart failure for the previous 20 years and had a permanent cardiac pacemaker that had also been initially inserted about 20 years earlier due to sick sinus syndrome with atrial fibrillation. She also had dementia, and a history of multiple incidents of cerebral infarction and its complications.\nAt the emergency department, her blood pressure was 112/72 mmHg, pulse rate was 101/min with an irregular rhythm, and body temperature was 36.5℃. On examination, she appeared tachypneic (respiratory rate, 28/min) and her breathing sounds were reduced over the left lung field. The arterial oxygen saturation in room air was 92%. The other laboratory findings were not notable. Chest radiography revealed opacification of the whole left lung field, thought by a physician of the emergency department to be unilateral pleural effusion (). Therefore, after local anesthesia and under sterile conditions, a 16F catheter (Prime-S; Sungwon Medical, Cheongju, Korea) was inserted into the 6th left intercostal space in the anterior axillary line without image guidance.\nShortly after insertion, blood was draining in a pulsatile way from the catheter. However, she was hemodynamically stable with a blood pressure of 132/78 mmHg and a heart rate of 98/min. After clamping the catheter, contrast-enhanced computed tomography (CT) of the chest was performed () and showed that severe cardiomegaly with displacement of the heart to the left with atelectasis (originally thought to be massive pleural effusion). The catheter had been inserted anterolaterally into the sixth intercostal space on the left and was within the left ventricle, exiting the ventricle through the aortic valve with the tip of the catheter located in the ascending aorta. Transthoracic echocardiography revealed mild aortic regurgitation with a small amount of pericardial effusion without hemodynamic significance.\nOpen mini-thoracotomy with chest tube insertion was performed under general anesthesia the next day. The previous catheter was carefully pulled out without myocardial repair. Although the removal of the catheter was successful and well tolerated by the patient, the hospital course was complicated by pneumonia and long-term mechanical ventilation. About a month after the complication, the patient died from pneumonia with septic shock.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 616,
+  "solution": "Apply CHA2DS2-VASc to the patient's admission history of atrial fibrillation:\n- Congestive heart failure: recurrent exacerbations, +1.\n- Hypertension: no history documented, 0.\n- Age: 76 years, +2 for age ≥75; do not also count age 65–74.\n- Diabetes: not documented, 0.\n- Prior stroke, TIA, or systemic arterial embolism: prior cerebral infarctions, +2 total regardless of the number of strokes.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): not documented, 0.\n- Sex category: female, +1.\nTotal = 1 + 0 + 2 + 0 + 2 + 0 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 938,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

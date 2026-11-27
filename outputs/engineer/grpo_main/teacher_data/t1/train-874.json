@@ -1,0 +1,22 @@
+{
+  "id": "train-874",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 71-year-old Nigerian female, with past medical history of rheumatic valvular disease with mitral stenosis, and atrial fibrillation, presented for routine preoperative chest X-ray for cataract surgery. The patient was asymptomatic, and otherwise in reasonably good health. A recent echocardiogram confirmed severe left atrial and left ventricular enlargement; the mitral valve area was found to be 0.7 cm2 (normal 3-4 cm2), consistent with mitral valve stenosis. Incidental findings on the chest X-ray revealed an unusual pattern of curvilinear cardiac calcification (Figures and ). Subsequently, a noncontrast CT scan of the thorax was obtained for further characterization and anatomical localization (Figures , , , and ). Surgical intervention was offered in years past, though did not occur for unknown reason(s).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 253,
+  "solution": "For CHA₂DS₂-VASc, score the findings at presentation:\n- Heart failure or LV systolic dysfunction: neither is documented; chamber enlargement alone does not qualify (0).\n- Hypertension: not documented (0).\n- Age: 71, in the 65–74 range (1); the 2-point category starts at 75.\n- Diabetes: not documented (0).\n- Prior stroke, TIA, or systemic embolism: not documented (0).\n- Vascular disease: no prior MI, peripheral arterial disease, or aortic plaque documented (0). Rheumatic mitral stenosis is not a vascular-disease point.\n- Female sex: 1.\nTotal: 0 + 0 + 1 + 0 + 0 + 0 + 1 = 2. This numerical score does not determine the anticoagulation indication in atrial fibrillation with severe rheumatic mitral stenosis.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 941,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

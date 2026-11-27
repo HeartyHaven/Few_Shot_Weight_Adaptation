@@ -1,0 +1,22 @@
+{
+  "id": "train-924",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 57-year-old man presents to his family physician for a checkup. He has had type 2 diabetes mellitus for 13 years, for which he has been taking metformin and vildagliptin. He has smoked 10–15 cigarettes daily for 29 years. Family history is irrelevant. Vital signs include: temperature 36.6°C (97.8°F), blood pressure 152/87 mm Hg and pulse 88/min. Examination reveals moderate abdominal obesity with a body mass index of 32 kg/m². The remainder of the examination is unremarkable.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 208,
+  "solution": "CHA₂DS₂-VASc at presentation:\n- Congestive heart failure or LV dysfunction: none reported, 0.\n- Hypertension: presenting BP 152/87 mm Hg, +1 if the elevated systolic pressure is counted as hypertension. A single reading does not establish chronic hypertension.\n- Age: 57 years, 0 (65–74 scores 1; ≥75 scores 2).\n- Diabetes mellitus: established type 2 diabetes, +1.\n- Prior stroke, TIA, or systemic embolism (2 points): none reported, 0.\n- Vascular disease: none reported, 0. Smoking and obesity do not themselves qualify.\n- Female sex: male, 0.\nTotal with hypertension counted = 0 + 1 + 0 + 1 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 919,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

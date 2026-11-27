@@ -1,0 +1,22 @@
+{
+  "id": "train-6461",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 58-year-old man is brought to the Emergency Department after 2 days of shortness breath, orthopnea, and lower limb edema. His past medical history is significant for hypertension and a myocardial infarction 3 years ago that required a coronary arterial bypass graft. He has not been able to take prescribed medicine in several months due to recent unemployment and issues with insurance. On admission, his blood pressure is 155/92 mmHg, heart rate is 102/min, respiratory rate is 24/min, and temperature is 36.4°C (97.5°F). On physical examination there are fine rales in both lungs, regular and rhythmic cardiac sounds with an S3 gallop and a grade II/VI holosystolic murmur. Initial laboratory tests are shown below:\nNa+ 140 mEq/L\nK+ 4.2 mEq/L\nCl- 105 mEq/L\nBUN 20 mg/dL\nCreatinine 0.8 mg/dL\nThe patient is stabilized and admitted to the hospital. The next day his blood pressure is 110/60 mmHg, heart rate is 110/min, respiratory rate is 18/min, and temperature is 36.4°C (97.5°F).\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 355,
+  "solution": "CURB-65 assigns 1 point for each qualifying finding. Use admission values, not the next day's measurements:\n- Confusion: none documented → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN 20 mg/dL exceeds the cutoff → 1.\n- Respiratory rate ≥30/min: 24/min → 0.\n- SBP <90 mmHg or DBP ≤60 mmHg: admission BP 155/92 mmHg → 0.\n- Age ≥65 years: age 58 → 0.\nSum: 0 + 1 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 955,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

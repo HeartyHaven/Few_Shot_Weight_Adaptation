@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1046",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Dracula, Claire gets Hamlet, Dave gets Ivanhoe, Eve gets Middlemarch, Fred gets Emma, and Gertrude gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Alice and Gertrude swap books. Then, Fred and Bob swap books. Then, Bob and Fred swap books. Then, Gertrude and Fred swap books. Then, Claire and Fred swap books. Finally, Dave and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Dune\n(B) Dracula\n(C) Hamlet\n(D) Ivanhoe\n(E) Middlemarch\n(F) Emma\n(G) Siddhartha",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Middlemarch",
+      "Fred": "Emma",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Emma",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Emma",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Emma",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Dracula",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Emma",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Hamlet",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Middlemarch",
+      "Eve": "Dune",
+      "Fred": "Hamlet",
+      "Gertrude": "Emma"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Dune, Dracula, Hamlet, Ivanhoe, Middlemarch, Emma, Siddhartha\n1. Dave ↔ Alice: Ivanhoe, Dracula, Hamlet, Dune, Middlemarch, Emma, Siddhartha\n2. Alice ↔ Gertrude: Siddhartha, Dracula, Hamlet, Dune, Middlemarch, Emma, Ivanhoe\n3. Fred ↔ Bob: Siddhartha, Emma, Hamlet, Dune, Middlemarch, Dracula, Ivanhoe\n4. Bob ↔ Fred: Siddhartha, Dracula, Hamlet, Dune, Middlemarch, Emma, Ivanhoe\n5. Gertrude ↔ Fred: Siddhartha, Dracula, Hamlet, Dune, Middlemarch, Ivanhoe, Emma\n6. Claire ↔ Fred: Siddhartha, Dracula, Ivanhoe, Dune, Middlemarch, Hamlet, Emma\n7. Dave ↔ Eve: Siddhartha, Dracula, Ivanhoe, Middlemarch, Dune, Hamlet, Emma\nAlice's final book is Siddhartha, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1344,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

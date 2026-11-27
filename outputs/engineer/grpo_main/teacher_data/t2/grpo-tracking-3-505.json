@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-505",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Siddhartha, and Claire gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Bob and Claire swap books. Finally, Bob and Alice swap books. At the end of the semester, Alice has\nOptions:\n(A) Walden\n(B) Siddhartha\n(C) Ivanhoe",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire), in that order.\nInitial: (Walden, Siddhartha, Ivanhoe)\n1. Bob ↔ Claire: (Walden, Ivanhoe, Siddhartha)\n2. Bob ↔ Claire: (Walden, Siddhartha, Ivanhoe)\n3. Bob ↔ Alice: (Siddhartha, Walden, Ivanhoe)\nAlice has Siddhartha, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1184,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

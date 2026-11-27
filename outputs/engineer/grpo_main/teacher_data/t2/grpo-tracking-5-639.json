@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-639",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Nadia, Claire is dancing with Wade, Dave is dancing with Quinn, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Dave and Claire switch partners. Then, Alice and Dave switch partners. Then, Dave and Eve switch partners. Then, Bob and Claire switch partners. Finally, Dave and Eve switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Umar\n(B) Nadia\n(C) Wade\n(D) Quinn\n(E) Yuki",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Nadia",
+      "Claire": "Wade",
+      "Dave": "Quinn",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Wade",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Umar",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Quinn",
+      "Claire": "Nadia",
+      "Dave": "Yuki",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Quinn",
+      "Claire": "Nadia",
+      "Dave": "Umar",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Nadia, Wade, Quinn, Yuki.\n1. Dave ↔ Claire: Umar, Nadia, Quinn, Wade, Yuki.\n2. Alice ↔ Dave: Wade, Nadia, Quinn, Umar, Yuki.\n3. Dave ↔ Eve: Wade, Nadia, Quinn, Yuki, Umar.\n4. Bob ↔ Claire: Wade, Quinn, Nadia, Yuki, Umar.\n5. Dave ↔ Eve: Wade, Quinn, Nadia, Umar, Yuki.\nDave's partner is Umar, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1266,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

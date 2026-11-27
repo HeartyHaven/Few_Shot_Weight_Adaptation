@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-461",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a green ball, Bob has a teal ball, Claire has a gold ball, Dave has a pink ball, and Eve has a blue ball.\nAs the game progresses, pairs of players trade balls. First, Bob and Alice swap balls. Then, Bob and Claire swap balls. Then, Eve and Bob swap balls. Then, Bob and Eve swap balls. Finally, Dave and Eve swap balls. At the end of the game, Dave has the\nOptions:\n(A) green ball\n(B) teal ball\n(C) gold ball\n(D) pink ball\n(E) blue ball",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "green",
+      "Bob": "teal",
+      "Claire": "gold",
+      "Dave": "pink",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "green",
+      "Claire": "gold",
+      "Dave": "pink",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "gold",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "gold",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "gold",
+      "Claire": "green",
+      "Dave": "blue",
+      "Eve": "pink"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors are listed in order: Alice, Bob, Claire, Dave, Eve.\nInitial: (green, teal, gold, pink, blue)\n1. Bob and Alice swap: (teal, green, gold, pink, blue)\n2. Bob and Claire swap: (teal, gold, green, pink, blue)\n3. Eve and Bob swap: (teal, blue, green, pink, gold)\n4. Bob and Eve swap: (teal, gold, green, pink, blue)\n5. Dave and Eve swap: (teal, gold, green, blue, pink)\nDave has the blue ball, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1109,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

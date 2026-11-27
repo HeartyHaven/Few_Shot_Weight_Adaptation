@@ -1,0 +1,22 @@
+{
+  "id": "train-4274",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 59-year-old diabetic and hypertensive male patient presented to our department with acute onset chest pain radiating to the left arm. His blood pressure was 110/70 mmHg, pulse rate was 68 beats/min, the respiratory rate was 16 breaths/min, and oxygen saturation was 99% on room air. His 12-lead electrocardiography revealed QS complexes in the inferior leads (). Two-dimensional echocardiography showed the absence of regional wall abnormality of the left ventricle and normal valvular function. His high-sensitivity troponin T (Elecsys Assay, Roche diagnostics, MA) level was 5.16 ng/mL (N < 0.014 ng/mL). The patient had undergone CABG 7 years back in another hospital for stable angina. One arterial graft, that is, LIMA to left anterior descending (LAD) artery and two venous grafts, one each to the first obtuse marginal (OM1) and the posterior descending artery (PDA) were implanted at that time. His previous left ventricular ejection fraction was also normal. He was doing well on guideline-directed medical therapy since then. He was compliant to drugs. His blood sugar levels were under control with oral hypoglycemic agents. His estimated glomerular filtration rate (eGFR) by the Modification of Diet in Renal Disease (MDRD) equation was 65.87 mL/min/1.73 m2. Other hematological and biochemical parameters were within normal range.\nHe was taken upon coronary angiogram with an intention to revascularize. His native coronary angiogram revealed severe triple vessel disease with total occlusion of the right coronary artery in mid part ( and ). To our surprise, both venous grafts were patent ( and ). To our dismay, LIMA graft to LAD graft was 100% occluded proximal to distal anastomotic site ( and ). Therefore, we considered LIMA graft as the culprit lesion and decided to intervene. However, the patient refused any intervention and opted for medical therapy. During his hospital stay, he demonstrated hemodynamic stability and pain-free status for the next 72 hours. He was discharged on dual antiplatelet (aspirin plus ticagrelor) regimen supplemented by other drugs for secondary prevention after myocardial infarction as directed by the guidelines. At first and second follow ups at 15 days and 1 month thereafter, he was symptomatic free on optimal medical therapy.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 18,
+  "prompt_tokens": 604,
+  "solution": "Use the HEART score for acute chest pain, based on the presenting history, ECG, age, risk factors, and initial troponin (0–2 points each).\n- History: acute chest pain radiating to the left arm in a patient with known coronary disease is highly suspicious for ischemia = 2 (slightly/moderately suspicious = 0/1).\n- ECG: inferior QS complexes are described, but no repolarization disturbance or ST depression is reported. QS morphology alone does not earn HEART ECG points = 0 (nonspecific repolarization changes = 1; significant ST depression = 2).\n- Age: 59 falls in the 45–64 range = 1 (<45 = 0; ≥65 = 2).\n- Risk factors: he has diabetes and hypertension. Established coronary atherosclerosis with prior CABG independently places him in the 2-point category (otherwise 0, 1–2, or ≥3 risk factors score 0, 1, or 2).\n- Troponin: 5.16/0.014 ≈ 369 times the upper reference limit = 2 (>3 times the limit; normal = 0, elevated up to 3 times = 1).\nTotal = 2 + 0 + 1 + 2 + 2 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 699,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

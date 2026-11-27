@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1129",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Oscar, Claire is dancing with Lena, Dave is dancing with Stefan, and Eve is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Claire and Eve switch partners. Then, Bob and Claire switch partners. Then, Bob and Dave switch partners. Then, Bob and Claire switch partners. Finally, Bob and Claire switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Umar\n(B) Oscar\n(C) Lena\n(D) Stefan\n(E) Priya",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Lena",
+      "Dave": "Stefan",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Priya",
+      "Dave": "Stefan",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Priya",
+      "Claire": "Oscar",
+      "Dave": "Stefan",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Stefan",
+      "Claire": "Oscar",
+      "Dave": "Priya",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Stefan",
+      "Dave": "Priya",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Stefan",
+      "Claire": "Oscar",
+      "Dave": "Priya",
+      "Eve": "Lena"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners in dancer order: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Oscar, Lena, Stefan, Priya\n1. Claire–Eve: Umar, Oscar, Priya, Stefan, Lena\n2. Bob–Claire: Umar, Priya, Oscar, Stefan, Lena\n3. Bob–Dave: Umar, Stefan, Oscar, Priya, Lena\n4. Bob–Claire: Umar, Oscar, Stefan, Priya, Lena\n5. Bob–Claire: Umar, Stefan, Oscar, Priya, Lena\nBob is dancing with Stefan, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 996,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

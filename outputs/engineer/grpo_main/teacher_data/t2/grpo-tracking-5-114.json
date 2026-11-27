@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-114",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Hamlet, Claire gets The Trial, Dave gets Emma, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Claire and Bob swap books. Then, Claire and Bob swap books. Then, Eve and Claire swap books. Finally, Claire and Eve swap books. At the end of the semester, Eve has\nOptions:\n(A) Persuasion\n(B) Hamlet\n(C) The Trial\n(D) Emma\n(E) Walden",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Hamlet",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "The Trial",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Persuasion, Hamlet, The Trial, Emma, Walden\n1. Bob and Eve swap: Persuasion, Walden, The Trial, Emma, Hamlet\n2. Claire and Bob swap: Persuasion, The Trial, Walden, Emma, Hamlet\n3. Claire and Bob swap: Persuasion, Walden, The Trial, Emma, Hamlet\n4. Eve and Claire swap: Persuasion, Walden, Hamlet, Emma, The Trial\n5. Claire and Eve swap: Persuasion, Walden, The Trial, Emma, Hamlet\nEve holds Hamlet, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1183,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

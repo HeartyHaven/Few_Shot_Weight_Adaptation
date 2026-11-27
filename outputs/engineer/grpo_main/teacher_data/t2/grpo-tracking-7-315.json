@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-315",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Jane Eyre, Claire gets Hamlet, Dave gets Dracula, Eve gets Emma, Fred gets Beloved, and Gertrude gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Alice and Dave swap books. Then, Bob and Claire swap books. Then, Alice and Gertrude swap books. Then, Alice and Gertrude swap books. Then, Eve and Dave swap books. Then, Gertrude and Alice swap books. Finally, Fred and Gertrude swap books. At the end of the semester, Fred has\nOptions:\n(A) Candide\n(B) Jane Eyre\n(C) Hamlet\n(D) Dracula\n(E) Emma\n(F) Beloved\n(G) Dune",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "Emma",
+      "Fred": "Beloved",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Jane Eyre",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Beloved",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Beloved",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Beloved",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Beloved",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "Candide",
+      "Fred": "Dracula",
+      "Gertrude": "Beloved"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Books in fixed order: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude\nInitial: Candide | Jane Eyre | Hamlet | Dracula | Emma | Beloved | Dune\n1. Alice ↔ Dave: Dracula | Jane Eyre | Hamlet | Candide | Emma | Beloved | Dune\n2. Bob ↔ Claire: Dracula | Hamlet | Jane Eyre | Candide | Emma | Beloved | Dune\n3. Alice ↔ Gertrude: Dune | Hamlet | Jane Eyre | Candide | Emma | Beloved | Dracula\n4. Alice ↔ Gertrude: Dracula | Hamlet | Jane Eyre | Candide | Emma | Beloved | Dune\n5. Eve ↔ Dave: Dracula | Hamlet | Jane Eyre | Emma | Candide | Beloved | Dune\n6. Gertrude ↔ Alice: Dune | Hamlet | Jane Eyre | Emma | Candide | Beloved | Dracula\n7. Fred ↔ Gertrude: Dune | Hamlet | Jane Eyre | Emma | Candide | Dracula | Beloved\nFred has Dracula, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1248,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

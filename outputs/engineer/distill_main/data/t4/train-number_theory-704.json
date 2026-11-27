@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-704",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Given a prime $p$ and an integer $a$, we say that $a$ is a $\\textit{primitive root} \\pmod p$ if the set $\\{a,a^2,a^3,\\ldots,a^{p-1}\\}$ contains exactly one element congruent to each of $1,2,3,\\ldots,p-1\\pmod p$.\n\nFor example, $2$ is a primitive root $\\pmod 5$ because $\\{2,2^2,2^3,2^4\\}\\equiv \\{2,4,3,1\\}\\pmod 5$, and this list contains every residue from $1$ to $4$ exactly once.\n\nHowever, $4$ is not a primitive root $\\pmod 5$ because $\\{4,4^2,4^3,4^4\\}\\equiv\\{4,1,4,1\\}\\pmod 5$, and this list does not contain every residue from $1$ to $4$ exactly once.\n\nWhat is the sum of all integers in the set $\\{1,2,3,4,5,6\\}$ that are primitive roots $\\pmod 7$?",
+  "answer": "8",
+  "solution": "If a power equals 1 modulo 7 before the sixth power, subsequent powers repeat, so the first six cannot all be distinct. This rules out 1, 2, 4, and 6: we have 1¹ = 1, 2³ = 8 ≡ 1, 4³ = 64 ≡ 1, and 6² = 36 ≡ 1 (mod 7).\n\nFor 3, successive multiplication by 3 modulo 7 gives 3, 2, 6, 4, 5, 1. For 5, successive multiplication by 5 gives 5, 4, 6, 2, 3, 1. Each list contains all six nonzero residues. Thus the primitive roots in the set are 3 and 5, with sum 3 + 5 = 8.\nFinal answer: 8",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 15,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "8",
+    "correct": true
+  }
+}

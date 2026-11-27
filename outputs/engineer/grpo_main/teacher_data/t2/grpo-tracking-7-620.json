@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-620",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Dune, Claire gets Persuasion, Dave gets The Hobbit, Eve gets Walden, Fred gets Ivanhoe, and Gertrude gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Gertrude and Fred swap books. Then, Claire and Gertrude swap books. Then, Alice and Claire swap books. Then, Eve and Alice swap books. Then, Fred and Eve swap books. Then, Bob and Alice swap books. Finally, Fred and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Candide\n(B) Dune\n(C) Persuasion\n(D) The Hobbit\n(E) Walden\n(F) Ivanhoe\n(G) Siddhartha",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Persuasion",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Persuasion",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Siddhartha",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Siddhartha",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Siddhartha",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe",
+      "Fred": "Siddhartha",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha",
+      "Fred": "Walden",
+      "Gertrude": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Candide | Dune | Persuasion | The Hobbit | Walden | Ivanhoe | Siddhartha\n1. Gertrude ↔ Fred: Candide | Dune | Persuasion | The Hobbit | Walden | Siddhartha | Ivanhoe\n2. Claire ↔ Gertrude: Candide | Dune | Ivanhoe | The Hobbit | Walden | Siddhartha | Persuasion\n3. Alice ↔ Claire: Ivanhoe | Dune | Candide | The Hobbit | Walden | Siddhartha | Persuasion\n4. Eve ↔ Alice: Walden | Dune | Candide | The Hobbit | Ivanhoe | Siddhartha | Persuasion\n5. Fred ↔ Eve: Walden | Dune | Candide | The Hobbit | Siddhartha | Ivanhoe | Persuasion\n6. Bob ↔ Alice: Dune | Walden | Candide | The Hobbit | Siddhartha | Ivanhoe | Persuasion\n7. Fred ↔ Bob: Dune | Ivanhoe | Candide | The Hobbit | Siddhartha | Walden | Persuasion\nBob has Ivanhoe, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1116,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

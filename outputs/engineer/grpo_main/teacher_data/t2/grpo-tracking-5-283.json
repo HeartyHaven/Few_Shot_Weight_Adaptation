@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-283",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Karl, Claire is dancing with Lena, Dave is dancing with Priya, and Eve is dancing with Rosa.\nThroughout the song, the dancers often trade partners. First, Bob and Dave switch partners. Then, Alice and Claire switch partners. Then, Alice and Eve switch partners. Then, Eve and Bob switch partners. Finally, Claire and Bob switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Quinn\n(B) Karl\n(C) Lena\n(D) Priya\n(E) Rosa",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Karl",
+      "Claire": "Lena",
+      "Dave": "Priya",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Priya",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Priya",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Quinn",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Priya"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners in every row are listed in dancer order: Alice, Bob, Claire, Dave, Eve.\nInitial: Quinn, Karl, Lena, Priya, Rosa\n1. Bob ↔ Dave: Quinn, Priya, Lena, Karl, Rosa\n2. Alice ↔ Claire: Lena, Priya, Quinn, Karl, Rosa\n3. Alice ↔ Eve: Rosa, Priya, Quinn, Karl, Lena\n4. Eve ↔ Bob: Rosa, Lena, Quinn, Karl, Priya\n5. Claire ↔ Bob: Rosa, Quinn, Lena, Karl, Priya\nBob is dancing with Quinn, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1197,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

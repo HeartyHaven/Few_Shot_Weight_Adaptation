@@ -1,0 +1,17 @@
+{
+  "id": "sample_125",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, res):\n    for c in '*\\n\"':\n        text = text.replace(c, '!' + str(res))\n    if text.startswith('!'):\n        text = text[len(str(res)):]\n    return text\n```\n\nInput: f('\"Leap and the net will appear', 123)",
+  "answer": "'3Leap and the net will appear'",
+  "solution": "res = 123, so the replacement string '!' + str(res) is '!123'. The loop tests three characters in order. First, '*' is absent, so text is unchanged. Second, the newline is absent, so text is still unchanged. Third, the double quote at the start is replaced, giving text = '!123Leap and the net will appear'.\ntext.startswith('!') is now True. len(str(res)) is 3, so text[3:] skips the first three characters ('!12') and starts at '3'.\nFinal answer: '3Leap and the net will appear'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 4,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'3Leap and the net will appear'",
+    "correct": true
+  }
+}

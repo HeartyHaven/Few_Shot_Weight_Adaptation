@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-238",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Jane Eyre, Claire gets Dracula, Dave gets Hamlet, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Eve and Alice swap books. Then, Claire and Bob swap books. Then, Eve and Bob swap books. Then, Alice and Dave swap books. Finally, Alice and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) The Trial\n(B) Jane Eyre\n(C) Dracula\n(D) Hamlet\n(E) Walden",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Hamlet",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: The Trial | Jane Eyre | Dracula | Hamlet | Walden\n1. Eve and Alice swap: Walden | Jane Eyre | Dracula | Hamlet | The Trial\n2. Claire and Bob swap: Walden | Dracula | Jane Eyre | Hamlet | The Trial\n3. Eve and Bob swap: Walden | The Trial | Jane Eyre | Hamlet | Dracula\n4. Alice and Dave swap: Hamlet | The Trial | Jane Eyre | Walden | Dracula\n5. Alice and Bob swap: The Trial | Hamlet | Jane Eyre | Walden | Dracula\nAlice has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1181,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

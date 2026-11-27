@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-722",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Consider the dark square in an array of unit squares, part of which is shown. The first ring of squares around this center square contains 8 unit squares. The second ring contains 16 unit squares. If we continue this process, then what is the number of unit squares in the $100^{th}$ ring?\n\n[asy]\nfill((2,2)--(7,2)--(7,7)--(2,7)--cycle,gray(0.8));\nfill((3,3)--(6,3)--(6,6)--(3,6)--cycle,gray(0.6));\nfill((4,4)--(4,5)--(5,5)--(5,4)--cycle,black);\nfor (int i=0; i<10; ++i) {\ndraw((0,i)--(9,i));\ndraw((i,0)--(i,9));\n}\n[/asy]",
+  "answer": "800",
+  "prompt_tokens": 222,
+  "solution": "Each ring adds one unit to both ends of each side length. Starting from the center square of side 1, the square through ring 100 therefore has side 1 + 2 × 100 = 201. The square through ring 99 has side 1 + 2 × 99 = 199.\nSubtract their areas to count only the unit squares in ring 100: 201² − 199² = (201 − 199)(201 + 199) = 2 × 400 = 800.\nFinal answer: 800",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1397,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "800",
+    "correct": true
+  }
+}

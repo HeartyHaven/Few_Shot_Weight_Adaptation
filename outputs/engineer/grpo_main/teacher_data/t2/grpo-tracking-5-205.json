@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-205",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Persuasion, Claire gets Emma, Dave gets Walden, and Eve gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Eve and Claire swap books. Then, Eve and Dave swap books. Then, Dave and Eve swap books. Finally, Bob and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) The Trial\n(B) Persuasion\n(C) Emma\n(D) Walden\n(E) Middlemarch",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Persuasion",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Middlemarch",
+      "Dave": "Persuasion",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Middlemarch",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (The Trial, Persuasion, Emma, Walden, Middlemarch)\n1. Claire ↔ Bob: (The Trial, Emma, Persuasion, Walden, Middlemarch)\n2. Eve ↔ Claire: (The Trial, Emma, Middlemarch, Walden, Persuasion)\n3. Eve ↔ Dave: (The Trial, Emma, Middlemarch, Persuasion, Walden)\n4. Dave ↔ Eve: (The Trial, Emma, Middlemarch, Walden, Persuasion)\n5. Bob ↔ Claire: (The Trial, Middlemarch, Emma, Walden, Persuasion)\nDave has Walden, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1176,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-212",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Hamlet, and Claire gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Beloved\n(B) Hamlet\n(C) Persuasion",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Hamlet",
+      "Claire": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Beloved",
+      "Claire": "Persuasion"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Beloved",
+      "Claire": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Hamlet",
+      "Claire": "Beloved"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Books in order (Alice, Bob, Claire):\nInitial: (Beloved, Hamlet, Persuasion)\n1. Bob swaps with Alice: (Hamlet, Beloved, Persuasion)\n2. Claire swaps with Alice: (Persuasion, Beloved, Hamlet)\n3. Bob swaps with Claire: (Persuasion, Hamlet, Beloved)\nAlice has Persuasion, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1128,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

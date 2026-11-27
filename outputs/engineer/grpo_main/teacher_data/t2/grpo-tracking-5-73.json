@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-73",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing fullback, Bob is playing sweeper, Claire is playing left winger, Dave is playing right back, and Eve is playing left back.\nAs the game progresses, pairs of players occasionally swap positions. First, Alice and Bob trade positions. Then, Alice and Dave trade positions. Then, Eve and Claire trade positions. Then, Alice and Dave trade positions. Finally, Claire and Alice trade positions. At the end of the match, Eve is playing\nOptions:\n(A) fullback\n(B) sweeper\n(C) left winger\n(D) right back\n(E) left back",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "fullback",
+      "Bob": "sweeper",
+      "Claire": "left winger",
+      "Dave": "right back",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "fullback",
+      "Claire": "left winger",
+      "Dave": "right back",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "fullback",
+      "Claire": "left winger",
+      "Dave": "sweeper",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "fullback",
+      "Claire": "left back",
+      "Dave": "sweeper",
+      "Eve": "left winger"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "fullback",
+      "Claire": "left back",
+      "Dave": "right back",
+      "Eve": "left winger"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "fullback",
+      "Claire": "sweeper",
+      "Dave": "right back",
+      "Eve": "left winger"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists positions in player order: Alice, Bob, Claire, Dave, Eve.\nInitial: fullback, sweeper, left winger, right back, left back\n1. Alice ↔ Bob: sweeper, fullback, left winger, right back, left back\n2. Alice ↔ Dave: right back, fullback, left winger, sweeper, left back\n3. Eve ↔ Claire: right back, fullback, left back, sweeper, left winger\n4. Alice ↔ Dave: sweeper, fullback, left back, right back, left winger\n5. Claire ↔ Alice: left back, fullback, sweeper, right back, left winger\nEve is the left winger, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1002,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

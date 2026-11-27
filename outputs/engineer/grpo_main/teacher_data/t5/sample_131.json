@@ -1,0 +1,20 @@
+{
+  "id": "sample_131",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    a = len(text)\n    count = 0\n    while text:\n        if text.startswith('a'):\n            count += text.find(' ')\n        else:\n            count += text.find('\\n')\n        text = text[text.find('\\n')+1:text.find('\\n')+a+1]\n    return count\n```\n\nInput: f(\"a\\nkgf\\nasd\\n\")",
+  "answer": "1",
+  "prompt_tokens": 141,
+  "solution": "Set a = 10 and count = 0. The slice advances past the first newline and keeps up to a characters.\n1. 'a\\nkgf\\nasd\\n' starts with 'a' but has no space, so find(' ') gives -1 and count becomes -1. The newline is at index 1, so text[2:12] gives 'kgf\\nasd\\n'.\n2. 'kgf\\nasd\\n' does not start with 'a'. Its first newline is at index 3, so count becomes -1 + 3 = 2. The slice text[4:14] gives 'asd\\n'.\n3. 'asd\\n' starts with 'a' but has no space, so count becomes 2 + (-1) = 1. The newline is at index 3, so text[4:14] gives ''. The loop stops and returns count.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "1",
+    "correct": true
+  }
+}

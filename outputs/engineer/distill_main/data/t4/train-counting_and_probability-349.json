@@ -1,0 +1,17 @@
+{
+  "id": "train-counting_and_probability-349",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Ninety-four bricks, each measuring $4''\\times10''\\times19'',$ are to be stacked one on top of another to form a tower 94 bricks tall. Each brick can be oriented so it contributes $4''\\,$ or $10''\\,$ or $19''\\,$ to the total height of the tower. How many different tower heights can be achieved using all ninety-four of the bricks?\n",
+  "answer": "465",
+  "solution": "Let \\(b,c\\) count the bricks contributing 10 and 19 inches, respectively; the other \\(94-b-c\\) bricks contribute 4 inches. The height is \\(4\\cdot94+6b+15c=376+3(2b+5c)\\), so count distinct values of \\(2b+5c\\).\nWhenever \\(b\\ge5\\), replace five 10-inch bricks by two 19-inch and three 4-inch bricks: both groups contribute 50 inches. Repeating gives a representation of every height with \\(0\\le b\\le4\\). It is unique: modulo 5, the value of \\(2b+5c\\) determines \\(2b\\), hence \\(b\\) since 2 is invertible modulo 5. With \\(b\\) fixed, the value also determines \\(c\\).\nFor each such \\(b\\), all \\(c=0,\\ldots,94-b\\) are feasible, giving \\(95-b\\) heights. The total is \\(95+94+93+92+91=465\\).\nFinal answer: 465",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 59,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "465",
+    "correct": true
+  }
+}

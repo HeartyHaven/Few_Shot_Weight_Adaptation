@@ -1,0 +1,22 @@
+{
+  "id": "train-720",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 56-year-old woman was referred to our outpatient clinic because of progressive exertional dyspnoea. She had undergone closure of a ventricular septum defect when she was 3 years old. At the age of 49, she developed paroxysmal atrial fibrillation. Because she was highly symptomatic and the atrial fibrillation turned out to be resistant to medical therapy, she underwent His bundle ablation and VVI-pacemaker implantation. There were bilateral superior caval veins but no connection between the left subclavian vein and the right superior caval vein, so the pacemaker was implanted on the right side. She had remained asymptomatic for 5 years. She was now referred to our outpatient clinic because of deterioration of her exercise capacity and progressive dyspnoea on exertion.\nAt physical examination, her saturation was 92 % at rest, which dropped to 72 % after mild exercise. Transthoracic echocardiography revealed a moderately dilated right ventricle with a normal systolic function and severe tricuspid valve insufficiency due to tricuspid annular dilation in combination with retraction of the septal leaflet caused by the pacemaker lead. The systolic PAP was estimated at 30 mmHg using the tricuspid insufficiency signal. Colour Doppler showed a flow signal from the left to the right atrium suggesting an atrial septum defect (ASD) (Fig. ). After infusion of agitated saline contrast, a right-to-left shunt at atrial level was seen, suggesting a patent foramen ovale or an ASD with right-to-left shunting. Transoesophageal echocardiography confirmed an 8 mm defect in the posterior part of the interatrial septum with bidirectional flow matching the diagnosis of ASD type UCS. Cardiac CT showed a PLVCS draining into a dilated coronary sinus, which was partially unroofed causing communication with the left atrium (Fig. ).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 484,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Score the presenting findings:\n- Congestive heart failure/LV dysfunction: 1 if her progressive exercise intolerance, severe tricuspid regurgitation, and dilated RV are interpreted as symptomatic right-sided heart failure. Heart failure is not explicitly diagnosed; the atrial shunt also contributes to her symptoms.\n- Hypertension: 0; diabetes: 0 (neither documented).\n- Age: 56 → 0 (65–74 earns 1; ≥75 earns 2).\n- Prior stroke/TIA/systemic embolism (2 if present): 0.\n- Vascular disease: 0; congenital structural defects do not qualify.\n- Female sex: 1.\nCounting symptomatic heart failure, the sum is 1 + 0 + 0 + 0 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 879,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

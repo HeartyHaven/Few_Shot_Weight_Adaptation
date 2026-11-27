@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-44",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Walden, Claire gets Dracula, Dave gets Hamlet, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Bob and Alice swap books. Then, Eve and Dave swap books. Then, Dave and Eve swap books. Finally, Dave and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Middlemarch\n(B) Walden\n(C) Dracula\n(D) Hamlet\n(E) The Trial",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Hamlet",
+      "Dave": "The Trial",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in each row are ordered by holder: Alice, Bob, Claire, Dave, Eve.\nInitial: Middlemarch, Walden, Dracula, Hamlet, The Trial\n1. Dave ↔ Claire: Middlemarch, Walden, Hamlet, Dracula, The Trial\n2. Bob ↔ Alice: Walden, Middlemarch, Hamlet, Dracula, The Trial\n3. Eve ↔ Dave: Walden, Middlemarch, Hamlet, The Trial, Dracula\n4. Dave ↔ Eve: Walden, Middlemarch, Hamlet, Dracula, The Trial\n5. Dave ↔ Claire: Walden, Middlemarch, Dracula, Hamlet, The Trial\nAlice has Walden, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1364,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

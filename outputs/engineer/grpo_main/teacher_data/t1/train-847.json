@@ -1,0 +1,22 @@
+{
+  "id": "train-847",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nWe present a 77-year-old Caucasian man with history of multiple comorbidities including coronary artery disease, diabetes mellitus, atrial fibrillation, pacemaker placement, and 40-pack-years of smoking who presented with complaints of speech disturbance and left-sided numbness and tingling which resolved within couple of hours of the hospitalization. He was diagnosed with transient ischemic attack (TIA). His pacemaker had been implanted for tachy-brady syndrome 36 months prior to this presentation. He was on warfarin, aspirin, and beta blocker for atrial fibrillation. His pulse rate was 105 beats/min, blood pressure 121/51 mmHg, respiratory rate 20/min, and oxygen saturation 96% on 3 L of oxygen. Physical examination revealed irregularly irregular tachycardia, bilateral rhonchi, wheezes, and mild pedal edema. His international normalized ratio (INR) was subtherapeutic at 1.2. Computer tomographic scan of the head was negative for acute process. His electrocardiogram (ECG) showed paced rhythm with right bundle-branch block, rather than the typical pattern of left bundle-branch block (). His chest X-ray in lateral projection showed ventricular lead with an abnormal turn (). Given the abnormal ECG and chest X-ray findings, pacemaker lead malposition was suspected. Transthoracic echocardiogram confirmed the pacemaker lead position in the left ventricle apex instead of right ventricle, passing through the interatrial septal defect (). Cardiac chambers were nondilated with ejection fraction of 65%. There was no associated thrombus. Doppler color-flow showed normal peak flows along with mild mitral regurgitation. Carotid ultrasound did not reveal any significant stenosis. Neurology service was on board and did the standard workup for TIA/stroke, which was negative.\nWe explained the possibility of recurrence of stroke/TIA in the setting of the malpositioned pacemaker lead to him. In view of his multiple co-morbidities, he refused surgical removal of the lead or any invasive procedures, including transesophageal echocardiogram. We increased his warfarin dose and educated him to maintain his INR between 2.5 and 3.5. Two years after the clinical follow-up, there was no evidence of further thromboembolic phenomenon.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 580,
+  "solution": "CHA₂DS₂-VASc scores heart failure, hypertension, age, diabetes, stroke/TIA/systemic embolism, vascular disease, and sex.\n- Heart failure (1 if present): not documented; EF 65% = 0.\n- Hypertension (1 if present): not documented = 0.\n- Age (1 for 65–74, 2 for ≥75): 77 years = 2.\n- Diabetes (1 if present): documented = 1.\n- Stroke/TIA/systemic embolism (2 if present): the presenting neurologic episode was diagnosed as a TIA = 2.\n- Vascular disease (1 if present): coronary artery disease = 1.\n- Sex (1 if female): male = 0.\nTotal = 0 + 0 + 2 + 1 + 2 + 1 + 0 = 6. Warfarin use and admission INR do not affect the score.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 701,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

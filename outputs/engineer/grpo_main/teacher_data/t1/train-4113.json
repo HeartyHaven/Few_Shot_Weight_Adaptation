@@ -1,0 +1,22 @@
+{
+  "id": "train-4113",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA previously healthy 54-year-old white man, with no family history of kidney disease, came to our attention with a 4-h history of excruciating chest pain, irradiated to both upper limbs and, later, to the thighs, associated with tremor; pain had begun 2 h after consuming a meal, shared with other family members, which included roasted quails which had been shot in a rural area the end of September, (2 months earlier) and stored in a deep freezer; he was not taking any medications and denied having had fever, traumas or having done strenuous exercise, but admitted being a heavy smoker (∼25 cigarettes/day). His past medical history included only a diagnosis of borderline hypertension, made 1 year earlier, treated with a low-sodium diet alone. On admission, physical exam was unrevealing, except for proximal muscle tenderness on palpation; his blood pressure was 210/130 mmHg, oxygen saturation 97% in ambient air and his body temperature was 36.6°C. An electrocardiogram showed sinus tachycardia with no other abnormalities; in order to rule out aortic dissection, a computed tomography scan of the thorax and abdomen was performed, which showed mild chronic lung disease, cysts of the liver and both kidneys and no evidence of aortic dissection. Lab testing on admission demonstrated signs of severe rhabdomyolysis, with preserved renal function. displays the time course of muscle enzyme levels, serum creatinine and other relevant parameters. A toxicology screen for substances of abuse was negative on admission. HIV, as well as B and C hepatitis markers were negative. The patient’s urine (pH 6.5) was reddish brown and tested strongly positive (+++) at the benzidine test; mild proteinuria (2+ dipstick) was also present, whereas the urine sediment was unremarkable. The patient was immediately hydrated intravenously (3500 mL normal saline/24 h); his symptoms subsided within 24 h, the urine cleared after 48 h and he was dismissed on the fourth day, after an uneventful hospital course. The patient was again seen 1 week later, and all lab tests (including renal function and muscle enzymes) had returned to normal.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 552,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, coronary risk factors, and initial troponin.\n- History: At presentation, severe chest pain radiating to both arms is highly suspicious for acute coronary syndrome, despite the atypical thigh pain and muscle tenderness → 2.\n- ECG: Sinus tachycardia without repolarization abnormality or ST depression → 0.\n- Age: 54 years is in the 45–64 range → 1.\n- Risk factors: Heavy smoking and previously diagnosed hypertension give two coronary risk factors; one or two score 1 → 1.\n- Troponin: No admission troponin is reported. The muscle enzyme elevation from rhabdomyolysis is not a troponin result. Assuming troponin was at or below the assay upper limit → 0.\nTotal under that assumption: 2 + 0 + 1 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 883,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

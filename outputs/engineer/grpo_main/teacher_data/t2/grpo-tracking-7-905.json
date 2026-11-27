@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-905",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Persuasion, Claire gets Beloved, Dave gets Candide, Eve gets Hamlet, Fred gets The Hobbit, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Fred and Dave swap books. Then, Fred and Claire swap books. Then, Alice and Gertrude swap books. Then, Fred and Gertrude swap books. Then, Eve and Fred swap books. Finally, Eve and Dave swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Siddhartha\n(B) Persuasion\n(C) Beloved\n(D) Candide\n(E) Hamlet\n(F) The Hobbit\n(G) Emma",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "Hamlet",
+      "Fred": "The Hobbit",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Beloved",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "The Hobbit",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Hamlet",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Siddhartha",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Hamlet",
+      "Dave": "Siddhartha",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (Siddhartha, Persuasion, Beloved, Candide, Hamlet, The Hobbit, Emma)\n1. Eve and Dave swap: (Siddhartha, Persuasion, Beloved, Hamlet, Candide, The Hobbit, Emma)\n2. Fred and Dave swap: (Siddhartha, Persuasion, Beloved, The Hobbit, Candide, Hamlet, Emma)\n3. Fred and Claire swap: (Siddhartha, Persuasion, Hamlet, The Hobbit, Candide, Beloved, Emma)\n4. Alice and Gertrude swap: (Emma, Persuasion, Hamlet, The Hobbit, Candide, Beloved, Siddhartha)\n5. Fred and Gertrude swap: (Emma, Persuasion, Hamlet, The Hobbit, Candide, Siddhartha, Beloved)\n6. Eve and Fred swap: (Emma, Persuasion, Hamlet, The Hobbit, Siddhartha, Candide, Beloved)\n7. Eve and Dave swap: (Emma, Persuasion, Hamlet, Siddhartha, The Hobbit, Candide, Beloved)\nGertrude has Beloved, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1227,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

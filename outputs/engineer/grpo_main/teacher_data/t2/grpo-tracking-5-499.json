@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-499",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Rosa, Bob is dancing with Yuki, Claire is dancing with Marco, Dave is dancing with Priya, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Bob and Eve switch partners. Then, Bob and Alice switch partners. Then, Claire and Dave switch partners. Then, Dave and Claire switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Rosa\n(B) Yuki\n(C) Marco\n(D) Priya\n(E) Karl",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Rosa",
+      "Bob": "Yuki",
+      "Claire": "Marco",
+      "Dave": "Priya",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Karl",
+      "Claire": "Marco",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Rosa",
+      "Claire": "Marco",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Rosa",
+      "Claire": "Priya",
+      "Dave": "Marco",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Rosa",
+      "Claire": "Marco",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Karl",
+      "Claire": "Marco",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (Rosa, Yuki, Marco, Priya, Karl)\n1. Bob and Eve switch: (Rosa, Karl, Marco, Priya, Yuki)\n2. Bob and Alice switch: (Karl, Rosa, Marco, Priya, Yuki)\n3. Claire and Dave switch: (Karl, Rosa, Priya, Marco, Yuki)\n4. Dave and Claire switch: (Karl, Rosa, Marco, Priya, Yuki)\n5. Bob and Alice switch: (Rosa, Karl, Marco, Priya, Yuki)\nAlice is dancing with Rosa, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1108,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

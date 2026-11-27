@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-88",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets The Trial, Claire gets Ivanhoe, Dave gets The Hobbit, Eve gets Dracula, Fred gets Middlemarch, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Eve and Claire swap books. Then, Gertrude and Eve swap books. Then, Alice and Eve swap books. Then, Alice and Eve swap books. Then, Claire and Fred swap books. Then, Claire and Bob swap books. Finally, Claire and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Siddhartha\n(B) The Trial\n(C) Ivanhoe\n(D) The Hobbit\n(E) Dracula\n(F) Middlemarch\n(G) Candide",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Middlemarch",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Dracula",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Dracula",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Middlemarch",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Dracula",
+      "Gertrude": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Owners in each row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude\nInitial: Siddhartha | The Trial | Ivanhoe | The Hobbit | Dracula | Middlemarch | Candide\n1. Eve ↔ Claire: Siddhartha | The Trial | Dracula | The Hobbit | Ivanhoe | Middlemarch | Candide\n2. Gertrude ↔ Eve: Siddhartha | The Trial | Dracula | The Hobbit | Candide | Middlemarch | Ivanhoe\n3. Alice ↔ Eve: Candide | The Trial | Dracula | The Hobbit | Siddhartha | Middlemarch | Ivanhoe\n4. Alice ↔ Eve: Siddhartha | The Trial | Dracula | The Hobbit | Candide | Middlemarch | Ivanhoe\n5. Claire ↔ Fred: Siddhartha | The Trial | Middlemarch | The Hobbit | Candide | Dracula | Ivanhoe\n6. Claire ↔ Bob: Siddhartha | Middlemarch | The Trial | The Hobbit | Candide | Dracula | Ivanhoe\n7. Claire ↔ Bob: Siddhartha | The Trial | Middlemarch | The Hobbit | Candide | Dracula | Ivanhoe\nClaire has Middlemarch, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1059,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

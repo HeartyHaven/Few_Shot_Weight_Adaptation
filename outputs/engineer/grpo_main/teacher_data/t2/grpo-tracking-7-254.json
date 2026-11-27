@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-254",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left back, Bob is playing right winger, Claire is playing fullback, Dave is playing benchwarmer, Eve is playing left midfielder, Fred is playing striker, and Gertrude is playing right midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Dave and Eve trade positions. Then, Alice and Claire trade positions. Then, Bob and Claire trade positions. Then, Claire and Dave trade positions. Then, Alice and Eve trade positions. Then, Bob and Alice trade positions. Finally, Dave and Fred trade positions. At the end of the match, Claire is playing\nOptions:\n(A) left back\n(B) right winger\n(C) fullback\n(D) benchwarmer\n(E) left midfielder\n(F) striker\n(G) right midfielder",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "left back",
+      "Bob": "right winger",
+      "Claire": "fullback",
+      "Dave": "benchwarmer",
+      "Eve": "left midfielder",
+      "Fred": "striker",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "right winger",
+      "Claire": "fullback",
+      "Dave": "left midfielder",
+      "Eve": "benchwarmer",
+      "Fred": "striker",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "right winger",
+      "Claire": "left back",
+      "Dave": "left midfielder",
+      "Eve": "benchwarmer",
+      "Fred": "striker",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left back",
+      "Claire": "right winger",
+      "Dave": "left midfielder",
+      "Eve": "benchwarmer",
+      "Fred": "striker",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left back",
+      "Claire": "left midfielder",
+      "Dave": "right winger",
+      "Eve": "benchwarmer",
+      "Fred": "striker",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "left back",
+      "Claire": "left midfielder",
+      "Dave": "right winger",
+      "Eve": "fullback",
+      "Fred": "striker",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "benchwarmer",
+      "Claire": "left midfielder",
+      "Dave": "right winger",
+      "Eve": "fullback",
+      "Fred": "striker",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "benchwarmer",
+      "Claire": "left midfielder",
+      "Dave": "striker",
+      "Eve": "fullback",
+      "Fred": "right winger",
+      "Gertrude": "right midfielder"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Positions in each row are listed in order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: left back, right winger, fullback, benchwarmer, left midfielder, striker, right midfielder\n1. Dave ↔ Eve: left back, right winger, fullback, left midfielder, benchwarmer, striker, right midfielder\n2. Alice ↔ Claire: fullback, right winger, left back, left midfielder, benchwarmer, striker, right midfielder\n3. Bob ↔ Claire: fullback, left back, right winger, left midfielder, benchwarmer, striker, right midfielder\n4. Claire ↔ Dave: fullback, left back, left midfielder, right winger, benchwarmer, striker, right midfielder\n5. Alice ↔ Eve: benchwarmer, left back, left midfielder, right winger, fullback, striker, right midfielder\n6. Bob ↔ Alice: left back, benchwarmer, left midfielder, right winger, fullback, striker, right midfielder\n7. Dave ↔ Fred: left back, benchwarmer, left midfielder, striker, fullback, right winger, right midfielder\nClaire is playing left midfielder, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1182,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

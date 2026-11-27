@@ -1,0 +1,22 @@
+{
+  "id": "train-6417",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nAn 80-year-old Caucasian female who was an active smoker with a 40 pack year smoking history and a past medical history of primary hypertension and chronic obstructive pulmonary disease (COPD) presented to our hospital emergency department (ED) in February, 2017 with fatigue, generalized weakness, and shortness of breath for the last two days. She had been noticing progressively worsening shortness of breath on exertion without any fever, chills, cough, chest pain, orthopnea or paroxysmal nocturnal dyspnea. She did not have any sick contacts and had not travelled anywhere recently.\nUpon arrival to the hospital, she was noted to have a heart rate of 122 beats per minute, a respiratory rate of 30 breaths per minute with an oxygen saturation of 85% on room air, and a blood pressure of 161/86 mmHg. Further physical examination revealed a thin and cachectic female who appeared to be in mild respiratory distress. She was noted to have normal heart sounds without any murmurs, rubs, or gallops. A pulmonary examination revealed expiratory wheezing bilaterally without any rales or rhonchi. She did not have rashes or peripheral edema. Due to her respiratory distress she was started on non-invasive ventilatory support in the emergency department (ED), which led to improvement in her respiratory status.\nLaboratory investigation revealed a hemoglobin count of 15.1 g/dL (reference range [ref], 12.3-15.3), a peripheral white blood cell count of 21,130 cells/mm3 (ref, 4400-11,300) with a relative neutrophil percentage of 80% (ref, 37%-77%), a platelet count of 301,000/mm3 (ref, 145,000-445,000), a sodium level of 134 mmol/L, a serum creatinine level of 0.30 mg/dL (ref, 0.70-1.5), and a blood urea nitrogen of 8 mg/dL (ref, 9-20). Her liver enzymes were within normal limits. Venous blood gas analysis revealed a pH of 7.26 and a CO2 of 83 mmHg (ref, 41-51). Initial serum procalcitonin was 0.07 ng/mL and a chest radiograph was only significant for hyper-inflated lungs (Figure ).\nShe was admitted to the hospital for management of mild COPD exacerbation and treated with inhaled bronchodilators and systemic steroids. Repeat blood work obtained 12 hours after initial presentation was significant for a serum procalcitonin of 2.07 ng/mL and a peripheral white blood cell count of 35,170 cells/mm3 with a relative neutrophil percentage of 91% and 2% bands. Due to concerns for development of CAP, sputum cultures, two sets of blood cultures via peripheral blood draw and urinary antigens for S. pneumoniae and L. pneumophila were obtained. She was started on intravenous ampicillin-sulbactam 3 grams every six hours and azithromycin 500 milligrams every 24 hours. A computed tomography scan of the chest revealed tree-in-bud opacities along with regions of bronchial wall thickening in the bilateral lower lobes (Figure ).\nA sputum Gram stain revealed many Gram-positive rods, rare Gram-positive cocci, less than 10 squamous epithelial cells and greater than 25 white blood cells per low power field. Her blood cultures remained negative and the final sputum culture grew normal respiratory flora. Surprisingly, urinary antigens for both S. pneumoniae and Lp1 returned positive. Antibiotics were then de-escalated to intravenous levofloxacin 500 mg every 24 hours for a total of five days. The patient’s clinical status improved, and she was discharged home in a stable condition after a one-week hospital stay.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 958,
+  "solution": "CURB-65 assigns one point per criterion, using admission findings:\n- Confusion: no new confusion reported → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN was 8 mg/dL → 0.\n- Respiratory rate ≥30/min: the initial rate was exactly 30/min → 1.\n- Blood pressure: systolic <90 or diastolic ≤60 mmHg is required; BP was 161/86 mmHg → 0.\n- Age ≥65 years: age 80 → 1.\nTotal: 0 + 0 + 1 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 885,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

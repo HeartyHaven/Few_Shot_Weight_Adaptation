@@ -1,0 +1,22 @@
+{
+  "id": "train-727",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 87-year-old woman was referred to our hospital for treatment of AF with palpitation and dyspnea (). She related a history of treatment for hypertension and cerebral infarction but no history of heart failure and/or arrhythmia. Upon arrival, her BP was 102/54 mmHg and HR was 151 bpm. Her heart rhythm often spontaneously alternated between AF and sinus rhythm (). Echocardiography demonstrated preserved cardiac contractility with an EF of 64%, indicating heart failure with preserved EF. She was administered verapamil (5 mg) injection; however, there was no decrease in HR or frequency of rhythm alternation. Next, bisoprolol transdermal patch (4 mg) was applied to her chest. Her HR trends were significantly decreased after 6 hours on the bisoprolol transdermal patch and the frequency and duration of AF decreased until 24 hours after administration (). Moreover, her symptoms were improved.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 275,
+  "solution": "CHA₂DS₂-VASc assigns 1 point each for heart failure/LV dysfunction, hypertension, diabetes, vascular disease, and female sex; 2 for prior stroke/TIA/systemic embolism; and either 1 for age 65–74 or 2 for age ≥75.\n- Heart failure/LV dysfunction: 0 if scored from her stated history at presentation. She had no prior heart failure and EF was 64%. The note also labels the current episode HFpEF; if accepted as established clinical heart failure, that would add 1 despite preserved EF.\n- Treated hypertension: 1, regardless of admission BP.\n- Age 87: 2.\n- Diabetes: 0; none reported.\n- Prior cerebral infarction: 2.\n- Vascular disease: 0; no MI, peripheral arterial disease, or aortic plaque reported.\n- Female sex: 1.\nUsing the history-based interpretation: 0 + 1 + 2 + 0 + 2 + 0 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 878,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

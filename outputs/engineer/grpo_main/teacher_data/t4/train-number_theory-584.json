@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-584",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Find the sum of all positive integers $n$ for which $n^2-19n+99$ is a perfect square.Find the sum of all integers $n$ such that $\\dfrac{12}{n}$ is also an integer.\n",
+  "answer": "38",
+  "prompt_tokens": 82,
+  "solution": "For the perfect-square condition, write $n^2-19n+99=m^2$ with $m\\ge0$. Multiplying by 4 and completing the square gives $4m^2-(2n-19)^2=35$. Set $x=2n-19$; then $(2m-x)(2m+x)=35$. Both factors are positive because $4m^2>x^2$ and $m\\ge0$.\nThe unordered positive factor pairs of 35 are $(1,35)$ and $(5,7)$. The difference of the factors gives $2|x|=34$ or $2$, and their sum gives $4m=36$ or $12$, respectively, so both pairs yield integer squares. Thus $x=\\pm17,\\pm1$, giving $n=(19+x)/2=1,18,9,10$. Their sum is $38$.\nFor the separate $12/n$ question, the eligible integers are the positive and negative divisors of 12. Each divisor cancels its negative in the sum, so that sum is 0.\nFinal answer: 38",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "38",
+    "correct": true
+  }
+}

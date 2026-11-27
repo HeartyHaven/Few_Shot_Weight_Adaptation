@@ -1,0 +1,22 @@
+{
+  "id": "train-1083",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 72-year-old woman was admitted to our department due to acute ischemia of the right leg. She was diagnosed with persistent nonvalvular atrial fibrillation 7 days ago, and it was decided that she would benefit from warfarin for stroke prophylaxis. Warfarin was prescribed at 2 mg daily as a slow loading dose and on the fifth day the primary care physician increased the dose to 5 mg, due to the low value of the international normalized ratio [INR = 1.5]. Moreover, the patient had a history of hypertension and diabetes mellitus and there was no history of any trauma or local/systemic infection.\nOn physical examination, the right leg of the patient was found to be pale and cold with the sign of developing mottling and cyanosis from knee level down. The calf muscles were also tender on examination. She had no detectable arterial pulses below her right knee by palpation, which was confirmed by an emergency Doppler examination revealing the complete lack of blood flow in both dorsalis pedis and posterior tibial arteries. Furthermore, a necrotic lesion was revealed measuring 5 cm in diameter on the lateral aspect of lower right leg [].\nThe diagnosis of acute right leg ischemia due to the acute occlusion of the 3-infrapopliteal arteries was considered. A dose of intravenous (IV) heparin was chosen and lower limb thromboembolectomy (TE) was immediately performed via the right femoral artery. The patient's postoperative course was uncomplicated, and the extremity tenderness and mottled skin were improved. Moreover, dermatology consults and skin biopsy revealed noninflammatory thrombosis with focal necrosis in the leg lesion. Warfarin therapy was discontinued and the patient was started on dabigatran 150 mg twice daily. Skin lesion was followed with conventional surgical debridement and was seen to improve [] in a few days, without any recurrence under dabigatran therapy.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 487,
+  "solution": "Apply CHA₂DS₂-VASc to the patient with atrial fibrillation, including the arterial embolic event already present on admission:\n- Congestive heart failure (1 point): not reported → 0.\n- Hypertension (1): documented → 1.\n- Age ≥75 (2) or 65–74 (1): age 72 → 1.\n- Diabetes mellitus (1): documented → 1.\n- Stroke, TIA, or systemic thromboembolism (2): the acute infrapopliteal arterial occlusion causing limb ischemia counts as systemic thromboembolism → 2.\n- Vascular disease (1): no separate history of atherosclerotic peripheral artery disease, myocardial infarction, or aortic plaque; do not count the limb embolism twice → 0.\n- Female sex (1): woman → 1.\nTotal = 0 + 1 + 1 + 1 + 2 + 0 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 727,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

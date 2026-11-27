@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-48",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets The Trial, Claire gets Ivanhoe, Dave gets Candide, and Eve gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Alice and Eve swap books. Then, Dave and Eve swap books. Then, Eve and Alice swap books. Finally, Eve and Alice swap books. At the end of the semester, Alice has\nOptions:\n(A) The Hobbit\n(B) The Trial\n(C) Ivanhoe\n(D) Candide\n(E) Dracula",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe",
+      "Dave": "Candide",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "Ivanhoe",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "Ivanhoe",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books are listed in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: The Hobbit, The Trial, Ivanhoe, Candide, Dracula\n1. Dave ↔ Claire: The Hobbit, The Trial, Candide, Ivanhoe, Dracula\n2. Alice ↔ Eve: Dracula, The Trial, Candide, Ivanhoe, The Hobbit\n3. Dave ↔ Eve: Dracula, The Trial, Candide, The Hobbit, Ivanhoe\n4. Eve ↔ Alice: Ivanhoe, The Trial, Candide, The Hobbit, Dracula\n5. Eve ↔ Alice: Dracula, The Trial, Candide, The Hobbit, Ivanhoe\nAlice has Dracula, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1053,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

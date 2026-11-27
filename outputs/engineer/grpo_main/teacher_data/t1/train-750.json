@@ -1,0 +1,22 @@
+{
+  "id": "train-750",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 67-year-old women presented to the hospital with worsening dyspnea and cough for 4 d.\nHer symptoms worsened after mild activities and relieved after rest without taking any medication.\nShe had a long-term history of AF.\nOn admission, she was fully conscious, with a blood pressure of 110/70 mmHg, an irregular heart rate of 105 bpm on auscultation and oxygen saturation of 92% on room air. She had mild edema in the lower limbs. Her weight was 58 kg and the remainder of her physical examination was normal.\nLaboratory tests revealed normal platelets, hemoglobin, electrolytes, liver function markers, renal function markers (serum creatinine and estimated glomerular filtration rate), cardiac troponin-T, and routine coagulation measurements (prothrombin time [PT], international normalized ratio, and activated partial thromboplastin time [aPTT]). However, her N-terminal pro-brain natriuretic peptide was 5364.00 pg/mL (reference, < 450.00 pg/mL), D-dimer level was 5.65 μg/mL (reference, 0.001–0.50 g/mL), and PaO2 was 60.5 mmHg (reference, 80-100 mmHg). Her electrocardiogram suggested AF, and her transthoracic echocardiogram revealed a left atrial diameter of 51 mm and an ejection fraction of 48%.\nLower limb venous compression ultrasonography showed a deep vein thromboembolism (DVT) involving bilateral intermuscular veins. Furthermore, computed tomography pulmonary angiography confirmed the presence of an embolus in both upper lobes of the pulmonary artery (Figure ).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 461,
+  "solution": "Apply CHA₂DS₂-VASc for atrial fibrillation at admission:\n- Congestive heart failure: no established diagnosis; EF 48% alone does not establish the criterion → 0.\n- Hypertension → 0; age ≥75 → 0; diabetes → 0.\n- Stroke/TIA/thromboembolism: counting the confirmed pulmonary embolism under the broad thromboembolism definition → +2. The associated DVT is not scored separately.\n- Vascular disease (e.g., prior MI or peripheral arterial disease): none documented → 0.\n- Age 65–74: age 67 → +1.\n- Female sex → +1.\nTotal = 0 + 0 + 0 + 0 + 2 + 0 + 1 + 1 = 4. This depends on the embolism definition: a version restricted to systemic arterial embolism would not count PE.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 942,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

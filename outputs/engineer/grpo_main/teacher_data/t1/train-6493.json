@@ -1,0 +1,22 @@
+{
+  "id": "train-6493",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "question": "Patient note:\nA 65-year-old man arrives to the emergency department (ED) complaining of pain and swelling in his right leg. The patient reports he recently underwent a total hip replacement. His past medical history is significant for hypertension and diabetes. His current medications include aspirin, lisinopril, metformin, and atorvastatin. On arrival, his temperature is 99°F (37.2°C), blood pressure is 135/82 mmHg, pulse is 88/minute, and oxygen saturation is 99% O2. He denies chest pain or shortness of breath. On physical exam, his right leg appears moderately erythematous, swollen, and is tender to palpation. Other physical exam findings are negative.\n\nA complete blood count (CBC) was performed with the following findings:\n\nHemoglobin: 13.0 g/dL\nLeukocyte count: 6500/mm^3\nPlatelet count: 150,000/mm^3\n\nThe appropriate anti-coagulation therapy is started. Seven days later the patient arrives back to the ED complaining of crushing substernal chest pain. An electrocardiogram is performed and is shown in Figure A.\n\nA CBC was performed with the following findings:\n\nHemoglobin: 13.5 g/dL\nLeukocyte count: 8500/mm^3\nPlatelet count: 58,000/mm^3\nINR: 2.5\naPTT: 34 seconds\nFibrinogen level: 200 mg/dL\nTroponin T: 0.2 ng/mL\n\nOn physical exam, the right leg is again swollen and tender to palpation. However, a new lesion has also formed, as shown in Figure B.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 48,
+  "prompt_tokens": 463,
+  "solution": "Count the positive Pulmonary Embolism Rule-out Criteria (PERC) at the first ED visit, before anticoagulation:\n- Age ≥50 years: 65 → 1.\n- Pulse ≥100/min: 88/min → 0.\n- Oxygen saturation <95%: 99% → 0.\n- Unilateral leg swelling: right leg swollen → 1.\n- Hemoptysis: none reported → 0.\n- Surgery or trauma requiring hospitalization within 4 weeks: recent total hip replacement, assumed within this interval → 1.\n- Prior DVT or PE: none reported; the current suspected DVT is not a prior event → 0.\n- Exogenous estrogen use: none reported → 0.\nTotal = 1 + 0 + 0 + 1 + 0 + 1 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 713,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

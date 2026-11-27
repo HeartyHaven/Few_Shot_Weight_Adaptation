@@ -1,0 +1,22 @@
+{
+  "id": "train-6471",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 20-year-old Nepalese male was admitted to our hospital after a 3-day history of a high fever and cough. He had been previously seen at another local clinic where he was diagnosed with influenza and treated with oral oseltamivir for the first 3 days. On the fourth day, he developed dyspnea and was admitted to our hospital on the same day. He did not have any relevant past history and had not been prescribed any medications. He came to Japan for employment almost five years ago with his parents and took his residence in Saitama Prefecture.\nHis vital signs on the day of admission were as follows: level of consciousness, E3V4M6/Glasgow Coma Scale; blood pressure, 100/72 mmHg; heart rate, 133 beats per minute; body temperature, 38.4 °C; respiratory rate, 24 breaths per minute; and peripheral capillary oxygen saturation level at an O2 flow rate of 2 liters per minute, 94%. Physical examination revealed lower respiratory sounds, and a few moist rales were heard in both lungs on chest auscultation. Laboratory data revealed a white blood cell (WBC) count of 700/mm3, a blood platelet count of 82,000/mm3, a C-reactive protein (CRP) level of 23.2 mg/dl, a blood urea nitrogen (BUN) level of 26.3 mg/dl, and a serum creatinine level of 2.2 mg/dl. The results of liver function tests were normal except for a lactate dehydrogenase (LDH) level of 618 IU/l. A chest computed tomography (CT) scan showed infiltrative and nodular shadows with pneumatocele formation in the right upper lobe ().\nAt first, we diagnosed severe bacterial pneumonia after influenza and septic shock and initiated the administration of lactate Ringer’s solution, noradrenalin infusion, and intravenous tazobactam/piperacillin (TAZ/PIPC) (4.5 g, 4 times daily) and azithromycin (AZM) (500 mg, once a day). However, his vital signs did not improve, and he developed respiratory failure requiring mechanical ventilation support. After rapid deterioration of his arterial oxygenation level, we introduced veno-veno extracorporeal membrane oxygenation support. Because gram-positive staphylococci were detected from sputum and blood samples collected on admission, we added linezolid (600 mg, 2 times daily, intravenously) on day 2. On the same day, we performed a bronchoscopy, which showed diffuse inflammatory changes and easy bleeding (). Therefore, we suspected necrotizing pneumonia caused by CA-MRSA. He underwent multidisciplinary treatment; however, his respiratory condition gradually worsened. Despite resuscitation efforts, he died of multiple organ failure on day 7. The isolates from the culture of blood and sputum samples on the day of hospital admission were MRSA strains TUM18988 and TUM18989. Additionally, his father, who lived with him in Japan, had a negative nasal swab test for MRSA.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 767,
+  "solution": "CURB-65 assigns 1 point for each criterion present on admission:\n- Confusion: GCS E3V4M6 indicates an abnormal verbal response, but new disorientation to person, place, or time is not specifically documented. Counting only documented disorientation: 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN 26.3 mg/dL → 1.\n- Respiratory rate ≥30/min: 24/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mm Hg: 100/72 → 0.\n- Age ≥65 years: 20 → 0.\nSum: 0 + 1 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 933,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

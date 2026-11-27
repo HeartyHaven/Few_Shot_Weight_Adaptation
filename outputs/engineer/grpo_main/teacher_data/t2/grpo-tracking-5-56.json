@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-56",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Priya, Claire is dancing with Marco, Dave is dancing with Tara, and Eve is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Alice and Dave switch partners. Then, Claire and Eve switch partners. Then, Claire and Dave switch partners. Then, Eve and Dave switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Stefan\n(B) Priya\n(C) Marco\n(D) Tara\n(E) Umar",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Priya",
+      "Claire": "Marco",
+      "Dave": "Tara",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Priya",
+      "Claire": "Marco",
+      "Dave": "Stefan",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Priya",
+      "Claire": "Umar",
+      "Dave": "Stefan",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Priya",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Priya",
+      "Claire": "Stefan",
+      "Dave": "Marco",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Marco",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners in each row are listed for Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Stefan, Priya, Marco, Tara, Umar\n1. Alice ↔ Dave: Tara, Priya, Marco, Stefan, Umar\n2. Claire ↔ Eve: Tara, Priya, Umar, Stefan, Marco\n3. Claire ↔ Dave: Tara, Priya, Stefan, Umar, Marco\n4. Eve ↔ Dave: Tara, Priya, Stefan, Marco, Umar\n5. Claire ↔ Alice: Stefan, Priya, Tara, Marco, Umar\nBob is dancing with Priya, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1172,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

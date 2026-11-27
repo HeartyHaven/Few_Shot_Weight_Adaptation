@@ -1,0 +1,22 @@
+{
+  "id": "train-4227",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 57-year-old man is brought to the emergency department after having chest pain for the last hour. He rates his pain as 8/10, dull in character, and says it is associated with sweating and shortness of breath. He has a history of diabetes and hypercholesterolemia. His current medication list includes amlodipine, aspirin, atorvastatin, insulin, and esomeprazole. He has smoked 2 packs of cigarettes per day for the past 25 years. His blood pressure is 98/66 mm Hg, pulse is 110/min, oxygen saturation is 94% on room air, and BMI is 31.8 kg/m2. His lungs are clear to auscultation. An electrocardiogram (ECG) is shown below. The patient is given 325 mg of oral aspirin and sublingual nitroglycerin.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 18,
+  "prompt_tokens": 269,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors and initial troponin.\n- History: acute severe chest pain with diaphoresis and dyspnea is highly suspicious for acute coronary syndrome: 2.\n- ECG: normal = 0, nonspecific repolarization changes = 1, significant ST depression = 2. The referenced tracing is unavailable.\n- Age: 57 years falls in the 45–64 range: 1.\n- Risk factors: diabetes, hypercholesterolemia, smoking and obesity meet the threshold of at least three: 2.\n- Troponin: at or below the upper reference limit = 0, above the limit through 3 times the limit = 1, and higher = 2. No admission value is reported.\nThe documented subtotal is 2 + 1 + 2 = 5. Assuming a normal ECG and normal initial troponin, the total is 2 + 0 + 1 + 2 + 0 = 5; the exact score cannot be verified without those results.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 672,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

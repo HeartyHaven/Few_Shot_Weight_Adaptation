@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1189",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Persuasion, Claire gets Dune, Dave gets Candide, Eve gets Jane Eyre, Fred gets Ivanhoe, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Alice and Gertrude swap books. Then, Gertrude and Dave swap books. Then, Eve and Gertrude swap books. Then, Claire and Dave swap books. Then, Fred and Gertrude swap books. Finally, Alice and Gertrude swap books. At the end of the semester, Dave has\nOptions:\n(A) The Trial\n(B) Persuasion\n(C) Dune\n(D) Candide\n(E) Jane Eyre\n(F) Ivanhoe\n(G) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Persuasion",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Candide",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Candide",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Candide",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Persuasion",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Candide",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Beloved"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: The Trial | Persuasion | Dune | Candide | Jane Eyre | Ivanhoe | Beloved\n1. Alice–Claire: Dune | Persuasion | The Trial | Candide | Jane Eyre | Ivanhoe | Beloved\n2. Alice–Gertrude: Beloved | Persuasion | The Trial | Candide | Jane Eyre | Ivanhoe | Dune\n3. Gertrude–Dave: Beloved | Persuasion | The Trial | Dune | Jane Eyre | Ivanhoe | Candide\n4. Eve–Gertrude: Beloved | Persuasion | The Trial | Dune | Candide | Ivanhoe | Jane Eyre\n5. Claire–Dave: Beloved | Persuasion | Dune | The Trial | Candide | Ivanhoe | Jane Eyre\n6. Fred–Gertrude: Beloved | Persuasion | Dune | The Trial | Candide | Jane Eyre | Ivanhoe\n7. Alice–Gertrude: Ivanhoe | Persuasion | Dune | The Trial | Candide | Jane Eyre | Beloved\nDave has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1234,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-191",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Jane Eyre, Claire gets The Hobbit, Dave gets The Trial, and Eve gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Alice and Eve swap books. Then, Bob and Claire swap books. Then, Eve and Alice swap books. Then, Alice and Bob swap books. Finally, Eve and Dave swap books. At the end of the semester, Eve has\nOptions:\n(A) Dracula\n(B) Jane Eyre\n(C) The Hobbit\n(D) The Trial\n(E) Beloved",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Reader order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Dracula, Jane Eyre, The Hobbit, The Trial, Beloved.\n1. Alice and Eve swap: Beloved, Jane Eyre, The Hobbit, The Trial, Dracula.\n2. Bob and Claire swap: Beloved, The Hobbit, Jane Eyre, The Trial, Dracula.\n3. Eve and Alice swap: Dracula, The Hobbit, Jane Eyre, The Trial, Beloved.\n4. Alice and Bob swap: The Hobbit, Dracula, Jane Eyre, The Trial, Beloved.\n5. Eve and Dave swap: The Hobbit, Dracula, Jane Eyre, Beloved, The Trial.\nEve has The Trial, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1206,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

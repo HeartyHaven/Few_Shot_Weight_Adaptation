@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-527",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Candide, Claire gets Siddhartha, Dave gets Middlemarch, and Eve gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Alice and Bob swap books. Then, Dave and Eve swap books. Then, Dave and Eve swap books. Finally, Dave and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Jane Eyre\n(B) Candide\n(C) Siddhartha\n(D) Middlemarch\n(E) Dune",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Middlemarch",
+      "Dave": "Siddhartha",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Jane Eyre, Candide, Siddhartha, Middlemarch, Dune\n1. Alice ↔ Bob: Candide, Jane Eyre, Siddhartha, Middlemarch, Dune\n2. Alice ↔ Bob: Jane Eyre, Candide, Siddhartha, Middlemarch, Dune\n3. Dave ↔ Eve: Jane Eyre, Candide, Siddhartha, Dune, Middlemarch\n4. Dave ↔ Eve: Jane Eyre, Candide, Siddhartha, Middlemarch, Dune\n5. Dave ↔ Claire: Jane Eyre, Candide, Middlemarch, Siddhartha, Dune\nClaire has Middlemarch, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1232,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

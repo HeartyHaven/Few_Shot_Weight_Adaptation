@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-330",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "For $\\{1, 2, 3, \\ldots, n\\}$ and each of its non-empty subsets a unique alternating sum is defined as follows. Arrange the numbers in the subset in decreasing order and then, beginning with the largest, alternately add and subtract successive numbers. For example, the alternating sum for $\\{1, 2, 3, 6,9\\}$ is $9-6+3-2+1=5$ and for $\\{5\\}$ it is simply $5$. Find the sum of all such alternating sums for $n=7$.\n",
+  "answer": "448",
+  "prompt_tokens": 153,
+  "solution": "For each k < 7, pair every subset containing k but not 7 with the subset obtained by adding 7. Since 7 goes first in decreasing order, k moves one position later and its sign reverses. These pairs account for all subsets containing k, so the total contribution of k is zero.\n\nThe number 7 itself always has a positive sign when present. Each of the other six numbers may independently be included or omitted, so 7 occurs in 2^6 = 64 subsets. The total is therefore 7·64 = 448.\nFinal answer: 448",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "448",
+    "correct": true
+  }
+}

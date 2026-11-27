@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-410",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "In a group of nine people each person shakes hands with exactly two of the other people from the group. Let $N$ be the number of ways this handshaking can occur. Consider two handshaking arrangements different if and only if at least two people who shake hands under one arrangement do not shake hands under the other arrangement. Find the remainder when $N$ is divided by $1000$.\n",
+  "answer": "16",
+  "prompt_tokens": 113,
+  "solution": "Represent people by labeled vertices and handshakes by undirected edges. Every vertex has degree two, so each connected component is a cycle of length at least three. The possible cycle lengths partitioning 9 are 9, 6+3, 5+4, and 3+3+3.\n\nOn a specified set of k people there are (k−1)!/2 cycles: fix one person at the start, order the rest, and divide by two for reversal. Count each case:\n• 9: one cycle gives 8!/2 = 20160.\n• 6+3: choose the 3 people in the triangle in 84 ways (9 choose 3). Their cycle is unique, and the other 6 form a cycle in 5!/2 ways, giving 84 × 60 = 5040.\n• 5+4: choose the 4 people in 126 ways (9 choose 4), then form both cycles, giving 126 × (3!/2) × (4!/2) = 4536.\n• 3+3+3: choose successive triples in 84 × 20 × 1 ways, since there are 20 choices of 3 from the remaining 6. Divide by 3! because the triples are unordered. This gives 280 arrangements.\n\nThus N = 20160 + 5040 + 4536 + 280 = 30016, whose remainder modulo 1000 is 16.\nFinal answer: 16",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1379,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "16",
+    "correct": true
+  }
+}

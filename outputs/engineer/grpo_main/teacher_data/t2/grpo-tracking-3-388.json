@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-388",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right midfielder, Bob is playing center midfielder, and Claire is playing fullback.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Alice trade positions. Then, Bob and Alice trade positions. Finally, Alice and Bob trade positions. At the end of the match, Claire is playing\nOptions:\n(A) right midfielder\n(B) center midfielder\n(C) fullback",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "right midfielder",
+      "Bob": "center midfielder",
+      "Claire": "fullback"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "right midfielder",
+      "Claire": "fullback"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "center midfielder",
+      "Claire": "fullback"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "right midfielder",
+      "Claire": "fullback"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Position order in every row: Alice, Bob, Claire.\nInitial: right midfielder, center midfielder, fullback.\n1. Bob ↔ Alice: center midfielder, right midfielder, fullback.\n2. Bob ↔ Alice: right midfielder, center midfielder, fullback.\n3. Alice ↔ Bob: center midfielder, right midfielder, fullback.\nClaire is playing fullback, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1358,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

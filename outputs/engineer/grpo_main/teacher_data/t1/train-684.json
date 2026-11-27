@@ -1,0 +1,22 @@
+{
+  "id": "train-684",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 77 year old lady presented with a two week history of shortness of breath and acute onset palpitations and chest pain. She had also developed an acute confusional state for two days prior to her admission. She had been admitted five months ago with an episode of chest infection which was successfully treated with antibiotics. In the previous four years she had suffered from an episode of transient ischaemic attack (TIA).\nPrevious investigations had shown a normal computer tomography (CT) scan of the head, active rheumatoid arthritis and osteoarthritis. On this occasion she was afebrile, normotensive and had an irregularly irregular pulse rate of 150 bpm. Further cardiovascular, respiratory and abdominal examination was unremarkable and a detailed neurological examination did not reveal any significant abnormality.\nAn electrocardiogram showed fast atrial fibrillation (AF) for which she was treated with digoxin, warfarin & beta blocker for further optimisation. An in-patient trans-thoracic echocardiogram (TTE) demonstrated a mobile mass in the left atrium (figure ). Subsequent trans-oesophageal echocardiography (TOE) revealed a mobile large left atrial mass (2.7 cm × 3.5 cm) attached to the fossa ovalis region in the inter-atrial septum, prolapsing into the left ventricle through the mitral valve in diastole (figure &).\nThe patient declined surgical treatment in view of the risks involved, & died a few weeks later whilst on conservative therapy.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 399,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Apply it to her admission history:\n- Congestive heart failure or LV dysfunction (1): not documented → 0.\n- Hypertension (1): no history reported → 0.\n- Age (2 if ≥75, 1 if 65–74): 77 years → 2.\n- Diabetes (1): not reported → 0.\n- Prior stroke, TIA, or systemic embolism (2): prior TIA → 2.\n- Vascular disease (1): no qualifying arterial disease reported → 0.\n- Female sex (1): woman → 1.\nTotal = 0 + 0 + 2 + 0 + 2 + 0 + 1 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 819,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

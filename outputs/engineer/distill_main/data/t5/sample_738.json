@@ -1,0 +1,17 @@
+{
+  "id": "sample_738",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, characters):\n    for i in range(len(characters)):\n        text = text.rstrip(characters[i::len(characters)])\n    return text\n```\n\nInput: f(\"r;r;r;r;r;r;r;r;r\", \"x.r\")",
+  "answer": "'r;r;r;r;r;r;r;r;'",
+  "solution": "len(characters) is 3, so each slice uses stride 3. At i = 0, characters[0::3] is 'x'; the text ends in 'r', so rstrip('x') leaves it unchanged. At i = 1, the slice is '.', which also does not match the final 'r'. At i = 2, the slice is 'r'; rstrip('r') removes the final 'r' and stops at the preceding ';'.\nFinal answer: 'r;r;r;r;r;r;r;r;'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 56,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'r;r;r;r;r;r;r;r;'",
+    "correct": true
+  }
+}

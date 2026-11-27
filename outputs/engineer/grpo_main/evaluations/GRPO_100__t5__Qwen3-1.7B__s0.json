@@ -1,0 +1,86 @@
+{
+  "name": "GRPO_100__t5__Qwen3-1.7B__s0",
+  "task": "t5",
+  "student": "Qwen/Qwen3-1.7B",
+  "seed": 0,
+  "baseline": "grpo_100",
+  "teacher": null,
+  "dtype": "bfloat16",
+  "engine": "vllm",
+  "max_new_tokens": 2048,
+  "gsm8k_max_new_tokens": 512,
+  "enable_thinking": false,
+  "test_fingerprints": {
+    "_secret/t5/test.jsonl": "e6b98a41473933237c8869e02757649b8f7ab1475a854413722baa1c0b492c0c"
+  },
+  "grader_sha256": "4518d21bd6f70e77e12984145e631e576981d0c90d191291d24ab95e781f52a6",
+  "evaluator_sha256": "ad7bf2e18d9e8b57e70e16cca4ef07034143e0951c0b8dd3b579d8e104b11dd5",
+  "worker_sha256": "f8cd98429a3c82fb07d2408c071f2f9b486d0814a4b0f556be4734b71fca4817",
+  "worker_loaded_sha256": "f8cd98429a3c82fb07d2408c071f2f9b486d0814a4b0f556be4734b71fca4817",
+  "gpu": "2",
+  "evaluation_protocol": 2,
+  "kv_cache_gib": 16,
+  "max_num_seqs": 64,
+  "max_num_batched_tokens": 8192,
+  "wall_seconds": 166.8,
+  "finished": 1795699384.009522,
+  "data_sha256": "253658addbb13abcfe0fee0341cbd7c57dbe563b3fc0f38516ded41d339ab3d1",
+  "adapter_sha256": "81aa662cb01c1b99424bdb37aff745a94cce162e78a9b942273e51e31b2d8eda",
+  "results": {
+    "test": {
+      "free": {
+        "acc": 0.5345,
+        "lo": 0.4927,
+        "hi": 0.5746,
+        "n": 550
+      },
+      "no_final_answer_rate": 0.0091,
+      "mean_output_chars": 1054,
+      "sec": 69,
+      "forward_tokens": 264644,
+      "by_group": {
+        "all": {
+          "free": {
+            "acc": 0.5345,
+            "lo": 0.4927,
+            "hi": 0.5746,
+            "n": 550
+          }
+        }
+      }
+    },
+    "retention": {
+      "ppl_generic": 12.1003,
+      "arc_challenge": {
+        "acc": 0.74,
+        "lo": 0.69,
+        "hi": 0.7867,
+        "n": 300
+      },
+      "hellaswag": {
+        "acc": 0.5533,
+        "lo": 0.4966,
+        "hi": 0.6133,
+        "n": 300
+      },
+      "arithmetic": {
+        "acc": 0.505,
+        "lo": 0.4399,
+        "hi": 0.575,
+        "n": 200
+      },
+      "mmlu": {
+        "acc": 0.5474,
+        "lo": 0.5202,
+        "hi": 0.5781,
+        "n": 1140
+      },
+      "gsm8k": {
+        "acc": 0.806,
+        "lo": 0.772,
+        "hi": 0.84,
+        "n": 500
+      }
+    }
+  }
+}

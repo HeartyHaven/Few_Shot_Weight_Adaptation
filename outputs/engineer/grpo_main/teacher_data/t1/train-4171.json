@@ -1,0 +1,22 @@
+{
+  "id": "train-4171",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 59-year-old man with a history of type 2 diabetes mellitus, hypertension, and dyslipidemia was referred to cardiology clinic for evaluation of atypical chest pain. The patient denied any family history of coronary artery disease and had a history of 60 pack years of smoking. Physical examination was normal as was the 12-lead electrocardiogram. He had a recent workup, including transthoracic echocardiography that showed a left ventricular ejection fraction of 60%, stage II diastolic dysfunction and mild biatrial enlargement, and a radionuclear myocardial perfusion imaging stress test that showed no evidence of inducible ischemia or previous myocardial infarction. Patient underwent cardiac catheterization for definite evaluation of coronary artery disease. Selective right coronary angiography with a 6 F right coronary Judkins 4 catheter revealed a common blood vessel from which the right coronary artery (RCA) and the LMCA were arising. The RCA followed its normal course around the atrioventricular groove and the LMCA traveled to the left side of the heart and divided at the level of the interventricular septum giving off a long LADCA and the LCXCA (). Selective left coronary angiography with a 6F left Judkins 3.5 catheter revealed a second short hypoplastic LADCA that ended at the distal end of the proximal third of the interventricular sulcus without giving any branches of significant size (). An aortogram was done to demonstrate the origins of the coronary blood vessels. Four coronary arteries were identified, one arising from the left coronary sinus and the other three originating from a main blood vessel from the right sinus of Valsalva. Left ventriculography showed normal chamber size and wall motion. There was significant calcification of the proximal segments of the RCA, LMCA, the longer LADCA, and the LCXCA without significant diameter stenoses. A coronary computed tomography angiography (CTA) was ordered to further delineate the course of the longer LADCA. Images were acquired with prospective gating on a 64-Multislice detector computed tomography scanner (Somatom Definition, Siemens, Forchheim, Germany) in the craniocaudal direction during suspended respiration at 0.75 mm slice thickness and reconstruction interval, 0.33 second gantry rotation speed, tube voltage 120 kVp, and a peak tube current of 390 mA. Cumulative dose-length product was 651 mGy × cm. Iso-osmolar nonionic contrast material (Omnipaque, GE Healthcare, Princeton, NJ) was used. Premedication with nitroglycerin 0.6 mg SL was administered. No beta blocker was given since heart rate was <70 per minute. CTA demonstrated the LMCA traveling to the left side of the heart behind the right ventricular outflow tract and through the interventricular septum (Figures and ). No angiographically significant stenoses or high-degree calcifications were noted.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 720,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, Risk factors, and initial Troponin.\n- History: atypical pain without described anginal features, rated slightly suspicious = 0.\n- ECG: normal = 0.\n- Age: 59 years, in the 45–64 band = 1.\n- Risk factors: diabetes, hypertension, and dyslipidemia already meet the threshold of at least 3 risk factors = 2. Smoking history does not increase this component above 2.\n- Troponin: no admission value is reported. Assuming it was within the reference range gives 0; the normal stress test cannot establish this.\nConditional total = 0 + 0 + 1 + 2 + 0 = 3. Without the troponin result, 3 is the documented subtotal rather than a confirmed complete score.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 760,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

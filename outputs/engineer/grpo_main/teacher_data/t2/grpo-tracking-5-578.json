@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-578",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Karl, Bob is dancing with Oscar, Claire is dancing with Quinn, Dave is dancing with Yuki, and Eve is dancing with Stefan.\nThroughout the song, the dancers often trade partners. First, Claire and Dave switch partners. Then, Eve and Bob switch partners. Then, Alice and Claire switch partners. Then, Claire and Dave switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Karl\n(B) Oscar\n(C) Quinn\n(D) Yuki\n(E) Stefan",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Karl",
+      "Bob": "Oscar",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Oscar",
+      "Claire": "Yuki",
+      "Dave": "Quinn",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Karl",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Karl",
+      "Eve": "Oscar"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Karl, Oscar, Quinn, Yuki, Stefan\n1. Claire and Dave swap: Karl, Oscar, Yuki, Quinn, Stefan\n2. Eve and Bob swap: Karl, Stefan, Yuki, Quinn, Oscar\n3. Alice and Claire swap: Yuki, Stefan, Karl, Quinn, Oscar\n4. Claire and Dave swap: Yuki, Stefan, Quinn, Karl, Oscar\n5. Claire and Alice swap: Quinn, Stefan, Yuki, Karl, Oscar\nAlice is dancing with Quinn, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1274,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

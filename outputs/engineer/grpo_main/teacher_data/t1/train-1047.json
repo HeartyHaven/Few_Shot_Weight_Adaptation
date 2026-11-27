@@ -1,0 +1,22 @@
+{
+  "id": "train-1047",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 80-year-old male with hypertension and coronary artery disease presented with a three-day history of emesis and diarrhea, diagnosed as gastroenteritis. He endorsed dizziness and weakness but did not report any headache, blurry vision, paresthesias, or syncope. The patient also described a three-day history of complex visualizations involving a moving car. The car had color and appeared life-like. It was not distorted and seemed to be driving in a realistic manner in front of him. This occurred exclusive when his eyes were closed and immediately resolved upon opening his eyes. It was present for the majority of the time his eyes were closed and made it difficult for him to sleep.\nHe denied any prior hallucinations and had insight that the car was not real. He had no history of head trauma, cerebrovascular disease, or personal or familial history of psychosis or dementia. Ophthalmologic history was unremarkable and he used glasses only for reading. He was not experiencing any other sensory hallucinations or illusions at this time.\nThe patient was hemodynamically stable and afebrile, and physical examination was significant only for mild abdominal tenderness. There were no signs of cognitive impairment. Fundoscopic examination did not reveal any abnormalities. Laboratory analysis showed white blood cell count 4.6 billion cells/L, sodium 119 mEq/L, potassium 3.2 mEq/L, carbon dioxide 24.6 mEq/L, anion gap 10, glucose 186 mg/dL, and lactate 2.1 mmol/L. Urine drug screen was negative. Chest X-ray was normal, and electrocardiogram showed normal sinus rhythm.\nFluid resuscitation with normal saline and electrolyte replenishment was initiated. The visualizations decreased in frequency over the next two days and were completely absent by the third day after admission, which was the sixth day since they first began. Serum sodium increased during treatment and was 130 mEq/L on the day the hallucinations subsided. The patient was discharged the next day and has not experienced any recurrence of closed-eye visualizations or other hallucinations in the eight months since.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 515,
+  "solution": "Apply CHA₂DS₂-VASc to the admission history:\n- Heart failure or LV dysfunction (1 if present): not documented → 0.\n- Hypertension: known hypertension → 1.\n- Age (65–74 = 1; ≥75 = 2): age 80 → 2.\n- Diabetes (1 if present): not diagnosed; a single glucose of 186 mg/dL does not establish diabetes → 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): none documented → 0.\n- Vascular disease: known coronary artery disease → 1.\n- Sex category (1 for female): male → 0.\nTotal = 0 + 1 + 2 + 0 + 0 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 803,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

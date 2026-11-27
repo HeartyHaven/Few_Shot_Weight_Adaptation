@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-158",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Quinn, Claire is dancing with Karl, Dave is dancing with Marco, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Dave and Eve switch partners. Then, Claire and Bob switch partners. Then, Claire and Bob switch partners. Finally, Dave and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Umar\n(B) Quinn\n(C) Karl\n(D) Marco\n(E) Yuki",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Quinn",
+      "Claire": "Karl",
+      "Dave": "Marco",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Karl",
+      "Dave": "Marco",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Karl",
+      "Dave": "Umar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Karl",
+      "Claire": "Quinn",
+      "Dave": "Umar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Karl",
+      "Dave": "Umar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Karl",
+      "Dave": "Marco",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners in order: Alice | Bob | Claire | Dave | Eve\nInitial: Umar | Quinn | Karl | Marco | Yuki\n1. Alice swaps with Eve: Yuki | Quinn | Karl | Marco | Umar\n2. Dave swaps with Eve: Yuki | Quinn | Karl | Umar | Marco\n3. Claire swaps with Bob: Yuki | Karl | Quinn | Umar | Marco\n4. Claire swaps with Bob: Yuki | Quinn | Karl | Umar | Marco\n5. Dave swaps with Eve: Yuki | Quinn | Karl | Marco | Umar\nBob dances with Quinn, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1150,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

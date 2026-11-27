@@ -1,0 +1,22 @@
+{
+  "id": "train-4114",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 46-year-old woman with a family history of ADPKD presented to our emergency department with acute chest pain.\nHer chest pain lasted for 1 day and radiated to the back of her left shoulder.\nHer ADPKD had affected kidney function (eGFR: 15.98 mL/min/1.73 m2), and she exhibited extrarenal features of polycystic liver as shown in Figure .\nShe had no cardiovascular risk factors except a long history of hypertension and emotional stress. Blood pressure at admission was 142/70 mmHg.\nAuscultation revealed that the heart sounds were normal, without rales in the lungs.\nAt the emergency department, her troponin I was 0.268 ng/mL and the peak value during hospitalization was 1.928 ng/mL. Hematological examination found no signs of inflammation and anemia. The low-density lipoprotein cholesterol was 3.32 mmol/L, High density lipoprotein cholesterol cholesterol was 1.10 mmol/L, total cholesterol was 4.07 mmol/L, triglyceride was 0.82 mmol/L, and body mass index was 21.87 kg/m2.\nHer initial electrocardiogram in the emergency room was normal without any changes in ST segment and T wave (Figure ). Transthoracic echocardiography revealed mild dilation of the left atrium (left atrium inner diameter 42 mm), normal left ventricular ejection fraction (62%), and mild mitral regurgitation.\nAfter three days of antiplatelet therapy, we performed coronary angiography which found no obvious characteristics of coronary dissection (Figure and ). Given the particularity of the patient, IVUS examination was performed at the same time to further examine the condition of her coronary artery. Interestingly, obvious IMH formation from the distal to proximal was found in the left circumflex (Figure ). IVUS was also performed on the left anterior descending artery, and found only a few atherosclerotic plaques (Figure ).\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 509,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors, and initial troponin.\n1. History: the prolonged pain radiating to the back of the shoulder has no described exertional trigger or pressure quality. Rate the history alone as slightly suspicious (0; moderately/highly suspicious would score 1/2).\n2. ECG: normal initial ECG = 0 (nonspecific repolarization changes = 1; significant ST depression = 2).\n3. Age: 46 years falls in the 45–64 band = 1 (<45 = 0; ≥65 = 2).\n4. Risk factors: hypertension is the only documented conventional risk factor = 1 (none = 0; ≥3 or known atherosclerotic disease = 2). Do not use plaques found later to score the admission.\n5. Troponin: use 0.268 ng/mL, not the later peak. HEART assigns 0 at or below the assay upper reference limit, 1 at >1–3 times the limit, and 2 at >3 times. Assuming a limit of 0.04 ng/mL, the initial value is 6.7 times the limit = 2; the note does not specify the assay limit.\nTotal under these assumptions = 0 + 0 + 1 + 1 + 2 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 694,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

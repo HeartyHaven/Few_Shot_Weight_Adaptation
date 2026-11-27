@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-171",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Lena, Claire is dancing with Karl, Dave is dancing with Stefan, and Eve is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Dave and Eve switch partners. Then, Dave and Eve switch partners. Then, Bob and Claire switch partners. Finally, Claire and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Oscar\n(B) Lena\n(C) Karl\n(D) Stefan\n(E) Nadia",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Lena",
+      "Claire": "Karl",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Oscar",
+      "Claire": "Lena",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners are listed in this fixed dancer order: Alice, Bob, Claire, Dave, Eve.\nInitial: Oscar, Lena, Karl, Stefan, Nadia.\n1. Alice ↔ Claire: Karl, Lena, Oscar, Stefan, Nadia.\n2. Dave ↔ Eve: Karl, Lena, Oscar, Nadia, Stefan.\n3. Dave ↔ Eve: Karl, Lena, Oscar, Stefan, Nadia.\n4. Bob ↔ Claire: Karl, Oscar, Lena, Stefan, Nadia.\n5. Claire ↔ Bob: Karl, Lena, Oscar, Stefan, Nadia.\nAlice is dancing with Karl, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1025,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

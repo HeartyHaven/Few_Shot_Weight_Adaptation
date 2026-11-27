@@ -1,0 +1,17 @@
+{
+  "id": "sample_530",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(s, ch):\n    sl = s\n    if ch in s:\n        sl = s.lstrip(ch)\n        if len(sl) == 0:\n            sl = sl + '!?'\n    else:\n        return 'no'\n    return sl\n```\n\nInput: f(\"@@@ff\", '@')",
+  "answer": "'ff'",
+  "solution": "sl starts as '@@@ff'. Since '@' is in s, s.lstrip('@') removes all three leading '@' characters and sets sl to 'ff'. Its length is 2, not 0, so nothing is appended. The function returns sl.\nFinal answer: 'ff'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 12,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'ff'",
+    "correct": true
+  }
+}

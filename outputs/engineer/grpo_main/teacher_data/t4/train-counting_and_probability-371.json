@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-371",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Each unit square of a 3-by-3 unit-square grid is to be colored either blue or red. For each square, either color is equally likely to be used. The probability of obtaining a grid that does not have a 2-by-2 red square is $\\frac {m}{n}$, where $m$ and $n$ are relatively prime positive integers. Find $m + n$.\n",
+  "answer": "929",
+  "prompt_tokens": 112,
+  "solution": "There are \\(2^9=512\\) equally likely colorings. Use inclusion-exclusion on the four events that a particular 2-by-2 block is all red. If a set of blocks forces \\(k\\) squares red, the remaining squares give \\(2^{9-k}\\) colorings.\nEach single block forces 4 squares red. Of the six pairs of blocks, four adjacent pairs share two squares and force 6 red; the two diagonal pairs share one square and force 7 red. Each of the four triples covers all but one corner, forcing 8 red. All four blocks together force 9 red.\nThus the number with at least one red block is \\(4\\cdot2^5-(4\\cdot2^3+2\\cdot2^2)+4\\cdot2^1-1=95\\). The probability of no red block is \\((512-95)/512=417/512\\), in lowest terms since 417 is odd and 512 is a power of 2. Hence \\(m+n=417+512=929\\).\nFinal answer: 929",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1377,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "929",
+    "correct": true
+  }
+}

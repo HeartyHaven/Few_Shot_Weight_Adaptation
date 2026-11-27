@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-115",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Walden, Claire gets Dune, Dave gets The Trial, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Alice and Dave swap books. Then, Dave and Claire swap books. Then, Eve and Bob swap books. Then, Alice and Claire swap books. Finally, Dave and Eve swap books. At the end of the semester, Dave has\nOptions:\n(A) Persuasion\n(B) Walden\n(C) Dune\n(D) The Trial\n(E) Jane Eyre",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve).\nInitial: (Persuasion, Walden, Dune, The Trial, Jane Eyre)\n1. Alice and Dave swap: (The Trial, Walden, Dune, Persuasion, Jane Eyre)\n2. Dave and Claire swap: (The Trial, Walden, Persuasion, Dune, Jane Eyre)\n3. Eve and Bob swap: (The Trial, Jane Eyre, Persuasion, Dune, Walden)\n4. Alice and Claire swap: (Persuasion, Jane Eyre, The Trial, Dune, Walden)\n5. Dave and Eve swap: (Persuasion, Jane Eyre, The Trial, Walden, Dune)\nDave has Walden, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 997,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

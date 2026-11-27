@@ -1,0 +1,22 @@
+{
+  "id": "train-6702",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 43-year-old male with no significant past medical history presented to the emergency room with shortness of breath, cough, fever, chest pain, and headache for about one week (). He was taking doxycycline for pneumonia before presentation; however, his symptoms did not resolve. He denied sick contacts, recent travel, or being in contact with someone who traveled. He also denied vomiting, diarrhea, or abdominal pain. Initial vitals showed a temperature of 98.7 Fahrenheit but rising to 101.2 Fahrenheit, pulse rate of 76 beats per minute, respiratory rate of 18 cycles per minute, blood pressure of 121/75 mmHg, and pulse oximetry of 95% on room air. Physical examination revealed breath sounds that were equal bilaterally. The initial laboratory showed a white blood cell count of 2.1 k/μL, hemoglobin of 12.8 g/dl, and platelets of 110 k/μL, but a complete metabolic panel was normal. Laboratory investigation was also negative for HIV 1 and 2, influenza A and B, and respiratory syncytial virus. A chest X-ray demonstrated mild fullness in the right perihilar region (.). He was diagnosed with COVID-19 and was started on levofloxacin but he received hydroxychloroquine for two days.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 51,
+  "prompt_tokens": 365,
+  "solution": "The adult SIRS count assigns 1 point for each of four criteria met:\n• Temperature >38°C or <36°C: initially 98.7°F, rising during presentation to 101.2°F (38.4°C), +1.\n• Heart rate >90/min: 76/min, 0.\n• Respiratory rate >20/min or PaCO₂ <32 mmHg: 18/min with no qualifying PaCO₂ reported, 0.\n• WBC >12,000/µL, <4,000/µL, or >10% bands: WBC 2,100/µL meets the leukopenia threshold, +1.\nTotal = 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 912,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

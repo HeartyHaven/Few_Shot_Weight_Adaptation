@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-305",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Wade, Bob is dancing with Vera, and Claire is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Claire and Alice switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Wade\n(B) Vera\n(C) Karl",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Wade",
+      "Bob": "Vera",
+      "Claire": "Karl"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Wade",
+      "Claire": "Vera"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Karl"
+    }
+  ],
+  "prompt_tokens": 135,
+  "solution": "Each row lists partners in the order Alice, Bob, Claire.\nInitial: Wade, Vera, Karl\n1. Alice ↔ Bob: Vera, Wade, Karl\n2. Claire ↔ Alice: Karl, Wade, Vera\n3. Alice ↔ Claire: Vera, Wade, Karl\nAlice dances with Vera, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1067,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

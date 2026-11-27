@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-31",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Yuki, Claire is dancing with Rosa, Dave is dancing with Quinn, and Eve is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Bob and Eve switch partners. Then, Bob and Eve switch partners. Then, Bob and Alice switch partners. Finally, Dave and Bob switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Umar\n(B) Yuki\n(C) Rosa\n(D) Quinn\n(E) Vera",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Yuki",
+      "Claire": "Rosa",
+      "Dave": "Quinn",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Yuki",
+      "Claire": "Rosa",
+      "Dave": "Quinn",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Umar",
+      "Claire": "Rosa",
+      "Dave": "Quinn",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Yuki",
+      "Claire": "Rosa",
+      "Dave": "Quinn",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Vera",
+      "Claire": "Rosa",
+      "Dave": "Quinn",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Rosa",
+      "Dave": "Vera",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Umar, Yuki, Rosa, Quinn, Vera)\n1. Alice and Eve swap: (Vera, Yuki, Rosa, Quinn, Umar)\n2. Bob and Eve swap: (Vera, Umar, Rosa, Quinn, Yuki)\n3. Bob and Eve swap: (Vera, Yuki, Rosa, Quinn, Umar)\n4. Bob and Alice swap: (Yuki, Vera, Rosa, Quinn, Umar)\n5. Dave and Bob swap: (Yuki, Quinn, Rosa, Vera, Umar)\nEve's final partner is Umar, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

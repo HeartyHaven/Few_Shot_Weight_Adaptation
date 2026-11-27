@@ -1,0 +1,22 @@
+{
+  "id": "train-6770",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA previously healthy 70-day-old male was brought to our clinic (Mugla Sitki Kocman University, Medicine Faculty, Department of Pediatrics, Mugla/Turkey; February 2012) with cyanosis on the perioral region, trunk and hands, three hours after he was administered locally prilocaine (Cytanest 2%; Astra Zeneca, Istanbul, Turkey) for circumcision. His previous health history and family history were unremarkable. On physical examination, temperature of 36 °C, blood pressure of 90/70 mm Hg, heart rate of 128 beats per minute regular with normal pulses and respiratory rate of 44 beats per minute with normal breathing. Oxygen saturation level was 76% (with pulse oximeter) on room air while he had prominent cyanosis on perioral region and the extremities. The rest of the physical examination was normal.\nIntravenous line was obtained, and the blood collected for laboratory analysis had chocolate-color appearance. The laboratory results analysed by routinely calibrated equipments revealed; Hb 11 g/dl, WBC 9310/μL, PLT 622000/μL and all other biochemistry values were in normal range (Symex XT 2000i,Roche Diagnostics, Mannheim, Germany). Arterial blood gases (GEM premier 3000,instrument laboratory, Italy, calibrated in january 2012) revealed pH 7.43, pCO2 41 mmHg, pO2 97 mmHg and bicarbonates 28 mEq/L, and methemoglobin 24.5% (). After obtaining blood samples to check the methemoglobin levels, 300 mg IV ascorbic acid was slowly administered in 24 h. After 10 min, oxygen saturation began to increase and an hour later reached its normal levels. Methemoglobin levels were found to be 24.5% before ascorbic acid administration. After 24 hour of administration, methemoglobin level was seen to be 2%.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 51,
+  "prompt_tokens": 530,
+  "solution": "Using the fixed-threshold SIRS calculator, count each admission criterion once:\n- Temperature <36°C or >38°C: 36°C is exactly at the lower boundary → 0.\n- Heart rate >90/min: 128/min → 1.\n- Respiratory rate >20/min or PaCO₂ <32 mm Hg: rate 44/min meets the criterion despite PaCO₂ of 41 mm Hg → 1.\n- WBC <4,000/µL, >12,000/µL, or >10% bands: WBC 9,310/µL with no bandemia reported → 0.\nTotal = 0 + 1 + 1 + 0 = 2. These are adult cutoffs, not age-adjusted pediatric SIRS criteria for a 70-day-old infant.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 742,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1098",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 76 years old woman presented to the Emergency Department with complaints of abdominal pain, and an abdominal mass in the right upper quadrant. She had a history of congestive heart failure, chronic atrial fibrillation, chronic obstructive lung disease, ischemic cerebrovascular disease and myocardial infarction. The patient had been taking warfarin sodium 5 mg/day for atrial fibrillation for 2 years without medical supervision. On physical examination painful mass in the left lower quadrant and suprapubic region of the abdomen was observed. Ausculatation of the abdomen revealed hypoactive bowel sound. Mean arterial pressure was 140/80 mmHg, pulse rate 118/min, hemoglobin level 13.32 g/dL, hematocrit 30.26%, platelet 199000/UL, PT: 79.2 sec, aPTT: 56 sec, INR: 6.68. The other biochemical tests were normal. Abdominal CT revealed rectus sheath hematoma (Figure ). During the follow up period 6 units of fresh frozen plasma was administered. Due to the hemodynamic stability patient was referred to the Internal Medicine Department.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 332,
+  "solution": "CHA₂DS₂-VASc assigns points for heart failure, hypertension, age, diabetes, prior stroke/TIA/systemic embolism, vascular disease, and female sex. Using the admission history:\n- Congestive heart failure: 1.\n- Hypertension: 0. A single reading of 140/80 mmHg does not establish a history of hypertension.\n- Age 76: 2 (age ≥75; do not also add the age 65–74 point).\n- Diabetes: 0; none documented.\n- Prior stroke/TIA/systemic embolism: 2, interpreting the documented ischemic cerebrovascular disease as a prior ischemic event.\n- Vascular disease: 1 for prior myocardial infarction.\n- Female sex: 1.\nTotal = 1 + 0 + 2 + 0 + 2 + 1 + 1 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 844,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

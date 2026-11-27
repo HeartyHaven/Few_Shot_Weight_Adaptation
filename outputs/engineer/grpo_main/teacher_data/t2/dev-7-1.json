@@ -1,0 +1,128 @@
+{
+  "id": "dev-7-1",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Rosa, Bob is dancing with Lena, Claire is dancing with Wade, Dave is dancing with Priya, Eve is dancing with Yuki, Fred is dancing with Vera, and Gertrude is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Eve and Dave switch partners. Then, Fred and Claire switch partners. Then, Gertrude and Bob switch partners. Then, Gertrude and Eve switch partners. Then, Alice and Eve switch partners. Then, Bob and Alice switch partners. Finally, Bob and Fred switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Rosa\n(B) Lena\n(C) Wade\n(D) Priya\n(E) Yuki\n(F) Vera\n(G) Nadia",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Wade",
+      "Dave": "Priya",
+      "Eve": "Yuki",
+      "Fred": "Vera",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Wade",
+      "Dave": "Yuki",
+      "Eve": "Priya",
+      "Fred": "Vera",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Priya",
+      "Fred": "Wade",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Nadia",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Priya",
+      "Fred": "Wade",
+      "Gertrude": "Lena"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Nadia",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Lena",
+      "Fred": "Wade",
+      "Gertrude": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Rosa",
+      "Fred": "Wade",
+      "Gertrude": "Priya"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Rosa",
+      "Fred": "Wade",
+      "Gertrude": "Priya"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Wade",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Rosa",
+      "Fred": "Lena",
+      "Gertrude": "Priya"
+    }
+  ],
+  "prompt_tokens": 229,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Rosa, Lena, Wade, Priya, Yuki, Vera, Nadia\n1. Eve ↔ Dave: Rosa, Lena, Wade, Yuki, Priya, Vera, Nadia\n2. Fred ↔ Claire: Rosa, Lena, Vera, Yuki, Priya, Wade, Nadia\n3. Gertrude ↔ Bob: Rosa, Nadia, Vera, Yuki, Priya, Wade, Lena\n4. Gertrude ↔ Eve: Rosa, Nadia, Vera, Yuki, Lena, Wade, Priya\n5. Alice ↔ Eve: Lena, Nadia, Vera, Yuki, Rosa, Wade, Priya\n6. Bob ↔ Alice: Nadia, Lena, Vera, Yuki, Rosa, Wade, Priya\n7. Bob ↔ Fred: Nadia, Wade, Vera, Yuki, Rosa, Lena, Priya\nAlice's partner is Nadia, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

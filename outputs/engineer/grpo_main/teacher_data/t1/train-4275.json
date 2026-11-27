@@ -1,0 +1,22 @@
+{
+  "id": "train-4275",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 54-year-old Caucasian female with a medical history significant for hypertension, hyperlipidemia, cervical disc disease, and depression was admitted for routine cervical spine surgery. She has never smoked and does not drink alcohol. Her medications included lisinopril 10 mg, atorvastatin 40 mg, citalopram 20 mg, and furosemide 20 mg. She has severe degenerative disk disease at C4–C7, with herniated nucleus pulposus. The patient was admitted to hospital for an elective cervical disk arthroplasty with diskectomy at C4 to C7 and fusion at C5–C7.\nThe patient failed weaning off the ventilator on multiple attempts postoperatively. There were no observed symptoms of an allergic reaction. Her vital signs and laboratory tests were unremarkable. CT scan of the neck showed extensive edema at the level of the arytenoids, but no retropharyngeal hematoma or abscess were noted (). A bronchoscopy confirmed arytenoid edema.\nDexamethasone 8 mg was given every 6 hours for 4 days to reduce the edema without successful resolution. On review of her medications, it was found that the patient was on lisinopril following the procedure for the treatment of hypertension. It was subsequently discontinued. The following day, the patient was weaned and successfully extubated.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 18,
+  "prompt_tokens": 366,
+  "solution": "The HEART score assesses suspected acute coronary syndrome (ACS) using five components, each worth 0–2 points. This was an elective surgical admission, not a suspected ACS presentation.\n- History (slightly/moderately/highly suspicious = 0/1/2): no ischemic symptoms on admission = 0.\n- ECG (normal/nonspecific repolarization disturbance/significant ST depression = 0/1/2): no admission ECG reported; assume 0 for this calculation.\n- Age (<45/45–64/≥65 years = 0/1/2): age 54 = 1.\n- Risk factors (none/1–2/≥3 or known atherosclerotic disease = 0/1/2): hypertension and hyperlipidemia = 1.\n- Troponin (≤1, >1–3, or >3 times the upper reference limit = 0/1/2): no admission value reported; assume 0 for this calculation.\nWith those assumptions, the sum is 0 + 0 + 1 + 1 + 0 = 2. The ECG and troponin components are not clinically verified.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 731,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

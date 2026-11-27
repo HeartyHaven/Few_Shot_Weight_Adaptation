@@ -1,0 +1,20 @@
+{
+  "id": "sample_629",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, dng):\n    if dng not in text:\n        return text\n    if text[-len(dng):] == dng:\n        return text[:-len(dng)]\n    return text[:-1] + f(text[:-2], dng)\n```\n\nInput: f('catNG', 'NG')",
+  "answer": "'cat'",
+  "prompt_tokens": 126,
+  "solution": "'NG' occurs in 'catNG', so the first return is skipped. Since len('NG') is 2, text[-2:] is 'NG', which matches dng. The function returns text[:-2], which is 'cat', without recursing.\nFinal answer: 'cat'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "'cat'",
+    "correct": true
+  }
+}

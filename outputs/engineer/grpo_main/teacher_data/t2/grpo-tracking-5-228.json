@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-228",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Umar, Claire is dancing with Quinn, Dave is dancing with Rosa, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Dave and Alice switch partners. Then, Eve and Bob switch partners. Then, Claire and Alice switch partners. Then, Alice and Claire switch partners. Finally, Bob and Eve switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Yuki\n(B) Umar\n(C) Quinn\n(D) Rosa\n(E) Marco",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Umar",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Umar",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Marco",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Marco",
+      "Claire": "Rosa",
+      "Dave": "Yuki",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Marco",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Umar",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Yuki, Umar, Quinn, Rosa, Marco\n1. Dave ↔ Alice: Rosa, Umar, Quinn, Yuki, Marco\n2. Eve ↔ Bob: Rosa, Marco, Quinn, Yuki, Umar\n3. Claire ↔ Alice: Quinn, Marco, Rosa, Yuki, Umar\n4. Alice ↔ Claire: Rosa, Marco, Quinn, Yuki, Umar\n5. Bob ↔ Eve: Rosa, Umar, Quinn, Yuki, Marco\nAlice's final partner is Rosa, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1228,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

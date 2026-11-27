@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-177",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Beloved, Claire gets Persuasion, Dave gets Hamlet, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Bob and Alice swap books. Then, Claire and Dave swap books. Then, Claire and Bob swap books. Finally, Alice and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Emma\n(B) Beloved\n(C) Persuasion\n(D) Hamlet\n(E) Siddhartha",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Persuasion",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Persuasion",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Hamlet",
+      "Dave": "Persuasion",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Persuasion",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "Persuasion",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Owners in each row: Alice | Bob | Claire | Dave | Eve\nInitial: Emma | Beloved | Persuasion | Hamlet | Siddhartha\n1. Bob ↔ Alice: Beloved | Emma | Persuasion | Hamlet | Siddhartha\n2. Bob ↔ Alice: Emma | Beloved | Persuasion | Hamlet | Siddhartha\n3. Claire ↔ Dave: Emma | Beloved | Hamlet | Persuasion | Siddhartha\n4. Claire ↔ Bob: Emma | Hamlet | Beloved | Persuasion | Siddhartha\n5. Alice ↔ Bob: Hamlet | Emma | Beloved | Persuasion | Siddhartha\nBob has Emma, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1059,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

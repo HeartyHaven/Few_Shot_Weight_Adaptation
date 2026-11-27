@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-570",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Marco, Claire is dancing with Lena, Dave is dancing with Quinn, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Eve and Bob switch partners. Then, Dave and Eve switch partners. Then, Bob and Eve switch partners. Then, Dave and Bob switch partners. Finally, Dave and Claire switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Oscar\n(B) Marco\n(C) Lena\n(D) Quinn\n(E) Karl",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Karl",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Karl",
+      "Claire": "Lena",
+      "Dave": "Marco",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Quinn",
+      "Claire": "Lena",
+      "Dave": "Marco",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Marco",
+      "Claire": "Quinn",
+      "Dave": "Lena",
+      "Eve": "Karl"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partners in each row are listed for Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Oscar, Marco, Lena, Quinn, Karl\n1. Eve ↔ Bob: Oscar, Karl, Lena, Quinn, Marco\n2. Dave ↔ Eve: Oscar, Karl, Lena, Marco, Quinn\n3. Bob ↔ Eve: Oscar, Quinn, Lena, Marco, Karl\n4. Dave ↔ Bob: Oscar, Marco, Lena, Quinn, Karl\n5. Dave ↔ Claire: Oscar, Marco, Quinn, Lena, Karl\nEve is dancing with Karl, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1155,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

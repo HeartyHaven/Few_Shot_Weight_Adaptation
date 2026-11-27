@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-652",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "In this square array of 16 dots, four dots are to be chosen at random. What is the probability that the four dots will be collinear? Express your answer as a common fraction.\n\n[asy]\nsize(59);\nfor(int i = 0; i<4; ++i)\nfor(int j = 0; j<4; ++j)\ndot((i,j),linewidth(7));\n[/asy]",
+  "answer": "\\frac{1}{182}",
+  "prompt_tokens": 117,
+  "solution": "There are $\\binom{16}{4}=16\\cdot15\\cdot14\\cdot13/(4\\cdot3\\cdot2\\cdot1)=1820$ equally likely sets of four dots. The 4 rows and 4 columns each give one collinear set. Any other line through four dots must use all four columns and all four rows, since neither coordinate repeats. Reading from left to right, the row numbers must strictly increase or strictly decrease, so their order is either $1,2,3,4$ or $4,3,2,1$. These give the two main diagonals. Thus the probability is $(4+4+2)/1820=1/182$.\nFinal answer: \\frac{1}{182}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1374,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "\\frac{1}{182}",
+    "correct": true
+  }
+}

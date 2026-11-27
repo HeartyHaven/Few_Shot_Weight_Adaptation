@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-121",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a blue present, Bob has a green present, Claire has a red present, Dave has a silver present, and Eve has a brown present.\nAs the event progresses, pairs of people swap gifts. First, Dave and Alice swap their gifts. Then, Dave and Bob swap their gifts. Then, Alice and Eve swap their gifts. Then, Eve and Dave swap their gifts. Finally, Alice and Dave swap their gifts. At the end of the event, Eve has the\nOptions:\n(A) blue present\n(B) green present\n(C) red present\n(D) silver present\n(E) brown present",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "blue",
+      "Bob": "green",
+      "Claire": "red",
+      "Dave": "silver",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "green",
+      "Claire": "red",
+      "Dave": "blue",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "blue",
+      "Claire": "red",
+      "Dave": "green",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "blue",
+      "Claire": "red",
+      "Dave": "green",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "blue",
+      "Claire": "red",
+      "Dave": "silver",
+      "Eve": "green"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "blue",
+      "Claire": "red",
+      "Dave": "brown",
+      "Eve": "green"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Gift colors in order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (blue, green, red, silver, brown)\n1. Dave and Alice swap: (silver, green, red, blue, brown)\n2. Dave and Bob swap: (silver, blue, red, green, brown)\n3. Alice and Eve swap: (brown, blue, red, green, silver)\n4. Eve and Dave swap: (brown, blue, red, silver, green)\n5. Alice and Dave swap: (silver, blue, red, brown, green)\nEve has the green present, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1118,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

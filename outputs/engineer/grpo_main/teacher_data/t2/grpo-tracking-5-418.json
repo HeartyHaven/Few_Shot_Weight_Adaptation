@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-418",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Walden, Claire gets Ivanhoe, Dave gets Emma, and Eve gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Bob and Eve swap books. Then, Alice and Bob swap books. Then, Bob and Eve swap books. Finally, Dave and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) The Hobbit\n(B) Walden\n(C) Ivanhoe\n(D) Emma\n(E) Middlemarch",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: The Hobbit | Walden | Ivanhoe | Emma | Middlemarch\n1. Alice ↔ Bob: Walden | The Hobbit | Ivanhoe | Emma | Middlemarch\n2. Bob ↔ Eve: Walden | Middlemarch | Ivanhoe | Emma | The Hobbit\n3. Alice ↔ Bob: Middlemarch | Walden | Ivanhoe | Emma | The Hobbit\n4. Bob ↔ Eve: Middlemarch | The Hobbit | Ivanhoe | Emma | Walden\n5. Dave ↔ Eve: Middlemarch | The Hobbit | Ivanhoe | Walden | Emma\nBob has The Hobbit, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1239,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

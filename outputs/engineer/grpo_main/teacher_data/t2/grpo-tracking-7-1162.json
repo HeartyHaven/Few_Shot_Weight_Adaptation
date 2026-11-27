@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1162",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Walden, Claire gets Dracula, Dave gets Beloved, Eve gets Jane Eyre, Fred gets The Trial, and Gertrude gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Bob and Claire swap books. Then, Gertrude and Claire swap books. Then, Bob and Alice swap books. Then, Gertrude and Alice swap books. Then, Bob and Fred swap books. Finally, Bob and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) Emma\n(B) Walden\n(C) Dracula\n(D) Beloved\n(E) Jane Eyre\n(F) The Trial\n(G) Middlemarch",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Emma",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Trial",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "Emma",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "Emma",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Books in reader order: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: Emma | Walden | Dracula | Beloved | Jane Eyre | The Trial | Middlemarch\n1. Dave ↔ Bob: Emma | Beloved | Dracula | Walden | Jane Eyre | The Trial | Middlemarch\n2. Bob ↔ Claire: Emma | Dracula | Beloved | Walden | Jane Eyre | The Trial | Middlemarch\n3. Gertrude ↔ Claire: Emma | Dracula | Middlemarch | Walden | Jane Eyre | The Trial | Beloved\n4. Bob ↔ Alice: Dracula | Emma | Middlemarch | Walden | Jane Eyre | The Trial | Beloved\n5. Gertrude ↔ Alice: Beloved | Emma | Middlemarch | Walden | Jane Eyre | The Trial | Dracula\n6. Bob ↔ Fred: Beloved | The Trial | Middlemarch | Walden | Jane Eyre | Emma | Dracula\n7. Bob ↔ Claire: Beloved | Middlemarch | The Trial | Walden | Jane Eyre | Emma | Dracula\nDave has Walden, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1365,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

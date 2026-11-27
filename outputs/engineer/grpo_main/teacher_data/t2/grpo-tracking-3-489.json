@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-489",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left back, Bob is playing cheerleader, and Claire is playing fullback.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Alice trade positions. Then, Bob and Claire trade positions. Finally, Claire and Alice trade positions. At the end of the match, Claire is playing\nOptions:\n(A) left back\n(B) cheerleader\n(C) fullback",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "left back",
+      "Bob": "cheerleader",
+      "Claire": "fullback"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "cheerleader",
+      "Claire": "left back"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left back",
+      "Claire": "cheerleader"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "left back",
+      "Claire": "fullback"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Player order in each row: (Alice, Bob, Claire).\nInitial: (left back, cheerleader, fullback)\n1. Claire and Alice swap: (fullback, cheerleader, left back)\n2. Bob and Claire swap: (fullback, left back, cheerleader)\n3. Claire and Alice swap: (cheerleader, left back, fullback)\nClaire's final position is fullback, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1258,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

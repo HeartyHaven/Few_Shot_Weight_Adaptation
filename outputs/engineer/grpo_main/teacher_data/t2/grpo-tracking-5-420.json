@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-420",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Lena, Claire is dancing with Karl, Dave is dancing with Oscar, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Claire and Dave switch partners. Then, Eve and Bob switch partners. Then, Claire and Eve switch partners. Then, Eve and Alice switch partners. Finally, Eve and Bob switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Stefan\n(B) Lena\n(C) Karl\n(D) Oscar\n(E) Marco",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Lena",
+      "Claire": "Karl",
+      "Dave": "Oscar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Karl",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Marco",
+      "Claire": "Oscar",
+      "Dave": "Karl",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Stefan",
+      "Claire": "Lena",
+      "Dave": "Karl",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partner order in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Stefan, Lena, Karl, Oscar, Marco)\n1. Claire and Dave swap: (Stefan, Lena, Oscar, Karl, Marco)\n2. Eve and Bob swap: (Stefan, Marco, Oscar, Karl, Lena)\n3. Claire and Eve swap: (Stefan, Marco, Lena, Karl, Oscar)\n4. Eve and Alice swap: (Oscar, Marco, Lena, Karl, Stefan)\n5. Eve and Bob swap: (Oscar, Stefan, Lena, Karl, Marco)\nBob's final partner is Stefan, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1130,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

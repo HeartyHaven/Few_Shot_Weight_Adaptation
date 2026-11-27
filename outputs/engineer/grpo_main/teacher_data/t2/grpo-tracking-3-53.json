@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-53",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing sweeper, Bob is playing right midfielder, and Claire is playing goalkeeper.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Claire trade positions. Then, Bob and Claire trade positions. Finally, Bob and Alice trade positions. At the end of the match, Bob is playing\nOptions:\n(A) sweeper\n(B) right midfielder\n(C) goalkeeper",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "sweeper",
+      "Bob": "right midfielder",
+      "Claire": "goalkeeper"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "goalkeeper",
+      "Claire": "right midfielder"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "right midfielder",
+      "Claire": "goalkeeper"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "sweeper",
+      "Claire": "goalkeeper"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Positions in order: (Alice, Bob, Claire).\nInitial: (sweeper, right midfielder, goalkeeper).\n1. Bob and Claire swap: (sweeper, goalkeeper, right midfielder).\n2. Bob and Claire swap: (sweeper, right midfielder, goalkeeper).\n3. Bob and Alice swap: (right midfielder, sweeper, goalkeeper).\nBob is playing sweeper, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1366,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

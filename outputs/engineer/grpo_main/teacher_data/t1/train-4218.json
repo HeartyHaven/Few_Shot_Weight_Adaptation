@@ -1,0 +1,22 @@
+{
+  "id": "train-4218",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 31-year-old male, airline pilot, with no clinical history or cardiovascular risk factors, was admitted to the emergency room with 12 h history of retrosternal chest pain radiating to the jaw and upper extremities, during a trans-Atlantic flight, which did not improve with analgesia. Because of persistent pain, he came to our hospital. Upon arrival to the emergency room, his vital signs were stable and he had a normal physical examination but complained of precordial pain. The cardiac enzymes were elevated and the EKG detected S-T changes consistent with MI (Fig. ). A multidetector CT coronary angiography was performed showing left main trunk dissection with 50% stenosis (Fig. ).\nThe patient underwent emergent coronary revascularization with saphenous vein grafts to the first obtuse marginal and the left anterior descending artery (LAD). His postoperative course was uneventful and the patient was discharged home 7 days later. Control CT coronary angiography was performed 2 months later revealing patent aorto-coronary grafts (Fig. ).\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 18,
+  "prompt_tokens": 296,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, atherosclerotic risk factors, and initial troponin.\n- History: Persistent retrosternal pain radiating to the jaw and arms is highly suspicious for ischemia → 2.\n- ECG: The MI-consistent ST changes are interpreted as significant ischemic ST deviation → 2.\n- Age: 31 years (<45) → 0.\n- Risk factors: No reported cardiovascular risk factors or prior atherosclerotic disease → 0. The coronary dissection is not an atherosclerotic risk factor.\n- Troponin: Assigning 2 assumes the elevated cardiac enzymes include a troponin >3 times the upper reference limit. The note does not give the value needed to verify this tier.\nUnder these ECG and troponin interpretations, HEART = 2 + 2 + 0 + 0 + 2 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 667,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

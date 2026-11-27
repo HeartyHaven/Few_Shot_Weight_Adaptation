@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-332",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Nadia, Bob is dancing with Lena, Claire is dancing with Wade, Dave is dancing with Vera, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Claire and Bob switch partners. Then, Alice and Dave switch partners. Then, Alice and Bob switch partners. Then, Eve and Claire switch partners. Finally, Dave and Bob switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Nadia\n(B) Lena\n(C) Wade\n(D) Vera\n(E) Tara",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Wade",
+      "Dave": "Vera",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Wade",
+      "Claire": "Lena",
+      "Dave": "Vera",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Lena",
+      "Dave": "Nadia",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Vera",
+      "Claire": "Lena",
+      "Dave": "Nadia",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Vera",
+      "Claire": "Tara",
+      "Dave": "Nadia",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Nadia",
+      "Claire": "Tara",
+      "Dave": "Vera",
+      "Eve": "Lena"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Nadia, Lena, Wade, Vera, Tara)\n1. Claire and Bob swap: (Nadia, Wade, Lena, Vera, Tara)\n2. Alice and Dave swap: (Vera, Wade, Lena, Nadia, Tara)\n3. Alice and Bob swap: (Wade, Vera, Lena, Nadia, Tara)\n4. Eve and Claire swap: (Wade, Vera, Tara, Nadia, Lena)\n5. Dave and Bob swap: (Wade, Nadia, Tara, Vera, Lena)\nEve's partner is Lena, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1068,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

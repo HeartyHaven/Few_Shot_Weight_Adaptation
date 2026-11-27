@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-595",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "The decimal representation of $m/n,$ where $m$ and $n$ are relatively prime positive integers and $m < n,$ contains the digits $2, 5$, and $1$ consecutively, and in that order. Find the smallest value of $n$ for which this is possible.\n",
+  "answer": "127",
+  "prompt_tokens": 92,
+  "solution": "If the block 251 starts after \\(k\\) decimal places, multiplying \\(m/n\\) by \\(10^k\\) shifts it to the first three places after the decimal point. The fractional part is \\(r/n\\), where \\(r\\) is the remainder when \\(10^k m\\) is divided by \\(n\\). Thus \\(251/1000\\le r/n<252/1000\\).\nMultiplying by 4 and subtracting 1 gives \\(0<(4r-n)/n<8/1000=1/125\\). Hence \\(4r-n\\) is a positive integer less than \\(n/125\\), so \\(n>125\\). If \\(n=126\\), then \\(4r-126\\) must be 1, the only positive integer below \\(126/125\\), but it is even.\nFor \\(n=127\\), take \\(m=32\\). Since \\(4\\cdot32-127=1\\), the numerator and denominator are coprime. Also \\(251\\cdot127=31877<32000<32004=252\\cdot127\\), so \\(32/127\\) begins with \\(0.251\\). This attains the smallest possible denominator.\nFinal answer: 127",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1421,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "127",
+    "correct": true
+  }
+}

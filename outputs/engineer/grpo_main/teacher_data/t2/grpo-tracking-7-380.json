@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-380",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Marco, Claire is dancing with Lena, Dave is dancing with Nadia, Eve is dancing with Stefan, Fred is dancing with Umar, and Gertrude is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Dave and Eve switch partners. Then, Fred and Eve switch partners. Then, Eve and Bob switch partners. Then, Alice and Fred switch partners. Then, Bob and Eve switch partners. Finally, Claire and Eve switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Oscar\n(B) Marco\n(C) Lena\n(D) Nadia\n(E) Stefan\n(F) Umar\n(G) Wade",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Nadia",
+      "Eve": "Stefan",
+      "Fred": "Umar",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Nadia",
+      "Eve": "Oscar",
+      "Fred": "Umar",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Oscar",
+      "Eve": "Nadia",
+      "Fred": "Umar",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Oscar",
+      "Eve": "Umar",
+      "Fred": "Nadia",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Oscar",
+      "Eve": "Marco",
+      "Fred": "Nadia",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Oscar",
+      "Eve": "Marco",
+      "Fred": "Stefan",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Marco",
+      "Claire": "Lena",
+      "Dave": "Oscar",
+      "Eve": "Umar",
+      "Fred": "Stefan",
+      "Gertrude": "Wade"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Marco",
+      "Claire": "Umar",
+      "Dave": "Oscar",
+      "Eve": "Lena",
+      "Fred": "Stefan",
+      "Gertrude": "Wade"
+    }
+  ],
+  "prompt_tokens": 223,
+  "solution": "Each row lists partners in order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Oscar | Marco | Lena | Nadia | Stefan | Umar | Wade\n1. Alice and Eve swap: Stefan | Marco | Lena | Nadia | Oscar | Umar | Wade\n2. Dave and Eve swap: Stefan | Marco | Lena | Oscar | Nadia | Umar | Wade\n3. Fred and Eve swap: Stefan | Marco | Lena | Oscar | Umar | Nadia | Wade\n4. Eve and Bob swap: Stefan | Umar | Lena | Oscar | Marco | Nadia | Wade\n5. Alice and Fred swap: Nadia | Umar | Lena | Oscar | Marco | Stefan | Wade\n6. Bob and Eve swap: Nadia | Marco | Lena | Oscar | Umar | Stefan | Wade\n7. Claire and Eve swap: Nadia | Marco | Umar | Oscar | Lena | Stefan | Wade\nClaire is dancing with Umar, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1286,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

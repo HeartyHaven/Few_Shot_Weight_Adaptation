@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-321",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Jane Eyre, Claire gets Beloved, Dave gets Dune, Eve gets Siddhartha, Fred gets Dracula, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Bob and Gertrude swap books. Then, Bob and Eve swap books. Then, Dave and Gertrude swap books. Then, Dave and Bob swap books. Then, Dave and Eve swap books. Then, Bob and Alice swap books. Finally, Fred and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) Jane Eyre\n(C) Beloved\n(D) Dune\n(E) Siddhartha\n(F) Dracula\n(G) Emma",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "Dune",
+      "Eve": "Siddhartha",
+      "Fred": "Dracula",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "Dune",
+      "Eve": "Siddhartha",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved",
+      "Dave": "Dune",
+      "Eve": "Emma",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "Siddhartha",
+      "Eve": "Emma",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Siddhartha",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Siddhartha",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Siddhartha",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Dune"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Book order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude\nInitial: Ivanhoe | Jane Eyre | Beloved | Dune | Siddhartha | Dracula | Emma\n1. Bob ↔ Gertrude: Ivanhoe | Emma | Beloved | Dune | Siddhartha | Dracula | Jane Eyre\n2. Bob ↔ Eve: Ivanhoe | Siddhartha | Beloved | Dune | Emma | Dracula | Jane Eyre\n3. Dave ↔ Gertrude: Ivanhoe | Siddhartha | Beloved | Jane Eyre | Emma | Dracula | Dune\n4. Dave ↔ Bob: Ivanhoe | Jane Eyre | Beloved | Siddhartha | Emma | Dracula | Dune\n5. Dave ↔ Eve: Ivanhoe | Jane Eyre | Beloved | Emma | Siddhartha | Dracula | Dune\n6. Bob ↔ Alice: Jane Eyre | Ivanhoe | Beloved | Emma | Siddhartha | Dracula | Dune\n7. Fred ↔ Bob: Jane Eyre | Dracula | Beloved | Emma | Siddhartha | Ivanhoe | Dune\nClaire has Beloved, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1092,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

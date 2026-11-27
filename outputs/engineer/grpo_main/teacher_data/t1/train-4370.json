@@ -1,0 +1,22 @@
+{
+  "id": "train-4370",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 48-year-old nurse presents with left-sided chest pain and nonproductive cough. He thinks both the chest pain and the cough began about two months ago. He recently joined a meditation group and found that the deep breathing exercises exacerbate his chest pain. The patient denies headaches, fever, or chills. He reports a 3 lb weight loss over the last two weeks, which he attributes to a change in his diet that he and his wife recently started. The patient drinks a glass or two of whiskey on the weekends and is a non-smoker. The patient’s medical history is significant for type II diabetes and Hodgkin lymphoma. He was treated with chemotherapy and radiation 25 years ago without complications. His current medications include metformin and glyburide. His HbA1c is 7.5%. His temperature is 99°F (37.2°C), blood pressure is 121/82 mmHg, pulse is 86/min, respirations are 12/min, and oxygen saturation is 95% on room air. Physical exam is notable for coarse rhonchi in the left lung. There is no appreciable lymphadenopathy. A chest radiograph is performed, which is shown in Figure A.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "-1",
+  "lower": -1.0,
+  "upper": -1.0,
+  "calc_id": 20,
+  "prompt_tokens": 328,
+  "solution": "Apply the age-adjusted Centor (McIsaac) score to the presenting findings:\n- Fever >38°C: temperature 37.2°C and fever denied → 0.\n- Absence of cough: nonproductive cough is present → 0.\n- Tender anterior cervical lymph nodes: no appreciable lymphadenopathy → 0.\n- Tonsillar swelling or exudate: neither reported → 0.\n- Age adjustment (+1 for 3–14 years, 0 for 15–44, −1 for ≥45): age 48 → −1.\nTotal = 0 + 0 + 0 + 0 − 1 = −1.\nFinal answer: -1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 736,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": -1.0,
+    "correct": true
+  }
+}

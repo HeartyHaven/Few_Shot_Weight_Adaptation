@@ -1,0 +1,17 @@
+{
+  "id": "sample_689",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(arr):\n    count = len(arr)\n    sub = arr.copy()\n    for i in range(0, count, 2):\n        sub[i] *= 5\n    return sub\n```\n\nInput: f([-3, -6, 2, 7])",
+  "answer": "[-15, -6, 10, 7]",
+  "solution": "count is 4, and sub is a copy of [-3, -6, 2, 7]. range(0, 4, 2) visits indices 0 and 2. At i = 0, -3 * 5 = -15, so sub becomes [-15, -6, 2, 7]. At i = 2, 2 * 5 = 10, so sub becomes [-15, -6, 10, 7]. The loop ends and the function returns sub.\nFinal answer: [-15, -6, 10, 7]",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 12,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[-15, -6, 10, 7]",
+    "correct": true
+  }
+}

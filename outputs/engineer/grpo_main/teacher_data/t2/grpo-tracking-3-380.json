@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-380",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Jane Eyre, and Claire gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Alice and Claire swap books. Finally, Claire and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Walden\n(B) Jane Eyre\n(C) The Trial",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Jane Eyre",
+      "Claire": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Book order in each row: (Alice, Bob, Claire).\nInitial: (Walden, Jane Eyre, The Trial)\n1. Claire and Alice swap: (The Trial, Jane Eyre, Walden)\n2. Alice and Claire swap: (Walden, Jane Eyre, The Trial)\n3. Claire and Bob swap: (Walden, The Trial, Jane Eyre)\nClaire has Jane Eyre, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1271,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

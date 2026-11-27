@@ -1,0 +1,22 @@
+{
+  "id": "train-1023",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 55-year-old man presents to his primary care physician for a general checkup. The patient has a past medical history of diabetes, hypertension, and atrial fibrillation and is currently taking warfarin, insulin, lisinopril, and metoprolol. The patient’s brother recently died from a heart attack and he has switched to an all vegetarian diet in order to improve his health. His temperature is 98.6°F (37.0°C), blood pressure is 167/108 mmHg, pulse is 90/min, respirations are 17/min, and oxygen saturation is 98% on room air. The patient’s physical exam is unremarkable.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 224,
+  "solution": "Apply CHA₂DS₂-VASc for stroke risk in atrial fibrillation:\n- Congestive heart failure or LV dysfunction: none documented → 0.\n- Hypertension: known hypertension, BP 167/108 mm Hg → 1.\n- Age: 55 years → 0 (1 point at 65–74, 2 at ≥75).\n- Diabetes mellitus: present, treated with insulin → 1.\n- Prior stroke, TIA, or systemic embolism: none documented → 0 of 2.\n- Vascular disease: no personal history of MI, peripheral arterial disease, or aortic plaque; his brother's MI does not count → 0.\n- Sex category: male → 0.\nWarfarin use does not change the score. Total = 0 + 1 + 0 + 1 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 692,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

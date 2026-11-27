@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-301",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Vera, Claire is dancing with Tara, Dave is dancing with Priya, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Bob and Claire switch partners. Then, Alice and Dave switch partners. Then, Claire and Bob switch partners. Finally, Bob and Eve switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Umar\n(B) Vera\n(C) Tara\n(D) Priya\n(E) Yuki",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Vera",
+      "Claire": "Tara",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Umar",
+      "Claire": "Tara",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Tara",
+      "Claire": "Umar",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Tara",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Umar",
+      "Claire": "Tara",
+      "Dave": "Vera",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Yuki",
+      "Claire": "Tara",
+      "Dave": "Vera",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Vera, Tara, Priya, Yuki\n1. Bob–Alice: Vera, Umar, Tara, Priya, Yuki\n2. Bob–Claire: Vera, Tara, Umar, Priya, Yuki\n3. Alice–Dave: Priya, Tara, Umar, Vera, Yuki\n4. Claire–Bob: Priya, Umar, Tara, Vera, Yuki\n5. Bob–Eve: Priya, Yuki, Tara, Vera, Umar\nAlice is dancing with Priya, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1198,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-13",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Marco, Claire is dancing with Karl, Dave is dancing with Lena, and Eve is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Alice and Claire switch partners. Then, Bob and Alice switch partners. Then, Dave and Eve switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Tara\n(B) Marco\n(C) Karl\n(D) Lena\n(E) Quinn",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Marco",
+      "Claire": "Karl",
+      "Dave": "Lena",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Karl",
+      "Claire": "Marco",
+      "Dave": "Lena",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Karl",
+      "Claire": "Tara",
+      "Dave": "Lena",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Marco",
+      "Claire": "Tara",
+      "Dave": "Lena",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Marco",
+      "Claire": "Tara",
+      "Dave": "Quinn",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Marco",
+      "Claire": "Tara",
+      "Dave": "Quinn",
+      "Eve": "Karl"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partner order in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Tara, Marco, Karl, Lena, Quinn)\n1. Bob and Claire swap: (Tara, Karl, Marco, Lena, Quinn)\n2. Alice and Claire swap: (Marco, Karl, Tara, Lena, Quinn)\n3. Bob and Alice swap: (Karl, Marco, Tara, Lena, Quinn)\n4. Dave and Eve swap: (Karl, Marco, Tara, Quinn, Lena)\n5. Alice and Eve swap: (Lena, Marco, Tara, Quinn, Karl)\nBob is dancing with Marco, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1271,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

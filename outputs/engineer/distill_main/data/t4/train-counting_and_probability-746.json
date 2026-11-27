@@ -1,0 +1,17 @@
+{
+  "id": "train-counting_and_probability-746",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "George is planning a dinner party for three other couples, his wife, and himself. He plans to seat the four couples around a circular table for 8, and wants each husband to be seated opposite his wife. How many seating arrangements can he make, if rotations and reflections of each seating arrangement are not considered different?  (Note: In this problem, if one seating is a reflection of another, then the two are considered the same!)",
+  "answer": "24",
+  "solution": "Fix George in one seat to remove rotational freedom. His wife must sit opposite him. Assign the other three couples to the three remaining pairs of opposite seats in \\(3!\\) ways. Each couple can choose which spouse takes which seat in 2 ways, giving \\(3!\\cdot2^3=48\\) arrangements before identifying reflections.\n\nWith George fixed, reflection across the line through his seat and his wife's seat reverses the circular order. It swaps George's two neighbors, who are distinct, so it pairs each arrangement with a different one. The count is therefore \\(48/2=24\\).\nFinal answer: 24",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 67,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "24",
+    "correct": true
+  }
+}

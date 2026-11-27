@@ -1,0 +1,22 @@
+{
+  "id": "train-681",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 56-year-old man was brought to the emergency department by his wife when he passed out for 5 seconds after dinner at home. He says that he recalls feeling lightheaded moments prior to passing out and also had some palpitations. Otherwise, he has been feeling fatigued recently and has had some shortness of breath. His previous medical history is significant for diabetes that is well controlled on metformin. An EKG is obtained showing fast sawtooth waves at 200/min. He is administered a medication but soon develops ringing in his ears, headache, flushed skin, and a spinning sensation.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 201,
+  "solution": "CHA₂DS₂-VASc estimates thromboembolic risk in atrial fibrillation or flutter. The sawtooth ECG suggests flutter. Score the baseline risk factors:\n- Congestive heart failure or LV systolic dysfunction (1): neither is documented; dyspnea alone does not establish heart failure = 0.\n- Hypertension (1): not documented = 0.\n- Age 65–74 (1) or ≥75 (2): age 56 = 0.\n- Diabetes mellitus (1): present, even though controlled on metformin = 1.\n- Prior stroke, TIA, or systemic embolism (2): none documented = 0.\n- Vascular disease (1): no prior MI, peripheral arterial disease, or aortic plaque documented = 0.\n- Female sex (1): male = 0.\nTotal: 0 + 0 + 0 + 1 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 711,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

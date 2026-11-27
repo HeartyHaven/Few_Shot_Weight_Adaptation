@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-516",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Walden, Claire gets The Hobbit, Dave gets Dracula, Eve gets Persuasion, Fred gets Emma, and Gertrude gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Gertrude and Alice swap books. Then, Bob and Fred swap books. Then, Dave and Gertrude swap books. Then, Eve and Fred swap books. Then, Alice and Dave swap books. Then, Alice and Eve swap books. Finally, Alice and Dave swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Hamlet\n(B) Walden\n(C) The Hobbit\n(D) Dracula\n(E) Persuasion\n(F) Emma\n(G) Middlemarch",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Walden",
+      "Claire": "The Hobbit",
+      "Dave": "Dracula",
+      "Eve": "Persuasion",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "The Hobbit",
+      "Dave": "Dracula",
+      "Eve": "Persuasion",
+      "Fred": "Emma",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Dracula",
+      "Eve": "Persuasion",
+      "Fred": "Walden",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "Persuasion",
+      "Fred": "Walden",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "Walden",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Middlemarch",
+      "Eve": "Walden",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Middlemarch",
+      "Eve": "Hamlet",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Walden",
+      "Eve": "Hamlet",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Hamlet, Walden, The Hobbit, Dracula, Persuasion, Emma, Middlemarch.\n1. Gertrude–Alice: Middlemarch, Walden, The Hobbit, Dracula, Persuasion, Emma, Hamlet.\n2. Bob–Fred: Middlemarch, Emma, The Hobbit, Dracula, Persuasion, Walden, Hamlet.\n3. Dave–Gertrude: Middlemarch, Emma, The Hobbit, Hamlet, Persuasion, Walden, Dracula.\n4. Eve–Fred: Middlemarch, Emma, The Hobbit, Hamlet, Walden, Persuasion, Dracula.\n5. Alice–Dave: Hamlet, Emma, The Hobbit, Middlemarch, Walden, Persuasion, Dracula.\n6. Alice–Eve: Walden, Emma, The Hobbit, Middlemarch, Hamlet, Persuasion, Dracula.\n7. Alice–Dave: Middlemarch, Emma, The Hobbit, Walden, Hamlet, Persuasion, Dracula.\nGertrude has Dracula, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1158,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-513",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Candide, Claire gets Hamlet, Dave gets Middlemarch, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Dave and Eve swap books. Then, Claire and Dave swap books. Then, Bob and Claire swap books. Then, Dave and Claire swap books. Finally, Eve and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Jane Eyre\n(B) Candide\n(C) Hamlet\n(D) Middlemarch\n(E) Walden",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Hamlet",
+      "Dave": "Middlemarch",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Hamlet",
+      "Dave": "Walden",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Hamlet",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Hamlet",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Middlemarch",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Jane Eyre, Candide, Hamlet, Middlemarch, Walden\n1. Dave–Eve: Jane Eyre, Candide, Hamlet, Walden, Middlemarch\n2. Claire–Dave: Jane Eyre, Candide, Walden, Hamlet, Middlemarch\n3. Bob–Claire: Jane Eyre, Walden, Candide, Hamlet, Middlemarch\n4. Dave–Claire: Jane Eyre, Walden, Hamlet, Candide, Middlemarch\n5. Eve–Bob: Jane Eyre, Middlemarch, Hamlet, Candide, Walden\nClaire has Hamlet, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1165,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

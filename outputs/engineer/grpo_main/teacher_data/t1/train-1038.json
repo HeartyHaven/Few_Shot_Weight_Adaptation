@@ -1,0 +1,22 @@
+{
+  "id": "train-1038",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nThe second patient was an 85-year-old man who was referred to our hospital as an outpatient with symptomatic, severe aortic stenosis (AVA 0.8 cm2) and preserved LVEF of more than 50%. His medical history included permanent atrial fibrillation and bilateral hip replacement. His symptoms were graded as NYHA II, with dyspnea on exertion and fatigue being his main symptoms. This patient was triaged as urgency Level 2.\nUsing conscious sedation, TAVR was successfully performed through transfemoral approach, with no valvular and paravalvular regurgitation. However, the procedure was complicated by bleeding of the right femoral artery due to unsuccessful placement of the closure device, necessitating surgical repair under general anesthesia and admission to the ICU. The same evening of the TAVR procedure, the patient was transferred to the CCU. The patient was discharged to the cardiology ward of the referring hospital for further rehabilitation the following day, and discharged home 4 days after TAVR.\nSeven days after discharge (and 11 days after TAVR), the patient presented to the emergency department with a 2-day history of fever, dyspnea and orthopnea. Chest CT showed bilateral ground-glass opacities and possible peribronchial infection in the left lower lobe. Subsequent PCR testing was positive for COVID-19. Patient was admitted to the COVID-19 ward and died 5 days later due to respiratory failure.\nContact tracing revealed hospital visits from only one visitor for this patient. This person exhibited COVID-19 related symptoms after the patient's readmission to the hospital (4 days after the patient exhibited symptoms), with PCR confirming COVID-19 five days after the patient's death. Other visitors outside the hospital never exhibited any COVID-19 related symptoms. In both the TAVR-center and the referring hospital, no COVID-19 cases were reported among the hospital personnel during that period.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 484,
+  "solution": "Apply CHA2DS2-VASc for atrial fibrillation using the pre-TAVR history:\n- Congestive heart failure/LV dysfunction: 1 if the NYHA II dyspnea and fatigue from severe aortic stenosis are interpreted as clinical heart failure. Preserved LVEF does not exclude heart failure, but the note does not explicitly diagnose it.\n- Hypertension: not documented → 0.\n- Age ≥75: age 85 → 2. The age 65–74 point is not added.\n- Diabetes: not documented → 0.\n- Prior stroke, TIA, or systemic embolism: not documented → 0.\n- Vascular disease: no qualifying history reported; aortic stenosis itself does not count → 0.\n- Female sex: male → 0.\nCounting clinical heart failure, the total is 1 + 0 + 2 + 0 + 0 + 0 + 0 = 3; age alone establishes 2 points.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 5,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

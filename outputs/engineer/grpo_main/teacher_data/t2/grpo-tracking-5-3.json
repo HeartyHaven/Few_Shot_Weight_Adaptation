@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-3",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Dune, Claire gets Siddhartha, Dave gets Jane Eyre, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Eve and Dave swap books. Then, Eve and Dave swap books. Then, Alice and Eve swap books. Finally, Claire and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Middlemarch\n(B) Dune\n(C) Siddhartha\n(D) Jane Eyre\n(E) Candide",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "Middlemarch",
+      "Eve": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve).\nInitial: (Middlemarch, Dune, Siddhartha, Jane Eyre, Candide)\n1. Dave and Alice swap: (Jane Eyre, Dune, Siddhartha, Middlemarch, Candide)\n2. Eve and Dave swap: (Jane Eyre, Dune, Siddhartha, Candide, Middlemarch)\n3. Eve and Dave swap again: (Jane Eyre, Dune, Siddhartha, Middlemarch, Candide)\n4. Alice and Eve swap: (Candide, Dune, Siddhartha, Middlemarch, Jane Eyre)\n5. Claire and Alice swap: (Siddhartha, Dune, Candide, Middlemarch, Jane Eyre)\nBob has Dune, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1272,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

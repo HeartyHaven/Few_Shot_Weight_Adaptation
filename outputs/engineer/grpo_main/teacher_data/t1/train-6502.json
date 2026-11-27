@@ -1,0 +1,22 @@
+{
+  "id": "train-6502",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "question": "Patient note:\nA 31-year-old, G1P0 woman at 35 weeks of gestation comes to the emergency room for a severe headache. She reports that she was washing the dishes 2 hours ago when a dull headache came on and progressively worsened. She also reports 2 episodes of intermittent blurred vision over the past hour that has since cleared. Nothing similar has ever happened before. She denies any precipitating events, trauma, mental status changes, abdominal pain, lightheadedness, fever, ulcers, or urinary changes. Her temperature is 98.9°F (37.1°C), blood pressure is 160/110 mmHg, pulse is 98/min, respirations are 12/min, and oxygen saturation is 98%. A physical examination demonstrates a rash on her face that she attributes to a recent change in cosmetics. A urine test demonstrates the presence of protein.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 48,
+  "prompt_tokens": 271,
+  "solution": "PERC counts positive PE rule-out criteria, one per item:\n- Age ≥50 years: 31 → 0.\n- Pulse ≥100/min: 98/min → 0.\n- Oxygen saturation <95%: 98% → 0.\n- Unilateral leg swelling: not reported → 0.\n- Hemoptysis: not reported → 0.\n- Prior DVT or PE: not reported → 0.\n- Recent surgery or trauma requiring hospitalization: not reported → 0.\n- Estrogen criterion: counting pregnancy as an estrogen-related risk factor gives 1 (35 weeks pregnant).\nSum under that interpretation: 0 + 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1. Standard PERC specifies exogenous estrogen, not pregnancy itself, and should not be used to rule out PE in pregnancy.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 738,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

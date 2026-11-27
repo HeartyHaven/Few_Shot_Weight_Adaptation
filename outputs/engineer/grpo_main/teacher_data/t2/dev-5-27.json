@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-27",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets The Hobbit, Claire gets Ivanhoe, Dave gets Middlemarch, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Dave and Eve swap books. Then, Dave and Eve swap books. Then, Alice and Eve swap books. Finally, Eve and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) The Trial\n(B) The Hobbit\n(C) Ivanhoe\n(D) Middlemarch\n(E) Hamlet",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Middlemarch",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Middlemarch",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in the order Alice, Bob, Claire, Dave, Eve.\nInitial: The Trial, The Hobbit, Ivanhoe, Middlemarch, Hamlet\n1. Dave and Bob swap: The Trial, Middlemarch, Ivanhoe, The Hobbit, Hamlet\n2. Dave and Eve swap: The Trial, Middlemarch, Ivanhoe, Hamlet, The Hobbit\n3. Dave and Eve swap: The Trial, Middlemarch, Ivanhoe, The Hobbit, Hamlet\n4. Alice and Eve swap: Hamlet, Middlemarch, Ivanhoe, The Hobbit, The Trial\n5. Eve and Claire swap: Hamlet, Middlemarch, The Trial, The Hobbit, Ivanhoe\nDave has The Hobbit, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-4217",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nThe proband (II-2), a 54-year-old lady, came to the hospital due to recurrent chest pain in last 2 years. Coronary angiography indicated approximately 60–80% stenosis of the anterior descending coronary artery (), ECG testing also suggested the patient suffered from CHD (). However, the lipid testing described the level of LDL-c (3.94 mmol/L; control: <3.12 mmol/L) and a distinctly reduced levels of HDL-c (0.41 mmol/L; control: 0.9–2.19 mmol/L) of the proband (). This discovery attracted our interest because most patients with ASCVD commonly presented high levels of LDL-c, TC, and TG (). We then investigated the family history of the proband (II-2), which indicated that her young sister (II-4) has been diagnosed as the occlusion of left iliac artery and her father (I-1) was died from myocardial infarction at 60-year-old. Lipid testing further described that both her son (III-1) and her young sister (II-4) showed an overt reduced levels of HDL-c and normal levels of LDL-c, TC, and TG (). And his young sister (II-4) also suffered from arterial plaque in the left lower limb. The blood pressure of the proband was 80–120 mmHg and the fasting blood-glucose was 5.2 mmol/L. The proband (II-2) accepted the treatment of percutaneous coronary intervention, the proband did not complain any uncomfortable after treatment. And breathing sound of the lungs was clearly, the heart rate was normal (), and the insertion site recovered well. The II-4 is accepting recovery treatment by exercise and diet control.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 452,
+  "solution": "HEART scores History, ECG, Age, Risk factors, and Troponin from 0 to 2 each. One conditional admission calculation is:\n- History: slightly suspicious = 0, interpreting the recurrent pain over two years as lacking described acute anginal features.\n- ECG: 1 if the tracing described as suggesting coronary disease showed nonspecific repolarization abnormalities rather than significant ST depression.\n- Age: 54 (45–64 years) = 1.\n- Risk factors: angiographically documented coronary atherosclerosis = 2; dyslipidemia is not added separately.\n- Troponin: 0 if at or below the assay upper reference limit.\nTotal under these assumptions = 0 + 1 + 1 + 2 + 0 = 4. The ECG pattern and troponin result are not given, so this is not a fully verifiable score.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 611,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

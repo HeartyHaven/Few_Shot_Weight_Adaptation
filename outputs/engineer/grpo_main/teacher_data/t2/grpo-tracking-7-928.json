@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-928",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Emma, Claire gets Dracula, Dave gets The Hobbit, Eve gets The Trial, Fred gets Hamlet, and Gertrude gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Fred and Claire swap books. Then, Fred and Eve swap books. Then, Gertrude and Claire swap books. Then, Fred and Claire swap books. Then, Dave and Claire swap books. Then, Eve and Gertrude swap books. Finally, Alice and Fred swap books. At the end of the semester, Dave has\nOptions:\n(A) Walden\n(B) Emma\n(C) Dracula\n(D) The Hobbit\n(E) The Trial\n(F) Hamlet\n(G) Middlemarch",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Hamlet",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Dracula",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "The Trial",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "Middlemarch",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "The Trial",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "The Trial",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "Middlemarch",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dracula",
+      "Fred": "Middlemarch",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Hamlet",
+      "Fred": "Middlemarch",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Hamlet",
+      "Fred": "Walden",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude), in that order.\nInitial: (Walden, Emma, Dracula, The Hobbit, The Trial, Hamlet, Middlemarch)\n1. Fred ↔ Claire: (Walden, Emma, Hamlet, The Hobbit, The Trial, Dracula, Middlemarch)\n2. Fred ↔ Eve: (Walden, Emma, Hamlet, The Hobbit, Dracula, The Trial, Middlemarch)\n3. Gertrude ↔ Claire: (Walden, Emma, Middlemarch, The Hobbit, Dracula, The Trial, Hamlet)\n4. Fred ↔ Claire: (Walden, Emma, The Trial, The Hobbit, Dracula, Middlemarch, Hamlet)\n5. Dave ↔ Claire: (Walden, Emma, The Hobbit, The Trial, Dracula, Middlemarch, Hamlet)\n6. Eve ↔ Gertrude: (Walden, Emma, The Hobbit, The Trial, Hamlet, Middlemarch, Dracula)\n7. Alice ↔ Fred: (Middlemarch, Emma, The Hobbit, The Trial, Hamlet, Walden, Dracula)\nDave has The Trial, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1321,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

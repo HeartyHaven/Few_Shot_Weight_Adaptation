@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-727",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Candide, Claire gets Hamlet, Dave gets Ivanhoe, and Eve gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Claire and Eve swap books. Then, Dave and Bob swap books. Then, Alice and Claire swap books. Then, Dave and Bob swap books. Finally, Bob and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Walden\n(B) Candide\n(C) Hamlet\n(D) Ivanhoe\n(E) Persuasion",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "Persuasion",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in order: Alice | Bob | Claire | Dave | Eve\nInitial: Walden | Candide | Hamlet | Ivanhoe | Persuasion\n1. Claire swaps with Eve: Walden | Candide | Persuasion | Ivanhoe | Hamlet\n2. Dave swaps with Bob: Walden | Ivanhoe | Persuasion | Candide | Hamlet\n3. Alice swaps with Claire: Persuasion | Ivanhoe | Walden | Candide | Hamlet\n4. Dave swaps with Bob: Persuasion | Candide | Walden | Ivanhoe | Hamlet\n5. Bob swaps with Claire: Persuasion | Walden | Candide | Ivanhoe | Hamlet\nBob has Walden, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1150,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

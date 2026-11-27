@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-50",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Persuasion, Claire gets The Hobbit, Dave gets Ivanhoe, Eve gets Candide, Fred gets The Trial, and Gertrude gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Fred and Gertrude swap books. Then, Gertrude and Eve swap books. Then, Gertrude and Alice swap books. Then, Claire and Bob swap books. Then, Eve and Claire swap books. Finally, Gertrude and Fred swap books. At the end of the semester, Dave has\nOptions:\n(A) Emma\n(B) Persuasion\n(C) The Hobbit\n(D) Ivanhoe\n(E) Candide\n(F) The Trial\n(G) Walden",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "The Hobbit",
+      "Dave": "Ivanhoe",
+      "Eve": "Candide",
+      "Fred": "The Trial",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "The Trial",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Candide",
+      "Fred": "Walden",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Walden",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Walden",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial",
+      "Fred": "Walden",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "The Hobbit",
+      "Eve": "Persuasion",
+      "Fred": "Walden",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "The Hobbit",
+      "Eve": "Persuasion",
+      "Fred": "Emma",
+      "Gertrude": "Walden"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Book order in each row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: Emma | Persuasion | The Hobbit | Ivanhoe | Candide | The Trial | Walden\n1. Dave ↔ Claire: Emma | Persuasion | Ivanhoe | The Hobbit | Candide | The Trial | Walden\n2. Fred ↔ Gertrude: Emma | Persuasion | Ivanhoe | The Hobbit | Candide | Walden | The Trial\n3. Gertrude ↔ Eve: Emma | Persuasion | Ivanhoe | The Hobbit | The Trial | Walden | Candide\n4. Gertrude ↔ Alice: Candide | Persuasion | Ivanhoe | The Hobbit | The Trial | Walden | Emma\n5. Claire ↔ Bob: Candide | Ivanhoe | Persuasion | The Hobbit | The Trial | Walden | Emma\n6. Eve ↔ Claire: Candide | Ivanhoe | The Trial | The Hobbit | Persuasion | Walden | Emma\n7. Gertrude ↔ Fred: Candide | Ivanhoe | The Trial | The Hobbit | Persuasion | Emma | Walden\nDave has The Hobbit, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1185,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

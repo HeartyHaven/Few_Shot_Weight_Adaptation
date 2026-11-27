@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-529",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Persuasion, Claire gets Emma, Dave gets Siddhartha, Eve gets Middlemarch, Fred gets Beloved, and Gertrude gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Bob and Gertrude swap books. Then, Bob and Alice swap books. Then, Dave and Eve swap books. Then, Gertrude and Dave swap books. Then, Fred and Dave swap books. Then, Gertrude and Claire swap books. Finally, Fred and Dave swap books. At the end of the semester, Alice has\nOptions:\n(A) Ivanhoe\n(B) Persuasion\n(C) Emma\n(D) Siddhartha\n(E) Middlemarch\n(F) Beloved\n(G) Jane Eyre",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Persuasion",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch",
+      "Fred": "Beloved",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch",
+      "Fred": "Beloved",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch",
+      "Fred": "Beloved",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Middlemarch",
+      "Eve": "Siddhartha",
+      "Fred": "Beloved",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Persuasion",
+      "Eve": "Siddhartha",
+      "Fred": "Beloved",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha",
+      "Fred": "Persuasion",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha",
+      "Fred": "Persuasion",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "Persuasion",
+      "Eve": "Siddhartha",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Ivanhoe, Persuasion, Emma, Siddhartha, Middlemarch, Beloved, Jane Eyre\n1. Bob–Gertrude: Ivanhoe, Jane Eyre, Emma, Siddhartha, Middlemarch, Beloved, Persuasion\n2. Bob–Alice: Jane Eyre, Ivanhoe, Emma, Siddhartha, Middlemarch, Beloved, Persuasion\n3. Dave–Eve: Jane Eyre, Ivanhoe, Emma, Middlemarch, Siddhartha, Beloved, Persuasion\n4. Gertrude–Dave: Jane Eyre, Ivanhoe, Emma, Persuasion, Siddhartha, Beloved, Middlemarch\n5. Fred–Dave: Jane Eyre, Ivanhoe, Emma, Beloved, Siddhartha, Persuasion, Middlemarch\n6. Gertrude–Claire: Jane Eyre, Ivanhoe, Middlemarch, Beloved, Siddhartha, Persuasion, Emma\n7. Fred–Dave: Jane Eyre, Ivanhoe, Middlemarch, Persuasion, Siddhartha, Beloved, Emma\nAlice has Jane Eyre, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1161,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

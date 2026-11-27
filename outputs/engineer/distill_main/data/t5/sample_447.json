@@ -1,0 +1,17 @@
+{
+  "id": "sample_447",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, tab_size):\n    res = ''\n    text = text.replace('\\t', ' '*(tab_size-1))\n    for i in range(len(text)):\n        if text[i] == ' ':\n            res += '|'\n        else:\n            res += text[i]\n    return res\n```\n\nInput: f(\"\\ta\", 3)",
+  "answer": "'||a'",
+  "solution": "res starts as ''. Since tab_size - 1 = 2, replace changes the tab into two spaces, making text = '  a'. At i = 0, the first space makes res = '|'. At i = 1, the second space makes res = '||'. At i = 2, the else branch appends 'a', making res = '||a'. The loop ends and res is returned.\nFinal answer: '||a'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 32,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'||a'",
+    "correct": true
+  }
+}

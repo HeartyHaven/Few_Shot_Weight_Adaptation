@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-398",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "A game show offers a contestant three prizes A, B and C, each of which is worth a whole number of dollars from $$ 1$ to $$ 9999$ inclusive. The contestant wins the prizes by correctly guessing the price of each prize in the order A, B, C. As a hint, the digits of the three prices are given. On a particular day, the digits given were $1, 1, 1, 1, 3, 3, 3$. Find the total number of possible guesses for all three prizes consistent with the hint.\n",
+  "answer": "420",
+  "prompt_tokens": 149,
+  "solution": "Concatenate the prices in order $A,B,C$. The seven-digit string is determined by choosing the three positions for the digit $3$, with $1$ in the other positions, giving $\\binom{7}{3}=35$ strings.\n\nFor each string, choose two of its six internal gaps as cuts to make three nonempty prices: $\\binom{6}{2}=15$ choices. Each price can have at most four digits. A part longer than four must have exactly five digits, leaving one digit for each other part. There are three invalid cut patterns, one for each position of the five-digit part. The remaining $15-3=12$ patterns are valid because no digit is zero.\n\nEach ordered guess uniquely determines its string and cuts, so the total is $35\\cdot12=420$.\nFinal answer: 420",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "420",
+    "correct": true
+  }
+}

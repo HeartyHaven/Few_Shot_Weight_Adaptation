@@ -1,0 +1,22 @@
+{
+  "id": "train-704",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 55-year-old male presents to the emergency department with dyspnea and palpitations. He does not smoke cigarettes or consume alcohol, and past medical history is insignificant. Blood pressure is 115/75 mmHG and heart rate is 125/min. Heart rhythm is irregularly irregular. After initial treatment with IV digoxin the patient's heart rate drops to 85/min and remains irregular.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "0",
+  "lower": 0.0,
+  "upper": 0.0,
+  "calc_id": 4,
+  "prompt_tokens": 161,
+  "solution": "Apply CHA₂DS₂-VASc at admission:\n- Congestive heart failure or LV dysfunction: none documented → 0.\n- Hypertension: no history; BP 115/75 mmHg → 0.\n- Age: 55 years → 0 (65–74 scores 1; ≥75 scores 2).\n- Diabetes: none documented → 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): none documented → 0.\n- Vascular disease: none documented → 0.\n- Sex category: male → 0.\nThe irregular rhythm prompts stroke-risk assessment, but the presenting heart rate of 125/min does not itself score. Sum = 0 + 0 + 0 + 0 + 0 + 0 + 0 = 0.\nFinal answer: 0",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 943,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 0.0,
+    "correct": true
+  }
+}

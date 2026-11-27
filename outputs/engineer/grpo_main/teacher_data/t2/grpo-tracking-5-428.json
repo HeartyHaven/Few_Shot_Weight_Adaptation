@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-428",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a gold ball, Bob has a pink ball, Claire has a grey ball, Dave has a silver ball, and Eve has a yellow ball.\nAs the game progresses, pairs of players trade balls. First, Claire and Eve swap balls. Then, Claire and Dave swap balls. Then, Claire and Eve swap balls. Then, Claire and Alice swap balls. Finally, Claire and Dave swap balls. At the end of the game, Alice has the\nOptions:\n(A) gold ball\n(B) pink ball\n(C) grey ball\n(D) silver ball\n(E) yellow ball",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "gold",
+      "Bob": "pink",
+      "Claire": "grey",
+      "Dave": "silver",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "pink",
+      "Claire": "yellow",
+      "Dave": "silver",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "pink",
+      "Claire": "silver",
+      "Dave": "yellow",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "pink",
+      "Claire": "grey",
+      "Dave": "yellow",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "pink",
+      "Claire": "gold",
+      "Dave": "yellow",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "pink",
+      "Claire": "yellow",
+      "Dave": "gold",
+      "Eve": "silver"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists ball colors in order: Alice, Bob, Claire, Dave, Eve.\nInitial: gold, pink, grey, silver, yellow.\nAfter Claire–Eve: gold, pink, yellow, silver, grey.\nAfter Claire–Dave: gold, pink, silver, yellow, grey.\nAfter Claire–Eve: gold, pink, grey, yellow, silver.\nAfter Claire–Alice: grey, pink, gold, yellow, silver.\nAfter Claire–Dave: grey, pink, yellow, gold, silver.\nAlice has the grey ball, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1188,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

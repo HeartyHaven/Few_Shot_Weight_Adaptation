@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-544",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Dune, Claire gets Jane Eyre, Dave gets Ivanhoe, and Eve gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Bob and Claire swap books. Then, Claire and Alice swap books. Then, Claire and Dave swap books. Finally, Eve and Alice swap books. At the end of the semester, Eve has\nOptions:\n(A) Hamlet\n(B) Dune\n(C) Jane Eyre\n(D) Ivanhoe\n(E) Middlemarch",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists book titles in holder order: Alice, Bob, Claire, Dave, Eve.\nInitial: Hamlet, Dune, Jane Eyre, Ivanhoe, Middlemarch\n1. Claire and Alice swap: Jane Eyre, Dune, Hamlet, Ivanhoe, Middlemarch\n2. Bob and Claire swap: Jane Eyre, Hamlet, Dune, Ivanhoe, Middlemarch\n3. Claire and Alice swap: Dune, Hamlet, Jane Eyre, Ivanhoe, Middlemarch\n4. Claire and Dave swap: Dune, Hamlet, Ivanhoe, Jane Eyre, Middlemarch\n5. Eve and Alice swap: Middlemarch, Hamlet, Ivanhoe, Jane Eyre, Dune\nEve has Dune, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1250,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

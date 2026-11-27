@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-206",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a silver ball, Bob has a grey ball, Claire has a blue ball, Dave has a brown ball, and Eve has a gold ball.\nAs the game progresses, pairs of players trade balls. First, Eve and Alice swap balls. Then, Eve and Claire swap balls. Then, Eve and Dave swap balls. Then, Dave and Eve swap balls. Finally, Claire and Eve swap balls. At the end of the game, Dave has the\nOptions:\n(A) silver ball\n(B) grey ball\n(C) blue ball\n(D) brown ball\n(E) gold ball",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "silver",
+      "Bob": "grey",
+      "Claire": "blue",
+      "Dave": "brown",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "blue",
+      "Dave": "brown",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "silver",
+      "Dave": "brown",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "silver",
+      "Dave": "blue",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "silver",
+      "Dave": "brown",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "blue",
+      "Dave": "brown",
+      "Eve": "silver"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors are listed in the fixed order (Alice, Bob, Claire, Dave, Eve).\nInitial: (silver, grey, blue, brown, gold).\n1. Eve and Alice swap: (gold, grey, blue, brown, silver).\n2. Eve and Claire swap: (gold, grey, silver, brown, blue).\n3. Eve and Dave swap: (gold, grey, silver, blue, brown).\n4. Dave and Eve swap: (gold, grey, silver, brown, blue).\n5. Claire and Eve swap: (gold, grey, blue, brown, silver).\nDave has the brown ball, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1103,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

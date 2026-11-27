@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-338",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "A given sequence $r_1, r_2, \\dots, r_n$ of distinct real numbers can be put in ascending order by means of one or more \"bubble passes\". A bubble pass through a given sequence consists of comparing the second term with the first term, and exchanging them if and only if the second term is smaller, then comparing the third term with the second term and exchanging them if and only if the third term is smaller, and so on in order, through comparing the last term, $r_n$, with its current predecessor and exchanging them if and only if the last term is smaller.\nThe example below shows how the sequence 1, 9, 8, 7 is transformed into the sequence 1, 8, 7, 9 by one bubble pass. The numbers compared at each step are underlined.\n$\\underline{1 \\quad 9} \\quad 8 \\quad 7$\n$1 \\quad {}\\underline{9 \\quad 8} \\quad 7$\n$1 \\quad 8 \\quad \\underline{9 \\quad 7}$\n$1 \\quad 8 \\quad 7 \\quad 9$\nSuppose that $n = 40$, and that the terms of the initial sequence $r_1, r_2, \\dots, r_{40}$ are distinct from one another and are in random order. Let $p/q$, in lowest terms, be the probability that the number that begins as $r_{20}$ will end up, after one bubble pass, in the $30^{\\mbox{th}}$ place. Find $p + q$.\n",
+  "answer": "931",
+  "prompt_tokens": 372,
+  "solution": "In a left-to-right pass, the value carried forward to each next comparison is the maximum seen so far: each comparison puts the larger value on the right. Thus r₂₀ first faces the maximum of r₁ through r₁₉. If it is smaller, it moves left and is never compared again. To reach position 30, it must instead exceed that maximum and then exceed every value from r₂₁ through r₃₀. To stop at position 30, it must be smaller than r₃₁.\nEquivalently, among the first 31 values, r₃₁ must be largest and r₂₀ second largest. By uniform random order, the largest is at position 31 with probability 1/31; conditional on that, the second largest is at position 20 with probability 1/30. The probability is 1/(31×30) = 1/930, so p+q = 1+930 = 931.\nFinal answer: 931",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1391,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "931",
+    "correct": true
+  }
+}

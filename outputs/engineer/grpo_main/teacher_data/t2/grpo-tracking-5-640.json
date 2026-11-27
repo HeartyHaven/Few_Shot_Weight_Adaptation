@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-640",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Tara, Claire is dancing with Wade, Dave is dancing with Quinn, and Eve is dancing with Lena.\nThroughout the song, the dancers often trade partners. First, Alice and Dave switch partners. Then, Bob and Dave switch partners. Then, Bob and Dave switch partners. Then, Bob and Claire switch partners. Finally, Eve and Dave switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Oscar\n(B) Tara\n(C) Wade\n(D) Quinn\n(E) Lena",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Tara",
+      "Claire": "Wade",
+      "Dave": "Quinn",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Tara",
+      "Claire": "Wade",
+      "Dave": "Oscar",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Oscar",
+      "Claire": "Wade",
+      "Dave": "Tara",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Tara",
+      "Claire": "Wade",
+      "Dave": "Oscar",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Oscar",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Lena",
+      "Eve": "Oscar"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partner order: Alice, Bob, Claire, Dave, Eve.\nInitial: Oscar, Tara, Wade, Quinn, Lena.\n1. Alice–Dave: Quinn, Tara, Wade, Oscar, Lena.\n2. Bob–Dave: Quinn, Oscar, Wade, Tara, Lena.\n3. Bob–Dave: Quinn, Tara, Wade, Oscar, Lena.\n4. Bob–Claire: Quinn, Wade, Tara, Oscar, Lena.\n5. Eve–Dave: Quinn, Wade, Tara, Lena, Oscar.\nClaire's partner is Tara, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1078,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

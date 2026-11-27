@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-703",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "How many different positive three-digit integers can be formed using only the digits in the set $\\{2, 3, 5, 5, 5, 6, 6\\}$ if no digit may be used more times than it appears in the given set of available digits?",
+  "answer": "43",
+  "prompt_tokens": 88,
+  "solution": "Classify the integers by how many distinct digits they use. None of the available digits is zero, so every allowed ordering gives a three-digit integer.\nThree distinct digits: using 2, 3, 5, and 6 as choices, there are 4 × 3 × 2 = 24 ordered triples without repetition.\nTwo distinct digits: the repeated digit must be 5 or 6 (2 choices). The other digit can be any of the remaining 3 digits and can occupy any of 3 positions, giving 2 × 3 × 3 = 18 integers.\nOne distinct digit: only 5 appears at least three times, so only 555 qualifies.\nThe total is 24 + 18 + 1 = 43.\nFinal answer: 43",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "43",
+    "correct": true
+  }
+}

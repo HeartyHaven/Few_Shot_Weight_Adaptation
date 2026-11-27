@@ -1,0 +1,22 @@
+{
+  "id": "train-921",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 59-year-old man with a 40-year history of smoking and 2-year history of hypertension presented to his local hospital with severe chest pain and dyspnea. Electrocardiogram (ECG) results suggested extensive anterior AMI. Dual antiplatelet therapy, anticoagulation, and statins were administered, but he refused further invasive treatment. His symptoms were slightly relieved but he continued to experience repeated chest pain attacks. He was referred to our hospital on the 8th day. His vital signs on admission were a heart rate of 108 beats/minute and blood pressure of 86/66 mmHg. The ECG showed ST-segment elevation in leads aVL and V1-V6, with significant ST depression in leads II, III, and aVF (). An echocardiogram displayed anterior, septal, lateral, and inferior akinesia and severely impaired left ventricular function with an ejection fraction (EF) of 18%. Extensive anterior AMI (Killip Class IV) and cardiogenic shock were diagnosed. The patient was transferred immediately to the catheterization laboratory and an intra-aortic balloon pump (IABP) was placed via the right femoral artery (). Diagnostic coronary angiography revealed a dominant right coronary artery (RCA) and acute total occlusion of the distal LMS with no anterograde flow (). There was no significant stenosis in the RCA and the posterior descending and posterolateral ventricular branches were also normal (). He was treated with implantation of a paclitaxel-eluting stent in the proximal left anterior descending artery and distal LMS (). There was no residual stenosis, thrombus, or dissection after stent implantation, with TIMI 3 flow. However, he developed atrial tachycardia and was treated with amiodarone. The IABP was successfully removed 10 days after PCI. The patient subsequently made satisfactory progress and was discharged 23 days after hospital admission, with an EF of 41%. Angiography showed unobstructed stents 1 year later () and an EF of 37% (NYHA Class II). The patient remained alive after 3 years of follow-up, with whole-heart enlargement and severe mitral regurgitation, and an EF of 32% (NYHA Class III) ().\nThe study protocol was approved by the institutional review board and Ethics Committee of The First Affiliated Hospital of Guangdong Pharmaceutical University. Written informed consent was obtained from the patient.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 606,
+  "solution": "CHA₂DS₂-VASc score at admission:\n- Heart failure or LV dysfunction: EF 18% → 1.\n- Hypertension: established history despite current hypotension → 1.\n- Age: 59, below both the 65–74 (1 point) and ≥75 (2 points) categories → 0.\n- Diabetes: not reported → 0.\n- Prior stroke, TIA, or systemic embolism (2 points): none reported → 0.\n- Vascular disease: myocardial infarction was already established before transfer → 1.\n- Female sex: male → 0.\nSum = 1 + 1 + 0 + 0 + 0 + 1 + 0 = 3. This is the component score; atrial fibrillation is not documented.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 772,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

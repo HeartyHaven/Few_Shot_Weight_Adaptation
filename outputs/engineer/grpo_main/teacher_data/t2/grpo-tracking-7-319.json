@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-319",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right back, Bob is playing right winger, Claire is playing left back, Dave is playing cheerleader, Eve is playing sweeper, Fred is playing center midfielder, and Gertrude is playing left midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Dave trade positions. Then, Claire and Eve trade positions. Then, Alice and Bob trade positions. Then, Gertrude and Eve trade positions. Then, Fred and Bob trade positions. Then, Dave and Bob trade positions. Finally, Alice and Gertrude trade positions. At the end of the match, Dave is playing\nOptions:\n(A) right back\n(B) right winger\n(C) left back\n(D) cheerleader\n(E) sweeper\n(F) center midfielder\n(G) left midfielder",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "right back",
+      "Bob": "right winger",
+      "Claire": "left back",
+      "Dave": "cheerleader",
+      "Eve": "sweeper",
+      "Fred": "center midfielder",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "cheerleader",
+      "Claire": "left back",
+      "Dave": "right winger",
+      "Eve": "sweeper",
+      "Fred": "center midfielder",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "cheerleader",
+      "Claire": "sweeper",
+      "Dave": "right winger",
+      "Eve": "left back",
+      "Fred": "center midfielder",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "right back",
+      "Claire": "sweeper",
+      "Dave": "right winger",
+      "Eve": "left back",
+      "Fred": "center midfielder",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "right back",
+      "Claire": "sweeper",
+      "Dave": "right winger",
+      "Eve": "left midfielder",
+      "Fred": "center midfielder",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "center midfielder",
+      "Claire": "sweeper",
+      "Dave": "right winger",
+      "Eve": "left midfielder",
+      "Fred": "right back",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "right winger",
+      "Claire": "sweeper",
+      "Dave": "center midfielder",
+      "Eve": "left midfielder",
+      "Fred": "right back",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "right winger",
+      "Claire": "sweeper",
+      "Dave": "center midfielder",
+      "Eve": "left midfielder",
+      "Fred": "right back",
+      "Gertrude": "cheerleader"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: right back, right winger, left back, cheerleader, sweeper, center midfielder, left midfielder.\n1. Bob–Dave: right back, cheerleader, left back, right winger, sweeper, center midfielder, left midfielder.\n2. Claire–Eve: right back, cheerleader, sweeper, right winger, left back, center midfielder, left midfielder.\n3. Alice–Bob: cheerleader, right back, sweeper, right winger, left back, center midfielder, left midfielder.\n4. Gertrude–Eve: cheerleader, right back, sweeper, right winger, left midfielder, center midfielder, left back.\n5. Fred–Bob: cheerleader, center midfielder, sweeper, right winger, left midfielder, right back, left back.\n6. Dave–Bob: cheerleader, right winger, sweeper, center midfielder, left midfielder, right back, left back.\n7. Alice–Gertrude: left back, right winger, sweeper, center midfielder, left midfielder, right back, cheerleader.\nDave, fourth in the row, is playing center midfielder: option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1297,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

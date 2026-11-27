@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-4",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Jane Eyre, Claire gets Dune, Dave gets Dracula, Eve gets Hamlet, Fred gets Ivanhoe, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Fred and Claire swap books. Then, Alice and Bob swap books. Then, Gertrude and Alice swap books. Then, Alice and Dave swap books. Then, Alice and Bob swap books. Finally, Dave and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) The Hobbit\n(B) Jane Eyre\n(C) Dune\n(D) Dracula\n(E) Hamlet\n(F) Ivanhoe\n(G) Emma",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Dune",
+      "Dave": "Dracula",
+      "Eve": "Hamlet",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "Dune",
+      "Eve": "Hamlet",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "Dune",
+      "Eve": "Hamlet",
+      "Fred": "Dracula",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Dune",
+      "Eve": "Hamlet",
+      "Fred": "Dracula",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Dune",
+      "Eve": "Hamlet",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Hamlet",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Hamlet",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Emma",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 228,
+  "solution": "Books are listed in reader order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: (The Hobbit, Jane Eyre, Dune, Dracula, Hamlet, Ivanhoe, Emma)\n1. Dave and Claire swap: (The Hobbit, Jane Eyre, Dracula, Dune, Hamlet, Ivanhoe, Emma)\n2. Fred and Claire swap: (The Hobbit, Jane Eyre, Ivanhoe, Dune, Hamlet, Dracula, Emma)\n3. Alice and Bob swap: (Jane Eyre, The Hobbit, Ivanhoe, Dune, Hamlet, Dracula, Emma)\n4. Gertrude and Alice swap: (Emma, The Hobbit, Ivanhoe, Dune, Hamlet, Dracula, Jane Eyre)\n5. Alice and Dave swap: (Dune, The Hobbit, Ivanhoe, Emma, Hamlet, Dracula, Jane Eyre)\n6. Alice and Bob swap: (The Hobbit, Dune, Ivanhoe, Emma, Hamlet, Dracula, Jane Eyre)\n7. Dave and Eve swap: (The Hobbit, Dune, Ivanhoe, Hamlet, Emma, Dracula, Jane Eyre)\nBob has Dune, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1263,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

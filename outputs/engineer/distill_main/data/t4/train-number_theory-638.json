@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-638",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "There are positive integers $x$ and $y$ that satisfy the system of equations\\begin{align*} \\log_{10} x + 2 \\log_{10} (\\text{gcd}(x,y)) &= 60\\\\ \\log_{10} y + 2 \\log_{10} (\\text{lcm}(x,y)) &= 570. \\end{align*}Let $m$ be the number of (not necessarily distinct) prime factors in the prime factorization of $x$, and let $n$ be the number of (not necessarily distinct) prime factors in the prime factorization of $y$. Find $3m+2n$.\n",
+  "answer": "880",
+  "solution": "Write g = gcd(x,y) and L = lcm(x,y). Combining logarithms and exponentiating gives xg² = 10^60 and yL² = 10^570. Multiplying and using gL = xy yields (xy)^3 = 10^630, so xy = 10^210.\nSince x divides 10^60, it has no prime factors other than 2 and 5, and the exponent of each is at most 60. In y = 10^210/x, each of these exponents is therefore at least 210 − 60 = 150. Thus x divides y and g = x.\nThe first equation becomes x³ = 10^60, giving x = 10^20 and y = 10^190. As 10 = 2 × 5, the counts with multiplicity are m = 40 and n = 380. Hence 3m + 2n = 120 + 760 = 880.\nFinal answer: 880",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 23,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "880",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-6423",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nAn 84-year-old man with end stage renal disease secondary to diabetic nephropathy for 1 year was admitted to hospital because of dyspnea and poor oral intake of 1 weeks duration. He had been diagnosed with gout 13 years previously, and had been managed at another clinic for glaucoma, diabetes mellitus and hypertension 10 years previously. He had a history of admission to our hospital due to chronic renal failure 1 year previously, after which he had not been followed up at our OPD unit. He did not have any allergic or family medical history. Physical examination at admission revealed blood pressure of 140/80 mmHg, heart rate of 107/min, body temperature of 36.8°C, and respiratory rate of 20/min; other findings were unremarkable. At that time, complete blood count revealed a hemoglobin level of 11.1 g/dL, WBC count was 24,500/mm3 (neutrophil, 93%; lymphocyte, 5%; monocyte, 2%), platelet count was 216,000/mm3, serum BUN was 143 mg/dL, Cr was 5.7 mg/dL, uric acid was 13.3 mg/dL, calcium was 9.3 mg/dL, phosphorus was 7.4 g/dL, albumin was 3.5 g/dL, alkaline phosphatase was 94 IU/L, total bilirubin was 1.1 mgf/dL, AST/ALT was 29/28 IU/L, and parathyroid hormone was 92.26 pg/mL. Urine analysis was albumin (++), blood (+), RBC count 3-5/HPF, and WBC count 20–30/HPF. Twenty-four hour urine protein level was 467 mg/day. Twenty-four hour urine creatinine clearance level was 5.4 mL/min. He was started on hemodialysis with temporary internal jugular catheter. On the twenty-fifth day after admission, a peritoneal catheter was inserted. Three weeks after peritoneal catheter insertion, he was started on peritoneal dialysis with a 6-hour exchange of 2L 1.5% peritoneal dialysate. On the ninth day after the start of peritoneal dialysis, he developed turbid peritoneal effluents with fever (38.4°C), abdominal pain and tenderness. Dialysate WBC count was 180/mm3 (neutrophil, 20%; lymphocyte, 4%; eosinophil, 76% [eosinophil count: 136/mm3]).\nComplete blood count was WBC of 7,650/mm3 (eosinophil, 5.5%), hemoglobin level of 8.9 g/dL, and platelet count level of 337,000/mm3. Peripheral blood eosinophilia was not observed. Cultures of peritoneal fluid showed no growth of aerobic or anaerobic bacteria, or of fungus. AFB stain was negative. CAPD was commenced, and he was started on intraperitoneal ceftazidime (1.0 g/day) and cefazolin (1.0 g/day) with heparin at 8000 unit. After two weeks, dialysate had cleared up and clinical symptoms were improved. Dialysate WBC count decreased to 8/mm3 and eosinophils were not detected in peritoneal fluid ().\nThere was no recurrence of eosinophilic peritonitis on follow-up evaluation and he continued with CAPD. However, he died of sepsis and pneumonia fifteen weeks after admission.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 890,
+  "solution": "CURB-65 assigns 1 point for each qualifying finding. Use admission values before dialysis:\n- Confusion: no new confusion documented → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN was 143 mg/dL, which meets the threshold despite the underlying renal disease → 1.\n- Respiratory rate ≥30/min: 20/min → 0.\n- Blood pressure: systolic <90 or diastolic ≤60 mmHg. Admission BP was 140/80 mmHg → 0.\n- Age ≥65 years: age 84 → 1.\nSum: 0 + 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 887,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

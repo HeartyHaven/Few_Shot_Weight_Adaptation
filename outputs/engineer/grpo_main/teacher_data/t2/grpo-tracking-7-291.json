@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-291",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right midfielder, Bob is playing right back, Claire is playing striker, Dave is playing benchwarmer, Eve is playing right winger, Fred is playing sweeper, and Gertrude is playing cheerleader.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Gertrude trade positions. Then, Dave and Eve trade positions. Then, Claire and Bob trade positions. Then, Alice and Bob trade positions. Then, Bob and Alice trade positions. Then, Claire and Alice trade positions. Finally, Dave and Eve trade positions. At the end of the match, Dave is playing\nOptions:\n(A) right midfielder\n(B) right back\n(C) striker\n(D) benchwarmer\n(E) right winger\n(F) sweeper\n(G) cheerleader",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "right midfielder",
+      "Bob": "right back",
+      "Claire": "striker",
+      "Dave": "benchwarmer",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "cheerleader"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "right back",
+      "Claire": "cheerleader",
+      "Dave": "benchwarmer",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "right back",
+      "Claire": "cheerleader",
+      "Dave": "right winger",
+      "Eve": "benchwarmer",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "cheerleader",
+      "Claire": "right back",
+      "Dave": "right winger",
+      "Eve": "benchwarmer",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "right midfielder",
+      "Claire": "right back",
+      "Dave": "right winger",
+      "Eve": "benchwarmer",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "cheerleader",
+      "Claire": "right back",
+      "Dave": "right winger",
+      "Eve": "benchwarmer",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "cheerleader",
+      "Claire": "right midfielder",
+      "Dave": "right winger",
+      "Eve": "benchwarmer",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "cheerleader",
+      "Claire": "right midfielder",
+      "Dave": "benchwarmer",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists positions in the order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (right midfielder, right back, striker, benchwarmer, right winger, sweeper, cheerleader)\n1. Claire ↔ Gertrude: (right midfielder, right back, cheerleader, benchwarmer, right winger, sweeper, striker)\n2. Dave ↔ Eve: (right midfielder, right back, cheerleader, right winger, benchwarmer, sweeper, striker)\n3. Claire ↔ Bob: (right midfielder, cheerleader, right back, right winger, benchwarmer, sweeper, striker)\n4. Alice ↔ Bob: (cheerleader, right midfielder, right back, right winger, benchwarmer, sweeper, striker)\n5. Bob ↔ Alice: (right midfielder, cheerleader, right back, right winger, benchwarmer, sweeper, striker)\n6. Claire ↔ Alice: (right back, cheerleader, right midfielder, right winger, benchwarmer, sweeper, striker)\n7. Dave ↔ Eve: (right back, cheerleader, right midfielder, benchwarmer, right winger, sweeper, striker)\nDave is playing benchwarmer, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1215,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

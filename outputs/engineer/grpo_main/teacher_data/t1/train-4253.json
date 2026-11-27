@@ -1,0 +1,22 @@
+{
+  "id": "train-4253",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 22-yr-old male, farmer by occupation was referred to our tertiary cardiac care institute for management of abnormal ECG changes mimicking acute coronary syndrome. He had sustained accidental electric burn injury (240V) while carrying out some work at home 2 hours prior to admission. He was thrown to the ground following an electrocution and was found to have brief period of loss of consciousness for few seconds with spontaneous recovery. He was immediately attended at a local hospital where ECG changes were noticed and referred to our institution for opinion and further management. He had no prior history of cardiac illness. There was no history of chest pain, palpitation or neurological deficits. There was no history suggestive of sudden or premature cardiac death in his family. He was not on any medications.\nOn physical examination, patient was conscious alert and had deep electric burn entry wound over the dorsum of left hand and an exit wound over the left ankle. The arterial blood pressure and heart rate were 120/80 mmHg and 78 beats per minute, respectively. Cardiovascular assessment was normal. Other systemic examinations were normal. Surface electrocardiogram done immediately following injury demonstrated a sinus rhythm with RBBB with coved ST segment elevation with negative T wave in V1 mimicking type 1 Brugada pattern and saddle back ST segment with upright T wave in V2 mimicking type 2 Brugada pattern with early repolarisation (). QTc was normal. Echocardiographic assessment revealed a normal left ventricular size and function, and no valvular pathology. Routine laboratory tests, including blood urea, serum creatinine, serum electrolytes and cardiac biomarkers were normal. Repeat ECG at 2 hours showed disappearance of above mentioned Brugada type pattern with persistent early repolarisation. Patient was observed in the ICU for rhythm disturbances for 24 hours. Repeat ECG after 24 hours was normal pattern. Since patient had no family history of sudden cardiac death and family members showing normal ECG and clear precipitating event that can result in above mentioned ECG changes he was not subjected for further investigations like induction with class I antiarrhythmics or electrophysiological studies.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "0",
+  "lower": 0.0,
+  "upper": 0.0,
+  "calc_id": 18,
+  "prompt_tokens": 522,
+  "solution": "The HEART score grades history, ECG, age, coronary risk factors, and troponin from 0 to 2 each. Its use is limited here because the patient presented after electrocution, not with chest pain suspicious for acute coronary syndrome.\n1. History (slightly/moderately/highly suspicious = 0/1/2): no chest pain or ischemic symptoms → 0.\n2. ECG (normal/nonspecific repolarization abnormality/significant ST depression = 0/1/2): the initial tracing showed an electrical-injury Brugada mimic with no ST depression. A score of 0 requires excluding this provoked pattern from the ECG tally; the tracing was not literally normal, and counting the repolarization abnormality would give 1.\n3. Age (<45/45–64/≥65 years = 0/1/2): 22 years → 0.\n4. Risk factors (none/1–2/≥3 or known atherosclerotic disease = 0/1/2): none documented → 0.\n5. Troponin (≤upper reference limit/>1–3 times/>3 times the limit = 0/1/2): cardiac biomarkers reported normal → 0.\nSum with the provoked ECG pattern excluded: 0 + 0 + 0 + 0 + 0 = 0.\nFinal answer: 0",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 814,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 0.0,
+    "correct": true
+  }
+}

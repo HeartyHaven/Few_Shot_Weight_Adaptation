@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-404",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing sweeper, Bob is playing fullback, Claire is playing benchwarmer, Dave is playing striker, Eve is playing goalkeeper, Fred is playing right winger, and Gertrude is playing cheerleader.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Fred trade positions. Then, Eve and Gertrude trade positions. Then, Alice and Fred trade positions. Then, Gertrude and Bob trade positions. Then, Claire and Dave trade positions. Then, Gertrude and Claire trade positions. Finally, Bob and Eve trade positions. At the end of the match, Claire is playing\nOptions:\n(A) sweeper\n(B) fullback\n(C) benchwarmer\n(D) striker\n(E) goalkeeper\n(F) right winger\n(G) cheerleader",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "sweeper",
+      "Bob": "fullback",
+      "Claire": "benchwarmer",
+      "Dave": "striker",
+      "Eve": "goalkeeper",
+      "Fred": "right winger",
+      "Gertrude": "cheerleader"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "fullback",
+      "Claire": "right winger",
+      "Dave": "striker",
+      "Eve": "goalkeeper",
+      "Fred": "benchwarmer",
+      "Gertrude": "cheerleader"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "fullback",
+      "Claire": "right winger",
+      "Dave": "striker",
+      "Eve": "cheerleader",
+      "Fred": "benchwarmer",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "fullback",
+      "Claire": "right winger",
+      "Dave": "striker",
+      "Eve": "cheerleader",
+      "Fred": "sweeper",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "goalkeeper",
+      "Claire": "right winger",
+      "Dave": "striker",
+      "Eve": "cheerleader",
+      "Fred": "sweeper",
+      "Gertrude": "fullback"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "goalkeeper",
+      "Claire": "striker",
+      "Dave": "right winger",
+      "Eve": "cheerleader",
+      "Fred": "sweeper",
+      "Gertrude": "fullback"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "goalkeeper",
+      "Claire": "fullback",
+      "Dave": "right winger",
+      "Eve": "cheerleader",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "cheerleader",
+      "Claire": "fullback",
+      "Dave": "right winger",
+      "Eve": "goalkeeper",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: sweeper, fullback, benchwarmer, striker, goalkeeper, right winger, cheerleader\n1. Claire ↔ Fred: sweeper, fullback, right winger, striker, goalkeeper, benchwarmer, cheerleader\n2. Eve ↔ Gertrude: sweeper, fullback, right winger, striker, cheerleader, benchwarmer, goalkeeper\n3. Alice ↔ Fred: benchwarmer, fullback, right winger, striker, cheerleader, sweeper, goalkeeper\n4. Gertrude ↔ Bob: benchwarmer, goalkeeper, right winger, striker, cheerleader, sweeper, fullback\n5. Claire ↔ Dave: benchwarmer, goalkeeper, striker, right winger, cheerleader, sweeper, fullback\n6. Gertrude ↔ Claire: benchwarmer, goalkeeper, fullback, right winger, cheerleader, sweeper, striker\n7. Bob ↔ Eve: benchwarmer, cheerleader, fullback, right winger, goalkeeper, sweeper, striker\nClaire plays fullback, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1098,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

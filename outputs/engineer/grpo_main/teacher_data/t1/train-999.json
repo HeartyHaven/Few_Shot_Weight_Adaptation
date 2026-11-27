@@ -1,0 +1,22 @@
+{
+  "id": "train-999",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nThe patient was a 34-year-old woman. One year prior to admission, she had began suffer-ing from an abdominal fullness and weakness. Physical findings revealed a hard non-tender mass in the right upper quadrant.\nLaboratory examinations manifested serum ALT of 391IU/L, serum AST of 341IU/L, alkaline phosphatase of 279IU/L, gamma glutamyl transferase of 298IU/L, alpha-fetoprotein of more than 7000ng/ml and alpha 1-antitypsin of 410mg/dl. Blood count was normal.\nAbdominal computed tomography revealed an ill-definded large inhomogeneous mass filling the entire right lobe of the liver with underlying liver cirrhosis and tumor thrombus in the upper portion of the IVC and the right atrium (). The electrocardiogram was normal. Two-dimensional echocardiogram manifested thrombus in the right atrium(). She expired 4 months later.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 285,
+  "solution": "CHA2DS2-VASc, using admission findings:\n- Congestive heart failure (1): not documented = 0.\n- Hypertension (1): not documented = 0.\n- Age (1 for 65–74; 2 for ≥75): age 34 = 0.\n- Diabetes mellitus (1): not documented = 0.\n- Prior stroke, TIA, or systemic embolism (2): none documented. A tumor thrombus extending from the IVC into the right atrium is not a systemic arterial embolic event = 0.\n- Vascular disease (1): no myocardial infarction, peripheral arterial disease, or aortic plaque documented = 0.\n- Female sex (1): present = 1.\nSum: 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 714,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

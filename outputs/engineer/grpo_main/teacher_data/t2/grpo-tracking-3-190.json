@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-190",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Beloved, and Claire gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Alice and Claire swap books. Finally, Alice and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Dracula\n(B) Beloved\n(C) Middlemarch",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Beloved",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Beloved",
+      "Claire": "Dracula"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire), in that order.\nInitial: (Dracula, Beloved, Middlemarch)\n1. Claire and Alice swap: (Middlemarch, Beloved, Dracula)\n2. Alice and Claire swap: (Dracula, Beloved, Middlemarch)\n3. Alice and Claire swap: (Middlemarch, Beloved, Dracula)\nAlice has Middlemarch, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1214,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

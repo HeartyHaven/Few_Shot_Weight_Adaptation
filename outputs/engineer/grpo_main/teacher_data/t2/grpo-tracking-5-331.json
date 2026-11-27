@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-331",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Siddhartha, Claire gets The Trial, Dave gets Middlemarch, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Alice and Dave swap books. Then, Claire and Bob swap books. Then, Claire and Alice swap books. Then, Claire and Alice swap books. Finally, Dave and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Beloved\n(B) Siddhartha\n(C) The Trial\n(D) Middlemarch\n(E) Candide",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Middlemarch",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Beloved",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Middlemarch",
+      "Dave": "Beloved",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "The Trial",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Books in holder order: Alice, Bob, Claire, Dave, Eve.\nInitial: Beloved, Siddhartha, The Trial, Middlemarch, Candide\n1. Alice ↔ Dave: Middlemarch, Siddhartha, The Trial, Beloved, Candide\n2. Claire ↔ Bob: Middlemarch, The Trial, Siddhartha, Beloved, Candide\n3. Claire ↔ Alice: Siddhartha, The Trial, Middlemarch, Beloved, Candide\n4. Claire ↔ Alice: Middlemarch, The Trial, Siddhartha, Beloved, Candide\n5. Dave ↔ Bob: Middlemarch, Beloved, Siddhartha, The Trial, Candide\nClaire has Siddhartha, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1223,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

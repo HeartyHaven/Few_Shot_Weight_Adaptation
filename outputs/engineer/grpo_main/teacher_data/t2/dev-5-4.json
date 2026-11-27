@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-4",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Tara, Claire is dancing with Wade, Dave is dancing with Vera, and Eve is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Claire and Bob switch partners. Then, Alice and Dave switch partners. Then, Alice and Dave switch partners. Then, Bob and Claire switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Stefan\n(B) Tara\n(C) Wade\n(D) Vera\n(E) Priya",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Wade",
+      "Dave": "Vera",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Vera",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Stefan",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Wade",
+      "Claire": "Tara",
+      "Dave": "Vera",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Tara",
+      "Claire": "Wade",
+      "Dave": "Vera",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Tara",
+      "Claire": "Stefan",
+      "Dave": "Vera",
+      "Eve": "Priya"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Stefan, Tara, Wade, Vera, Priya)\n1. Claire ↔ Bob: (Stefan, Wade, Tara, Vera, Priya)\n2. Alice ↔ Dave: (Vera, Wade, Tara, Stefan, Priya)\n3. Alice ↔ Dave: (Stefan, Wade, Tara, Vera, Priya)\n4. Bob ↔ Claire: (Stefan, Tara, Wade, Vera, Priya)\n5. Alice ↔ Claire: (Wade, Tara, Stefan, Vera, Priya)\nDave’s partner is Vera, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

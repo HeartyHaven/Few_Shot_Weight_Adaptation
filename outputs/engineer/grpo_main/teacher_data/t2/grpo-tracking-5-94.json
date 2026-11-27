@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-94",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Priya, Claire is dancing with Oscar, Dave is dancing with Quinn, and Eve is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Bob and Dave switch partners. Then, Alice and Bob switch partners. Then, Alice and Dave switch partners. Then, Dave and Alice switch partners. Finally, Bob and Claire switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Tara\n(B) Priya\n(C) Oscar\n(D) Quinn\n(E) Vera",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Priya",
+      "Claire": "Oscar",
+      "Dave": "Quinn",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Quinn",
+      "Claire": "Oscar",
+      "Dave": "Priya",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Tara",
+      "Claire": "Oscar",
+      "Dave": "Priya",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Tara",
+      "Claire": "Oscar",
+      "Dave": "Quinn",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Tara",
+      "Claire": "Oscar",
+      "Dave": "Priya",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Oscar",
+      "Claire": "Tara",
+      "Dave": "Priya",
+      "Eve": "Vera"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Tara, Priya, Oscar, Quinn, Vera.\n1. Bob and Dave swap: Tara, Quinn, Oscar, Priya, Vera.\n2. Alice and Bob swap: Quinn, Tara, Oscar, Priya, Vera.\n3. Alice and Dave swap: Priya, Tara, Oscar, Quinn, Vera.\n4. Dave and Alice swap: Quinn, Tara, Oscar, Priya, Vera.\n5. Bob and Claire swap: Quinn, Oscar, Tara, Priya, Vera.\nAlice is dancing with Quinn, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1299,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

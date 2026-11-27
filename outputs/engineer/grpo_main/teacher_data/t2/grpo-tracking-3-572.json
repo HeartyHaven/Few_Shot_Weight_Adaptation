@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-572",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Persuasion, and Claire gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Bob and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) The Hobbit\n(B) Persuasion\n(C) Ivanhoe",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Persuasion",
+      "Claire": "The Hobbit"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "The Hobbit"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Book order in every row: (Alice, Bob, Claire).\nInitial: (The Hobbit, Persuasion, Ivanhoe)\n1. Claire and Alice swap: (Ivanhoe, Persuasion, The Hobbit)\n2. Bob and Alice swap: (Persuasion, Ivanhoe, The Hobbit)\n3. Bob and Claire swap: (Persuasion, The Hobbit, Ivanhoe)\nAlice has Persuasion, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1325,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-127",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Walden, Claire gets Dune, Dave gets Dracula, Eve gets Hamlet, Fred gets Beloved, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Dave and Eve swap books. Then, Dave and Claire swap books. Then, Dave and Claire swap books. Then, Alice and Eve swap books. Then, Dave and Alice swap books. Then, Alice and Claire swap books. Finally, Dave and Gertrude swap books. At the end of the semester, Dave has\nOptions:\n(A) The Trial\n(B) Walden\n(C) Dune\n(D) Dracula\n(E) Hamlet\n(F) Beloved\n(G) Emma",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Dracula",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "Dracula",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Dracula",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "Dracula",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "The Trial",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Emma",
+      "Eve": "The Trial",
+      "Fred": "Beloved",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 224,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: The Trial | Walden | Dune | Dracula | Hamlet | Beloved | Emma\n1. Dave ↔ Eve: The Trial | Walden | Dune | Hamlet | Dracula | Beloved | Emma\n2. Dave ↔ Claire: The Trial | Walden | Hamlet | Dune | Dracula | Beloved | Emma\n3. Dave ↔ Claire: The Trial | Walden | Dune | Hamlet | Dracula | Beloved | Emma\n4. Alice ↔ Eve: Dracula | Walden | Dune | Hamlet | The Trial | Beloved | Emma\n5. Dave ↔ Alice: Hamlet | Walden | Dune | Dracula | The Trial | Beloved | Emma\n6. Alice ↔ Claire: Dune | Walden | Hamlet | Dracula | The Trial | Beloved | Emma\n7. Dave ↔ Gertrude: Dune | Walden | Hamlet | Emma | The Trial | Beloved | Dracula\nDave has Emma, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1368,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

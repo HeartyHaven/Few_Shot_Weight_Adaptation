@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-147",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Dune, and Claire gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Bob and Claire swap books. Finally, Alice and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Middlemarch\n(B) Dune\n(C) Candide",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Candide",
+      "Claire": "Dune"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Candide"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Middlemarch",
+      "Claire": "Candide"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Book order in every row: Alice, Bob, Claire.\nInitial: Middlemarch, Dune, Candide.\n1. Claire ↔ Bob: Middlemarch, Candide, Dune.\n2. Bob ↔ Claire: Middlemarch, Dune, Candide.\n3. Alice ↔ Bob: Dune, Middlemarch, Candide.\nBob's book is Middlemarch, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1257,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

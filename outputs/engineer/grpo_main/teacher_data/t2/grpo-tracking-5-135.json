@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-135",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Nadia, Claire is dancing with Quinn, Dave is dancing with Priya, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Bob and Alice switch partners. Then, Claire and Dave switch partners. Then, Claire and Dave switch partners. Finally, Dave and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Umar\n(B) Nadia\n(C) Quinn\n(D) Priya\n(E) Tara",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Priya",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Nadia",
+      "Claire": "Tara",
+      "Dave": "Priya",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Tara",
+      "Dave": "Priya",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Priya",
+      "Dave": "Tara",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Tara",
+      "Dave": "Priya",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Umar",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Umar, Nadia, Quinn, Priya, Tara.\n1. Eve ↔ Claire: Umar, Nadia, Tara, Priya, Quinn.\n2. Bob ↔ Alice: Nadia, Umar, Tara, Priya, Quinn.\n3. Claire ↔ Dave: Nadia, Umar, Priya, Tara, Quinn.\n4. Claire ↔ Dave: Nadia, Umar, Tara, Priya, Quinn.\n5. Dave ↔ Bob: Nadia, Priya, Tara, Umar, Quinn.\nAlice's partner is Nadia, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1358,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

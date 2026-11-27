@@ -1,0 +1,20 @@
+{
+  "id": "sample_257",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    ls = []\n    for x in text:\n        ls.append(x.splitlines())\n    return ls\n```\n\nInput: f(['Hello World\\n\"I am String\"'])",
+  "answer": "[['Hello World', '\"I am String\"']]",
+  "prompt_tokens": 98,
+  "solution": "ls starts as []. The loop runs once because the input list contains one string. splitlines() splits that string at the newline, removing the newline but keeping the double quotes around the second line. It produces ['Hello World', '\"I am String\"']. append() adds this list as one element of ls, which is then returned.\nFinal answer: [['Hello World', '\"I am String\"']]",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "[['Hello World', '\"I am String\"']]",
+    "correct": true
+  }
+}

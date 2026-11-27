@@ -1,0 +1,22 @@
+{
+  "id": "train-1104",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 85-year-old female patient presented to the emergency department 3 h after receiving hemodialysis, with severe left loin pain and dizziness. Her blood pressure was 70/40 and pulse was 110 not responding to bolus infusions of normal saline. Serum hemoglobin was 60 g/L. Examination revealed a left hypochondrial tender mass, with clinical evidence of hemorrhagic shock. An emergent CT of the abdomen and pelvis was done and showed extensive left retroperitoneal hemorrhage and heterogeneous left kidney. The patient was on warfarin and had end-stage renal disease (ESRD) secondary to diabetes mellitus, atrial fibrillation, congestive heart failure, diastolic dysfunction, coronary artery bypass grafting, and hypertension.\nShe was positioned with left flank elevated 45° and left retroperitoneal subcostal transverse lateral lumbotomy was done. The retroperitoneal cavity was full of blood clots that were removed; this was rapidly followed by kidney dissection using blunt dissection and Ligasure vascular control. The renal pedicle was soon accessible and Hem-o-lok clips were used for pedicle control. The kidney was safely removed and the whole procedure was completed in 35 min. The patient vitals were stabilized and she was transferred to ICU for 24 h observation.\nPathology showed extensive sclerosed glomeruli, marked interstitial inflammation, severe arteriosclerosis, perirenal and renal parenchymal hemorrhage, severe renal artery atherosclerosis, and ACKD. and show the enlarged left kidney with massive retroperitoneal hemorrhage on CT scan.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 415,
+  "solution": "CHA2DS2-VASc estimates stroke risk in atrial fibrillation. Using the history at admission:\n- Congestive heart failure: present, 1.\n- Hypertension: established history, 1. Hypotension from hemorrhagic shock does not negate that history.\n- Age: 85 meets the ≥75 criterion, 2; the 65–74 band is not scored separately.\n- Diabetes mellitus: present and identified as the cause of ESRD, 1.\n- Prior stroke, TIA, or systemic embolism (2 points if present): none documented, 0.\n- Vascular disease: coronary artery disease evidenced by prior coronary bypass grafting, 1.\n- Sex category: female, 1.\nTotal = 1 + 1 + 2 + 1 + 0 + 1 + 1 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 702,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

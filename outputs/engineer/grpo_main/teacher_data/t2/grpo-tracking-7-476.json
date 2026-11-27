@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-476",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Dune, Claire gets Dracula, Dave gets The Trial, Eve gets Beloved, Fred gets Jane Eyre, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Fred and Bob swap books. Then, Dave and Fred swap books. Then, Claire and Fred swap books. Then, Bob and Claire swap books. Then, Alice and Fred swap books. Then, Bob and Dave swap books. Finally, Bob and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) Dune\n(C) Dracula\n(D) The Trial\n(E) Beloved\n(F) Jane Eyre\n(G) Candide",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Dune",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "Dune",
+      "Eve": "Beloved",
+      "Fred": "The Trial",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Beloved",
+      "Fred": "Dracula",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Beloved",
+      "Fred": "Dracula",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Beloved",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Candide"
+    }
+  ],
+  "prompt_tokens": 226,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Ivanhoe | Dune | Dracula | The Trial | Beloved | Jane Eyre | Candide\n1. Fred ↔ Bob: Ivanhoe | Jane Eyre | Dracula | The Trial | Beloved | Dune | Candide\n2. Dave ↔ Fred: Ivanhoe | Jane Eyre | Dracula | Dune | Beloved | The Trial | Candide\n3. Claire ↔ Fred: Ivanhoe | Jane Eyre | The Trial | Dune | Beloved | Dracula | Candide\n4. Bob ↔ Claire: Ivanhoe | The Trial | Jane Eyre | Dune | Beloved | Dracula | Candide\n5. Alice ↔ Fred: Dracula | The Trial | Jane Eyre | Dune | Beloved | Ivanhoe | Candide\n6. Bob ↔ Dave: Dracula | Dune | Jane Eyre | The Trial | Beloved | Ivanhoe | Candide\n7. Bob ↔ Alice: Dune | Dracula | Jane Eyre | The Trial | Beloved | Ivanhoe | Candide\nClaire has Jane Eyre, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1239,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-895",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Walden, Claire gets Beloved, Dave gets Emma, and Eve gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Claire and Dave swap books. Then, Alice and Dave swap books. Then, Dave and Eve swap books. Finally, Eve and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) The Trial\n(B) Walden\n(C) Beloved\n(D) Emma\n(E) The Hobbit",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "The Hobbit",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "The Hobbit",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Hobbit",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Hobbit",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists books in order: Alice, Bob, Claire, Dave, Eve.\nInitial: The Trial | Walden | Beloved | Emma | The Hobbit\n1. Bob and Eve swap: The Trial | The Hobbit | Beloved | Emma | Walden\n2. Claire and Dave swap: The Trial | The Hobbit | Emma | Beloved | Walden\n3. Alice and Dave swap: Beloved | The Hobbit | Emma | The Trial | Walden\n4. Dave and Eve swap: Beloved | The Hobbit | Emma | Walden | The Trial\n5. Eve and Bob swap: Beloved | The Trial | Emma | Walden | The Hobbit\nAlice has Beloved, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1286,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

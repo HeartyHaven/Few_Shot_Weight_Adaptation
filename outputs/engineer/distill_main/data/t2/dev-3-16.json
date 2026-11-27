@@ -1,0 +1,57 @@
+{
+  "id": "dev-3-16",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Wade, Bob is dancing with Lena, and Claire is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Bob and Alice switch partners. Finally, Claire and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Wade\n(B) Lena\n(C) Nadia",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Wade",
+      "Bob": "Lena",
+      "Claire": "Nadia"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Wade"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Wade"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Wade",
+      "Claire": "Nadia"
+    }
+  ],
+  "solution": "Initial: Alice = Wade, Bob = Lena, Claire = Nadia.\n1. Claire and Alice switch: Alice = Nadia, Bob = Lena, Claire = Wade.\n2. Bob and Alice switch: Alice = Lena, Bob = Nadia, Claire = Wade.\n3. Claire and Bob switch: Alice = Lena, Bob = Wade, Claire = Nadia.\nAlice is dancing with Lena, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 14,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

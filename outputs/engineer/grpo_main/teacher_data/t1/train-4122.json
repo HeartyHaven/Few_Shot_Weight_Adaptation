@@ -1,0 +1,22 @@
+{
+  "id": "train-4122",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 62-year-old man comes to the physician because of a persistent cough for the past 2 weeks. During this time, he has also had occasional discomfort in his chest. Three weeks ago, he had a sore throat, headache, and a low-grade fever, which were treated with acetaminophen and rest. He has a history of hypertension and hyperlipidemia. His father died of myocardial infarction at the age of 57 years. He has smoked a pack of cigarettes daily for the past 40 years. Current medications include enalapril and atorvastatin. His temperature is 37°C (98.6°F), pulse is 70/min, and blood pressure is 145/90 mm Hg. Physical examination shows no abnormalities. An x-ray of the chest is shown.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 247,
+  "solution": "The HEART score adds five 0–2 point components for suspected acute coronary syndrome.\n- History: score the occasional chest discomfort as moderately suspicious (1). The description is limited: there is no classic ischemic pattern, and cough after a respiratory illness offers an alternative explanation.\n- ECG: not supplied. Assume a normal tracing (0); nonspecific repolarization changes would score 1 and significant ST depression 2.\n- Age: 62 years is in the 45–64 band (1).\n- Risk factors: hypertension, hyperlipidemia, and current smoking establish at least three coronary risk factors (2), without needing to count family history.\n- Troponin: not supplied. Assume an initial value at or below the assay upper limit (0); an elevation through 3 times the limit would score 1, and >3 times the limit would score 2.\nConditional sum: 1 + 0 + 1 + 2 + 0 = 4. The ECG and troponin assumptions are not confirmed by the note.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 729,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

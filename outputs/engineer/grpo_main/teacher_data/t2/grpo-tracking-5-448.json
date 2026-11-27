@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-448",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Middlemarch, Claire gets Jane Eyre, Dave gets Beloved, and Eve gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Alice and Eve swap books. Then, Eve and Alice swap books. Then, Alice and Claire swap books. Finally, Alice and Dave swap books. At the end of the semester, Alice has\nOptions:\n(A) Walden\n(B) Middlemarch\n(C) Jane Eyre\n(D) Beloved\n(E) Dune",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dune",
+      "Claire": "Walden",
+      "Dave": "Jane Eyre",
+      "Eve": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Walden, Middlemarch, Jane Eyre, Beloved, Dune\n1. Bob swaps with Eve: Walden, Dune, Jane Eyre, Beloved, Middlemarch\n2. Alice swaps with Eve: Middlemarch, Dune, Jane Eyre, Beloved, Walden\n3. Eve swaps with Alice: Walden, Dune, Jane Eyre, Beloved, Middlemarch\n4. Alice swaps with Claire: Jane Eyre, Dune, Walden, Beloved, Middlemarch\n5. Alice swaps with Dave: Beloved, Dune, Walden, Jane Eyre, Middlemarch\nAlice has Beloved, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1051,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

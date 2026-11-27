@@ -1,0 +1,22 @@
+{
+  "id": "train-4101",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 59-year-old male with past medical history of hypothyroidism, atrial fibrillation and atopic rhinitis presents to our tertiary care center for follow-up CT chest for incidentally detected pulmonary cysts on CT Chest Abdomen and Pelvis as part of a trauma workup. He was afebrile and had stable vitals. No history of smoking, dyspnea, chest pain, cough, fatigue or fever.\nCT Chest (, , ) was performed which demonstrated multiple thin elliptical well-defined para-mediastinal air-filled cysts without internal structure, in a basilar distribution with preserved lung volume and no evidence of interstitial lung disease. The distribution pattern was concerning for cystic lung disease associated with Birt-Hogg-Dubé syndrome. The patient had no personal or family history of thyroid cancer, renal cancer or spontaneous pneumothorax.\nHe subsequently underwent genetic testing. Analysis of 106 gene revealed a pathogenic variant in the FLCN gene, FLCN c.1285dup (p.His429Profs*27) heterozygous, confirming the diagnosis of Birt-Hogg-Dubé syndrome.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 317,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, atherosclerotic risk factors, and troponin.\n- History: incidental pulmonary cysts without chest pain or dyspnea; history is not suspicious for acute coronary syndrome = 0.\n- ECG: no tracing or interpretation is reported. Assign 0 provisionally; a normal ECG is not established.\n- Age: 59 years falls in the 45–64 band = 1.\n- Risk factors: no standard coronary risk factor is documented; atrial fibrillation itself does not count = 0.\n- Troponin: not reported. Assign 0 provisionally; a normal level is not established.\nDocumented minimum = 0 + 0 + 1 + 0 + 0 = 1. A definitive HEART score would require ECG and troponin results, and this was not an acute chest-pain presentation.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 908,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1086",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 81-year-old Caucasian man presented to our hospital after a mechanical fall resulting in a right femur periprosthetic fracture. His past medical history was pertinent for coronary artery bypass grafting (CABG) and aortic valve replacement with a 27-mm Saint Jude Biocor bioprosthetic valve due to severe aortic insufficiency in 2007, paroxysmal atrial fibrillation, hypertension, hyperlipidemia, diabetes mellitus, former tobacco abuse, right popliteal aneurysm, and abdominal aortic aneurysm measuring up to 12 cm x 12 cm status post-endovascular aortic repair in 2011 (Figure ).\nHe reported intermittent chest pressure and dyspnea with mild exertion. He can walk about half of a block before stopping to rest due to dyspnea. Transthoracic echocardiogram showed preserved ejection fraction of 60-65%, stage 1 diastolic dysfunction, well-seated bioprosthetic aortic valve with normal gradients, and no other major valvular abnormalities. A regadenason nuclear stress test was performed and it revealed a fixed inferior wall defect and significant transient ischemic dilation, prompting further investigation with coronary and bypass angiography. Coronary angiography revealed numerous aneurysmal dilations, most notably the proximal left anterior descending artery (LAD), as well as severe atherosclerosis lesions (Figure ).\nThe left circumflex artery (LCX) was occluded proximally (Figure ).\nBypass angiography revealed patent grafts to the LAD, obtuse marginal branch, and right coronary artery (RCA) (Figure ).\nGiven his age, underlying comorbidities, and patent bypass grafts, we opted to treat him medically with optimization of medical therapy, which included anti-platelet, angiotensin receptor antagonists, and statins.\nHe proceeded with open reduction internal fixation of the right periprosthetic femur fracture. The surgery was uncomplicated, and his post-operative course was relatively unremarkable. He was discharged to an inpatient rehabilitation facility to continue recovery.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 521,
+  "solution": "CHA₂DS₂-VASc assigns points for stroke risk factors in atrial fibrillation. At admission:\n- Congestive heart failure: 1 if his exertional dyspnea and diastolic dysfunction are interpreted as symptomatic heart failure with preserved EF. This is the uncertain point: the note does not explicitly diagnose heart failure, and grade 1 diastolic dysfunction alone would not qualify.\n- Hypertension: 1 for established hypertension.\n- Age: 2 at age 81 (≥75); the 1 point for age 65–74 is not added.\n- Diabetes mellitus: 1.\n- Prior stroke, TIA, or systemic embolism (2 if present): 0 documented.\n- Vascular disease: 1 for established coronary and peripheral vascular disease, counted once.\n- Sex category: 0 for male sex.\nCounting symptomatic heart failure, the sum is 1 + 1 + 2 + 1 + 0 + 1 + 0 = 6; without that interpretation it would be 5.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 901,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

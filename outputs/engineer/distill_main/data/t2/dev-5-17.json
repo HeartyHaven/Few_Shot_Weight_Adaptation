@@ -1,0 +1,87 @@
+{
+  "id": "dev-5-17",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a teal ball, Bob has a orange ball, Claire has a silver ball, Dave has a purple ball, and Eve has a brown ball.\nAs the game progresses, pairs of players trade balls. First, Eve and Dave swap balls. Then, Dave and Eve swap balls. Then, Eve and Claire swap balls. Then, Bob and Alice swap balls. Finally, Claire and Eve swap balls. At the end of the game, Alice has the\nOptions:\n(A) teal ball\n(B) orange ball\n(C) silver ball\n(D) purple ball\n(E) brown ball",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "teal",
+      "Bob": "orange",
+      "Claire": "silver",
+      "Dave": "purple",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "orange",
+      "Claire": "silver",
+      "Dave": "brown",
+      "Eve": "purple"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "orange",
+      "Claire": "silver",
+      "Dave": "purple",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "orange",
+      "Claire": "brown",
+      "Dave": "purple",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "teal",
+      "Claire": "brown",
+      "Dave": "purple",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "teal",
+      "Claire": "silver",
+      "Dave": "purple",
+      "Eve": "brown"
+    }
+  ],
+  "solution": "Ball colors are listed in player order: Alice, Bob, Claire, Dave, Eve.\nInitial: (teal, orange, silver, purple, brown)\n1. Eve and Dave swap: (teal, orange, silver, brown, purple)\n2. Dave and Eve swap: (teal, orange, silver, purple, brown)\n3. Eve and Claire swap: (teal, orange, brown, purple, silver)\n4. Bob and Alice swap: (orange, teal, brown, purple, silver)\n5. Claire and Eve swap: (orange, teal, silver, purple, brown)\nAlice has the orange ball, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 30,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

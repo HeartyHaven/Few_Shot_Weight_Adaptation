@@ -1,0 +1,22 @@
+{
+  "id": "train-1035",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 77-year-old woman is brought by ambulance to the emergency department after she developed weakness of her right arm along with a right-sided facial droop.  By the time the ambulance arrived, she was having difficulty speaking. Past medical history is significant for hypertension, diabetes mellitus type II, and hyperlipidemia. She takes lisinopril, hydrochlorothiazide, metformin, and atorvastatin. On arrival to the emergency department, her vital signs are within normal limits.  On physical examination, she is awake and alert but the right side of her mouth is dropping, making it difficult for her to speak clearly. Her heart has a regular rate and rhythm and her lungs are clear to auscultation bilaterally. Fingerstick glucose is 85 mg/dL. Her right upper extremity strength is 2/5 and her left upper extremity strength is 5/5.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 263,
+  "solution": "CHA₂DS₂-VASc assigns 1 point each for heart failure, hypertension, diabetes, qualifying vascular disease, and female sex; age 65–74 gives 1 point and age ≥75 gives 2 instead. Stroke, TIA, or systemic embolism gives 2 points.\n- Heart failure: none documented → 0.\n- Hypertension: known and treated, despite normal arrival BP → 1.\n- Age: 77 years → 2.\n- Diabetes: type II → 1.\n- Stroke/TIA/embolism: counting the presenting right facial droop, arm weakness, and speech difficulty as an acute cerebrovascular event → 2.\n- Vascular disease: no MI, peripheral arterial disease, or aortic plaque documented; hyperlipidemia alone does not count → 0.\n- Female sex → 1.\nSum: 0 + 1 + 2 + 1 + 2 + 0 + 1 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 764,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

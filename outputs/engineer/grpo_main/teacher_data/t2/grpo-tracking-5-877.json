@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-877",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lena, Bob is dancing with Oscar, Claire is dancing with Quinn, Dave is dancing with Rosa, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Claire and Dave switch partners. Then, Alice and Dave switch partners. Then, Alice and Claire switch partners. Finally, Claire and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Lena\n(B) Oscar\n(C) Quinn\n(D) Rosa\n(E) Yuki",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Lena",
+      "Bob": "Oscar",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Lena",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Lena",
+      "Claire": "Rosa",
+      "Dave": "Quinn",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Lena",
+      "Claire": "Rosa",
+      "Dave": "Oscar",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Quinn",
+      "Dave": "Oscar",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Yuki",
+      "Dave": "Oscar",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Dancer order for every row: Alice | Bob | Claire | Dave | Eve.\nInitial: Lena | Oscar | Quinn | Rosa | Yuki\n1. Bob ↔ Alice: Oscar | Lena | Quinn | Rosa | Yuki\n2. Claire ↔ Dave: Oscar | Lena | Rosa | Quinn | Yuki\n3. Alice ↔ Dave: Quinn | Lena | Rosa | Oscar | Yuki\n4. Alice ↔ Claire: Rosa | Lena | Quinn | Oscar | Yuki\n5. Claire ↔ Eve: Rosa | Lena | Yuki | Oscar | Quinn\nBob dances with Lena, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1054,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

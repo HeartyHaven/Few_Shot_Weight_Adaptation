@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-934",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Beloved, Claire gets Siddhartha, Dave gets Walden, Eve gets Dracula, Fred gets Jane Eyre, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Fred and Claire swap books. Then, Fred and Gertrude swap books. Then, Bob and Fred swap books. Then, Alice and Gertrude swap books. Then, Gertrude and Bob swap books. Finally, Gertrude and Alice swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Persuasion\n(B) Beloved\n(C) Siddhartha\n(D) Walden\n(E) Dracula\n(F) Jane Eyre\n(G) Emma",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Siddhartha",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Persuasion",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Emma",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Persuasion",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Emma",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Persuasion",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Persuasion",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dracula",
+      "Fred": "Persuasion",
+      "Gertrude": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Each row lists books in the order Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Persuasion, Beloved, Siddhartha, Walden, Dracula, Jane Eyre, Emma.\n1. Alice swaps with Bob: Beloved, Persuasion, Siddhartha, Walden, Dracula, Jane Eyre, Emma.\n2. Fred swaps with Claire: Beloved, Persuasion, Jane Eyre, Walden, Dracula, Siddhartha, Emma.\n3. Fred swaps with Gertrude: Beloved, Persuasion, Jane Eyre, Walden, Dracula, Emma, Siddhartha.\n4. Bob swaps with Fred: Beloved, Emma, Jane Eyre, Walden, Dracula, Persuasion, Siddhartha.\n5. Alice swaps with Gertrude: Siddhartha, Emma, Jane Eyre, Walden, Dracula, Persuasion, Beloved.\n6. Gertrude swaps with Bob: Siddhartha, Beloved, Jane Eyre, Walden, Dracula, Persuasion, Emma.\n7. Gertrude swaps with Alice: Emma, Beloved, Jane Eyre, Walden, Dracula, Persuasion, Siddhartha.\nGertrude has Siddhartha, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1047,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-847",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets The Hobbit, Claire gets Hamlet, Dave gets Dune, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Bob and Dave swap books. Then, Claire and Dave swap books. Then, Alice and Claire swap books. Finally, Dave and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) The Hobbit\n(C) Hamlet\n(D) Dune\n(E) Walden",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Hobbit",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Ivanhoe, The Hobbit, Hamlet, Dune, Walden.\n1. Claire ↔ Alice: Hamlet, The Hobbit, Ivanhoe, Dune, Walden.\n2. Bob ↔ Dave: Hamlet, Dune, Ivanhoe, The Hobbit, Walden.\n3. Claire ↔ Dave: Hamlet, Dune, The Hobbit, Ivanhoe, Walden.\n4. Alice ↔ Claire: The Hobbit, Dune, Hamlet, Ivanhoe, Walden.\n5. Dave ↔ Bob: The Hobbit, Ivanhoe, Hamlet, Dune, Walden.\nClaire holds Hamlet, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1147,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-861",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 90-year-old man presented for evaluation of a one-month history of fatigue and progressive abdominal and lower extremity edema. His history was notable for ischemic cardiomyopathy with a left ventricular ejection fraction (LVEF) of 15% with a dual-chamber pacemaker for cardiac resynchronization; paroxysmal atrial fibrillation and frequent ventricular ectopy requiring initiation of amiodarone 6 months prior (200 mcg/day); stage IV chronic kidney disease, not on dialysis. The patient reported full compliance with his medical heart failure regimen and denied any dietary indiscretion, alcohol intake, or anginal symptoms. His vital signs were unremarkable but his weight had increased by 4.6 kg. Examination revealed a regular heart rate of 60 beats/minute, jugular venous distension, a hepatojugular reflex, inspiratory crackles in the lung bases, and significant lower extremity pitting edema to mid-thigh level. The skin was notably dry. Thyroid exam was unremarkable. A chest X-ray revealed pulmonary edema and cardiomegaly (). Electrocardiography revealed a paced rhythm at 62 beats/minute and cardiac biomarkers revealed no evidence of myocardial infarction. Laboratory studies included an N-terminal pro-B-type natriuretic peptide of 10,644 pg/mL (normal < 180) and serum creatinine of 3.7 mg/dL (GFR 16 mL/min), significantly worse than his baseline creatinine of 2.3 mg/dL. A transthoracic echocardiogram revealed an LVEF of 12% with global hypokinesis, a right ventricular (RV) systolic pressure of 44 mmHg, and a moderate-sized concentric pericardial effusion ().\nFor treatment of decompensated heart failure, he was cautiously diuresed with furosemide. With this his pulmonary, abdominal, and peripheral edema improved, and his serum creatinine trended down to 3.2 mg/dL. However, he remained severely fatigued. Given this and the new pericardial effusion, serum thyroid studies were obtained, revealing a dramatically elevated thyroid-stimulating hormone of 187 mIU/L (normal 0.3 to 5.0), free thyroxine of 0.4 ng/dL (normal 0.8 to 1.8), and negative antithyroperoxidase antibodies. By contrast, his thyroid-stimulating hormone level was normal at 2.0 mIU/L immediately prior to initiation of amiodarone several months prior. He was diagnosed with amiodarone-induced hypothyroidism and started on low-dose oral levothyroxine (25 mcg/day), given his age, systolic heart failure, and history of ventricular dysrhythmias. His amiodarone was continued for the purpose of rhythm control. His fatigue and fluid status improved gradually over the next 4 days, and he was dismissed from the hospital.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 726,
+  "solution": "Apply CHA₂DS₂-VASc to the admission history:\n- Heart failure or LV dysfunction: decompensated systolic heart failure with admission LVEF 12% → 1.\n- Hypertension (1 if present): not documented → 0.\n- Age (65–74 = 1; ≥75 = 2): age 90 → 2.\n- Diabetes (1 if present): not documented → 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): not documented → 0.\n- Vascular disease: ischemic cardiomyopathy indicates underlying coronary artery disease → 1.\n- Sex category (1 for female): male → 0.\nTotal = 1 + 0 + 2 + 0 + 0 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 803,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

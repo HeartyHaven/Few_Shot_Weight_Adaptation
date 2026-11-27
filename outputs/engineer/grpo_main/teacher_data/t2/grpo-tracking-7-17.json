@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-17",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Beloved, Claire gets Dracula, Dave gets The Trial, Eve gets Walden, Fred gets The Hobbit, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Fred and Gertrude swap books. Then, Claire and Bob swap books. Then, Eve and Claire swap books. Then, Bob and Fred swap books. Then, Fred and Alice swap books. Then, Alice and Gertrude swap books. Finally, Eve and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Candide\n(B) Beloved\n(C) Dracula\n(D) The Trial\n(E) Walden\n(F) The Hobbit\n(G) Emma",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Walden",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "The Trial",
+      "Eve": "Walden",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Emma",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Dracula",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "The Trial",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 228,
+  "solution": "Books in holder order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude):\nInitial: (Candide, Beloved, Dracula, The Trial, Walden, The Hobbit, Emma)\n1. Fred ↔ Gertrude: (Candide, Beloved, Dracula, The Trial, Walden, Emma, The Hobbit)\n2. Claire ↔ Bob: (Candide, Dracula, Beloved, The Trial, Walden, Emma, The Hobbit)\n3. Eve ↔ Claire: (Candide, Dracula, Walden, The Trial, Beloved, Emma, The Hobbit)\n4. Bob ↔ Fred: (Candide, Emma, Walden, The Trial, Beloved, Dracula, The Hobbit)\n5. Fred ↔ Alice: (Dracula, Emma, Walden, The Trial, Beloved, Candide, The Hobbit)\n6. Alice ↔ Gertrude: (The Hobbit, Emma, Walden, The Trial, Beloved, Candide, Dracula)\n7. Eve ↔ Alice: (Beloved, Emma, Walden, The Trial, The Hobbit, Candide, Dracula)\nBob has Emma, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1193,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

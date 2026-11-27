@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-497",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Walden, Claire gets Dracula, Dave gets Middlemarch, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Eve and Dave swap books. Then, Alice and Bob swap books. Then, Bob and Claire swap books. Finally, Eve and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) Siddhartha\n(B) Walden\n(C) Dracula\n(D) Middlemarch\n(E) Jane Eyre",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "Middlemarch",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "Jane Eyre",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "Jane Eyre",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Walden",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Middlemarch",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Book owners in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Siddhartha, Walden, Dracula, Middlemarch, Jane Eyre\n1. Claire and Bob: Siddhartha, Dracula, Walden, Middlemarch, Jane Eyre\n2. Eve and Dave: Siddhartha, Dracula, Walden, Jane Eyre, Middlemarch\n3. Alice and Bob: Dracula, Siddhartha, Walden, Jane Eyre, Middlemarch\n4. Bob and Claire: Dracula, Walden, Siddhartha, Jane Eyre, Middlemarch\n5. Eve and Bob: Dracula, Middlemarch, Siddhartha, Jane Eyre, Walden\nAlice has Dracula, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1251,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

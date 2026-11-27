@@ -1,0 +1,22 @@
+{
+  "id": "train-936",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 64-year old female patient presented with transient dizziness and memory impairment. She had a history of previous ischemic stroke with a 10-year medical history of diabetes mellitus and hypertension. Findings on MRI revealed an old border zone infarct at the right fronto-parietal lobe, and old small infarctions at the basal ganglia and the right paramedian pons. Cerebral angiography indicated right cavernous ICA stenosis of approximately 75%. During insertion of guiding catheter, acute thrombosis occurred and the patient developed left hemiparesis (motor grade 2). After thrombolysis with 300,000 IU urokinase, the occluded artery was recanalized and the left hemiparesis showed improvement, allowing us to perform balloon angioplasty using a Gateway balloon (2.5 × 15 mm) with successful placement of a 4 × 20 mm Wingspan stent. We obtained post-procedure images indicating reduction of stenosis (stenosis 25%). However, cerebral angiography revealed CCF at the stent implantation site. Transvenous coil embolization was performed successfully through the right inferior petrosal sinus. After three days, the patient developed third nerve palsy, including ptosis and paralysis of extraocular movement, however, diffusion MRI did not reveal any abnormalities. The third nerve palsy showed gradual improvement, and showed complete resolution within three months.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 382,
+  "solution": "Apply CHA₂DS₂-VASc to the admission history, before catheterization:\n- Congestive heart failure: not documented, 0.\n- Hypertension: present, +1.\n- Age: 64, below both the 65–74 (+1) and ≥75 (+2) categories, 0.\n- Diabetes mellitus: present, +1.\n- Prior stroke, TIA, or systemic embolism: prior ischemic stroke, +2. Multiple old infarcts do not score separately.\n- Vascular disease: no prior myocardial infarction, peripheral arterial disease, or aortic plaque documented, 0. The ICA stenosis does not add a point under these criteria.\n- Sex category: female, +1.\nSum: 0 + 1 + 0 + 1 + 2 + 0 + 1 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 623,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

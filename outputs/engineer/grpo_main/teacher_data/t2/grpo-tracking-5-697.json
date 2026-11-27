@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-697",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Dune, Claire gets Emma, Dave gets Jane Eyre, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Alice and Claire swap books. Then, Eve and Alice swap books. Then, Claire and Dave swap books. Finally, Bob and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Ivanhoe\n(B) Dune\n(C) Emma\n(D) Jane Eyre\n(E) Hamlet",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Hamlet",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Ivanhoe | Dune | Emma | Jane Eyre | Hamlet\nAfter Eve–Dave: Ivanhoe | Dune | Emma | Hamlet | Jane Eyre\nAfter Alice–Claire: Emma | Dune | Ivanhoe | Hamlet | Jane Eyre\nAfter Eve–Alice: Jane Eyre | Dune | Ivanhoe | Hamlet | Emma\nAfter Claire–Dave: Jane Eyre | Dune | Hamlet | Ivanhoe | Emma\nAfter Bob–Claire: Jane Eyre | Hamlet | Dune | Ivanhoe | Emma\nBob has Hamlet, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1226,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-242",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing benchwarmer, Bob is playing right midfielder, and Claire is playing left winger.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Claire trade positions. Then, Bob and Alice trade positions. Finally, Claire and Alice trade positions. At the end of the match, Alice is playing\nOptions:\n(A) benchwarmer\n(B) right midfielder\n(C) left winger",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "benchwarmer",
+      "Bob": "right midfielder",
+      "Claire": "left winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "left winger",
+      "Claire": "right midfielder"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "benchwarmer",
+      "Claire": "right midfielder"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "benchwarmer",
+      "Claire": "left winger"
+    }
+  ],
+  "prompt_tokens": 146,
+  "solution": "Each row lists positions in this order: Alice, Bob, Claire.\nInitial: benchwarmer, right midfielder, left winger\n1. Bob and Claire swap: benchwarmer, left winger, right midfielder\n2. Bob and Alice swap: left winger, benchwarmer, right midfielder\n3. Claire and Alice swap: right midfielder, benchwarmer, left winger\nAlice is playing right midfielder, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1369,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

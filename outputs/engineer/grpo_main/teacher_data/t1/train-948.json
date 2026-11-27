@@ -1,0 +1,22 @@
+{
+  "id": "train-948",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 67-year-old man presents to the emergency department after an episode of syncope. It happened when he was doing yard work while lifting a heavy bag. Similar episodes have occurred in the past when he exerts himself. The patient is otherwise healthy and is not currently on any medications. His temperature is 98.3°F (36.8°C), blood pressure is 137/89 mmHg, pulse is 88/min, respirations are 14/min, and oxygen saturation is 99% on room air. Physical exam is notable for a delayed carotid pulse but is otherwise unremarkable. The patient is asked to walk around the emergency department, and after doing so he states he feels a little short of breath and dizzy. The patient’s initial ECG is seen in Figure A, and 2 sets of troponins are unremarkable.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 259,
+  "solution": "CHA₂DS₂-VASc at admission:\n- Heart failure or LV systolic dysfunction (1 if present): not documented; exertional symptoms alone do not establish heart failure → 0.\n- Hypertension (1): no established diagnosis; a single BP of 137/89 mmHg does not establish one → 0.\n- Age (1 for 65–74; 2 for ≥75): 67 → 1.\n- Diabetes (1): none reported → 0.\n- Prior stroke, TIA, or systemic embolism (2): none reported → 0.\n- Vascular disease (1): none reported → 0.\n- Female sex (1): male → 0.\nSum: 0 + 0 + 1 + 0 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 975,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

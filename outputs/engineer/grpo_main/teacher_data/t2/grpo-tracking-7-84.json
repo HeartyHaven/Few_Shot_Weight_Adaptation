@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-84",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Middlemarch, Claire gets Emma, Dave gets The Hobbit, Eve gets Dracula, Fred gets Dune, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Gertrude and Claire swap books. Then, Fred and Alice swap books. Then, Bob and Gertrude swap books. Then, Claire and Alice swap books. Then, Bob and Dave swap books. Then, Alice and Gertrude swap books. Finally, Dave and Alice swap books. At the end of the semester, Fred has\nOptions:\n(A) Candide\n(B) Middlemarch\n(C) Emma\n(D) The Hobbit\n(E) Dracula\n(F) Dune\n(G) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Middlemarch",
+      "Claire": "Emma",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "Dune",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "Dune",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Dune",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Emma",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Emma",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Middlemarch",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Book order in each row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Candide, Middlemarch, Emma, The Hobbit, Dracula, Dune, Beloved.\n1. Gertrude swaps with Claire: Candide, Middlemarch, Beloved, The Hobbit, Dracula, Dune, Emma.\n2. Fred swaps with Alice: Dune, Middlemarch, Beloved, The Hobbit, Dracula, Candide, Emma.\n3. Bob swaps with Gertrude: Dune, Emma, Beloved, The Hobbit, Dracula, Candide, Middlemarch.\n4. Claire swaps with Alice: Beloved, Emma, Dune, The Hobbit, Dracula, Candide, Middlemarch.\n5. Bob swaps with Dave: Beloved, The Hobbit, Dune, Emma, Dracula, Candide, Middlemarch.\n6. Alice swaps with Gertrude: Middlemarch, The Hobbit, Dune, Emma, Dracula, Candide, Beloved.\n7. Dave swaps with Alice: Emma, The Hobbit, Dune, Middlemarch, Dracula, Candide, Beloved.\nFred has Candide, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1115,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

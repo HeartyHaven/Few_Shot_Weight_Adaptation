@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-658",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a gold present, Bob has a blue present, Claire has a white present, Dave has a orange present, and Eve has a grey present.\nAs the event progresses, pairs of people swap gifts. First, Dave and Bob swap their gifts. Then, Eve and Bob swap their gifts. Then, Claire and Eve swap their gifts. Then, Bob and Eve swap their gifts. Finally, Eve and Alice swap their gifts. At the end of the event, Dave has the\nOptions:\n(A) gold present\n(B) blue present\n(C) white present\n(D) orange present\n(E) grey present",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "gold",
+      "Bob": "blue",
+      "Claire": "white",
+      "Dave": "orange",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "orange",
+      "Claire": "white",
+      "Dave": "blue",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "white",
+      "Dave": "blue",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "grey",
+      "Claire": "orange",
+      "Dave": "blue",
+      "Eve": "white"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "white",
+      "Claire": "orange",
+      "Dave": "blue",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "white",
+      "Claire": "orange",
+      "Dave": "blue",
+      "Eve": "gold"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Each row lists present colors in holder order: Alice, Bob, Claire, Dave, Eve.\nInitial: gold, blue, white, orange, grey.\n1. Dave ↔ Bob: gold, orange, white, blue, grey.\n2. Eve ↔ Bob: gold, grey, white, blue, orange.\n3. Claire ↔ Eve: gold, grey, orange, blue, white.\n4. Bob ↔ Eve: gold, white, orange, blue, grey.\n5. Eve ↔ Alice: grey, white, orange, blue, gold.\nDave has the blue present, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1312,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

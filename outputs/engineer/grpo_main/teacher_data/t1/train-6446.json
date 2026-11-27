@@ -1,0 +1,22 @@
+{
+  "id": "train-6446",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 36-year-old man is brought to the emergency department by his neighbor because of altered mental status. He was found 6 hours ago stumbling through his neighbor's bushes and yelling obscenities. The neighbor helped him home but found him again 1 hour ago slumped over on his driveway in a puddle of vomit. He is oriented to self but not to place or time. His temperature is 36.9°C (98.5°F), pulse is 82/min, respirations are 28/min, and blood pressure is 122/80 mm Hg. Cardiopulmonary exam shows no abnormalities. He is unable to cooperate for a neurological examination. Muscle spasms are seen in his arms and jaw. Serum laboratory studies show:\nNa+ 140 mEq/L\nK+ 5.5 mEq/L\nCl- 101 mEq/L\nHCO3- 9 mEq/L\nUrea nitrogen 28 mg/dL\nCreatinine 2.3 mg/dL\nGlucose 75 mg/dL\nCalcium 7.2 mg/dL\nOsmolality 320 mOsm/kg\nCalculated serum osmolality is 294 mOsm/kg. Arterial blood gas shows a pH of 7.25 and lactate level of 3.2 mmol/L (N=< 1 mmol/L). Examination of the urine shows oxalate crystals and no ketones.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 389,
+  "solution": "CURB-65 assigns one point for each qualifying admission finding:\n- New confusion: He is disoriented to place and time (+1).\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN is 28 mg/dL (+1).\n- Respiratory rate ≥30/min: His rate is 28/min (0).\n- Systolic BP <90 or diastolic BP ≤60 mm Hg: His BP is 122/80 mm Hg (0).\n- Age ≥65 years: He is 36 (0).\nTotal = 1 + 1 + 0 + 0 + 0 = 2. CURB-65 estimates severity in pneumonia; this calculation does not establish a pneumonia diagnosis.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 650,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "sample_728",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    result = []\n    for i, ch in enumerate(text):\n        if ch == ch.lower():\n            continue\n        if len(text) - 1 - i < text.rindex(ch.lower()):\n            result.append(ch)\n    return ''.join(result)\n```\n\nInput: f('ru')",
+  "answer": "''",
+  "prompt_tokens": 122,
+  "solution": "result starts as []. At i = 0, 'r'.lower() is 'r', so continue skips the rest of the iteration. At i = 1, 'u'.lower() is 'u', so continue skips the rest again. Nothing is appended, and ''.join([]) returns the empty string.\nFinal answer: ''",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "''",
+    "correct": true
+  }
+}

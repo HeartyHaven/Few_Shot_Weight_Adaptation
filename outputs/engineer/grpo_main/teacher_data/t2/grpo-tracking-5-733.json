@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-733",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Dracula, Claire gets Dune, Dave gets Beloved, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Claire and Dave swap books. Then, Alice and Claire swap books. Then, Eve and Alice swap books. Finally, Claire and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) Emma\n(B) Dracula\n(C) Dune\n(D) Beloved\n(E) The Trial",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Dracula",
+      "Claire": "Emma",
+      "Dave": "Dune",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "Emma",
+      "Dave": "Dune",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Dracula",
+      "Dave": "Dune",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 178,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Emma, Dracula, Dune, Beloved, The Trial.\n1. Eve ↔ Dave: Emma, Dracula, Dune, The Trial, Beloved.\n2. Claire ↔ Dave: Emma, Dracula, The Trial, Dune, Beloved.\n3. Alice ↔ Claire: The Trial, Dracula, Emma, Dune, Beloved.\n4. Eve ↔ Alice: Beloved, Dracula, Emma, Dune, The Trial.\n5. Claire ↔ Bob: Beloved, Emma, Dracula, Dune, The Trial.\nAlice has Beloved, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1275,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

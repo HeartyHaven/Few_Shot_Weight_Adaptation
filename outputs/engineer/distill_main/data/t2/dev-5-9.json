@@ -1,0 +1,87 @@
+{
+  "id": "dev-5-9",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Umar, Claire is dancing with Nadia, Dave is dancing with Wade, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Eve and Alice switch partners. Then, Eve and Dave switch partners. Then, Alice and Dave switch partners. Then, Alice and Bob switch partners. Finally, Bob and Dave switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Quinn\n(B) Umar\n(C) Nadia\n(D) Wade\n(E) Tara",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Wade",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Wade",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Quinn",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Umar",
+      "Claire": "Nadia",
+      "Dave": "Tara",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Quinn",
+      "Claire": "Nadia",
+      "Dave": "Tara",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Tara",
+      "Claire": "Nadia",
+      "Dave": "Quinn",
+      "Eve": "Wade"
+    }
+  ],
+  "solution": "Partners in order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Quinn, Umar, Nadia, Wade, Tara)\n1. Eve and Alice swap: (Tara, Umar, Nadia, Wade, Quinn)\n2. Eve and Dave swap: (Tara, Umar, Nadia, Quinn, Wade)\n3. Alice and Dave swap: (Quinn, Umar, Nadia, Tara, Wade)\n4. Alice and Bob swap: (Umar, Quinn, Nadia, Tara, Wade)\n5. Bob and Dave swap: (Umar, Tara, Nadia, Quinn, Wade)\nDave is dancing with Quinn, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 22,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

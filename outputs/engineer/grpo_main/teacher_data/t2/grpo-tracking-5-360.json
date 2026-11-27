@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-360",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing cheerleader, Bob is playing right winger, Claire is playing left winger, Dave is playing right back, and Eve is playing benchwarmer.\nAs the game progresses, pairs of players occasionally swap positions. First, Alice and Bob trade positions. Then, Alice and Eve trade positions. Then, Alice and Dave trade positions. Then, Dave and Eve trade positions. Finally, Claire and Bob trade positions. At the end of the match, Dave is playing\nOptions:\n(A) cheerleader\n(B) right winger\n(C) left winger\n(D) right back\n(E) benchwarmer",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "cheerleader",
+      "Bob": "right winger",
+      "Claire": "left winger",
+      "Dave": "right back",
+      "Eve": "benchwarmer"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "cheerleader",
+      "Claire": "left winger",
+      "Dave": "right back",
+      "Eve": "benchwarmer"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "cheerleader",
+      "Claire": "left winger",
+      "Dave": "right back",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "cheerleader",
+      "Claire": "left winger",
+      "Dave": "benchwarmer",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "cheerleader",
+      "Claire": "left winger",
+      "Dave": "right winger",
+      "Eve": "benchwarmer"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "left winger",
+      "Claire": "cheerleader",
+      "Dave": "right winger",
+      "Eve": "benchwarmer"
+    }
+  ],
+  "prompt_tokens": 188,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial positions: cheerleader, right winger, left winger, right back, benchwarmer\n1. Alice ↔ Bob: right winger, cheerleader, left winger, right back, benchwarmer\n2. Alice ↔ Eve: benchwarmer, cheerleader, left winger, right back, right winger\n3. Alice ↔ Dave: right back, cheerleader, left winger, benchwarmer, right winger\n4. Dave ↔ Eve: right back, cheerleader, left winger, right winger, benchwarmer\n5. Claire ↔ Bob: right back, left winger, cheerleader, right winger, benchwarmer\nDave is playing right winger, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1346,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

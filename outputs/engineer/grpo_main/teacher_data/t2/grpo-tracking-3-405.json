@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-405",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "gifts",
+  "question": "Alice, Bob, and Claire are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a purple present, Bob has a teal present, and Claire has a yellow present.\nAs the event progresses, pairs of people swap gifts. First, Claire and Bob swap their gifts. Then, Alice and Claire swap their gifts. Finally, Claire and Alice swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) purple present\n(B) teal present\n(C) yellow present",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "purple",
+      "Bob": "teal",
+      "Claire": "yellow"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "yellow",
+      "Claire": "teal"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "yellow",
+      "Claire": "purple"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "yellow",
+      "Claire": "teal"
+    }
+  ],
+  "prompt_tokens": 147,
+  "solution": "Present colors in order (Alice, Bob, Claire):\nInitial: (purple, teal, yellow)\n1. Claire and Bob swap: (purple, yellow, teal)\n2. Alice and Claire swap: (teal, yellow, purple)\n3. Claire and Alice swap: (purple, yellow, teal)\nBob has the yellow present, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1191,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

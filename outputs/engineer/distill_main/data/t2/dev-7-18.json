@@ -1,0 +1,125 @@
+{
+  "id": "dev-7-18",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Ivanhoe, Claire gets Persuasion, Dave gets Candide, Eve gets Dune, Fred gets Walden, and Gertrude gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Fred and Eve swap books. Then, Eve and Bob swap books. Then, Alice and Fred swap books. Then, Alice and Dave swap books. Then, Bob and Eve swap books. Finally, Bob and Eve swap books. At the end of the semester, Claire has\nOptions:\n(A) Emma\n(B) Ivanhoe\n(C) Persuasion\n(D) Candide\n(E) Dune\n(F) Walden\n(G) Jane Eyre",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Walden",
+      "Fred": "Dune",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Dune",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Emma",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Emma",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Jane Eyre"
+    }
+  ],
+  "solution": "Book titles in every row are ordered by holder: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Emma, Ivanhoe, Persuasion, Candide, Dune, Walden, Jane Eyre\n1. Alice–Bob: Ivanhoe, Emma, Persuasion, Candide, Dune, Walden, Jane Eyre\n2. Fred–Eve: Ivanhoe, Emma, Persuasion, Candide, Walden, Dune, Jane Eyre\n3. Eve–Bob: Ivanhoe, Walden, Persuasion, Candide, Emma, Dune, Jane Eyre\n4. Alice–Fred: Dune, Walden, Persuasion, Candide, Emma, Ivanhoe, Jane Eyre\n5. Alice–Dave: Candide, Walden, Persuasion, Dune, Emma, Ivanhoe, Jane Eyre\n6. Bob–Eve: Candide, Emma, Persuasion, Dune, Walden, Ivanhoe, Jane Eyre\n7. Bob–Eve: Candide, Walden, Persuasion, Dune, Emma, Ivanhoe, Jane Eyre\nClaire has Persuasion, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 62,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

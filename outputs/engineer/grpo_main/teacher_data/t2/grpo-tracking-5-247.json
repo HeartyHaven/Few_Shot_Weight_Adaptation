@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-247",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Dune, Claire gets Middlemarch, Dave gets Hamlet, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Dave and Alice swap books. Then, Dave and Claire swap books. Then, Alice and Dave swap books. Finally, Bob and Eve swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) Dune\n(C) Middlemarch\n(D) Hamlet\n(E) Siddhartha",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Middlemarch",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Middlemarch",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Middlemarch",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe",
+      "Dave": "Middlemarch",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Reader order for each row: Alice, Bob, Claire, Dave, Eve.\nInitial: Ivanhoe, Dune, Middlemarch, Hamlet, Siddhartha.\n1. Dave ↔ Claire: Ivanhoe, Dune, Hamlet, Middlemarch, Siddhartha.\n2. Dave ↔ Alice: Middlemarch, Dune, Hamlet, Ivanhoe, Siddhartha.\n3. Dave ↔ Claire: Middlemarch, Dune, Ivanhoe, Hamlet, Siddhartha.\n4. Alice ↔ Dave: Hamlet, Dune, Ivanhoe, Middlemarch, Siddhartha.\n5. Bob ↔ Eve: Hamlet, Siddhartha, Ivanhoe, Middlemarch, Dune.\nClaire has Ivanhoe, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1350,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

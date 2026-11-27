@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-818",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a purple present, Bob has a black present, Claire has a orange present, Dave has a green present, and Eve has a silver present.\nAs the event progresses, pairs of people swap gifts. First, Eve and Claire swap their gifts. Then, Alice and Dave swap their gifts. Then, Claire and Bob swap their gifts. Then, Alice and Eve swap their gifts. Finally, Alice and Eve swap their gifts. At the end of the event, Dave has the\nOptions:\n(A) purple present\n(B) black present\n(C) orange present\n(D) green present\n(E) silver present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "purple",
+      "Bob": "black",
+      "Claire": "orange",
+      "Dave": "green",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "black",
+      "Claire": "silver",
+      "Dave": "green",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "green",
+      "Bob": "black",
+      "Claire": "silver",
+      "Dave": "purple",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "green",
+      "Bob": "silver",
+      "Claire": "black",
+      "Dave": "purple",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "silver",
+      "Claire": "black",
+      "Dave": "purple",
+      "Eve": "green"
+    },
+    {
+      "Alice": "green",
+      "Bob": "silver",
+      "Claire": "black",
+      "Dave": "purple",
+      "Eve": "orange"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Present colors in each row are ordered by holder: Alice | Bob | Claire | Dave | Eve.\nInitial: purple | black | orange | green | silver\n1. Eve ↔ Claire: purple | black | silver | green | orange\n2. Alice ↔ Dave: green | black | silver | purple | orange\n3. Claire ↔ Bob: green | silver | black | purple | orange\n4. Alice ↔ Eve: orange | silver | black | purple | green\n5. Alice ↔ Eve: green | silver | black | purple | orange\nDave has the purple present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1185,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

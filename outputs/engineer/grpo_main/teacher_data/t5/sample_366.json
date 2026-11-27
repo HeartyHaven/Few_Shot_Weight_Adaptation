@@ -1,0 +1,20 @@
+{
+  "id": "sample_366",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(string):\n    tmp = string.lower()\n    for char in string.lower():\n        if char in tmp:\n            tmp = tmp.replace(char, '', 1)\n    return tmp\n```\n\nInput: f('[ Hello ]+ Hello, World!!_ Hi')",
+  "answer": "''",
+  "prompt_tokens": 113,
+  "solution": "tmp starts as '[ hello ]+ hello, world!!_ hi'. The loop reads a separate lowercase string in that same order. On each iteration, char is the first character of the current tmp, so the test is True and replace(char, '', 1) removes exactly that character.\nAfter the iterations for '[ hello ]+', tmp is ' hello, world!!_ hi'. After those for ' hello, ', it is 'world!!_ hi'. After those for 'world!!_ ', it is 'hi'. Removing 'h' leaves 'i', and removing 'i' leaves '', which is returned.\nFinal answer: ''",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "''",
+    "correct": true
+  }
+}

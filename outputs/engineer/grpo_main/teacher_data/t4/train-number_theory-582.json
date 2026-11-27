@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-582",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "The number $r$ can be expressed as a four-place decimal $0.abcd,$ where $a, b, c,$ and $d$ represent digits, any of which could be zero. It is desired to approximate $r$ by a fraction whose numerator is 1 or 2 and whose denominator is an integer. The closest such fraction to $r$ is $\\frac 27.$ What is the number of possible values for $r$?\n",
+  "answer": "417",
+  "prompt_tokens": 122,
+  "solution": "Every positive candidate is of the form 2/q for a positive integer q, since 1/q = 2/(2q). These fractions decrease as q increases, so the neighbors of 2/7 are 2/8 = 1/4 below and 2/6 = 1/3 above. Between the midpoints with these neighbors, 2/7 is closer than either neighbor and thus closer than any other candidate (negative fractions are farther still).\nThe lower midpoint is (1/4 + 2/7)/2 = 15/56, and the upper midpoint is (2/7 + 1/3)/2 = 13/42. Writing r = k/10000, the midpoint bounds on k are 150000/56 = 2678 + 4/7 and 130000/42 = 3095 + 5/21. Neither is an integer, so no tie occurs. The possible integers run from 2679 through 3095, giving 3095 − 2679 + 1 = 417 values.\nFinal answer: 417",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "417",
+    "correct": true
+  }
+}

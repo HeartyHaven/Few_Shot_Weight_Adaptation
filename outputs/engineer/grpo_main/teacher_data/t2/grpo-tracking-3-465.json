@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-465",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Karl, and Claire is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Alice and Bob switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Marco\n(B) Karl\n(C) Quinn",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Karl",
+      "Claire": "Quinn"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Karl",
+      "Claire": "Marco"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Quinn",
+      "Claire": "Marco"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Quinn",
+      "Claire": "Karl"
+    }
+  ],
+  "prompt_tokens": 135,
+  "solution": "Partner order in every row: Alice | Bob | Claire.\nInitial: Marco | Karl | Quinn\n1. Alice swaps with Claire: Quinn | Karl | Marco\n2. Alice swaps with Bob: Karl | Quinn | Marco\n3. Alice swaps with Claire: Marco | Quinn | Karl\nAlice is dancing with Marco, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1049,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

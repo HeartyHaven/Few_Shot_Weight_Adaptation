@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-149",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Priya, Bob is dancing with Wade, and Claire is dancing with Oscar.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Alice and Bob switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Priya\n(B) Wade\n(C) Oscar",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Priya",
+      "Bob": "Wade",
+      "Claire": "Oscar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Wade",
+      "Claire": "Priya"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Oscar",
+      "Claire": "Priya"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Wade",
+      "Claire": "Priya"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Partners are listed in dancer order: Alice, Bob, Claire.\nInitial: Priya, Wade, Oscar.\n1. Claire and Alice switch: Oscar, Wade, Priya.\n2. Alice and Bob switch: Wade, Oscar, Priya.\n3. Alice and Bob switch: Oscar, Wade, Priya.\nClaire is dancing with Priya, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1276,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

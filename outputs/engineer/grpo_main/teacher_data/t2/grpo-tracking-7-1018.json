@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1018",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Beloved, Claire gets Walden, Dave gets Dune, Eve gets Candide, Fred gets Siddhartha, and Gertrude gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Bob and Fred swap books. Then, Claire and Bob swap books. Then, Bob and Fred swap books. Then, Eve and Dave swap books. Then, Alice and Dave swap books. Then, Bob and Fred swap books. Finally, Claire and Bob swap books. At the end of the semester, Dave has\nOptions:\n(A) The Hobbit\n(B) Beloved\n(C) Walden\n(D) Dune\n(E) Candide\n(F) Siddhartha\n(G) Ivanhoe",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Beloved",
+      "Claire": "Walden",
+      "Dave": "Dune",
+      "Eve": "Candide",
+      "Fred": "Siddhartha",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "Dune",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Candide",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Candide",
+      "Fred": "Walden",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Dune",
+      "Fred": "Walden",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "The Hobbit",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 228,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: The Hobbit | Beloved | Walden | Dune | Candide | Siddhartha | Ivanhoe\n1. Bob ↔ Fred: The Hobbit | Siddhartha | Walden | Dune | Candide | Beloved | Ivanhoe\n2. Claire ↔ Bob: The Hobbit | Walden | Siddhartha | Dune | Candide | Beloved | Ivanhoe\n3. Bob ↔ Fred: The Hobbit | Beloved | Siddhartha | Dune | Candide | Walden | Ivanhoe\n4. Eve ↔ Dave: The Hobbit | Beloved | Siddhartha | Candide | Dune | Walden | Ivanhoe\n5. Alice ↔ Dave: Candide | Beloved | Siddhartha | The Hobbit | Dune | Walden | Ivanhoe\n6. Bob ↔ Fred: Candide | Walden | Siddhartha | The Hobbit | Dune | Beloved | Ivanhoe\n7. Claire ↔ Bob: Candide | Siddhartha | Walden | The Hobbit | Dune | Beloved | Ivanhoe\nDave's book, the fourth entry, is The Hobbit: option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1101,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

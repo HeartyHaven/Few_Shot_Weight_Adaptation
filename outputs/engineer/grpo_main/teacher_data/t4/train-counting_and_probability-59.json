@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-59",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "There are positive integers that have these properties:\n\n$\\bullet$ I. The sum of the squares of their digits is $50,$ and\n\n$\\bullet$ II. Each digit is larger than the one on its left.\n\nWhat is the product of the digits of the largest integer with both properties?",
+  "answer": "36",
+  "prompt_tokens": 89,
+  "solution": "The digits are strictly increasing and cannot include 0, since it would have to be the leading digit. Five digits are impossible because even the five smallest give $1^2+2^2+3^2+4^2+5^2=55>50$. Four digits are possible: $1236$ gives $1+4+9+36=50$. Thus the largest valid integer has four digits.\n\nIts first two digits must be 1 and 2: if 1 is absent, the minimum square sum is $4+9+16+25=54$; if 2 is absent, it is $1+9+16+25=51$. The last two squares must therefore sum to $50-1-4=45$. The third digit cannot be at least 5, since $5^2+6^2>45$. If it is 4, the last square would be $45-16=29$, not a square. Hence it is 3, giving last digit $\\sqrt{45-9}=6$. The product is $1\\cdot2\\cdot3\\cdot6=36$.\nFinal answer: 36",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "36",
+    "correct": true
+  }
+}

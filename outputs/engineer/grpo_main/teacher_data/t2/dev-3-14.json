@@ -1,0 +1,60 @@
+{
+  "id": "dev-3-14",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Nadia, Bob is dancing with Karl, and Claire is dancing with Rosa.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Bob and Claire switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Nadia\n(B) Karl\n(C) Rosa",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Nadia",
+      "Bob": "Karl",
+      "Claire": "Rosa"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Karl",
+      "Claire": "Nadia"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Nadia",
+      "Claire": "Karl"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Rosa",
+      "Claire": "Karl"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Initial partners: Alice = Nadia, Bob = Karl, Claire = Rosa.\n1. Claire and Alice switch partners: Alice = Rosa, Bob = Karl, Claire = Nadia.\n2. Bob and Claire switch partners: Alice = Rosa, Bob = Nadia, Claire = Karl.\n3. Alice and Bob switch partners: Alice = Nadia, Bob = Rosa, Claire = Karl.\nAlice is dancing with Nadia, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

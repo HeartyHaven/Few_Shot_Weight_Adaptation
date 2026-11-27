@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-741",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a green present, Bob has a red present, Claire has a orange present, Dave has a pink present, Eve has a grey present, Fred has a blue present, and Gertrude has a gold present.\nAs the event progresses, pairs of people swap gifts. First, Gertrude and Fred swap their gifts. Then, Dave and Alice swap their gifts. Then, Dave and Gertrude swap their gifts. Then, Dave and Fred swap their gifts. Then, Dave and Bob swap their gifts. Then, Dave and Claire swap their gifts. Finally, Alice and Claire swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) green present\n(B) red present\n(C) orange present\n(D) pink present\n(E) grey present\n(F) blue present\n(G) gold present",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "green",
+      "Bob": "red",
+      "Claire": "orange",
+      "Dave": "pink",
+      "Eve": "grey",
+      "Fred": "blue",
+      "Gertrude": "gold"
+    },
+    {
+      "Alice": "green",
+      "Bob": "red",
+      "Claire": "orange",
+      "Dave": "pink",
+      "Eve": "grey",
+      "Fred": "gold",
+      "Gertrude": "blue"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "red",
+      "Claire": "orange",
+      "Dave": "green",
+      "Eve": "grey",
+      "Fred": "gold",
+      "Gertrude": "blue"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "red",
+      "Claire": "orange",
+      "Dave": "blue",
+      "Eve": "grey",
+      "Fred": "gold",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "red",
+      "Claire": "orange",
+      "Dave": "gold",
+      "Eve": "grey",
+      "Fred": "blue",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "gold",
+      "Claire": "orange",
+      "Dave": "red",
+      "Eve": "grey",
+      "Fred": "blue",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "gold",
+      "Claire": "red",
+      "Dave": "orange",
+      "Eve": "grey",
+      "Fred": "blue",
+      "Gertrude": "green"
+    },
+    {
+      "Alice": "red",
+      "Bob": "gold",
+      "Claire": "pink",
+      "Dave": "orange",
+      "Eve": "grey",
+      "Fred": "blue",
+      "Gertrude": "green"
+    }
+  ],
+  "prompt_tokens": 243,
+  "solution": "Present colors in holder order: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: green | red | orange | pink | grey | blue | gold\n1. Gertrude–Fred: green | red | orange | pink | grey | gold | blue\n2. Dave–Alice: pink | red | orange | green | grey | gold | blue\n3. Dave–Gertrude: pink | red | orange | blue | grey | gold | green\n4. Dave–Fred: pink | red | orange | gold | grey | blue | green\n5. Dave–Bob: pink | gold | orange | red | grey | blue | green\n6. Dave–Claire: pink | gold | red | orange | grey | blue | green\n7. Alice–Claire: red | gold | pink | orange | grey | blue | green\nBob has the gold present, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1222,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

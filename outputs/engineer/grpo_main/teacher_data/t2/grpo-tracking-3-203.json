@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-203",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Siddhartha, and Claire gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Claire and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Beloved\n(B) Siddhartha\n(C) Jane Eyre",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Books in holder order: Alice, Bob, Claire.\nInitial: Beloved, Siddhartha, Jane Eyre.\n1. Claire ↔ Bob: Beloved, Jane Eyre, Siddhartha.\n2. Claire ↔ Alice: Siddhartha, Jane Eyre, Beloved.\n3. Bob ↔ Claire: Siddhartha, Beloved, Jane Eyre.\nClaire holds Jane Eyre, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1264,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

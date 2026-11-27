@@ -1,0 +1,22 @@
+{
+  "id": "train-4392",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 4-year old boy is brought to the emergency department with fever, painful swallowing, headache, and neck spasm that began shortly after waking up. He has had a sore throat over the last week that acutely worsened this morning. He has no history of serious illness and takes no medications. He lives at home with his mother. His older brother has asthma. His immunizations are up-to-date. He appears acutely ill. His temperature is 38.4°C (101.2°F), pulse is 95/min, respirations are 33/min, and blood pressure is 93/60 mm Hg. Examination shows drooling. The neck is stiff and extension is limited. Respirations appear labored with accessory muscle use. Inspiratory stridor is heard on auscultation of the chest. Cardiac examination shows no abnormalities. Oropharyngeal examination shows a bulge in the posterior pharyngeal wall. Intravenous access is obtained and laboratory studies are ordered.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 20,
+  "prompt_tokens": 277,
+  "solution": "Use the age-adjusted Centor (McIsaac) score for this 4-year-old:\n- Temperature >38°C: 38.4°C → 1.\n- Absence of cough: no cough reported → 1.\n- Tonsillar swelling or exudate: 0. The bulge is on the posterior pharyngeal wall, not the tonsils.\n- Tender anterior cervical nodes: 0. Neck stiffness is present, but nodal tenderness is not documented.\n- Age 3–14 years: age 4 → 1.\nSum = 1 + 1 + 0 + 0 + 1 = 3. This pharyngitis score does not assess the airway threat suggested by drooling, stridor, and the posterior pharyngeal bulge.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 745,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

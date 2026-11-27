@@ -1,0 +1,17 @@
+{
+  "id": "sample_244",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, symbols):\n    count = 0\n    if symbols:\n        for i in symbols:\n            count += 1\n        text = text * count\n    return text.rjust(len(text) + count*2)[:-2]\n```\n\nInput: f('', 'BC1ty')",
+  "answer": "'        '",
+  "solution": "count starts at 0. Since 'BC1ty' is nonempty, the loop visits 'B', 'C', '1', 't', 'y', raising count to 1, 2, 3, 4, 5 in turn. Multiplying text = '' by 5 leaves it empty. The width for rjust is 0 + 5*2 = 10, so it produces ten spaces. The slice [:-2] drops the last two, leaving eight spaces.\nFinal answer: '        '",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 24,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'        '",
+    "correct": true
+  }
+}

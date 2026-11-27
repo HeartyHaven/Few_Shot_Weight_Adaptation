@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-655",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Walden, Claire gets Ivanhoe, Dave gets Persuasion, Eve gets The Trial, Fred gets Candide, and Gertrude gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Eve and Gertrude swap books. Then, Alice and Eve swap books. Then, Alice and Bob swap books. Then, Gertrude and Alice swap books. Then, Dave and Bob swap books. Then, Dave and Alice swap books. Finally, Eve and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Beloved\n(B) Walden\n(C) Ivanhoe\n(D) Persuasion\n(E) The Trial\n(F) Candide\n(G) Hamlet",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "The Trial",
+      "Fred": "Candide",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Hamlet",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "Beloved",
+      "Dave": "The Trial",
+      "Eve": "Ivanhoe",
+      "Fred": "Candide",
+      "Gertrude": "Walden"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Books in each row are listed for Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Beloved | Walden | Ivanhoe | Persuasion | The Trial | Candide | Hamlet\n1. Eve and Gertrude swap: Beloved | Walden | Ivanhoe | Persuasion | Hamlet | Candide | The Trial\n2. Alice and Eve swap: Hamlet | Walden | Ivanhoe | Persuasion | Beloved | Candide | The Trial\n3. Alice and Bob swap: Walden | Hamlet | Ivanhoe | Persuasion | Beloved | Candide | The Trial\n4. Gertrude and Alice swap: The Trial | Hamlet | Ivanhoe | Persuasion | Beloved | Candide | Walden\n5. Dave and Bob swap: The Trial | Persuasion | Ivanhoe | Hamlet | Beloved | Candide | Walden\n6. Dave and Alice swap: Hamlet | Persuasion | Ivanhoe | The Trial | Beloved | Candide | Walden\n7. Eve and Claire swap: Hamlet | Persuasion | Beloved | The Trial | Ivanhoe | Candide | Walden\nClaire has Beloved, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1133,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

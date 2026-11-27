@@ -1,0 +1,22 @@
+{
+  "id": "train-902",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 68-year-old woman with a history of diabetes mellitus, living-donor renal transplant on current immunosuppression, and compensated cirrhosis secondary to hepatitis C genotype 1a presented for esophageal variceal surveillance. The patient had no history of variceal bleeding, encephalopathy, or ascites. Liver function indices were unremarkable. Upon her first endoscopy [], large columns of varices were found with high-risk stigmata of a red wale sign, and 5 bands were applied successfully. She presented to us for her third session of surveillance and 3 additional variceal bands were applied (, ; before and after banding). Immediately after the procedure the patient could not swallow any liquids or secretions, with persistent spitting up of saliva admixed with small streaks of blood. Viscous lidocaine mixed with water failed to provide any relief. The patient was admitted for observation with nothing by mouth. Sucralfate was started along with proton-pump inhibitor therapy. By the second day, the patient was still unable to swallow any liquids including her own saliva. A barium esophagram showed complete obstruction of the distal esophagus (). Repeat esophagogastroduodenoscopy (EGD) the following day showed pooling of saliva in the distal esophagus, which was suctioned, along with necrotic and ulcerated esophageal mucosa at the base of the banded varices causing complete luminal obstruction (, ). We grasped the 3 bands with the hook of an endoloop cutter (Olympus America, Melville, NY, USA) (, ), and the bands were removed intact from the base of necrotic varices one-by-one without any bleeding. This restored the esophageal lumen () and led to resolution of symptoms. The patient was discharged home the following day tolerating a regular diet. Upon follow-up endoscopy, scars were seen in the area without any varices.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 487,
+  "solution": "CHA₂DS₂-VASc assigns points for the following stroke-risk factors:\n- Congestive heart failure (1): not reported → 0.\n- Hypertension (1): not reported → 0.\n- Age (2 if ≥75, 1 if 65–74): age 68 → 1.\n- Diabetes mellitus (1): present → 1.\n- Prior stroke, TIA, or systemic thromboembolism (2): not reported → 0.\n- Vascular disease such as prior myocardial infarction or peripheral arterial disease (1): not reported; esophageal varices do not qualify → 0.\n- Female sex (1): present → 1.\nSum: 0 + 0 + 1 + 1 + 0 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 648,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

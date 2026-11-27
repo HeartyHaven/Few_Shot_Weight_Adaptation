@@ -1,0 +1,22 @@
+{
+  "id": "train-917",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 70-year-old man with ischaemic cardiomyopathy was referred to our institution for catheter ablation of ventricular tachycardia (VT) storm. Eight years prior to his presentation, he had undergone coronary artery bypass grafting, endoventricular circular patch plasty, mitral valve plasty, tricuspid annuloplasty, and CRT-D implantation with an LV lead also surgically implanted for NYHA Class IV HF, reduced LVEF of 24%, and QRS width of 154 ms. He has also suffered from chronic obstructive pulmonary disease and chronic kidney disease (serum creatinine level, 1.99 mg/dL). Physical examination revealed a pansystolic murmur (IV/VI) over the apex and no lower-limb oedema. His BNP level was elevated to 500 pg/mL. Echocardiography revealed an LVEF of 20% and pulmonary hypertension [tricuspid regurgitation pressure gradient (TRPG) of 43 mmHg].\nOne day after admission, catheter ablation was performed under CARTO guidance (Biosense Webster Inc., Diamond Bar, CA, USA). CARTO mapping revealed a low-voltage area in the anterior and septal walls (). After elimination of all abnormal potentials within the low-voltage area, no VT could be induced.\nHowever, the patient developed progressively worsening dyspnoea and hypotension even under optimized medical therapies including oral intake of carvedilol of 10 mg, spironolactone of 50 mg, furosemide of 40 mg, tolvaptan of 15 mg, and amiodarone of 200 mg and intravenous infusion of dobutamine at 5 μg/min/kg. Despite an improved LVEF of 35%, TRPG elevation to 90 mmHg was observed on echocardiography and respirator support was required. We were aware of the development of CAVB and a change in the QRS morphology during junctional escape rhythm that suggested injury to the left posterior fascicle (). We thought his haemodynamic deterioration was induced by RV and LV dyssynchrony due to CAVB caused by catheter ablation because the VT episodes were completely eliminated. We therefore decided to add a pacing lead (Model 3830, Medtronic, Inc.) at the HB region (). Although we initially placed the lead at the site where a HB potential was recorded, the pacing threshold at that site was too high to obtain stable permanent pacing. Alternatively, the lead was implanted at a more distal (ventricular) site where a possible right bundle branch potential was recorded (). During HBP, the QRS duration was not significantly shortened (186 ms, ), so we applied BiVHB+LV pacing. Fortunately, because a DF-1 lead was originally used as a defibrillator lead, we could connect the HBP lead to the RV pacing port. The pin of the original RV pacing lead was covered with a silicon cap and abandoned. Following the application of BiVHB+LV pacing, the QRS narrowed from 167 to 127 ms with an optimized AV delay (atrial-HB delay: 140 ms) and VV delay (HB-LV delay: 40 ms) (). Over the week following the upgrade to BiVHB+LV, his haemodynamics improved dramatically. Although RV-SD and LV-SD had worsened from 52 to 82 ms and 75 to 189 ms after ablation, respectively, BiVHB+LV reversed the RV-SD to 53 ms and LV-SD to 82 ms (). Unfortunately, he died from a non-cardiac cause, acute non-occlusive mesenteric infarction, 4 months after the upgrade although he had remained free from HF until that time.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 900,
+  "solution": "CHA₂DS₂-VASc uses the following admission risk factors:\n- Heart failure or LV dysfunction (1): established heart failure with LVEF 20% → 1.\n- Hypertension (1): systemic hypertension is not documented; pulmonary hypertension does not count → 0.\n- Age ≥75 (2) or 65–74 (1): age 70 → 1.\n- Diabetes (1): not documented → 0.\n- Prior stroke, TIA, or systemic embolism (2): none documented at admission → 0.\n- Vascular disease (1): established ischemic coronary disease requiring bypass grafting → 1.\n- Female sex (1): male → 0.\nTotal = 1 + 0 + 1 + 0 + 0 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 788,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

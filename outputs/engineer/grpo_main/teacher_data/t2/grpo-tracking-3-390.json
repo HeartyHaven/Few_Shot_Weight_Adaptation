@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-390",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Dracula, and Claire gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Claire and Bob swap books. Finally, Alice and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Emma\n(B) Dracula\n(C) Persuasion",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Persuasion"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Persuasion"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Emma",
+      "Claire": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 140,
+  "solution": "Reader order in every row: Alice, Bob, Claire.\nInitial: Emma | Dracula | Persuasion\n1. Bob and Claire swap: Emma | Persuasion | Dracula\n2. Claire and Bob swap: Emma | Dracula | Persuasion\n3. Alice and Bob swap: Dracula | Emma | Persuasion\nBob has Emma, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1149,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

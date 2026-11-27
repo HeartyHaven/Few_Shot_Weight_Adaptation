@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-388",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lena, Bob is dancing with Oscar, Claire is dancing with Umar, Dave is dancing with Marco, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Dave and Bob switch partners. Then, Dave and Eve switch partners. Then, Claire and Dave switch partners. Then, Alice and Eve switch partners. Finally, Eve and Bob switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Lena\n(B) Oscar\n(C) Umar\n(D) Marco\n(E) Karl",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Lena",
+      "Bob": "Oscar",
+      "Claire": "Umar",
+      "Dave": "Marco",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Marco",
+      "Claire": "Umar",
+      "Dave": "Oscar",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Marco",
+      "Claire": "Umar",
+      "Dave": "Karl",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Marco",
+      "Claire": "Karl",
+      "Dave": "Umar",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Marco",
+      "Claire": "Karl",
+      "Dave": "Umar",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Lena",
+      "Claire": "Karl",
+      "Dave": "Umar",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners in Alice, Bob, Claire, Dave, Eve order:\nInitial: Lena, Oscar, Umar, Marco, Karl\nAfter Dave–Bob: Lena, Marco, Umar, Oscar, Karl\nAfter Dave–Eve: Lena, Marco, Umar, Karl, Oscar\nAfter Claire–Dave: Lena, Marco, Karl, Umar, Oscar\nAfter Alice–Eve: Oscar, Marco, Karl, Umar, Lena\nAfter Eve–Bob: Oscar, Lena, Karl, Umar, Marco\nDave is dancing with Umar, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1060,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

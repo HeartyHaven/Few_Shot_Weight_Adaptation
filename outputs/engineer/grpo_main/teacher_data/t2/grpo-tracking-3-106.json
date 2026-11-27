@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-106",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Persuasion, and Claire gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Alice swap books. Finally, Claire and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) The Trial\n(B) Persuasion\n(C) Middlemarch",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Persuasion",
+      "Claire": "The Trial"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Middlemarch",
+      "Claire": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire.\nInitial: The Trial, Persuasion, Middlemarch\n1. Alice and Claire: Middlemarch, Persuasion, The Trial\n2. Bob and Alice: Persuasion, Middlemarch, The Trial\n3. Claire and Alice: The Trial, Middlemarch, Persuasion\nBob has Middlemarch, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1142,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

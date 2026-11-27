@@ -1,0 +1,20 @@
+{
+  "id": "sample_368",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(string, numbers):\n    arr = []\n    for num in numbers:\n        arr.append(string.zfill(num))\n    return ' '.join(arr)\n```\n\nInput: f('4327', [2, 8, 9, 2, 7, 1])",
+  "answer": "'4327 00004327 000004327 4327 0004327 4327'",
+  "prompt_tokens": 119,
+  "solution": "arr starts as []. '4327' has length 4, so each iteration appends '4327' with max(0, num - 4) leading zeros:\nnum=2: append '4327'.\nnum=8: append '00004327'.\nnum=9: append '000004327'.\nnum=2: append '4327'.\nnum=7: append '0004327'.\nnum=1: append '4327'.\n' '.join(arr) places one space between consecutive entries in that order.\nFinal answer: '4327 00004327 000004327 4327 0004327 4327'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "'4327 00004327 000004327 4327 0004327 4327'",
+    "correct": true
+  }
+}

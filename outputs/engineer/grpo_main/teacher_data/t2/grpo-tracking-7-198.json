@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-198",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Dracula, Claire gets Middlemarch, Dave gets Ivanhoe, Eve gets The Trial, Fred gets Persuasion, and Gertrude gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Gertrude and Eve swap books. Then, Gertrude and Eve swap books. Then, Bob and Dave swap books. Then, Dave and Claire swap books. Then, Eve and Gertrude swap books. Then, Fred and Alice swap books. Finally, Dave and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Jane Eyre\n(B) Dracula\n(C) Middlemarch\n(D) Ivanhoe\n(E) The Trial\n(F) Persuasion\n(G) Siddhartha",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha",
+      "Fred": "Persuasion",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Siddhartha",
+      "Fred": "Persuasion",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Siddhartha",
+      "Fred": "Jane Eyre",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "Dracula",
+      "Eve": "Siddhartha",
+      "Fred": "Jane Eyre",
+      "Gertrude": "The Trial"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Jane Eyre, Dracula, Middlemarch, Ivanhoe, The Trial, Persuasion, Siddhartha.\n1. Gertrude ↔ Eve: Jane Eyre, Dracula, Middlemarch, Ivanhoe, Siddhartha, Persuasion, The Trial.\n2. Gertrude ↔ Eve: Jane Eyre, Dracula, Middlemarch, Ivanhoe, The Trial, Persuasion, Siddhartha.\n3. Bob ↔ Dave: Jane Eyre, Ivanhoe, Middlemarch, Dracula, The Trial, Persuasion, Siddhartha.\n4. Dave ↔ Claire: Jane Eyre, Ivanhoe, Dracula, Middlemarch, The Trial, Persuasion, Siddhartha.\n5. Eve ↔ Gertrude: Jane Eyre, Ivanhoe, Dracula, Middlemarch, Siddhartha, Persuasion, The Trial.\n6. Fred ↔ Alice: Persuasion, Ivanhoe, Dracula, Middlemarch, Siddhartha, Jane Eyre, The Trial.\n7. Dave ↔ Claire: Persuasion, Ivanhoe, Middlemarch, Dracula, Siddhartha, Jane Eyre, The Trial.\nBob has Ivanhoe, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1216,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

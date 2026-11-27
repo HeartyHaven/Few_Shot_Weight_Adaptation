@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-143",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Dracula, and Claire gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Alice and Bob swap books. Finally, Alice and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Ivanhoe\n(B) Dracula\n(C) Siddhartha",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dracula",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Ivanhoe",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dracula",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Book order in every row: Alice, Bob, Claire.\nInitial: Ivanhoe, Dracula, Siddhartha.\n1. Bob and Alice swap: Dracula, Ivanhoe, Siddhartha.\n2. Alice and Bob swap: Ivanhoe, Dracula, Siddhartha.\n3. Alice and Claire swap: Siddhartha, Dracula, Ivanhoe.\nBob has Dracula, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1219,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

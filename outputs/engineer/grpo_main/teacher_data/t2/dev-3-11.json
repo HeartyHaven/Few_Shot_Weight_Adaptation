@@ -1,0 +1,60 @@
+{
+  "id": "dev-3-11",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "gifts",
+  "question": "Alice, Bob, and Claire are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a pink present, Bob has a orange present, and Claire has a blue present.\nAs the event progresses, pairs of people swap gifts. First, Claire and Bob swap their gifts. Then, Claire and Alice swap their gifts. Finally, Claire and Alice swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) pink present\n(B) orange present\n(C) blue present",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "pink",
+      "Bob": "orange",
+      "Claire": "blue"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "blue",
+      "Claire": "orange"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "blue",
+      "Claire": "pink"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "blue",
+      "Claire": "orange"
+    }
+  ],
+  "prompt_tokens": 147,
+  "solution": "Initial present colors: Alice = pink, Bob = orange, Claire = blue.\n1. Claire and Bob swap: Alice = pink, Bob = blue, Claire = orange.\n2. Claire and Alice swap: Alice = orange, Bob = blue, Claire = pink.\n3. Claire and Alice swap again: Alice = pink, Bob = blue, Claire = orange.\nBob has the blue present, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

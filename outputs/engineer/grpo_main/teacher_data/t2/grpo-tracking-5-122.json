@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-122",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Priya, Bob is dancing with Karl, Claire is dancing with Lena, Dave is dancing with Quinn, and Eve is dancing with Oscar.\nThroughout the song, the dancers often trade partners. First, Bob and Eve switch partners. Then, Bob and Eve switch partners. Then, Claire and Bob switch partners. Then, Alice and Claire switch partners. Finally, Bob and Dave switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Priya\n(B) Karl\n(C) Lena\n(D) Quinn\n(E) Oscar",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Priya",
+      "Bob": "Karl",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Oscar",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Karl",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Lena",
+      "Claire": "Karl",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Lena",
+      "Claire": "Priya",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Quinn",
+      "Claire": "Priya",
+      "Dave": "Lena",
+      "Eve": "Oscar"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Priya | Karl | Lena | Quinn | Oscar\n1. Bob and Eve swap: Priya | Oscar | Lena | Quinn | Karl\n2. Bob and Eve swap again: Priya | Karl | Lena | Quinn | Oscar\n3. Claire and Bob swap: Priya | Lena | Karl | Quinn | Oscar\n4. Alice and Claire swap: Karl | Lena | Priya | Quinn | Oscar\n5. Bob and Dave swap: Karl | Quinn | Priya | Lena | Oscar\nBob is dancing with Quinn, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1286,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

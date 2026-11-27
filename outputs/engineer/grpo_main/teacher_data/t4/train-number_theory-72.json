@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-72",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $f(n)$ be the sum of all the divisors of a positive integer $n$. If $f(f(n)) = n+2$, then call $n$ superdeficient. How many superdeficient positive integers are there?",
+  "answer": "1",
+  "prompt_tokens": 79,
+  "solution": "For any integer m > 1, its divisors include 1 and m, so f(m) ≥ m + 1, with equality exactly when m is prime. For n > 1, applying this twice gives f(f(n)) ≥ f(n) + 1 ≥ n + 2. To attain n + 2, both inequalities must be equalities, so n and f(n) = n + 1 must both be prime. One of these consecutive integers is even and must therefore be 2. Since n > 1, the only pair is 2, 3. Indeed, f(2) = 3 and f(3) = 4 = 2 + 2. Finally, n = 1 fails because f(f(1)) = 1, not 3. Thus exactly one positive integer qualifies.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1382,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "1",
+    "correct": true
+  }
+}

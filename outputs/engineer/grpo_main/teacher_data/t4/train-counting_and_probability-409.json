@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-409",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Nine people sit down for dinner where there are three choices of meals. Three people order the beef meal, three order the chicken meal, and three order the fish meal. The waiter serves the nine meals in random order. Find the number of ways in which the waiter could serve the meal types to the nine people so that exactly one person receives the type of meal ordered by that person.\n",
+  "answer": "216",
+  "prompt_tokens": 106,
+  "solution": "Choose the sole correct recipient in 9 ways. By symmetry, call that person's meal beef. After serving it, there are 2 beef, 3 chicken, and 3 fish meals left, and everyone else must receive a wrong type.\nLet \\(x\\) of the 2 remaining beef orderers receive chicken. Choose them in \\(\\binom{2}{x}\\) ways; the other \\(2-x\\) receive fish. This leaves \\(3-x\\) chicken meals, all of which must go to fish orderers, and \\(3-(2-x)=1+x\\) fish meals, all of which must go to chicken orderers. Choose those recipients in \\(\\binom{3}{3-x}\\binom{3}{1+x}\\) ways. The two people still unserved get beef.\nFor \\(x=0,1,2\\), the products of the three choice counts are respectively \\(1\\cdot1\\cdot3=3\\), \\(2\\cdot3\\cdot3=18\\), and \\(1\\cdot3\\cdot1=3\\). Thus there are \\(9(3+18+3)=216\\) assignments.\nFinal answer: 216",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1383,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "216",
+    "correct": true
+  }
+}

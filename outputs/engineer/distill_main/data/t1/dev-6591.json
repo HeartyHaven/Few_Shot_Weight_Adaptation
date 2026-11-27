@@ -1,0 +1,21 @@
+{
+  "id": "dev-6591",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "calc_id": 48,
+  "question": "Patient note:\nA 63-year-old woman comes to the physician because of worsening shortness of breath, cough, and a 4-kg (8.8-lb) weight loss over the last year. She has no history of serious illness and takes no medications. She has smoked one pack of cigarettes daily for 35 years. Her temperature is 37°C (98.6°F), pulse is 92/min, respirations are 20/min, blood pressure is 124/78 mm Hg, and pulse oximetry on room air shows an oxygen saturation of 93%. Physical examination shows decreased breath sounds. A flow-volume loop obtained via pulmonary function testing is shown.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "explanation": "The PERC Rule critiera are listed below:\n\n1. Age ≥50: No = 0 points, Yes = +1 point\n2. Heart Rate (HR) ≥100: No = 0 points, Yes = +1 point\n3. O₂ saturation on room air <95%: No = 0 points, Yes = +1 point\n4. Unilateral leg swelling: No = 0 points, Yes = +1 point\n5. Hemoptysis: No = 0 points, Yes = +1 point\n6. Recent surgery or trauma (within 4 weeks, requiring treatment with general anesthesia): No = 0 points, Yes = +1 point\n7. Prior pulmonary embolism (PE) or deep vein thrombosis (DVT): No = 0 points, Yes = +1 point\n8. Hormone use (oral contraceptives, hormone replacement, or estrogenic hormone use in males or females): No = 0 points, Yes = +1 point\n\nThe total number of criteria met is taken by summing the points for each criterion.\n    \nThe current count of PERC criteria met is 0.\nThe patient is 63 years old. The patient's age is greater than or equal to 50 years, and so we increment the perc critieria met by 1, making the current total 0 + 1 = 1.\nThe patient's heart rate is 92.0 beats per minute. The patient's heart rate is less than 100 beats per minute, and so we do not increment the criteria count. The current total remains at 1.\nThe saturated oxygen percentage in the room is 93.0 percent. The saturated oxygen is less than 95%, and so we increment the perc critieria met by 1, making the current total 1 + 1 = 2.\nThe patient note does not report a status on 'unilateral leg swelling'. Hence, we assume it to be absent, and so we do not increment the criteria count. The current total remains at 2.\nThe patient note reports 'hemoptysis' to be absent in the patient and so we do not increment the criteria count. The current total remains at 2.\nThe patient note reports 'recent surgery or trauma' to be absent in the patient and so we do not increment the criteria count. The current total remains at 2.\nThe patient must be diagnosed with at least one of deep vein thrombosis or pulmonary embolism in the past for a PERC rule criteria to be met. The patient is not reported to have been diagnosed with deep vein thrombosis in the past. The patient is not reported to have been diagnosed with pulmonary embolism in the past. Neither criteria is met and so we do increment the criteria count, keep the current total at 2.\nThe patient note reports 'hormonal use' to be absent in the patient and so we do not increment the criteria count. The current total remains at 2.\nHence, the number of PERC rule criteria met by the patient is 2.",
+  "solution": "The Pulmonary Embolism Rule-out Criteria (PERC) count one point per criterion met. At initial presentation:\n1. Age ≥50 years: 63 → 1.\n2. Heart rate ≥100/min: 92/min → 0.\n3. Room-air SpO₂ <95%: 93% → 1.\n4. Unilateral leg swelling: not reported → 0.\n5. Hemoptysis: cough without reported blood → 0.\n6. Surgery or trauma requiring general anesthesia within four weeks: not reported → 0.\n7. Prior DVT or PE: not reported → 0.\n8. Exogenous estrogen use: she takes no medications → 0.\nTotal: 1 + 0 + 1 + 0 + 0 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "8b9a3e561e15e11dac4347cef51c8be2946c533d751cd80486ae510d65212049",
+  "call_id": 29,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-493",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "If Greg rolls four fair six-sided dice, what is the probability that he rolls more 1's than 6's?",
+  "answer": "\\dfrac{421}{1296}",
+  "prompt_tokens": 54,
+  "solution": "There are \\(6^4=1296\\) equally likely ordered rolls. Swapping every 1 with a 6 and every 6 with a 1 pairs each roll having more 1's with a roll having more 6's. Thus exactly half the non-ties have more 1's.\nCount ties by the number of each face (1 and 6):\n- Zero of each: all four dice show 2 through 5, giving \\(4^4=256\\) rolls.\n- One of each: choose the position of the 1 in 4 ways and the 6 in 3 ways. The other dice each have 4 choices, giving \\(4\\cdot3\\cdot4^2=192\\) rolls.\n- Two of each: choose the two positions for the 1's; the rest must be 6's. This gives \\(\\binom{4}{2}=6\\) rolls.\nThere are \\(256+192+6=454\\) ties, so \\((1296-454)/2=421\\) rolls have more 1's than 6's. Divide by 1296 to get the probability.\nFinal answer: \\dfrac{421}{1296}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1415,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "\\dfrac{421}{1296}",
+    "correct": true
+  }
+}

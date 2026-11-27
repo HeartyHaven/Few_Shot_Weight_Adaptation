@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1158",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a gold ball, Bob has a blue ball, Claire has a white ball, Dave has a green ball, and Eve has a black ball.\nAs the game progresses, pairs of players trade balls. First, Alice and Dave swap balls. Then, Alice and Claire swap balls. Then, Bob and Alice swap balls. Then, Bob and Claire swap balls. Finally, Alice and Claire swap balls. At the end of the game, Claire has the\nOptions:\n(A) gold ball\n(B) blue ball\n(C) white ball\n(D) green ball\n(E) black ball",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "gold",
+      "Bob": "blue",
+      "Claire": "white",
+      "Dave": "green",
+      "Eve": "black"
+    },
+    {
+      "Alice": "green",
+      "Bob": "blue",
+      "Claire": "white",
+      "Dave": "gold",
+      "Eve": "black"
+    },
+    {
+      "Alice": "white",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "gold",
+      "Eve": "black"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "white",
+      "Claire": "green",
+      "Dave": "gold",
+      "Eve": "black"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "green",
+      "Claire": "white",
+      "Dave": "gold",
+      "Eve": "black"
+    },
+    {
+      "Alice": "white",
+      "Bob": "green",
+      "Claire": "blue",
+      "Dave": "gold",
+      "Eve": "black"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors in every row: Alice | Bob | Claire | Dave | Eve\nInitial: gold | blue | white | green | black\n1. Alice ↔ Dave: green | blue | white | gold | black\n2. Alice ↔ Claire: white | blue | green | gold | black\n3. Bob ↔ Alice: blue | white | green | gold | black\n4. Bob ↔ Claire: blue | green | white | gold | black\n5. Alice ↔ Claire: white | green | blue | gold | black\nClaire has the blue ball, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1092,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

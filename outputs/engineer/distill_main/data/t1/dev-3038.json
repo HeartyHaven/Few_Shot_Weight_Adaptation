@@ -1,0 +1,21 @@
+{
+  "id": "dev-3038",
+  "task": "t1",
+  "group": "Wells' Criteria for Pulmonary Embolism",
+  "calc_id": 8,
+  "question": "Patient note:\nA 45-year-old male presents to the emergency room complaining that he has been coughing up blood-tinged sputum. Since this morning, the patient reports he has coughed up around 1/4 cup of \"phlegm\" mixed with blood. A review of systems is also notable for fatigue and night sweats that began two nights ago, but he denies any recent changes in weight. His past medical history is significant for hypertension, chronic sinusitis, and childhood asthma. His current medications include metoprolol and amlodipine. He is a smoker with a 20 pack-year history. The patient’s temperature is 99°F (37.2°C), blood pressure is 126/76 mmHg, pulse is 72/min, and respirations are 14/min with an oxygen saturation of 98% O2 on room air. A physical exam is notable for oral ulcers. A chest radiograph is performed and is shown in Figure A.\n\nQuestion: What is the patient's score of Wells' criteria for Pulmonary Embolism? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "explanation": "\nThe criteria for the Wells' Criteria for Pulmonary Embolism score are listed below:\n\n1. Clinical signs and symptoms of DVT: No = 0 points, Yes = +3 points\n2. PE is #1 diagnosis OR equally likely: No = 0 points, Yes = +3 points\n3. Heart rate > 100: No = 0 points, Yes = +1.5 points\n4. Immobilization at least 3 days OR surgery in the previous 4 weeks: No = 0 points, Yes = +1.5 points\n5. Previous, objectively diagnosed PE or DVT: No = 0 points, Yes = +1.5 points\n6. Hemoptysis: No = 0 points, Yes = +1 point\n7. Malignancy with treatment within 6 months or palliative: No = 0 points, Yes = +1 point\n\nThe total score is calculated by summing the points for each criterion.\n   \nThe Well's score for pulmonary embolism is currently 0.\nClinical signs and symptoms of DVT are not reported and so we assume that this is missing from the patient, keeping the current total at 0. Whether Pulmonary Embolism is the #1 diagonsis or is equally likely to being the #1 diagnosis is not reported and so we assume this statement is false, keeping the total unchanged at 0.\nThe patient's heart rate is 72.0 beats per minute. The heart rate is less than 100 bpm, and so the score remains unchanged, keeping the total score at 0.\nBecause the patient has not had an immobilization for at least 3 days, and the patient did not have a surgery in the past 4 weeks, the score remains at 0.\nBecause the patient has no previous diagnosis of pulmonary embolism (PE) or deep vein thrombosis (DVT), the score remains at 0.\nHemoptysis is reported to be present and so one point is incremented to the score, making the current total 0 + 1 = 1.\nMalignany with treatment within 6 months or palliative is reported to be absent and so the total score remains unchanged, keeping the total score at 1.\nThe patient's Well's score for pulmonary embolism is 1.",
+  "solution": "Wells score for pulmonary embolism (PE) at presentation:\n1. Clinical signs of DVT (3): no leg swelling or deep venous tenderness reported → 0.\n2. PE most likely or equally likely (3): hemoptysis alone does not establish PE as the leading diagnosis, and the note does not rank it as such → 0.\n3. Heart rate >100/min (1.5): 72/min → 0.\n4. Immobilization ≥3 days or surgery within 4 weeks (1.5): neither reported → 0.\n5. Previous DVT or PE (1.5): none reported → 0.\n6. Hemoptysis (1): he coughed up sputum mixed with blood → 1.\n7. Active or recently treated malignancy (1): none reported; smoking history does not score → 0.\nSum: 0 + 0 + 0 + 0 + 0 + 1 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "8b9a3e561e15e11dac4347cef51c8be2946c533d751cd80486ae510d65212049",
+  "call_id": 33,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

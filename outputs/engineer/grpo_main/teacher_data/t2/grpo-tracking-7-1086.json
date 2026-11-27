@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1086",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing benchwarmer, Bob is playing right winger, Claire is playing striker, Dave is playing sweeper, Eve is playing center midfielder, Fred is playing fullback, and Gertrude is playing left winger.\nAs the game progresses, pairs of players occasionally swap positions. First, Dave and Bob trade positions. Then, Dave and Eve trade positions. Then, Gertrude and Alice trade positions. Then, Gertrude and Claire trade positions. Then, Bob and Fred trade positions. Then, Eve and Gertrude trade positions. Finally, Fred and Dave trade positions. At the end of the match, Fred is playing\nOptions:\n(A) benchwarmer\n(B) right winger\n(C) striker\n(D) sweeper\n(E) center midfielder\n(F) fullback\n(G) left winger",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "benchwarmer",
+      "Bob": "right winger",
+      "Claire": "striker",
+      "Dave": "sweeper",
+      "Eve": "center midfielder",
+      "Fred": "fullback",
+      "Gertrude": "left winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "sweeper",
+      "Claire": "striker",
+      "Dave": "right winger",
+      "Eve": "center midfielder",
+      "Fred": "fullback",
+      "Gertrude": "left winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "sweeper",
+      "Claire": "striker",
+      "Dave": "center midfielder",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "left winger"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "sweeper",
+      "Claire": "striker",
+      "Dave": "center midfielder",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "sweeper",
+      "Claire": "benchwarmer",
+      "Dave": "center midfielder",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "fullback",
+      "Claire": "benchwarmer",
+      "Dave": "center midfielder",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "fullback",
+      "Claire": "benchwarmer",
+      "Dave": "center midfielder",
+      "Eve": "striker",
+      "Fred": "sweeper",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "fullback",
+      "Claire": "benchwarmer",
+      "Dave": "sweeper",
+      "Eve": "striker",
+      "Fred": "center midfielder",
+      "Gertrude": "right winger"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Each row lists positions in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: benchwarmer, right winger, striker, sweeper, center midfielder, fullback, left winger\n1. Dave ↔ Bob: benchwarmer, sweeper, striker, right winger, center midfielder, fullback, left winger\n2. Dave ↔ Eve: benchwarmer, sweeper, striker, center midfielder, right winger, fullback, left winger\n3. Gertrude ↔ Alice: left winger, sweeper, striker, center midfielder, right winger, fullback, benchwarmer\n4. Gertrude ↔ Claire: left winger, sweeper, benchwarmer, center midfielder, right winger, fullback, striker\n5. Bob ↔ Fred: left winger, fullback, benchwarmer, center midfielder, right winger, sweeper, striker\n6. Eve ↔ Gertrude: left winger, fullback, benchwarmer, center midfielder, striker, sweeper, right winger\n7. Fred ↔ Dave: left winger, fullback, benchwarmer, sweeper, striker, center midfielder, right winger\nFred is playing center midfielder, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1089,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-938",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Rosa, Bob is dancing with Marco, Claire is dancing with Vera, Dave is dancing with Yuki, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Dave and Claire switch partners. Then, Claire and Dave switch partners. Then, Eve and Dave switch partners. Then, Bob and Claire switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Rosa\n(B) Marco\n(C) Vera\n(D) Yuki\n(E) Tara",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Rosa",
+      "Bob": "Marco",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Marco",
+      "Claire": "Yuki",
+      "Dave": "Vera",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Marco",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Marco",
+      "Claire": "Vera",
+      "Dave": "Tara",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Vera",
+      "Claire": "Marco",
+      "Dave": "Tara",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Vera",
+      "Claire": "Rosa",
+      "Dave": "Tara",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists the partners of (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (Rosa, Marco, Vera, Yuki, Tara)\n1. Dave and Claire switch partners: (Rosa, Marco, Yuki, Vera, Tara)\n2. Claire and Dave switch partners: (Rosa, Marco, Vera, Yuki, Tara)\n3. Eve and Dave switch partners: (Rosa, Marco, Vera, Tara, Yuki)\n4. Bob and Claire switch partners: (Rosa, Vera, Marco, Tara, Yuki)\n5. Claire and Alice switch partners: (Marco, Vera, Rosa, Tara, Yuki)\nAlice's partner is Marco, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1083,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-696",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Beloved, Claire gets Siddhartha, Dave gets Emma, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Alice and Dave swap books. Then, Bob and Eve swap books. Then, Claire and Eve swap books. Then, Bob and Alice swap books. Finally, Dave and Eve swap books. At the end of the semester, Eve has\nOptions:\n(A) Dracula\n(B) Beloved\n(C) Siddhartha\n(D) Emma\n(E) Hamlet",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Dracula",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "Dracula",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "Siddhartha",
+      "Eve": "Dracula"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books in reader order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Dracula, Beloved, Siddhartha, Emma, Hamlet)\n1. Alice ↔ Dave: (Emma, Beloved, Siddhartha, Dracula, Hamlet)\n2. Bob ↔ Eve: (Emma, Hamlet, Siddhartha, Dracula, Beloved)\n3. Claire ↔ Eve: (Emma, Hamlet, Beloved, Dracula, Siddhartha)\n4. Bob ↔ Alice: (Hamlet, Emma, Beloved, Dracula, Siddhartha)\n5. Dave ↔ Eve: (Hamlet, Emma, Beloved, Siddhartha, Dracula)\nEve has Dracula, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1256,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

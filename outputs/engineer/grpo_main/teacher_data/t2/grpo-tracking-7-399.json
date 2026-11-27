@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-399",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Jane Eyre, Claire gets Hamlet, Dave gets Emma, Eve gets Walden, Fred gets Ivanhoe, and Gertrude gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Dave and Gertrude swap books. Then, Dave and Fred swap books. Then, Claire and Alice swap books. Then, Alice and Fred swap books. Then, Claire and Bob swap books. Finally, Gertrude and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) Candide\n(B) Jane Eyre\n(C) Hamlet\n(D) Emma\n(E) Walden\n(F) Ivanhoe\n(G) Middlemarch",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Hamlet",
+      "Dave": "Emma",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Jane Eyre",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Jane Eyre",
+      "Claire": "Hamlet",
+      "Dave": "Middlemarch",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Jane Eyre",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Walden",
+      "Fred": "Hamlet",
+      "Gertrude": "Emma"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Candide, Jane Eyre, Hamlet, Emma, Walden, Ivanhoe, Middlemarch\n1. Dave–Alice: Emma, Jane Eyre, Hamlet, Candide, Walden, Ivanhoe, Middlemarch\n2. Dave–Gertrude: Emma, Jane Eyre, Hamlet, Middlemarch, Walden, Ivanhoe, Candide\n3. Dave–Fred: Emma, Jane Eyre, Hamlet, Ivanhoe, Walden, Middlemarch, Candide\n4. Claire–Alice: Hamlet, Jane Eyre, Emma, Ivanhoe, Walden, Middlemarch, Candide\n5. Alice–Fred: Middlemarch, Jane Eyre, Emma, Ivanhoe, Walden, Hamlet, Candide\n6. Claire–Bob: Middlemarch, Emma, Jane Eyre, Ivanhoe, Walden, Hamlet, Candide\n7. Gertrude–Bob: Middlemarch, Candide, Jane Eyre, Ivanhoe, Walden, Hamlet, Emma\nAlice has Middlemarch, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1177,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

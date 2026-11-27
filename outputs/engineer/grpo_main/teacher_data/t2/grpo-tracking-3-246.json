@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-246",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Jane Eyre, and Claire gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Alice and Bob swap books. Finally, Bob and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Walden\n(B) Jane Eyre\n(C) Siddhartha",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Jane Eyre",
+      "Claire": "Walden"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Each row lists books in order: Alice, Bob, Claire.\nInitial: Walden, Jane Eyre, Siddhartha\n1. Claire ↔ Bob: Walden, Siddhartha, Jane Eyre\n2. Alice ↔ Bob: Siddhartha, Walden, Jane Eyre\n3. Bob ↔ Claire: Siddhartha, Jane Eyre, Walden\nAlice has Siddhartha, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1319,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

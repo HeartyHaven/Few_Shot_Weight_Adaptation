@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-400",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a red present, Bob has a orange present, Claire has a pink present, Dave has a blue present, and Eve has a teal present.\nAs the event progresses, pairs of people swap gifts. First, Bob and Eve swap their gifts. Then, Dave and Alice swap their gifts. Then, Bob and Eve swap their gifts. Then, Alice and Claire swap their gifts. Finally, Alice and Dave swap their gifts. At the end of the event, Alice has the\nOptions:\n(A) red present\n(B) orange present\n(C) pink present\n(D) blue present\n(E) teal present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "red",
+      "Bob": "orange",
+      "Claire": "pink",
+      "Dave": "blue",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "red",
+      "Bob": "teal",
+      "Claire": "pink",
+      "Dave": "blue",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "teal",
+      "Claire": "pink",
+      "Dave": "red",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "orange",
+      "Claire": "pink",
+      "Dave": "red",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "orange",
+      "Claire": "blue",
+      "Dave": "red",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "red",
+      "Bob": "orange",
+      "Claire": "blue",
+      "Dave": "pink",
+      "Eve": "teal"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Each row lists present colors in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: red, orange, pink, blue, teal\n1. Bob–Eve: red, teal, pink, blue, orange\n2. Dave–Alice: blue, teal, pink, red, orange\n3. Bob–Eve: blue, orange, pink, red, teal\n4. Alice–Claire: pink, orange, blue, red, teal\n5. Alice–Dave: red, orange, blue, pink, teal\nAlice has the red present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1198,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

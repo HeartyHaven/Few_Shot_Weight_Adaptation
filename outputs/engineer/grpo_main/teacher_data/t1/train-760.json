@@ -1,0 +1,22 @@
+{
+  "id": "train-760",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 73-year-old woman arrives at the emergency department due to intense central chest pain for 30 minutes this morning. She says the pain was cramping in nature and radiated down her left arm. She has a history of atrial fibrillation and type 2 diabetes mellitus. Her pulse is 98/min, respiratory rate is 19/min, temperature is 36.8°C (98.2°F), and blood pressure is 160/91 mm Hg. Cardiovascular examination shows no abnormalities. ECG is shown below.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 192,
+  "solution": "The CHA₂DS₂-VASc score assesses stroke risk in atrial fibrillation. Using the documented admission history:\n- Congestive heart failure: Not documented → 0.\n- Hypertension: No established diagnosis or treatment; one BP of 160/91 mm Hg during acute pain does not establish hypertension → 0.\n- Age: 73 years falls in the 65–74 tier (1 point), not the ≥75 tier (2 points) → 1.\n- Diabetes mellitus: Type 2 diabetes → 1.\n- Prior stroke, TIA, or systemic embolism (2 points): None documented → 0.\n- Vascular disease: No established myocardial infarction, peripheral arterial disease, or aortic plaque; chest pain alone does not qualify → 0.\n- Sex category: Female → 1.\nTotal = 0 + 0 + 1 + 1 + 0 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 783,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

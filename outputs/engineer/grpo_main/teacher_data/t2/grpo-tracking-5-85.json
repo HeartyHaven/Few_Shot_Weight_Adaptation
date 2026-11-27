@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-85",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Siddhartha, Claire gets Jane Eyre, Dave gets Candide, and Eve gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Dave and Alice swap books. Then, Claire and Alice swap books. Then, Dave and Claire swap books. Finally, Dave and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) Beloved\n(B) Siddhartha\n(C) Jane Eyre\n(D) Candide\n(E) The Hobbit",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Hobbit",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Beloved, Siddhartha, Jane Eyre, Candide, The Hobbit.\n1. Bob–Eve: Beloved, The Hobbit, Jane Eyre, Candide, Siddhartha.\n2. Dave–Alice: Candide, The Hobbit, Jane Eyre, Beloved, Siddhartha.\n3. Claire–Alice: Jane Eyre, The Hobbit, Candide, Beloved, Siddhartha.\n4. Dave–Claire: Jane Eyre, The Hobbit, Beloved, Candide, Siddhartha.\n5. Dave–Claire: Jane Eyre, The Hobbit, Candide, Beloved, Siddhartha.\nDave has Beloved, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1259,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

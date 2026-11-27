@@ -1,0 +1,22 @@
+{
+  "id": "train-4251",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 53-year old female presented to the Emergency Department for cough, nausea, vomiting and “feeling sick for 3 weeks.” She reported an allergy to penicillin but no other significant past medical history. On initial assessment, patient was afebrile, tachycardic (125 beats/minute), tachypneic (22 breaths/minute), with blood pressure of 109/74 mmHg, and oxygen saturation of 72 % on room air. Physical exam showed no other abnormalities.\nInitial laboratories showed leukocytosis (WBC 22,000 k/mcgl), hyperglycemia (glucose 796 mg/dl), hyponatremia (Na 120 mEq/L; corrected 131 mEq/L), a hemoglobin A1c of 17.2 %, and an elevated troponin T (0.19 ng/mL) and BNP (2137 pg/mL). Measured osmolarity was 349 mOsm/L with only small ketones in the blood and an arterial lactate of 5.62 mmol/L. Arterial blood gas suggested metabolic acidosis (pH = 7.264 | PCO2 = 25.9 mmHg | Bicarbonate = 13 mmol/L). Calculated anion gap was 30 mEq/l. Chest X-ray showed bilateral reticular opacities without cardiomegaly (Fig. ). The patient was also found to have an abnormal thyroid hormone profile suggesting NTIS: TSH 1.35 mcgUI/mL (nr: 0.27–4.20), free T4 0.88 ng/dL (nr: 0.93–1.70), free T3 0.95 pg/ml (nr:2.30–4.20), mixed hyperlipidemia, mild elevation of lipase and amylase, and transaminitis.\nIntravenous fluids, insulin and levofloxacin were started; the patient’s clinical condition improved in 24 hours, although she continued to complain of shortness of breath and remained hypotensive. Blood and urine cultures were ultimately negative. Initial EKG changes suggested previous myocardial infarction (Fig. ). A transthoracic echocardiogram demonstrated a severely depressed LV systolic function (ejection fraction = 26 %), grade 2 diastolic dysfunction, and multiple regional wall motion abnormalities (Fig. -). However, on Day 4 after admission, a Myoview stress test showed no stress-induced ischemia, normal LV function, no regional wall motion abnormalities, and an estimated ejection fraction of 50 %. A repeat transthoracic echocardiogram performed on Day 7 demonstrated an ejection fraction of 50–55 % (Fig. -3d). A follow-up EKG on Day 4 showed no significant changes (Fig. ).\nOn 6-month follow-up, the patient’s A1c remained elevated but the NTIS and cardiomyopathy had resolved. Her HgA1c was 9.4 %, TSH 1.86 mcgUI/mL (nr: 0.27–4.20), free T4 1.01 ng/dl (nr: 0.93–1.70), free T3 2.89 pg/ml (nr:2.30–4.20). BNP was 42 pg/ml (normal).\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 839,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors, and troponin. A conditional calculation using the admission findings is:\n- History (slightly/moderately/highly suspicious): cough, nausea, and vomiting without reported ischemic chest discomfort; judged slightly suspicious → 0.\n- ECG (0 for no repolarization abnormality, 1 for nonspecific repolarization disturbance, 2 for significant ST depression): changes suggesting old MI are mentioned but not described. If these were isolated Q waves without ST-T abnormalities → 0.\n- Age (<45, 45–64, ≥65): 53 years → 1.\n- Risk factors (0 for none, 1 for 1–2, 2 for ≥3 or established atherosclerotic disease): diabetes and hyperlipidemia, without confirmed prior MI → 1.\n- Troponin (0 if normal, 1 if elevated up to 3 times the upper reference limit, 2 if higher): 0.19 ng/mL would score 1 if the assay limit were 0.10 ng/mL. The limit is not provided.\nUnder these ECG and assay assumptions, the sum is 0 + 0 + 1 + 1 + 1 = 3; the note does not uniquely establish the score.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 943,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

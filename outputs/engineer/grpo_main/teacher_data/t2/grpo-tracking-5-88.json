@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-88",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a gold ball, Bob has a purple ball, Claire has a black ball, Dave has a red ball, and Eve has a silver ball.\nAs the game progresses, pairs of players trade balls. First, Dave and Alice swap balls. Then, Alice and Eve swap balls. Then, Bob and Claire swap balls. Then, Alice and Eve swap balls. Finally, Alice and Dave swap balls. At the end of the game, Claire has the\nOptions:\n(A) gold ball\n(B) purple ball\n(C) black ball\n(D) red ball\n(E) silver ball",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "gold",
+      "Bob": "purple",
+      "Claire": "black",
+      "Dave": "red",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "red",
+      "Bob": "purple",
+      "Claire": "black",
+      "Dave": "gold",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "purple",
+      "Claire": "black",
+      "Dave": "gold",
+      "Eve": "red"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "black",
+      "Claire": "purple",
+      "Dave": "gold",
+      "Eve": "red"
+    },
+    {
+      "Alice": "red",
+      "Bob": "black",
+      "Claire": "purple",
+      "Dave": "gold",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "black",
+      "Claire": "purple",
+      "Dave": "red",
+      "Eve": "silver"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors in every row are listed for (Alice, Bob, Claire, Dave, Eve).\nInitial: (gold, purple, black, red, silver)\n1. Dave ↔ Alice: (red, purple, black, gold, silver)\n2. Alice ↔ Eve: (silver, purple, black, gold, red)\n3. Bob ↔ Claire: (silver, black, purple, gold, red)\n4. Alice ↔ Eve: (red, black, purple, gold, silver)\n5. Alice ↔ Dave: (gold, black, purple, red, silver)\nClaire has the purple ball, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1255,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

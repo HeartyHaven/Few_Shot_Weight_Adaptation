@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-144",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Beloved, Claire gets Jane Eyre, Dave gets Middlemarch, and Eve gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Alice and Bob swap books. Then, Eve and Claire swap books. Then, Bob and Alice swap books. Finally, Eve and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) The Trial\n(B) Beloved\n(C) Jane Eyre\n(D) Middlemarch\n(E) Emma",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "Middlemarch",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Beloved",
+      "Claire": "The Trial",
+      "Dave": "Middlemarch",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial",
+      "Dave": "Middlemarch",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "Middlemarch",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Beloved",
+      "Claire": "Emma",
+      "Dave": "Middlemarch",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Middlemarch",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: The Trial | Beloved | Jane Eyre | Middlemarch | Emma\n1. Claire ↔ Alice: Jane Eyre | Beloved | The Trial | Middlemarch | Emma\n2. Alice ↔ Bob: Beloved | Jane Eyre | The Trial | Middlemarch | Emma\n3. Eve ↔ Claire: Beloved | Jane Eyre | Emma | Middlemarch | The Trial\n4. Bob ↔ Alice: Jane Eyre | Beloved | Emma | Middlemarch | The Trial\n5. Eve ↔ Bob: Jane Eyre | The Trial | Emma | Middlemarch | Beloved\nBob has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1116,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

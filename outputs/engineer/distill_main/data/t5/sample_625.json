@@ -1,0 +1,17 @@
+{
+  "id": "sample_625",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    count = 0\n    for i in text:\n        if i in '.?!.,':\n            count += 1\n    return count\n```\n\nInput: f(\"bwiajegrwjd??djoda,?\")",
+  "answer": "4",
+  "solution": "Start with count = 0. None of the letters in 'bwiajegrwjd' match '.?!.,', so count stays 0. The two consecutive '?' characters each match, raising count to 1 and then 2. The letters in 'djoda' leave it at 2. The comma raises it to 3, and the final '?' raises it to 4. Return count.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 20,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "4",
+    "correct": true
+  }
+}

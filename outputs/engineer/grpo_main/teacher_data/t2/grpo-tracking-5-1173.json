@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1173",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Dune, Claire gets Dracula, Dave gets Persuasion, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Dave and Claire swap books. Then, Alice and Claire swap books. Then, Dave and Claire swap books. Finally, Dave and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Hamlet\n(B) Dune\n(C) Dracula\n(D) Persuasion\n(E) Walden",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Persuasion",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Persuasion",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Dracula",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Hamlet, Dune, Dracula, Persuasion, Walden\n1. Claire ↔ Bob: Hamlet, Dracula, Dune, Persuasion, Walden\n2. Dave ↔ Claire: Hamlet, Dracula, Persuasion, Dune, Walden\n3. Alice ↔ Claire: Persuasion, Dracula, Hamlet, Dune, Walden\n4. Dave ↔ Claire: Persuasion, Dracula, Dune, Hamlet, Walden\n5. Dave ↔ Bob: Persuasion, Hamlet, Dune, Dracula, Walden\nBob has Hamlet, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1362,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

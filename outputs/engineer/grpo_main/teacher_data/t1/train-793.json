@@ -1,0 +1,22 @@
+{
+  "id": "train-793",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn almost asymptomatic 41-year-old woman suffering from mild dyspnoea on exertion consulted her physician for the yearly checkup. The physical examination was completely unremarkable, all laboratory testings were within normal limits, and the ECG showed sinus rhythm; only the chest X-ray revealed an enlargement of the cardiac silhouette ().\nFollowing echocardiographic examination and contrast-enhanced CT scan of the thorax revealed a lipomatous mass, measuring 16 × 14 × 12 cm, located on the left side of the heart with blood supply from the left coronary artery, highly suspective of a lipoma (). Within this mass, a dense calcification (3.5 × 1.5 cm in diameter) in the cranioventral part of the tumour was seen. This large mass caused a marked shift in the midline structures, displacing the heart to the right hemithorax.\nIn October 2010, the patient underwent open heart surgery via median sternotomy without cardiopulmonary support. The pericardium was opened on the left side and revealed the left atrium and ventricle pushed to the right side by a lipomatous tumor. The lipoma had a stalk measuring about 5 cm in diameter connected to the diaphragmatic surface of the left ventricle, but it did not adhere to the pericardium. The tumour mass was completely removed, hemostasis was achieved, and the chest was closed after placing one chest tube in the pericardium. The postoperative course was uneventful and the patient was discharged from hospital on the 6th postoperative day. The patient is currently asymptomatic and has not presented with evidence of recurrence at the 6-month followup.\nGross examination revealed a homogenous yellowish vascularized tumour mass with a smooth lobulated surface limited by a fibrous capsule (). Histologically, the excised specimen showed a fatty structure of mature benign fat with some areas of increased vascularity ().\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 490,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Although this patient was in sinus rhythm, its components can be tallied at presentation:\n- Congestive heart failure (1): none documented; the enlarged cardiac silhouette was due to a lipoma → 0.\n- Hypertension (1): none documented → 0.\n- Age ≥75 (2) or 65–74 (1): age 41 → 0.\n- Diabetes (1): none documented → 0.\n- Prior stroke, TIA, or systemic embolism (2): none documented → 0.\n- Vascular disease (1): none documented; coronary blood supply to the mass is not vascular disease → 0.\n- Female sex (1): present → 1.\nTotal: 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 735,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

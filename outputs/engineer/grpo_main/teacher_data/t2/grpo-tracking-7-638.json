@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-638",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Hamlet, Claire gets The Trial, Dave gets Ivanhoe, Eve gets Dune, Fred gets Persuasion, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Claire and Eve swap books. Then, Eve and Gertrude swap books. Then, Claire and Bob swap books. Then, Claire and Dave swap books. Then, Alice and Eve swap books. Then, Eve and Gertrude swap books. Finally, Gertrude and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Walden\n(B) Hamlet\n(C) The Trial\n(D) Ivanhoe\n(E) Dune\n(F) Persuasion\n(G) Candide",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Hamlet",
+      "Claire": "The Trial",
+      "Dave": "Ivanhoe",
+      "Eve": "Dune",
+      "Fred": "Persuasion",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Candide",
+      "Fred": "Persuasion",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Candide",
+      "Fred": "Persuasion",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Persuasion",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Walden",
+      "Fred": "Persuasion",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Candide"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Reader order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude\nInitial: Walden | Hamlet | The Trial | Ivanhoe | Dune | Persuasion | Candide\n1. Claire ↔ Eve: Walden | Hamlet | Dune | Ivanhoe | The Trial | Persuasion | Candide\n2. Eve ↔ Gertrude: Walden | Hamlet | Dune | Ivanhoe | Candide | Persuasion | The Trial\n3. Claire ↔ Bob: Walden | Dune | Hamlet | Ivanhoe | Candide | Persuasion | The Trial\n4. Claire ↔ Dave: Walden | Dune | Ivanhoe | Hamlet | Candide | Persuasion | The Trial\n5. Alice ↔ Eve: Candide | Dune | Ivanhoe | Hamlet | Walden | Persuasion | The Trial\n6. Eve ↔ Gertrude: Candide | Dune | Ivanhoe | Hamlet | The Trial | Persuasion | Walden\n7. Gertrude ↔ Alice: Walden | Dune | Ivanhoe | Hamlet | The Trial | Persuasion | Candide\nBob has Dune, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1289,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

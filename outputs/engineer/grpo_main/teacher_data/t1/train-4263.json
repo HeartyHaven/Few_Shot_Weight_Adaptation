@@ -1,0 +1,22 @@
+{
+  "id": "train-4263",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 72-year-old man with exertional chest pain lasting 5 months was referred to our hospital. He had hypertension and hyperlipidaemia without prior cardiovascular history. A stress test with single-photon emission computed tomography 2 months before the catheterization showed a small sized anteroseptal wall ischaemia. An echocardiography 1 month before the catheterization showed normal left ventricular systolic function. Given his persistent symptom despite the medication of aspirin and calcium channel blocker, he underwent coronary angiography. Coronary angiography showed a systolic compression at the mid-left anterior descending artery (LAD) without any other significant stenosis (). Optical coherence tomography (OCT) corresponding to the angiographic squeezing showed an MB defined as a homogeneous intermediate intensity band (similar to the intensity of media of which major composition is smooth muscle cell) above the epicardial artery (i.e. perivascular side); the minimal lumen area measured 2.15 mm2 (). The depth and length of the intramyocardial tract of the LAD were 0.39 mm and 16.8 mm, respectively, indicating the superficial type., Full-cycle ratio, defined as the lowest ratio of distal coronary pressure (P) to aortic pressure (P) during the entire cardiac cycle, was measured with a dobutamine challenge with a pressure sensor located distal to the MB. The full-cycle ratio at rest and then inotropic stimulation by intravenous dobutamine of 5, 10, and 20 µg/kg/min were 0.89, 0.90, 0.86, and 0.73, respectively (). Compared with the waveform of atherosclerotic stenosis, which typically shows the lowest ratio in late diastole, the lowest ratio in this case was observed in early diastole. Chest discomfort was induced by dobutamine of 10 µg/kg/min and increased along with heart rate as the dosage of dobutamine increased. With dobutamine of 20 µg/kg/min, full-cycle ratio pullback showed a significant pressure step-up at the site of MB (). The cut-off value of full-cycle ratio to correlate with ischaemia at rest has been reported to be 0.89. Because dobutamine incudes hyperaemia, the value of 0.73 (<0.80) at 20 µg/kg/min of dobutamine was considered significant ischaemia. Metoprolol succinate dosage was increased from 50 mg/day to 100 mg/day and has not been further increased because of a bradycardia. The patient has been free from chest pain for 7 months after the discharge.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 649,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, Risk factors, and Troponin. The admission ECG and troponin are not reported, so the total is conditional on those components scoring zero.\n- History: exertional chest pain suggests ischemia, but few other pain characteristics are given. Classify the history as moderately suspicious → 1.\n- ECG: assuming no repolarization abnormality or significant ST depression → 0. The prior stress perfusion defect is not an admission ECG finding.\n- Age: 72 years (≥65) → 2.\n- Risk factors: hypertension and hyperlipidemia are two risk factors, without known prior atherosclerotic disease → 1.\n- Troponin: assuming an admission value at or below the assay upper reference limit → 0.\nTotal under these assumptions = 1 + 0 + 2 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 802,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

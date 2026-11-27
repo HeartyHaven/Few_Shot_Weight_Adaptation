@@ -1,0 +1,22 @@
+{
+  "id": "train-1107",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nB. A., a 71-year-old man, presented with dyspnoea under moderate exercise, without angina. His clinical history was characterized by a silent inferior-basal myocardial infarction detected by a control ECG that presented inferior Q waves, and he had not previously presented symptoms. The infarct was referable to maximum a couple of months before especially basing on symptoms worsening. So he had not any previous diagnosis or treatment of the acute event.\nFunctional NYHA Class was III, but it was I two months before, and symptoms were rapidly worsening in the last 20 days.\nThe patient was a smoker, affected by chronic obstructive pulmonary disease (COPD), hypertension, and peripheral vascular disease, presented in sinus rhythm. Medical therapy was based beta blockers, ASA, and a diuretic with some relief of symptoms.\nA transthoracic echocardiogram (TTE) showed a dyskinetic posterior wall of the left ventricle, mild mitral regurgitation, with moderate reduction of the ejection fraction (EF = 44%). An aneurysmatic enlargement was noted in the posterior wall, but with few signs to distinguish a true aneurysm from a pseudo-aneurysm. The patient underwent a coronary angiographic examination that revealed patent anterior descending and circumflex arteries and a right coronary artery that was completely closed and perfused by hetero-coronaric circulation. Contrast ventriculography showed an enlargement of the left ventricle with a large dyskinetic cavity localized in the diaphragmatic region, suggesting the presence of a pseudo-aneurysm. (Fig. )\nA second TTE was done, with results similar to the first one, but a thrombus in the posterior wall was also disclosed.\nAt the time of surgery a large true aneurysm of the posterior wall of the left ventricle was found (Fig. , ). The aneurysm consisted of a very thin myocardium layer; inside there was a thrombus about 6 cm × 4.5 cm. (Fig. )\nSurgery was performed via medial sternotomy. A normothermic cardiopulmonary by-pass (CPB) was carried out with cannulation of the aorta and the right atrium, on a beating heart without cardioplegic arrest and without clamping of the aorta. We performed the Dor repair, as described by Dor et al. [], after creating a neck of healthy muscle with 2/0 Prolene suture. The defect was closed, using the thin autologous aneurysmatic excised myocardium layer as patch. It was sutured with 3/0 continuous Prolene.(Fig. ) Two Teflon pledgets were used to reinforce the ventricle suture on the outside.(Fig. ) The CPB was 78 minutes long. Intra-operative TEE showed no mitral regurgitation (MR) and satisfactory post-surgical remodelling.\nThe patient was discharged 6 days after surgery without complications. At his 3 month control, the patient was completely restored to a normal life, an echocardiography showed good results in left ventricular remodelling with mild mitral regurgitation and an improved ejection fraction (EF = 55%).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 758,
+  "solution": "Apply the CHA₂DS₂-VASc components at admission. The patient was in sinus rhythm, so this is a component count, not an atrial fibrillation stroke-risk estimate.\n- Congestive heart failure/LV dysfunction (1): no explicit heart failure diagnosis, and EF 44% is above the usual ≤40% systolic dysfunction threshold → 0.\n- Hypertension (1): documented → 1.\n- Age ≥75 (2) or 65–74 (1): age 71 → 1.\n- Diabetes (1): not reported → 0.\n- Prior stroke, TIA or systemic embolism (2): none reported; a ventricular thrombus is not itself an embolic event → 0.\n- Vascular disease (1): prior MI and peripheral vascular disease qualify, but count only once → 1.\n- Female sex (1): male → 0.\nSum: 0 + 1 + 1 + 0 + 0 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 897,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

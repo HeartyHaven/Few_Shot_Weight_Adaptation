@@ -1,0 +1,22 @@
+{
+  "id": "train-4401",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 28-year-old man presents to the office complaining of a sore throat, difficulty swallowing, and difficulty opening his mouth for the past 5 days. He states that he had symptoms like this before and \"was given some antibiotics that made him feel better\". He is up to date on his immunizations. On examination, his temperature is 39.5°C (103.2°F) and he has bilateral cervical lymphadenopathy. An oropharyngeal exam is difficult, because the patient finds it painful to fully open his mouth. However, you are able to view an erythematous pharynx as well as a large, unilateral lesion superior to the left tonsil. A rapid antigen detection test is negative.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 20,
+  "prompt_tokens": 219,
+  "solution": "The Centor score gives 1 point each for fever >38°C, absence of cough, tender anterior cervical nodes, and tonsillar exudate.\n- Fever: 39.5°C → 1.\n- Absence of cough: no cough is mentioned; treating it as absent → 1.\n- Tender anterior cervical nodes: counting the bilateral cervical lymphadenopathy as qualifying → 1. Tenderness and anterior location are not explicitly stated.\n- Tonsillar exudate: 0. A lesion superior to the tonsil is described, not exudate.\nUnder those assumptions, 1 + 1 + 1 + 0 = 3. The rapid antigen result is not a scoring criterion; age 28 would add 0 in the age-adjusted version.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 625,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

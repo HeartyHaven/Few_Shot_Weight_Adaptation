@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1176",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left back, Bob is playing right midfielder, Claire is playing sweeper, Dave is playing goalkeeper, Eve is playing left winger, Fred is playing center midfielder, and Gertrude is playing striker.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Gertrude trade positions. Then, Fred and Alice trade positions. Then, Fred and Alice trade positions. Then, Eve and Dave trade positions. Then, Alice and Eve trade positions. Then, Fred and Eve trade positions. Finally, Fred and Claire trade positions. At the end of the match, Gertrude is playing\nOptions:\n(A) left back\n(B) right midfielder\n(C) sweeper\n(D) goalkeeper\n(E) left winger\n(F) center midfielder\n(G) striker",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "left back",
+      "Bob": "right midfielder",
+      "Claire": "sweeper",
+      "Dave": "goalkeeper",
+      "Eve": "left winger",
+      "Fred": "center midfielder",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "sweeper",
+      "Dave": "goalkeeper",
+      "Eve": "left winger",
+      "Fred": "center midfielder",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "striker",
+      "Claire": "sweeper",
+      "Dave": "goalkeeper",
+      "Eve": "left winger",
+      "Fred": "left back",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "sweeper",
+      "Dave": "goalkeeper",
+      "Eve": "left winger",
+      "Fred": "center midfielder",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "sweeper",
+      "Dave": "left winger",
+      "Eve": "goalkeeper",
+      "Fred": "center midfielder",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "striker",
+      "Claire": "sweeper",
+      "Dave": "left winger",
+      "Eve": "left back",
+      "Fred": "center midfielder",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "striker",
+      "Claire": "sweeper",
+      "Dave": "left winger",
+      "Eve": "center midfielder",
+      "Fred": "left back",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "striker",
+      "Claire": "left back",
+      "Dave": "left winger",
+      "Eve": "center midfielder",
+      "Fred": "sweeper",
+      "Gertrude": "right midfielder"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Positions are listed in order: (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (left back, right midfielder, sweeper, goalkeeper, left winger, center midfielder, striker).\n1. Bob and Gertrude swap: (left back, striker, sweeper, goalkeeper, left winger, center midfielder, right midfielder).\n2. Fred and Alice swap: (center midfielder, striker, sweeper, goalkeeper, left winger, left back, right midfielder).\n3. Fred and Alice swap again: (left back, striker, sweeper, goalkeeper, left winger, center midfielder, right midfielder).\n4. Eve and Dave swap: (left back, striker, sweeper, left winger, goalkeeper, center midfielder, right midfielder).\n5. Alice and Eve swap: (goalkeeper, striker, sweeper, left winger, left back, center midfielder, right midfielder).\n6. Fred and Eve swap: (goalkeeper, striker, sweeper, left winger, center midfielder, left back, right midfielder).\n7. Fred and Claire swap: (goalkeeper, striker, left back, left winger, center midfielder, sweeper, right midfielder).\nGertrude is playing right midfielder, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1100,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

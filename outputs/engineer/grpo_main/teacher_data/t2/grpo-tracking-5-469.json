@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-469",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Emma, Claire gets Siddhartha, Dave gets Walden, and Eve gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Bob and Eve swap books. Then, Eve and Dave swap books. Then, Dave and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Candide\n(B) Emma\n(C) Siddhartha\n(D) Walden\n(E) Persuasion",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Emma",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Walden",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in each row: Alice, Bob, Claire, Dave, Eve.\nInitial: Candide, Emma, Siddhartha, Walden, Persuasion.\n1. Dave and Alice swap: Walden, Emma, Siddhartha, Candide, Persuasion.\n2. Bob and Eve swap: Walden, Persuasion, Siddhartha, Candide, Emma.\n3. Eve and Dave swap: Walden, Persuasion, Siddhartha, Emma, Candide.\n4. Dave and Alice swap: Emma, Persuasion, Siddhartha, Walden, Candide.\n5. Bob and Claire swap: Emma, Siddhartha, Persuasion, Walden, Candide.\nBob has Siddhartha, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1154,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

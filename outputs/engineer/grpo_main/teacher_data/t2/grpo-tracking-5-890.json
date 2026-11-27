@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-890",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Yuki, Claire is dancing with Stefan, Dave is dancing with Karl, and Eve is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Bob and Dave switch partners. Then, Claire and Eve switch partners. Then, Alice and Bob switch partners. Finally, Dave and Claire switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Quinn\n(B) Yuki\n(C) Stefan\n(D) Karl\n(E) Vera",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Yuki",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Karl",
+      "Claire": "Stefan",
+      "Dave": "Quinn",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Karl",
+      "Claire": "Vera",
+      "Dave": "Quinn",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Yuki",
+      "Claire": "Vera",
+      "Dave": "Quinn",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Yuki",
+      "Claire": "Quinn",
+      "Dave": "Vera",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Quinn, Yuki, Stefan, Karl, Vera\n1. Alice ↔ Bob: Yuki, Quinn, Stefan, Karl, Vera\n2. Bob ↔ Dave: Yuki, Karl, Stefan, Quinn, Vera\n3. Claire ↔ Eve: Yuki, Karl, Vera, Quinn, Stefan\n4. Alice ↔ Bob: Karl, Yuki, Vera, Quinn, Stefan\n5. Dave ↔ Claire: Karl, Yuki, Quinn, Vera, Stefan\nEve is dancing with Stefan, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1000,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

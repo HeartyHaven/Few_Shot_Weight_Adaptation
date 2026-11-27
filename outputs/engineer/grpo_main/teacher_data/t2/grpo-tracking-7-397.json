@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-397",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right back, Bob is playing left winger, Claire is playing goalkeeper, Dave is playing right winger, Eve is playing right midfielder, Fred is playing striker, and Gertrude is playing fullback.\nAs the game progresses, pairs of players occasionally swap positions. First, Fred and Bob trade positions. Then, Dave and Gertrude trade positions. Then, Gertrude and Dave trade positions. Then, Alice and Eve trade positions. Then, Fred and Gertrude trade positions. Then, Dave and Eve trade positions. Finally, Dave and Gertrude trade positions. At the end of the match, Gertrude is playing\nOptions:\n(A) right back\n(B) left winger\n(C) goalkeeper\n(D) right winger\n(E) right midfielder\n(F) striker\n(G) fullback",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "right back",
+      "Bob": "left winger",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "right midfielder",
+      "Fred": "striker",
+      "Gertrude": "fullback"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "right midfielder",
+      "Fred": "left winger",
+      "Gertrude": "fullback"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "fullback",
+      "Eve": "right midfielder",
+      "Fred": "left winger",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "right midfielder",
+      "Fred": "left winger",
+      "Gertrude": "fullback"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "right back",
+      "Fred": "left winger",
+      "Gertrude": "fullback"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "right back",
+      "Fred": "fullback",
+      "Gertrude": "left winger"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "right back",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "left winger"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "left winger",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "right back"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Positions are listed in player order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: right back, left winger, goalkeeper, right winger, right midfielder, striker, fullback.\n1. Fred and Bob swap: right back, striker, goalkeeper, right winger, right midfielder, left winger, fullback.\n2. Dave and Gertrude swap: right back, striker, goalkeeper, fullback, right midfielder, left winger, right winger.\n3. Gertrude and Dave swap: right back, striker, goalkeeper, right winger, right midfielder, left winger, fullback.\n4. Alice and Eve swap: right midfielder, striker, goalkeeper, right winger, right back, left winger, fullback.\n5. Fred and Gertrude swap: right midfielder, striker, goalkeeper, right winger, right back, fullback, left winger.\n6. Dave and Eve swap: right midfielder, striker, goalkeeper, right back, right winger, fullback, left winger.\n7. Dave and Gertrude swap: right midfielder, striker, goalkeeper, left winger, right winger, fullback, right back.\nGertrude is playing right back, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1141,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

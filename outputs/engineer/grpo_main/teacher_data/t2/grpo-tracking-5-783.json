@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-783",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Umar, Claire is dancing with Lena, Dave is dancing with Oscar, and Eve is dancing with Stefan.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Bob and Dave switch partners. Then, Alice and Eve switch partners. Then, Bob and Alice switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Quinn\n(B) Umar\n(C) Lena\n(D) Oscar\n(E) Stefan",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Oscar",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Umar",
+      "Claire": "Stefan",
+      "Dave": "Oscar",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Oscar",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Oscar",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Lena",
+      "Claire": "Stefan",
+      "Dave": "Umar",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Lena",
+      "Claire": "Quinn",
+      "Dave": "Umar",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Quinn, Umar, Lena, Oscar, Stefan)\n1. Eve ↔ Claire: (Quinn, Umar, Stefan, Oscar, Lena)\n2. Bob ↔ Dave: (Quinn, Oscar, Stefan, Umar, Lena)\n3. Alice ↔ Eve: (Lena, Oscar, Stefan, Umar, Quinn)\n4. Bob ↔ Alice: (Oscar, Lena, Stefan, Umar, Quinn)\n5. Eve ↔ Claire: (Oscar, Lena, Quinn, Umar, Stefan)\nBob is dancing with Lena, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1339,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

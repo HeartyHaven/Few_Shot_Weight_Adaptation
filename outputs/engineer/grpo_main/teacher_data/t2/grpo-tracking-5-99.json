@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-99",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Dracula, Claire gets Middlemarch, Dave gets Emma, and Eve gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Claire and Bob swap books. Then, Alice and Claire swap books. Then, Dave and Bob swap books. Finally, Alice and Bob swap books. At the end of the semester, Dave has\nOptions:\n(A) Beloved\n(B) Dracula\n(C) Middlemarch\n(D) Emma\n(E) Dune",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Emma",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Dune",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Middlemarch",
+      "Claire": "Dracula",
+      "Dave": "Dune",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "Dune",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "Middlemarch",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Middlemarch",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Beloved, Dracula, Middlemarch, Emma, Dune\n1. Eve and Dave swap: Beloved, Dracula, Middlemarch, Dune, Emma\n2. Claire and Bob swap: Beloved, Middlemarch, Dracula, Dune, Emma\n3. Alice and Claire swap: Dracula, Middlemarch, Beloved, Dune, Emma\n4. Dave and Bob swap: Dracula, Dune, Beloved, Middlemarch, Emma\n5. Alice and Bob swap: Dune, Dracula, Beloved, Middlemarch, Emma\nDave has Middlemarch, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1316,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

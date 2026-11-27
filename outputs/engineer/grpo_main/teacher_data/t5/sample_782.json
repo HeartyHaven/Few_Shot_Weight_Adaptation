@@ -1,0 +1,20 @@
+{
+  "id": "sample_782",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(input):\n    for char in input:\n        if char.isupper():\n            return False\n    return True\n```\n\nInput: f(\"a j c n x X k\")",
+  "answer": "False",
+  "prompt_tokens": 97,
+  "solution": "The first ten values of char are 'a', ' ', 'j', ' ', 'c', ' ', 'n', ' ', 'x', ' '. Each gives False for char.isupper(), so the loop continues. The next char is 'X', for which isupper() is True. The function immediately returns False without examining the remaining space or 'k'.\nFinal answer: False",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "False",
+    "correct": true
+  }
+}

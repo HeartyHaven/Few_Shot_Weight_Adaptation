@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-873",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Emma, Claire gets Hamlet, Dave gets Walden, and Eve gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Claire and Alice swap books. Then, Alice and Claire swap books. Then, Eve and Claire swap books. Finally, Claire and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) Candide\n(B) Emma\n(C) Hamlet\n(D) Walden\n(E) Dune",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Hamlet",
+      "Dave": "Walden",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Walden",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 178,
+  "solution": "Book order in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Candide, Emma, Hamlet, Walden, Dune)\n1. Claire ↔ Bob: (Candide, Hamlet, Emma, Walden, Dune)\n2. Claire ↔ Alice: (Emma, Hamlet, Candide, Walden, Dune)\n3. Alice ↔ Claire: (Candide, Hamlet, Emma, Walden, Dune)\n4. Eve ↔ Claire: (Candide, Hamlet, Dune, Walden, Emma)\n5. Claire ↔ Eve: (Candide, Hamlet, Emma, Walden, Dune)\nBob has Hamlet, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1337,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

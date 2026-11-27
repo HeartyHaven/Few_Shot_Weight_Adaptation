@@ -1,0 +1,22 @@
+{
+  "id": "train-969",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 58-year-old woman comes to the physician because of intermittent painful retrosternal dullness for 4 weeks. The pain is recurrent and occurs when she exerts herself or when she is outside during cold weather. She also experiences shortness of breath and palpitations during these episodes. The symptoms resolve spontaneously when she stops or sits down for a while. Over the past few days, the episodes have increased in frequency. She has hypertension, type 2 diabetes mellitus, and osteoarthritis. Her left leg was amputated below the knee after a motorcycle accident 25 years ago. She is currently waiting for a new prosthesis and walks with crutches. Current medications include captopril, glyburide, and ibuprofen. She does not smoke or drink alcohol. Her pulse is 88/min, respirations are 20/min, and blood pressure is 144/90 mm Hg. Cardiac examination shows no abnormalities. An x-ray of the chest shows no abnormalities. An ECG shows a normal sinus rhythm without any signs of ischemia. Serum cardiac markers are within the reference range.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 308,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Although her ECG shows sinus rhythm and atrial fibrillation is not documented, the requested component sum is:\n- Congestive heart failure: not documented → 0.\n- Hypertension: treated with captopril → 1.\n- Age: 58 (<65; 65–74 scores 1 and ≥75 scores 2) → 0.\n- Diabetes mellitus: type 2 → 1.\n- Prior stroke, TIA, or systemic embolism: none documented → 0.\n- Vascular disease: no established qualifying disease documented. Her amputation was traumatic, not due to peripheral arterial disease → 0.\n- Sex category: female → 1.\nSum: 0 + 1 + 0 + 1 + 0 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 857,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

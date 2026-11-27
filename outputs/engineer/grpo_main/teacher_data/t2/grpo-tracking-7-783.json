@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-783",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Candide, Claire gets Walden, Dave gets Persuasion, Eve gets The Hobbit, Fred gets Middlemarch, and Gertrude gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Dave and Gertrude swap books. Then, Alice and Eve swap books. Then, Dave and Alice swap books. Then, Dave and Fred swap books. Then, Gertrude and Dave swap books. Finally, Claire and Gertrude swap books. At the end of the semester, Eve has\nOptions:\n(A) The Trial\n(B) Candide\n(C) Walden\n(D) Persuasion\n(E) The Hobbit\n(F) Middlemarch\n(G) Dune",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Persuasion",
+      "Eve": "The Hobbit",
+      "Fred": "Middlemarch",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Persuasion",
+      "Eve": "The Hobbit",
+      "Fred": "Middlemarch",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "The Hobbit",
+      "Fred": "Middlemarch",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Walden",
+      "Fred": "Middlemarch",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Middlemarch",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Middlemarch",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Persuasion",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Middlemarch",
+      "Dave": "Persuasion",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "The Trial"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Reader order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: The Trial | Candide | Walden | Persuasion | The Hobbit | Middlemarch | Dune\n1. Claire ↔ Alice: Walden | Candide | The Trial | Persuasion | The Hobbit | Middlemarch | Dune\n2. Dave ↔ Gertrude: Walden | Candide | The Trial | Dune | The Hobbit | Middlemarch | Persuasion\n3. Alice ↔ Eve: The Hobbit | Candide | The Trial | Dune | Walden | Middlemarch | Persuasion\n4. Dave ↔ Alice: Dune | Candide | The Trial | The Hobbit | Walden | Middlemarch | Persuasion\n5. Dave ↔ Fred: Dune | Candide | The Trial | Middlemarch | Walden | The Hobbit | Persuasion\n6. Gertrude ↔ Dave: Dune | Candide | The Trial | Persuasion | Walden | The Hobbit | Middlemarch\n7. Claire ↔ Gertrude: Dune | Candide | Middlemarch | Persuasion | Walden | The Hobbit | The Trial\nEve has Walden, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1081,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

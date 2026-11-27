@@ -1,0 +1,22 @@
+{
+  "id": "train-904",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 59-year-old female presented our hospital for investigation and treatment of a sudden onset of syncope lasted about 2 minutes. She did not have significant past medical history and had taken no medication, and her physical examination was unremarkable. The head computed tomography scan revealed lacunar infarcts, and magnetic resonance imaging showed no evidence of severe stenosis or occlusion in intracranial and carotid arteries. Electrocardiogram showed normal sinus rhythm, and laboratory results were almost within normal limits. Transthoracic echocardiogram revealed a hyperechoic irregular solid structure arising from the opening of the left inferior pulmonary vein and protruding into the left atrium, and the cardiac structure and function were otherwise almost normal (Fig. ).\nShe was scheduled for elective resection of this mass. Median sternotomy was performed and cardiopulmonary bypass was established via aorto-bicaval cannulation. The left atrium was incised and a 10 × 15 mm mobile, gelatinous mass was found. The mass was resected en bloc along with the stalk and surrounding tissue of the left atrial wall. On gross examination, the tumor was grey-white and soft, and appeared frond-like and translucent when submerged in liquid. Postoperative histopathologic examination showed that the mass was composed of branching avascular papillary fronds lined by a layer of endothelial cells with variable amount myxoid change, collagen, smooth muscle cells and elastic fibers, leading to the definite diagnosis of papillary fibroelastoma (Fig. ). The patient's postoperative course was uneventful, and she was discharged 10 days after surgery. The patient remained free of neurologic deficits and had no evidence of residual or recurrence of tumor with echocardiography during 1 year of follow-up.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 451,
+  "solution": "CHA2DS2-VASc is intended for patients with atrial fibrillation. No AF is documented here, but the admission components can be tallied:\n- Congestive heart failure, hypertension, and diabetes: 0 each; none documented.\n- Age: 0 at 59 (65–74 gives 1 point; ≥75 gives 2).\n- Prior clinical stroke, TIA, or systemic embolism: 0 of 2. CT showed lacunar infarcts, but there was no history of clinical stroke or TIA, and the syncopal episode was not diagnosed as either.\n- Vascular disease: 0; no qualifying coronary, peripheral arterial, or aortic plaque disease documented.\n- Female sex: 1.\nSum: 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 730,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-4239",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 71 year-old woman with a history of depression, refractory to medical management, presented with a major depressive episode for electroconvulsive therapy (ECT).\nShe had an uneventful ECT series four years prior, consisting of approximately 10 sessions. Her past medical history was significant only for hypertension. Her medications included daily quetiapine 300 mg, nortriptyline 25 mg, metoprolol succinate 100 mg, amlodipine 5 mg, and ativan 0.5 mg. She was also taking a four-day course of cefuroxime for a urinary tract infection. She had no allergies, and no family history of heart disease. Her electrocardiogram one day prior to ECT revealed normal sinus rhythm, at 97 beats per minute, with no ST or T abnormalities, or Q waves.\nAnesthesia was induced with 50 mg of methohexitol, and 50 mg of succinylcholine. After unilateral ECT was delivered to the right side of the head, a generalized seizure was initiated. The patient remained hemodynamically stable, resumed spontaneous respirations, and emerged rapidly.\nThree to four hours following the procedure she complained of chest pain. Her ECG revealed T wave flattening in AVL, and poor precordial R wave progression. A troponin level performed at that time was 3.28 ng/mL. Cardiac catheterization revealed non-obstructive coronary artery disease. Echocardiography demonstrated LV dysfunction with an ejection fraction of 20%, and a large apical aneurysm. A follow up echocardiogram one day later revealed improved LV function, and an EF of 45%. The troponin levels decreased over seven days to 0.18 ng/mL. Based on these results, the consulting cardiologist diagnosed Takotsubo cardiomyopathy. Subsequently, this patient's blood pressure regimen was modified with the addition of an angiotensin converting enzyme inhibitor. Follow-up echocardiography four months later revealed normal ejection fraction. Since that episode, the patient has had nineteen uneventful follow-up ECT treatments. These follow-up ECT treatments were performed with the addition of nicardipine, esmolol, and/or labetolol for blood pressure management, and cardioprotection.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 18,
+  "prompt_tokens": 566,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors, and troponin. A strictly pre-ECT score is unavailable: she had no reported chest pain or troponin measurement at admission. Using the baseline ECG and the first troponin obtained for chest pain gives this conditional calculation:\n- History: No specifically ischemic pain features are described; score as slightly suspicious = 0.\n- ECG: The pre-ECT tracing had no ST or T abnormalities = 0. The later chest-pain tracing was not normal.\n- Age: 71 (≥65) = 2.\n- Risk factors: Hypertension was the only documented risk factor before catheterization; 1–2 risk factors = 1.\n- Troponin: The initial chest-pain value of 3.28 ng/mL is more than three times a typical assay upper reference limit = 2.\nTotal using those time points: 0 + 0 + 2 + 1 + 2 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 681,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

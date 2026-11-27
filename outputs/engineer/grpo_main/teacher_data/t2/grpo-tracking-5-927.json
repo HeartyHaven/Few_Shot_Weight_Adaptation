@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-927",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets The Trial, Claire gets Beloved, Dave gets Emma, and Eve gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Dave and Eve swap books. Then, Eve and Claire swap books. Then, Alice and Dave swap books. Finally, Bob and Eve swap books. At the end of the semester, Dave has\nOptions:\n(A) Ivanhoe\n(B) The Trial\n(C) Beloved\n(D) Emma\n(E) Dune",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Trial",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Dune",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Dune",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Beloved",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 178,
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Ivanhoe, The Trial, Beloved, Emma, Dune).\n1. Bob and Alice swap: (The Trial, Ivanhoe, Beloved, Emma, Dune).\n2. Dave and Eve swap: (The Trial, Ivanhoe, Beloved, Dune, Emma).\n3. Eve and Claire swap: (The Trial, Ivanhoe, Emma, Dune, Beloved).\n4. Alice and Dave swap: (Dune, Ivanhoe, Emma, The Trial, Beloved).\n5. Bob and Eve swap: (Dune, Beloved, Emma, The Trial, Ivanhoe).\nDave has The Trial, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1099,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-627",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Define $n!!$ to be $n(n-2)(n-4)\\cdots 3\\cdot 1$ for $n$ odd and $n(n-2)(n-4)\\cdots 4\\cdot 2$ for $n$ even. When $\\sum_{i=1}^{2009} \\frac{(2i-1)!!}{(2i)!!}$ is expressed as a fraction in lowest terms, its denominator is $2^ab$ with $b$ odd. Find $\\dfrac{ab}{10}$.\n",
+  "answer": "401",
+  "prompt_tokens": 150,
+  "solution": "Let $t_i=(2i-1)!!/(2i)!!$. Since $(2i)!!=2^i i!$ and $(2i-1)!!=(2i)!/(2i)!!$, we have $t_i=\\binom{2i}{i}/2^{2i}$. Thus its reduced denominator is a power of 2. In the original double-factorial ratio the numerator is odd, so the exact exponent of 2 in the denominator is $e_i=i+v_2(i!)$, where $v_2$ counts factors of 2.\nThe exponents $e_i$ strictly increase. Over the common denominator $2^{e_{2009}}$, every term except the last therefore has an even numerator, while the last has an odd numerator. The sum has an odd numerator, so $a=e_{2009}$ and $b=1$.\nCounting multiples of successive powers of 2 in $2009!$ gives $v_2(2009!)=1004+502+251+125+62+31+15+7+3+1=2001$. Hence $a=2009+2001=4010$, and $ab/10=401$.\nFinal answer: 401",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "401",
+    "correct": true
+  }
+}

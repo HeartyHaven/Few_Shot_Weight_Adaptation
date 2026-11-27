@@ -1,0 +1,22 @@
+{
+  "id": "train-938",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 70-year-old male was presented to our hospital complaining of on and off chest pain for five days. The pain was over the epigastrium and the left side of the chest with no radiation. It was burning in character and associated with epigastric discomfort and belching. There was no associated sweating, breathing difficulty, abdominal pain, headache, fever, swelling of legs, and any changes in appetite and weight. There were histories of hypertension and hyperlipidemia for which he was on amlodipine 5 mg daily and atorvastatin 20 mg daily, respectively. He had a history of gastroesophageal reflux disease. There was a 30-pack-year of smoking history, and he denied intake of alcohol or any illicit drugs.\nFor these complaints, he had initially visited the local health center. Antacid syrup and intravenous (IV) pantoprazole were given, and an ECG was done. The initial ECG done in the local health center is as shown in Figure .\nWith these complaints and ECG findings, he was referred to our hospital. At presentation, his vitals were stable, and saturation was normal on room air. The lab results revealed a normal complete blood count and comprehensive metabolic panel with negative troponin-T, CK-MB 15 U/L (reference range 0-24 U/L), and troponin-I 0.009 ng/mL (reference range < 0.03). The chest x-ray was normal, and the ECG taken at our hospital showed deeply inverted T-waves in anterior chest leads (V2-V4), as shown in Figure suggesting Wellens syndrome type II.\nHe was treated medically with one dose of 300 mg aspirin followed by 75 mg aspirin daily, atorvastatin 40 mg daily, and started on a heparin drip. A transthoracic echocardiogram of the heart was done, and he underwent cardiac catheterization. He was found to have a clot in the proximal LADCA, which required catheter-directed thrombectomy and drug-eluting stent placement. He did well throughout the procedure, and his vitals were stable after the procedure.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 538,
+  "solution": "Calculate the requested CHA2DS2-VASc score using the admission history:\n- Heart failure or left ventricular dysfunction: none documented = 0.\n- Hypertension: treated with amlodipine = 1.\n- Age (65–74 = 1; ≥75 = 2): 70 years = 1.\n- Diabetes: not documented = 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): none documented = 0.\n- Vascular disease: no prior MI, peripheral arterial disease, or aortic plaque documented. The LAD stent placed during this admission is not a pre-admission history of MI = 0.\n- Sex category (female = 1): male = 0.\nTotal = 0 + 1 + 1 + 0 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 775,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-769",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 75-year-old gentleman presented to the accident and emergency department (A&E) following an episode of fall at home and was found by his wife on a bathroom floor. Initial neurological examination revealed global aphasia with right-sided hemiparesis. He was noted to be incontinent of urine.\nHis medical history included atrial fibrillation, hypertension, benign prostatic hypertrophy and chronic obstructive pulmonary disease. His medications included warfarin, tamsulosin, seretide, felodipine and candesartan. He has no physical disability, independent prior to hospital admission. On presentation, he was hemodynamically stable with a GCS of 11/15 (E4/V1/M6). Initial blood parameters including inflammatory markers were within normal limits. Each episode of seizures lasted less than a minute. They were all self-terminating. He was commenced on phenytoin infusion. CT brain revealed an old lacunar infarct in the left basal ganglia. He was transferred to the stroke ward for further observation and treatment. It was noted he had been developing further seizure clusters despite IV phenytoin. Each seizure episode lasted between 3 and 5 min. Nursing documentation revealed at least 20 stereotypical movements within the first 24 h.\nOn the second day of his admission, his CRP had risen and he was commenced treatment for aspiration pneumonia. MRI brain was unremarkable with no evidence of temporal or meningeal enhancement (). Lumbar puncture was delayed in view of his abnormal INR. His random blood sugar measurement was recorded at 30 mmol/L with HbA1c measurement of 14.8%. He was commenced on IV insulin with subsequent reduction of seizure frequency. He was seizure free within 24 h and discharged uneventfully with oral metformin. He was reportedly still seizure free on annual review without any anti-epileptic medication.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 472,
+  "solution": "CHA₂DS₂-VASc for atrial fibrillation, using conditions present at admission:\n- Heart failure/LV dysfunction: none documented = 0.\n- Hypertension: established diagnosis = 1.\n- Age: 75 years meets the ≥75 threshold = 2; do not also count the 65–74 point.\n- Diabetes: HbA1c 14.8% establishes that diabetes predated admission, although it was recognized later = 1.\n- Prior stroke/TIA/systemic embolism: the old lacunar infarct on CT is counted as a prior ischemic infarct = 2.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): none documented = 0.\n- Female sex: male = 0.\nSum: 0 + 1 + 2 + 1 + 2 + 0 + 0 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 884,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

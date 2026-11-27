@@ -1,0 +1,22 @@
+{
+  "id": "train-6599",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 16-year-old man presents to the clinic accompanied by his father, with the complaints of high fever, sore throat, and bloody diarrhea for 4 days. He adds that he is also nauseous and vomited several times in the past 2 days. He denies any recent travel or eating outside. He recently started a dog-walking business. The father relates that two of the dogs had been unwell. His temperature is 37°C (98.6°F), respiratory rate is 16/min, pulse is 77/min, and blood pressure is 100/88 mm Hg. A physical examination is performed and is within normal limits including the abdominal exam.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 51,
+  "prompt_tokens": 216,
+  "solution": "The SIRS count gives one point for each qualifying temperature, heart rate, respiratory rate or PaCO₂, and white-cell finding.\n- Temperature >38°C or <36°C: the presenting history includes high fever. Counting this as >38°C gives 1 point by history, although the measured clinic temperature of 37°C does not qualify.\n- Heart rate >90/min: 77/min, 0.\n- Respiratory rate >20/min or PaCO₂ <32 mm Hg: 16/min, with no PaCO₂ reported, 0 documented.\n- WBC >12,000/µL, <4,000/µL, or >10% bands: no count or differential reported, 0 documented.\nCounting the reported fever, the total is 1 + 0 + 0 + 0 = 1. Strictly from measured admission values, no criterion is confirmed.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 620,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

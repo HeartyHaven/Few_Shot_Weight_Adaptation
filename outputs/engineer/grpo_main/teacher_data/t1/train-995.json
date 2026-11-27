@@ -1,0 +1,22 @@
+{
+  "id": "train-995",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 66-year-old Caucasian male with past medical history significant for hypertension and hyperlipidemia presented with altered mental status. Symptoms at presentation included slurred speech. He was found walking around his yard and his neighbor noted his slurred speech. His last know well state was the day before in the evening hours. Upon arrival, the blood pressure was found to be at 150/70 and his laboratory workup including complete blood count, complete metabolic profile and urinalysis were normal. Urine drug screen was positive for cannabinoids and serum alcohol level was not detectable. CT of the head showed age-related atrophy and mild small vessel ischemic changes without acute intracranial bleeding (Figure ). Questionable loss of gray-white junction and edema was found in the left frontoparietal region. On physical exam, the patient was confused but had normal movements and strength. He denied use of any tobacco products. TTE showed a normal left ventricle size, thickness, and function. The ejection fraction was estimated at 60% with normal right ventricular structure and function. There was a small PFO with predominant left-to-right shunting visualized. MRI showed an acute left middle cerebral artery territory infarction without midline shift or hemorrhagic conversion (Figure ). CTA showed the right internal carotid artery with estimated stenosis of 30-50% and the left internal carotid artery with stenosis estimated at 30-50%. TEE showed the PFO previously demonstrated and an ejection fraction of approximately 60%. Ultrasound of lower extremities failed to show deep vein thrombosis. The patient continued receiving neuro checks during the length of the stay and was started on antiplatelet therapy and atorvastatin with an outpatient follow-up and discharged with an event recorder and possible percutaneous closure of PFO after conduction abnormalities were ruled out.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 469,
+  "solution": "Apply CHA₂DS₂-VASc to the conditions present on admission:\n- Congestive heart failure/LV dysfunction: none documented, EF about 60% → 0.\n- Hypertension: known history → 1.\n- Age: 66 years is in the 65–74 range → 1 (age ≥75 would give 2 instead).\n- Diabetes: not documented → 0.\n- Stroke, TIA, or systemic embolism: MRI confirmed that the presenting symptoms were due to an acute left MCA infarction → 2.\n- Qualifying vascular disease: no MI, peripheral arterial disease, or aortic plaque documented → 0.\n- Female sex: male → 0.\nSum: 0 + 1 + 1 + 0 + 2 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 764,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

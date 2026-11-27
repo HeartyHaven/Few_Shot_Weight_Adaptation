@@ -1,0 +1,22 @@
+{
+  "id": "train-4149",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 37-year-old woman was referred to our emergency department of our hospital. She dropped during the second prostration in prayer and decreased her mental state, with no prior history of syncope, shortness of breath, or chest pain. She had no significant past medical history, but she had a positive family history of early cardiovascular disease. At presentation, the patient was afebrile and had normal vital signs (heart rate 80 bpm, blood pressure 110/70 mmHg, oxygen saturation 97% while breathing room air) and jugular venous pressure (JVP) was normal.\nA 12-lead electrocardiogram revealed normal sinus rhythm with nonspecific minor ST-T abnormalities. On cardiac examination, S1 was accentuated and S2 was normal. There was an early diastolic sound that was compatible with a tumor plop.\nA transthoracic echocardiogram (TTE) was performed which showed the presence of a pediculated mass in the left atrium, with an appearance suggestive of atrial myxoma, that was prolapsed through the mitral valve towards the left ventricle by changing patient's position [Figure –].\nThe patient was referred for urgent surgery. The intraoperative findings included a mass, and histopathology confirmed an atrial myxoma. She recovered without major complication and was discharged. At 2-year follow-up, she remains with excellent cardiac function.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 370,
+  "solution": "HEART assigns 0–2 points each for history, ECG, age, risk factors, and initial troponin. It is intended for suspected acute coronary syndrome, not isolated syncope. A score of 1 requires the following interpretation:\n- History: Positional collapse without chest pain is only slightly suspicious for coronary ischemia (0).\n- ECG: Count the minor ST-T changes as a normal variant (0). If classified as nonspecific repolarization abnormalities, they would instead score 1.\n- Age: 37 years is below 45 (0).\n- Risk factors: Family history of early cardiovascular disease is one risk factor (1).\n- Troponin: Not reported; assigning 0 assumes an initial value within the reference range.\nConditional total: 0 + 0 + 0 + 1 + 0 = 1. The missing troponin prevents confirmation of a complete HEART score.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 837,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

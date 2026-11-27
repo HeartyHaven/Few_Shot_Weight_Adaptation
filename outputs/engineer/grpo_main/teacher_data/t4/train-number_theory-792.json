@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-792",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "As $p$ ranges over the primes greater than $5$, how many different remainders can $p^2$ leave upon division by $120$?",
+  "answer": "2",
+  "prompt_tokens": 63,
+  "solution": "Every prime $p>5$ is odd. Of the consecutive even numbers $p-1$ and $p+1$, one is divisible by 4, so their product $p^2-1$ is divisible by 8. Also $p$ is not divisible by 3, so $p\\equiv\\pm1\\pmod 3$ and $3\\mid p^2-1$. Thus $p^2\\equiv1\\pmod{24}$ since 8 and 3 are coprime.\nThe possible remainders modulo 120 congruent to 1 modulo 24 are $1,25,49,73,97$. Modulo 5, $p$ is $\\pm1$ or $\\pm2$, so its square is 1 or 4. Only 1 and 49 in the list satisfy this condition. Both occur: $7^2=49$ and $11^2=121\\equiv1\\pmod{120}$.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1398,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "2",
+    "correct": true
+  }
+}

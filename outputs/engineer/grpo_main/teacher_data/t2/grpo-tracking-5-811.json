@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-811",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Siddhartha, Claire gets Emma, Dave gets Walden, and Eve gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Dave and Alice swap books. Then, Alice and Bob swap books. Then, Eve and Bob swap books. Finally, Dave and Bob swap books. At the end of the semester, Dave has\nOptions:\n(A) The Trial\n(B) Siddhartha\n(C) Emma\n(D) Walden\n(E) Middlemarch",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Siddhartha",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Middlemarch",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: (The Trial, Siddhartha, Emma, Walden, Middlemarch)\n1. Dave ↔ Bob: (The Trial, Walden, Emma, Siddhartha, Middlemarch)\n2. Dave ↔ Alice: (Siddhartha, Walden, Emma, The Trial, Middlemarch)\n3. Alice ↔ Bob: (Walden, Siddhartha, Emma, The Trial, Middlemarch)\n4. Eve ↔ Bob: (Walden, Middlemarch, Emma, The Trial, Siddhartha)\n5. Dave ↔ Bob: (Walden, The Trial, Emma, Middlemarch, Siddhartha)\nDave has Middlemarch, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1079,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

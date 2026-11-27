@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-448",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Let $N$ denote the number of permutations of the $15$-character string $AAAABBBBBCCCCCC$ such that\nNone of the first four letters is an $A$.\nNone of the next five letters is a $B$.\nNone of the last six letters is a $C$.\nFind the remainder when $N$ is divided by $1000$.\n",
+  "answer": "320",
+  "prompt_tokens": 109,
+  "solution": "Let k be the number of B's in the first block. Its other 4 − k letters are C's. Since the last block allows no C's, the middle block must contain the remaining 6 − (4 − k) = 2 + k C's. Its other 3 − k letters are A's, leaving 4 − (3 − k) = 1 + k A's for the last block. The last block is filled out by the remaining 5 − k B's. These counts are feasible for k = 0, 1, 2, 3.\nFor each k, choose the B positions in the first block, the C positions in the middle, and the A positions in the last. This gives C(4,k) × C(5,2+k) × C(6,1+k) strings, where C denotes a binomial coefficient. Summing in order of k gives N = 1×10×6 + 4×10×15 + 6×5×20 + 4×1×15 = 1320. The remainder modulo 1000 is 320.\nFinal answer: 320",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1409,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "320",
+    "correct": true
+  }
+}

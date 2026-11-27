@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-395",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "The diagram below shows a $4\\times4$ rectangular array of points, each of which is $1$ unit away from its nearest neighbors.\n[asy] unitsize(0.25inch); defaultpen(linewidth(0.7));  int i, j; for(i = 0; i < 4; ++i) \tfor(j = 0; j < 4; ++j) \t\tdot(((real)i, (real)j)); [/asy]\nDefine a growing path to be a sequence of distinct points of the array with the property that the distance between consecutive points of the sequence is strictly increasing. Let $m$ be the maximum possible number of points in a growing path, and let $r$ be the number of growing paths consisting of exactly $m$ points. Find $mr$.\n",
+  "answer": "240",
+  "prompt_tokens": 201,
+  "solution": "Label the points by coordinates from 0 to 3 in each direction. A squared step length is a sum of two numbers from {0,1,4,9}, the squares of the coordinate changes. The distinct positive sums are 1,2,4,5,8,9,10,13,18. Thus a growing path has at most 9 steps and 10 points.\n\nCount paths attaining this bound in reverse, so they must use all nine squared lengths in descending order. The length-squared-18 step joins opposite corners. There are 4 choices of starting corner, so by symmetry fix (0,0) → (3,3). The 13-step then goes to (1,0) or (0,1). These are reflections across the diagonal, so take (1,0) and double the count.\n\nFrom (1,0), the 10-step goes to (0,3) or (2,3). From (0,3), both possible 9-steps revisit a corner already used. Thus take (2,3), from which the 9-step must go to (2,0). The 8-step changes both coordinates by 2, forcing (0,2).\n\nThe 5-step from (0,2) can reach (1,0), (2,3), or (2,1); only (2,1) is unused. The 4-step then goes to (0,1), since (2,3) is used. The 2-step must go to (1,2), since (1,0) is used. Finally, the 1-step can end at any of (1,1), (1,3), or (2,2); the fourth neighbor (0,2) is used.\n\nThese paths attain 10 points, so m = 10. Restoring the symmetric choices gives r = 4 × 2 × 3 = 24, hence mr = 10 × 24 = 240.\nFinal answer: 240",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1435,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "240",
+    "correct": true
+  }
+}

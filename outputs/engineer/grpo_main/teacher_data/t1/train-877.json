@@ -1,0 +1,22 @@
+{
+  "id": "train-877",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 87-year-old woman was admitted to the emergency room for altered mental status and left-side weakness. She had been treated with warfarin and aspirin for 2 years due to AF, ischemic stroke, and myocardial infarction. She had also been diagnosed and managed for hypertension, diabetes mellitus, dyslipidemia, and ischemic cardiomyopathy. A neurologic examination revealed a stuporous mental status, unresponsiveness to visual threatening, gaze preponderance to the right side, and left-sided hemiparesis. Magnetic resonance imaging revealed acute ischemic infarction in the right middle cerebral artery (MCA) territory and chronic infarction in the left MCA territory. The transthoracic echocardiogram findings were consistent with ischemic heart disease with moderate left-ventricular systolic dysfunction (left-ventricular ejection fraction, 30-35%), AF with enlargement of both atria, and moderate tricuspid regurgitation with borderline pulmonary hypertension. Coagulation assays were performed with a Stago STA-R device. The activated partial thromboplastin time (aPTT) was 30.8 sec (reference, 29.1-41.9 sec) and the international normalized ratio (INR) was 1.24 (reference, 0.90-1.10).\nThe decision was made to change from warfarin to dabigatran because the patient suffered a recurrent stroke despite receiving warfarin treatment. In addition, frequent measurement of INR could not be performed after discharge due to severe neurologic deficits. A baseline assessment revealed that she had a serum creatinine concentration of 1.29 mg/dL, an estimated glomerular filtration rate of 38.7 mL/min/1.73 m2, and a CrCL of 27.2 mL/min. Dabigatran was started at a dosage of 110 mg twice daily, 2 days after cessation of warfarin. The patient developed multiple bruises after 2 days of dabigatran use, and small old blood clot was observed in her nasogastric tube. Blood sampling revealed severe coagulopathy (), with a PT of 65.4 sec (reference, 12.6-14.9 sec), an INR of 7.99, and an aPTT of 99.7 sec. A repeat assessment performed 4 hours later revealed that the PT and aPTT were further prolonged (to 85.9 and 119.2 sec, respectively), the INR had increased (11.36), and she had a prolonged thrombin time of 230.8 sec (reference, 14.2-16.5 sec). The patient received a vitamin K injection and dabigatran was discontinued; 7 days later the PT was normalized, with an INR of 1.09 and an aPTT of 34.8 sec, but the thrombin time was still prolonged at 61.5 sec. Serial assessment of renal function revealed substantial fluctuation in the CrCL (range, 17.9-26.5 mL/min) ().\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "9",
+  "lower": 9.0,
+  "upper": 9.0,
+  "calc_id": 4,
+  "prompt_tokens": 759,
+  "solution": "Apply CHA₂DS₂-VASc to the patient's atrial fibrillation using her admission history:\n- Heart failure or LV systolic dysfunction: ischemic cardiomyopathy with LVEF 30–35% → 1.\n- Hypertension: present → 1.\n- Age ≥75 years: age 87 → 2. The 65–74 age point is not added.\n- Diabetes mellitus: present → 1.\n- Prior stroke, TIA, or systemic embolism: documented ischemic stroke before this admission → 2.\n- Vascular disease: prior myocardial infarction → 1.\n- Female sex → 1.\nTotal: 1 + 1 + 2 + 1 + 2 + 1 + 1 = 9.\nFinal answer: 9",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 981,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 9.0,
+    "correct": true
+  }
+}

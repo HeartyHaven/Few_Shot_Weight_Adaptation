@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-557",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Beloved, Claire gets Dracula, Dave gets The Hobbit, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Claire and Eve swap books. Then, Dave and Alice swap books. Then, Eve and Bob swap books. Then, Bob and Claire swap books. Finally, Bob and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Dune\n(B) Beloved\n(C) Dracula\n(D) The Hobbit\n(E) Hamlet",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Beloved",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Beloved",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "Dune",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Dune",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Dune | Beloved | Dracula | The Hobbit | Hamlet\n1. Claire and Eve swap: Dune | Beloved | Hamlet | The Hobbit | Dracula\n2. Dave and Alice swap: The Hobbit | Beloved | Hamlet | Dune | Dracula\n3. Eve and Bob swap: The Hobbit | Dracula | Hamlet | Dune | Beloved\n4. Bob and Claire swap: The Hobbit | Hamlet | Dracula | Dune | Beloved\n5. Bob and Claire swap: The Hobbit | Dracula | Hamlet | Dune | Beloved\nBob has Dracula, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1126,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

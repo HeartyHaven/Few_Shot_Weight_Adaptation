@@ -1,0 +1,93 @@
+{
+  "name": "GRPO_BASE__t4__Qwen3-14B",
+  "task": "t4",
+  "student": "Qwen/Qwen3-14B",
+  "seed": null,
+  "baseline": "Base-matched",
+  "teacher": null,
+  "dtype": "bfloat16",
+  "engine": "vllm",
+  "max_new_tokens": 2048,
+  "gsm8k_max_new_tokens": 512,
+  "enable_thinking": false,
+  "test_fingerprints": {
+    "_secret/t4/test.jsonl": "188ed99bad6bd53c58780ed9be92b0f55a4db58ec3e16820bd6ecb84f4078c24"
+  },
+  "grader_sha256": "4518d21bd6f70e77e12984145e631e576981d0c90d191291d24ab95e781f52a6",
+  "evaluator_sha256": "ad7bf2e18d9e8b57e70e16cca4ef07034143e0951c0b8dd3b579d8e104b11dd5",
+  "worker_sha256": "3babb908d5016dc3def948d9314159927d627c61dc5492a0d44a1d6800c68f0f",
+  "gpu": "6",
+  "evaluation_protocol": 2,
+  "kv_cache_gib": 24,
+  "max_num_seqs": 64,
+  "max_num_batched_tokens": 8192,
+  "wall_seconds": 210.7,
+  "finished": 1795691956.579177,
+  "results": {
+    "test": {
+      "free": {
+        "acc": 0.7545,
+        "lo": 0.7004,
+        "hi": 0.8051,
+        "n": 277
+      },
+      "no_final_answer_rate": 0.1011,
+      "mean_output_chars": 2453,
+      "sec": 108,
+      "forward_tokens": 295078,
+      "by_group": {
+        "Counting & Probability": {
+          "free": {
+            "acc": 0.7317,
+            "lo": 0.6423,
+            "hi": 0.813,
+            "n": 123
+          }
+        },
+        "Number Theory": {
+          "free": {
+            "acc": 0.7727,
+            "lo": 0.7078,
+            "hi": 0.8377,
+            "n": 154
+          }
+        }
+      }
+    },
+    "retention": {
+      "ppl_generic": 6.5867,
+      "arc_challenge": {
+        "acc": 0.9233,
+        "lo": 0.8933,
+        "hi": 0.9501,
+        "n": 300
+      },
+      "hellaswag": {
+        "acc": 0.89,
+        "lo": 0.8567,
+        "hi": 0.9233,
+        "n": 300
+      },
+      "arithmetic": {
+        "acc": 0.99,
+        "lo": 0.975,
+        "hi": 1.0,
+        "n": 200
+      },
+      "mmlu": {
+        "acc": 0.7518,
+        "lo": 0.7281,
+        "hi": 0.7772,
+        "n": 1140
+      },
+      "gsm8k": {
+        "acc": 0.94,
+        "lo": 0.918,
+        "hi": 0.96,
+        "n": 500
+      }
+    }
+  },
+  "reused_from": "outputs/engineer/distill_main/evaluations/B3_BASE__t4__Qwen3-14B.json",
+  "reused_source_sha256": "ec1b55b5232622256de556bff2b5a5e259a16a16b2a10de536684c584a1ae4f5"
+}

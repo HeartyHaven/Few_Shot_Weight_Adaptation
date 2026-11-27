@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-44",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are playing a game. At the start of the game, they are each holding a ball: Alice has a purple ball, Bob has a blue ball, Claire has a green ball, Dave has a silver ball, Eve has a orange ball, Fred has a grey ball, and Gertrude has a yellow ball.\nAs the game progresses, pairs of players trade balls. First, Claire and Fred swap balls. Then, Fred and Claire swap balls. Then, Fred and Eve swap balls. Then, Gertrude and Fred swap balls. Then, Claire and Alice swap balls. Then, Claire and Alice swap balls. Finally, Alice and Dave swap balls. At the end of the game, Fred has the\nOptions:\n(A) purple ball\n(B) blue ball\n(C) green ball\n(D) silver ball\n(E) orange ball\n(F) grey ball\n(G) yellow ball",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "silver",
+      "Eve": "orange",
+      "Fred": "grey",
+      "Gertrude": "yellow"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "grey",
+      "Dave": "silver",
+      "Eve": "orange",
+      "Fred": "green",
+      "Gertrude": "yellow"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "silver",
+      "Eve": "orange",
+      "Fred": "grey",
+      "Gertrude": "yellow"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "silver",
+      "Eve": "grey",
+      "Fred": "orange",
+      "Gertrude": "yellow"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "silver",
+      "Eve": "grey",
+      "Fred": "yellow",
+      "Gertrude": "orange"
+    },
+    {
+      "Alice": "green",
+      "Bob": "blue",
+      "Claire": "purple",
+      "Dave": "silver",
+      "Eve": "grey",
+      "Fred": "yellow",
+      "Gertrude": "orange"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "silver",
+      "Eve": "grey",
+      "Fred": "yellow",
+      "Gertrude": "orange"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "purple",
+      "Eve": "grey",
+      "Fred": "yellow",
+      "Gertrude": "orange"
+    }
+  ],
+  "prompt_tokens": 227,
+  "solution": "Ball colors in holder order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude):\nInitial: (purple, blue, green, silver, orange, grey, yellow)\n1. Claire ↔ Fred: (purple, blue, grey, silver, orange, green, yellow)\n2. Fred ↔ Claire: (purple, blue, green, silver, orange, grey, yellow)\n3. Fred ↔ Eve: (purple, blue, green, silver, grey, orange, yellow)\n4. Gertrude ↔ Fred: (purple, blue, green, silver, grey, yellow, orange)\n5. Claire ↔ Alice: (green, blue, purple, silver, grey, yellow, orange)\n6. Claire ↔ Alice: (purple, blue, green, silver, grey, yellow, orange)\n7. Alice ↔ Dave: (silver, blue, green, purple, grey, yellow, orange)\nFred has the yellow ball, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1102,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

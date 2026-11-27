@@ -1,0 +1,22 @@
+{
+  "id": "train-6463",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 68-year-old man is brought to the emergency department because of fever, progressive weakness, and cough for the past five days. He experienced a similar episode 2 months ago, for which he was hospitalized for 10 days while visiting his son in Russia. He states that he has never fully recovered from that episode. He felt much better after being treated with antibiotics, but he still coughs often during meals. He sometimes also coughs up undigested food after eating. For the last 5 days, his coughing has become more frequent and productive of yellowish-green sputum. He takes hydrochlorothiazide for hypertension and pantoprazole for the retrosternal discomfort that he often experiences while eating. He has smoked half a pack of cigarettes daily for the last 30 years and drinks one shot of vodka every day. The patient appears thin. His temperature is 40.1°C (104.2°F), pulse is 118/min, respirations are 22/min, and blood pressure is 125/90 mm Hg. Auscultation of the lungs shows right basal crackles. There is dullness on percussion at the right lung base. The remainder of the physical examination shows no abnormalities. Laboratory studies show:\nHemoglobin 15.4 g/dL\nLeukocyte count 17,000/mm3\nPlatelet count 350,000/mm3\nNa+ 139 mEq/L\nK+\n4.6 mEq/L\nCl- 102 mEq/L\nHCO3- 25 mEq/L\nUrea Nitrogen 16 mg/dL\nCreatinine 1.3 mg/dL\nAn x-ray of the chest shows a right lower lobe infiltrate.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 452,
+  "solution": "CURB-65 assigns 1 point for each criterion met at admission:\n- New confusion: none reported → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN 16 mg/dL → 0.\n- Respiratory rate ≥30/min: 22/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mm Hg: 125/90 mm Hg → 0.\n- Age ≥65 years: 68 years → 1.\nTotal = 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 788,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

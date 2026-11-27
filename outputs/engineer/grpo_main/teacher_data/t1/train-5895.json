@@ -1,0 +1,22 @@
+{
+  "id": "train-5895",
+  "task": "t1",
+  "group": "FeverPAIN Score for Strep Pharyngitis",
+  "question": "Patient note:\nA 45-year-old male patient arrived at our otorhinolaryngology department for an emergency examination. Owing to the policy of his employing company, he was obliged to self-test for SARS-CoV-2 twice a week. Four hours before his arrival, the patient had attempted to perform a SARS-CoV-2 rapid antigen test (GenBody Inc, Cheonan, KR) at home by taking an OPS. Upon specimen collection, he felt a mild resistance and had a gag reflex, which resulted in the ingestion of the swab applicator.\nThe patient showed no signs of respiratory distress and had stable vital signs. He showed no apparent regurgitation of saliva. We performed a SARS-CoV-2 rapid antigen test (Hangzhou Clungene Biotech, CN) by taking an NPS and obtained a negative result.\nDuring routine ear, nose, and throat examination, including flexible rhinopharyngolaryngoscopy, we found no foreign body in the upper respiratory tract or at the pharyngeal level.\nWe performed thoracic and abdominal computed tomography (CT) scans in the supine and right lateral recumbent positions. Swab applicators are usually made of nylon. Thus, their radiopacity is not guaranteed without a documented radiopaque marking. In our case, we did not have the manufacturer’s description in hand. To overcome this problem, we asked the patient to drink water to fill the stomach with fluid. After proper windowing, a radiolucent band was visible in the stomach, suggestive of a foreign body (Figure ). No other abnormalities were observable in the imaged regions.\nIn collaboration with the department of gastroenterology, we performed an urgent gastroscopy with a flexible endoscope (Olympus, JP). Despite four hours having elapsed since the incident, we still identified the swab stick intact in the stomach. After firmly catching the object with a polypectomy loop, it was withdrawn and removed safely (Figure ). A second look showed no signs of mucosal damage or any residual foreign bodies along the esophagus and stomach. We examined the foreign body and confirmed that it had been removed without missing parts (Figure ). After eventless observation, the patient was discharged on the same day.\nInformed consent was obtained from the patient for all the procedures and for the publication of information on his clinical course. All actions were made in accordance with the World Medical Association’s Declaration of Helsinki.\n\nQuestion: What is the patient's FeverPAIN score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 33,
+  "prompt_tokens": 570,
+  "solution": "FeverPAIN assigns 1 point per feature at presentation:\n- Fever in the preceding 24 hours: none reported → 0.\n- Tonsillar purulence: none reported → 0.\n- Attendance within 3 days of symptom onset: he presented 4 hours after the swab incident → 1 if the incident is used as onset.\n- Severely inflamed tonsils: not described → 0.\n- No cough or coryza: neither is reported; assuming both were absent → 1.\nTotal: 0 + 0 + 1 + 0 + 1 = 2. This is a checklist calculation only: FeverPAIN is intended for acute sore throat, not foreign-body ingestion.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 705,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

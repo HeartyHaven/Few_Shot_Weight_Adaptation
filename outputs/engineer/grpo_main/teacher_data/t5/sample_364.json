@@ -1,0 +1,20 @@
+{
+  "id": "sample_364",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(nums, verdict):\n    res = [x for x in nums if x != 0]\n    result = [[x, verdict(x)] for x in res]\n    if result:\n        return result\n    return 'error - no numbers or all zeros!'\n```\n\nInput: f([0, 3, 0, 1], lambda x: x < 2)",
+  "answer": "[[3, False], [1, True]]",
+  "prompt_tokens": 138,
+  "solution": "The first comprehension skips 0, keeps 3, skips 0, then keeps 1, so res = [3, 1]. The second comprehension pairs 3 with (3 < 2), which is False, then 1 with (1 < 2), which is True. The resulting list is nonempty, so the function returns it.\nFinal answer: [[3, False], [1, True]]",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "[[3, False], [1, True]]",
+    "correct": true
+  }
+}

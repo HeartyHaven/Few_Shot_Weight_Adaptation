@@ -1,0 +1,22 @@
+{
+  "id": "train-6466",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 47-year-old Caucasian man presented with a three-week history of progressive dyspnea, productive cough, and weight loss of 10 kg in the preceding 3 months. He suffered from several episodes of respiratory infection in preceding months that improved after antibiotic therapy. He smoked 16 packs per year.\nUpon admission, physical examination showed an ill looking patient who was thin, pale, acyanotic and tachycardic. His blood pressure was 100/70 mmHg, his pulse 100 beats/min, and his respiratory rate was 26 breaths/min. There was no cervical, axillary, or inguinal lymphadenopathy. Lung auscultation revealed diffusely scattered crackles and rhonchi bilaterally. A physical examination of the heart and abdomen revealed no abnormal findings.\nLaboratory tests showed the following blood analysis results: red blood cell count, 4.7 milion/mm3; hemoglobin, 11.1 g/dL; hematocrit, 34.8%; white blood cells, 4,300/mm3; and platelets, 200,000/mm3. Arterial blood gas analysis while breathing room air showed an arterial oxygen tension (PaO2) of 80 mmHg and an arterial carbon dioxide tension (PaCO2) of 32 mmHg. Blood analysis further revealed the following molecular concentrations: sodium, 136 mEq/L; potassium, 4.5 mEq/L; blood urea nitrogen, 26 mg/dL; and creatinine, 1.1 mg/dl. Liver function tests were normal. Serology for HIV and tests for acid-fast bacilli and fungi in three sputum samples were negative. Respiratory function tests demonstrated a moderate obstructive disease. Echocardiography revealed a normal ejection fraction with no myocardial or valvular abnormalities.\nA chest radiograph () and computed tomography (CT) on the thorax () showed multiple pulmonary nodular opacities and masses of soft tissue density that had irregular contours, and were diffusely and bilaterally distributed. Most of the nodules and masses contained calcifications, but none were cavitated. Radiographs () and CT of the thorax () had been performed at another institution six years prior, showing nodular lesions with calcifications that were smaller than at present. Since he was asymptomatic at the time, he did not return for further examinations.\nBronchoscopy showed no abnormalities. A bronchoalveolar lavage was negative for tuberculosis, fungi or malignancy. An open lung biopsy was performed and histopathological analysis showed pulmonary amyloidosis. Three months later, the patient died from a respiratory infection.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 646,
+  "solution": "CURB-65 assigns 1 point for each criterion met at admission:\n- Confusion: none reported → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN 26 mg/dL → 1.\n- Respiratory rate ≥30/min: 26/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: 100/70 mmHg → 0.\n- Age ≥65 years: 47 years → 0.\nTotal: 0 + 1 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 749,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

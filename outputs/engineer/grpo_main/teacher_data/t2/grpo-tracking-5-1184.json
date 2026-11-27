@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1184",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Marco, Claire is dancing with Umar, Dave is dancing with Yuki, and Eve is dancing with Lena.\nThroughout the song, the dancers often trade partners. First, Eve and Alice switch partners. Then, Alice and Bob switch partners. Then, Alice and Bob switch partners. Then, Bob and Claire switch partners. Finally, Bob and Claire switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Oscar\n(B) Marco\n(C) Umar\n(D) Yuki\n(E) Lena",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Marco",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Marco",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Lena",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Marco",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Umar",
+      "Claire": "Marco",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Marco",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners in each row are listed in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Oscar, Marco, Umar, Yuki, Lena\n1. Eve ↔ Alice: Lena, Marco, Umar, Yuki, Oscar\n2. Alice ↔ Bob: Marco, Lena, Umar, Yuki, Oscar\n3. Alice ↔ Bob: Lena, Marco, Umar, Yuki, Oscar\n4. Bob ↔ Claire: Lena, Umar, Marco, Yuki, Oscar\n5. Bob ↔ Claire: Lena, Marco, Umar, Yuki, Oscar\nAlice is dancing with Lena, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1022,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

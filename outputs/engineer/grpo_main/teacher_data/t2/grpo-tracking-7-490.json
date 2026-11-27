@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-490",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Walden, Claire gets Persuasion, Dave gets Siddhartha, Eve gets Jane Eyre, Fred gets Middlemarch, and Gertrude gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Alice and Dave swap books. Then, Claire and Eve swap books. Then, Dave and Fred swap books. Then, Fred and Eve swap books. Then, Dave and Eve swap books. Then, Fred and Alice swap books. Finally, Fred and Bob swap books. At the end of the semester, Eve has\nOptions:\n(A) Dune\n(B) Walden\n(C) Persuasion\n(D) Siddhartha\n(E) Jane Eyre\n(F) Middlemarch\n(G) Dracula",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Siddhartha",
+      "Eve": "Jane Eyre",
+      "Fred": "Middlemarch",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Middlemarch",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Middlemarch",
+      "Eve": "Persuasion",
+      "Fred": "Dune",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Middlemarch",
+      "Eve": "Dune",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Middlemarch",
+      "Fred": "Walden",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Books in every row are ordered by holder: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Dune, Walden, Persuasion, Siddhartha, Jane Eyre, Middlemarch, Dracula\n1. Alice ↔ Dave: Siddhartha, Walden, Persuasion, Dune, Jane Eyre, Middlemarch, Dracula\n2. Claire ↔ Eve: Siddhartha, Walden, Jane Eyre, Dune, Persuasion, Middlemarch, Dracula\n3. Dave ↔ Fred: Siddhartha, Walden, Jane Eyre, Middlemarch, Persuasion, Dune, Dracula\n4. Fred ↔ Eve: Siddhartha, Walden, Jane Eyre, Middlemarch, Dune, Persuasion, Dracula\n5. Dave ↔ Eve: Siddhartha, Walden, Jane Eyre, Dune, Middlemarch, Persuasion, Dracula\n6. Fred ↔ Alice: Persuasion, Walden, Jane Eyre, Dune, Middlemarch, Siddhartha, Dracula\n7. Fred ↔ Bob: Persuasion, Siddhartha, Jane Eyre, Dune, Middlemarch, Walden, Dracula\nEve has Middlemarch, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1114,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

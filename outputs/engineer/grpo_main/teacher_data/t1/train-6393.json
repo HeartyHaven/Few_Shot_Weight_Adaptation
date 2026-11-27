@@ -1,0 +1,22 @@
+{
+  "id": "train-6393",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nIn June 2014, a 50-year-old man was brought to the emergency room with pain abdomen, high-grade fever with chills, generalized malaise, night sweats and significant weight loss (>10 kg in 45 days). The patient is a milk vendor by occupation in rural Bangalore and routinely consumes unpasteurized or raw milk due to a belief that raw milk is healthier. The patient is an ex-smoker and alcoholic with consuming about 20 g (whiskey) per day from 10 years. Patient's medical records and history from relatives revealed fever with night sweats and pain abdomen from 2 months for which he was evaluated as fever of unknown origin. The patient denied any recent travel or contact with persons having a similar illness.\nHis physical examination during admission was remarkable for fever (40°C), hypotension (BP: 86/60 mmHg), and increased respiratory (30 min–1) and heart (120 min–1) rates. He was severely dehydrated and pale, but no scleral icterus, clubbing, cyanosis, edema or lymphadenopathy was noted. Systemic examination of the abdomen showed tenderness in the left hypochondriac region. The liver was nontender with normal span. The spleen was not palpable but castell's sign was elicited (dullness noted in lower eighth intercostal space on inspiration). Cardiovascular and respiratory system examination was normal. Nervous system examination was normal.\nInvestigations revealed total white blood cell count of 32 100 mm–3 (neutrophils 64%, lymphocytes 30%, eosinophils 3% and monocytes 3%), ESR of 100 mm/h, C-reactive protein of 92 mg/l, hemoglobin of 10 mg/dl and platelet count was 199 000 μm–1. The arterial blood gasses had pH of 7.36, a PO2 of 68 mmHg, PCO2 of 35.5 mmHg and 17.9 mmol/l of bicarbonate. Renal function test was abnormal with creatinine of 2.0 mg/dl and blood urea of 70 mg/dl. Liver function test was normal. Electrocardiogram showed tachycardia and nonspecific ST–T changes in leads 2 and aVF. Echocardiography was normal with the ejection fraction of 60% and no features of endocarditis were found.\nBrucella slide and tube agglutination tests (Wright, at 1/640) were positive. Ultrasound abdomen and computerized tomography of the abdomen showed splenomegaly and well-demarcated hypodense lesion, which is nonenhancing and measuring 3.2 × 2.8 × 2.8 cm in the upper pole of spleen with perisplenic fat stranding. Blood cultures confirmed infection by Brucella melitensis on Day 1 and Day 3. Chest radiograph showed bilateral pleural effusion with basal atelectasis. Upper gastrointestinal (GI) endoscopy was normal. The patient was treated with percutaneous drainage along with oral doxycycline (200 mg/day) and rifampin (600 mg/day) for 6 weeks.\nThe patient improved symptomatically over a period of 10 days with the absence of fever and reduction of pain abdomen. The patient was discharged on Day 10 with advice for review ultrasound abdomen examinations. The patient remained asymptomatic without recurrence at 6 months after completion of treatment. Repeat ultrasound abdomen showed mild splenomegaly without any other abnormalities.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 45,
+  "prompt_tokens": 870,
+  "solution": "CURB-65 assigns 1 point for each criterion met at admission:\n- New confusion: none reported; neurologic examination normal → 0.\n- Urea >7 mmol/L: blood urea 70 mg/dL is approximately 11.7 mmol/L → 1.\n- Respiratory rate ≥30/min: exactly 30/min → 1.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: 86/60 meets both thresholds, but BP counts only once → 1.\n- Age ≥65 years: age 50 → 0.\nSum: 0 + 1 + 1 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 641,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

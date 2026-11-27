@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-388",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Let set $\\mathcal{A}$ be a 90-element subset of $\\{1,2,3,\\ldots,100\\},$ and let $S$ be the sum of the elements of $\\mathcal{A}.$ Find the number of possible values of $S.$\n",
+  "answer": "901",
+  "prompt_tokens": 92,
+  "solution": "The minimum sum comes from {1, …, 90} and equals 90·91/2 = 4095. The maximum comes from {11, …, 100}; each of its 90 entries is 10 greater than the corresponding minimum entry, so its sum is 4095 + 900 = 4995.\nTo realize every intermediate sum, start at the minimum set. Increase 90 to 100 one unit at a time, then 89 to 99, and continue in descending order until 1 reaches 11. No entries coincide: the larger entries have already moved up by 10, and the smaller ones are unchanged. Each step increases the sum by exactly 1, so there are 4995 − 4095 + 1 = 901 possible sums.\nFinal answer: 901",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "901",
+    "correct": true
+  }
+}

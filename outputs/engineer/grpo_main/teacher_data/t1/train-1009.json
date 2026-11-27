@@ -1,0 +1,22 @@
+{
+  "id": "train-1009",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nOur patient is a 63-year-old Caucasian man with a past medical history of recent myocardial infarction (MI) status post unsuccessful percutaneous coronary intervention, heart failure with reduced ejection fraction (25–30%), coronary artery disease, and atrial fibrillation who presented to our institution with a 3-day history of syncope without chest pain or dyspnea. Initial vital signs reveal tachycardia and hypotension (lowest recorded 85/64). Initial testing revealed new-onset atrial fibrillation with rapid ventricular response, negative troponin, chest X-ray revealing cardiomegaly, and negative computer tomography of the brain. Subsequent cardiac catheterization revealed a single ostium shared by all three coronary arteries (right coronary artery, LCX, and LAD) all originating from the right coronary cusp with the left anterior descending artery originating posteriorly and coursing between the aorta and left atrium (Figs. , and ). In addition to an occluded mid RCA, distal disease of the LAD and severe disease of the superior branch of the obtuse marginal artery of the LCX were noted. The occluded RCA appeared to have left-to-right collaterals from the septal branches of the LAD to the posterior descending artery (PDA) (Fig. ). Next, a CCTA was performed to evaluate the artery for a ‘malignant course” defined as an anomalous origin of the coronary artery with subsequent course between the aorta and pulmonary trunk. It is considered malignant as the affected coronary artery can get compressed between the aorta and pulmonary trunk, specifically during exercise, and can produce angina or in worst cases, sudden cardiac death. Our patient was found to have a non-malignant course (Fig. ). Our patient was evaluated by cardiothoracic surgeons as well as other interventionalists with the decision to treat conservatively, with the option for coronary artery bypass graft (CABG) with or without repositioning of the artery if he remained symptomatic (Table ). Our patient ultimately underwent successful dual-chamber implantable cardioverter-defibrillator (ICD) placement several months later secondary to ischemic cardiomyopathy with reduced ejection fraction (25–30%) after maximally tolerated medical therapy. Of note, our patient did experience a recent MI 23 days prior to this admission. A cardiac catheterization at that time did show a completely occluded mid RCA with unknown chronicity of the lesion. However, it appeared to be subacute or chronic as the vessel was unable to crossed by the guidewire. Anomalous origin of his coronary arteries was noted at that time. As no percutaneous coronary intervention (PCI) could be performed, our patient was treated medically and later discharged home.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 651,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. At admission:\n- Congestive heart failure or LV dysfunction: known heart failure with EF 25–30% → 1.\n- Hypertension: no history documented → 0.\n- Age: 63, below both the 65–74 (1 point) and ≥75 (2 points) bands → 0.\n- Diabetes: none documented → 0.\n- Prior stroke, TIA, or systemic embolism (2 points if present): none documented; syncope does not qualify → 0.\n- Vascular disease: MI 23 days before admission → 1.\n- Female sex category: male → 0.\nSum: 1 + 0 + 0 + 0 + 0 + 1 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 977,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

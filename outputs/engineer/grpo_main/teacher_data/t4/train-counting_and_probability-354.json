@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-354",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Every card in a deck has a picture of one shape - circle, square, or triangle, which is painted in one of the three colors - red, blue, or green. Furthermore, each color is applied in one of three shades - light, medium, or dark. The deck has 27 cards, with every shape-color-shade combination represented. A set of three cards from the deck is called complementary if all of the following statements are true:\ni. Either each of the three cards has a different shape or all three of the card have the same shape.\nii. Either each of the three cards has a different color or all three of the cards have the same color.\niii. Either each of the three cards has a different shade or all three of the cards have the same shade.\nHow many different complementary three-card sets are there?\n",
+  "answer": "117",
+  "prompt_tokens": 200,
+  "solution": "Choose any two distinct cards. For each attribute (shape, color, or shade), if the two cards match, the third card must match them; if they differ, it must have the one unused value. These rules determine exactly one card in the deck. It is distinct from both chosen cards because they differ in at least one attribute, for which it has the unused value.\nThere are \\(27\\cdot26/2=351\\) unordered pairs. Each complementary set is counted once for each of its three pairs, so the number of sets is \\(351/3=117\\).\nFinal answer: 117",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1401,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "117",
+    "correct": true
+  }
+}

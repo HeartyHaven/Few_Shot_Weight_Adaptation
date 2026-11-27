@@ -1,0 +1,22 @@
+{
+  "id": "train-4214",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nPatient 2 is a 62-year-old male smoker with hyperlipidaemia and positive family history for premature coronary artery disease who originally presented with a non-ST-elevation myocardial infarction (NSTEMI) for which he had three DES implanted in the left anterior descending artery (LAD). He represented with anterior STEMI due to ST 795 days after his index admission while on aspirin 75 mg daily. He was treated with intravascular ultrasound guided POBA. Platelet function testing using sTEG demonstrated an inadequate response to P2Y12 receptor inhibitors. Initial response to aspirin 75 mg daily appeared adequate (%CI 61); however response to clopidogrel 75 mg daily was suboptimal (%CI 21) after 36 days of treatment. As a result, the patient was commenced on prasugrel 10 mg daily with no initial loading. Testing, after 70 days of treatment, again revealed hyporesponsiveness (%CI 17). Finally, ticagrelor 90 mg bd was introduced, with no initial loading, with similar effect (%CI −21) after 263 days of treatment (). Ultimately, he was maintained on ticagrelor 90 mg twice daily for life and has suffered no further ST or ischaemic events to date.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 18,
+  "prompt_tokens": 355,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, Risk factors, and Troponin. Use the index NSTEMI admission, not the STEMI 795 days later.\n- History: 2 if the presenting symptoms were highly suspicious for ACS. The note gives the NSTEMI diagnosis but not the symptom history.\n- ECG: 0 if the index ECG had no scored repolarization abnormality. The index tracing is not described; NSTEMI alone does not establish a normal ECG.\n- Age: 62 years (45–64) → 1.\n- Risk factors: smoking, hyperlipidaemia, and family history of premature coronary disease (≥3 factors) → 2.\n- Troponin: 2 if the initial level was >3 times the upper reference limit. NSTEMI implies myocardial injury, but the initial level is not reported.\nUnder these assumptions, the sum is 2 + 0 + 1 + 2 + 2 = 7. The exact score cannot be verified from the note alone.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 757,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

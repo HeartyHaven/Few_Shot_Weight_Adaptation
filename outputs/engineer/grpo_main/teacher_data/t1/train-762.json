@@ -1,0 +1,22 @@
+{
+  "id": "train-762",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 65-year-old male with a past medical history of end stage renal disease status after kidney transplant, atrial fibrillation, and hypertension presented to the emergency room with complaints of abdominal pain for one week. He was known to have a failed kidney transplant at the time of admission as per his outpatient visit records. The suspicion for an infection or infarction of the kidney graft was high based on the patient being on immunosuppressant medications and having atrial fibrillation, respectively. His laboratory data are presented in . No urine was available for analysis as the patient was a hemodialysis patient. Blood cultures were negative. A CT of the abdomen and pelvis showed an edematous transplanted kidney with air in the intraparenchymal region and the urinary bladder (). The patient also had a small bowel obstruction. Early goal directed therapy with fluids and antibiotics was started. He was started on empiric IV Unasyn (). The concern for a more fulminant EPN was high and the patient was taken to the operating room for an emergent transplant nephrectomy and hemicolectomy with small bowel resection. Postoperatively the patient developed acute respiratory failure secondary to Acinetobacter pneumonia and had to be admitted to the intensive care unit (ICU) service. He was started on IV Imipenem to which he responded with resolution of his pneumonia. He developed an ileus and required a course of total parenteral nutrition. In the ICU the patient developed Clostridium difficile colitis. He was successfully treated for Clostridium difficile colitis with oral Vancomycin. He made complete clinical recovery and was transferred to the medical floor where his clinical course was eventful for resolution of cough, dyspnea, fever, diarrhea, and abdominal pain. He was discharged on a course of IV Imipenem and IV Unasyn to complete a total of 14 days.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 466,
+  "solution": "CHA₂DS₂-VASc score for stroke risk in atrial fibrillation, using the admission history:\n- Congestive heart failure (1): not reported → 0.\n- Hypertension (1): present → 1.\n- Age (2 if ≥75, 1 if 65–74): age 65 → 1.\n- Diabetes mellitus (1): not reported → 0.\n- Prior stroke, TIA, or systemic embolism (2): none documented; suspected graft infarction is not a confirmed prior embolism → 0.\n- Vascular disease, such as prior MI, peripheral arterial disease, or aortic plaque (1): not reported → 0.\n- Female sex (1): male → 0.\nTotal = 0 + 1 + 1 + 0 + 0 + 0 + 0 = 2. Dialysis and transplant failure are not scoring criteria.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 656,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

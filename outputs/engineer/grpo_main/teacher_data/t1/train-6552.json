@@ -1,0 +1,22 @@
+{
+  "id": "train-6552",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "question": "Patient note:\nA 46-year-old woman was urgently presented to a nearby hospital because of a femur fracture caused by an accident. Although she was alert on arrival, she began to experience sleepiness approximately 5 hours later. A follow-up helical computed tomography (CT) of the brain revealed the absence of any additional severe lesions or skull fractures. Chest CT confirmed an exudative lesion, and a pulmonary vascular computed tomography angiography (CTA) revealed no obvious abnormalities. Based on the clinical and imaging findings, the patient was suspected to have CFE. After 2 days, the patient was moved to our neurology department to receive the appropriate care. Immediate physical examination on arrival revealed a Glasgow Coma Scale score of 4, a positive bilateral Babinski sign, a positive Kernig sign, and neck stiffness. The patients left thigh presented bruising and swelling and had been fixed with external fixation with restrained movement in the previous hospital (Fig. A). She presented an arterial pressure of 148/80 mm Hg, heart rate of 124 bpm, and partial pressure of oxygen (PO2) of 64 mm Hg. Her blood gas analysis revealed a pH value of 7.4. Total body CT revealed a left femoral comminuted fracture with dislocation (Fig. B). Her bilateral lung presented an exudative lesion as well as pleural effusion (Fig. A). Brain magnetic resonance imaging (MRI) revealed diffuse abnormal signals in the bilateral cerebral hemisphere, brainstem, and cerebellum, which were suggestive of embolization (Fig. ). Combined with the patients trauma history and imaging findings of the lung and brain, the patient was initially diagnosed with FES, whose corresponding treatment is mainly supportive. Regarding the closed fracture of the left femur, the external fixation that had been performed at the previous hospital was appropriate, and no further treatment was applied. Subsequent cardiovascular screening, including echocardiography, cervical artery ultrasound and bilateral lower extremity vascular ultrasound, was performed, and all the findings were negative. Four days after the femur fracture, the patient presented with moderate dyspnea, and her arterial blood gas analysis retrieved a pH value of 7.4. PO2 was 35 mm Hg, partial pressure of carbon dioxide was 126 mm Hg, and arterial oxygen saturation was 97.5% under nasal oxygen. Fourteen days after the fracture, both the lung symptoms and lung CT findings were considerably improved (Fig. B). Transthoracic echocardiography ultrasound was performed again, and shunts through a PFO were observed (Fig. ). On the following day, there was a gradual improvement in consciousness. However, the patients speech indicated dysphasia. Under active supportive care and hormone therapy, the patient was finally discharged with dysphasia and an untreated closed fracture.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 48,
+  "prompt_tokens": 669,
+  "solution": "The PERC rule counts one positive criterion for each of eight findings. Using the earliest available values:\n- Age ≥50: age 46 → 0.\n- Pulse ≥100/min: 124/min → 1.\n- Room-air SpO₂ <95%: not directly reported. At pH 7.4, a PaO₂ of 64 mm Hg typically corresponds to a saturation below 95% → 1 inferred. The later saturation on nasal oxygen is not a baseline value.\n- Unilateral leg swelling: swollen left thigh → 1.\n- Trauma or surgery requiring hospitalization within four weeks: acute femur fracture requiring admission → 1.\n- Hemoptysis, prior DVT/PE, and exogenous estrogen: none reported → 0 each.\nCounting the inferred oxygen criterion, the sum is 0 + 1 + 1 + 1 + 1 + 0 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 703,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

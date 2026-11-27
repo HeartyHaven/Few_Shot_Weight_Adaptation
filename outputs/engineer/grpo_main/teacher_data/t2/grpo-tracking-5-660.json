@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-660",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Emma, Claire gets Siddhartha, Dave gets The Hobbit, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Eve and Alice swap books. Then, Eve and Dave swap books. Then, Eve and Alice swap books. Finally, Claire and Eve swap books. At the end of the semester, Claire has\nOptions:\n(A) Dune\n(B) Emma\n(C) Siddhartha\n(D) The Hobbit\n(E) Walden",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in reader order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Dune, Emma, Siddhartha, The Hobbit, Walden)\n1. Dave ↔ Alice: (The Hobbit, Emma, Siddhartha, Dune, Walden)\n2. Eve ↔ Alice: (Walden, Emma, Siddhartha, Dune, The Hobbit)\n3. Eve ↔ Dave: (Walden, Emma, Siddhartha, The Hobbit, Dune)\n4. Eve ↔ Alice: (Dune, Emma, Siddhartha, The Hobbit, Walden)\n5. Claire ↔ Eve: (Dune, Emma, Walden, The Hobbit, Siddhartha)\nClaire has Walden, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1256,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

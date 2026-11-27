@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-352",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing fullback, Bob is playing left midfielder, Claire is playing goalkeeper, Dave is playing right midfielder, Eve is playing left back, Fred is playing right back, and Gertrude is playing benchwarmer.\nAs the game progresses, pairs of players occasionally swap positions. First, Fred and Dave trade positions. Then, Fred and Claire trade positions. Then, Gertrude and Claire trade positions. Then, Gertrude and Eve trade positions. Then, Gertrude and Fred trade positions. Then, Claire and Dave trade positions. Finally, Fred and Alice trade positions. At the end of the match, Eve is playing\nOptions:\n(A) fullback\n(B) left midfielder\n(C) goalkeeper\n(D) right midfielder\n(E) left back\n(F) right back\n(G) benchwarmer",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "goalkeeper",
+      "Dave": "right midfielder",
+      "Eve": "left back",
+      "Fred": "right back",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "goalkeeper",
+      "Dave": "right back",
+      "Eve": "left back",
+      "Fred": "right midfielder",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "right midfielder",
+      "Dave": "right back",
+      "Eve": "left back",
+      "Fred": "goalkeeper",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "benchwarmer",
+      "Dave": "right back",
+      "Eve": "left back",
+      "Fred": "goalkeeper",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "benchwarmer",
+      "Dave": "right back",
+      "Eve": "right midfielder",
+      "Fred": "goalkeeper",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "benchwarmer",
+      "Dave": "right back",
+      "Eve": "right midfielder",
+      "Fred": "left back",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "right back",
+      "Dave": "benchwarmer",
+      "Eve": "right midfielder",
+      "Fred": "left back",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "left midfielder",
+      "Claire": "right back",
+      "Dave": "benchwarmer",
+      "Eve": "right midfielder",
+      "Fred": "fullback",
+      "Gertrude": "goalkeeper"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Player order: (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude). Each row lists their positions in that order.\nInitial: (fullback, left midfielder, goalkeeper, right midfielder, left back, right back, benchwarmer).\n1. Fred and Dave swap: (fullback, left midfielder, goalkeeper, right back, left back, right midfielder, benchwarmer).\n2. Fred and Claire swap: (fullback, left midfielder, right midfielder, right back, left back, goalkeeper, benchwarmer).\n3. Gertrude and Claire swap: (fullback, left midfielder, benchwarmer, right back, left back, goalkeeper, right midfielder).\n4. Gertrude and Eve swap: (fullback, left midfielder, benchwarmer, right back, right midfielder, goalkeeper, left back).\n5. Gertrude and Fred swap: (fullback, left midfielder, benchwarmer, right back, right midfielder, left back, goalkeeper).\n6. Claire and Dave swap: (fullback, left midfielder, right back, benchwarmer, right midfielder, left back, goalkeeper).\n7. Fred and Alice swap: (left back, left midfielder, right back, benchwarmer, right midfielder, fullback, goalkeeper).\nEve is playing right midfielder, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1084,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

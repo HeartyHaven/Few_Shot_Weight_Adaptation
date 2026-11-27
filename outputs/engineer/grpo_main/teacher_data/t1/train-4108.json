@@ -1,0 +1,22 @@
+{
+  "id": "train-4108",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 45-year-old man presents to the physician with a complaint of recurrent chest pain for the last 2 weeks. He mentions that the pain is not present at rest, but when he walks for some distance, he feels pain like a pressure over the retrosternal region. The pain disappears within a few minutes of stopping the physical activity. He is an otherwise healthy man with no known medical disorder. He does not smoke or have any known dependence. There is no family history of ischemic heart disease or vascular disorder. On physical examination, his vital signs, including blood pressure, are normal. The diagnosis of coronary artery disease due to atherosclerosis is made.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 205,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors and troponin. A conditional estimate is:\n1. History: rate the history as moderately suspicious for acute coronary syndrome (1). The pressure is typical of angina but predictably exertional, resolves with rest and is absent at rest.\n2. ECG: not reported; assume a normal tracing for this estimate (0).\n3. Age: 45 years falls in the 45–64 bracket (1).\n4. Risk factors: count the stated diagnosis of atherosclerotic coronary artery disease as established atherosclerotic disease (2).\n5. Troponin: not reported; assume an initial value at or below the assay's upper reference limit (0).\nSum under these assumptions = 1 + 0 + 1 + 2 + 0 = 4. Without an ECG and troponin, the admission score cannot be confirmed.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 722,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

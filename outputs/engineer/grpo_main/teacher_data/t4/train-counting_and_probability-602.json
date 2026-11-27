@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-602",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Thirty identical toothpicks were used to create the figure below. There are over 25 triangles in the figure. What is the fewest number of toothpicks that could be removed so that no triangles remain?\n\n[asy]\ndraw((0,0)--(8,0), linewidth(1));\ndraw(2dir(60)--(2dir(60)+(6,0)), linewidth(1));\ndraw(4dir(60)--(4dir(60)+(4,0)), linewidth(1));\ndraw(6dir(60)--(6dir(60)+(2,0)), linewidth(1));\n\ndraw((0,0)--8dir(60),linewidth(1));\ndraw((2,0)--(6dir(60)+(2,0)),linewidth(1));\ndraw((4,0)--(4dir(60)+(4,0)),linewidth(1));\ndraw((6,0)--(2dir(60)+(6,0)),linewidth(1));\n\ndraw(2dir(60)--(2,0),linewidth(1));\ndraw(4dir(60)--(4,0),linewidth(1));\ndraw(6dir(60)--(6,0),linewidth(1));\ndraw(8dir(60)--(8,0),linewidth(1));\n[/asy]",
+  "answer": "10",
+  "prompt_tokens": 310,
+  "solution": "The rows from top to bottom contain 1, 2, 3, and 4 upward-pointing unit triangles, for a total of 10. No two of these triangles share a toothpick, so breaking all of them requires at least 10 removals.\n\nThis bound is attainable: remove all 1 + 2 + 3 + 4 = 10 horizontal toothpicks. Every triangle, regardless of size or orientation, must use all three edge directions and hence must have a horizontal side. Thus none remain.\nFinal answer: 10",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1426,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "10",
+    "correct": true
+  }
+}

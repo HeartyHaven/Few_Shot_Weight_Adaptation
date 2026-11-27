@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-903",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right back, Bob is playing right winger, Claire is playing left winger, Dave is playing striker, Eve is playing goalkeeper, Fred is playing left midfielder, and Gertrude is playing sweeper.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Eve trade positions. Then, Bob and Claire trade positions. Then, Gertrude and Claire trade positions. Then, Alice and Fred trade positions. Then, Bob and Claire trade positions. Then, Gertrude and Alice trade positions. Finally, Eve and Alice trade positions. At the end of the match, Eve is playing\nOptions:\n(A) right back\n(B) right winger\n(C) left winger\n(D) striker\n(E) goalkeeper\n(F) left midfielder\n(G) sweeper",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "right back",
+      "Bob": "right winger",
+      "Claire": "left winger",
+      "Dave": "striker",
+      "Eve": "goalkeeper",
+      "Fred": "left midfielder",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "right winger",
+      "Claire": "goalkeeper",
+      "Dave": "striker",
+      "Eve": "left winger",
+      "Fred": "left midfielder",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "goalkeeper",
+      "Claire": "right winger",
+      "Dave": "striker",
+      "Eve": "left winger",
+      "Fred": "left midfielder",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "goalkeeper",
+      "Claire": "sweeper",
+      "Dave": "striker",
+      "Eve": "left winger",
+      "Fred": "left midfielder",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "goalkeeper",
+      "Claire": "sweeper",
+      "Dave": "striker",
+      "Eve": "left winger",
+      "Fred": "right back",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "sweeper",
+      "Claire": "goalkeeper",
+      "Dave": "striker",
+      "Eve": "left winger",
+      "Fred": "right back",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "sweeper",
+      "Claire": "goalkeeper",
+      "Dave": "striker",
+      "Eve": "left winger",
+      "Fred": "right back",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "sweeper",
+      "Claire": "goalkeeper",
+      "Dave": "striker",
+      "Eve": "right winger",
+      "Fred": "right back",
+      "Gertrude": "left midfielder"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Positions in player order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: right back, right winger, left winger, striker, goalkeeper, left midfielder, sweeper\n1. Claire ↔ Eve: right back, right winger, goalkeeper, striker, left winger, left midfielder, sweeper\n2. Bob ↔ Claire: right back, goalkeeper, right winger, striker, left winger, left midfielder, sweeper\n3. Gertrude ↔ Claire: right back, goalkeeper, sweeper, striker, left winger, left midfielder, right winger\n4. Alice ↔ Fred: left midfielder, goalkeeper, sweeper, striker, left winger, right back, right winger\n5. Bob ↔ Claire: left midfielder, sweeper, goalkeeper, striker, left winger, right back, right winger\n6. Gertrude ↔ Alice: right winger, sweeper, goalkeeper, striker, left winger, right back, left midfielder\n7. Eve ↔ Alice: left winger, sweeper, goalkeeper, striker, right winger, right back, left midfielder\nEve is playing right winger, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1224,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

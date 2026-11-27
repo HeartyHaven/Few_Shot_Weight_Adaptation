@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-372",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Yuki, Claire is dancing with Karl, Dave is dancing with Marco, and Eve is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Claire and Eve switch partners. Then, Claire and Eve switch partners. Then, Dave and Bob switch partners. Then, Dave and Claire switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Umar\n(B) Yuki\n(C) Karl\n(D) Marco\n(E) Quinn",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Yuki",
+      "Claire": "Karl",
+      "Dave": "Marco",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Yuki",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Yuki",
+      "Claire": "Karl",
+      "Dave": "Marco",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Marco",
+      "Claire": "Karl",
+      "Dave": "Yuki",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Marco",
+      "Claire": "Yuki",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Umar",
+      "Claire": "Yuki",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners in every row are listed for Alice, Bob, Claire, Dave, Eve, in that order.\nInitial: Umar, Yuki, Karl, Marco, Quinn\n1. Claire ↔ Eve: Umar, Yuki, Quinn, Marco, Karl\n2. Claire ↔ Eve: Umar, Yuki, Karl, Marco, Quinn\n3. Dave ↔ Bob: Umar, Marco, Karl, Yuki, Quinn\n4. Dave ↔ Claire: Umar, Marco, Yuki, Karl, Quinn\n5. Bob ↔ Alice: Marco, Umar, Yuki, Karl, Quinn\nClaire's final partner is Yuki, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1304,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

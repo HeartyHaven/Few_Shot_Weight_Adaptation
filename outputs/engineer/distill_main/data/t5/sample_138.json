@@ -1,0 +1,17 @@
+{
+  "id": "sample_138",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, chars):\n    listchars = list(chars)\n    first = listchars.pop()\n    for i in listchars:\n        text = text[0:text.find(i)]+i+text[text.find(i)+1:]\n    return text\n```\n\nInput: f('tflb omn rtt', 'm')",
+  "answer": "'tflb omn rtt'",
+  "solution": "list('m') gives listchars = ['m']. pop() sets first = 'm' and leaves listchars = []. The loop therefore runs zero times, and text is returned unchanged.\nFinal answer: 'tflb omn rtt'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 48,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'tflb omn rtt'",
+    "correct": true
+  }
+}

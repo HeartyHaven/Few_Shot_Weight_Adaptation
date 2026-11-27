@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-216",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Dune, Claire gets Ivanhoe, Dave gets Beloved, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Bob and Claire swap books. Then, Bob and Alice swap books. Then, Claire and Bob swap books. Finally, Dave and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Jane Eyre\n(B) Dune\n(C) Ivanhoe\n(D) Beloved\n(E) The Trial",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Dune",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Jane Eyre | Dune | Ivanhoe | Beloved | The Trial\n1. Bob and Claire swap: Jane Eyre | Ivanhoe | Dune | Beloved | The Trial\n2. Bob and Claire swap: Jane Eyre | Dune | Ivanhoe | Beloved | The Trial\n3. Bob and Alice swap: Dune | Jane Eyre | Ivanhoe | Beloved | The Trial\n4. Claire and Bob swap: Dune | Ivanhoe | Jane Eyre | Beloved | The Trial\n5. Dave and Alice swap: Beloved | Ivanhoe | Jane Eyre | Dune | The Trial\nBob has Ivanhoe, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1065,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

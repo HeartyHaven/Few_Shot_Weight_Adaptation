@@ -1,0 +1,17 @@
+{
+  "id": "sample_656",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(letters):\n    a = [] \n    for i in range(len(letters)):\n        if letters[i] in a:\n            return 'no'\n        a.append(letters[i]) \n    return 'yes'\n```\n\nInput: f(['b', 'i', 'r', 'o', 's', 'j', 'v', 'p'])",
+  "answer": "'yes'",
+  "solution": "Start with a = []. At each index, the current letter is absent from a, so the function appends it. The list after each iteration is:\ni=0: ['b']\ni=1: ['b', 'i']\ni=2: ['b', 'i', 'r']\ni=3: ['b', 'i', 'r', 'o']\ni=4: ['b', 'i', 'r', 'o', 's']\ni=5: ['b', 'i', 'r', 'o', 's', 'j']\ni=6: ['b', 'i', 'r', 'o', 's', 'j', 'v']\ni=7: ['b', 'i', 'r', 'o', 's', 'j', 'v', 'p']\nNo duplicate triggered the early return, so execution reaches return 'yes'.\nFinal answer: 'yes'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 72,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'yes'",
+    "correct": true
+  }
+}

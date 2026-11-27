@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-78",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "What is the largest three-digit integer $n$ that satisfies $$55n\\equiv 165\\pmod{260}~?$$",
+  "answer": "991",
+  "prompt_tokens": 63,
+  "solution": "Since 165 = 55·3, the congruence says that 260 divides 55(n−3). Dividing both numbers by 5 gives the equivalent condition that 52 divides 11(n−3). As 11 and 52 are coprime, this holds exactly when 52 divides n−3.\nThus n = 3 + 52t for integer t. To stay at most 999, we need 52t ≤ 996. Since 52·19 = 988 and 52·20 = 1040, the largest possible t is 19, giving n = 3 + 988 = 991.\nFinal answer: 991",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "991",
+    "correct": true
+  }
+}

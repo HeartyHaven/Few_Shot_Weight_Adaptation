@@ -1,0 +1,17 @@
+{
+  "id": "sample_779",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    values = text.split()\n    return '${first}y, ${second}x, ${third}r, ${fourth}p' % dict({\n        'first': values[0],\n        'second': values[1],\n        'third': values[2],\n        'fourth': values[3]\n    })\n```\n\nInput: f('python ruby c javascript')",
+  "answer": "'${first}y, ${second}x, ${third}r, ${fourth}p'",
+  "solution": "text.split() gives values = ['python', 'ruby', 'c', 'javascript']. Indices 0 through 3 supply the mapping {'first': 'python', 'second': 'ruby', 'third': 'c', 'fourth': 'javascript'}. The % operator looks for percent-format fields such as %(first)s, not ${first}. The format string contains no % fields, so no mapping entries are substituted and the string is returned unchanged.\nFinal answer: '${first}y, ${second}x, ${third}r, ${fourth}p'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 4,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'${first}y, ${second}x, ${third}r, ${fourth}p'",
+    "correct": true
+  }
+}

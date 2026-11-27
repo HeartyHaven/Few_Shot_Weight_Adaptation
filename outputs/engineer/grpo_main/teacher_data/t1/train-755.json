@@ -1,0 +1,22 @@
+{
+  "id": "train-755",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 78-year-old male, originally from China, with a past medical history of hypertension, diabetes, paroxysmal atrial fibrillation, and a stroke with residual left-sided deficit and waxing and waning mental status was brought to the hospital for weakness, urinary incontinence, confusion, and poor oral intake. On the day of his presentation, the patient was noted to appear weak on the left side more so than at baseline. The patient was brought to the emergency department as a stroke code; computed tomography (CT) scan of the head ruled out acute stroke. Vital signs were significant for a heart rate of 94 beats per minute and respiratory rate of 31 breaths per minute. The patient was admitted to the hospital for sepsis and workup for possible toxic, metabolic, or infectious insults leading to recrudescence.\nThe patient was started on empiric antibiotics, which were narrowed when blood cultures revealed gram-negative bacteremia speciating to Klebsiella pneumoniae, ampicillin-resistant, but sensitive to ceftriaxone. A CT scan of the abdomen and pelvis demonstrated the presence of a large cystic region with air-fluid level in the left lobe of the liver ( and ). Under the suspicion that this lesion was the source of the patient’s bacteremia, the patient underwent percutaneous drainage of the lesion by Interventional Radiology, which produced 80 cc of purulent fluid, also growing ampicillin-resistant, ceftriaxone-sensitive Klebsiella pneumoniae. While a stool ova and parasite examination on the patient was negative, further workup revealed that the patient was positive for Entamoeba histolytica antibody in the serum, detected via enzyme-linked immunosorbent assay and indicative of either current or prior infection. The patient had lived in the United States for several years, had no recent travel history and, to the knowledge of his family, had never been diagnosed or treated for E histolytica infection in the past; as such, he was started on metronidazole and paromomycin for extraluminal amoebic infection after completing the course of ceftriaxone to treat what appeared to have been a superimposed bacterial infection of a previously subclinical amoebic liver abscess (ALA).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 549,
+  "solution": "CHA₂DS₂-VASc estimates thromboembolic risk in atrial fibrillation, including paroxysmal AF. Using the admission history:\n- Congestive heart failure (1 if present): none documented → 0.\n- Hypertension (1): present → 1.\n- Age (2 for ≥75 years, 1 for 65–74, otherwise 0): age 78 → 2.\n- Diabetes mellitus (1): present → 1.\n- Prior stroke, TIA, or systemic embolism (2): prior stroke with residual left-sided deficit → 2. A new stroke is not required.\n- Vascular disease such as prior MI, peripheral arterial disease, or aortic plaque (1): none documented → 0.\n- Female sex (1): male → 0.\nTotal = 0 + 1 + 2 + 1 + 2 + 0 + 0 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 2,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

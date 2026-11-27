@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-518",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Jane Eyre, and Claire gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Claire swap books. Finally, Claire and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) Candide\n(B) Jane Eyre\n(C) Hamlet",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Hamlet"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire).\nInitial: (Candide, Jane Eyre, Hamlet)\n1. Alice ↔ Claire: (Hamlet, Jane Eyre, Candide)\n2. Bob ↔ Claire: (Hamlet, Candide, Jane Eyre)\n3. Claire ↔ Alice: (Jane Eyre, Candide, Hamlet)\nClaire has Hamlet, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1215,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

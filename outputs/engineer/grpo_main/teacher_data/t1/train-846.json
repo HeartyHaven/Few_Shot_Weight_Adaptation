@@ -1,0 +1,22 @@
+{
+  "id": "train-846",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 86-year-old gentleman presented to the emergency department for abrasions and\nright leg pain. Immediately prior to arrival, he had experienced a mechanical fall\nonto concrete. His medical history consisted of atrial fibrillation for which he\ntook daily anticoagulation medication (rivaroxaban). On arrival, he reported\nposterior right thigh discomfort that was constant, described as “tightness,” worse\nwith movement of the right leg, and associated with mild, vague paresthesias of the\nright foot. His vital signs were within normal limits including a pulse rate of 65\nbeats/min and a blood pressure of 129/96. The physical exam was notable for focal\ntenderness to palpation over the posterior right thigh with a compartment that felt\nmildly firm to palpation. There was no overlying rash or ecchymosis. There was\ndecreased sensation to light touch in the right foot with fully intact motor\nfunction. Distal pulses in the right leg were intact. The bilateral feet appeared\nsymmetric and well perfused and were both warm to touch.\nBedside ultrasound of the posterior right thigh was performed and revealed an area of\nhypoechogencity without Doppler color flow concerning for a fluid collection ( and ). This finding raised the\nprovider’s concern for a traumatic hematoma in the setting of anticoagulant use and\nan expedited computed tomography (CT) scan with intravenous (IV) contrast of the\nright leg was obtained, which revealed an 8-cm hematoma in the right posterior thigh\nwith active extravasation (). Immediate specialty consultation was obtained for further management.\nDuring the patient’s emergency department course (after acquisition of focused\nadvanced imaging and initial specialty consultation), he developed hypotension\nrequiring bolus intravenous fluids as well as progression of right foot paresthesias\nand interval development of motor weakness in the right foot concerning for sciatic\nnerve palsy. The patient was taken in an emergent manner to the operating room and\nunderwent a fasciotomy of the right posterior thigh followed by interventional\nradiology embolization of a profunda femoral vessel. Following the above\ninterventions, the patient’s symptoms gradually improved and at his 1-month\nfollow-up appointment, he did not have any significant morbidity related to his\ncompartment syndrome.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 571,
+  "solution": "Apply CHA2DS2-VASc to the patient's atrial fibrillation at admission:\n- Congestive heart failure (1 point) and history of hypertension (1): neither documented, so 0 each. A single BP of 129/96 does not establish a hypertension history.\n- Age 86: +2 for age ≥75; do not also count the 65–74 age band.\n- Diabetes (1), prior stroke/TIA/systemic embolism (2), and vascular disease such as prior MI or peripheral arterial disease (1): none documented, so 0 each. The traumatic thigh hematoma is not qualifying vascular disease.\n- Sex category: male, 0.\nTotal = 0 + 0 + 2 + 0 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 858,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

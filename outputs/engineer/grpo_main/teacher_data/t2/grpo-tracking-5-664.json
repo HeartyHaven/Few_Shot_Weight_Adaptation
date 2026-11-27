@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-664",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets The Trial, Claire gets Candide, Dave gets Beloved, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Eve swap books. Then, Alice and Bob swap books. Then, Alice and Claire swap books. Finally, Dave and Alice swap books. At the end of the semester, Eve has\nOptions:\n(A) Ivanhoe\n(B) The Trial\n(C) Candide\n(D) Beloved\n(E) Siddhartha",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve).\nInitial: (Ivanhoe, The Trial, Candide, Beloved, Siddhartha)\n1. Alice swaps with Claire: (Candide, The Trial, Ivanhoe, Beloved, Siddhartha)\n2. Bob swaps with Eve: (Candide, Siddhartha, Ivanhoe, Beloved, The Trial)\n3. Alice swaps with Bob: (Siddhartha, Candide, Ivanhoe, Beloved, The Trial)\n4. Alice swaps with Claire: (Ivanhoe, Candide, Siddhartha, Beloved, The Trial)\n5. Dave swaps with Alice: (Beloved, Candide, Siddhartha, Ivanhoe, The Trial)\nEve has The Trial, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1124,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

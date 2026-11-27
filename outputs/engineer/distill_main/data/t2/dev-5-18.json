@@ -1,0 +1,87 @@
+{
+  "id": "dev-5-18",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a green ball, Bob has a white ball, Claire has a yellow ball, Dave has a gold ball, and Eve has a orange ball.\nAs the game progresses, pairs of players trade balls. First, Dave and Bob swap balls. Then, Claire and Alice swap balls. Then, Bob and Alice swap balls. Then, Alice and Bob swap balls. Finally, Alice and Dave swap balls. At the end of the game, Alice has the\nOptions:\n(A) green ball\n(B) white ball\n(C) yellow ball\n(D) gold ball\n(E) orange ball",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "green",
+      "Bob": "white",
+      "Claire": "yellow",
+      "Dave": "gold",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "green",
+      "Bob": "gold",
+      "Claire": "yellow",
+      "Dave": "white",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "gold",
+      "Claire": "green",
+      "Dave": "white",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "yellow",
+      "Claire": "green",
+      "Dave": "white",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "gold",
+      "Claire": "green",
+      "Dave": "white",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "white",
+      "Bob": "gold",
+      "Claire": "green",
+      "Dave": "yellow",
+      "Eve": "orange"
+    }
+  ],
+  "solution": "Ball colors are listed in player order: Alice, Bob, Claire, Dave, Eve.\nInitial: (green, white, yellow, gold, orange)\n1. Dave and Bob swap: (green, gold, yellow, white, orange)\n2. Claire and Alice swap: (yellow, gold, green, white, orange)\n3. Bob and Alice swap: (gold, yellow, green, white, orange)\n4. Alice and Bob swap: (yellow, gold, green, white, orange)\n5. Alice and Dave swap: (white, gold, green, yellow, orange)\nAlice has the white ball, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 30,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

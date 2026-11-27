@@ -1,0 +1,22 @@
+{
+  "id": "train-6648",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nAn 87-year-old man presented with multiple episodes of non-bloody, watery diarrhea associated with nausea and epigastric pain for two days. He had a past medical history of hypertension, hyperlipidemia, and coronary artery disease with bypass surgery. He denied any fever, vomiting, sick contact, recent travel, or recent antibiotic use. On physical exam, his blood pressure was 146/90 mmHg, pulse rate was 90 beats per minute, respiratory rate was 20 breaths per minute, and temperature was 100.8°F. He was non-toxic-appearing without acute distress, mild epigastric tenderness with hypoactive bowel sounds was noted, without rebound tenderness or guarding. Normal vesicular breathing without any crackles or wheezing on chest exam. Laboratory findings showed normal blood counts except leukocytosis of 14,000/ml, elevated urea blood levels of 30 mmol/L, and creatinine level of 1.3 mg/dl. A contrast-enhanced computed tomography (CECT) scan of the abdomen and pelvis showed air in the portal vein and gastric wall, with minimal thickening of the proximal small bowel, which was concerning for emphysematous gastroenteritis (Figure ).\nFurther workup results were negative, including blood cultures, stool studies, Clostridium difficile toxins, and lactic acid levels. He was admitted to the intensive care unit (ICU) for closer monitoring and evaluated by surgery, gastroenterology, and infectious disease specialists. His care team decided to treat the patient nonoperatively based on his hemodynamic stability and a benign abdominal exam. The patient was placed on a “nil per os” (i.e., nothing by mouth) order and received intravenous (IV) fluids and IV antibiotics, including ciprofloxacin and metronidazole. With no other identifiable cause of PI, the patient’s presentation was ultimately thought to represent a mild bacterial infection yielding minimal clues to the definitive diagnosis aside from radiographic data. The patient recovered well with nonoperative management and was discharged on oral antibiotics after a few days, with plans to follow up with outpatient CT scan imaging.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 51,
+  "prompt_tokens": 534,
+  "solution": "Adult SIRS criteria each contribute at most 1 point:\n- Temperature >38°C or <36°C: 100.8°F is approximately 38.2°C → 1.\n- Heart rate >90/min: exactly 90/min does not exceed the threshold → 0.\n- Respiratory rate >20/min or PaCO₂ <32 mmHg: RR exactly 20/min, with no qualifying PaCO₂ reported → 0.\n- WBC >12,000/µL, <4,000/µL, or >10% bands: admission leukocytosis of 14,000 meets the upper threshold → 1.\nSum = 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 943,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

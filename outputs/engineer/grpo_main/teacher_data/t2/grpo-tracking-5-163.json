@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-163",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets The Hobbit, Claire gets Middlemarch, Dave gets Ivanhoe, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Claire swap books. Then, Claire and Eve swap books. Then, Bob and Claire swap books. Finally, Alice and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) Dune\n(B) The Hobbit\n(C) Middlemarch\n(D) Ivanhoe\n(E) Hamlet",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "The Hobbit",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Dune | The Hobbit | Middlemarch | Ivanhoe | Hamlet\n1. Alice ↔ Claire: Middlemarch | The Hobbit | Dune | Ivanhoe | Hamlet\n2. Bob ↔ Claire: Middlemarch | Dune | The Hobbit | Ivanhoe | Hamlet\n3. Claire ↔ Eve: Middlemarch | Dune | Hamlet | Ivanhoe | The Hobbit\n4. Bob ↔ Claire: Middlemarch | Hamlet | Dune | Ivanhoe | The Hobbit\n5. Alice ↔ Eve: The Hobbit | Hamlet | Dune | Ivanhoe | Middlemarch\nBob has Hamlet, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1368,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-933",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Jane Eyre, Claire gets Persuasion, Dave gets Dracula, and Eve gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Alice and Claire swap books. Then, Eve and Alice swap books. Then, Bob and Claire swap books. Finally, Dave and Eve swap books. At the end of the semester, Claire has\nOptions:\n(A) Siddhartha\n(B) Jane Eyre\n(C) Persuasion\n(D) Dracula\n(E) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha",
+      "Dave": "Persuasion",
+      "Eve": "Dracula"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Siddhartha | Jane Eyre | Persuasion | Dracula | Beloved\n1. Bob ↔ Alice: Jane Eyre | Siddhartha | Persuasion | Dracula | Beloved\n2. Alice ↔ Claire: Persuasion | Siddhartha | Jane Eyre | Dracula | Beloved\n3. Eve ↔ Alice: Beloved | Siddhartha | Jane Eyre | Dracula | Persuasion\n4. Bob ↔ Claire: Beloved | Jane Eyre | Siddhartha | Dracula | Persuasion\n5. Dave ↔ Eve: Beloved | Jane Eyre | Siddhartha | Persuasion | Dracula\nClaire has Siddhartha, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1288,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

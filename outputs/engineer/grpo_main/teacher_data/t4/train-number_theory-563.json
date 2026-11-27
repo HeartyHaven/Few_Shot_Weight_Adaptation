@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-563",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "What is the largest positive integer $n$ for which there is a unique integer $k$ such that $\\frac{8}{15} < \\frac{n}{n + k} < \\frac{7}{13}$?\n",
+  "answer": "112",
+  "prompt_tokens": 77,
+  "solution": "Since $n>0$ and the fraction is positive, $n+k>0$. Cross-multiplying gives $8(n+k)<15n$ and $13n<7(n+k)$, so $6n/7<k<7n/8$.\nThe interval has length $7n/8-6n/7=n/56$. If $n>112$, its length exceeds 2, so it contains at least two integers: the first integer strictly above the lower endpoint and the next integer, both within 2 of that endpoint. At $n=112$, the interval is $96<k<98$, containing only $k=97$. Thus 112 works and no larger integer does.\nFinal answer: 112",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1398,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "112",
+    "correct": true
+  }
+}

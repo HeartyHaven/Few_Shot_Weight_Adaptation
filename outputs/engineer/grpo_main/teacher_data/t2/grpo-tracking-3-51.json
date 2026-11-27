@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-51",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right winger, Bob is playing center midfielder, and Claire is playing striker.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Alice trade positions. Then, Bob and Alice trade positions. Finally, Claire and Alice trade positions. At the end of the match, Bob is playing\nOptions:\n(A) right winger\n(B) center midfielder\n(C) striker",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "right winger",
+      "Bob": "center midfielder",
+      "Claire": "striker"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "right winger",
+      "Claire": "striker"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "center midfielder",
+      "Claire": "striker"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "center midfielder",
+      "Claire": "right winger"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Positions in order (Alice, Bob, Claire):\nInitial: (right winger, center midfielder, striker)\n1. Bob and Alice swap: (center midfielder, right winger, striker)\n2. Bob and Alice swap: (right winger, center midfielder, striker)\n3. Claire and Alice swap: (striker, center midfielder, right winger)\nBob plays center midfielder, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1341,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

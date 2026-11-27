@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-989",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Emma, Claire gets Walden, Dave gets Beloved, Eve gets Hamlet, Fred gets Siddhartha, and Gertrude gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Dave and Gertrude swap books. Then, Fred and Gertrude swap books. Then, Gertrude and Dave swap books. Then, Bob and Alice swap books. Then, Gertrude and Alice swap books. Then, Gertrude and Claire swap books. Finally, Alice and Gertrude swap books. At the end of the semester, Fred has\nOptions:\n(A) Ivanhoe\n(B) Emma\n(C) Walden\n(D) Beloved\n(E) Hamlet\n(F) Siddhartha\n(G) The Hobbit",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Hamlet",
+      "Fred": "Siddhartha",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet",
+      "Fred": "Siddhartha",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Walden",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Ivanhoe",
+      "Claire": "Walden",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Walden",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet",
+      "Fred": "Beloved",
+      "Gertrude": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Books in each row are listed for Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Ivanhoe, Emma, Walden, Beloved, Hamlet, Siddhartha, The Hobbit\n1. Dave ↔ Gertrude: Ivanhoe, Emma, Walden, The Hobbit, Hamlet, Siddhartha, Beloved\n2. Fred ↔ Gertrude: Ivanhoe, Emma, Walden, The Hobbit, Hamlet, Beloved, Siddhartha\n3. Gertrude ↔ Dave: Ivanhoe, Emma, Walden, Siddhartha, Hamlet, Beloved, The Hobbit\n4. Bob ↔ Alice: Emma, Ivanhoe, Walden, Siddhartha, Hamlet, Beloved, The Hobbit\n5. Gertrude ↔ Alice: The Hobbit, Ivanhoe, Walden, Siddhartha, Hamlet, Beloved, Emma\n6. Gertrude ↔ Claire: The Hobbit, Ivanhoe, Emma, Siddhartha, Hamlet, Beloved, Walden\n7. Alice ↔ Gertrude: Walden, Ivanhoe, Emma, Siddhartha, Hamlet, Beloved, The Hobbit\nFred has Beloved, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1110,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

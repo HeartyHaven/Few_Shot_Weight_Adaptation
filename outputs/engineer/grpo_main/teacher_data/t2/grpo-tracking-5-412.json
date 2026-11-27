@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-412",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a grey ball, Bob has a white ball, Claire has a purple ball, Dave has a brown ball, and Eve has a orange ball.\nAs the game progresses, pairs of players trade balls. First, Claire and Dave swap balls. Then, Claire and Alice swap balls. Then, Dave and Eve swap balls. Then, Dave and Alice swap balls. Finally, Eve and Bob swap balls. At the end of the game, Dave has the\nOptions:\n(A) grey ball\n(B) white ball\n(C) purple ball\n(D) brown ball\n(E) orange ball",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "grey",
+      "Bob": "white",
+      "Claire": "purple",
+      "Dave": "brown",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "white",
+      "Claire": "brown",
+      "Dave": "purple",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "white",
+      "Claire": "grey",
+      "Dave": "purple",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "white",
+      "Claire": "grey",
+      "Dave": "orange",
+      "Eve": "purple"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "white",
+      "Claire": "grey",
+      "Dave": "brown",
+      "Eve": "purple"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "purple",
+      "Claire": "grey",
+      "Dave": "brown",
+      "Eve": "white"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists ball colors in this order: Alice | Bob | Claire | Dave | Eve.\nInitial: grey | white | purple | brown | orange\n1. Claire–Dave: grey | white | brown | purple | orange\n2. Claire–Alice: brown | white | grey | purple | orange\n3. Dave–Eve: brown | white | grey | orange | purple\n4. Dave–Alice: orange | white | grey | brown | purple\n5. Eve–Bob: orange | purple | grey | brown | white\nDave has the brown ball, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1335,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

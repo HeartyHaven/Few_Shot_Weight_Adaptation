@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-421",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Hamlet, Claire gets Dracula, Dave gets Beloved, Eve gets The Hobbit, Fred gets Middlemarch, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Eve and Claire swap books. Then, Bob and Dave swap books. Then, Alice and Dave swap books. Then, Fred and Claire swap books. Then, Gertrude and Dave swap books. Then, Bob and Eve swap books. Finally, Alice and Fred swap books. At the end of the semester, Fred has\nOptions:\n(A) Siddhartha\n(B) Hamlet\n(C) Dracula\n(D) Beloved\n(E) The Hobbit\n(F) Middlemarch\n(G) Candide",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "Beloved",
+      "Eve": "Dracula",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Beloved",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "Dracula",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Beloved",
+      "Claire": "The Hobbit",
+      "Dave": "Siddhartha",
+      "Eve": "Dracula",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch",
+      "Dave": "Siddhartha",
+      "Eve": "Dracula",
+      "Fred": "The Hobbit",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch",
+      "Dave": "Candide",
+      "Eve": "Dracula",
+      "Fred": "The Hobbit",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Candide",
+      "Eve": "Beloved",
+      "Fred": "The Hobbit",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Middlemarch",
+      "Dave": "Candide",
+      "Eve": "Beloved",
+      "Fred": "Hamlet",
+      "Gertrude": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Book order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: Siddhartha | Hamlet | Dracula | Beloved | The Hobbit | Middlemarch | Candide\n1. Eve–Claire: Siddhartha | Hamlet | The Hobbit | Beloved | Dracula | Middlemarch | Candide\n2. Bob–Dave: Siddhartha | Beloved | The Hobbit | Hamlet | Dracula | Middlemarch | Candide\n3. Alice–Dave: Hamlet | Beloved | The Hobbit | Siddhartha | Dracula | Middlemarch | Candide\n4. Fred–Claire: Hamlet | Beloved | Middlemarch | Siddhartha | Dracula | The Hobbit | Candide\n5. Gertrude–Dave: Hamlet | Beloved | Middlemarch | Candide | Dracula | The Hobbit | Siddhartha\n6. Bob–Eve: Hamlet | Dracula | Middlemarch | Candide | Beloved | The Hobbit | Siddhartha\n7. Alice–Fred: The Hobbit | Dracula | Middlemarch | Candide | Beloved | Hamlet | Siddhartha\nFred has Hamlet, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1262,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

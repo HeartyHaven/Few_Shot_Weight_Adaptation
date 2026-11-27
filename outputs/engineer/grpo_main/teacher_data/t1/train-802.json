@@ -1,0 +1,22 @@
+{
+  "id": "train-802",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 61-year-old male presented to the emergency department with a 2-h history of new alexia, intermittent expressive dysphasia and right upper limb ataxia. He had a National Institutes for Health Stroke Scale (NIHSS) score of 6 and modified Rankin Score (mRS) for neurological disability of 4. His vision assessed by confrontation remained intact. He had a past medical history of diet controlled type 2 diabetes mellitus and hypertension controlled with Ramipril and Amlodipine 5 mg.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 183,
+  "solution": "CHA₂DS₂-VASc assigns 1 point each for heart failure, hypertension, diabetes, vascular disease, age 65–74, and female sex; it assigns 2 for age ≥75 or for stroke/TIA/systemic embolism. The age categories are mutually exclusive.\n- Treated hypertension: 1. Diet-controlled type 2 diabetes: 1. Both diagnoses count regardless of treatment.\n- Stroke/TIA/systemic embolism: 2, counting the presenting episode of acute alexia, dysphasia, and right arm ataxia as a cerebrovascular event. The NIHSS value itself adds no points.\n- Heart failure: 0; vascular disease: 0; age 61: 0; male sex: 0.\nTotal: 1 + 1 + 2 + 0 + 0 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 947,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

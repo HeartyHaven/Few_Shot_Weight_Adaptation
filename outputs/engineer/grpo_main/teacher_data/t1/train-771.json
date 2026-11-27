@@ -1,0 +1,22 @@
+{
+  "id": "train-771",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 70-year-old woman presented to the emergency room with symptoms of total aphasia and right unilateral spatial neglect. She had a history of bronchial asthma, dyslipidemia, and type 2 diabetes. Dyslipidemia and type 2 diabetes were noted from the age of 62. The onset of symptoms was 46 min prior to presentation to the emergency room. Her neurological findings confirmed mixed aphasia (she could not obey simple commands), neglect of the right half of her body, and left conjugated deviation. No obvious paralysis or sensory disturbances were noted. Deep tendon reflex was normal, and no pathological reflex was observed. Her NIH Stroke Scale (NIHSS) was 7. Her baseline MRI revealed no obvious high signal in DWI (Fig. ). Fluid-attenuated inversion recovery (FLAIR) confirmed FLAIR vessel hyperintensities in the left middle cerebral artery (MCA) (Fig. ). Magnetic resonance angiography (MRA) showed partial obstruction in the distal part of the left MCA (Fig. ), which may have been an artifact. To make a definitive diagnosis, perfusion-weighted imaging (PWI) was additionally performed to assess the tissue at risk. Our automated software showed 12 mL of Tmax >6 s of hypoperfusion in the left MCA region, which matched the lesion side. Because the ischemic core calculated by an apparent diffusion coefficient (ADC) <620/10−3 mm2/s was not present, this case was diagnosed as DWI-negative DWI-PWI-mismatched AIS (Fig. ). Carotid vascular ultrasound showed no stenosis in the bilateral common carotid artery or internal carotid artery. We diagnosed her as AIS, and intravenous rt-PA therapy was administered 22 min after entering the MRI suite. She responded well to the reperfusion therapy, and her NIHSS was 0 after leaving the MRI suite. No further deterioration of neurological signs was observed during her admission. A FLAIR scan on the 9th day showed an ischemic change in the same lesion as the perfusion abnormality. This area was also identical to the obstructed left MCA seen on MRA. Transthoracic echocardiography did not reveal any apparent cardiac dysfunction or intracardiac thrombus. Nonvalvular atrial fibrillation was observed on day 2 of admission, and we diagnosed her stroke subtype as a cardiogenic cerebral embolism. Direct oral anticoagulant (dabigatran 300 mg/day) was prescribed at the time she was discharged to her home.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 618,
+  "solution": "CHA2DS2-VASc estimates thromboembolic risk in atrial fibrillation. Score the conditions present at admission:\n- Congestive heart failure: none documented → 0.\n- Hypertension: none documented → 0.\n- Age: 70 years, within the 65–74 band → 1 (age ≥75 would score 2 instead).\n- Diabetes mellitus: type 2 diabetes → 1.\n- Stroke, TIA, or systemic embolism: the ischemic stroke was already present before treatment → 2. The initially negative DWI does not exclude it.\n- Vascular disease: no prior MI, peripheral arterial disease, or aortic plaque documented; dyslipidemia alone does not qualify → 0.\n- Sex category: female → 1.\nSum: 0 + 0 + 1 + 1 + 2 + 0 + 1 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 851,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

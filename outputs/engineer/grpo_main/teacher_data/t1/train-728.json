@@ -1,0 +1,22 @@
+{
+  "id": "train-728",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 76-year-old man presents after an acute onset seizure. He lives in a retirement home and denies any previous history of seizures. Past medical history is significant for a hemorrhagic stroke 4 years ago, and type 2 diabetes, managed with metformin. His vital signs include: blood pressure 80/50 mm Hg, pulse 80/min, and respiratory rate 19/min. On physical examination, the patient is lethargic. Mucous membranes are dry. A noncontrast CT of the head is performed and is unremarkable.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 192,
+  "solution": "CHA₂DS₂-VASc assigns 1 point each for heart failure, hypertension, diabetes, vascular disease, and female sex; 2 for prior stroke/TIA/systemic embolism; and 1 for age 65–74 or 2 for age ≥75.\n- Heart failure: not documented = 0.\n- Hypertension: no history reported = 0.\n- Age: 76 years = 2.\n- Diabetes: treated type 2 diabetes = 1.\n- Stroke/TIA/systemic embolism: counting the documented hemorrhagic stroke four years ago under the prior-stroke criterion = 2.\n- Vascular disease: no separate qualifying history reported = 0.\n- Sex: male = 0.\nTotal = 0 + 0 + 2 + 1 + 2 + 0 + 0 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 701,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

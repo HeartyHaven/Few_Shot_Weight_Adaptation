@@ -1,0 +1,22 @@
+{
+  "id": "train-4374",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA previously healthy 11-year-old boy is brought to the emergency department because of a 3-day history of fever, cough, and a runny nose. During this period, he has also had pink, itchy eyes. The patient emigrated from Syria 2 weeks ago. His parents died 6 months ago. He has not yet received any routine childhood vaccinations. He lives at a foster home with ten other refugees; two have similar symptoms. He appears anxious and is sweating. His temperature is 39.2°C (102.5°F), pulse is 100/min, respirations are 20/min, and blood pressure is 125/75 mm Hg. Examination shows conjunctivitis of both eyes. There are multiple bluish-gray lesions on an erythematous background on the buccal mucosa and the soft palate.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 20,
+  "prompt_tokens": 250,
+  "solution": "Use the age-adjusted Centor (McIsaac) score at admission:\n- Temperature >38°C: 39.2°C → +1.\n- Absence of cough: he has a cough → 0.\n- Tonsillar swelling or exudate: not described. The buccal and palatal lesions are not tonsillar exudate → 0.\n- Tender anterior cervical nodes: not reported → 0.\n- Age 3–14 years: he is 11 → +1.\nTotal = 1 + 0 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 942,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

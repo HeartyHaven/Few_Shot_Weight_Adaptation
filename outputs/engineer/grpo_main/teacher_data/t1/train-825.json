@@ -1,0 +1,22 @@
+{
+  "id": "train-825",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 84-year-old woman with Alzheimer's disease is brought to the physician by her son for a follow-up examination. The patient lives with her son, who is her primary caregiver. He reports that it is becoming gradually more difficult to care for her. She occasionally has tantrums and there are times when she does not recognize him. She sleeps 6–8 hours throughout the day and is increasingly agitated and confused at night. When the phone, television, or oven beeps she thinks she is at the dentist's office and becomes very anxious. She eats 2–3 meals a day and has a good appetite. She has not fallen. She has not left the home in weeks except for short walks. She has a history of hypertension, hyperlipidemia, atrial fibrillation, and hypothyroidism. She takes levothyroxine, aspirin, warfarin, donepezil, verapamil, lisinopril, atorvastatin, and a multivitamin daily. Her temperature is 37°C (98.4°F), pulse is 66/min, respirations are 13/min, and blood pressure is 126/82 mm Hg. Physical examination shows no abnormalities. It is important to the family that the patient continues her care in the home.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 348,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Using the patient's baseline history:\n- Congestive heart failure or left ventricular dysfunction: not documented → 0.\n- Hypertension: documented; a controlled blood pressure does not remove the point → 1.\n- Age: 84 years → 2 (age ≥75; the 1 point for age 65–74 is not added).\n- Diabetes mellitus: not documented → 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): not documented → 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): not documented; hyperlipidemia alone does not qualify → 0.\n- Female sex → 1.\nSum: 0 + 1 + 2 + 0 + 0 + 0 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 892,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

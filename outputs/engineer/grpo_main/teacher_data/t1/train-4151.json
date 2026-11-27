@@ -1,0 +1,22 @@
+{
+  "id": "train-4151",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 57-year-old male presents to his primary care physician with upper abdominal pain. He reports a 3-month history of mild epigastric pain that improves with meals. He has lost 15 pounds since his symptoms started. His past medical history is notable for gynecomastia in the setting of a prolactinoma for which he underwent surgical resection over 10 years prior. He has a 15-pack-year smoking history, a history of heroin abuse, and is on methadone. His family history is notable for parathyroid adenoma in his father. His temperature is 98.8°F (37.1°C), blood pressure is 125/80 mmHg, pulse is 78/min, and respirations are 18/min.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 18,
+  "prompt_tokens": 239,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, Risk factors, and Troponin when evaluating possible acute coronary syndrome.\n- History: chronic mild epigastric pain relieved by meals is only slightly suspicious for coronary ischemia → 0.\n- ECG: no tracing reported. A normal ECG would score 0; nonspecific repolarization changes score 1 and significant ST depression scores 2.\n- Age: 57 falls in the 45–64 range → 1.\n- Risk factors: smoking is the only documented coronary risk factor. One or two risk factors score 1; his father's parathyroid adenoma is not a family history of coronary disease → 1.\n- Troponin: not reported. A value at or below the assay upper limit of normal would score 0; elevations score 1–2.\nThe documented subtotal is 0 + 1 + 1 = 2. A complete score requires ECG and troponin results; assuming both are normal, the total is 0 + 0 + 1 + 1 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 823,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-690",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Umar, Bob is dancing with Quinn, Claire is dancing with Lena, Dave is dancing with Oscar, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Dave and Eve switch partners. Then, Claire and Bob switch partners. Then, Eve and Claire switch partners. Then, Alice and Dave switch partners. Finally, Dave and Bob switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Umar\n(B) Quinn\n(C) Lena\n(D) Oscar\n(E) Yuki",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Umar",
+      "Bob": "Quinn",
+      "Claire": "Lena",
+      "Dave": "Oscar",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Quinn",
+      "Claire": "Lena",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Lena",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Yuki",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Umar",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Umar",
+      "Claire": "Oscar",
+      "Dave": "Lena",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Umar, Quinn, Lena, Oscar, Yuki\n1. Dave and Eve swap: Umar, Quinn, Lena, Yuki, Oscar\n2. Claire and Bob swap: Umar, Lena, Quinn, Yuki, Oscar\n3. Eve and Claire swap: Umar, Lena, Oscar, Yuki, Quinn\n4. Alice and Dave swap: Yuki, Lena, Oscar, Umar, Quinn\n5. Dave and Bob swap: Yuki, Umar, Oscar, Lena, Quinn\nClaire is dancing with Oscar, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1183,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

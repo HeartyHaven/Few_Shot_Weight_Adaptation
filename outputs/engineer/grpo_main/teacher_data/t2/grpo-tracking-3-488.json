@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-488",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Oscar, and Claire is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Bob and Claire switch partners. Finally, Bob and Claire switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Yuki\n(B) Oscar\n(C) Priya",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Oscar",
+      "Claire": "Priya"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Yuki",
+      "Claire": "Priya"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Priya",
+      "Claire": "Yuki"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Yuki",
+      "Claire": "Priya"
+    }
+  ],
+  "prompt_tokens": 139,
+  "solution": "Each row lists the partners of (Alice, Bob, Claire), in that order.\nInitial: (Yuki, Oscar, Priya)\n1. Bob and Alice switch: (Oscar, Yuki, Priya)\n2. Bob and Claire switch: (Oscar, Priya, Yuki)\n3. Bob and Claire switch: (Oscar, Yuki, Priya)\nBob is dancing with Yuki, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1318,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

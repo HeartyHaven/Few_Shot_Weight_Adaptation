@@ -30,9 +30,12 @@ def num(s):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--student", required=True); ap.add_argument("--lora"); ap.add_argument("--name", required=True); ap.add_argument("--mem", type=float, default=0.4)
+    ap.add_argument("--model-path", help="2026-11-25: merged weights of an edited run (tdwa.eval_fast --ret); default = the base student")
+    ap.add_argument("--dtype", default="bfloat16", help="float32 for the 0.6B-4B students, as in their hidden tests")
+    ap.add_argument("--meta", default="{}", help="extra JSON merged into the output metadata")
     a = ap.parse_args()
     from datasets import load_dataset
-    st = VStudent(a.student, None, 1, mem=a.mem, lora=a.lora)
+    st = VStudent(a.student, a.model_path, 1, dtype=a.dtype, mem=a.mem, lora=a.lora)
     rng = random.Random(1212); res = {}; out_dir = os.path.join(ROOT, "_secret", "eval_ret", a.name); os.makedirs(out_dir, exist_ok=True)
     mm = load_dataset("cais/mmlu", "all")["test"]; by = {}
     for r in mm:
@@ -49,7 +52,8 @@ def main():
     res["gsm8k"] = ci(ok)
     json.dump([{"q": r["question"], "gold": y, "out": o, "ok": k} for r, y, o, k in zip(g, gold, outs, ok)], open(os.path.join(out_dir, "gsm8k.json"), "w"))
     os.makedirs(os.path.join(ROOT, "eval_ret"), exist_ok=True)
-    json.dump({"student": a.student, "lora": a.lora, "engine": "vllm", "results": res}, open(os.path.join(ROOT, "eval_ret", a.name + ".json"), "w"), indent=1)
+    json.dump({**json.loads(a.meta), "student": a.student, "lora": a.lora, "model_path": a.model_path, "dtype": a.dtype, "engine": "vllm", "results": res},
+              open(os.path.join(ROOT, "eval_ret", a.name + ".json"), "w"), indent=1)
     print(a.name, res)
 
 

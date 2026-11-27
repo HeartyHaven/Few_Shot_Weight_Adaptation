@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-676",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Dune, Claire gets Beloved, Dave gets Walden, Eve gets Candide, Fred gets Persuasion, and Gertrude gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Fred and Alice swap books. Then, Dave and Fred swap books. Then, Gertrude and Eve swap books. Then, Fred and Dave swap books. Then, Dave and Gertrude swap books. Then, Gertrude and Claire swap books. Finally, Gertrude and Dave swap books. At the end of the semester, Fred has\nOptions:\n(A) Hamlet\n(B) Dune\n(C) Beloved\n(D) Walden\n(E) Candide\n(F) Persuasion\n(G) Emma",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Candide",
+      "Fred": "Persuasion",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Candide",
+      "Fred": "Hamlet",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Walden",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "Hamlet",
+      "Eve": "Emma",
+      "Fred": "Walden",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Emma",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Hamlet",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Emma",
+      "Fred": "Hamlet",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Emma",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Reader order for every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: Hamlet | Dune | Beloved | Walden | Candide | Persuasion | Emma\n1. Fred ↔ Alice: Persuasion | Dune | Beloved | Walden | Candide | Hamlet | Emma\n2. Dave ↔ Fred: Persuasion | Dune | Beloved | Hamlet | Candide | Walden | Emma\n3. Gertrude ↔ Eve: Persuasion | Dune | Beloved | Hamlet | Emma | Walden | Candide\n4. Fred ↔ Dave: Persuasion | Dune | Beloved | Walden | Emma | Hamlet | Candide\n5. Dave ↔ Gertrude: Persuasion | Dune | Beloved | Candide | Emma | Hamlet | Walden\n6. Gertrude ↔ Claire: Persuasion | Dune | Walden | Candide | Emma | Hamlet | Beloved\n7. Gertrude ↔ Dave: Persuasion | Dune | Walden | Beloved | Emma | Hamlet | Candide\nFred has Hamlet, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1054,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

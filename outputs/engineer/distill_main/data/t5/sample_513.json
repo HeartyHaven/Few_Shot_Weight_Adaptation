@@ -1,0 +1,17 @@
+{
+  "id": "sample_513",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(array):\n    while -1 in array:\n        array.pop(-3)\n    while 0 in array:\n        array.pop()\n    while 1 in array:\n        array.pop(0)\n    return array\n```\n\nInput: f([0, 2])",
+  "answer": "[]",
+  "solution": "Start with array = [0, 2]. There is no -1, so the first loop is skipped. In the second loop, 0 is present, so pop() removes the last element, 2, leaving [0]. Since 0 is still present, pop() removes 0, leaving []. The second loop stops, and the third loop is skipped because 1 is absent. Return array.\nFinal answer: []",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 76,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[]",
+    "correct": true
+  }
+}

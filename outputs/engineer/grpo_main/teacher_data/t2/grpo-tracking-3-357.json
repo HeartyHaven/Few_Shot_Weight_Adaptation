@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-357",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Rosa, Bob is dancing with Lena, and Claire is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Claire and Bob switch partners. Then, Alice and Bob switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Rosa\n(B) Lena\n(C) Yuki",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Yuki"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Yuki",
+      "Claire": "Lena"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Rosa",
+      "Claire": "Lena"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Rosa",
+      "Claire": "Yuki"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Each row lists partners in the order (Alice, Bob, Claire).\nInitial: (Rosa, Lena, Yuki)\n1. Claire and Bob swap: (Rosa, Yuki, Lena)\n2. Alice and Bob swap: (Yuki, Rosa, Lena)\n3. Alice and Claire swap: (Lena, Rosa, Yuki)\nBob is dancing with Rosa, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1295,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

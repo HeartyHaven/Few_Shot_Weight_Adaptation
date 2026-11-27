@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-592",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets The Hobbit, and Claire gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Bob and Claire swap books. Finally, Alice and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Emma\n(B) The Hobbit\n(C) Hamlet",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Hamlet"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "The Hobbit"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 140,
+  "solution": "Read each book list in the order (Alice, Bob, Claire).\nInitial: (Emma, The Hobbit, Hamlet)\n1. Claire and Alice swap: (Hamlet, The Hobbit, Emma)\n2. Bob and Claire swap: (Hamlet, Emma, The Hobbit)\n3. Alice and Bob swap: (Emma, Hamlet, The Hobbit)\nClaire's final book is The Hobbit, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1296,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

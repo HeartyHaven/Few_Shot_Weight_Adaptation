@@ -1,0 +1,22 @@
+{
+  "id": "train-6678",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nIn April 2020, a 46-year-old man with a past medical history of diabetes presented to the emergency room with symptoms of cough, shortness of breath, and fevers for four weeks. He was treated for suspected pneumonia with azithromycin two weeks prior to presentation and denied any improvement in respiratory symptoms thereafter. In addition, he developed a painful and pruritic rash that was progressively worsening over the last two weeks (see for timeline of patient course).\nOn physical examination, he was afebrile (36.9 C) with tachycardia (110 bpm), blood pressure 127/77 mm Hg, respiratory rate 20, and O2 saturation 94% on room air. He had erosions on bilateral nasal mucosa and vermillion lips with overlying crusts. Oropharynx was clear. There were purpuric macules and papules on bilateral palms, arms, and legs, few with overlying vesicular changes and collarettes of scale (Figures and ). He also had retiform purpuric macules and patches on buttocks and thighs (), as well as ulcerations on buttocks at the gluteal cleft.\nLaboratory evaluation showed an elevated white blood cell count (15.3K/μL), decreased hemoglobin (10.3 g/dL), elevated blood urea nitrogen (48 mg/dL), creatine (2.9 mg/dL), and D-dimer (8,922 ng/mL). He was cANCA positive, coronavirus PCR negative via nasopharyngeal swab, and coronavirus antibody IgM positive and IgG negative. CT scan of the chest showed patchy ground-glass opacities in the lungs.\nBiopsy of skin showed superficial and deep perivascular inflammation with thrombus formation (H&E stain, 10x) (). High-power view showed an infiltrate composed of lymphocytes, histiocytes, neutrophils, and eosinophils, with prominent erythrocyte extravasation, leukocytoclasia, and fibrinoid necrosis of vessels (H&E stain, 40x) (). Renal biopsy showed interstitial mixed cell infiltrates and intraglomerular thrombi and necrosis, concerning for GPA.\nBased upon his clinical presentation, histologic findings, and laboratory studies, the patient was diagnosed with GPA in the setting of suspected coronavirus infection. He was first treated for coronavirus with five-day course of hydroxychloroquine, followed by treatment of GPA with systemic steroids and rituximab infusion. Kidney function improved, and his rash completely resolved. He was discharged on a steroid taper.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 51,
+  "prompt_tokens": 636,
+  "solution": "Count one point for each SIRS criterion present on initial assessment:\n1. Temperature >38 °C or <36 °C: 36.9 °C = 0. Earlier subjective fevers do not change the admission value.\n2. Heart rate >90/min: 110/min = 1.\n3. Respiratory rate >20/min or PaCO₂ <32 mmHg: rate exactly 20/min does not exceed the threshold; no low PaCO₂ is reported = 0.\n4. WBC >12,000/µL, <4,000/µL, or >10% bands: WBC 15,300/µL exceeds 12,000 = 1.\nTotal = 0 + 1 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 694,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

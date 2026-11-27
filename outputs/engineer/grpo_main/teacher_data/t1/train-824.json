@@ -1,0 +1,22 @@
+{
+  "id": "train-824",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 70-year-old man presents to his primary care physician for a general checkup. He states that he has been doing well and taking his medications as prescribed. He recently started a new diet and supplement to improve his health and has started exercising. The patient has a past medical history of diabetes, a myocardial infarction, and hypertension. He denies any shortness of breath at rest or with exertion. An ECG is performed and is within normal limits.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 169,
+  "solution": "CHA₂DS₂-VASc sums stroke risk factors, ordinarily in patients with atrial fibrillation. Using the documented history:\n- Congestive heart failure: not documented → 0.\n- Hypertension: present → 1.\n- Age: 70 falls in the 65–74 band → 1, rather than the 2 points for age ≥75.\n- Diabetes mellitus: present → 1.\n- Prior stroke, TIA, or systemic embolism: none reported → 0 of 2.\n- Vascular disease: prior myocardial infarction qualifies → 1.\n- Sex category: male → 0.\nTotal = 0 + 1 + 1 + 1 + 0 + 1 + 0 = 4. The normal current ECG does not change the risk-factor sum.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 802,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

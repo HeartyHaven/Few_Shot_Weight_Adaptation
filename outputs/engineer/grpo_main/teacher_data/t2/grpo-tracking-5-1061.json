@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1061",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Candide, Claire gets Walden, Dave gets Dune, and Eve gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Dave and Eve swap books. Then, Claire and Eve swap books. Then, Claire and Alice swap books. Then, Claire and Bob swap books. Finally, Dave and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) Persuasion\n(B) Candide\n(C) Walden\n(D) Dune\n(E) Emma",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Dune",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Persuasion",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Persuasion",
+      "Claire": "Candide",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "Persuasion",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Persuasion, Candide, Walden, Dune, Emma)\n1. Dave ↔ Eve: (Persuasion, Candide, Walden, Emma, Dune)\n2. Claire ↔ Eve: (Persuasion, Candide, Dune, Emma, Walden)\n3. Claire ↔ Alice: (Dune, Candide, Persuasion, Emma, Walden)\n4. Claire ↔ Bob: (Dune, Persuasion, Candide, Emma, Walden)\n5. Dave ↔ Bob: (Dune, Emma, Candide, Persuasion, Walden)\nAlice has Dune, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1306,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

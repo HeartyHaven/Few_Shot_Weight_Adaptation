@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-310",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a brown ball, Bob has a silver ball, Claire has a orange ball, Dave has a pink ball, and Eve has a gold ball.\nAs the game progresses, pairs of players trade balls. First, Eve and Alice swap balls. Then, Alice and Eve swap balls. Then, Eve and Dave swap balls. Then, Bob and Eve swap balls. Finally, Alice and Claire swap balls. At the end of the game, Bob has the\nOptions:\n(A) brown ball\n(B) silver ball\n(C) orange ball\n(D) pink ball\n(E) gold ball",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "brown",
+      "Bob": "silver",
+      "Claire": "orange",
+      "Dave": "pink",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "silver",
+      "Claire": "orange",
+      "Dave": "pink",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "silver",
+      "Claire": "orange",
+      "Dave": "pink",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "silver",
+      "Claire": "orange",
+      "Dave": "gold",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "pink",
+      "Claire": "orange",
+      "Dave": "gold",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "pink",
+      "Claire": "brown",
+      "Dave": "gold",
+      "Eve": "silver"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the ball colors for Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: brown, silver, orange, pink, gold\n1. Eve–Alice: gold, silver, orange, pink, brown\n2. Alice–Eve: brown, silver, orange, pink, gold\n3. Eve–Dave: brown, silver, orange, gold, pink\n4. Bob–Eve: brown, pink, orange, gold, silver\n5. Alice–Claire: orange, pink, brown, gold, silver\nBob has the pink ball, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1137,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

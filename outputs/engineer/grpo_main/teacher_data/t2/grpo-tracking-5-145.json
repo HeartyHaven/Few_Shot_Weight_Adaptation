@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-145",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Ivanhoe, Claire gets Hamlet, Dave gets Beloved, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Claire and Dave swap books. Then, Bob and Alice swap books. Then, Eve and Alice swap books. Finally, Claire and Alice swap books. At the end of the semester, Alice has\nOptions:\n(A) Persuasion\n(B) Ivanhoe\n(C) Hamlet\n(D) Beloved\n(E) Jane Eyre",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Beloved",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Reader order for every row: Alice | Bob | Claire | Dave | Eve.\nInitial: Persuasion | Ivanhoe | Hamlet | Beloved | Jane Eyre\n1. Claire ↔ Alice: Hamlet | Ivanhoe | Persuasion | Beloved | Jane Eyre\n2. Claire ↔ Dave: Hamlet | Ivanhoe | Beloved | Persuasion | Jane Eyre\n3. Bob ↔ Alice: Ivanhoe | Hamlet | Beloved | Persuasion | Jane Eyre\n4. Eve ↔ Alice: Jane Eyre | Hamlet | Beloved | Persuasion | Ivanhoe\n5. Claire ↔ Alice: Beloved | Hamlet | Jane Eyre | Persuasion | Ivanhoe\nAlice has Beloved, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1054,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

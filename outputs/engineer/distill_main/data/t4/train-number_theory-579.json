@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-579",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "The harmonic mean of two positive integers is the reciprocal of the arithmetic mean of their reciprocals. For how many ordered pairs of positive integers $(x,y)$ with $x<y$ is the harmonic mean of $x$ and $y$ equal to $6^{20}$?\n",
+  "answer": "799",
+  "solution": "Let k = 6^20/2 = 2^19 · 3^20. The harmonic mean is 2xy/(x+y), so setting it equal to 2k gives xy = k(x+y). Adding k² after rearranging yields (x−k)(y−k) = k².\nSince k = xy/(x+y) < x and k < y, both factors are positive. Each positive factor pair a < b with ab = k² gives exactly one solution x = k+a, y = k+b, and every solution with x < y arises this way.\nNow k² = 2^38 · 3^40 has (38+1)(40+1) = 1599 positive divisors, by choosing the two exponents independently. Exclude the divisor k, which pairs with itself and gives x = y. The other divisors pair as a and k²/a, with only the smaller one giving x < y when chosen first. Thus the count is (1599−1)/2 = 799.\nFinal answer: 799",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 27,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "799",
+    "correct": true
+  }
+}

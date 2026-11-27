@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-21",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "An o-Pod MP3 player stores and plays entire songs. Celeste has 10 songs stored on her o-Pod. The time length of each song is different. When the songs are ordered by length, the shortest song is only 30 seconds long and each subsequent song is 30 seconds longer than the previous song. Her favorite song is 3 minutes, 30 seconds long. The o-Pod will play all the songs in random order before repeating any song. What is the probability that she hears the first 4 minutes, 30 seconds of music - there are no pauses between songs - without hearing every second of her favorite song? Express your answer as a common fraction.",
+  "answer": "\\dfrac{79}{90}",
+  "prompt_tokens": 173,
+  "solution": "Count the complementary event that the favorite song finishes within the first 4 minutes, 30 seconds. Since it lasts 3 minutes, 30 seconds, it must start at most 60 seconds into the playlist. Two preceding songs would take at least 30 + 60 = 90 seconds. Thus the favorite must be first, or it must be second after the 30-second or 60-second song.\nThe probability it is first is 1/10. The probability of the second case is (2/10)(1/9): two choices qualify for the first song, and the favorite must be next among the nine remaining songs. These cases are disjoint, so the probability of hearing the entire favorite is 1/10 + 2/90 = 11/90. The requested probability is 1 − 11/90 = 79/90.\nFinal answer: \\dfrac{79}{90}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1419,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "\\dfrac{79}{90}",
+    "correct": true
+  }
+}

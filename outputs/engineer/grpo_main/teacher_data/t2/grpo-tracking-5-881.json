@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-881",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Quinn, Claire is dancing with Stefan, Dave is dancing with Priya, and Eve is dancing with Rosa.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Claire and Dave switch partners. Then, Claire and Dave switch partners. Then, Claire and Alice switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Marco\n(B) Quinn\n(C) Stefan\n(D) Priya\n(E) Rosa",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Quinn",
+      "Claire": "Stefan",
+      "Dave": "Priya",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Quinn",
+      "Claire": "Rosa",
+      "Dave": "Priya",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Quinn",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Quinn",
+      "Claire": "Rosa",
+      "Dave": "Priya",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Quinn",
+      "Claire": "Marco",
+      "Dave": "Priya",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Quinn",
+      "Claire": "Stefan",
+      "Dave": "Priya",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Dancer order in every row: Alice | Bob | Claire | Dave | Eve\nInitial: Marco | Quinn | Stefan | Priya | Rosa\n1. Eve ↔ Claire: Marco | Quinn | Rosa | Priya | Stefan\n2. Claire ↔ Dave: Marco | Quinn | Priya | Rosa | Stefan\n3. Claire ↔ Dave: Marco | Quinn | Rosa | Priya | Stefan\n4. Claire ↔ Alice: Rosa | Quinn | Marco | Priya | Stefan\n5. Eve ↔ Claire: Rosa | Quinn | Stefan | Priya | Marco\nClaire dances with Stefan, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1289,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

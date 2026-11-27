@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-137",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Walden, and Claire gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Alice swap books. Finally, Claire and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) Jane Eyre\n(B) Walden\n(C) Beloved",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Walden",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Beloved",
+      "Claire": "Walden"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Books in holder order (Alice, Bob, Claire):\nInitial: (Jane Eyre, Walden, Beloved)\n1. Alice ↔ Claire: (Beloved, Walden, Jane Eyre)\n2. Bob ↔ Alice: (Walden, Beloved, Jane Eyre)\n3. Claire ↔ Alice: (Jane Eyre, Beloved, Walden)\nClaire has Walden, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1122,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

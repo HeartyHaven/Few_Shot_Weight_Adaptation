@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-20",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Emma, Claire gets Jane Eyre, Dave gets The Hobbit, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Dave and Claire swap books. Then, Eve and Dave swap books. Then, Dave and Claire swap books. Finally, Claire and Bob swap books. At the end of the semester, Dave has\nOptions:\n(A) Hamlet\n(B) Emma\n(C) Jane Eyre\n(D) The Hobbit\n(E) Candide",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "Jane Eyre",
+      "Dave": "The Hobbit",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "The Hobbit",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "The Hobbit",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "The Hobbit",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Emma",
+      "Dave": "The Hobbit",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Hamlet, Emma, Jane Eyre, The Hobbit, Candide)\n1. Bob ↔ Eve: (Hamlet, Candide, Jane Eyre, The Hobbit, Emma)\n2. Dave ↔ Claire: (Hamlet, Candide, The Hobbit, Jane Eyre, Emma)\n3. Eve ↔ Dave: (Hamlet, Candide, The Hobbit, Emma, Jane Eyre)\n4. Dave ↔ Claire: (Hamlet, Candide, Emma, The Hobbit, Jane Eyre)\n5. Claire ↔ Bob: (Hamlet, Emma, Candide, The Hobbit, Jane Eyre)\nDave has The Hobbit, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

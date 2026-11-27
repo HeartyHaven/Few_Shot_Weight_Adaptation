@@ -1,0 +1,22 @@
+{
+  "id": "train-4238",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 35-year-old man presents to the physician’s clinic due to episodic chest pain over the last couple of months. He is currently pain-free. His chest pain occurs soon after he starts to exercise, and it is rapidly relieved by rest. He recently started training for a marathon after a decade of a fairly sedentary lifestyle. He was a competitive runner during his college years, but he has only had occasional exercise since then. He is concerned that he might be developing some heart disease. He has no prior medical issues and takes no medications. The family history is significant for hypertension and myocardial infarction in his father. His vital signs include: pulse 74/min, respirations 10/min, and blood pressure 120/74 mm Hg. The ECG test is normal. The physician orders an exercise tolerance test that has to be stopped after 5 minutes due to the onset of chest pain.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 18,
+  "prompt_tokens": 262,
+  "solution": "HEART scores five components from 0 to 2 each:\n- History (slightly/moderately/highly suspicious): exertional pain relieved by rest is anginal, but the pattern has been stable for months. Rate the history moderately suspicious for acute coronary syndrome → 1.\n- ECG (normal/nonspecific repolarization changes/significant ST depression): normal initial ECG → 0.\n- Age (<45/45–64/≥65): 35 years → 0.\n- Risk factors (none/1–2/≥3 or established atherosclerotic disease): paternal MI gives one reported risk factor → 1.\n- Troponin (≤1, >1–3, or >3 times the upper reference limit): not reported; assume no elevation for this calculation → 0.\nSum assuming normal troponin: 1 + 0 + 0 + 1 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 905,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1004",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Jane Eyre, Claire gets Dracula, Dave gets The Trial, and Eve gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Dave swap books. Then, Alice and Dave swap books. Then, Eve and Bob swap books. Finally, Bob and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) Jane Eyre\n(C) Dracula\n(D) The Trial\n(E) Middlemarch",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Middlemarch",
+      "Dave": "Jane Eyre",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (Ivanhoe, Jane Eyre, Dracula, The Trial, Middlemarch)\n1. Bob ↔ Alice: (Jane Eyre, Ivanhoe, Dracula, The Trial, Middlemarch)\n2. Claire ↔ Dave: (Jane Eyre, Ivanhoe, The Trial, Dracula, Middlemarch)\n3. Alice ↔ Dave: (Dracula, Ivanhoe, The Trial, Jane Eyre, Middlemarch)\n4. Eve ↔ Bob: (Dracula, Middlemarch, The Trial, Jane Eyre, Ivanhoe)\n5. Bob ↔ Claire: (Dracula, The Trial, Middlemarch, Jane Eyre, Ivanhoe)\nClaire has Middlemarch, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1321,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

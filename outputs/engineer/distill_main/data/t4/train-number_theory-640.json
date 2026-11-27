@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-640",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Find the sum of all positive integers $n$ such that, given an unlimited supply of stamps of denominations $5,n,$ and $n+1$ cents, $91$ cents is the greatest postage that cannot be formed.\n",
+  "answer": "71",
+  "solution": "Since 5-cent stamps are available, it suffices to show that 91 is impossible and 92 through 96 are possible: adding 5 repeatedly then gives every larger amount.\n\nA representation of 96 cannot use a 5, since removing it would give 91. Nor can it use five or more stamps: among the six partial sums from 0 through the first five stamps, two agree modulo 5. The stamps between them total some positive multiple 5t; replacing them by t−1 five-cent stamps would give 91.\n\nThus 96 uses k≤4 stamps of values n and n+1, so kn≤96≤k(n+1). For k=1,2,3,4 respectively this gives n in {95,96}, {47,48}, {31,32}, {23,24}.\n\nFor n=95 or 96, 92 is impossible. For n=48, at most one 48- or 49-cent stamp fits in 92, and neither 92 nor the remainders 44,43 are multiples of 5. For n=31,32,23 respectively, 91 is possible as 31+60, 2·33+25, or 2·23+45.\n\nFor n=24, only the 24-cent stamps affect the residue modulo 5. To make 91 would require at least four of them (24k≡1 mod 5), already totaling 96. Amounts 92–96 are 3·24+20, 2·24+45, 24+70, 95, and 4·24.\n\nFor n=47, at most one 47 or 48 fits in 91, leaving residue 1, 4, or 3 modulo 5 after using neither or one of them. Thus 91 is impossible. Amounts 92–96 are 47+45, 48+45, 2·47, 95, and 2·48. The qualifying values sum to 24+47=71.\nFinal answer: 71",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 19,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "71",
+    "correct": true
+  }
+}

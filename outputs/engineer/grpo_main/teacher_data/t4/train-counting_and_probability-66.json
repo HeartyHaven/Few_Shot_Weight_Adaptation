@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-66",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Jeff will pick a card at random from ten cards numbered 1 through 10.  The number on this card will indicate his starting point on the number line shown below.  He will then spin the fair spinner shown below (which has three congruent sectors) and follow the instruction indicated by his spin.  From this new point he will spin the spinner again and follow the resulting instruction.  What is the probability that he ends up at a multiple of 3 on the number line?  Express your answer as a common fraction. [asy]\nimport graph;\nsize(10cm);\ndefaultpen(linewidth(0.7)+fontsize(8));\n\nxaxis(-2,13,Ticks(OmitFormat(-1),1.0,begin=false,end=false,beginlabel=false,endlabel=false),Arrows(4));\n\nlabel(\"-1\",(-1,-0.98));\n\nreal r=3.5;\npair center=(17,0);\ndraw(circle(center,r));\nint i;\nfor(i=1;i<=3;++i)\n\n{\n\ndraw(center--center+r*dir(120*i-30));\n\n}\nlabel(\"$\\parbox{1cm}{move \\\\ 1 space \\\\ left}$\",center+r/2*dir(150));\nlabel(\"$\\parbox{1cm}{move \\\\ 1 space \\\\ right}$\",center+r/2*dir(270));\nlabel(\"$\\parbox{1cm}{move \\\\ 1 space \\\\ right}$\",center+r/2*dir(30));\ndraw(center--center+3*r/4*dir(80),EndArrow(4));[/asy]",
+  "answer": "\\frac{31}{90}",
+  "prompt_tokens": 372,
+  "solution": "There are $10\\cdot3^2=90$ equally likely choices of starting card and ordered pair of spinner sectors. One sector moves left and two move right.\n\nTwo left moves give displacement $-2$ in one sector pair. The start must be 2 modulo 3, giving 3 choices (2, 5, 8). Opposite moves give displacement 0 in $1\\cdot2+2\\cdot1=4$ sector pairs. The start must be a multiple of 3, giving 3 choices (3, 6, 9). Two right moves give displacement $+2$ in $2^2=4$ sector pairs. The start must be 1 modulo 3, giving 4 choices (1, 4, 7, 10).\n\nThus $1\\cdot3+4\\cdot3+4\\cdot4=31$ of the 90 outcomes succeed.\nFinal answer: \\frac{31}{90}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1390,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "\\frac{31}{90}",
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-586",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Siddhartha, and Claire gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Dune\n(B) Siddhartha\n(C) The Trial",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dune",
+      "Claire": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Dune",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Siddhartha",
+      "Claire": "Dune"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Book order in every row: Alice, Bob, Claire.\nInitial: Dune, Siddhartha, The Trial.\n1. Bob swaps with Alice: Siddhartha, Dune, The Trial.\n2. Claire swaps with Alice: The Trial, Dune, Siddhartha.\n3. Bob swaps with Claire: The Trial, Siddhartha, Dune.\nAlice has The Trial, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1153,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-347",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing sweeper, Bob is playing striker, Claire is playing benchwarmer, Dave is playing right winger, and Eve is playing fullback.\nAs the game progresses, pairs of players occasionally swap positions. First, Eve and Bob trade positions. Then, Bob and Alice trade positions. Then, Claire and Dave trade positions. Then, Eve and Claire trade positions. Finally, Dave and Alice trade positions. At the end of the match, Claire is playing\nOptions:\n(A) sweeper\n(B) striker\n(C) benchwarmer\n(D) right winger\n(E) fullback",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "sweeper",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "right winger",
+      "Eve": "fullback"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "fullback",
+      "Claire": "benchwarmer",
+      "Dave": "right winger",
+      "Eve": "striker"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "sweeper",
+      "Claire": "benchwarmer",
+      "Dave": "right winger",
+      "Eve": "striker"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "sweeper",
+      "Claire": "right winger",
+      "Dave": "benchwarmer",
+      "Eve": "striker"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "sweeper",
+      "Claire": "striker",
+      "Dave": "benchwarmer",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "sweeper",
+      "Claire": "striker",
+      "Dave": "fullback",
+      "Eve": "right winger"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Positions in every row are listed for Alice, Bob, Claire, Dave, Eve, respectively.\nInitial: sweeper | striker | benchwarmer | right winger | fullback\n1. Eve ↔ Bob: sweeper | fullback | benchwarmer | right winger | striker\n2. Bob ↔ Alice: fullback | sweeper | benchwarmer | right winger | striker\n3. Claire ↔ Dave: fullback | sweeper | right winger | benchwarmer | striker\n4. Eve ↔ Claire: fullback | sweeper | striker | benchwarmer | right winger\n5. Dave ↔ Alice: benchwarmer | sweeper | striker | fullback | right winger\nClaire is playing striker, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1030,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

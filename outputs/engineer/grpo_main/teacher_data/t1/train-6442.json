@@ -1,0 +1,22 @@
+{
+  "id": "train-6442",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 17-year-old boy presents to the emergency department of a hospital located in the town of Recuay (which is situated at 3,400 meters above mean sea level [MAMSL]) in the Ancash Region (Peru), 48 hours after returning from a 21-day stay in Lima (the capital city of Peru at 0 MAMSL). The patient has no previous medical history. His current complaints include cough, dyspnea at rest, hemoptysis, chest pain, and vomiting. His vital signs include: blood pressure 90/60 mm Hg; heart rate 149/min; respiratory rate 37/min; temperature 36.5°C (97.7°F); and O2 saturation 71%. Physical examination reveals polypnea, perioral cyanosis, intercostal retractions, and diffuse pulmonary crackles. His laboratory results are as follows:\nHemoglobin 19.2 g/dL\nHematocrit 60%\nLeukocytes 13,000 (Bands: 12%, Seg: 78%, Eos: 0%, Bas: 0%, Mon: 6%)\nUrea 25 mg/dL\nCreatinine 0.96 mg/dL\nA chest X-ray is shown.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 45,
+  "prompt_tokens": 355,
+  "solution": "CURB-65 assigns 1 point per criterion at presentation:\n- Confusion: none reported → 0.\n- Urea >7 mmol/L (equivalently, BUN >19.6 mg/dL): the result is labeled “urea 25 mg/dL.” If this denotes BUN, it scores 1. If it is total urea as labeled, 25 mg/dL is about 4.2 mmol/L and scores 0.\n- Respiratory rate ≥30/min: 37/min → 1.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: 90/60 qualifies by diastolic BP → 1.\n- Age ≥65 years: 17 → 0.\nInterpreting 25 mg/dL as BUN gives 0 + 1 + 1 + 1 + 0 = 3; a literal total-urea reading gives 2.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 790,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

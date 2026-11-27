@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-939",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Vera, Bob is dancing with Rosa, Claire is dancing with Wade, Dave is dancing with Oscar, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Dave and Bob switch partners. Then, Eve and Alice switch partners. Then, Eve and Bob switch partners. Then, Bob and Alice switch partners. Finally, Eve and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Vera\n(B) Rosa\n(C) Wade\n(D) Oscar\n(E) Marco",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Vera",
+      "Bob": "Rosa",
+      "Claire": "Wade",
+      "Dave": "Oscar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Oscar",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Oscar",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Vera",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Marco",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Oscar",
+      "Claire": "Wade",
+      "Dave": "Rosa",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Dancer order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial partners: Vera, Rosa, Wade, Oscar, Marco.\n1. Dave and Bob swap: Vera, Oscar, Wade, Rosa, Marco.\n2. Eve and Alice swap: Marco, Oscar, Wade, Rosa, Vera.\n3. Eve and Bob swap: Marco, Vera, Wade, Rosa, Oscar.\n4. Bob and Alice swap: Vera, Marco, Wade, Rosa, Oscar.\n5. Eve and Bob swap: Vera, Oscar, Wade, Rosa, Marco.\nAlice's partner is Vera, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1206,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

@@ -155,6 +155,7 @@ print("lazy base: kept in RAM", len(BASE.ram), "of", len(BASE.names), file=sys.s
 COMMITTED = {}         # overlay: tensors that differ from BASE in the committed state (and added bias vectors)
 EXTRA_SITES = {}       # param name -> module path, for bias parameters added by the teacher
 _hooks = {}
+HIDDEN = getattr(model.config, "text_config", model.config).hidden_size   # Gemma 3 (4B+) keeps it in text_config
 EDITS = []             # accepted edit ids
 
 
@@ -170,7 +171,7 @@ def _add_bias(site):
     if key in dict(model.named_parameters()):
         return key
     mod = _module(site)
-    p = torch.nn.Parameter(torch.zeros(model.config.hidden_size, device="cuda", dtype=DTYPE), requires_grad=False)
+    p = torch.nn.Parameter(torch.zeros(HIDDEN, device="cuda", dtype=DTYPE), requires_grad=False)
     model.register_parameter(key, p)
 
     def hook(m, i, o):
@@ -401,7 +402,7 @@ class StudentAPI:
         for e in keep:
             state = _apply_delta_file(state, os.path.join(RUN, "edits", f"{e:03d}", "delta.safetensors"))
         for n in EXTRA_SITES:
-            state.setdefault(n, torch.zeros(model.config.hidden_size))
+            state.setdefault(n, torch.zeros(HIDDEN))
         COMMITTED.clear(); COMMITTED.update(state); _load_state(COMMITTED)
         removed = [e for e in EDITS if e > to_edit_id]; EDITS[:] = keep
         _ledger(event="rollback", to=to_edit_id, removed=removed, reason=reason); _save_state()
@@ -431,7 +432,7 @@ if RESUMED:
     for _e in _st["edits"]:
         _state = _apply_delta_file(_state, os.path.join(RUN, "edits", f"{_e:03d}", "delta.safetensors"))
     for _n in EXTRA_SITES:
-        _state.setdefault(_n, torch.zeros(model.config.hidden_size))
+        _state.setdefault(_n, torch.zeros(HIDDEN))
     COMMITTED.update(_state); _load_state(COMMITTED); EDITS[:] = _st["edits"]; ACC.update(_st["acc"])
     if _st.get("last_reg"):
         S._last_reg = _st["last_reg"]

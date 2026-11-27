@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-535",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "A flag is made of three horizontal strips of fabric, each of a solid color, either red, white, blue or green. If no two adjacent strips can be the same color, how many distinct flags are possible? These two flags are different.\n\n[asy]draw((0,0)--(0,6),linewidth(1));\nfilldraw((0,3)--(4,3)--(4,4)--(0,4)--(0,3)--cycle,white);\nfilldraw((0,4)--(4,4)--(4,5)--(0,5)--(0,4)--cycle,red);\nfilldraw((0,5)--(4,5)--(4,6)--(0,6)--(0,5)--cycle,green);\nfilldraw(circle((0,6),1/6),white);\nlabel(\"Green\",(2,5.5));\nlabel(\"Red\",(2,4.5));\nlabel(\"White\",(2,3.5));\n\ndraw((5,0)--(5,6),linewidth(1));\nfilldraw((5,3)--(9,3)--(9,4)--(5,4)--(5,3)--cycle,green);\nfilldraw((5,4)--(9,4)--(9,5)--(5,5)--(5,4)--cycle,red);\nfilldraw((5,5)--(9,5)--(9,6)--(5,6)--(5,5)--cycle,white);\nfilldraw(circle((5,6),1/6),white);\nlabel(\"White\",(7,5.5));\nlabel(\"Red\",(7,4.5));\nlabel(\"Green\",(7,3.5));\n[/asy]",
+  "answer": "36",
+  "prompt_tokens": 389,
+  "solution": "Choose the colors from top to bottom, since strip order matters. The top strip has 4 choices. The middle strip can be any of the 3 colors other than the top color. The bottom strip can likewise be any of the 3 colors other than the middle color, even if it matches the top. Multiplying gives 4 · 3 · 3 = 36 flags.\nFinal answer: 36",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1418,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "36",
+    "correct": true
+  }
+}

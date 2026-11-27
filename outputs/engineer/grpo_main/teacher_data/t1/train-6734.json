@@ -1,0 +1,22 @@
+{
+  "id": "train-6734",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nThe patient, a forty-seven-year-old male from Guinea, West Africa, presented to the emergency room with one-day history of fever and profuse diarrhea. His past medical history was significant for end stage renal disease requiring hemodialysis, hypertension, and type 2 diabetes mellitus. He reported an exposure to antibiotics two months prior to his current admission.\nHis vital signs included blood pressure of 166/106 mmHg, heart rate of 136 bpm, temperature of 100.7 F, and respiratory rate of 16 breaths/min. Physical examination was remarkable for generalized maculopapular rash and abdominal tenderness. The rest of the physical evaluation was unremarkable.\nPertinent laboratory analysis showed a white blood cell count of 27,000/mm3 with left shift, hemoglobin of 11.2 g/dL, blood urea nitrogen of 68 mg/dL, and creatinine of 6.6 mg/dL. Blood and urine cultures, hepatitis A and hepatitis B antigens, hepatitis C antibody, and cytomegalovirus antigen in the blood were all unremarkable. Stool work-up including clostridium difficile toxin B PCR, leukocytes in stool, stool culture, and cryptosporidium were negative. Ova and parasite stool examination revealed the presence of multiple microorganisms identified as Blastocystis sp.\nOur patient was started on intravenous fluid hydration and antibiotic therapy with intravenous metronidazole. His diarrhea frequency lessened and white blood cell count improved three days after the initiation of therapy. The patient was discharged on oral metronidazole in light of the presence of Blastocystis sp. with total resolution of symptoms by day ten.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 51,
+  "prompt_tokens": 436,
+  "solution": "Apply the four adult SIRS criteria to pretreatment values:\n- Temperature >38°C or <36°C: 100.7°F converts to 38.17°C → 1.\n- Heart rate >90/min: 136/min → 1.\n- Respiratory rate >20/min or PaCO₂ <32 mmHg: respiratory rate 16/min, with no qualifying PaCO₂ reported → 0.\n- WBC >12,000/mm³ or <4,000/mm³, or >10% bands: WBC 27,000/mm³ → 1. The left shift does not add a separate point.\nTotal: 1 + 1 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 992,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

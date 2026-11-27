@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1151",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Siddhartha, Claire gets Ivanhoe, Dave gets Emma, Eve gets Walden, Fred gets The Hobbit, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Bob and Gertrude swap books. Then, Claire and Eve swap books. Then, Gertrude and Bob swap books. Then, Dave and Fred swap books. Then, Alice and Gertrude swap books. Then, Fred and Claire swap books. Finally, Alice and Fred swap books. At the end of the semester, Gertrude has\nOptions:\n(A) The Trial\n(B) Siddhartha\n(C) Ivanhoe\n(D) Emma\n(E) Walden\n(F) The Hobbit\n(G) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Beloved",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Beloved",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Ivanhoe",
+      "Fred": "The Hobbit",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "Ivanhoe",
+      "Fred": "The Hobbit",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe",
+      "Fred": "Emma",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe",
+      "Fred": "Emma",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Emma",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe",
+      "Fred": "Walden",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Emma",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe",
+      "Fred": "Beloved",
+      "Gertrude": "The Trial"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Books in holder order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude):\nInitial: (The Trial, Siddhartha, Ivanhoe, Emma, Walden, The Hobbit, Beloved)\n1. Bob ↔ Gertrude: (The Trial, Beloved, Ivanhoe, Emma, Walden, The Hobbit, Siddhartha)\n2. Claire ↔ Eve: (The Trial, Beloved, Walden, Emma, Ivanhoe, The Hobbit, Siddhartha)\n3. Gertrude ↔ Bob: (The Trial, Siddhartha, Walden, Emma, Ivanhoe, The Hobbit, Beloved)\n4. Dave ↔ Fred: (The Trial, Siddhartha, Walden, The Hobbit, Ivanhoe, Emma, Beloved)\n5. Alice ↔ Gertrude: (Beloved, Siddhartha, Walden, The Hobbit, Ivanhoe, Emma, The Trial)\n6. Fred ↔ Claire: (Beloved, Siddhartha, Emma, The Hobbit, Ivanhoe, Walden, The Trial)\n7. Alice ↔ Fred: (Walden, Siddhartha, Emma, The Hobbit, Ivanhoe, Beloved, The Trial)\nGertrude has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1122,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

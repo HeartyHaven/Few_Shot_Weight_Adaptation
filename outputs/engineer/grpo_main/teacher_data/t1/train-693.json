@@ -1,0 +1,22 @@
+{
+  "id": "train-693",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 68-year-old male was admitted for transseptal transcatheter mitral valve replacement for mitral stenosis and regurgitation. His comorbidities included paroxysmal atrial fibrillation (AF), coronary artery disease, congestive heart failure, and ischemic cerebral vascular accident. At the time of surgery, the patient was in SR with distinct “P“ waves on the electrocardiogram (EKG). During intraoperative transesophageal echocardiography (TEE) examination, the LA contractility was demonstrated with distinct mitral inflow E and A waves, and atrial systolic reversal waves of pulmonary venous inflow []. Simultaneous interrogation of the LAA with pulse wave Doppler (PWD) demonstrated characteristic dyssynchronous contraction and relaxation waves suggesting a non-SR [ and ]. There was no spontaneous echo contrast (SEC) or thrombus in the LAA and ejection velocity was >20 cm/s []. The patient underwent a successful transseptal mitral valve replacement procedure with a 26 mm Sapien 3 valve (Edwards Lifesciences Corporation, Irvine, California, USA). The postoperative course was uneventful and patient remained in SR and was discharged after 1 day of oral aspirin and clopidogrel therapy. He was noncompliant with medications and suffered a massive embolic stroke a week after discharge and died a week after the procedure.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 369,
+  "solution": "Use CHA₂DS₂-VASc at admission. Paroxysmal AF makes the score applicable despite sinus rhythm during surgery.\n- Congestive heart failure: present (+1).\n- Hypertension: not documented (+0).\n- Age: 68, so age 65–74 contributes +1 rather than the +2 for age ≥75.\n- Diabetes: not documented (+0).\n- Prior stroke, TIA, or systemic embolism: ischemic stroke before admission (+2). The later embolic stroke is not used.\n- Vascular disease: coronary artery disease (+1).\n- Sex category: male (+0).\nTotal = 1 + 0 + 1 + 0 + 2 + 1 + 0 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 834,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

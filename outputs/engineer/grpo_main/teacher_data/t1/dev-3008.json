@@ -1,0 +1,24 @@
+{
+  "id": "dev-3008",
+  "task": "t1",
+  "group": "Wells' Criteria for Pulmonary Embolism",
+  "calc_id": 8,
+  "question": "Patient note:\nA 31 yo male with no significant past medical history presents with productive cough and chest pain. He reports developing cold symptoms one week ago that were improving until two days ago, when he developed a new fever, chills, and worsening cough. He has right-sided chest pain that is aggravated by coughing. His wife also had cold symptoms a week ago but is now feeling well. Vitals signs include temperature 103.4, pulse 105, blood pressure 120/80, and respiratory rate 15. Lung exam reveals expiratory wheezing, decreased breath sounds, and egophany in the left lower lung field.\n\nQuestion: What is the patient's score of Wells' criteria for Pulmonary Embolism? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1.5",
+  "lower": 1.5,
+  "upper": 1.5,
+  "explanation": "\nThe criteria for the Wells' Criteria for Pulmonary Embolism score are listed below:\n\n1. Clinical signs and symptoms of DVT: No = 0 points, Yes = +3 points\n2. PE is #1 diagnosis OR equally likely: No = 0 points, Yes = +3 points\n3. Heart rate > 100: No = 0 points, Yes = +1.5 points\n4. Immobilization at least 3 days OR surgery in the previous 4 weeks: No = 0 points, Yes = +1.5 points\n5. Previous, objectively diagnosed PE or DVT: No = 0 points, Yes = +1.5 points\n6. Hemoptysis: No = 0 points, Yes = +1 point\n7. Malignancy with treatment within 6 months or palliative: No = 0 points, Yes = +1 point\n\nThe total score is calculated by summing the points for each criterion.\n   \nThe Well's score for pulmonary embolism is currently 0.\nClinical signs and symptoms of DVT are repoted to be absent and so the total score remains unchanged, keeping the total score at 0. Pulmonary Embolism is not reported to be the #1 diagnosis and so the total score remains unchanged, keeping the total score at 0.\nThe patient's heart rate is 105.0 beats per minute. The heart rate is more than 100 bpm, and so the score is increased by 1.5, making the total score, 0 + 1.5 = 1.5.\nBecause the patient has not had an immobilization for at least 3 days, and the patient did not have a surgery in the past 4 weeks, the score remains at 1.5.\nBecause the patient has no previous diagnosis of pulmonary embolism (PE) or deep vein thrombosis (DVT), the score remains at 1.5.\nHemoptysis is not reported in the patient note and so we assume that it is missing from the patient, keeping the total score at 1.5.\nMalignany with treatment within 6 months or palliative is reported to be absent and so the total score remains unchanged, keeping the total score at 1.5.\nThe patient's Well's score for pulmonary embolism is 1.5.",
+  "prompt_tokens": 213,
+  "solution": "Wells score for pulmonary embolism (PE) at presentation:\n1. Clinical signs of DVT (3 points): none reported → 0.\n2. PE most likely or equally likely (3): recurrent fever, productive cough, and focal egophony favor pneumonia over PE → 0.\n3. Heart rate >100 bpm (1.5): pulse was 105 bpm → 1.5.\n4. Immobilization ≥3 days or surgery within 4 weeks (1.5): neither reported → 0.\n5. Prior PE or DVT (1.5): none reported → 0.\n6. Hemoptysis (1): the cough was productive, but no blood was reported → 0.\n7. Malignancy treated within 6 months or receiving palliation (1): none reported → 0.\nSum: 0 + 0 + 1.5 + 0 + 0 + 0 + 0 = 1.5.\nFinal answer: 1.5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "reused_from": "outputs/engineer/distill_main/data/t1.jsonl",
+  "reused_source_sha256": "986c157b1c67e1e15f790a8591252e01848729b0d9e5eaec2af974849a7ae226",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": 1.5,
+    "correct": true
+  }
+}

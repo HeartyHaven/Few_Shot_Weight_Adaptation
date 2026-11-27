@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-724",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Walden, Claire gets Candide, Dave gets Beloved, and Eve gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Alice and Dave swap books. Then, Claire and Bob swap books. Then, Alice and Bob swap books. Finally, Bob and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) The Hobbit\n(B) Walden\n(C) Candide\n(D) Beloved\n(E) Persuasion",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "The Hobbit",
+      "Dave": "Beloved",
+      "Eve": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Books in reader order (Alice, Bob, Claire, Dave, Eve):\nInitial: (The Hobbit, Walden, Candide, Beloved, Persuasion)\n1. Dave and Alice swap: (Beloved, Walden, Candide, The Hobbit, Persuasion)\n2. Alice and Dave swap: (The Hobbit, Walden, Candide, Beloved, Persuasion)\n3. Claire and Bob swap: (The Hobbit, Candide, Walden, Beloved, Persuasion)\n4. Alice and Bob swap: (Candide, The Hobbit, Walden, Beloved, Persuasion)\n5. Bob and Claire swap: (Candide, Walden, The Hobbit, Beloved, Persuasion)\nDave has Beloved, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1207,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

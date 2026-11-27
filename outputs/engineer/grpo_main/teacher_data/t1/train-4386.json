@@ -1,0 +1,22 @@
+{
+  "id": "train-4386",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nOn January 31, 2018, a usually healthy, 9-year old, non-Hispanic white female was screened for ORCHARDS eligibility (Figure ). She was a vaccinated (quadrivalent inactivated influenza vaccine on October 9, 2017) 4th-grade student who lived with both parents and two younger siblings. All family members had received the 2017/2018 influenza vaccine. A home visit was conducted 25 hours after symptom onset. Her moderate ILI was characterized by fever (measured temperature = 37.2°C after antipyretic), chills, cough, sore throat, rhinorrhea, nasal congestion, headache, malaise, myalgia, anorexia, and sneezing. There was no recent travel, exposure to farm animals, or identified sick contact preceding onset. Nasal and oropharyngeal specimens were collected. Although the RIDT result was negative, rRT-PCR was positive for influenza A (H3N2) (cycle threshold value [Ct] = 31.48) and RPP was positive for coronavirus HKU1. At follow-up, she reported 2 days of absenteeism and continued cough, rhinorrhea, sore throat, myalgia, and headache. There had been no medical follow-up or antiviral treatment. The rRT-PCR result from the subject's day 7 swab was negative for influenza. No other family members reported illness on day 0, but one sibling developed mild respiratory illness on day 6. All family members tested negative for influenza by rRT-PCR on day 0 and day 7.\nOn March 9, 2018, 37 days after the initial encounter, the subject was again screened due to a new ILI episode. A home visit was conducted 49 hours after symptom onset. Now 10 years old, the subject complained of significant symptoms including fever (measured temperature = 37.6°C after antipyretic), chills, cough, wheezing, nasal congestion, headache, malaise, myalgia, anorexia, burning eyes, and dizziness. Again, there was no recent travel, exposure to farm animals, or identified sick contact preceding onset. The subject's RIDT result was positive for influenza A, and rRT-PCR results confirmed the presence of influenza A (H3N2) (Ct = 26.48). At follow-up, she reported 2 days of absenteeism and continued fever, chills, cough, rhinorrhea, malaise, myalgia, headache, and anorexia. There had been no medical follow-up or antiviral treatment. The rRT-PCR results from the subject's day 7 swab continued to show influenza A (H3N2) (Ct = 33.30). No other family members reported illness on day 0 or day 7. All family members tested negative for influenza by rRT-PCR on day 0 and day 7.\nThe subject's initial specimen from each episode, collected on January 31 and March 9, 2018, was prepared for full genomic sequencing at the WSLH. Both A (H3N2) strains were of the hemagglutinin gene clade 3C2.a2. After WSLH performed a consensus sequence comparison between the two viruses collected from the subject, three single nucleotide polymorphisms (SNPs) were identified within the coding region of the HA protein. Only one SNP was non-synonymous and resulted in an isoleucine to leucine change at position 67 (in HA1). This particular polymorphism was near 100% frequency in the sequence reads and was four amino acids away from an established antibody epitope site (Site E). Both sequences (first isolate ORCH00001 and second isolate ORCH00002) were submitted to the GenBank® genetic sequence database and given accession numbers (MK262897 and MK262898, respectively).\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 20,
+  "prompt_tokens": 943,
+  "solution": "Use the age-adjusted Centor (McIsaac) score at the first illness visit:\n- Temperature >38°C: fever was reported, but no temperature above the threshold was documented; the reading after antipyretic was 37.2°C (+0).\n- Absence of cough: cough was present (+0).\n- Tonsillar swelling or exudate: not documented (+0).\n- Tender anterior cervical nodes: not documented (+0).\n- Age adjustment: age 9 falls in the 3–14 band (+1).\nTotal = 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 834,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

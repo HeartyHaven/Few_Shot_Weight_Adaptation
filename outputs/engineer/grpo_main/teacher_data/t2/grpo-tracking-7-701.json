@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-701",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Persuasion, Claire gets Siddhartha, Dave gets Hamlet, Eve gets The Hobbit, Fred gets Beloved, and Gertrude gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Alice and Eve swap books. Then, Fred and Dave swap books. Then, Eve and Claire swap books. Then, Claire and Gertrude swap books. Then, Eve and Gertrude swap books. Finally, Claire and Bob swap books. At the end of the semester, Eve has\nOptions:\n(A) Dracula\n(B) Persuasion\n(C) Siddhartha\n(D) Hamlet\n(E) The Hobbit\n(F) Beloved\n(G) The Trial",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Hamlet",
+      "Eve": "The Hobbit",
+      "Fred": "Beloved",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Persuasion",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "The Hobbit",
+      "Fred": "Beloved",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Persuasion",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Siddhartha",
+      "Fred": "Beloved",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Persuasion",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha",
+      "Fred": "Hamlet",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "Dracula",
+      "Fred": "Hamlet",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Beloved",
+      "Eve": "Dracula",
+      "Fred": "Hamlet",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha",
+      "Fred": "Hamlet",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Persuasion",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha",
+      "Fred": "Hamlet",
+      "Gertrude": "Dracula"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Dracula, Persuasion, Siddhartha, Hamlet, The Hobbit, Beloved, The Trial\n1. Alice and Claire swap: Siddhartha, Persuasion, Dracula, Hamlet, The Hobbit, Beloved, The Trial\n2. Alice and Eve swap: The Hobbit, Persuasion, Dracula, Hamlet, Siddhartha, Beloved, The Trial\n3. Fred and Dave swap: The Hobbit, Persuasion, Dracula, Beloved, Siddhartha, Hamlet, The Trial\n4. Eve and Claire swap: The Hobbit, Persuasion, Siddhartha, Beloved, Dracula, Hamlet, The Trial\n5. Claire and Gertrude swap: The Hobbit, Persuasion, The Trial, Beloved, Dracula, Hamlet, Siddhartha\n6. Eve and Gertrude swap: The Hobbit, Persuasion, The Trial, Beloved, Siddhartha, Hamlet, Dracula\n7. Claire and Bob swap: The Hobbit, The Trial, Persuasion, Beloved, Siddhartha, Hamlet, Dracula\nEve has Siddhartha, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1209,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

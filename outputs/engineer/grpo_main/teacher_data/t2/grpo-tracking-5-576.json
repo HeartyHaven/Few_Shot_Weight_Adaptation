@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-576",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Nadia, Claire is dancing with Priya, Dave is dancing with Quinn, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Eve and Alice switch partners. Then, Claire and Alice switch partners. Then, Dave and Bob switch partners. Finally, Bob and Claire switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Marco\n(B) Nadia\n(C) Priya\n(D) Quinn\n(E) Yuki",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Nadia",
+      "Claire": "Priya",
+      "Dave": "Quinn",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Priya",
+      "Claire": "Nadia",
+      "Dave": "Quinn",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Priya",
+      "Claire": "Nadia",
+      "Dave": "Quinn",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Priya",
+      "Claire": "Yuki",
+      "Dave": "Quinn",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Quinn",
+      "Claire": "Yuki",
+      "Dave": "Priya",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Yuki",
+      "Claire": "Quinn",
+      "Dave": "Priya",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Each row lists partners in the order Alice, Bob, Claire, Dave, Eve.\nInitial: Marco, Nadia, Priya, Quinn, Yuki\n1. Bob ↔ Claire: Marco, Priya, Nadia, Quinn, Yuki\n2. Eve ↔ Alice: Yuki, Priya, Nadia, Quinn, Marco\n3. Claire ↔ Alice: Nadia, Priya, Yuki, Quinn, Marco\n4. Dave ↔ Bob: Nadia, Quinn, Yuki, Priya, Marco\n5. Bob ↔ Claire: Nadia, Yuki, Quinn, Priya, Marco\nDave's partner is Priya, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1138,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-28",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a brown present, Bob has a white present, Claire has a green present, Dave has a black present, and Eve has a blue present.\nAs the event progresses, pairs of people swap gifts. First, Dave and Alice swap their gifts. Then, Claire and Dave swap their gifts. Then, Bob and Claire swap their gifts. Then, Dave and Eve swap their gifts. Finally, Bob and Claire swap their gifts. At the end of the event, Alice has the\nOptions:\n(A) brown present\n(B) white present\n(C) green present\n(D) black present\n(E) blue present",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "brown",
+      "Bob": "white",
+      "Claire": "green",
+      "Dave": "black",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "black",
+      "Bob": "white",
+      "Claire": "green",
+      "Dave": "brown",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "black",
+      "Bob": "white",
+      "Claire": "brown",
+      "Dave": "green",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "black",
+      "Bob": "brown",
+      "Claire": "white",
+      "Dave": "green",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "black",
+      "Bob": "brown",
+      "Claire": "white",
+      "Dave": "blue",
+      "Eve": "green"
+    },
+    {
+      "Alice": "black",
+      "Bob": "white",
+      "Claire": "brown",
+      "Dave": "blue",
+      "Eve": "green"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Each row lists present colors in the order Alice, Bob, Claire, Dave, Eve.\nInitial: brown, white, green, black, blue\n1. Dave and Alice swap: black, white, green, brown, blue\n2. Claire and Dave swap: black, white, brown, green, blue\n3. Bob and Claire swap: black, brown, white, green, blue\n4. Dave and Eve swap: black, brown, white, blue, green\n5. Bob and Claire swap: black, white, brown, blue, green\nAlice has the black present, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

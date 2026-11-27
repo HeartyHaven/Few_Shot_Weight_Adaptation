@@ -1,0 +1,22 @@
+{
+  "id": "train-6407",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 40-year-old female from Ralegaon village, Yavatmal district, farm laborer by occupation was admitted in drowsy state with history of fever for 10 days, cough and progressive shortness of breath for last 5 days, and pain in right side of abdomen and vomiting for last 3 days. On general physical examination, she was febrile (39.2°C), icteric, and drowsy. She had pulse of 114 beats per min, blood pressure of 110/80 mmHg, and respiratory rate of 26 breaths per min. Her GCS score was E2M5V4. A 1.5 cm sized black crusted ulcer (eschar) was found on the lateral aspect of right thigh []. Her chest examination revealed bilateral crackles. Chest radiograph showed bilateral diffuse infiltrates []. She was treated with oral doxycycline 100 mg twice a day. Arterial blood gas analysis revealed metabolic acidosis and PaO2/FiO2 ratio of 54. In view of her respiratory distress, she was intubated and put on mechanical ventilator.\nHer laboratory investigations revealed TLC of 21,300 mm3, hemoglobin of 7.8 gm/dl, and platelet count of 116,000 mm3; AST, 373; ALT, 238; total bilirubin, 3.6 mg/dl; albumin, 1.7 gm/dl; total protein, 4 gm/dl; creatinine, 2.4 mg/dl; and urea, 84 mg/dl. CSF examination did not reveal any abnormality. Abdominal USG was normal. Her Weil-Felix test was positive for the OX-K antigen in titers of 1:320. Biopsy of eschar showed a lymphohistiocytic vasculitis, perivascular collections of lymphocytes with areas of ulceration, and necrosis of overlying epidermis. She was also started on chloramphenicol, but in spite of the intensive supportive care and antibiotic coverage, the patient succumbed to her illness on the 7th day of hospitalization due to multiorgan failure (MOF).\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 562,
+  "solution": "CURB-65 assigns 1 point for each qualifying admission finding:\n- Confusion: drowsy with GCS E2M5V4; V4 indicates confused verbal responses = 1.\n- Urea >7 mmol/L: the reported urea (not BUN) is 84 mg/dL, or about 14 mmol/L = 1.\n- Respiratory rate ≥30/min: rate was 26/min = 0.\n- Blood pressure: systolic <90 or diastolic ≤60 mm Hg qualifies. BP was 110/80 mm Hg = 0.\n- Age ≥65: age was 40 = 0.\nTotal = 1 + 1 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 845,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

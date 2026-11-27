@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-865",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Persuasion, Claire gets Candide, Dave gets Middlemarch, and Eve gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Alice and Bob swap books. Then, Claire and Eve swap books. Then, Dave and Eve swap books. Finally, Claire and Dave swap books. At the end of the semester, Bob has\nOptions:\n(A) The Trial\n(B) Persuasion\n(C) Candide\n(D) Middlemarch\n(E) Dracula",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Persuasion",
+      "Claire": "Candide",
+      "Dave": "Middlemarch",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Persuasion",
+      "Dave": "Middlemarch",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Persuasion",
+      "Dave": "Middlemarch",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "Persuasion",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Book order in every row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (The Trial, Persuasion, Candide, Middlemarch, Dracula)\n1. Bob and Claire swap: (The Trial, Candide, Persuasion, Middlemarch, Dracula)\n2. Alice and Bob swap: (Candide, The Trial, Persuasion, Middlemarch, Dracula)\n3. Claire and Eve swap: (Candide, The Trial, Dracula, Middlemarch, Persuasion)\n4. Dave and Eve swap: (Candide, The Trial, Dracula, Persuasion, Middlemarch)\n5. Claire and Dave swap: (Candide, The Trial, Persuasion, Dracula, Middlemarch)\nBob has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1091,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

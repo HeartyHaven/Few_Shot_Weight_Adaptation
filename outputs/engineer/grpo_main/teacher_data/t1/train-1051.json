@@ -1,0 +1,22 @@
+{
+  "id": "train-1051",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 56-year-old male electrician, with treated hypertension (reported mean values of blood pressure: 130/95 mm Hg), was admitted with chest pain lasting for about 60 minutes. He was journeymen electrician specialized in commercial, residential and low-voltage wiring.\nHe gave a history that on the morning he had working for almost 4 hours carrying out various activities such as manipulate cables and wires through cavities or carry boxes of electrical equipment weighing about 20 kilos, with considerable physical effort.\nIn his clinical history he reported to have had occasional atypical chest pain for which he submitted two years ago to exercise stress testing, which resulted maximal for age and negative for ischaemia induced by stress. The patient on admission had tachypnoea at rest with oxygen saturation of 93%. Electrocardiogram (ECG) showed atrial fibrillation with a heart rate of 90 beats/min. Blood pressure was 175/95 mm Hg. Cardiac auscultation was normal but at pulmonary level bilateral basal crackles were present. Cardiac enzymes were slightly elevated: Troponin T (TnT): 0,033 ng/l [norm: <0.03] and Creatine Kinase (CK): 260 U/l [norm: 47–220]. Regional left ventricular wall motion and ejection fraction was normal (Ejection Fraction EF 60%). After cardioversion with DC shock (3 J/Kg body weight), considering TnT and CK levels [] a CAG was performed to exclude coronary disease. It revealed a suspect of single coronary vessel arising from the right sinus of Valsalva. The right coronary artery (RCA) showed a normal course (Figure : panel A). Stenoses of the coronary arteries were not present. In order to better define the origin and course of the single vessel, we performed a Multi Slices Computed Tomography (MSCT) (Figure : panels B, C and D) using a 64-detector-row scanner (Aquilion 64; Toshiba Medical System, Tokyo, Japan).\nMSCT showed a SCA arising from the right sinus Valsalva and dividing in RCA and Left Main (LM) (Figure : panel B,C and D). The LM showed an acute take-off angle, turned posteriorly behind the aorta, reaching the atrio-ventricular groove where it divides into left anterior descending (LAD) and left circumflex (CX) arteries. No atherosclerotic plaque were present. The patient was discharged with only antihypertensive drug therapy. After 2 month, at follow up medical check, he reported no angina and no exertional dyspnea. His left ventricular ejection fraction was normal and exercise tolerance >12 METs. He returned to his full work duties, although we recommended him to avoiding strenuous work (under 6 METs) and work on overhead lines too.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 699,
+  "solution": "CHA2DS2-VASc score for the patient presenting with atrial fibrillation:\n- Congestive heart failure or left ventricular dysfunction: no heart failure diagnosis, EF 60%; crackles alone do not establish heart failure → 0.\n- Hypertension: treated hypertension, with admission BP 175/95 mm Hg → 1.\n- Age: 56 years, below both scoring thresholds (65–74 earns 1; ≥75 earns 2) → 0.\n- Diabetes: none reported → 0.\n- Stroke, TIA, or systemic embolism: none reported → 0.\n- Vascular disease: no prior myocardial infarction, peripheral arterial disease, or aortic plaque documented; the anomalous coronary origin does not count → 0.\n- Sex category: male → 0.\nTotal = 0 + 1 + 0 + 0 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 1,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

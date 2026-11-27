@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-686",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Ivanhoe, Claire gets Dune, Dave gets Hamlet, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Eve swap books. Then, Alice and Eve swap books. Then, Bob and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) The Hobbit\n(B) Ivanhoe\n(C) Dune\n(D) Hamlet\n(E) The Trial",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Hobbit",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "The Hobbit",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: The Hobbit | Ivanhoe | Dune | Hamlet | The Trial\n1. Bob and Alice swap: Ivanhoe | The Hobbit | Dune | Hamlet | The Trial\n2. Claire and Eve swap: Ivanhoe | The Hobbit | The Trial | Hamlet | Dune\n3. Alice and Eve swap: Dune | The Hobbit | The Trial | Hamlet | Ivanhoe\n4. Bob and Alice swap: The Hobbit | Dune | The Trial | Hamlet | Ivanhoe\n5. Bob and Claire swap: The Hobbit | The Trial | Dune | Hamlet | Ivanhoe\nDave has Hamlet, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1163,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

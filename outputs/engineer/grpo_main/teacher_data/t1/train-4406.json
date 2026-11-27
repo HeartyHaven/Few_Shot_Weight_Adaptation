@@ -1,0 +1,22 @@
+{
+  "id": "train-4406",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 4-year-old boy is brought to the pediatrician in the month of January with a one-week history of a cough and somnolence. He developed a fever and cough and stated that his legs hurt ‘really bad’ 3–4 days prior to his symptoms. He has asthma but no other significant past medical history. He takes albuterol and his mom administered acetaminophen because he was feeling ‘hot’. The blood pressure is 92/66 mm Hg, the heart rate is 118/min, the respiratory rate is 40/min, and the temperature is 39.2°C (102.6°F). On physical examination, the visualization of the pharynx shows mild erythema without purulence. Auscultation of the lungs reveals crackles over the right lung base. The rapid strep test is negative. A chest X-ray shows homogenous opacity in the lower lobe of the right lung.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 20,
+  "prompt_tokens": 268,
+  "solution": "Use the age-adjusted Centor (McIsaac) score for this child:\n- Fever >38°C: temperature 39.2°C → +1.\n- Absence of cough: he has a cough → 0.\n- Tonsillar swelling or exudate: only mild pharyngeal erythema is described → 0.\n- Tender anterior cervical nodes: none reported → 0.\n- Age adjustment: age 4 falls in the 3–14 group → +1 (ages 15–44 score 0; ≥45 score −1).\nThe rapid strep result is not a scoring criterion. Sum = 1 + 0 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 733,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

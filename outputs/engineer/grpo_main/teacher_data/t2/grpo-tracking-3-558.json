@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-558",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right back, Bob is playing striker, and Claire is playing right winger.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Alice trade positions. Then, Alice and Claire trade positions. Finally, Bob and Claire trade positions. At the end of the match, Bob is playing\nOptions:\n(A) right back\n(B) striker\n(C) right winger",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "right back",
+      "Bob": "striker",
+      "Claire": "right winger"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "right back",
+      "Claire": "right winger"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "right back",
+      "Claire": "striker"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "striker",
+      "Claire": "right back"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Each row lists positions in this order: Alice, Bob, Claire.\nInitial: right back, striker, right winger\n1. Bob ↔ Alice: striker, right back, right winger\n2. Alice ↔ Claire: right winger, right back, striker\n3. Bob ↔ Claire: right winger, striker, right back\nBob is playing striker, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1021,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

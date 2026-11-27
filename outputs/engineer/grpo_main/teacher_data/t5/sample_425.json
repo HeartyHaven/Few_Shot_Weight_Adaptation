@@ -1,0 +1,20 @@
+{
+  "id": "sample_425",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(a):\n    a = a.replace('/', ':')\n    z = a.rpartition(':')\n    return [z[0], z[1], z[2]]\n```\n\nInput: f('/CL44     ')",
+  "answer": "['', ':', 'CL44     ']",
+  "prompt_tokens": 105,
+  "solution": "Replacing '/' with ':' sets a to ':CL44     ', preserving the five trailing spaces. The only colon is at index 0, so rpartition(':') gives z = ('', ':', 'CL44     '): an empty prefix, the separator, and the suffix. The return statement puts those three elements into a list in order.\nFinal answer: ['', ':', 'CL44     ']",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "['', ':', 'CL44     ']",
+    "correct": true
+  }
+}

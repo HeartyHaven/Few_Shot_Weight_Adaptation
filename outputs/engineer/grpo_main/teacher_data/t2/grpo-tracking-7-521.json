@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-521",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets The Trial, Claire gets Emma, Dave gets Jane Eyre, Eve gets Candide, Fred gets Siddhartha, and Gertrude gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Eve and Alice swap books. Then, Claire and Gertrude swap books. Then, Fred and Gertrude swap books. Then, Gertrude and Claire swap books. Then, Claire and Fred swap books. Then, Dave and Eve swap books. Finally, Alice and Bob swap books. At the end of the semester, Eve has\nOptions:\n(A) Dune\n(B) The Trial\n(C) Emma\n(D) Jane Eyre\n(E) Candide\n(F) Siddhartha\n(G) Hamlet",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "Candide",
+      "Fred": "Siddhartha",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Siddhartha",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Hamlet",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Siddhartha",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Hamlet",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Siddhartha",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Emma",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Dune | The Trial | Emma | Jane Eyre | Candide | Siddhartha | Hamlet\n1. Eve ↔ Alice: Candide | The Trial | Emma | Jane Eyre | Dune | Siddhartha | Hamlet\n2. Claire ↔ Gertrude: Candide | The Trial | Hamlet | Jane Eyre | Dune | Siddhartha | Emma\n3. Fred ↔ Gertrude: Candide | The Trial | Hamlet | Jane Eyre | Dune | Emma | Siddhartha\n4. Gertrude ↔ Claire: Candide | The Trial | Siddhartha | Jane Eyre | Dune | Emma | Hamlet\n5. Claire ↔ Fred: Candide | The Trial | Emma | Jane Eyre | Dune | Siddhartha | Hamlet\n6. Dave ↔ Eve: Candide | The Trial | Emma | Dune | Jane Eyre | Siddhartha | Hamlet\n7. Alice ↔ Bob: The Trial | Candide | Emma | Dune | Jane Eyre | Siddhartha | Hamlet\nEve has Jane Eyre, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1125,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

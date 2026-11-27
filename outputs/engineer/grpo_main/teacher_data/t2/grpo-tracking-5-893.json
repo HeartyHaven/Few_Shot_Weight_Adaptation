@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-893",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Rosa, Claire is dancing with Nadia, Dave is dancing with Oscar, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Claire and Alice switch partners. Then, Claire and Dave switch partners. Then, Bob and Dave switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Quinn\n(B) Rosa\n(C) Nadia\n(D) Oscar\n(E) Wade",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Rosa",
+      "Claire": "Nadia",
+      "Dave": "Oscar",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Rosa",
+      "Claire": "Quinn",
+      "Dave": "Oscar",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Rosa",
+      "Claire": "Nadia",
+      "Dave": "Oscar",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Rosa",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Nadia",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Quinn",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners are listed in order: Alice, Bob, Claire, Dave, Eve.\nInitial: (Quinn, Rosa, Nadia, Oscar, Wade)\n1. Claire and Alice switch: (Nadia, Rosa, Quinn, Oscar, Wade)\n2. Claire and Alice switch again: (Quinn, Rosa, Nadia, Oscar, Wade)\n3. Claire and Dave switch: (Quinn, Rosa, Oscar, Nadia, Wade)\n4. Bob and Dave switch: (Quinn, Nadia, Oscar, Rosa, Wade)\n5. Alice and Bob switch: (Nadia, Quinn, Oscar, Rosa, Wade)\nDave is dancing with Rosa, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1096,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

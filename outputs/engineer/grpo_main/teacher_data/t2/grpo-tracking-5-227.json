@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-227",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Rosa, Bob is dancing with Priya, Claire is dancing with Nadia, Dave is dancing with Tara, and Eve is dancing with Lena.\nThroughout the song, the dancers often trade partners. First, Dave and Claire switch partners. Then, Claire and Eve switch partners. Then, Eve and Bob switch partners. Then, Alice and Dave switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Rosa\n(B) Priya\n(C) Nadia\n(D) Tara\n(E) Lena",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Nadia",
+      "Dave": "Tara",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Nadia",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Priya",
+      "Claire": "Lena",
+      "Dave": "Nadia",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Tara",
+      "Claire": "Lena",
+      "Dave": "Nadia",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Lena",
+      "Dave": "Rosa",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Lena"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Dancer order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Rosa | Priya | Nadia | Tara | Lena\n1. Dave and Claire swap: Rosa | Priya | Tara | Nadia | Lena\n2. Claire and Eve swap: Rosa | Priya | Lena | Nadia | Tara\n3. Eve and Bob swap: Rosa | Tara | Lena | Nadia | Priya\n4. Alice and Dave swap: Nadia | Tara | Lena | Rosa | Priya\n5. Eve and Claire swap: Nadia | Tara | Priya | Rosa | Lena\nAlice is dancing with Nadia, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1149,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

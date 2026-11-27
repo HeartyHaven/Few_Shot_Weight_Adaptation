@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1138",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing fullback, Bob is playing left midfielder, Claire is playing sweeper, Dave is playing right winger, Eve is playing right back, Fred is playing left back, and Gertrude is playing goalkeeper.\nAs the game progresses, pairs of players occasionally swap positions. First, Gertrude and Fred trade positions. Then, Fred and Claire trade positions. Then, Alice and Bob trade positions. Then, Eve and Fred trade positions. Then, Gertrude and Eve trade positions. Then, Gertrude and Bob trade positions. Finally, Eve and Alice trade positions. At the end of the match, Dave is playing\nOptions:\n(A) fullback\n(B) left midfielder\n(C) sweeper\n(D) right winger\n(E) right back\n(F) left back\n(G) goalkeeper",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "sweeper",
+      "Dave": "right winger",
+      "Eve": "right back",
+      "Fred": "left back",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "sweeper",
+      "Dave": "right winger",
+      "Eve": "right back",
+      "Fred": "goalkeeper",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left midfielder",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "right back",
+      "Fred": "sweeper",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "fullback",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "right back",
+      "Fred": "sweeper",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "fullback",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "sweeper",
+      "Fred": "right back",
+      "Gertrude": "left back"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "fullback",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "left back",
+      "Fred": "right back",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "sweeper",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "left back",
+      "Fred": "right back",
+      "Gertrude": "fullback"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "sweeper",
+      "Claire": "goalkeeper",
+      "Dave": "right winger",
+      "Eve": "left midfielder",
+      "Fred": "right back",
+      "Gertrude": "fullback"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Player order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: fullback | left midfielder | sweeper | right winger | right back | left back | goalkeeper\n1. Gertrude ↔ Fred: fullback | left midfielder | sweeper | right winger | right back | goalkeeper | left back\n2. Fred ↔ Claire: fullback | left midfielder | goalkeeper | right winger | right back | sweeper | left back\n3. Alice ↔ Bob: left midfielder | fullback | goalkeeper | right winger | right back | sweeper | left back\n4. Eve ↔ Fred: left midfielder | fullback | goalkeeper | right winger | sweeper | right back | left back\n5. Gertrude ↔ Eve: left midfielder | fullback | goalkeeper | right winger | left back | right back | sweeper\n6. Gertrude ↔ Bob: left midfielder | sweeper | goalkeeper | right winger | left back | right back | fullback\n7. Eve ↔ Alice: left back | sweeper | goalkeeper | right winger | left midfielder | right back | fullback\nDave's final position is right winger, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1269,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

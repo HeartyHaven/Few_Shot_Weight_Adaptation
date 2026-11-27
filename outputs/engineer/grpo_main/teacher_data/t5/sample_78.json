@@ -1,0 +1,20 @@
+{
+  "id": "sample_78",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    if text and text.isupper():\n        cs = str.maketrans(string.ascii_uppercase, string.ascii_lowercase)\n        return text.translate(cs)\n    return text.lower()[:3]\n```\n\nInput: f('mTYWLMwbLRVOqNEf.oLsYkZORKE[Ko[{n')",
+  "answer": "'mty'",
+  "prompt_tokens": 131,
+  "solution": "text is nonempty, but its first character 'm' is lowercase, so text.isupper() is False. The translation branch is skipped. text.lower() changes the opening 'mTY' to 'mty', and [:3] keeps exactly those three characters.\nFinal answer: 'mty'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "'mty'",
+    "correct": true
+  }
+}

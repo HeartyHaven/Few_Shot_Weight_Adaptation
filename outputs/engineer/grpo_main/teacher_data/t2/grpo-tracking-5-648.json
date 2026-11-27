@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-648",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left midfielder, Bob is playing striker, Claire is playing goalkeeper, Dave is playing right back, and Eve is playing right winger.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Alice trade positions. Then, Dave and Bob trade positions. Then, Eve and Claire trade positions. Then, Dave and Alice trade positions. Finally, Alice and Bob trade positions. At the end of the match, Bob is playing\nOptions:\n(A) left midfielder\n(B) striker\n(C) goalkeeper\n(D) right back\n(E) right winger",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "left midfielder",
+      "Bob": "striker",
+      "Claire": "goalkeeper",
+      "Dave": "right back",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "left midfielder",
+      "Claire": "goalkeeper",
+      "Dave": "right back",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "right back",
+      "Claire": "goalkeeper",
+      "Dave": "left midfielder",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "right back",
+      "Claire": "right winger",
+      "Dave": "left midfielder",
+      "Eve": "goalkeeper"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "right back",
+      "Claire": "right winger",
+      "Dave": "striker",
+      "Eve": "goalkeeper"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "left midfielder",
+      "Claire": "right winger",
+      "Dave": "striker",
+      "Eve": "goalkeeper"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the positions of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: left midfielder, striker, goalkeeper, right back, right winger\n1. Bob ↔ Alice: striker, left midfielder, goalkeeper, right back, right winger\n2. Dave ↔ Bob: striker, right back, goalkeeper, left midfielder, right winger\n3. Eve ↔ Claire: striker, right back, right winger, left midfielder, goalkeeper\n4. Dave ↔ Alice: left midfielder, right back, right winger, striker, goalkeeper\n5. Alice ↔ Bob: right back, left midfielder, right winger, striker, goalkeeper\nBob's final position is left midfielder, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1228,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

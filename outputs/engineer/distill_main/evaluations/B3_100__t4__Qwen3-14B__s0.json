@@ -1,0 +1,94 @@
+{
+  "name": "B3_100__t4__Qwen3-14B__s0",
+  "task": "t4",
+  "student": "Qwen/Qwen3-14B",
+  "seed": 0,
+  "baseline": "B3-100",
+  "teacher": "gpt-6.2-astra",
+  "dtype": "bfloat16",
+  "engine": "vllm",
+  "max_new_tokens": 2048,
+  "gsm8k_max_new_tokens": 512,
+  "enable_thinking": false,
+  "test_fingerprints": {
+    "_secret/t4/test.jsonl": "188ed99bad6bd53c58780ed9be92b0f55a4db58ec3e16820bd6ecb84f4078c24"
+  },
+  "grader_sha256": "4518d21bd6f70e77e12984145e631e576981d0c90d191291d24ab95e781f52a6",
+  "evaluator_sha256": "ad7bf2e18d9e8b57e70e16cca4ef07034143e0951c0b8dd3b579d8e104b11dd5",
+  "worker_sha256": "3babb908d5016dc3def948d9314159927d627c61dc5492a0d44a1d6800c68f0f",
+  "worker_loaded_sha256": "3babb908d5016dc3def948d9314159927d627c61dc5492a0d44a1d6800c68f0f",
+  "gpu": "2",
+  "evaluation_protocol": 2,
+  "kv_cache_gib": 24,
+  "max_num_seqs": 64,
+  "max_num_batched_tokens": 8192,
+  "wall_seconds": 169.16,
+  "finished": 1795692236.705771,
+  "data_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "adapter_sha256": "9953f990d23bc60f80559d61820060fc2f3ff3319a4d0908567235b408de8070",
+  "results": {
+    "test": {
+      "free": {
+        "acc": 0.2022,
+        "lo": 0.1552,
+        "hi": 0.2492,
+        "n": 277
+      },
+      "no_final_answer_rate": 0.0036,
+      "mean_output_chars": 482,
+      "sec": 55,
+      "forward_tokens": 78655,
+      "by_group": {
+        "Counting & Probability": {
+          "free": {
+            "acc": 0.2195,
+            "lo": 0.1463,
+            "hi": 0.2927,
+            "n": 123
+          }
+        },
+        "Number Theory": {
+          "free": {
+            "acc": 0.1883,
+            "lo": 0.1299,
+            "hi": 0.2532,
+            "n": 154
+          }
+        }
+      }
+    },
+    "retention": {
+      "ppl_generic": 5.5395,
+      "arc_challenge": {
+        "acc": 0.91,
+        "lo": 0.8766,
+        "hi": 0.94,
+        "n": 300
+      },
+      "hellaswag": {
+        "acc": 0.88,
+        "lo": 0.8433,
+        "hi": 0.9133,
+        "n": 300
+      },
+      "arithmetic": {
+        "acc": 0.135,
+        "lo": 0.09,
+        "hi": 0.185,
+        "n": 200
+      },
+      "mmlu": {
+        "acc": 0.7412,
+        "lo": 0.7167,
+        "hi": 0.7675,
+        "n": 1140
+      },
+      "gsm8k": {
+        "acc": 0.85,
+        "lo": 0.818,
+        "hi": 0.88,
+        "n": 500
+      }
+    }
+  }
+}

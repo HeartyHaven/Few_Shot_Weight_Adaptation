@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-109",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Dune, Claire gets Candide, Dave gets The Hobbit, and Eve gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Bob and Dave swap books. Then, Eve and Alice swap books. Then, Dave and Claire swap books. Then, Alice and Bob swap books. Finally, Bob and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) Hamlet\n(B) Dune\n(C) Candide\n(D) The Hobbit\n(E) Emma",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists books in this reader order: Alice, Bob, Claire, Dave, Eve.\nInitial: Hamlet, Dune, Candide, The Hobbit, Emma\n1. Bob ↔ Dave: Hamlet, The Hobbit, Candide, Dune, Emma\n2. Eve ↔ Alice: Emma, The Hobbit, Candide, Dune, Hamlet\n3. Dave ↔ Claire: Emma, The Hobbit, Dune, Candide, Hamlet\n4. Alice ↔ Bob: The Hobbit, Emma, Dune, Candide, Hamlet\n5. Bob ↔ Alice: Emma, The Hobbit, Dune, Candide, Hamlet\nClaire's final book is Dune, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1075,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

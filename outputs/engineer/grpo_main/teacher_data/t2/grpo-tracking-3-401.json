@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-401",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Tara, and Claire is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Alice and Claire switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Oscar\n(B) Tara\n(C) Yuki",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Tara",
+      "Claire": "Yuki"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Yuki",
+      "Claire": "Tara"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Yuki",
+      "Claire": "Oscar"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Yuki",
+      "Claire": "Tara"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Partner order: (Alice, Bob, Claire).\nInitial: (Oscar, Tara, Yuki).\n1. Bob and Claire swap: (Oscar, Yuki, Tara).\n2. Alice and Claire swap: (Tara, Yuki, Oscar).\n3. Alice and Claire swap: (Oscar, Yuki, Tara).\nClaire's partner is Tara, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 999,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

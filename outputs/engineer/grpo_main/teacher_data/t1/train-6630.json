@@ -1,0 +1,22 @@
+{
+  "id": "train-6630",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 55-year-old man presents with a 2-month history of an increasing sensation of fullness in the upper left side of his abdomen. He complains of increasing fatigue and dyspnea. He has no history of serious illness and takes no medications. His temperature is 36.7°C (98.1°F), pulse is 90/min, respiratory rate is 18/min, and blood pressure is 125/70 mm Hg. His conjunctivae are pale. The examination of the heart and lungs shows no abnormalities. The splenic margin is palpable 8 cm (3.1 in) below the costal margin. No abnormal lymph nodes are found. Laboratory studies show:\nHemoglobin 8 g/dL\nMean corpuscular volume 90 μm3\nLeukocyte count 3,000/mm3\nPlatelet count 85,000/mm3\nPeripheral blood smear shows small lymphocytes with cell membrane projections. Bone marrow aspiration is unsuccessful. Cell immunophenotyping is positive for CD25.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 51,
+  "prompt_tokens": 298,
+  "solution": "The systemic inflammatory response syndrome (SIRS) count assigns one point per criterion met at presentation:\n- Temperature >38°C or <36°C: 36.7°C → 0.\n- Heart rate >90/min: exactly 90/min → 0.\n- Respiratory rate >20/min or PaCO₂ <32 mm Hg: 18/min, with no PaCO₂ reported → 0.\n- Leukocytes >12,000/mm³ or <4,000/mm³, or >10% bands: 3,000/mm³ meets the low-count criterion → 1.\nTotal = 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 736,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

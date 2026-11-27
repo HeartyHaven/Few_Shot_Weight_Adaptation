@@ -1,0 +1,22 @@
+{
+  "id": "train-615",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 78-year-old man visited our emergency room with unconsciousness. According to his family, he was poisoned with pesticide (glyphosate) for self-injury purpose. Two years ago, he had a history of cerebral infarction, and he was taking aspirin and medication for hypertension. During gastric lavage in the local clinic emergency room, his heart rate and respiration decreased. Then, he was transferred to the intensive care unit after intubation.\nIntensive care such as continuous renal replacement therapy and mechanical ventilation was performed in the intensive care unit, and colistin and minocycline were administered for pneumonia. Pulmonary thromboembolism was confirmed by chest computed tomography (CT), and anticoagulant therapy was performed. Acute acalculous cholecystitis occurred simultaneously, and a percutaneous transhepatic GB drainage tube was inserted.\nAfter 2 months of intensive treatment, the patient's condition improved, and cholecystectomy was planned. He underwent laparoscopic cholecystectomy, and there were no remarkable details of the surgery.\nOn the first day postoperatively, the drainage changed to bile. The patient's vital signs were as follows: blood pressure, 160/105 mm Hg; pulse rate, 143 beats/min; respiratory rate, 37 breaths/min; and body temperature, 39°C. There was tenderness and rebound tenderness in the whole abdomen, and CT showed pneumoperitoneum and diffuse fluid collection in the right perihepatic space (Figure ). We diagnosed him as having bile peritonitis, and reoperation was decided.\nOn relaparoscopic examination, there was a large amount of bile juice around the GB bed and perihepatic space, and suction and irrigation were performed. The cystic duct stump was confirmed, but there was no leakage. In the GB bed, a leak was observed in a small duct-like structure, which was regarded as an aberrant duct, and the operation was terminated after primary repair (Figure ).\nUntil 6 days postoperatively, hemoserous fluid was drained from the drainage tube. However, from postoperative day 7, the fluid changed to bile, and a percutaneous drainage (PCD) catheter was inserted into the GB bed area after performing CT.\nOn postoperative day 9, endoscopic retrograde cholangiopancreatography (ERCP) was performed, and a leak was detected in the branch of the right posterior hepatic duct, which was regarded as an aberrant subvesical bile duct (Figure ). Endoscopic sphincterotomy (EST) and insertion of an endoscopic retrograde biliary drainage (ERBD) stent (7 French, 5 cm) were performed (Figure ).\nOne month after ERBD stent insertion, ERCP was performed again to confirm that there was no leak, and then, the ERBD stent was removed (Figure ).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 685,
+  "solution": "CHA₂DS₂-VASc uses the patient's history at admission:\n- Congestive heart failure: not documented → 0.\n- Hypertension: taking antihypertensive medication → 1.\n- Age: 78 years meets the ≥75 criterion → 2. The 65–74 age point is not added.\n- Diabetes mellitus: not documented → 0.\n- Prior stroke, TIA, or systemic embolism: cerebral infarction two years earlier → 2.\n- Vascular disease (prior myocardial infarction, peripheral arterial disease, or aortic plaque): none documented → 0. The later pulmonary embolism does not count.\n- Sex category: male → 0.\nTotal = 0 + 1 + 2 + 0 + 2 + 0 + 0 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 904,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

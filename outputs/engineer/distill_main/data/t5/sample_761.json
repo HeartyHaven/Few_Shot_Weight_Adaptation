@@ -1,0 +1,17 @@
+{
+  "id": "sample_761",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(array):\n    output = array.copy()\n    output[0::2] = output[-1::-2]\n    output.reverse()\n    return output\n```\n\nInput: f([])",
+  "answer": "[]",
+  "solution": "array.copy() sets output to []. The right-hand slice output[-1::-2] evaluates to [] because there are no elements. The target slice output[0::2] also selects no elements, so assigning [] leaves output empty. Reversing the empty list in place changes nothing, and the function returns output.\nFinal answer: []",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 80,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[]",
+    "correct": true
+  }
+}

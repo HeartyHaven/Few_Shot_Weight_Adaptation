@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-726",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Emma, Claire gets Hamlet, Dave gets The Hobbit, Eve gets Persuasion, Fred gets Ivanhoe, and Gertrude gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Fred and Bob swap books. Then, Bob and Fred swap books. Then, Fred and Dave swap books. Then, Alice and Claire swap books. Then, Alice and Bob swap books. Then, Fred and Gertrude swap books. Finally, Dave and Fred swap books. At the end of the semester, Dave has\nOptions:\n(A) Middlemarch\n(B) Emma\n(C) Hamlet\n(D) The Hobbit\n(E) Persuasion\n(F) Ivanhoe\n(G) The Trial",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Persuasion",
+      "Fred": "Ivanhoe",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Persuasion",
+      "Fred": "Emma",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Persuasion",
+      "Fred": "Ivanhoe",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Emma",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "The Hobbit",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "The Hobbit",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "The Hobbit",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Middlemarch",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "The Trial",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Middlemarch",
+      "Dave": "The Trial",
+      "Eve": "Persuasion",
+      "Fred": "Ivanhoe",
+      "Gertrude": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude), in that order.\nInitial: (Middlemarch, Emma, Hamlet, The Hobbit, Persuasion, Ivanhoe, The Trial)\n1. Fred swaps with Bob: (Middlemarch, Ivanhoe, Hamlet, The Hobbit, Persuasion, Emma, The Trial)\n2. Bob swaps with Fred: (Middlemarch, Emma, Hamlet, The Hobbit, Persuasion, Ivanhoe, The Trial)\n3. Fred swaps with Dave: (Middlemarch, Emma, Hamlet, Ivanhoe, Persuasion, The Hobbit, The Trial)\n4. Alice swaps with Claire: (Hamlet, Emma, Middlemarch, Ivanhoe, Persuasion, The Hobbit, The Trial)\n5. Alice swaps with Bob: (Emma, Hamlet, Middlemarch, Ivanhoe, Persuasion, The Hobbit, The Trial)\n6. Fred swaps with Gertrude: (Emma, Hamlet, Middlemarch, Ivanhoe, Persuasion, The Trial, The Hobbit)\n7. Dave swaps with Fred: (Emma, Hamlet, Middlemarch, The Trial, Persuasion, Ivanhoe, The Hobbit)\nDave's book is The Trial, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1083,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

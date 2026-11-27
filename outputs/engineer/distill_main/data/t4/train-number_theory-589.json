@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-589",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Call a positive integer $N$ a 7-10 double if the digits of the base-$7$ representation of $N$ form a base-$10$ number that is twice $N$. For example, $51$ is a 7-10 double because its base-$7$ representation is $102$. What is the largest 7-10 double?\n",
+  "answer": "315",
+  "solution": "Write $N=\\sum_i d_i7^i$ with digits $0\\le d_i\\le6$. The double condition is $\\sum_i d_i(10^i-2\\cdot7^i)=0$. The coefficients for $i=0,1,2$ are $-1,-4,2$, respectively, so the total negative contribution is at worst $-6-4\\cdot6=-30$. For $i\\ge3$, the coefficient is $7^i((10/7)^i-2)\\ge10^3-2\\cdot7^3=314$. Hence no digit in position $i\\ge3$ can be nonzero.\nWriting the remaining digits as $abc$ in base $7$ (padding with zeros if needed), we get $2a=4b+c$. To maximize $N$, maximize $a$ first. With $a=6$, we need $4b+c=12$, so $b\\le3$. Taking $b=3$ gives $c=0$, making the largest feasible digit string $630$. Its base-$7$ value is $6\\cdot49+3\\cdot7=315$.\nFinal answer: 315",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 35,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "315",
+    "correct": true
+  }
+}

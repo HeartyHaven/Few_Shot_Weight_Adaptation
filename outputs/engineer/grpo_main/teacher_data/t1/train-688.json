@@ -1,0 +1,22 @@
+{
+  "id": "train-688",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 49-year old man was referred to us with painless sudden visual loss in his right eye. Eight days prior to his visit, he received chiropractic manipulation on his neck in a prone position for approximately 10 minutes to improve neck and shoulder stiffness. Immediately after rising, he was unable to see with his right eye. When he first visited our clinic, the best corrected visual acuity in the right eye was hand motion, while the left eye was at 20 / 20. Anterior segment examination was unremarkable, and the right eye had a relative afferent pupillary defect. There was cherry-red spot in the macula in his right eye (), and the arterio-venous transit time in the fluorescein angiogram was delayed (). A cervical color Doppler showed stenosis of the right internal carotid artery () with diffuse atherosclerotic plaques in the right common carotid artery (). The right anterior communication artery was not visible by magnetic resonance angiogram ().\nThe patient had been taken hospitalization twice previously because of cerebral infarction. He has suffered from dysarthria, which is sequela of cerebral infarction. He has taken medicine for hypertension and diabetes mellitus for 5 years.\nIn our case of central retinal artery occlusion, the usual emergency efforts to restore retinal circulation such as ocular digital massage and anterior chamber paracentesis were not performed because eight days had already passed. We prescribed ginko biloba extract (Tanamin; Yuyu Pharmacy, Seoul, Korea), 3 tablets per day. Three years after the patient's first visit, the best corrected visual acuity of his right eye was 20 / 200.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 430,
+  "solution": "CHA₂DS₂-VASc is a stroke-risk score for atrial fibrillation. Using the patient's documented history at presentation:\n- Congestive heart failure: not documented → 0.\n- Hypertension: treated for 5 years → 1.\n- Age: 49 (<65; 65–74 scores 1 and ≥75 scores 2) → 0.\n- Diabetes mellitus: treated for 5 years → 1.\n- Prior stroke, TIA, or systemic embolism: previous cerebral infarctions → 2 total, not 2 per event.\n- Vascular disease: documented carotid stenosis with diffuse atherosclerotic plaques, counted as vascular disease here → 1.\n- Sex category: male → 0.\nSum: 0 + 1 + 0 + 1 + 2 + 1 + 0 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 857,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

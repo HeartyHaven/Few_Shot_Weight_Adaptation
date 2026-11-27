@@ -1,0 +1,22 @@
+{
+  "id": "train-4093",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 57-year-old lady presented with exertional dyspnea and NYHA class II angina since last 3 years which had aggravated in last 6 months. She had been previously diagnosed with hypertension and hypercholesterolemia and was put on medical treatment.\nPhysical examination was unremarkable except a soft (grade II/VI) continuous murmur that was heard most clearly over the pulmonary area. An electrocardiogram was normal without any evidence of ischemia, and echocardiogram showed mild dilatation of the left atrium and left ventricle. Coronary angiography demonstrated multiple coronary artery to pulmonary artery fistulae originating from the left anterior descending (LAD) and right coronary arteries (RCA). There were no flow-limiting lesions in the coronary arteries. There was TIMI III flow in coronary vessels distal to the origin of the fistulae [Figures and ]. After a thorough discussion during the weekly catheterization meeting, it was decided to close the fistulae surgically in order to alleviate symptoms. Issues that prompted against transcatheter intervention were acute angle of origin of the fistula arising from LAD and the excessive tortuosity that would make transcatheter coil embolization of the coronary fistula extremely cumbersome and complex. Intra-operatively, the coronary fistulae were confirmed to be originating from the RCA and the LAD and terminating into pulmonary artery with an intervening “fistula lake.” The “lake” next to the LAD was identified, and the vessels feeding this lake were occluded with surgical clips as were the vessels coming from RCA. The aneurysmal sac was further obliterated using a larger surgical clip. Post-operative coronary angiogram showed no evidence of residual fistulae [Figures and ]. The patient made an uneventful recovery and at 1-month follow-up, she was symptom free.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 456,
+  "solution": "HEART scores five components from 0 to 2 for suspected acute coronary syndrome. Its application here is conditional because the symptoms are chronic and no admission troponin is reported.\n- History (slightly/moderately/highly suspicious = 0/1/2): exertional angina with gradual worsening, but no clear acute episode, is scored as moderately suspicious = 1.\n- ECG (normal/nonspecific repolarization changes/significant ST depression = 0/1/2): normal = 0.\n- Age (<45/45–64/≥65 years = 0/1/2): age 57 = 1.\n- Risk factors (none/1–2/≥3 or known atherosclerotic disease = 0/1/2): hypertension and hypercholesterolemia = 1. Coronary fistulae are not atherosclerotic disease.\n- Troponin (≤1, >1 to 3, or >3 times the upper reference limit = 0/1/2): assumed normal for this estimate = 0.\nConditional total: 1 + 0 + 1 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 711,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

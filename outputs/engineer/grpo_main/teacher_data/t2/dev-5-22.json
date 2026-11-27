@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-22",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right back, Bob is playing goalkeeper, Claire is playing fullback, Dave is playing benchwarmer, and Eve is playing left back.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Alice trade positions. Then, Alice and Dave trade positions. Then, Bob and Claire trade positions. Then, Bob and Claire trade positions. Finally, Dave and Bob trade positions. At the end of the match, Alice is playing\nOptions:\n(A) right back\n(B) goalkeeper\n(C) fullback\n(D) benchwarmer\n(E) left back",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "right back",
+      "Bob": "goalkeeper",
+      "Claire": "fullback",
+      "Dave": "benchwarmer",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "goalkeeper",
+      "Claire": "right back",
+      "Dave": "benchwarmer",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "goalkeeper",
+      "Claire": "right back",
+      "Dave": "fullback",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "right back",
+      "Claire": "goalkeeper",
+      "Dave": "fullback",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "goalkeeper",
+      "Claire": "right back",
+      "Dave": "fullback",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "fullback",
+      "Claire": "right back",
+      "Dave": "goalkeeper",
+      "Eve": "left back"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Position order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (right back, goalkeeper, fullback, benchwarmer, left back)\n1. Claire ↔ Alice: (fullback, goalkeeper, right back, benchwarmer, left back)\n2. Alice ↔ Dave: (benchwarmer, goalkeeper, right back, fullback, left back)\n3. Bob ↔ Claire: (benchwarmer, right back, goalkeeper, fullback, left back)\n4. Bob ↔ Claire: (benchwarmer, goalkeeper, right back, fullback, left back)\n5. Dave ↔ Bob: (benchwarmer, fullback, right back, goalkeeper, left back)\nAlice is the benchwarmer, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

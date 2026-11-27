@@ -1,0 +1,20 @@
+{
+  "id": "sample_320",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    index = 1\n    while index < len(text):\n        if text[index] != text[index - 1]:\n            index += 1\n        else:\n            text1 = text[:index]\n            text2 = text[index:].swapcase()\n            return text1 + text2\n    return text.swapcase()\n```\n\nInput: f('USaR')",
+  "answer": "'usAr'",
+  "prompt_tokens": 139,
+  "solution": "len(text) is 4. At index 1, 'S' differs from 'U', so index becomes 2. At index 2, 'a' differs from 'S', so index becomes 3. At index 3, 'R' differs from 'a', so index becomes 4. The loop ends, and swapcase() changes 'U', 'S', 'a', 'R' to 'u', 's', 'A', 'r', respectively.\nFinal answer: 'usAr'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "'usAr'",
+    "correct": true
+  }
+}

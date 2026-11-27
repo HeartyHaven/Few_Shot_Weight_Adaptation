@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-504",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Nadia, Claire is dancing with Lena, Dave is dancing with Rosa, Eve is dancing with Tara, Fred is dancing with Priya, and Gertrude is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Bob and Dave switch partners. Then, Dave and Bob switch partners. Then, Fred and Claire switch partners. Then, Eve and Claire switch partners. Then, Bob and Eve switch partners. Finally, Eve and Alice switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Oscar\n(B) Nadia\n(C) Lena\n(D) Rosa\n(E) Tara\n(F) Priya\n(G) Umar",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Nadia",
+      "Claire": "Lena",
+      "Dave": "Rosa",
+      "Eve": "Tara",
+      "Fred": "Priya",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Tara",
+      "Fred": "Priya",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Rosa",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Tara",
+      "Fred": "Priya",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Oscar",
+      "Dave": "Rosa",
+      "Eve": "Tara",
+      "Fred": "Priya",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Priya",
+      "Dave": "Rosa",
+      "Eve": "Tara",
+      "Fred": "Oscar",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Tara",
+      "Dave": "Rosa",
+      "Eve": "Priya",
+      "Fred": "Oscar",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Rosa",
+      "Eve": "Nadia",
+      "Fred": "Oscar",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Rosa",
+      "Eve": "Lena",
+      "Fred": "Oscar",
+      "Gertrude": "Umar"
+    }
+  ],
+  "prompt_tokens": 225,
+  "solution": "Each row lists partners in dancer order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Oscar | Nadia | Lena | Rosa | Tara | Priya | Umar\n1. Alice ↔ Claire: Lena | Nadia | Oscar | Rosa | Tara | Priya | Umar\n2. Bob ↔ Dave: Lena | Rosa | Oscar | Nadia | Tara | Priya | Umar\n3. Dave ↔ Bob: Lena | Nadia | Oscar | Rosa | Tara | Priya | Umar\n4. Fred ↔ Claire: Lena | Nadia | Priya | Rosa | Tara | Oscar | Umar\n5. Eve ↔ Claire: Lena | Nadia | Tara | Rosa | Priya | Oscar | Umar\n6. Bob ↔ Eve: Lena | Priya | Tara | Rosa | Nadia | Oscar | Umar\n7. Eve ↔ Alice: Nadia | Priya | Tara | Rosa | Lena | Oscar | Umar\nDave is dancing with Rosa, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1014,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

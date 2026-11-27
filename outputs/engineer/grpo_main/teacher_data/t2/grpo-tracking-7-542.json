@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-542",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Vera, Bob is dancing with Karl, Claire is dancing with Umar, Dave is dancing with Nadia, Eve is dancing with Wade, Fred is dancing with Marco, and Gertrude is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Alice and Dave switch partners. Then, Claire and Bob switch partners. Then, Eve and Claire switch partners. Then, Fred and Bob switch partners. Then, Alice and Dave switch partners. Then, Fred and Dave switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Fred is dancing with\nOptions:\n(A) Vera\n(B) Karl\n(C) Umar\n(D) Nadia\n(E) Wade\n(F) Marco\n(G) Quinn",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Vera",
+      "Bob": "Karl",
+      "Claire": "Umar",
+      "Dave": "Nadia",
+      "Eve": "Wade",
+      "Fred": "Marco",
+      "Gertrude": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Karl",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Wade",
+      "Fred": "Marco",
+      "Gertrude": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Karl",
+      "Dave": "Vera",
+      "Eve": "Wade",
+      "Fred": "Marco",
+      "Gertrude": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Wade",
+      "Dave": "Vera",
+      "Eve": "Karl",
+      "Fred": "Marco",
+      "Gertrude": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Marco",
+      "Claire": "Wade",
+      "Dave": "Vera",
+      "Eve": "Karl",
+      "Fred": "Umar",
+      "Gertrude": "Quinn"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Marco",
+      "Claire": "Wade",
+      "Dave": "Nadia",
+      "Eve": "Karl",
+      "Fred": "Umar",
+      "Gertrude": "Quinn"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Marco",
+      "Claire": "Wade",
+      "Dave": "Umar",
+      "Eve": "Karl",
+      "Fred": "Nadia",
+      "Gertrude": "Quinn"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Marco",
+      "Claire": "Vera",
+      "Dave": "Umar",
+      "Eve": "Karl",
+      "Fred": "Nadia",
+      "Gertrude": "Quinn"
+    }
+  ],
+  "prompt_tokens": 223,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Vera, Karl, Umar, Nadia, Wade, Marco, Quinn\n1. Alice ↔ Dave: Nadia, Karl, Umar, Vera, Wade, Marco, Quinn\n2. Claire ↔ Bob: Nadia, Umar, Karl, Vera, Wade, Marco, Quinn\n3. Eve ↔ Claire: Nadia, Umar, Wade, Vera, Karl, Marco, Quinn\n4. Fred ↔ Bob: Nadia, Marco, Wade, Vera, Karl, Umar, Quinn\n5. Alice ↔ Dave: Vera, Marco, Wade, Nadia, Karl, Umar, Quinn\n6. Fred ↔ Dave: Vera, Marco, Wade, Umar, Karl, Nadia, Quinn\n7. Claire ↔ Alice: Wade, Marco, Vera, Umar, Karl, Nadia, Quinn\nFred's final partner is Nadia, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1301,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

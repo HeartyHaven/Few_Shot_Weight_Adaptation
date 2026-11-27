@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-154",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing striker, Bob is playing fullback, Claire is playing benchwarmer, Dave is playing cheerleader, and Eve is playing center midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Dave trade positions. Then, Eve and Dave trade positions. Then, Eve and Dave trade positions. Then, Bob and Dave trade positions. Finally, Dave and Bob trade positions. At the end of the match, Dave is playing\nOptions:\n(A) striker\n(B) fullback\n(C) benchwarmer\n(D) cheerleader\n(E) center midfielder",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "striker",
+      "Bob": "fullback",
+      "Claire": "benchwarmer",
+      "Dave": "cheerleader",
+      "Eve": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "fullback",
+      "Claire": "cheerleader",
+      "Dave": "benchwarmer",
+      "Eve": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "fullback",
+      "Claire": "cheerleader",
+      "Dave": "center midfielder",
+      "Eve": "benchwarmer"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "fullback",
+      "Claire": "cheerleader",
+      "Dave": "benchwarmer",
+      "Eve": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "benchwarmer",
+      "Claire": "cheerleader",
+      "Dave": "fullback",
+      "Eve": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "fullback",
+      "Claire": "cheerleader",
+      "Dave": "benchwarmer",
+      "Eve": "center midfielder"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists the positions of (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (striker, fullback, benchwarmer, cheerleader, center midfielder)\n1. Claire ↔ Dave: (striker, fullback, cheerleader, benchwarmer, center midfielder)\n2. Eve ↔ Dave: (striker, fullback, cheerleader, center midfielder, benchwarmer)\n3. Eve ↔ Dave: (striker, fullback, cheerleader, benchwarmer, center midfielder)\n4. Bob ↔ Dave: (striker, benchwarmer, cheerleader, fullback, center midfielder)\n5. Dave ↔ Bob: (striker, fullback, cheerleader, benchwarmer, center midfielder)\nDave is playing benchwarmer, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1202,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-781",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 84-year-old woman with hypertension presented to the emergency department with epigastric pain, nausea, and dizziness for 3 hours. A 12-lead electrocardiogram showed a junctional rhythm at rate of 40 and 2 mm inferior ST-elevations with lateral ST depressions. High-sensitivity troponin-I level was 0.01 ng/mL. Initial management included aspirin, clopidogrel, and intravenous heparin, and she was subsequently taken emergently to the catheterization laboratory. Attempts to engage the right coronary artery (RCA) were unsuccessful despite using multiple guide catheters. The left coronary system showed no angiographic evidence of coronary artery disease with left to right collaterals. Contrast injection in the right coronary sinus suggested ostial total occlusion of the RCA (). Probing with a coronary wire near where the RCA ostium was presumed to be located was associated with an increase in the heart rate with an idioventricular rhythm and resolution of inferior ST-elevation. The RCA was then easily engaged with a guide catheter. Angiographic evaluation of the RCA showed a smooth vessel with no evidence of coronary artery disease except for abrupt termination of the distal PL2 branch (). A computed tomography angiogram was then done to explore the cause of the right ostial occlusion and revealed an aortic root thrombus (21 × 16 mm) with extension into the right coronary sinus, together with near complete obliteration of the left atrial appendage with another large thrombus ( and ). Serial electrocardiograms demonstrated paroxysmal atrial fibrillation with complete resolution of inferior ST-segment elevation. Subsequent troponin-I levels peaked at 74 ng/mL. A transthoracic echocardiogram showed inferobasal septal hypokinesis and ejection fraction of 45%. A brain magnetic resonance imaging obtained secondary to mental status changes that occurred a few hours after the procedure showed multiple embolic cerebral infarcts and complete occlusion of the left internal carotid artery. The patient was treated with intravenous heparin and bridged to warfarin therapy. She was discharged home in good condition on hospital day 5. Follow-up 6 months after the index hospitalization revealed no symptoms or signs of disease recurrence.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 554,
+  "solution": "CHA₂DS₂-VASc scores stroke risk in atrial fibrillation. Applying each criterion to the presenting illness:\n- Congestive heart failure or qualifying LV dysfunction: no clinical heart failure documented; EF 45% does not meet the usual ≤40% threshold → 0.\n- Hypertension: known history → 1.\n- Age: 84 years → 2 for age ≥75; the 65–74 category is not added separately.\n- Diabetes: none documented → 0.\n- Stroke, TIA, or systemic embolism: the presenting coronary occlusion was thromboembolic, with an aortic root thrombus extending into the right coronary sinus → 2. This does not require counting the later cerebral infarcts as pre-admission strokes.\n- Vascular disease: the presenting inferior myocardial infarction counts as an MI → 1.\n- Sex category: female → 1.\nTotal = 0 + 1 + 2 + 0 + 2 + 1 + 1 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 692,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

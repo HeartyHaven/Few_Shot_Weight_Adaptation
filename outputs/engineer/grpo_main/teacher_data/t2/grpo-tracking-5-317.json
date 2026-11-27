@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-317",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Dune, Claire gets Dracula, Dave gets Walden, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Claire and Eve swap books. Then, Dave and Claire swap books. Then, Dave and Eve swap books. Finally, Eve and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) Middlemarch\n(B) Dune\n(C) Dracula\n(D) Walden\n(E) The Trial",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Walden",
+      "Dave": "Dracula",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Dracula"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Middlemarch, Dune, Dracula, Walden, The Trial)\n1. Dave and Claire swap: (Middlemarch, Dune, Walden, Dracula, The Trial)\n2. Claire and Eve swap: (Middlemarch, Dune, The Trial, Dracula, Walden)\n3. Dave and Claire swap: (Middlemarch, Dune, Dracula, The Trial, Walden)\n4. Dave and Eve swap: (Middlemarch, Dune, Dracula, Walden, The Trial)\n5. Eve and Claire swap: (Middlemarch, Dune, The Trial, Walden, Dracula)\nDave has Walden, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1175,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

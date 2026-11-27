@@ -1,0 +1,22 @@
+{
+  "id": "train-767",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 87-year-old woman was transferred to the emergency department with mild consciousness cloudiness and swallowing disturbance. She had a history of myocardial infarction 7 years before and had been taking aspirin, isosorbide and lipid-lowering drugs. She had mild, untreated diabetes mellitus. On examination, her consciousness level was 4-4-6 on the Glasgow Coma Scale. Her blood pressure was 128/94 mm Hg and her heart rate was 103/min without arrhythmia. She showed severe dysphagia and hoarseness, but palatal movement and gag reflex were normal and there was no tongue deviation. Except for mild gait ataxia, which was suspected to be of cerebellar origin, no motor or sensory impairment was observed. Bilateral limb tendon reflexes tended to be decreased, but other neurological signs were negative. Blood tests, including a complete blood count, electrolytes, and renal and liver functions were all normal. Fasting glucose level was 170 mg/dL. Chest X-ray and electrocardiogram were noncontributory. Head CT showed a high-density area at the right dorsolateral medulla (Fig. ). However, CT angiography performed at the same time did not reveal the cause of the hemorrhagic lesion; there was no aneurysm, cavernous malformation or tumor (Fig. ).\nAfter hospitalization, aspirin intake was discontinued, and anti-hypertensive drugs were initiated. Her consciousness level returned to normal within a few days. Due to the swallowing disturbance, nutrition was provided via a feeding tube. Rehabilitation training stabilized her walking and reduced the symptoms of ataxia. She could speak clearly by the 10th hospital day and she was able to take food orally on the 30th hospital day.\nThe patient underwent 1.5-T MRI scans of the brain on the 8th and 40th hospital days. The 40th day scan still showed a low signal intensity lesion on the right dorsolateral medulla in the T2* sequence image (Fig. ). MRA conducted at the same time again did not reveal any vascular anomaly or tumor. Diffusion tensor tractography, performed on the same day (40th hospital day) as the second MRI using our previously reported technique [], showed a decreased volume of the right cortico-mesencephalic tract (Fig. ).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 574,
+  "solution": "CHA₂DS₂-VASc assigns points for heart failure, hypertension, age, diabetes, prior stroke/TIA/systemic embolism, vascular disease, and female sex.\n- Heart failure: none documented → 0.\n- Hypertension: admission BP was 128/94 mm Hg → 1 if the elevated diastolic pressure is taken to represent hypertension. A single reading does not establish chronic hypertension; this is the assumption needed for the total below.\n- Age 87: age ≥75 → 2; do not also score the 65–74 age band.\n- Diabetes: present, even though untreated → 1.\n- Prior stroke/TIA/systemic embolism: none reported. The presenting medullary hemorrhage is not a prior thromboembolic event → 0.\n- Vascular disease: prior myocardial infarction → 1.\n- Female sex → 1.\nSum with hypertension counted: 0 + 1 + 2 + 1 + 0 + 1 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 726,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-786",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nIn our case, a 68-year-old man with a past medical history of end-stage renal disease, atrial flutter, and peripheral vascular disease presented to the hospital with severe, pressure-like chest pain. The initial electrocardiogram (ECG) was abnormal as shown in Figure . Initial laboratory workups, including electrolytes and cardiac enzymes, were within normal limits. The ECG in Figure demonstrates a narrow QRS complex tachycardia with normal axis. Borderline low voltage QRS complexes along with elevated ST-segments in leads II, III, and aVF are also apparent. The patient's ECG and presentation was concerning for an inferior ST-segment elevation myocardial infarction (STEMI). However, careful inspection of the ECG will reveal that the rhythm is in fact atrial flutter with 2:1 conduction to the ventricles at a rate of 106 beats per minute, and the flutter waves (tachycardia cycle length 289 ms) are falling on the ST segment of the ECG. This is best seen in lead V\n1, where the flutter waves are positive.\nIn the index case, however, the patient was taken to the cardiac catheterization lab given high pretest probability of ischemic disease, and no evidence of coronary artery disease was found. During the cardiac catheterization, the patient spontaneously converted to sinus rhythm with resolution of ST segment changes. A previous ECG (Figure ) demonstrates atrial flutter with slow ventricular response. On this tracing, flutter waves are intermittently superimposed on the ST segments (thick arrows), and when not overlapped, clearly demonstrates the ST segment is normal (thin arrows).\nPrevious cases have been reported where the timing of the flutter waves raise the suspicion for ST-segment elevation, mimicking a STEMI. In these cases, reciprocal changes should be carefully evaluated, and patient history may also provide a diagnostic clue. Whenever the diagnosis of myocardial injury is unclear due to the possibility of an artifact or atrial flutter, simply repeating the ECG during carotid sinus massage or administering AV blocking agents may fortuitously dissociate the ST segments from flutter waves just briefly enough to elucidate the correct diagnosis as shown in Figure . Our case illustrates how striking the elevation of ST segments can appear when atrial flutter waves are incidentally superimposed upon the ST segments.\nRecognition of this arrhythmia can potentially expedite treatment (rate control and/or cardioversion) and spare the patient invasive studies.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 588,
+  "solution": "Apply CHA₂DS₂-VASc for thromboembolic risk in atrial flutter:\n1. Congestive heart failure or LV dysfunction (1 point): not reported = 0.\n2. Hypertension (1): not reported = 0.\n3. Age (2 if ≥75, 1 if 65–74): age 68 = 1.\n4. Diabetes mellitus (1): not reported = 0.\n5. Prior stroke, TIA or systemic embolism (2): not reported = 0.\n6. Vascular disease (1): documented peripheral vascular disease = 1, independently of the coronary findings.\n7. Female sex (1): male = 0.\nEnd-stage renal disease is not a CHA₂DS₂-VASc criterion. Sum = 0 + 0 + 1 + 0 + 0 + 1 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 722,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

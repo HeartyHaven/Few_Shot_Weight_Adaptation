@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-381",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Candide, and Claire gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Alice and Bob swap books. Finally, Alice and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Jane Eyre\n(B) Candide\n(C) Emma",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "Emma"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Emma",
+      "Claire": "Candide"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma"
+    }
+  ],
+  "prompt_tokens": 140,
+  "solution": "Book order: (Alice, Bob, Claire).\nInitial: (Jane Eyre, Candide, Emma).\n1. Bob and Claire swap: (Jane Eyre, Emma, Candide).\n2. Alice and Bob swap: (Emma, Jane Eyre, Candide).\n3. Alice and Claire swap: (Candide, Jane Eyre, Emma).\nBob has Jane Eyre, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 999,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

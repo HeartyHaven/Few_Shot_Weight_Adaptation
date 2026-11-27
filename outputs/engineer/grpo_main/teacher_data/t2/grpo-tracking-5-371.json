@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-371",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a black ball, Bob has a white ball, Claire has a gold ball, Dave has a green ball, and Eve has a blue ball.\nAs the game progresses, pairs of players trade balls. First, Claire and Dave swap balls. Then, Bob and Eve swap balls. Then, Dave and Claire swap balls. Then, Dave and Eve swap balls. Finally, Alice and Dave swap balls. At the end of the game, Claire has the\nOptions:\n(A) black ball\n(B) white ball\n(C) gold ball\n(D) green ball\n(E) blue ball",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "black",
+      "Bob": "white",
+      "Claire": "gold",
+      "Dave": "green",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "black",
+      "Bob": "white",
+      "Claire": "green",
+      "Dave": "gold",
+      "Eve": "blue"
+    },
+    {
+      "Alice": "black",
+      "Bob": "blue",
+      "Claire": "green",
+      "Dave": "gold",
+      "Eve": "white"
+    },
+    {
+      "Alice": "black",
+      "Bob": "blue",
+      "Claire": "gold",
+      "Dave": "green",
+      "Eve": "white"
+    },
+    {
+      "Alice": "black",
+      "Bob": "blue",
+      "Claire": "gold",
+      "Dave": "white",
+      "Eve": "green"
+    },
+    {
+      "Alice": "white",
+      "Bob": "blue",
+      "Claire": "gold",
+      "Dave": "black",
+      "Eve": "green"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists ball colors in player order: Alice, Bob, Claire, Dave, Eve.\nInitial: black, white, gold, green, blue.\n1. Claire ↔ Dave: black, white, green, gold, blue.\n2. Bob ↔ Eve: black, blue, green, gold, white.\n3. Dave ↔ Claire: black, blue, gold, green, white.\n4. Dave ↔ Eve: black, blue, gold, white, green.\n5. Alice ↔ Dave: white, blue, gold, black, green.\nClaire has the gold ball, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1312,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

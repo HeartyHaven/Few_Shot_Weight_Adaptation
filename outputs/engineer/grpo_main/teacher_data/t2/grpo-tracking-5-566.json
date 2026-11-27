@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-566",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Dune, Claire gets The Trial, Dave gets Dracula, and Eve gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Alice and Eve swap books. Then, Claire and Dave swap books. Then, Eve and Claire swap books. Then, Bob and Eve swap books. Finally, Claire and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Persuasion\n(B) Dune\n(C) The Trial\n(D) Dracula\n(E) Ivanhoe",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Persuasion",
+      "Dave": "The Trial",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dracula",
+      "Claire": "Persuasion",
+      "Dave": "The Trial",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Persuasion | Dune | The Trial | Dracula | Ivanhoe\nAfter Alice–Eve: Ivanhoe | Dune | The Trial | Dracula | Persuasion\nAfter Claire–Dave: Ivanhoe | Dune | Dracula | The Trial | Persuasion\nAfter Eve–Claire: Ivanhoe | Dune | Persuasion | The Trial | Dracula\nAfter Bob–Eve: Ivanhoe | Dracula | Persuasion | The Trial | Dune\nAfter Claire–Alice: Persuasion | Dracula | Ivanhoe | The Trial | Dune\nBob has Dracula, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1226,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-4",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Nadia, Bob is dancing with Tara, Claire is dancing with Karl, Dave is dancing with Stefan, and Eve is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Claire and Dave switch partners. Then, Claire and Dave switch partners. Then, Claire and Dave switch partners. Then, Claire and Eve switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Nadia\n(B) Tara\n(C) Karl\n(D) Stefan\n(E) Quinn",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Karl",
+      "Dave": "Stefan",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Karl",
+      "Dave": "Stefan",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners in each row are listed for Alice, Bob, Claire, Dave, and Eve, respectively.\nInitial: Nadia, Tara, Karl, Stefan, Quinn.\n1. Claire–Dave: Nadia, Tara, Stefan, Karl, Quinn.\n2. Claire–Dave: Nadia, Tara, Karl, Stefan, Quinn.\n3. Claire–Dave: Nadia, Tara, Stefan, Karl, Quinn.\n4. Claire–Eve: Nadia, Tara, Quinn, Karl, Stefan.\n5. Bob–Alice: Tara, Nadia, Quinn, Karl, Stefan.\nBob, second in the row, is dancing with Nadia: option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1297,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

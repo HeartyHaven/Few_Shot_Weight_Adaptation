@@ -1,0 +1,20 @@
+{
+  "id": "sample_124",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(txt, sep, sep_count):\n    o = ''\n    while sep_count > 0 and txt.count(sep) > 0:\n        o += txt.rsplit(sep, 1)[0] + sep\n        txt = txt.rsplit(sep, 1)[1]\n        sep_count -= 1\n    return o + txt\n```\n\nInput: f('i like you', ' ', -1)",
+  "answer": "'i like you'",
+  "prompt_tokens": 148,
+  "solution": "Start with o = '', txt = 'i like you', and sep_count = -1. The first loop test, sep_count > 0, is False, so txt.count(sep) is not evaluated. No iterations run. The return expression o + txt is '' + 'i like you'.\nFinal answer: 'i like you'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "'i like you'",
+    "correct": true
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "id": "dev-876",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "calc_id": 4,
+  "question": "Patient note:\nA 55-year-old woman presents to a primary care clinic for a physical evaluation. She works as a software engineer, travels frequently, is married with 2 kids, and drinks alcohol occasionally. She does not exercise regularly. She currently does not take any medications except for occasional ibuprofen or acetaminophen. She is currently undergoing menopause. Her initial vital signs reveal that her blood pressure is 140/95 mmHg and heart rate is 75/min. She weighs 65 kg (143 lb) and is 160 cm (63 in) tall. Her physical exam is unremarkable. A repeat measurement of her blood pressure is the same as before. Among various laboratory tests for hypertension evaluation, the physician requests fasting glucose and hemoglobin A1c levels.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "explanation": "The criteria for the CHA2DS2-VASc score are listed below:\n\n1. Age: < 65 years = 0 points, 65-74 years = +1 point, ≥ 75 years = +2 points\n2. Sex: Female = +1 point, Male = 0 points\n3. Congestive Heart Failure (CHF) history: No = 0 points, Yes = +1 point\n4. Hypertension history: No = 0 points, Yes = +1 point\n5. Stroke, Transient Ischemic Attack (TIA), or Thromboembolism history: No = 0 points, Yes = +2 points\n6. Vascular disease history (previous myocardial infarction, peripheral artery disease, or aortic plaque): No = 0 points, Yes = +1 point\n7. Diabetes history: No = 0 points, Yes = +1 point\n\nThe CHA2DS2-VASc score is calculated by summing the points for each criterion.\n    \nThe current CHA2DS2-VASc score is 0.\nThe patient is 55 years old. Because the age is less than 65 years, no points are added to the current total, keeping the total at 0.\nThe patient's gender is female and so one point is added to the score, making the current total 0 + 1 = 1.\nThe patient history for congestive heart failure is absent. Because the patient does not have congestive heart failure, no points are added to the current total, keeping the total at 1.\nThe patient history for hypertension is present. Because the patient has hypertension, one point is added to the score, making the current total 1 + 1 = 2.\nOne criteria of the CHA2DS2-VASc score is to check if the patient has had any history of stroke, transient ischemic attacks (TIA), or thromboembolism. Based on the patient note, the patient history for stroke is absent. Based on the patient note, the patient history for tia is absent. Based on the patient note, the patient history for thromboembolism is absent. Because all of stroke, tia, or thromboembolism are absent, no points are added to score, keeping the score at 2.\nBased on the patient note, the patient history for vascular disease is absent. Because the patient does not have vascular disease, no points are added to score, keeping the score at 2. Because diabetes history is not specified in the patient note, we assume it's value as 'absent'. Because the patient does not have diabetes, no points are added to score, keeping the score at 2.\nThe patient's CHA2DS2-VASc Score is 2.",
+  "solution": "Apply CHA2DS2-VASc using the findings at the initial visit:\n- Age: 55, below 65 → 0 (65–74 scores 1; ≥75 scores 2).\n- Sex: female → 1.\n- Congestive heart failure: none documented → 0.\n- Hypertension: untreated BP was 140/95 mmHg on both measurements, counted as hypertension in this case → 1.\n- Prior stroke, TIA, or systemic embolism: none documented → 0.\n- Vascular disease: no prior myocardial infarction, peripheral artery disease, or aortic plaque documented → 0.\n- Diabetes: fasting glucose and HbA1c were ordered, but no result or diagnosis establishes diabetes → 0.\nSum: 0 + 1 + 0 + 1 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "8b9a3e561e15e11dac4347cef51c8be2946c533d751cd80486ae510d65212049",
+  "call_id": 77,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

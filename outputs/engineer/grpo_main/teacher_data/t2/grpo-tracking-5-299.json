@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-299",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Siddhartha, Claire gets Hamlet, Dave gets Candide, and Eve gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Dave and Alice swap books. Then, Eve and Dave swap books. Then, Eve and Alice swap books. Finally, Bob and Alice swap books. At the end of the semester, Alice has\nOptions:\n(A) Dracula\n(B) Siddhartha\n(C) Hamlet\n(D) Candide\n(E) Beloved",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Hamlet",
+      "Dave": "Dracula",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: Alice | Bob | Claire | Dave | Eve\nInitial: Dracula | Siddhartha | Hamlet | Candide | Beloved\n1. Eve ↔ Dave: Dracula | Siddhartha | Hamlet | Beloved | Candide\n2. Dave ↔ Alice: Beloved | Siddhartha | Hamlet | Dracula | Candide\n3. Eve ↔ Dave: Beloved | Siddhartha | Hamlet | Candide | Dracula\n4. Eve ↔ Alice: Dracula | Siddhartha | Hamlet | Candide | Beloved\n5. Bob ↔ Alice: Siddhartha | Dracula | Hamlet | Candide | Beloved\nAlice has Siddhartha, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1092,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

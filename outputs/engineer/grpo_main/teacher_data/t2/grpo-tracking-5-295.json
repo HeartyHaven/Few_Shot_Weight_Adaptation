@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-295",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Jane Eyre, Claire gets Beloved, Dave gets Walden, and Eve gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Dave and Eve swap books. Then, Claire and Eve swap books. Then, Bob and Alice swap books. Finally, Alice and Claire swap books. At the end of the semester, Eve has\nOptions:\n(A) The Hobbit\n(B) Jane Eyre\n(C) Beloved\n(D) Walden\n(E) Ivanhoe",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "Jane Eyre",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "Ivanhoe",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Ivanhoe",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Ivanhoe",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Reader order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: The Hobbit, Jane Eyre, Beloved, Walden, Ivanhoe.\n1. Dave and Bob swap: The Hobbit, Walden, Beloved, Jane Eyre, Ivanhoe.\n2. Dave and Eve swap: The Hobbit, Walden, Beloved, Ivanhoe, Jane Eyre.\n3. Claire and Eve swap: The Hobbit, Walden, Jane Eyre, Ivanhoe, Beloved.\n4. Bob and Alice swap: Walden, The Hobbit, Jane Eyre, Ivanhoe, Beloved.\n5. Alice and Claire swap: Jane Eyre, The Hobbit, Walden, Ivanhoe, Beloved.\nEve has Beloved, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1206,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

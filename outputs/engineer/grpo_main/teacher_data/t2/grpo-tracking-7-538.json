@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-538",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Dune, Claire gets Emma, Dave gets Beloved, Eve gets Walden, Fred gets Hamlet, and Gertrude gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Fred and Bob swap books. Then, Eve and Bob swap books. Then, Alice and Eve swap books. Then, Eve and Alice swap books. Then, Alice and Gertrude swap books. Then, Eve and Dave swap books. Finally, Alice and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) The Trial\n(B) Dune\n(C) Emma\n(D) Beloved\n(E) Walden\n(F) Hamlet\n(G) Persuasion",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Walden",
+      "Fred": "Hamlet",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Walden",
+      "Fred": "Dune",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Hamlet",
+      "Fred": "Dune",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "The Trial",
+      "Fred": "Dune",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Hamlet",
+      "Fred": "Dune",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Hamlet",
+      "Fred": "Dune",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Hamlet",
+      "Eve": "Beloved",
+      "Fred": "Dune",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Persuasion",
+      "Claire": "Emma",
+      "Dave": "Hamlet",
+      "Eve": "Beloved",
+      "Fred": "Dune",
+      "Gertrude": "The Trial"
+    }
+  ],
+  "prompt_tokens": 226,
+  "solution": "Books are listed in reader order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: The Trial, Dune, Emma, Beloved, Walden, Hamlet, Persuasion\n1. Fred ↔ Bob: The Trial, Hamlet, Emma, Beloved, Walden, Dune, Persuasion\n2. Eve ↔ Bob: The Trial, Walden, Emma, Beloved, Hamlet, Dune, Persuasion\n3. Alice ↔ Eve: Hamlet, Walden, Emma, Beloved, The Trial, Dune, Persuasion\n4. Eve ↔ Alice: The Trial, Walden, Emma, Beloved, Hamlet, Dune, Persuasion\n5. Alice ↔ Gertrude: Persuasion, Walden, Emma, Beloved, Hamlet, Dune, The Trial\n6. Eve ↔ Dave: Persuasion, Walden, Emma, Hamlet, Beloved, Dune, The Trial\n7. Alice ↔ Bob: Walden, Persuasion, Emma, Hamlet, Beloved, Dune, The Trial\nAlice has Walden, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1020,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

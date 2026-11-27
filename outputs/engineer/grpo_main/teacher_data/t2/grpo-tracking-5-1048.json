@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1048",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Vera, Claire is dancing with Tara, Dave is dancing with Wade, and Eve is dancing with Lena.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Alice and Claire switch partners. Then, Alice and Eve switch partners. Then, Eve and Bob switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Quinn\n(B) Vera\n(C) Tara\n(D) Wade\n(E) Lena",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Vera",
+      "Claire": "Tara",
+      "Dave": "Wade",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Wade",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Vera",
+      "Claire": "Tara",
+      "Dave": "Wade",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Vera",
+      "Claire": "Tara",
+      "Dave": "Wade",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Quinn",
+      "Claire": "Tara",
+      "Dave": "Wade",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Quinn",
+      "Claire": "Tara",
+      "Dave": "Wade",
+      "Eve": "Lena"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partner columns: Alice | Bob | Claire | Dave | Eve\nInitial: Quinn | Vera | Tara | Wade | Lena\n1. Alice ↔ Claire: Tara | Vera | Quinn | Wade | Lena\n2. Alice ↔ Claire: Quinn | Vera | Tara | Wade | Lena\n3. Alice ↔ Eve: Lena | Vera | Tara | Wade | Quinn\n4. Eve ↔ Bob: Lena | Quinn | Tara | Wade | Vera\n5. Alice ↔ Eve: Vera | Quinn | Tara | Wade | Lena\nEve's partner is Lena, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1010,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-125",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "balls",
+  "question": "Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a teal ball, Bob has a red ball, and Claire has a gold ball.\nAs the game progresses, pairs of players trade balls. First, Bob and Alice swap balls. Then, Bob and Claire swap balls. Finally, Alice and Claire swap balls. At the end of the game, Bob has the\nOptions:\n(A) teal ball\n(B) red ball\n(C) gold ball",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "teal",
+      "Bob": "red",
+      "Claire": "gold"
+    },
+    {
+      "Alice": "red",
+      "Bob": "teal",
+      "Claire": "gold"
+    },
+    {
+      "Alice": "red",
+      "Bob": "gold",
+      "Claire": "teal"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "gold",
+      "Claire": "red"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Ball colors are listed in holder order: Alice, Bob, Claire.\nInitial: teal, red, gold.\n1. Bob and Alice swap: red, teal, gold.\n2. Bob and Claire swap: red, gold, teal.\n3. Alice and Claire swap: teal, gold, red.\nBob has the gold ball, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1017,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

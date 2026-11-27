@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-880",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Middlemarch, Claire gets Dracula, Dave gets The Hobbit, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Eve and Bob swap books. Then, Alice and Bob swap books. Then, Alice and Eve swap books. Then, Eve and Dave swap books. Finally, Bob and Dave swap books. At the end of the semester, Dave has\nOptions:\n(A) Dune\n(B) Middlemarch\n(C) Dracula\n(D) The Hobbit\n(E) Siddhartha",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Middlemarch",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Siddhartha",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "The Hobbit",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Siddhartha",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Siddhartha",
+      "Claire": "Dracula",
+      "Dave": "Dune",
+      "Eve": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Books in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Dune, Middlemarch, Dracula, The Hobbit, Siddhartha)\n1. Eve and Bob swap: (Dune, Siddhartha, Dracula, The Hobbit, Middlemarch)\n2. Alice and Bob swap: (Siddhartha, Dune, Dracula, The Hobbit, Middlemarch)\n3. Alice and Eve swap: (Middlemarch, Dune, Dracula, The Hobbit, Siddhartha)\n4. Eve and Dave swap: (Middlemarch, Dune, Dracula, Siddhartha, The Hobbit)\n5. Bob and Dave swap: (Middlemarch, Siddhartha, Dracula, Dune, The Hobbit)\nDave has Dune, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1093,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

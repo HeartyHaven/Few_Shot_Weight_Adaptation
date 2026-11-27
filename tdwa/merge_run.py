@@ -30,8 +30,27 @@ def main():
     edit = {k: v for k, v in edit.items() if k not in bias}
     os.makedirs(out, exist_ok=True)
     for f in os.listdir(snap):
-        if not f.endswith(".safetensors"):          # config, tokenizer, and the shard index (same shard names are written below)
+        if not f.endswith(".safetensors") and not os.path.isdir(os.path.join(snap, f)):   # config, tokenizer, shard index; 2026-11-25: skip
+            # sub-directories (Llama 3.1 snapshots have original/ with Meta's consolidated checkpoint; copying it failed the merge)
             shutil.copy(os.path.realpath(os.path.join(snap, f)), os.path.join(out, f))
+    # 2026-11-25: the kernel names parameters as the loaded model does (transformers 4.57: Gemma3ForConditionalGeneration ->
+    # model.language_model.*, lm_head.*); the checkpoint files may use the older layout (language_model.model.*,
+    # language_model.lm_head.*). Map every edited name to the key that exists in the checkpoint.
+    keyset = set()
+    for f in glob.glob(os.path.join(snap, "*.safetensors")):
+        with safe_open(f, "pt") as h:
+            keyset.update(h.keys())
+
+    def _cands(k):
+        out = [k]
+        for new, old in (("model.language_model.", "language_model.model."), ("model.vision_tower.", "vision_tower."),
+                         ("model.multi_modal_projector.", "multi_modal_projector."), ("lm_head.", "language_model.lm_head.")):
+            if k.startswith(new):
+                out.append(old + k[len(new):])
+            if k.startswith(old):
+                out.append(new + k[len(old):])
+        return out
+    edit = {next((c for c in _cands(k) if c in keyset), k): v for k, v in edit.items()}
     dt = getattr(torch, a.dtype); used = set(); n = 0
     for f in sorted(glob.glob(os.path.join(snap, "*.safetensors"))):   # one shard at a time keeps peak RAM at one shard
         tensors = {}

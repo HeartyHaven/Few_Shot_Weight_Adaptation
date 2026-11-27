@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-750",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Karl, Bob is dancing with Stefan, Claire is dancing with Nadia, Dave is dancing with Marco, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Bob and Dave switch partners. Then, Bob and Dave switch partners. Then, Claire and Bob switch partners. Then, Alice and Bob switch partners. Finally, Bob and Dave switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Karl\n(B) Stefan\n(C) Nadia\n(D) Marco\n(E) Tara",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Marco",
+      "Claire": "Nadia",
+      "Dave": "Stefan",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Nadia",
+      "Claire": "Stefan",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Karl",
+      "Claire": "Stefan",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Karl",
+      "Eve": "Tara"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Karl, Stefan, Nadia, Marco, Tara\n1. Bob and Dave swap: Karl, Marco, Nadia, Stefan, Tara\n2. Bob and Dave swap again: Karl, Stefan, Nadia, Marco, Tara\n3. Claire and Bob swap: Karl, Nadia, Stefan, Marco, Tara\n4. Alice and Bob swap: Nadia, Karl, Stefan, Marco, Tara\n5. Bob and Dave swap: Nadia, Marco, Stefan, Karl, Tara\nBob's final partner is Marco, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1209,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "sample_385",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(lst):\n    i = 0\n    new_list = []\n    while i < len(lst):\n        if lst[i] in lst[i+1:]:\n            new_list.append(lst[i])\n            if len(new_list) == 3:\n                return new_list\n        i += 1\n    return new_list\n```\n\nInput: f([0, 2, 1, 2, 6, 2, 6, 3, 0])",
+  "answer": "[0, 2, 2]",
+  "prompt_tokens": 157,
+  "solution": "Start with i=0 and new_list=[]. Each test looks only at elements after index i.\ni=0: 0 occurs again at index 8. Append 0 → [0]; increment i to 1.\ni=1: 2 occurs again at index 3. Append 2 → [0, 2]; increment i to 2.\ni=2: 1 does not occur later. Keep [0, 2]; increment i to 3.\ni=3: 2 occurs again at index 5. Append 2 → [0, 2, 2]. The length is now 3, so return immediately.\nFinal answer: [0, 2, 2]",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "[0, 2, 2]",
+    "correct": true
+  }
+}

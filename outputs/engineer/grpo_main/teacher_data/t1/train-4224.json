@@ -1,0 +1,22 @@
+{
+  "id": "train-4224",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 71-year-old man came to the hospital in November 2019 with a palpable left inguinoscrotal mass and symptoms of intermittent left quadrant abdominal pain for more than 6 mo.\nThe patient had received total gastrectomy and chemotherapy in December 2016 for pT4aN2 gastric cancer. The histopathology disclosed mixed poorly differentiated adenocarcinoma with signet ring cell components. Chemotherapy regimens against the primary gastric cancer was oral TS-1 20 mg (gimeracil + oteracil + tegafur) from February 2017 to June 2018.\nThe patient had been in good health.\nThe patient denied any positive personal or family history.\nThe physical examination revealed a palpable, left inguinoscrotal mass with induration at the spermatic cord and epididymis. An abdominal examination showed no palpable mass nor tenderness.\nTumor biomarkers were: AFP, 2.5 ng/mL; prostate-specific antigen, 1.11 ng/mL; LDH 265 U/L; βHCG < 1 mIU/mL; CEA 3.95 ng/mL; and CA19-9, 16.6 U/mL.\nRenal and testicular echography showed left hydronephrosis and a left peritesticular soft tissue lesion with blood flow. CT revealed a left scrotal mass (Figure ) and left mild hydronephrosis (Figure ). Left retrograde pyelography revealed multiple stenosis and narrowing points causing left hydronephrosis and hydroureter (Figure ).\nDiagnostic ureteroscopy showed left lower ureter segmental narrowing without an intraluminal lesion. Scrotal exploration and biopsy of the indurated spermatic cord and epididymis disclosed metastatic poorly differentiated adenocarcinoma (Figure ). An immunohistochemical study showed nests of poorly differentiated adenocarcinoma diffusely and strongly positive for homeobox protein CDX2 (Figure ). The features of the tumor were consistent with metastatic adenocarcinoma of the primary gastric cancer.\nPositron emission tomography with 2-deoxy-2-[fluorine-18]-fluoro-D-glucose integrated with computed tomography (18F-FDG PET/CT) from skull vertex to upper thighs was performed at 60 min after injection of 18F-FDG. The examination revealed a gastric stump recurrence, positive celiac lymph nodes, and distant metastases to the spine, ribs, sternum, pelvic bones, bilateral scapulae, pelvic cavity, left spermatic cord, and epididymis (Figure ).\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 18,
+  "prompt_tokens": 639,
+  "solution": "HEART assigns 0–2 points each for history, ECG, age, coronary risk factors, and troponin. It is intended for suspected acute coronary syndrome, not a cancer presentation. The note supports only a minimum score:\n- History: chronic abdominal pain with an inguinoscrotal mass, not suggestive of myocardial ischemia → 0.\n- ECG: not reported → 0 assumed for the minimum; a normal tracing is not established.\n- Age: 71 years meets the ≥65-year threshold → 2.\n- Risk factors: no standard coronary risk factors or known atherosclerotic disease documented → 0 counted.\n- Troponin: not reported → 0 assumed for the minimum; a normal value is not established.\nMinimum total = 0 + 0 + 2 + 0 + 0 = 2. An exact clinical score cannot be confirmed.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 652,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

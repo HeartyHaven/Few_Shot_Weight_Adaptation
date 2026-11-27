@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-948",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Priya, Bob is dancing with Stefan, Claire is dancing with Tara, Dave is dancing with Wade, and Eve is dancing with Rosa.\nThroughout the song, the dancers often trade partners. First, Eve and Claire switch partners. Then, Eve and Dave switch partners. Then, Eve and Dave switch partners. Then, Eve and Bob switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Priya\n(B) Stefan\n(C) Tara\n(D) Wade\n(E) Rosa",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Priya",
+      "Bob": "Stefan",
+      "Claire": "Tara",
+      "Dave": "Wade",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Stefan",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Stefan",
+      "Claire": "Rosa",
+      "Dave": "Tara",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Stefan",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Tara",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Priya",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Priya, Stefan, Tara, Wade, Rosa)\n1. Eve and Claire swap: (Priya, Stefan, Rosa, Wade, Tara)\n2. Eve and Dave swap: (Priya, Stefan, Rosa, Tara, Wade)\n3. Eve and Dave swap again: (Priya, Stefan, Rosa, Wade, Tara)\n4. Eve and Bob swap: (Priya, Tara, Rosa, Wade, Stefan)\n5. Bob and Alice swap: (Tara, Priya, Rosa, Wade, Stefan)\nEve's partner is Stefan, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1118,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

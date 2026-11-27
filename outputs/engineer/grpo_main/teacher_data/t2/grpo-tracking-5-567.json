@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-567",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Candide, Claire gets Jane Eyre, Dave gets Persuasion, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Bob and Dave swap books. Then, Claire and Bob swap books. Then, Alice and Claire swap books. Finally, Bob and Dave swap books. At the end of the semester, Bob has\nOptions:\n(A) Dracula\n(B) Candide\n(C) Jane Eyre\n(D) Persuasion\n(E) Walden",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Persuasion",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Persuasion",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Dracula",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Candide",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in reader order: Alice, Bob, Claire, Dave, Eve.\nInitial: Dracula, Candide, Jane Eyre, Persuasion, Walden\n1. Bob ↔ Alice: Candide, Dracula, Jane Eyre, Persuasion, Walden\n2. Bob ↔ Dave: Candide, Persuasion, Jane Eyre, Dracula, Walden\n3. Claire ↔ Bob: Candide, Jane Eyre, Persuasion, Dracula, Walden\n4. Alice ↔ Claire: Persuasion, Jane Eyre, Candide, Dracula, Walden\n5. Bob ↔ Dave: Persuasion, Dracula, Candide, Jane Eyre, Walden\nBob has Dracula, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1002,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

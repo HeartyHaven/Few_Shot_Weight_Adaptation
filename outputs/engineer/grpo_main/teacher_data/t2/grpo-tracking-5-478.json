@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-478",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Candide, Claire gets Walden, Dave gets Middlemarch, and Eve gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Dave and Alice swap books. Then, Eve and Claire swap books. Then, Eve and Claire swap books. Finally, Bob and Alice swap books. At the end of the semester, Eve has\nOptions:\n(A) The Trial\n(B) Candide\n(C) Walden\n(D) Middlemarch\n(E) Beloved",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Middlemarch",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Middlemarch",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books in person order: Alice, Bob, Claire, Dave, Eve.\nInitial: The Trial | Candide | Walden | Middlemarch | Beloved\n1. Alice–Claire: Walden | Candide | The Trial | Middlemarch | Beloved\n2. Dave–Alice: Middlemarch | Candide | The Trial | Walden | Beloved\n3. Eve–Claire: Middlemarch | Candide | Beloved | Walden | The Trial\n4. Eve–Claire: Middlemarch | Candide | The Trial | Walden | Beloved\n5. Bob–Alice: Candide | Middlemarch | The Trial | Walden | Beloved\nEve has Beloved, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1077,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

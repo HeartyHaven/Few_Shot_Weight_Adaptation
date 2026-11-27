@@ -1,0 +1,22 @@
+{
+  "id": "train-4112",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 25-year-old female with no past medical or surgical history presented to the emergency department with a complaint of intermittent epigastric and abdominal pulsation sensation that she had been experiencing for the prior year. An abdominal aorta ultrasound showed no evidence of aneurysm or dissection, but a 3.9-centimeter, echogenic tubular structure was found in the distal abdominal aorta consistent with a retained catheter fragment ( and ). The patient reported that she was born premature at seven months at an outside hospital. Given her history and the ultrasound findings, there was high suspicion for a retained fragment of an umbilical catheter in her aorta. Vascular surgery was consulted. The patient was seen in clinic but was later lost to follow-up before further imaging and treatment.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "0",
+  "lower": 0.0,
+  "upper": 0.0,
+  "calc_id": 18,
+  "prompt_tokens": 232,
+  "solution": "The HEART score assesses suspected acute coronary syndrome using five components, each worth 0–2 points:\n- History (slightly/moderately/highly suspicious): a year of intermittent abdominal pulsation without anginal symptoms is slightly suspicious at most → 0.\n- ECG (normal/nonspecific repolarization changes/significant ST depression): not reported → unknown, minimum 0.\n- Age (<45/45–64/≥65 years): 25 → 0.\n- Risk factors (none/1–2/≥3 or known atherosclerotic disease): none documented; the retained catheter fragment is not atherosclerotic disease → 0 on available history.\n- Troponin (≤1/ >1–3/ >3 times the upper reference limit): not reported → unknown, minimum 0.\nMinimum score = 0 + 0 + 0 + 0 + 0 = 0. This is the exact score only if the ECG and troponin are normal.\nFinal answer: 0",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 676,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 0.0,
+    "correct": true
+  }
+}

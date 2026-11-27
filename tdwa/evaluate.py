@@ -169,7 +169,7 @@ def main():
     a = ap.parse_args()
     os.makedirs(os.path.join(ROOT, "eval"), exist_ok=True)
     if a.base:
-        name = f"base__{a.task}__{a.student.split('/')[-1]}" + ("__bf16" if os.environ.get("TDWA_DTYPE") == "bfloat16" else ""); st = Student(a.student); task = a.task; meta = {"student": a.student, "task": task, "edited": False}
+        name = f"base__{a.task}__{a.student.split('/')[-1]}" + ("__bf16" if os.environ.get("TDWA_DTYPE") == "bfloat16" else "") + os.environ.get("TDWA_NAME_SUFFIX", ""); st = Student(a.student); task = a.task; meta = {"student": a.student, "task": task, "edited": False}
     else:
         run = a.run.rstrip("/"); cfg = json.load(open(os.path.join(run, "config.json"))); name = os.path.basename(run); task = cfg["task"]
         st = Student(cfg["student"], os.path.join(run, "final"))

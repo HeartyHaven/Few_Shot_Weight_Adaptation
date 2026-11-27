@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-348",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Dracula, and Claire gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Alice and Bob swap books. Finally, Bob and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Candide\n(B) Dracula\n(C) Emma",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Candide",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Candide"
+    }
+  ],
+  "prompt_tokens": 138,
+  "solution": "Books are listed in order: Alice, Bob, Claire.\nInitial: Candide, Dracula, Emma.\n1. Claire ↔ Bob: Candide, Emma, Dracula.\n2. Alice ↔ Bob: Emma, Candide, Dracula.\n3. Bob ↔ Claire: Emma, Dracula, Candide.\nClaire has Candide, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1349,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

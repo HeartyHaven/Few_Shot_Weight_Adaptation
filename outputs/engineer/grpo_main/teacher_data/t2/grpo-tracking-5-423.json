@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-423",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a orange present, Bob has a pink present, Claire has a gold present, Dave has a black present, and Eve has a purple present.\nAs the event progresses, pairs of people swap gifts. First, Alice and Eve swap their gifts. Then, Dave and Eve swap their gifts. Then, Alice and Bob swap their gifts. Then, Dave and Claire swap their gifts. Finally, Dave and Bob swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) orange present\n(B) pink present\n(C) gold present\n(D) black present\n(E) purple present",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "orange",
+      "Bob": "pink",
+      "Claire": "gold",
+      "Dave": "black",
+      "Eve": "purple"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "pink",
+      "Claire": "gold",
+      "Dave": "black",
+      "Eve": "orange"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "pink",
+      "Claire": "gold",
+      "Dave": "orange",
+      "Eve": "black"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "purple",
+      "Claire": "gold",
+      "Dave": "orange",
+      "Eve": "black"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "purple",
+      "Claire": "orange",
+      "Dave": "gold",
+      "Eve": "black"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "gold",
+      "Claire": "orange",
+      "Dave": "purple",
+      "Eve": "black"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Gift color order: Alice, Bob, Claire, Dave, Eve.\nInitial: orange, pink, gold, black, purple.\n1. Alice–Eve: purple, pink, gold, black, orange.\n2. Dave–Eve: purple, pink, gold, orange, black.\n3. Alice–Bob: pink, purple, gold, orange, black.\n4. Dave–Claire: pink, purple, orange, gold, black.\n5. Dave–Bob: pink, gold, orange, purple, black.\nBob has the gold present, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1078,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

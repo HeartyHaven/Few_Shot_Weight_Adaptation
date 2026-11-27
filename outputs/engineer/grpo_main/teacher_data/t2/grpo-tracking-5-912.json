@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-912",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Persuasion, Claire gets Emma, Dave gets Ivanhoe, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Claire and Dave swap books. Then, Bob and Dave swap books. Then, Bob and Eve swap books. Then, Alice and Bob swap books. Finally, Claire and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Candide\n(B) Persuasion\n(C) Emma\n(D) Ivanhoe\n(E) The Trial",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Emma",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Emma",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books in holder order: Alice | Bob | Claire | Dave | Eve.\nInitial: Candide | Persuasion | Emma | Ivanhoe | The Trial\n1. Claire–Dave: Candide | Persuasion | Ivanhoe | Emma | The Trial\n2. Bob–Dave: Candide | Emma | Ivanhoe | Persuasion | The Trial\n3. Bob–Eve: Candide | The Trial | Ivanhoe | Persuasion | Emma\n4. Alice–Bob: The Trial | Candide | Ivanhoe | Persuasion | Emma\n5. Claire–Eve: The Trial | Candide | Emma | Persuasion | Ivanhoe\nAlice has The Trial, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1222,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

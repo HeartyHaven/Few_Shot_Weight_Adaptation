@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-695",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left winger, Bob is playing benchwarmer, Claire is playing fullback, Dave is playing right midfielder, Eve is playing right winger, Fred is playing striker, and Gertrude is playing sweeper.\nAs the game progresses, pairs of players occasionally swap positions. First, Fred and Claire trade positions. Then, Gertrude and Eve trade positions. Then, Alice and Bob trade positions. Then, Gertrude and Eve trade positions. Then, Alice and Dave trade positions. Then, Alice and Fred trade positions. Finally, Alice and Dave trade positions. At the end of the match, Gertrude is playing\nOptions:\n(A) left winger\n(B) benchwarmer\n(C) fullback\n(D) right midfielder\n(E) right winger\n(F) striker\n(G) sweeper",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "left winger",
+      "Bob": "benchwarmer",
+      "Claire": "fullback",
+      "Dave": "right midfielder",
+      "Eve": "right winger",
+      "Fred": "striker",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "benchwarmer",
+      "Claire": "striker",
+      "Dave": "right midfielder",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "benchwarmer",
+      "Claire": "striker",
+      "Dave": "right midfielder",
+      "Eve": "sweeper",
+      "Fred": "fullback",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "left winger",
+      "Claire": "striker",
+      "Dave": "right midfielder",
+      "Eve": "sweeper",
+      "Fred": "fullback",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "left winger",
+      "Claire": "striker",
+      "Dave": "right midfielder",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "left winger",
+      "Claire": "striker",
+      "Dave": "benchwarmer",
+      "Eve": "right winger",
+      "Fred": "fullback",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "left winger",
+      "Claire": "striker",
+      "Dave": "benchwarmer",
+      "Eve": "right winger",
+      "Fred": "right midfielder",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "left winger",
+      "Claire": "striker",
+      "Dave": "fullback",
+      "Eve": "right winger",
+      "Fred": "right midfielder",
+      "Gertrude": "sweeper"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Positions are listed in player order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: left winger, benchwarmer, fullback, right midfielder, right winger, striker, sweeper.\n1. Fred swaps with Claire: left winger, benchwarmer, striker, right midfielder, right winger, fullback, sweeper.\n2. Gertrude swaps with Eve: left winger, benchwarmer, striker, right midfielder, sweeper, fullback, right winger.\n3. Alice swaps with Bob: benchwarmer, left winger, striker, right midfielder, sweeper, fullback, right winger.\n4. Gertrude swaps with Eve: benchwarmer, left winger, striker, right midfielder, right winger, fullback, sweeper.\n5. Alice swaps with Dave: right midfielder, left winger, striker, benchwarmer, right winger, fullback, sweeper.\n6. Alice swaps with Fred: fullback, left winger, striker, benchwarmer, right winger, right midfielder, sweeper.\n7. Alice swaps with Dave: benchwarmer, left winger, striker, fullback, right winger, right midfielder, sweeper.\nGertrude is playing sweeper, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1001,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

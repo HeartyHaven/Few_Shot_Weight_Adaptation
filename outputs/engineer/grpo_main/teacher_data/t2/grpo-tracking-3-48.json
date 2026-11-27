@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-48",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing striker, Bob is playing right winger, and Claire is playing benchwarmer.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Bob trade positions. Then, Claire and Alice trade positions. Finally, Alice and Bob trade positions. At the end of the match, Claire is playing\nOptions:\n(A) striker\n(B) right winger\n(C) benchwarmer",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "striker",
+      "Bob": "right winger",
+      "Claire": "benchwarmer"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "benchwarmer",
+      "Claire": "right winger"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "benchwarmer",
+      "Claire": "striker"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "right winger",
+      "Claire": "striker"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Position order in every row: (Alice, Bob, Claire).\nInitial: (striker, right winger, benchwarmer).\n1. Claire and Bob swap: (striker, benchwarmer, right winger).\n2. Claire and Alice swap: (right winger, benchwarmer, striker).\n3. Alice and Bob swap: (benchwarmer, right winger, striker).\nClaire is playing striker, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1330,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-503",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Stefan, Claire is dancing with Quinn, Dave is dancing with Marco, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Claire and Alice switch partners. Then, Alice and Eve switch partners. Then, Bob and Claire switch partners. Finally, Dave and Eve switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Tara\n(B) Stefan\n(C) Quinn\n(D) Marco\n(E) Yuki",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Stefan",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Marco",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Marco",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Yuki",
+      "Claire": "Stefan",
+      "Dave": "Marco",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Yuki",
+      "Claire": "Stefan",
+      "Dave": "Quinn",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Dancer order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial partners: Tara | Stefan | Quinn | Marco | Yuki\n1. Alice ↔ Eve: Yuki | Stefan | Quinn | Marco | Tara\n2. Claire ↔ Alice: Quinn | Stefan | Yuki | Marco | Tara\n3. Alice ↔ Eve: Tara | Stefan | Yuki | Marco | Quinn\n4. Bob ↔ Claire: Tara | Yuki | Stefan | Marco | Quinn\n5. Dave ↔ Eve: Tara | Yuki | Stefan | Quinn | Marco\nClaire's final partner is Stefan, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1081,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

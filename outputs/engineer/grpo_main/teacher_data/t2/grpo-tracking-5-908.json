@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-908",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Nadia, Claire is dancing with Lena, Dave is dancing with Umar, and Eve is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Bob and Alice switch partners. Then, Eve and Bob switch partners. Then, Eve and Bob switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Yuki\n(B) Nadia\n(C) Lena\n(D) Umar\n(E) Priya",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Lena",
+      "Dave": "Umar",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Lena",
+      "Claire": "Nadia",
+      "Dave": "Umar",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Nadia",
+      "Dave": "Umar",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Priya",
+      "Claire": "Nadia",
+      "Dave": "Umar",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Nadia",
+      "Dave": "Umar",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Yuki",
+      "Claire": "Nadia",
+      "Dave": "Umar",
+      "Eve": "Lena"
+    }
+  ],
+  "prompt_tokens": 183,
+  "solution": "Partners in each row are listed for Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Yuki, Nadia, Lena, Umar, Priya\n1. Bob ↔ Claire: Yuki, Lena, Nadia, Umar, Priya\n2. Bob ↔ Alice: Lena, Yuki, Nadia, Umar, Priya\n3. Eve ↔ Bob: Lena, Priya, Nadia, Umar, Yuki\n4. Eve ↔ Bob: Lena, Yuki, Nadia, Umar, Priya\n5. Alice ↔ Eve: Priya, Yuki, Nadia, Umar, Lena\nBob is dancing with Yuki, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1172,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

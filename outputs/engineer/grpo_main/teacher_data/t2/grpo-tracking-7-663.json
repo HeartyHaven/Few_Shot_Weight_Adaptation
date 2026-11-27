@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-663",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Emma, Claire gets Siddhartha, Dave gets Dracula, Eve gets Jane Eyre, Fred gets Persuasion, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Eve and Fred swap books. Then, Dave and Fred swap books. Then, Dave and Bob swap books. Then, Dave and Gertrude swap books. Then, Claire and Bob swap books. Then, Dave and Gertrude swap books. Finally, Gertrude and Claire swap books. At the end of the semester, Eve has\nOptions:\n(A) Beloved\n(B) Emma\n(C) Siddhartha\n(D) Dracula\n(E) Jane Eyre\n(F) Persuasion\n(G) Candide",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre",
+      "Fred": "Persuasion",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Persuasion",
+      "Fred": "Dracula",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha",
+      "Dave": "Emma",
+      "Eve": "Persuasion",
+      "Fred": "Dracula",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "Persuasion",
+      "Fred": "Dracula",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Persuasion",
+      "Fred": "Dracula",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "Persuasion",
+      "Fred": "Dracula",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Candide",
+      "Dave": "Emma",
+      "Eve": "Persuasion",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists the books of Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Beloved | Emma | Siddhartha | Dracula | Jane Eyre | Persuasion | Candide\n1. Eve ↔ Fred: Beloved | Emma | Siddhartha | Dracula | Persuasion | Jane Eyre | Candide\n2. Dave ↔ Fred: Beloved | Emma | Siddhartha | Jane Eyre | Persuasion | Dracula | Candide\n3. Dave ↔ Bob: Beloved | Jane Eyre | Siddhartha | Emma | Persuasion | Dracula | Candide\n4. Dave ↔ Gertrude: Beloved | Jane Eyre | Siddhartha | Candide | Persuasion | Dracula | Emma\n5. Claire ↔ Bob: Beloved | Siddhartha | Jane Eyre | Candide | Persuasion | Dracula | Emma\n6. Dave ↔ Gertrude: Beloved | Siddhartha | Jane Eyre | Emma | Persuasion | Dracula | Candide\n7. Gertrude ↔ Claire: Beloved | Siddhartha | Candide | Emma | Persuasion | Dracula | Jane Eyre\nEve's final book is Persuasion, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1218,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

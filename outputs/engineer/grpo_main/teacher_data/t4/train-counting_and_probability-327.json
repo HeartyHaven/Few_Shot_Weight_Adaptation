@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-327",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Six cards numbered $1$ through $6$ are to be lined up in a row. Find the number of arrangements of these six cards where one of the cards can be removed leaving the remaining five cards in either ascending or descending order.\n",
+  "answer": "52",
+  "prompt_tokens": 77,
+  "solution": "First count arrangements that can leave five cards in ascending order. Each can be made from $1,2,3,4,5,6$ by moving one card: removing that card undoes its insertion into the other five. Count the unchanged row once.\n\nFor a nontrivial move, the interval from the old position to the new one is exactly the block of positions whose cards change, so different intervals give different rows. A length-2 interval gives just one swap, for 5 rows. For length $k\\ge3$, moving the leftmost card to the right end or the rightmost card to the left end gives two distinct rows. Lengths 3, 4, 5, and 6 have 4, 3, 2, and 1 possible intervals, respectively. Thus the ascending count is $1+5+2(4+3+2+1)=26$.\n\nReversing the row gives equally many descending cases. The two counts do not overlap: any two selections of five cards share at least four cards, whose relative order cannot be both ascending and descending. The total is $2\\cdot26=52$.\nFinal answer: 52",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1402,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "52",
+    "correct": true
+  }
+}

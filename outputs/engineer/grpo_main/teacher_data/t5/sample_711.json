@@ -1,0 +1,20 @@
+{
+  "id": "sample_711",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    return text.replace('\\n', '\\t')\n```\n\nInput: f('apples\\n\\t\\npears\\n\\t\\nbananas')",
+  "answer": "'apples\\t\\t\\tpears\\t\\t\\tbananas'",
+  "prompt_tokens": 92,
+  "solution": "Both separators between fruit names are '\\n\\t\\n'. replace('\\n', '\\t') changes each newline to a tab and leaves each existing tab intact, so each separator becomes '\\t\\t\\t'. The fruit names remain unchanged.\nFinal answer: 'apples\\t\\t\\tpears\\t\\t\\tbananas'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "'apples\\t\\t\\tpears\\t\\t\\tbananas'",
+    "correct": true
+  }
+}

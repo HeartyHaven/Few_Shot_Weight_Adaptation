@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-561",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Given the nine-sided regular polygon $A_1A_2A_3A_4A_5A_6A_7A_8A_9$, how many distinct equilateral triangles in the plane of the polygon have at least two vertices in the set $\\{A_1, A_2, \\ldots A_9\\}$?",
+  "answer": "66",
+  "prompt_tokens": 103,
+  "solution": "Choose a pair of polygon vertices in \\(\\binom{9}{2}=36\\) ways. Each pair is a side of two equilateral triangles, one on each side of its line, giving 72 pair-triangle counts. A triangle with exactly two polygon vertices is counted once, but one with three is counted three times, once per side.\nAn equilateral triangle on the polygon's circumcircle divides it into three equal arcs of \\(120^\\circ\\). Consecutive polygon vertices are \\(360^\\circ/9=40^\\circ\\) apart, so the triangle must use every third vertex. There are exactly three such triples, starting at \\(A_1,A_2,A_3\\). Subtracting the two extra counts for each gives \\(72-2\\cdot3=66\\).\nFinal answer: 66",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "66",
+    "correct": true
+  }
+}

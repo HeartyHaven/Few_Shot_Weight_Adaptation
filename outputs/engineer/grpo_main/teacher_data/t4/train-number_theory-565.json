@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-565",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "One of Euler's conjectures was disproved in the 1960s by three American mathematicians when they showed there was a positive integer such that $133^5+110^5+84^5+27^5=n^{5}$. Find the value of $n$.\n",
+  "answer": "144",
+  "prompt_tokens": 96,
+  "solution": "The sum exceeds 133⁵ but is less than 4·133⁵. Since (3/2)⁵ > 4, this gives 133 < n < (3/2)·133 < 200.\nEvery integer's fifth power has the same last digit as the integer (check digits 0 through 9). Thus n ends in the last digit of 3 + 0 + 4 + 7 = 14, namely 4.\nModulo 7, the bases 133, 110, 84, 27 are congruent to 0, −2, 0, −1. Hence n⁵ ≡ (−2)⁵ + (−1)⁵ = −33 ≡ 2 modulo 7. Since 7 does not divide n, Fermat's little theorem gives 1 ≡ n⁶ ≡ 2n modulo 7, so n ≡ 4 modulo 7.\nNow n − 4 is divisible by both 10 and 7, hence by 70. The only number of the form 4 + 70k strictly between 133 and 200 is 144.\nFinal answer: 144",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "144",
+    "correct": true
+  }
+}

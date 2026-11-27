@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-916",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Jane Eyre, Claire gets Candide, Dave gets Ivanhoe, and Eve gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Alice and Bob swap books. Then, Bob and Alice swap books. Then, Eve and Claire swap books. Finally, Eve and Claire swap books. At the end of the semester, Eve has\nOptions:\n(A) The Hobbit\n(B) Jane Eyre\n(C) Candide\n(D) Ivanhoe\n(E) Persuasion",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Book titles are listed in the order (Alice, Bob, Claire, Dave, Eve).\nInitial: (The Hobbit, Jane Eyre, Candide, Ivanhoe, Persuasion).\n1. Eve and Dave swap: (The Hobbit, Jane Eyre, Candide, Persuasion, Ivanhoe).\n2. Alice and Bob swap: (Jane Eyre, The Hobbit, Candide, Persuasion, Ivanhoe).\n3. Bob and Alice swap: (The Hobbit, Jane Eyre, Candide, Persuasion, Ivanhoe).\n4. Eve and Claire swap: (The Hobbit, Jane Eyre, Ivanhoe, Persuasion, Candide).\n5. Eve and Claire swap: (The Hobbit, Jane Eyre, Candide, Persuasion, Ivanhoe).\nEve has Ivanhoe, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1131,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

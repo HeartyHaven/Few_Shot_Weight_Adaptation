@@ -1,0 +1,22 @@
+{
+  "id": "train-4272",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 43-year-old non-athlete man patient was referred to Cardiac Emergency Unit due to an intermittent typical chest pain from 2 days before. The chest pain severity was grade III according to Canadian Cardiovascular Society Angina Grading Scale. The “at-rest” chest pain was started 40 minutes prior to admission, and continued without any other symptoms as shortness of breath or dyspnea. The patient had no cardiovascular risk factor, and was not on any medication.\nLaboratory tests showed elevated and raising troponin I (TPI) levels (TPI of 40.2 ng/l at admission time and 1524 ng/l 3 hours later, normal range: ≤ 19 ng/l). Furthermore, the laboratory results revealed dyslipidemia [triglyceride: 72 mg/dl, cholesterol: 222 mg/dl, high-density lipoprotein (HDL) cholesterol: 47 mg/dl and low-density lipoprotein (LDL) cholesterol: 151 mg/dl]. The first ECG showed pre-excitation WPW as well as de Winter pattern ().\nAccording to patient’s symptoms and suggestive ECG for probable LAD occlusion, emergent angiography was scheduled. The coronary angiography revealed sever LAD occlusion (). Diagonal, left circumflex and left main arteries were normal, left and right coronary artery had significant lesion at mid part. The patient was symptom free after successful ballooning.\nThe ballooning was performed by use of guiding catheter Judkins left 6-3.5, and workhouse Guidwire Runthrough Hypercoated was used to pass the lesion. Then semicopliant balloon used for dottering and pre-dilatation of the lesion. After this step, the Resulut Onyx stent 3*32 mm was deployed, and post-dilatation by non-compliant balloon (Apollo 3*20 mm) was done. The post-percutaneous angiography ECG indicated the absence of de Winter pattern (). The patient was discharged healthy and aspirin, clopidogrel, atorvastatin, carvedilol, spironolactone, and captopril were prescribed. The patient remained asymptomatic in 1-year follow-up period.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 18,
+  "prompt_tokens": 548,
+  "solution": "The HEART score grades history, ECG, age, risk factors, and initial troponin from 0 to 2 points each.\n- History: typical angina progressing to pain at rest is highly suspicious for acute coronary syndrome = 2.\n- ECG: the de Winter pattern includes significant ischemic ST depression = 2.\n- Age: 43 years (<45) = 0.\n- Risk factors: admission testing identifies dyslipidemia (LDL 151 mg/dL), one risk factor = 1. Coronary disease diagnosed on subsequent angiography is not a preexisting history.\n- Troponin: initial troponin I was 40.2 ng/L, or 40.2/19 = 2.12 times the upper reference limit. A value 1–3 times the limit scores 1; the later peak is not used.\nSum: 2 + 2 + 0 + 1 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 754,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

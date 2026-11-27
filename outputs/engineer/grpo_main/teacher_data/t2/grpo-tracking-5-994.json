@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-994",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a gold present, Bob has a teal present, Claire has a blue present, Dave has a black present, and Eve has a grey present.\nAs the event progresses, pairs of people swap gifts. First, Claire and Alice swap their gifts. Then, Dave and Claire swap their gifts. Then, Dave and Bob swap their gifts. Then, Eve and Dave swap their gifts. Finally, Dave and Eve swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) gold present\n(B) teal present\n(C) blue present\n(D) black present\n(E) grey present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "gold",
+      "Bob": "teal",
+      "Claire": "blue",
+      "Dave": "black",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "teal",
+      "Claire": "gold",
+      "Dave": "black",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "teal",
+      "Claire": "black",
+      "Dave": "gold",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "gold",
+      "Claire": "black",
+      "Dave": "teal",
+      "Eve": "grey"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "gold",
+      "Claire": "black",
+      "Dave": "grey",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "gold",
+      "Claire": "black",
+      "Dave": "teal",
+      "Eve": "grey"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Present colors in holder order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (gold, teal, blue, black, grey)\n1. Claire swaps with Alice: (blue, teal, gold, black, grey)\n2. Dave swaps with Claire: (blue, teal, black, gold, grey)\n3. Dave swaps with Bob: (blue, gold, black, teal, grey)\n4. Eve swaps with Dave: (blue, gold, black, grey, teal)\n5. Dave swaps with Eve: (blue, gold, black, teal, grey)\nBob holds the gold present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1333,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

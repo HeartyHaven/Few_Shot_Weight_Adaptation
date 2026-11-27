@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-197",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Persuasion, Claire gets The Trial, Dave gets Siddhartha, and Eve gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Bob and Dave swap books. Then, Alice and Eve swap books. Then, Dave and Claire swap books. Then, Alice and Dave swap books. Finally, Bob and Claire swap books. At the end of the semester, Eve has\nOptions:\n(A) Hamlet\n(B) Persuasion\n(C) The Trial\n(D) Siddhartha\n(E) Emma",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Siddhartha",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Persuasion",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Persuasion",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "The Trial",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Persuasion",
+      "Claire": "Siddhartha",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in holder order: Alice | Bob | Claire | Dave | Eve.\nInitial: Hamlet | Persuasion | The Trial | Siddhartha | Emma\n1. Bob–Dave: Hamlet | Siddhartha | The Trial | Persuasion | Emma\n2. Alice–Eve: Emma | Siddhartha | The Trial | Persuasion | Hamlet\n3. Dave–Claire: Emma | Siddhartha | Persuasion | The Trial | Hamlet\n4. Alice–Dave: The Trial | Siddhartha | Persuasion | Emma | Hamlet\n5. Bob–Claire: The Trial | Persuasion | Siddhartha | Emma | Hamlet\nEve has Hamlet, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1222,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

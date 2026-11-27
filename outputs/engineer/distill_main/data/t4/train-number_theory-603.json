@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-603",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Three clever monkeys divide a pile of bananas. The first monkey takes some bananas from the pile, keeps three-fourths of them, and divides the rest equally between the other two. The second monkey takes some bananas from the pile, keeps one-fourth of them, and divides the rest equally between the other two. The third monkey takes the remaining bananas from the pile, keeps one-twelfth of them, and divides the rest equally between the other two. Given that each monkey receives a whole number of bananas whenever the bananas are divided, and the numbers of bananas the first, second, and third monkeys have at the end of the process are in the ratio $3: 2: 1,$what is the least possible total for the number of bananas?\n",
+  "answer": "408",
+  "solution": "From the first monkey's batch, each other monkey gets 1/8; from the second's, each other monkey gets 3/8; from the third's, each other monkey gets 11/24. These fractions are reduced, so whole shares require batch sizes 8a, 8b, 24c for positive integers a, b, c.\nThe first batch contributes (6a, a, a) to the three monkeys, the second contributes (3b, 2b, 3b), and the third contributes (11c, 11c, 2c). Thus the third monkey ends with T = a + 3b + 2c. The required ratio gives\n a + 2b + 11c = 2T, hence a + 4b = 7c;\n 6a + 3b + 11c = 3T, hence 3a − 6b + 5c = 0.\nSubstituting a = 7c − 4b into the second equation gives 26c − 18b = 0, so b = 13c/9 and a = 11c/9. Since 13 and 9 are coprime, c must be a multiple of 9. All batch sizes scale with c, so the least total occurs at c = 9, giving a = 11 and b = 13. These integers satisfy both ratio equations and give 8(11) + 8(13) + 24(9) = 408 bananas.\nFinal answer: 408",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 3,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "408",
+    "correct": true
+  }
+}

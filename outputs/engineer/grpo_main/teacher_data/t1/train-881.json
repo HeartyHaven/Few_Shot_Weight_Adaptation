@@ -1,0 +1,22 @@
+{
+  "id": "train-881",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 67-year-old man presents to the emergency department for a headache. The patient states his symptoms started thirty minutes ago. He states he experienced a sudden and severe headache while painting his house, causing him to fall of the ladder and hit his head. He has also experienced two episodes of vomiting and difficulty walking since the fall. The patient has a past medical history of hypertension, obesity, and atrial fibrillation. His current medications include lisinopril, rivaroxaban, atorvastatin, and metformin. His temperature is 99.5°F (37.5°C), blood pressure is 150/105 mmHg, pulse is 90/min, respirations are 15/min, and oxygen saturation is 98% on room air. On physical exam, the patient localizes his headache to the back of his head. Cardiac exam reveals a normal rate and rhythm. Pulmonary exam reveals minor bibasilar crackles. Neurological exam is notable for minor weakness of the muscles of facial expression. Examination of cranial nerve three reveals a notable nystagmus. Heel to shin exam is abnormal bilaterally. The patient's gait is notably ataxic. A non-contrast CT scan of the head is currently pending.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 343,
+  "solution": "CHA₂DS₂-VASc scores thromboembolic risk in atrial fibrillation using the following admission history:\n- Congestive heart failure/LV dysfunction (1 if present): not documented; bibasilar crackles alone do not establish it → 0.\n- Hypertension (1): known hypertension → 1.\n- Age (2 if ≥75, 1 if 65–74): age 67 → 1.\n- Diabetes mellitus (1): not documented as a diagnosis; metformin use alone does not confirm it → 0.\n- Prior stroke, TIA, or systemic embolism (2): no such history; the current neurologic symptoms do not establish a prior event → 0.\n- Vascular disease (1): no documented myocardial infarction, peripheral artery disease, or aortic plaque → 0.\n- Female sex (1): male → 0.\nTotal = 0 + 1 + 1 + 0 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 707,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

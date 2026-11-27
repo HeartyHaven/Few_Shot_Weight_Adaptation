@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-802",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Nadia, Claire is dancing with Quinn, Dave is dancing with Vera, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Bob and Dave switch partners. Then, Dave and Alice switch partners. Then, Dave and Alice switch partners. Then, Eve and Alice switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Marco\n(B) Nadia\n(C) Quinn\n(D) Vera\n(E) Karl",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Vera",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Nadia",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Marco",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Nadia",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Nadia",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Vera",
+      "Claire": "Marco",
+      "Dave": "Nadia",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Marco, Nadia, Quinn, Vera, Karl.\n1. Bob ↔ Dave: Marco, Vera, Quinn, Nadia, Karl.\n2. Dave ↔ Alice: Nadia, Vera, Quinn, Marco, Karl.\n3. Dave ↔ Alice: Marco, Vera, Quinn, Nadia, Karl.\n4. Eve ↔ Alice: Karl, Vera, Quinn, Nadia, Marco.\n5. Eve ↔ Claire: Karl, Vera, Marco, Nadia, Quinn.\nClaire's partner is Marco, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1352,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

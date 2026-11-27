@@ -1,0 +1,125 @@
+{
+  "id": "dev-7-0",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Nadia, Claire is dancing with Wade, Dave is dancing with Quinn, Eve is dancing with Karl, Fred is dancing with Marco, and Gertrude is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Fred and Bob switch partners. Then, Fred and Bob switch partners. Then, Bob and Eve switch partners. Then, Claire and Alice switch partners. Then, Bob and Dave switch partners. Then, Alice and Dave switch partners. Finally, Fred and Alice switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Yuki\n(B) Nadia\n(C) Wade\n(D) Quinn\n(E) Karl\n(F) Marco\n(G) Vera",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Wade",
+      "Dave": "Quinn",
+      "Eve": "Karl",
+      "Fred": "Marco",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Wade",
+      "Dave": "Quinn",
+      "Eve": "Karl",
+      "Fred": "Nadia",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Wade",
+      "Dave": "Quinn",
+      "Eve": "Karl",
+      "Fred": "Marco",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Karl",
+      "Claire": "Wade",
+      "Dave": "Quinn",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Karl",
+      "Claire": "Yuki",
+      "Dave": "Quinn",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Quinn",
+      "Claire": "Yuki",
+      "Dave": "Karl",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Quinn",
+      "Claire": "Yuki",
+      "Dave": "Wade",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Vera"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Quinn",
+      "Claire": "Yuki",
+      "Dave": "Wade",
+      "Eve": "Nadia",
+      "Fred": "Karl",
+      "Gertrude": "Vera"
+    }
+  ],
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Yuki, Nadia, Wade, Quinn, Karl, Marco, Vera\n1. Fred ↔ Bob: Yuki, Marco, Wade, Quinn, Karl, Nadia, Vera\n2. Fred ↔ Bob: Yuki, Nadia, Wade, Quinn, Karl, Marco, Vera\n3. Bob ↔ Eve: Yuki, Karl, Wade, Quinn, Nadia, Marco, Vera\n4. Claire ↔ Alice: Wade, Karl, Yuki, Quinn, Nadia, Marco, Vera\n5. Bob ↔ Dave: Wade, Quinn, Yuki, Karl, Nadia, Marco, Vera\n6. Alice ↔ Dave: Karl, Quinn, Yuki, Wade, Nadia, Marco, Vera\n7. Fred ↔ Alice: Marco, Quinn, Yuki, Wade, Nadia, Karl, Vera\nEve's partner is Nadia, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 50,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1077",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 71-year-old woman presented to the emergency department with symptoms of dizziness, fatigue, and bright red bleeding per rectum. She has a past medical history of atrial fibrillation and hypertension. She started having six to seven bright red colored stools for about one week, unassociated with mucus. She reported concerns of constant right upper quadrant pain that started approximately two days before the presentation. She denied any nausea, vomiting, or subjective fever, and she had no recent travel or exposure to sick contacts and no history of hemorrhoids.\nOn examination, she was found to be tachycardic with a heart rate of 130 beats per minute. Her blood pressure was 98/50 mmHg, and her body temperature was 100.2°F. Her oxygen saturation was 93% on room air. She appeared thin, cachectic, and had no scleral icterus. Her lungs were clear on auscultation, and her cardiovascular examination revealed no significant murmurs.\nHer laboratory investigation showed leukocytosis with white blood cell count of 29,000 per microliter (neutrophils, 88%; lymphocytes, 3.5%; monocytes, 3.7%; eosinophils, 1.2%; basophils, 0.3%). Her hemoglobin was 9 g/dl (reference range: 11.2-15.7 g/dl), and her mean corpuscular volume was 77. Urine analysis was negative for infection. Chest X-ray did not show any active consolidation (Figure ).\nHer Clostridium difficile screening was negative. Right upper quadrant ultrasound showed several indeterminate hypoechoic solid masses, and both lobes of the liver had several indeterminate hypoechoic solid masses. A slight gall bladder wall thickening with no surrounding inflammatory signs was noted. MRI of the abdomen showed multiple circumscribed lesions throughout the liver compatible with metastasis (Figure ).\nThe patient was started on empiric antibiotics with vancomycin and cefepime for possible infection. Her blood cultures grew S. anginosus, and her antibiotic regimen was changed to ceftriaxone.\nAs the source of the bacteremia was unknown, and because of her microcytic anemia with a recent change in bowel habits, she underwent a colonoscopy and transthoracic echocardiogram (TTE). The colonoscopy revealed a fungating infiltrative, ulcerated, partially obstructing mass in the sigmoid colon. The biopsy results are positive for moderately differentiated adenocarcinoma of the colon (Figure ).\nTTE showed thickening and possible vegetation involving the aortic and mitral valves. Subsequent transesophageal echocardiogram revealed vegetation (approximately 0.2 cm) on the aortic and mitral valves (Figures , ).\nShe had no signs of a perivalvular abscess, and her ejection fraction was within reference range at 55% to 60%. Her care team decided to continue treatment with antibiotics for at least six weeks. Her anticoagulation for atrial fibrillation was halted due to active gastrointestinal (GI) bleeding. The patient died several days later as her family focused on comfort care measures based on the patient's wishes.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 760,
+  "solution": "Apply CHA2DS2-VASc to this woman with atrial fibrillation:\n- Heart failure or left ventricular dysfunction: no heart failure documented; ejection fraction 55–60% = 0.\n- Hypertension: established history counts despite admission BP of 98/50 mmHg = 1.\n- Age (65–74 = 1; ≥75 = 2): 71 years = 1.\n- Diabetes: not documented = 0.\n- Prior stroke, TIA, or systemic embolism (2 if present): none documented = 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): none documented = 0.\n- Sex category: female = 1.\nActive GI bleeding affects anticoagulation decisions, not this score. Total = 0 + 1 + 1 + 0 + 0 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 775,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-302",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Marco, Claire is dancing with Nadia, Dave is dancing with Stefan, and Eve is dancing with Tara.\nThroughout the song, the dancers often trade partners. First, Dave and Claire switch partners. Then, Dave and Eve switch partners. Then, Dave and Eve switch partners. Then, Dave and Alice switch partners. Finally, Eve and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Yuki\n(B) Marco\n(C) Nadia\n(D) Stefan\n(E) Tara",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Nadia",
+      "Dave": "Stefan",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Nadia",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Tara",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Nadia",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Yuki",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Yuki",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Yuki, Marco, Nadia, Stefan, Tara\n1. Dave ↔ Claire: Yuki, Marco, Stefan, Nadia, Tara\n2. Dave ↔ Eve: Yuki, Marco, Stefan, Tara, Nadia\n3. Dave ↔ Eve: Yuki, Marco, Stefan, Nadia, Tara\n4. Dave ↔ Alice: Nadia, Marco, Stefan, Yuki, Tara\n5. Eve ↔ Alice: Tara, Marco, Stefan, Yuki, Nadia\nAlice's partner is Tara, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1114,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

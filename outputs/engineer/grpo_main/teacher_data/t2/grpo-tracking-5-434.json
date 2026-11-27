@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-434",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Nadia, Claire is dancing with Quinn, Dave is dancing with Rosa, and Eve is dancing with Yuki.\nThroughout the song, the dancers often trade partners. First, Dave and Eve switch partners. Then, Alice and Dave switch partners. Then, Eve and Claire switch partners. Then, Bob and Claire switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Stefan\n(B) Nadia\n(C) Quinn\n(D) Rosa\n(E) Yuki",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Rosa",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Yuki",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Quinn",
+      "Dave": "Stefan",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Rosa",
+      "Dave": "Stefan",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Rosa",
+      "Claire": "Nadia",
+      "Dave": "Stefan",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Rosa",
+      "Claire": "Quinn",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Stefan, Nadia, Quinn, Rosa, Yuki\n1. Dave and Eve: Stefan, Nadia, Quinn, Yuki, Rosa\n2. Alice and Dave: Yuki, Nadia, Quinn, Stefan, Rosa\n3. Eve and Claire: Yuki, Nadia, Rosa, Stefan, Quinn\n4. Bob and Claire: Yuki, Rosa, Nadia, Stefan, Quinn\n5. Eve and Claire: Yuki, Rosa, Quinn, Stefan, Nadia\nDave's partner is Stefan, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1251,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

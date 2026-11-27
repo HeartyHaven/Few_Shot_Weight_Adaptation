@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-641",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Call a positive integer $n$ $k$-pretty if $n$ has exactly $k$ positive divisors and $n$ is divisible by $k$. For example, $18$ is $6$-pretty. Let $S$ be the sum of positive integers less than $2019$ that are $20$-pretty. Find $\\tfrac{S}{20}$.\n",
+  "answer": "472",
+  "solution": "A qualifying n is divisible by 20=2²·5. Its divisor count is the product of its prime exponents plus one each. Since n has at least two distinct primes, the possible multiplicative partitions of 20 are 10·2, 5·4, and 5·2·2. These give exponent patterns (9,1), (4,3), and (4,1,1).\n\nFor (9,1), the exponent 9 must belong to 2, but 2⁹·5=2560 is too large. For (4,3), the two possibilities are 2⁴·5³=2000 and 2³·5⁴=5000, of which only 2000 qualifies.\n\nFor (4,1,1), the exponent 4 must belong to 2, so n=2⁴·5·q=80q for a prime q distinct from 2 and 5. The bound 80q<2019 gives q≤25, leaving 3,7,11,13,17,19,23. These sum to 93. Thus S/20=2000/20+(80/20)·93=100+372=472.\nFinal answer: 472",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 19,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "472",
+    "correct": true
+  }
+}

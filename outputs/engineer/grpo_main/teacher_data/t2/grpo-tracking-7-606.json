@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-606",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Hamlet, Claire gets Dracula, Dave gets The Trial, Eve gets Middlemarch, Fred gets Persuasion, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Fred and Eve swap books. Then, Bob and Alice swap books. Then, Bob and Gertrude swap books. Then, Alice and Dave swap books. Then, Claire and Bob swap books. Then, Alice and Claire swap books. Finally, Claire and Dave swap books. At the end of the semester, Alice has\nOptions:\n(A) Ivanhoe\n(B) Hamlet\n(C) Dracula\n(D) The Trial\n(E) Middlemarch\n(F) Persuasion\n(G) Beloved",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch",
+      "Fred": "Persuasion",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Beloved",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Hamlet",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "Hamlet",
+      "Dave": "The Trial",
+      "Eve": "Persuasion",
+      "Fred": "Middlemarch",
+      "Gertrude": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Ivanhoe, Hamlet, Dracula, The Trial, Middlemarch, Persuasion, Beloved\n1. Fred ↔ Eve: Ivanhoe, Hamlet, Dracula, The Trial, Persuasion, Middlemarch, Beloved\n2. Bob ↔ Alice: Hamlet, Ivanhoe, Dracula, The Trial, Persuasion, Middlemarch, Beloved\n3. Bob ↔ Gertrude: Hamlet, Beloved, Dracula, The Trial, Persuasion, Middlemarch, Ivanhoe\n4. Alice ↔ Dave: The Trial, Beloved, Dracula, Hamlet, Persuasion, Middlemarch, Ivanhoe\n5. Claire ↔ Bob: The Trial, Dracula, Beloved, Hamlet, Persuasion, Middlemarch, Ivanhoe\n6. Alice ↔ Claire: Beloved, Dracula, The Trial, Hamlet, Persuasion, Middlemarch, Ivanhoe\n7. Claire ↔ Dave: Beloved, Dracula, Hamlet, The Trial, Persuasion, Middlemarch, Ivanhoe\nAlice has Beloved, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 994,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

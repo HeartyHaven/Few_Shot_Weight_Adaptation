@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-146",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Dracula, Claire gets Ivanhoe, Dave gets Hamlet, and Eve gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Eve and Claire swap books. Then, Bob and Claire swap books. Then, Alice and Dave swap books. Then, Claire and Dave swap books. Finally, Dave and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) The Trial\n(B) Dracula\n(C) Ivanhoe\n(D) Hamlet\n(E) Dune",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Hamlet",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Hamlet",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Hamlet",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Book order in every row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (The Trial, Dracula, Ivanhoe, Hamlet, Dune)\n1. Eve ↔ Claire: (The Trial, Dracula, Dune, Hamlet, Ivanhoe)\n2. Bob ↔ Claire: (The Trial, Dune, Dracula, Hamlet, Ivanhoe)\n3. Alice ↔ Dave: (Hamlet, Dune, Dracula, The Trial, Ivanhoe)\n4. Claire ↔ Dave: (Hamlet, Dune, The Trial, Dracula, Ivanhoe)\n5. Dave ↔ Alice: (Dracula, Dune, The Trial, Hamlet, Ivanhoe)\nClaire has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1157,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

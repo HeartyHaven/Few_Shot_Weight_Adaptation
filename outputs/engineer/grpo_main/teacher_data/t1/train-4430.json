@@ -1,0 +1,22 @@
+{
+  "id": "train-4430",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nIndex case: A 48-year-old UK born male was referred to a Scottish hospital on 31 October 2019 by his family doctor with a 10-day history of sore throat and dysphagia. He had returned from a holiday in Tunisia on 18 October 2019. He had previously presented to his family doctor on two occasions following the onset of symptoms. He had completed his childhood vaccinations (including diphtheria toxoid), and had a diphtheria toxoid booster 15 years previously.\nOn examination in the hospital, his heart rate was 98 bpm and the temperature was 37.8 °C. He had a thick white pseudomembrane extending over both pharyngeal pillars and a swollen uvula with patchy exudate. Initial blood tests showed a white cell count of 11.2 × 109/l (normal range: 4–11) and C-reactive protein (CRP) of 344 mg/l (normal range: 0–5). Throat and nasopharyngeal swabs were taken. The local Health Protection Team and Public Health England (PHE) were informed, and based on epidemiological and clinical evidence the case was classed as a possible case of diphtheria. He was started on 1.2 g benzylpenicillin IV four times daily, 500 mg clarithromycin IV twice daily and 500 mg metronidazole IV three times daily. He was placed in isolation within 2 h of admission with droplet precautions.\nSmall numbers of C. diphtheriae were isolated from his throat swab on 3 November 2019. The National Reference Laboratory confirmed the identification of C. diphtheriae and the presence of the diphtheria toxin gene by real-time PCR []. The expression of diphtheria toxin was confirmed using the modified Elek immunoprecipitation test [].\nHe improved with treatment and his pseudomembrane had largely disappeared by 8 November 2019 (Image 1). Antitoxin was not administered due to his rapid clinical improvement by the time C. diphtheriae was isolated. He was discharged from the Infectious Diseases Unit on 9 November 2019 with 500 mg erythromycin four times daily and 500 mg amoxicillin three times daily. A diphtheria toxoid vaccine booster was also given prior to discharge. Clearance swabs on 22 and 25 November 2019 were negative ().\nSecond case: The second case was a 45-year-old British female who travelled with the index case to Tunisia. She reported the onset of pharyngitis from 28 October 2019. She also had a full immunisation history, but with no additional boosters. Following confirmation of C. diphtheriae in the index case, nasopharyngeal and throat swabs were taken and she was commenced on prophylactic oral clarithromycin 500 mg twice daily from 3 November 2019.\nOn 6 November 2019, when C. diphtheriae was isolated, she was urgently assessed at the Infectious Diseases Unit and found to have only a mildly erythematous pharynx. Her CRP was 23 mg/l. She was discharged on the same day with advice to self-isolate and to complete 14 days of clarithromycin 500 mg twice daily. Diphtheria antitoxin (DAT) was not administered. Clearance swabs on 20 and 22 November 2019 were negative ().\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 20,
+  "prompt_tokens": 857,
+  "solution": "Use the age-adjusted Centor (McIsaac) score for the 48-year-old index patient at admission. The four clinical criteria are worth 1 point each; the age adjustment is +1 at ages 3–14, 0 at 15–44, and −1 at ≥45.\n- Temperature >38 °C: measured 37.8 °C → 0.\n- Tonsillar swelling or exudate: counting the exudative pseudomembrane over the pharyngeal pillars as tonsillar-region exudate → 1.\n- Tender anterior cervical nodes: not documented → 0.\n- Absence of cough: no cough mentioned → 1 if the symptom history is taken to indicate no cough.\n- Age 48 → −1.\nUnder those assumptions, total = 0 + 1 + 0 + 1 − 1 = 1. Cough status was not explicitly recorded.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 782,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

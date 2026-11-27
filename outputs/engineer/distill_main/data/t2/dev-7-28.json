@@ -1,0 +1,125 @@
+{
+  "id": "dev-7-28",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Dracula, Claire gets Ivanhoe, Dave gets Jane Eyre, Eve gets Persuasion, Fred gets The Trial, and Gertrude gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Fred and Dave swap books. Then, Eve and Bob swap books. Then, Bob and Fred swap books. Then, Alice and Bob swap books. Then, Claire and Gertrude swap books. Then, Dave and Eve swap books. Finally, Bob and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Hamlet\n(B) Dracula\n(C) Ivanhoe\n(D) Jane Eyre\n(E) Persuasion\n(F) The Trial\n(G) The Hobbit",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Jane Eyre",
+      "Eve": "Persuasion",
+      "Fred": "The Trial",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Persuasion",
+      "Fred": "Jane Eyre",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Persuasion",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Dracula",
+      "Fred": "Jane Eyre",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Dracula",
+      "Fred": "Persuasion",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "Ivanhoe",
+      "Dave": "The Trial",
+      "Eve": "Dracula",
+      "Fred": "Persuasion",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dracula",
+      "Fred": "Persuasion",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Trial",
+      "Claire": "The Hobbit",
+      "Dave": "Dracula",
+      "Eve": "Hamlet",
+      "Fred": "Persuasion",
+      "Gertrude": "Ivanhoe"
+    }
+  ],
+  "solution": "Each row lists books in person order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Hamlet, Dracula, Ivanhoe, Jane Eyre, Persuasion, The Trial, The Hobbit\n1. Fred ↔ Dave: Hamlet, Dracula, Ivanhoe, The Trial, Persuasion, Jane Eyre, The Hobbit\n2. Eve ↔ Bob: Hamlet, Persuasion, Ivanhoe, The Trial, Dracula, Jane Eyre, The Hobbit\n3. Bob ↔ Fred: Hamlet, Jane Eyre, Ivanhoe, The Trial, Dracula, Persuasion, The Hobbit\n4. Alice ↔ Bob: Jane Eyre, Hamlet, Ivanhoe, The Trial, Dracula, Persuasion, The Hobbit\n5. Claire ↔ Gertrude: Jane Eyre, Hamlet, The Hobbit, The Trial, Dracula, Persuasion, Ivanhoe\n6. Dave ↔ Eve: Jane Eyre, Hamlet, The Hobbit, Dracula, The Trial, Persuasion, Ivanhoe\n7. Bob ↔ Eve: Jane Eyre, The Trial, The Hobbit, Dracula, Hamlet, Persuasion, Ivanhoe\nAlice has Jane Eyre, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 70,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

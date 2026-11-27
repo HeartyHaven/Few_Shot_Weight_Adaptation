@@ -1,0 +1,22 @@
+{
+  "id": "train-4098",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 43-year-old Caucasian woman is admitted to the hospital with acute onset right upper quadrant (RUQ) pain. The pain started 6 hours ago after the patient had a large meal at a birthday party and has progressively worsened. She recalls having similar pain before but not so intense. No significant past medical history. Current medications are only oral contraceptive. Vitals are blood pressure 140/80 mm Hg, heart rate 79/min, respiratory rate 14/min, and temperature 37.6℃ (99.7℉). The patient’s BMI is 36.3 kg/m2. On exam, the patient appears slightly jaundiced. Her cardiac and respiratory examinations are within normal limits. Abdominal palpation reveals tenderness to palpation in the RUQ with no rebound or guarding, and there is an inspiratory arrest on deep palpation in this region. The remainder of the examination is within normal limits.\nLaboratory tests are significant for the following:\nRBC count 4.1 million/mm3\nHb 13.4 mg/dL\nLeukocyte count 11,200/mm3\nESR 22 mm/hr\nPlatelet count 230,000/mm3\nTotal bilirubin 2 mg/dL\nDirect bilirubin 1.1 mg/dL\nALT 20 IU/L\nAST 18 IU/L\nAmylase 33 IU/L\nUltrasound of the abdomen shows the following result (see image):\nThe common bile duct (CBD) (not shown in the image) is not dilated.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 415,
+  "solution": "The HEART score for suspected acute coronary syndrome grades History, ECG, Age, Risk factors, and Troponin from 0 to 2 each.\n- History: postprandial RUQ pain with inspiratory arrest on RUQ palpation suggests biliary pain rather than ischemia. Slightly suspicious or less → 0.\n- ECG: no tracing or interpretation supplied; assume no abnormality for this calculation → 0.\n- Age: 43, below 45 → 0.\n- Risk factors: obesity (BMI 36.3) is one coronary risk factor; no others or established atherosclerotic disease documented. One or two risk factors → 1.\n- Troponin: not reported; assume not elevated for this calculation → 0.\nConditional sum: 0 + 0 + 0 + 1 + 0 = 1. A definitive HEART score would require ECG and troponin results.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 832,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

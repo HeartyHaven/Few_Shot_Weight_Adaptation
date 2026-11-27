@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-26",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Ivanhoe, Claire gets Hamlet, Dave gets Beloved, Eve gets Walden, Fred gets Candide, and Gertrude gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Eve and Bob swap books. Then, Alice and Eve swap books. Then, Eve and Gertrude swap books. Then, Gertrude and Alice swap books. Then, Fred and Dave swap books. Then, Claire and Bob swap books. Finally, Fred and Gertrude swap books. At the end of the semester, Alice has\nOptions:\n(A) The Trial\n(B) Ivanhoe\n(C) Hamlet\n(D) Beloved\n(E) Walden\n(F) Candide\n(G) Middlemarch",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Walden",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Ivanhoe",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "The Trial",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Middlemarch",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Middlemarch",
+      "Fred": "Candide",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Candide",
+      "Eve": "Middlemarch",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Middlemarch",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Middlemarch",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Beloved"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists book titles in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: The Trial, Ivanhoe, Hamlet, Beloved, Walden, Candide, Middlemarch\n1. Eve ↔ Bob: The Trial, Walden, Hamlet, Beloved, Ivanhoe, Candide, Middlemarch\n2. Alice ↔ Eve: Ivanhoe, Walden, Hamlet, Beloved, The Trial, Candide, Middlemarch\n3. Eve ↔ Gertrude: Ivanhoe, Walden, Hamlet, Beloved, Middlemarch, Candide, The Trial\n4. Gertrude ↔ Alice: The Trial, Walden, Hamlet, Beloved, Middlemarch, Candide, Ivanhoe\n5. Fred ↔ Dave: The Trial, Walden, Hamlet, Candide, Middlemarch, Beloved, Ivanhoe\n6. Claire ↔ Bob: The Trial, Hamlet, Walden, Candide, Middlemarch, Beloved, Ivanhoe\n7. Fred ↔ Gertrude: The Trial, Hamlet, Walden, Candide, Middlemarch, Ivanhoe, Beloved\nAlice has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1148,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

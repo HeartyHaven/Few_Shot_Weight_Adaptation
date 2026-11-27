@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-914",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Yuki, Claire is dancing with Priya, Dave is dancing with Wade, and Eve is dancing with Lena.\nThroughout the song, the dancers often trade partners. First, Claire and Dave switch partners. Then, Alice and Bob switch partners. Then, Dave and Eve switch partners. Then, Claire and Eve switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Stefan\n(B) Yuki\n(C) Priya\n(D) Wade\n(E) Lena",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Priya",
+      "Dave": "Wade",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Wade",
+      "Dave": "Priya",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Wade",
+      "Dave": "Priya",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Wade",
+      "Dave": "Lena",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Priya",
+      "Dave": "Lena",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Yuki",
+      "Claire": "Priya",
+      "Dave": "Lena",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Stefan, Yuki, Priya, Wade, Lena\n1. Claire ↔ Dave: Stefan, Yuki, Wade, Priya, Lena\n2. Alice ↔ Bob: Yuki, Stefan, Wade, Priya, Lena\n3. Dave ↔ Eve: Yuki, Stefan, Wade, Lena, Priya\n4. Claire ↔ Eve: Yuki, Stefan, Priya, Lena, Wade\n5. Alice ↔ Bob: Stefan, Yuki, Priya, Lena, Wade\nEve's final partner is Wade, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1301,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

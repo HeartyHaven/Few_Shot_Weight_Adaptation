@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-245",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Dune, Claire gets The Hobbit, Dave gets Candide, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Claire and Dave swap books. Then, Dave and Claire swap books. Then, Bob and Eve swap books. Finally, Eve and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) The Trial\n(B) Dune\n(C) The Hobbit\n(D) Candide\n(E) Jane Eyre",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Dune"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in the order Alice, Bob, Claire, Dave, Eve.\nInitial: The Trial | Dune | The Hobbit | Candide | Jane Eyre\n1. Claire ↔ Alice: The Hobbit | Dune | The Trial | Candide | Jane Eyre\n2. Claire ↔ Dave: The Hobbit | Dune | Candide | The Trial | Jane Eyre\n3. Dave ↔ Claire: The Hobbit | Dune | The Trial | Candide | Jane Eyre\n4. Bob ↔ Eve: The Hobbit | Jane Eyre | The Trial | Candide | Dune\n5. Eve ↔ Bob: The Hobbit | Dune | The Trial | Candide | Jane Eyre\nClaire has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1204,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

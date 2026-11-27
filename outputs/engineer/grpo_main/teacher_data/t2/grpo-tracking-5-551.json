@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-551",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Ivanhoe, Claire gets Dracula, Dave gets The Trial, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Bob and Eve swap books. Then, Claire and Alice swap books. Then, Alice and Eve swap books. Finally, Dave and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Middlemarch\n(B) Ivanhoe\n(C) Dracula\n(D) The Trial\n(E) Walden",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Ivanhoe",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "The Trial",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "The Trial",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "Dracula",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Middlemarch | Ivanhoe | Dracula | The Trial | Walden\n1. Bob and Eve swap: Middlemarch | Walden | Dracula | The Trial | Ivanhoe\n2. Bob and Eve swap: Middlemarch | Ivanhoe | Dracula | The Trial | Walden\n3. Claire and Alice swap: Dracula | Ivanhoe | Middlemarch | The Trial | Walden\n4. Alice and Eve swap: Walden | Ivanhoe | Middlemarch | The Trial | Dracula\n5. Dave and Eve swap: Walden | Ivanhoe | Middlemarch | Dracula | The Trial\nAlice has Walden, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1282,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

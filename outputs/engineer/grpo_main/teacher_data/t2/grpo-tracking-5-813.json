@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-813",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Priya, Bob is dancing with Yuki, Claire is dancing with Tara, Dave is dancing with Oscar, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Alice and Dave switch partners. Then, Eve and Alice switch partners. Then, Eve and Bob switch partners. Finally, Alice and Dave switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Priya\n(B) Yuki\n(C) Tara\n(D) Oscar\n(E) Marco",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Priya",
+      "Bob": "Yuki",
+      "Claire": "Tara",
+      "Dave": "Oscar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Oscar",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Priya",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Oscar",
+      "Claire": "Tara",
+      "Dave": "Yuki",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Oscar",
+      "Claire": "Tara",
+      "Dave": "Marco",
+      "Eve": "Priya"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Priya, Yuki, Tara, Oscar, Marco\n1. Bob and Alice swap: Yuki, Priya, Tara, Oscar, Marco\n2. Alice and Dave swap: Oscar, Priya, Tara, Yuki, Marco\n3. Eve and Alice swap: Marco, Priya, Tara, Yuki, Oscar\n4. Eve and Bob swap: Marco, Oscar, Tara, Yuki, Priya\n5. Alice and Dave swap: Yuki, Oscar, Tara, Marco, Priya\nDave is dancing with Marco, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1183,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

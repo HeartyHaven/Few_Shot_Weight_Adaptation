@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-128",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Nadia, Claire is dancing with Umar, Dave is dancing with Stefan, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Dave and Bob switch partners. Then, Claire and Alice switch partners. Then, Dave and Claire switch partners. Then, Eve and Alice switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Yuki\n(B) Nadia\n(C) Umar\n(D) Stefan\n(E) Wade",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Umar",
+      "Dave": "Stefan",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Stefan",
+      "Claire": "Umar",
+      "Dave": "Nadia",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Nadia",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Yuki",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Yuki",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Yuki",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Yuki, Nadia, Umar, Stefan, Wade.\n1. Dave and Bob swap: Yuki, Stefan, Umar, Nadia, Wade.\n2. Claire and Alice swap: Umar, Stefan, Yuki, Nadia, Wade.\n3. Dave and Claire swap: Umar, Stefan, Nadia, Yuki, Wade.\n4. Eve and Alice swap: Wade, Stefan, Nadia, Yuki, Umar.\n5. Alice and Eve swap: Umar, Stefan, Nadia, Yuki, Wade.\nAlice is dancing with Umar, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1299,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

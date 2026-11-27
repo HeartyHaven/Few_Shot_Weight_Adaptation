@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-485",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Candide, Claire gets The Trial, Dave gets Emma, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Dave and Claire swap books. Then, Eve and Dave swap books. Then, Claire and Dave swap books. Finally, Bob and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) Persuasion\n(B) Candide\n(C) The Trial\n(D) Emma\n(E) Jane Eyre",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Persuasion, Candide, The Trial, Emma, Jane Eyre\n1. Alice ↔ Bob: Candide, Persuasion, The Trial, Emma, Jane Eyre\n2. Dave ↔ Claire: Candide, Persuasion, Emma, The Trial, Jane Eyre\n3. Eve ↔ Dave: Candide, Persuasion, Emma, Jane Eyre, The Trial\n4. Claire ↔ Dave: Candide, Persuasion, Jane Eyre, Emma, The Trial\n5. Bob ↔ Alice: Persuasion, Candide, Jane Eyre, Emma, The Trial\nClaire has Jane Eyre, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1243,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

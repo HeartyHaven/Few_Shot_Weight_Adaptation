@@ -1,0 +1,21 @@
+{
+  "id": "dev-4385",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "calc_id": 20,
+  "question": "Patient note:\nA 16-year-old girl presents with a sore throat. The patient says symptoms onset acutely 3 days ago and have progressively worsened. She denies any history of cough, nasal congestion or rhinorrhea. No significant past medical history or current medications. The vital signs include: temperature 37.7°C (99.9°F), blood pressure 110/70 mm Hg, pulse 74/min, respiratory rate 20/min, and oxygen saturation 99% on room air. Physical examination is significant for anterior cervical lymphadenopathy. There is edema of the oropharynx and tonsillar swelling but no tonsillar exudate.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "explanation": "The criteria listed in the Centor Score formula are listed below:\n\n1. Age: 3-14 years = +1 point, 15-44 years = 0 points, ≥45 years = -1 point\n2. Exudate or swelling on tonsils: No = 0 points, Yes = +1 point\n3. Tender/swollen anterior cervical lymph nodes: No = 0 points, Yes = +1 point\n4. Temperature >38°C (100.4°F): No = 0 points, Yes = +1 point\n5. Cough: Cough present = 0 points, Cough absent = +1 point\n\nThe Centor score is calculated by summing the points for each criterion.\n    \nThe current Centor score is 0.\nThe patient is 16 years old. Because the age is in between 15 and 44 years, the score does not change, keeping the score at 0.\nThe patient's temperature is 99.9 degrees fahrenheit. To convert to degrees celsius, apply the formula 5/9 * [temperature (degrees fahrenheit) - 32]. This means that the patient's temperature is 5/9 * 67.9 = 37.72222 degrees celsius. The patient's temperature is less than or equal to 38 degrees Celsius, and so we do not make any changes to the score, keeping the score at 0.\nThe patient note reports an absence of cough and so we add 1 point to the score, making the current score 0 + 1 = 1.\nThe patient note reports 'tender/swollen anterior cervical lymph nodes' as present for the patient. Hence, we increase the score by 1, making the current score 1 + 1 = 2.\nThe patient note reports 'exudate or swelling on tonsils' as absent for the patient. Hence, we do not change the score, keeping the current score at 2.\nHence, the Centor score for the patient is 2.",
+  "solution": "Modified Centor (McIsaac) score at presentation:\n- Age adjustment: age 16 is in the 15–44 group → 0.\n- Temperature >38°C: 37.7°C does not meet the threshold → 0.\n- Absence of cough: she explicitly denies cough → +1.\n- Tonsillar swelling or exudate: swelling is present, which qualifies even without exudate → +1.\n- Tender anterior cervical nodes: anterior cervical lymphadenopathy is documented, but tenderness is not → 0.\nSum: 0 + 0 + 1 + 1 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "8b9a3e561e15e11dac4347cef51c8be2946c533d751cd80486ae510d65212049",
+  "call_id": 41,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

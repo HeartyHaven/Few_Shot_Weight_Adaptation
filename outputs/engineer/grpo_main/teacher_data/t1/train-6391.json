@@ -1,0 +1,22 @@
+{
+  "id": "train-6391",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 71-year-old man presents to the emergency department for shortness of breath. The patient was returning from a business trip to China, when he suddenly felt short of breath during the taxi ride home from the airport. The patient has a past medical history of poorly controlled diabetes mellitus and a 50 pack-year smoking history. The patient is non-compliant with his medications and is currently only taking ibuprofen. An initial ECG demonstrates sinus tachycardia. A chest radiograph is within normal limits. Laboratory values are notable for a creatinine of 2.4 mg/dL and a BUN of 32 mg/dL as compared to his baseline creatinine of 0.9 mg/dL. His temperature is 98.8°F (37.1°C), pulse is 122/min, blood pressure is 145/90 mmHg, respirations are 19/min, and oxygen saturation is 93% on room air. On physical exam, you note an older gentleman in distress. Cardiac exam is notable only for tachycardia. Pulmonary exam is notable for expiratory wheezes.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 316,
+  "solution": "CURB-65 is a pneumonia severity score with five criteria, each worth 1 point. Using admission values:\n- Confusion: no new confusion reported, 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN 32 mg/dL, 1.\n- Respiratory rate ≥30/min: 19/min, 0.\n- Blood pressure: systolic <90 or diastolic ≤60 mm Hg. At 145/90, neither criterion is met, 0.\n- Age ≥65 years: age 71, 1.\nTotal = 0 + 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 863,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

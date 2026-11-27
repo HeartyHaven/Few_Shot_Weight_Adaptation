@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-881",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Dracula, Claire gets Dune, Dave gets Jane Eyre, Eve gets Walden, Fred gets Candide, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Gertrude and Claire swap books. Then, Fred and Bob swap books. Then, Gertrude and Fred swap books. Then, Gertrude and Dave swap books. Then, Alice and Claire swap books. Then, Dave and Fred swap books. Finally, Claire and Dave swap books. At the end of the semester, Dave has\nOptions:\n(A) Persuasion\n(B) Dracula\n(C) Dune\n(D) Jane Eyre\n(E) Walden\n(F) Candide\n(G) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden",
+      "Fred": "Candide",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden",
+      "Fred": "Dune",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "Dracula",
+      "Eve": "Walden",
+      "Fred": "Dune",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Candide",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Walden",
+      "Fred": "Dune",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Candide",
+      "Claire": "Persuasion",
+      "Dave": "Dune",
+      "Eve": "Walden",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "Persuasion",
+      "Eve": "Walden",
+      "Fred": "Dracula",
+      "Gertrude": "Jane Eyre"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Book order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: Persuasion | Dracula | Dune | Jane Eyre | Walden | Candide | Beloved\n1. Gertrude swaps with Claire: Persuasion | Dracula | Beloved | Jane Eyre | Walden | Candide | Dune\n2. Fred swaps with Bob: Persuasion | Candide | Beloved | Jane Eyre | Walden | Dracula | Dune\n3. Gertrude swaps with Fred: Persuasion | Candide | Beloved | Jane Eyre | Walden | Dune | Dracula\n4. Gertrude swaps with Dave: Persuasion | Candide | Beloved | Dracula | Walden | Dune | Jane Eyre\n5. Alice swaps with Claire: Beloved | Candide | Persuasion | Dracula | Walden | Dune | Jane Eyre\n6. Dave swaps with Fred: Beloved | Candide | Persuasion | Dune | Walden | Dracula | Jane Eyre\n7. Claire swaps with Dave: Beloved | Candide | Dune | Persuasion | Walden | Dracula | Jane Eyre\nDave's book is Persuasion, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1179,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

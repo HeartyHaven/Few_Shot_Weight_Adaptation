@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-624",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Ivanhoe, Claire gets The Trial, Dave gets Jane Eyre, Eve gets Siddhartha, Fred gets Candide, and Gertrude gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Dave and Eve swap books. Then, Gertrude and Eve swap books. Then, Claire and Dave swap books. Then, Dave and Gertrude swap books. Then, Bob and Alice swap books. Then, Claire and Fred swap books. Finally, Dave and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) Beloved\n(B) Ivanhoe\n(C) The Trial\n(D) Jane Eyre\n(E) Siddhartha\n(F) Candide\n(G) Dracula",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Siddhartha",
+      "Fred": "Candide",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Siddhartha",
+      "Eve": "Jane Eyre",
+      "Fred": "Candide",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Siddhartha",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "Siddhartha",
+      "Dave": "The Trial",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Ivanhoe",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Beloved",
+      "Claire": "Candide",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula",
+      "Fred": "Siddhartha",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Beloved",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Dracula",
+      "Fred": "Siddhartha",
+      "Gertrude": "The Trial"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Books in holder order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Beloved, Ivanhoe, The Trial, Jane Eyre, Siddhartha, Candide, Dracula\n1. Dave ↔ Eve: Beloved, Ivanhoe, The Trial, Siddhartha, Jane Eyre, Candide, Dracula\n2. Gertrude ↔ Eve: Beloved, Ivanhoe, The Trial, Siddhartha, Dracula, Candide, Jane Eyre\n3. Claire ↔ Dave: Beloved, Ivanhoe, Siddhartha, The Trial, Dracula, Candide, Jane Eyre\n4. Dave ↔ Gertrude: Beloved, Ivanhoe, Siddhartha, Jane Eyre, Dracula, Candide, The Trial\n5. Bob ↔ Alice: Ivanhoe, Beloved, Siddhartha, Jane Eyre, Dracula, Candide, The Trial\n6. Claire ↔ Fred: Ivanhoe, Beloved, Candide, Jane Eyre, Dracula, Siddhartha, The Trial\n7. Dave ↔ Claire: Ivanhoe, Beloved, Jane Eyre, Candide, Dracula, Siddhartha, The Trial\nDave has Candide, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1223,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

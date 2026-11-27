@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-37",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a grey ball, Bob has a white ball, Claire has a purple ball, Dave has a pink ball, and Eve has a yellow ball.\nAs the game progresses, pairs of players trade balls. First, Dave and Eve swap balls. Then, Alice and Dave swap balls. Then, Claire and Bob swap balls. Then, Alice and Bob swap balls. Finally, Claire and Bob swap balls. At the end of the game, Dave has the\nOptions:\n(A) grey ball\n(B) white ball\n(C) purple ball\n(D) pink ball\n(E) yellow ball",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "grey",
+      "Bob": "white",
+      "Claire": "purple",
+      "Dave": "pink",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "white",
+      "Claire": "purple",
+      "Dave": "yellow",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "white",
+      "Claire": "purple",
+      "Dave": "grey",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "purple",
+      "Claire": "white",
+      "Dave": "grey",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "yellow",
+      "Claire": "white",
+      "Dave": "grey",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "white",
+      "Claire": "yellow",
+      "Dave": "grey",
+      "Eve": "pink"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (grey, white, purple, pink, yellow)\n1. Dave ↔ Eve: (grey, white, purple, yellow, pink)\n2. Alice ↔ Dave: (yellow, white, purple, grey, pink)\n3. Claire ↔ Bob: (yellow, purple, white, grey, pink)\n4. Alice ↔ Bob: (purple, yellow, white, grey, pink)\n5. Claire ↔ Bob: (purple, white, yellow, grey, pink)\nDave has the grey ball, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

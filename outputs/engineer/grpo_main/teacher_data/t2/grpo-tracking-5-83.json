@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-83",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Jane Eyre, Claire gets Ivanhoe, Dave gets The Hobbit, and Eve gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Eve and Alice swap books. Then, Eve and Claire swap books. Then, Claire and Dave swap books. Then, Alice and Eve swap books. Finally, Dave and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) The Trial\n(B) Jane Eyre\n(C) Ivanhoe\n(D) The Hobbit\n(E) Walden",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "The Trial",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Trial",
+      "Claire": "The Hobbit",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: The Trial, Jane Eyre, Ivanhoe, The Hobbit, Walden\n1. Eve–Alice: Walden, Jane Eyre, Ivanhoe, The Hobbit, The Trial\n2. Eve–Claire: Walden, Jane Eyre, The Trial, The Hobbit, Ivanhoe\n3. Claire–Dave: Walden, Jane Eyre, The Hobbit, The Trial, Ivanhoe\n4. Alice–Eve: Ivanhoe, Jane Eyre, The Hobbit, The Trial, Walden\n5. Dave–Bob: Ivanhoe, The Trial, The Hobbit, Jane Eyre, Walden\nBob has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1328,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

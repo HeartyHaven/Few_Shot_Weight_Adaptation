@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-416",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Umar, Claire is dancing with Vera, Dave is dancing with Karl, and Eve is dancing with Rosa.\nThroughout the song, the dancers often trade partners. First, Dave and Eve switch partners. Then, Bob and Dave switch partners. Then, Bob and Eve switch partners. Then, Claire and Bob switch partners. Finally, Dave and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Marco\n(B) Umar\n(C) Vera\n(D) Karl\n(E) Rosa",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Umar",
+      "Claire": "Vera",
+      "Dave": "Karl",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Umar",
+      "Claire": "Vera",
+      "Dave": "Rosa",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Rosa",
+      "Claire": "Vera",
+      "Dave": "Umar",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Karl",
+      "Claire": "Vera",
+      "Dave": "Umar",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Vera",
+      "Claire": "Karl",
+      "Dave": "Umar",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Vera",
+      "Claire": "Karl",
+      "Dave": "Rosa",
+      "Eve": "Umar"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Marco, Umar, Vera, Karl, Rosa\n1. Dave–Eve: Marco, Umar, Vera, Rosa, Karl\n2. Bob–Dave: Marco, Rosa, Vera, Umar, Karl\n3. Bob–Eve: Marco, Karl, Vera, Umar, Rosa\n4. Claire–Bob: Marco, Vera, Karl, Umar, Rosa\n5. Dave–Eve: Marco, Vera, Karl, Rosa, Umar\nBob is dancing with Vera, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1165,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

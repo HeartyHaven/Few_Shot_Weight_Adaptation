@@ -1,0 +1,125 @@
+{
+  "id": "dev-7-19",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing sweeper, Bob is playing cheerleader, Claire is playing left midfielder, Dave is playing benchwarmer, Eve is playing striker, Fred is playing right winger, and Gertrude is playing right back.\nAs the game progresses, pairs of players occasionally swap positions. First, Dave and Bob trade positions. Then, Claire and Dave trade positions. Then, Bob and Gertrude trade positions. Then, Claire and Dave trade positions. Then, Dave and Eve trade positions. Then, Bob and Fred trade positions. Finally, Alice and Bob trade positions. At the end of the match, Eve is playing\nOptions:\n(A) sweeper\n(B) cheerleader\n(C) left midfielder\n(D) benchwarmer\n(E) striker\n(F) right winger\n(G) right back",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "sweeper",
+      "Bob": "cheerleader",
+      "Claire": "left midfielder",
+      "Dave": "benchwarmer",
+      "Eve": "striker",
+      "Fred": "right winger",
+      "Gertrude": "right back"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "benchwarmer",
+      "Claire": "left midfielder",
+      "Dave": "cheerleader",
+      "Eve": "striker",
+      "Fred": "right winger",
+      "Gertrude": "right back"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "benchwarmer",
+      "Claire": "cheerleader",
+      "Dave": "left midfielder",
+      "Eve": "striker",
+      "Fred": "right winger",
+      "Gertrude": "right back"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "right back",
+      "Claire": "cheerleader",
+      "Dave": "left midfielder",
+      "Eve": "striker",
+      "Fred": "right winger",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "right back",
+      "Claire": "left midfielder",
+      "Dave": "cheerleader",
+      "Eve": "striker",
+      "Fred": "right winger",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "right back",
+      "Claire": "left midfielder",
+      "Dave": "striker",
+      "Eve": "cheerleader",
+      "Fred": "right winger",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "right winger",
+      "Claire": "left midfielder",
+      "Dave": "striker",
+      "Eve": "cheerleader",
+      "Fred": "right back",
+      "Gertrude": "benchwarmer"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "sweeper",
+      "Claire": "left midfielder",
+      "Dave": "striker",
+      "Eve": "cheerleader",
+      "Fred": "right back",
+      "Gertrude": "benchwarmer"
+    }
+  ],
+  "solution": "Position order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: sweeper, cheerleader, left midfielder, benchwarmer, striker, right winger, right back\n1. Dave–Bob: sweeper, benchwarmer, left midfielder, cheerleader, striker, right winger, right back\n2. Claire–Dave: sweeper, benchwarmer, cheerleader, left midfielder, striker, right winger, right back\n3. Bob–Gertrude: sweeper, right back, cheerleader, left midfielder, striker, right winger, benchwarmer\n4. Claire–Dave: sweeper, right back, left midfielder, cheerleader, striker, right winger, benchwarmer\n5. Dave–Eve: sweeper, right back, left midfielder, striker, cheerleader, right winger, benchwarmer\n6. Bob–Fred: sweeper, right winger, left midfielder, striker, cheerleader, right back, benchwarmer\n7. Alice–Bob: right winger, sweeper, left midfielder, striker, cheerleader, right back, benchwarmer\nEve's final position is cheerleader, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 62,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

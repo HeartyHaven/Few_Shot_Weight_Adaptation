@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-909",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Jane Eyre, Claire gets The Hobbit, Dave gets The Trial, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Eve and Claire swap books. Then, Dave and Eve swap books. Then, Alice and Bob swap books. Then, Claire and Alice swap books. Finally, Alice and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) Jane Eyre\n(C) The Hobbit\n(D) The Trial\n(E) Candide",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "The Trial",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Ivanhoe | Jane Eyre | The Hobbit | The Trial | Candide\n1. Eve–Claire: Ivanhoe | Jane Eyre | Candide | The Trial | The Hobbit\n2. Dave–Eve: Ivanhoe | Jane Eyre | Candide | The Hobbit | The Trial\n3. Alice–Bob: Jane Eyre | Ivanhoe | Candide | The Hobbit | The Trial\n4. Claire–Alice: Candide | Ivanhoe | Jane Eyre | The Hobbit | The Trial\n5. Alice–Claire: Jane Eyre | Ivanhoe | Candide | The Hobbit | The Trial\nClaire has Candide, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1186,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

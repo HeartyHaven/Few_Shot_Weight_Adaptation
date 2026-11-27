@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-449",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "For how many positive integers $n$ does $\\frac{1}{n}$ yield a terminating decimal with a non-zero hundredths digit?",
+  "answer": "11",
+  "prompt_tokens": 57,
+  "solution": "The decimal terminates exactly when $n$ divides a power of $10$, so $n=2^a5^b$ for nonnegative integers $a,b$. Also, $n>100$ gives $1/n<0.01$, whose hundredths digit is zero. Thus we need only list such $n\\le100$. The hundredths digit is the units digit of $\\lfloor100/n\\rfloor$.\n- $b=0$: for $n=1,2,4,8,16,32,64$, the floors are $100,50,25,12,6,3,1$; five have nonzero units digit.\n- $b=1$: for $n=5,10,20,40,80$, the floors are $20,10,5,2,1$; three qualify.\n- $b=2$: for $n=25,50,100$, the floors are $4,2,1$; all three qualify.\nNo larger $b$ is possible since $5^3=125>100$. The count is $5+3+3=11$.\nFinal answer: 11",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "11",
+    "correct": true
+  }
+}

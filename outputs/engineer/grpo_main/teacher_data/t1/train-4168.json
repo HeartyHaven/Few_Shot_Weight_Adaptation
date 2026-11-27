@@ -1,0 +1,22 @@
+{
+  "id": "train-4168",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 26-year-old man comes to the physician because of a 1-week history of left-sided chest pain. The pain is worse when he takes deep breaths. Over the past 6 weeks, he had been training daily for an upcoming hockey tournament. He does not smoke cigarettes or drink alcohol but has used cocaine once. His temperature is 37.1°C (98.7°F), pulse is 75/min, and blood pressure is 128/85 mm Hg. Physical examination shows tenderness to palpation of the left chest. An x-ray of the chest is shown.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "0",
+  "lower": 0.0,
+  "upper": 0.0,
+  "calc_id": 18,
+  "prompt_tokens": 197,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, cardiac risk factors, and troponin.\n- History: Pleuritic pain reproducible by palpation during a period of daily hockey training is only slightly suspicious for acute coronary syndrome → 0.\n- ECG: Normal = 0, nonspecific repolarization abnormality = 1, significant ST depression = 2. No ECG result is given; assume normal for this calculation → 0.\n- Age: 26 years is <45 → 0 (45–64 = 1; ≥65 = 2).\n- Risk factors: No standard HEART risk factors or known atherosclerotic disease are reported. One-time cocaine use is not a scored risk factor → 0 (1–2 factors = 1; ≥3 or known atherosclerotic disease = 2).\n- Troponin: At or below the upper reference limit = 0, >1 to 3 times the limit = 1, >3 times = 2. No result is given; assume no elevation → 0.\nConditional sum: 0 + 0 + 0 + 0 + 0 = 0. A definitive clinical score requires the ECG and troponin results.\nFinal answer: 0",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 660,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 0.0,
+    "correct": true
+  }
+}

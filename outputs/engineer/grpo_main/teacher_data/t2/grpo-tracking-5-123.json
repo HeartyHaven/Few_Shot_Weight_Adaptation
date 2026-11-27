@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-123",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Vera, Bob is dancing with Stefan, Claire is dancing with Yuki, Dave is dancing with Priya, and Eve is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Eve and Claire switch partners. Then, Alice and Eve switch partners. Then, Dave and Alice switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Vera\n(B) Stefan\n(C) Yuki\n(D) Priya\n(E) Nadia",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Vera",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Priya",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Vera",
+      "Claire": "Yuki",
+      "Dave": "Priya",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Stefan",
+      "Bob": "Vera",
+      "Claire": "Nadia",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Vera",
+      "Claire": "Nadia",
+      "Dave": "Priya",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Vera",
+      "Claire": "Nadia",
+      "Dave": "Yuki",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Vera",
+      "Claire": "Priya",
+      "Dave": "Yuki",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Partners are listed in dancer order: Alice, Bob, Claire, Dave, Eve.\nInitial: Vera, Stefan, Yuki, Priya, Nadia.\n1. Bob and Alice switch: Stefan, Vera, Yuki, Priya, Nadia.\n2. Eve and Claire switch: Stefan, Vera, Nadia, Priya, Yuki.\n3. Alice and Eve switch: Yuki, Vera, Nadia, Priya, Stefan.\n4. Dave and Alice switch: Priya, Vera, Nadia, Yuki, Stefan.\n5. Claire and Alice switch: Nadia, Vera, Priya, Yuki, Stefan.\nClaire is dancing with Priya, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1194,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

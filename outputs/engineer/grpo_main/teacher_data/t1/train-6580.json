@@ -1,0 +1,22 @@
+{
+  "id": "train-6580",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "question": "Patient note:\nA 53-year-old male without known significant past medical history presented to the emergency department for a gunshot wound to the left foot. He reported leaving a bar when a shot was fired, hitting him in the foot. He noted pain and bleeding but was able to walk. His pain was worsened with palpation to the affected site. The patient denied any significant family history. His social history was significant for tobacco use of two packs per day and alcohol use of six to 12 beers a day.\nUpon arrival, blood pressure was 152/85 mmHg, pulse was 76 bpm, respiratory rate was 18 bpm, the temperature was 97.6°F, and O2 saturation was 100% on room air. On examination, there was a wound with associated tenderness and edema to the medial aspect of the left foot with no other findings noted. A left foot x-ray was ordered and tetanus, diphtheria, and pertussis (Tdap) vaccine were administered intramuscularly. X-ray imaging revealed a large bullet fragment in the plantar soft tissue beneath the medial cuneiform as well as punctate fragments in the medial soft tissue near the large fragment. There were no fractures noted on imaging (Figure ).\nLidocaine 1% with epinephrine was administered locally and removal of the bullet was attempted. The bullet path was tracked by following pieces of thread detached from the patient’s shoe, which was found to be wrapped around the bullet (Figure ).\nBullet extraction was performed by pulling the shoe fibers along the bullet path. The severed tendon was visible upon extraction following bullet removal. Plantar and dorsiflexion of all toes of the left foot were intact. Orthopedic surgery was consulted and recommended a repeat x-ray which showed removal of the large bullet fragment in the plantar soft tissues (Figure ).\nThe patient was discharged with topical bacitracin and ciprofloxacin 500 mg tablet two times daily for seven days. He was provided with crutches and instruction for outpatient management with orthopedic surgery. The patient did not follow up for further management.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 48,
+  "prompt_tokens": 522,
+  "solution": "Count one for each positive Pulmonary Embolism Rule-out Criterion (PERC) at presentation. Using the recent-surgery-or-trauma formulation:\n- Age ≥50 years: age 53 → 1.\n- Pulse ≥100/min: pulse 76 → 0.\n- Room-air oxygen saturation <95%: saturation 100% → 0.\n- Unilateral lower-extremity swelling: edema of the injured left foot → 1.\n- Hemoptysis: none reported → 0.\n- Recent surgery or trauma: acute penetrating foot injury → 1.\n- Prior DVT or PE: none reported → 0.\n- Exogenous estrogen use: none reported → 0.\nTotal = 1 + 0 + 0 + 1 + 0 + 1 + 0 + 0 = 3 positive criteria. This count does not diagnose PE.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 848,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

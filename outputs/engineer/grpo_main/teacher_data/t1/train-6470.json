@@ -1,0 +1,22 @@
+{
+  "id": "train-6470",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nAn 80-year-old woman was admitted to Gachon Gil Medical Center due to severe right upper quadrant (RUQ) abdominal pain of 2 days, before which she had been diagnosed as hilar cholangiocarcinoma (). An endoscopic retrograde biliary stent was placed for biliary drain-age 2 months prior to the current admission. She had no medical history, such as diabetes mellitus or biliary surgery. Symptoms related to cholangitis were resolved with biliary stenting and her general condition showed improvement. Because of her refusal to undergo surgical treatment, radiotherapy was applied after palliative biliary stenting. Computed tomography (CT) performed for simulating a radiation therapy taken 17 days prior to admission revealed ideal placement of an endoscopic retrograde biliary drainage stent (). She received 9 times of radiotherapy with a total dose of 16.2 Gy (1.8 Gy×9 fractions).\nOn admission, she was conscious and acutely ill in appearance. Her vital signs included a temperature of 36.7℃, a heart rate of 100 beats/min, a blood pressure of 120/70 mmHg, a respiratory rate of 18 breaths/min, and an oxygen saturation of 94% on room air. Her sclera was icteric and her liver was palpable approximately 2 cm below the right costal margin. Right upper quadrant tenderness of the abdomen was present. The spleen was not palpable. Initial complete blood count showed a white blood cell count of 36,130 mm3, hematocrit of 28.2%, and hemoglobin of 9.3 mg/dL. Blood urea nitrogen was 34.9 mg/dL and creatinine was 1.4 mg/dL. C-reactive protein was 26.56 mg/dL. On liver function tests, aspartate transaminase of 882 IU/L, alanine transaminase of 257 IU/L, alkaline phosphatase of 464 IU/L, and total bilirubin of 17.9 mg/dL. Prothrombin time was normal. Abdominal CT scan demonstrated hepatic parenchymal emphysema measuring approximately 6.3×4.4 cm in the superior segment of the right liver (S7/S8) with pneumoperitoneum finding in the perihepatic space (). Urgent percutaneous drainage was attempted under the peritonitis impression; however, no fluid was drained. A diagnosis of emphysematous hepatitis with spontaneous rupture into the peritoneal cavity was made.\nOn the second day of admission, aggravated laboratory tests were noted as follows: WBC 26,000 mm3, aspartate transaminase 978 IU/L, alanine transaminase 257 IU/L, alkaline phosphatase 367 IU/L, total bilirubin 27.4 mg/dL, blood urea nitrogen 50.2 mg/dL, creatitine 1.2 mg/dL, prothrombin time INR 1.19. Clostridium perfringens and Escherichia coli were grown on blood culture. She was empirically treated with cefotaxime and metronidazol. Despite intensive therapy in the ICU, the patient's condition did not show improvement and she expired on the third day of admission.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 813,
+  "solution": "CURB-65 assigns 1 point per criterion. Using admission findings rather than the second-day laboratory values:\n- Confusion: no new confusion documented → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): initial BUN 34.9 mg/dL → 1.\n- Respiratory rate ≥30/min: 18/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mm Hg: 120/70 mm Hg → 0.\n- Age ≥65 years: 80 years → 1.\nSum: 0 + 1 + 0 + 0 + 1 = 2. CURB-65 is a pneumonia severity tool; the arithmetic score does not validate its use for emphysematous hepatitis.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 768,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

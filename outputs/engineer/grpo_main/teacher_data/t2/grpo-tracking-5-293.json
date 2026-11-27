@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-293",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Yuki, Claire is dancing with Karl, Dave is dancing with Nadia, and Eve is dancing with Oscar.\nThroughout the song, the dancers often trade partners. First, Bob and Dave switch partners. Then, Dave and Alice switch partners. Then, Alice and Dave switch partners. Then, Dave and Eve switch partners. Finally, Dave and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Marco\n(B) Yuki\n(C) Karl\n(D) Nadia\n(E) Oscar",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Yuki",
+      "Claire": "Karl",
+      "Dave": "Nadia",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Nadia",
+      "Claire": "Karl",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Karl",
+      "Dave": "Marco",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Nadia",
+      "Claire": "Karl",
+      "Dave": "Yuki",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Nadia",
+      "Claire": "Karl",
+      "Dave": "Oscar",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Oscar",
+      "Claire": "Karl",
+      "Dave": "Nadia",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners in every row are ordered by (Alice, Bob, Claire, Dave, Eve).\nInitial: (Marco, Yuki, Karl, Nadia, Oscar)\n1. Bob swaps with Dave: (Marco, Nadia, Karl, Yuki, Oscar)\n2. Dave swaps with Alice: (Yuki, Nadia, Karl, Marco, Oscar)\n3. Alice swaps with Dave: (Marco, Nadia, Karl, Yuki, Oscar)\n4. Dave swaps with Eve: (Marco, Nadia, Karl, Oscar, Yuki)\n5. Dave swaps with Bob: (Marco, Oscar, Karl, Nadia, Yuki)\nAlice is dancing with Marco, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1169,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

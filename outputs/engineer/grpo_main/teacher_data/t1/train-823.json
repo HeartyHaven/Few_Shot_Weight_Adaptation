@@ -1,0 +1,22 @@
+{
+  "id": "train-823",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 65-year-old man comes to the physician because of a 10-day history of episodic retrosternal pain, shortness of breath, and palpitations. The episodes occur when he climbs stairs or tries to walk briskly on his treadmill. The symptoms resolve when he stops walking. The previous evening he felt dizzy and weak during such an episode. He also reports that he had a cold 2 weeks ago. He was diagnosed with type 2 diabetes mellitus four years ago but is otherwise healthy. His only medication is glyburide. He appears well. His pulse is 62/min and is weak, respirations are 20/min, and blood pressure is 134/90 mmHg. Cardiovascular examination shows a late systolic ejection murmur that is best heard in the second right intercostal space. The lungs are clear to auscultation.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 258,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation; AF itself is not established in this vignette. Using the presenting BP as the hypertension criterion for this calculation:\n- Congestive heart failure or LV dysfunction: not documented → 0.\n- Hypertension: BP 134/90 mm Hg meets the diastolic threshold of 90 → 1 under the stated assumption. A single reading does not establish chronic hypertension; without confirmation, this point is uncertain.\n- Age: 65–74 years earns 1; ≥75 earns 2 instead. At age 65 → 1.\n- Diabetes: known type 2 diabetes treated with glyburide → 1.\n- Prior stroke, TIA, or systemic embolism (2 if present): none documented → 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): none documented → 0.\n- Female sex: male → 0.\nTotal with the BP point = 0 + 1 + 1 + 1 + 0 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 925,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

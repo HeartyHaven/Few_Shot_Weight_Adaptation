@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-8",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Beloved, Claire gets Ivanhoe, Dave gets Candide, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Bob and Dave swap books. Then, Bob and Eve swap books. Then, Dave and Alice swap books. Then, Alice and Claire swap books. Finally, Dave and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Hamlet\n(B) Beloved\n(C) Ivanhoe\n(D) Candide\n(E) Siddhartha",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Beloved",
+      "Claire": "Ivanhoe",
+      "Dave": "Candide",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe",
+      "Dave": "Beloved",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved",
+      "Dave": "Hamlet",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Siddhartha",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Books in every row are listed for (Alice, Bob, Claire, Dave, Eve).\nInitial: (Hamlet, Beloved, Ivanhoe, Candide, Siddhartha)\n1. Bob and Dave swap: (Hamlet, Candide, Ivanhoe, Beloved, Siddhartha)\n2. Bob and Eve swap: (Hamlet, Siddhartha, Ivanhoe, Beloved, Candide)\n3. Dave and Alice swap: (Beloved, Siddhartha, Ivanhoe, Hamlet, Candide)\n4. Alice and Claire swap: (Ivanhoe, Siddhartha, Beloved, Hamlet, Candide)\n5. Dave and Bob swap: (Ivanhoe, Hamlet, Beloved, Siddhartha, Candide)\nClaire has Beloved, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1334,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

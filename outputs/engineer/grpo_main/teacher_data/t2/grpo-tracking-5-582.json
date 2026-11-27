@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-582",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Lena, Claire is dancing with Yuki, Dave is dancing with Stefan, and Eve is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Eve and Alice switch partners. Then, Claire and Dave switch partners. Then, Alice and Bob switch partners. Then, Alice and Bob switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Quinn\n(B) Lena\n(C) Yuki\n(D) Stefan\n(E) Nadia",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Lena",
+      "Claire": "Yuki",
+      "Dave": "Stefan",
+      "Eve": "Nadia"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Yuki",
+      "Dave": "Stefan",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Stefan",
+      "Dave": "Yuki",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Stefan",
+      "Dave": "Yuki",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Stefan",
+      "Dave": "Yuki",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Nadia",
+      "Claire": "Stefan",
+      "Dave": "Yuki",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners in every row are listed for (Alice, Bob, Claire, Dave, Eve).\nInitial: (Quinn, Lena, Yuki, Stefan, Nadia)\n1. Eve and Alice swap: (Nadia, Lena, Yuki, Stefan, Quinn)\n2. Claire and Dave swap: (Nadia, Lena, Stefan, Yuki, Quinn)\n3. Alice and Bob swap: (Lena, Nadia, Stefan, Yuki, Quinn)\n4. Alice and Bob swap: (Nadia, Lena, Stefan, Yuki, Quinn)\n5. Bob and Alice swap: (Lena, Nadia, Stefan, Yuki, Quinn)\nBob is dancing with Nadia, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1080,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

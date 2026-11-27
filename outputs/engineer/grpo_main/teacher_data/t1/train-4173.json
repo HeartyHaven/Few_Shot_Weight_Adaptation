@@ -1,0 +1,22 @@
+{
+  "id": "train-4173",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 78-year-old female patient, temporarily admitted to the recovery department after ECT, developed atrial fibrillation and chest pain. Her medical history showed hypertension, severe depression and paroxysmal atrial fibrillation. Her ECG 3 months before ECT was completely normal. Immediately after ECT her blood pressure was 230/140 mmHg, but later decreased to 110/45 mmHg. Examination of heart and lungs revealed no abnormalities. The ECG showed atrial fibrillation with a ventricular rate of 140 beats/min and new negative T waves in leads I, II, aVL and V2-6. The second ECG showed sinus rhythm and persisting negative T-waves (Fig. ). Troponin T level was 0.02 μg/l (normal) and no other laboratory abnormalities were found. A differential diagnosis was made and the following possible causes were taken into account: post ECT, post tachycardia due to atrial fibrillation, severe hypertension or myocardial ischaemia. Since the patient reported to have had previous anginal complaints, coronary angiography was performed. In the left anterior descending artery two significant stenoses were identified in the proximal and the mid section, respectively. Furthermore, a stenosis was found in the right coronary artery. Due to her psychiatric condition, PCI was not performed and she was treated with anti-anginal medication and warfarin.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 18,
+  "prompt_tokens": 377,
+  "solution": "The HEART Score assigns 0–2 points each for history, ECG, age, risk factors, and troponin. Use the presentation before angiography or treatment.\n- History: acute chest pain with prior anginal complaints makes the history highly suspicious for ischemia = 2.\n- ECG: new T-wave inversions without reported ST depression qualify as repolarization abnormalities = 1.\n- Age: 78 years meets the ≥65 threshold = 2.\n- Risk factors: hypertension is the only documented coronary risk factor at presentation. One or two risk factors score 1; the stenoses discovered later are not counted as previously known disease = 1.\n- Troponin: troponin T 0.02 μg/L was within the laboratory's normal range = 0.\nTotal = 2 + 1 + 2 + 1 + 0 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 896,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

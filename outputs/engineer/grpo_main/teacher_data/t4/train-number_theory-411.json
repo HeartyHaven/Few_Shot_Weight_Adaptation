@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-411",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $g(n)$ be the product of the proper positive integer divisors of $n$. (Recall that a proper divisor of $n$ is a divisor other than $n$.) For how many values of $n$ does $n$ not divide $g(n)$, given that $2 \\le n \\le 50$?",
+  "answer": "19",
+  "prompt_tokens": 101,
+  "solution": "If n is prime, its only proper divisor is 1, so n does not divide g(n). If n = p² for a prime p, its proper divisors are 1 and p, so g(n) = p is also not divisible by n.\nFor any other composite n, choose a prime divisor p. Then p and n/p are distinct proper divisors: n/p > 1 because n is composite, and n/p ≠ p because n ≠ p². Their product is n, so n divides g(n).\nThus we count primes and prime squares up to 50. The 15 primes are 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47. The 4 prime squares are 4, 9, 25, 49. The total is 15 + 4 = 19.\nFinal answer: 19",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1400,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "19",
+    "correct": true
+  }
+}

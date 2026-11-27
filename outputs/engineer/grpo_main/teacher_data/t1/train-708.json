@@ -1,0 +1,22 @@
+{
+  "id": "train-708",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nMr. E. K. P was a 77-year-old Chinese gentleman who presented to our institution with 3 days history of fever associated with chills and rigors. There were no other constitutional symptoms. Prior to the current admission, he was treated for a liver abscess which had resolved. The patient's past medical history included tablet-controlled Type 1 diabetes mellitus, a previous cholecystectomy, and a previous repair of a perforated peptic ulcer.\nOn examination, he was found to be afebrile with stable vital signs. There were bilateral basal lung crepitations on auscultation. The rest of the systemic examination was unremarkable. Blood investigation showed elevated glucose level of 18.2 mmol/l. Full blood count revealed leukocytosis with total count of 23.7 × 109/l and mild thrombocytopenia with a platelet count of 139 × 109/l. Liver function test showed mild elevation of alkaline phosphatase and γ-glutaryl transaminase.\nA supine chest radiograph was performed on admission which was also unremarkable. Ultrasound of the hepatobiliary system was performed on admission to exclude recurrent liver abscesses, which also turned out to be negative.\nThe patient was admitted for blood glucose control and antibiotic treatment. Repeat physical examination in the ward revealed bronchial breathing in the right lower zone with crepitations and signs of a right pleural effusion which was confirmed on a right decubitus chest radiograph. He was then treated for community-acquired pneumonia and was started on intravenous Imipenem (Tienem®). Patient responded clinically well initially to the treatment.\nHowever, despite treatment, C-reactive protein and erythrocyte sedimentation rate (ESR) levels remained elevated at 17.1 mg/dl and 75 mm/h, respectively. A leukocyte labeled scintigraphy was then performed to exclude other foci of infection, which turned out to be negative except for an intense tracer uptake in the left distal thigh. A fused single-photon emitter computed tomography and computed tomography (SPECT-CT) was performed, and a diagnosis of a left popliteal vein aneurysm was made. No evidence of thrombosis was noted.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 555,
+  "solution": "CHA₂DS₂-VASc sums the following admission risk factors:\n- Congestive heart failure: none documented → 0.\n- Hypertension: none documented → 0.\n- Age: 77 years (≥75) → 2. The 65–74 age category is not counted separately.\n- Diabetes mellitus: present → 1.\n- Prior stroke, TIA, or systemic embolism: none documented → 0.\n- Vascular disease: no prior myocardial infarction, peripheral arterial disease, or aortic plaque documented → 0. A popliteal vein aneurysm does not qualify.\n- Sex category: male → 0.\nTotal = 0 + 0 + 2 + 1 + 0 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 829,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

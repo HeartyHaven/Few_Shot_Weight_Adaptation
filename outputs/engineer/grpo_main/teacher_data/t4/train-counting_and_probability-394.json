@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-394",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Consider sequences that consist entirely of $A$'s and $B$'s and that have the property that every run of consecutive $A$'s has even length, and every run of consecutive $B$'s has odd length. Examples of such sequences are $AA$, $B$, and $AABAA$, while $BBAB$ is not such a sequence. How many such sequences have length 14?\n",
+  "answer": "172",
+  "prompt_tokens": 117,
+  "solution": "Let $k$ be the number of $B$-runs and $j$ the number of $A$-runs. Since $14$ is even, the even $A$-run lengths and odd $B$-run lengths can sum to $14$ only if $k$ is even. For $k=0$ there is one sequence, all $A$'s.\n\nFor $k>0$, alternation gives $j=k-1,k,k+1$. There is one run order when $j\\ne k$ (the more frequent run type starts and ends the sequence), and two when $j=k$. The minimum total length is $k+2j$, hence at least $3k-2$. Thus only $k=2,4$ need consideration.\n\nFor a fixed run order, start each $B$-run at length one and each $A$-run at length two. Distribute $t=(14-k-2j)/2$ extra pairs of letters among the $k+j$ runs. By stars and bars this gives $\\binom{t+k+j-1}{k+j-1}$ sequences per order.\n\nFor $k=2$, taking $j=1,2,3$ gives $t=5,4,3$, respectively. Including the order choices, the count is $\\binom{7}{2}+2\\binom{7}{3}+\\binom{7}{4}=21+70+35=126$.\n\nFor $k=4$, taking $j=3,4,5$ gives $t=2,1,0$. The count is $\\binom{8}{6}+2\\binom{8}{7}+\\binom{8}{8}=28+16+1=45$. The total is $1+126+45=172$.\nFinal answer: 172",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "172",
+    "correct": true
+  }
+}

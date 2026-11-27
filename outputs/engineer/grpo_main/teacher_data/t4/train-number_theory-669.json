@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-669",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $S$ denote the sum of all of the three digit positive integers with three distinct digits. Compute the remainder when $S$ is divided by $1000$.\n",
+  "answer": "680",
+  "prompt_tokens": 66,
+  "solution": "Count each nonzero digit's contribution by position; zero itself adds nothing. With a fixed hundreds digit, there are 9 choices for the tens digit and then 8 for the units digit, so each digit 1 through 9 occurs 72 times in the hundreds place.\nWith a fixed nonzero tens digit, there are 8 choices for the hundreds digit (nonzero and different), then 8 choices for the units digit. Thus each nonzero digit occurs 64 times in the tens place and, by interchanging tens and units, 64 times in the units place.\nSince 1+⋯+9=45, the sum is S=45(72·100+64·10+64)=45·7904=355680. Its remainder modulo 1000 is 680.\nFinal answer: 680",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "680",
+    "correct": true
+  }
+}

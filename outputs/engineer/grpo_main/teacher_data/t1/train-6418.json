@@ -1,0 +1,22 @@
+{
+  "id": "train-6418",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 37-year-old man with stage V diabetic nephropathy was admitted in the nephrology unit of a tertiary care hospital with complaints of decreased urine output, low grade fever and puffiness of face and pedal edema for one week. He is a known diabetic and hypertensive on regular treatment. He is an A.C technician by occupation, working in the Middle East. He had undergone dialysis five times in the Middle East for the same complaints. At the time of admission, he had a temperature of 100.8°F, BP – 130/90 mm Hg, Pulse -80 beats/min, Respiratory rate – 20 breaths / min. On physical examination, he had pitting pedal edema. Hemogram showed hemoglobin 8.9gm%, total count 8300/cu mm with 71 % neutrophils, 22% lymphocytes, 6% eosinophils. Other investigations showed blood urea 125 mg/dl, s. creatinine 9.4 mg/dl, S. uric acid 5.3 mg/dl, total proteins 5.0 g/dl, Albumin 2.3 g/dl, A/G ratio 0.9, Random blood sugar 110 mg/dl. HIV, HBsAg and HCV ELISA were negative.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 362,
+  "solution": "CURB-65 assigns 1 point for each admission criterion met:\n- New confusion: none reported → 0.\n- Urea >7 mmol/L: blood urea 125 mg/dL converts to about 20.8 mmol/L → 1.\n- Respiratory rate ≥30/min: 20/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: 130/90 → 0.\n- Age ≥65 years: 37 → 0.\nTotal = 0 + 1 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 906,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

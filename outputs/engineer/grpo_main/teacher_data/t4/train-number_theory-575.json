@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-575",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $n=2^{31}3^{19}.$ How many positive integer divisors of $n^2$ are less than $n$ but do not divide $n$?\n",
+  "answer": "589",
+  "prompt_tokens": 70,
+  "solution": "Since n² = 2^62 × 3^38, each divisor is specified by choosing an exponent from 0 through 62 for 2 and from 0 through 38 for 3. This gives 63 × 39 = 2457 divisors.\nPair each divisor d with n²/d. Only n pairs with itself; each other pair contains one divisor below n and one above n. Thus (2457 − 1)/2 = 1228 divisors of n² are below n.\nThe divisors of n all divide n². There are (31 + 1)(19 + 1) = 640 of them, and all except n itself are below n. Removing these 639 divisors leaves 1228 − 639 = 589.\nFinal answer: 589",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1423,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "589",
+    "correct": true
+  }
+}

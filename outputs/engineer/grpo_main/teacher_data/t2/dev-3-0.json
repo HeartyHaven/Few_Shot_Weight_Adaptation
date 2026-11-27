@@ -1,0 +1,60 @@
+{
+  "id": "dev-3-0",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Quinn, and Claire is dancing with Priya.\nThroughout the song, the dancers often trade partners. First, Alice and Claire switch partners. Then, Alice and Claire switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Yuki\n(B) Quinn\n(C) Priya",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Priya"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Quinn",
+      "Claire": "Yuki"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Quinn",
+      "Claire": "Priya"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Quinn",
+      "Claire": "Yuki"
+    }
+  ],
+  "prompt_tokens": 139,
+  "solution": "Initial: Alice → Yuki; Bob → Quinn; Claire → Priya.\n1. Alice and Claire swap: Alice → Priya; Bob → Quinn; Claire → Yuki.\n2. Alice and Claire swap: Alice → Yuki; Bob → Quinn; Claire → Priya.\n3. Claire and Alice swap: Alice → Priya; Bob → Quinn; Claire → Yuki.\nClaire dances with Yuki, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

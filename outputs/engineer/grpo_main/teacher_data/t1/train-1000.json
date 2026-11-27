@@ -1,0 +1,22 @@
+{
+  "id": "train-1000",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 50-year-old previously healthy female presented with dyspnea, fatigue, and 6-kg weight loss during the course of 3 months. She was found to have a giant left atrial tumor by transthoracic echocardiography (TTE). Cardiac computed tomographic angiography (CTA) () showed an 88 × 76 mm large cardiac mass with a broad base involving the atrial septum and the anterior left atrial wall, nearly filled the entire left atrium. The right pulmonary vein orifices and the mitral valve were associated with the tumor. 18F-fluorodeoxy-glucose positron emission tomography-computed tomography (PET-CT) scan demonstrated that left atrial tumor was hypermetabolic tumor activity without signs of any distant metastases (). These preoperative images studies suggested that the left atrial tumor could be malignant. To better understand the adjacent anatomic relationship between left atrial tumor and surrounding tissues, a 3D printing model () was fabricated in collaboration with Changsha Jiebo Information Technology Co., Ltd, China. It was made of photosensitive resin material by 3D printing device (Sailner J501 Series Color Multimaterial 3D printer). The duration of the print run was about 5 h. In view of the extent of the mass and the limited exposure, the conventional surgical resection approach would be difficult and risky. After careful evaluation of the 3D printed model, cardiac autotransplantation was considered to be suitable. Following median sternotomy and full heparinization, the aorta and superior vena cavae and right femoral vein were cannulated, and cavae snared, for total cardiopulmonary bypass. The heart was arrested using antegrade cardioplegic solution (Custodio HTK Solution; Dr Franz Kohler Chemie GMBH, Bensheim, Germany). The heart was excision () and the tumor were removed (). The repair of the excised septum and anterior left atrial wall was performed with two bovine pericardium patches (). Reimplantation of the heart is similar to a bicaval orthotopic cardiac transplant (). Self-constructed bovine pericardial tube has been used as a graft to complete the re-anastomosis of inferior vena cavae to alleviate tension (). Although preoperative images suggested the left atrial tumor was malignant, the final pathology confirmed atrial myxoma. The patient recovered well and was discharged on post-operative day 12. She remains well without recurrence or arrhythmias at 9 months after surgery.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 4,
+  "prompt_tokens": 623,
+  "solution": "Apply CHA₂DS₂-VASc to the admission history:\n- Congestive heart failure or left ventricular systolic dysfunction (1): neither documented; dyspnea alone does not establish heart failure → 0.\n- Hypertension (1): none reported → 0.\n- Age 65–74 (1) or ≥75 (2): age 50 → 0.\n- Diabetes mellitus (1): none reported → 0.\n- Prior stroke, TIA, or systemic embolism (2): none reported → 0.\n- Vascular disease (1): no prior myocardial infarction, peripheral arterial disease, or aortic plaque reported; an atrial mass does not qualify → 0.\n- Female sex (1): present → 1.\nTotal = 0 + 0 + 0 + 0 + 0 + 0 + 1 = 1. This is the numerical score; its usual application is in atrial fibrillation, which is not documented here.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 886,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

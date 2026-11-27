@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-941",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Vera, Bob is dancing with Rosa, Claire is dancing with Priya, Dave is dancing with Quinn, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Dave and Claire switch partners. Then, Bob and Alice switch partners. Then, Eve and Alice switch partners. Then, Alice and Eve switch partners. Finally, Claire and Bob switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Vera\n(B) Rosa\n(C) Priya\n(D) Quinn\n(E) Wade",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Vera",
+      "Bob": "Rosa",
+      "Claire": "Priya",
+      "Dave": "Quinn",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Rosa",
+      "Claire": "Quinn",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Priya",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Quinn",
+      "Claire": "Vera",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Vera | Rosa | Priya | Quinn | Wade\n1. Dave and Claire swap: Vera | Rosa | Quinn | Priya | Wade\n2. Bob and Alice swap: Rosa | Vera | Quinn | Priya | Wade\n3. Eve and Alice swap: Wade | Vera | Quinn | Priya | Rosa\n4. Alice and Eve swap: Rosa | Vera | Quinn | Priya | Wade\n5. Claire and Bob swap: Rosa | Quinn | Vera | Priya | Wade\nEve is dancing with Wade, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1126,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

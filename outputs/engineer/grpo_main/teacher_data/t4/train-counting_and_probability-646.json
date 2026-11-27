@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-646",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Given that $\\binom{17}{7}=19448$, $\\binom{17}{8}=24310$ and $\\binom{17}{9}=24310$, calculate $\\binom{19}{9}$.",
+  "answer": "92378",
+  "prompt_tokens": 88,
+  "solution": "Pascal's identity gives C(n,k) = C(n−1,k−1) + C(n−1,k), by splitting the k-element subsets according to whether they contain a fixed element. Thus C(18,8) = C(17,7) + C(17,8) = 19448 + 24310 = 43758. Similarly, C(18,9) = C(17,8) + C(17,9) = 24310 + 24310 = 48620. Applying the identity once more gives C(19,9) = C(18,8) + C(18,9) = 43758 + 48620 = 92378.\nFinal answer: 92378",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1418,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "92378",
+    "correct": true
+  }
+}

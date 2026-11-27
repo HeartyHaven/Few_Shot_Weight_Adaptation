@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-749",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Vera, Claire is dancing with Yuki, Dave is dancing with Quinn, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Bob and Eve switch partners. Then, Claire and Bob switch partners. Then, Eve and Dave switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Oscar\n(B) Vera\n(C) Yuki\n(D) Quinn\n(E) Wade",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Vera",
+      "Claire": "Yuki",
+      "Dave": "Quinn",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Oscar",
+      "Claire": "Yuki",
+      "Dave": "Quinn",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Yuki",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Yuki",
+      "Claire": "Wade",
+      "Dave": "Quinn",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Yuki",
+      "Claire": "Wade",
+      "Dave": "Oscar",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Yuki",
+      "Claire": "Vera",
+      "Dave": "Oscar",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Oscar | Vera | Yuki | Quinn | Wade\n1. Alice–Bob: Vera | Oscar | Yuki | Quinn | Wade\n2. Bob–Eve: Vera | Wade | Yuki | Quinn | Oscar\n3. Claire–Bob: Vera | Yuki | Wade | Quinn | Oscar\n4. Eve–Dave: Vera | Yuki | Wade | Oscar | Quinn\n5. Claire–Alice: Wade | Yuki | Vera | Oscar | Quinn\nEve is dancing with Quinn, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1023,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

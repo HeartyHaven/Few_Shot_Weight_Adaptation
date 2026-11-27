@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-586",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Dune, Claire gets The Hobbit, Dave gets The Trial, Eve gets Middlemarch, Fred gets Jane Eyre, and Gertrude gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Alice and Fred swap books. Then, Alice and Claire swap books. Then, Gertrude and Alice swap books. Then, Claire and Dave swap books. Then, Alice and Bob swap books. Finally, Claire and Alice swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Beloved\n(B) Dune\n(C) The Hobbit\n(D) The Trial\n(E) Middlemarch\n(F) Jane Eyre\n(G) Walden",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Middlemarch",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Middlemarch",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Middlemarch",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Walden",
+      "Claire": "Middlemarch",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Beloved",
+      "Gertrude": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude), in that order.\nInitial: (Beloved, Dune, The Hobbit, The Trial, Middlemarch, Jane Eyre, Walden)\n1. Bob ↔ Eve: (Beloved, Middlemarch, The Hobbit, The Trial, Dune, Jane Eyre, Walden)\n2. Alice ↔ Fred: (Jane Eyre, Middlemarch, The Hobbit, The Trial, Dune, Beloved, Walden)\n3. Alice ↔ Claire: (The Hobbit, Middlemarch, Jane Eyre, The Trial, Dune, Beloved, Walden)\n4. Gertrude ↔ Alice: (Walden, Middlemarch, Jane Eyre, The Trial, Dune, Beloved, The Hobbit)\n5. Claire ↔ Dave: (Walden, Middlemarch, The Trial, Jane Eyre, Dune, Beloved, The Hobbit)\n6. Alice ↔ Bob: (Middlemarch, Walden, The Trial, Jane Eyre, Dune, Beloved, The Hobbit)\n7. Claire ↔ Alice: (The Trial, Walden, Middlemarch, Jane Eyre, Dune, Beloved, The Hobbit)\nGertrude has The Hobbit, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1321,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

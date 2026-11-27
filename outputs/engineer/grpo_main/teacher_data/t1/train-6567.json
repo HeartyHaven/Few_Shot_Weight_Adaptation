@@ -1,0 +1,22 @@
+{
+  "id": "train-6567",
+  "task": "t1",
+  "group": "PERC Rule for Pulmonary Embolism",
+  "question": "Patient note:\nA 43-year-old Brazilian man arrived at the ED in May 2020 with a history of cough with hemoptoic sputum for more than 1 month, evolving to mild respiratory distress in the last 7 days. He did not show signs of a fever and other symptoms. He had a previous history of HIV/AIDS with no adherence to antiretroviral therapy, illicit drug abuse, and had generalized anxiety disorder. He had lost clinical and laboratory follow-up in the last 5 years. In 2015, the HIV viral load was 9,054 copies/mm3, and the T-CD4 cell count was 407/mm3. On physical examination, his weight was 55 kg, heart rate was 79 bpm, respiratory rate was 18 rpm, and SPO2 was 96%. No lymphadenopathy was observed. Blood cell count presented low hemoglobin (9.9 g/dL) and hematocrit levels (29.7%), and normal platelet and white cell count ranges. Lactate dehydrogenase and C-reactive protein levels were 312 U/L, above reference limits (140–271 U/L), and 52.3 mg/dL, respectively. The D-dimer level (0.6 mcg/mL) exceeded the normal range. Troponin, AST, ALT, and ferritin levels were in normal range.\nChest CT revealed bilateral glass-ground opacities occupying approximately 25% of both lungs (). Respiratory secretion was collected with a nasopharyngeal swab and tested positive for SARS-CoV-2. Mycobacterium tuberculosis DNA was detected using PCR (GeneXpert MTB/RIF assay) without RIF resistance. Treatment was initiated with azithromycin (500 mg/day), HCQ (400 mg/day) for 5 days, and ceftriaxone (2 g/day). He was treated with isoniazid, ethambutol, pyrazinamide, and RIF. Antiretroviral therapy was not started to avoid complications with anti-TB treatment. The patient was clinically stable and discharged to home after 1 week. Currently, the patient is under follow-up and remains asymptomatic without developing relapses.\n\nQuestion: What are the number of criteria met for the PERC Rule for Pulmonary Embolism (PE)? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 48,
+  "prompt_tokens": 569,
+  "solution": "The Pulmonary Embolism Rule-out Criteria (PERC) count eight positive findings at presentation:\n- Age ≥50 years: age 43 → 0.\n- Heart rate ≥100/min: 79/min → 0.\n- SpO₂ <95%: 96% → 0.\n- Unilateral leg swelling: not reported → 0.\n- Hemoptysis: blood in the sputum → 1.\n- Surgery or trauma requiring hospitalization in the past four weeks: not reported → 0.\n- Prior DVT or PE: not reported → 0.\n- Exogenous estrogen use: not reported → 0.\nD-dimer is not part of PERC. Sum = 0 + 0 + 0 + 0 + 1 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 733,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

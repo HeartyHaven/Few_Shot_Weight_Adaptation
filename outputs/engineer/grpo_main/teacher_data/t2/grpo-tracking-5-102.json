@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-102",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Beloved, Claire gets Siddhartha, Dave gets Emma, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Eve and Alice swap books. Then, Eve and Dave swap books. Then, Claire and Dave swap books. Finally, Alice and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) Jane Eyre\n(B) Beloved\n(C) Siddhartha\n(D) Emma\n(E) Candide",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha",
+      "Dave": "Emma",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Beloved",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Jane Eyre | Beloved | Siddhartha | Emma | Candide\n1. Claire ↔ Bob: Jane Eyre | Siddhartha | Beloved | Emma | Candide\n2. Eve ↔ Alice: Candide | Siddhartha | Beloved | Emma | Jane Eyre\n3. Eve ↔ Dave: Candide | Siddhartha | Beloved | Jane Eyre | Emma\n4. Claire ↔ Dave: Candide | Siddhartha | Jane Eyre | Beloved | Emma\n5. Alice ↔ Bob: Siddhartha | Candide | Jane Eyre | Beloved | Emma\nAlice has Siddhartha, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1239,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

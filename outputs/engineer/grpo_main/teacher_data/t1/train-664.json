@@ -1,0 +1,22 @@
+{
+  "id": "train-664",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 76-year-old woman comes to the physician for a routine examination. She has a history of hypertension well controlled with diet and exercise. She has no history of smoking or illicit drug use. She walks one mile daily. Her pulse is 68/min, respirations are 16/min, and blood pressure is 119/76 mm Hg. Physical examination shows no abnormalities.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 156,
+  "solution": "CHA2DS2-VASc, using findings at the routine examination:\n- Congestive heart failure (1): not documented = 0.\n- Hypertension (1): documented history counts even though diet and exercise control her blood pressure = 1.\n- Age (1 for 65–74; 2 for ≥75): age 76 falls in the ≥75 category = 2.\n- Diabetes mellitus (1): not documented = 0.\n- Prior stroke, TIA, or systemic embolism (2): none documented = 0.\n- Vascular disease (1): no myocardial infarction, peripheral arterial disease, or aortic plaque documented = 0.\n- Female sex (1): present = 1.\nSum: 0 + 1 + 2 + 0 + 0 + 0 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 714,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

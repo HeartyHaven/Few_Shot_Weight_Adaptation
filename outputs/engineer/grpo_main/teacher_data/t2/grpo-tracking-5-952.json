@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-952",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Quinn, Bob is dancing with Nadia, Claire is dancing with Umar, Dave is dancing with Vera, and Eve is dancing with Stefan.\nThroughout the song, the dancers often trade partners. First, Claire and Eve switch partners. Then, Bob and Claire switch partners. Then, Bob and Claire switch partners. Then, Claire and Eve switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Quinn\n(B) Nadia\n(C) Umar\n(D) Vera\n(E) Stefan",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Quinn",
+      "Bob": "Nadia",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Nadia",
+      "Claire": "Stefan",
+      "Dave": "Vera",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Vera",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Nadia",
+      "Claire": "Stefan",
+      "Dave": "Vera",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Nadia",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Quinn",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Quinn, Nadia, Umar, Vera, Stefan\n1. Claire–Eve: Quinn, Nadia, Stefan, Vera, Umar\n2. Bob–Claire: Quinn, Stefan, Nadia, Vera, Umar\n3. Bob–Claire: Quinn, Nadia, Stefan, Vera, Umar\n4. Claire–Eve: Quinn, Nadia, Umar, Vera, Stefan\n5. Alice–Bob: Nadia, Quinn, Umar, Vera, Stefan\nDave is dancing with Vera, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1027,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

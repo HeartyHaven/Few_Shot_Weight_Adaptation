@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-370",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "A set of positive numbers has the triangle property if it has three distinct elements that are the lengths of the sides of a triangle whose area is positive. Consider sets $\\{4, 5, 6, \\ldots, n\\}$ of consecutive positive integers, all of whose ten-element subsets have the triangle property. What is the largest possible value of $n$?\n",
+  "answer": "253",
+  "prompt_tokens": 105,
+  "solution": "Write a ten-element subset in increasing order as a₁ < ⋯ < a₁₀. For each k ≥ 3, the largest sum of two elements smaller than aₖ is aₖ₋₂ + aₖ₋₁. A positive-area triangle with largest side aₖ exists exactly when this sum exceeds aₖ. Thus the subset has no triangle exactly when aₖ ≥ aₖ₋₂ + aₖ₋₁ for every k ≥ 3.\nTo minimize the last element of a triangle-free subset, start with the smallest possible entries, 4 and 5, and take each later entry equal to the sum of its predecessors. This gives 4, 5, 9, 14, 23, 37, 60, 97, 157, 254. By induction, every triangle-free subset has each entry at least as large as the corresponding entry in this list. Hence none fits when n = 253, while the list itself is a triangle-free subset for every n ≥ 254.\nFinal answer: 253",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "253",
+    "correct": true
+  }
+}

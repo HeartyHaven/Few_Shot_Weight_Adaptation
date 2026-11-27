@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-545",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Dune, and Claire gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Bob and Claire swap books. Finally, Bob and Alice swap books. At the end of the semester, Claire has\nOptions:\n(A) Middlemarch\n(B) Dune\n(C) Jane Eyre",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Middlemarch",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Jane Eyre",
+      "Claire": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 144,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire), in that order.\nInitial: (Middlemarch, Dune, Jane Eyre)\n1. Alice and Bob swap: (Dune, Middlemarch, Jane Eyre)\n2. Bob and Claire swap: (Dune, Jane Eyre, Middlemarch)\n3. Bob and Alice swap: (Jane Eyre, Dune, Middlemarch)\nClaire has Middlemarch, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1318,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

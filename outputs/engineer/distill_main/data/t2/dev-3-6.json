@@ -1,0 +1,57 @@
+{
+  "id": "dev-3-6",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Candide, and Claire gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Claire and Bob swap books. Finally, Bob and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Persuasion\n(B) Candide\n(C) Middlemarch",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Middlemarch"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Middlemarch",
+      "Claire": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Middlemarch"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch"
+    }
+  ],
+  "solution": "Initial: Alice = Persuasion; Bob = Candide; Claire = Middlemarch.\n1. Claire and Bob swap: Alice = Persuasion; Bob = Middlemarch; Claire = Candide.\n2. Claire and Bob swap: Alice = Persuasion; Bob = Candide; Claire = Middlemarch.\n3. Bob and Alice swap: Alice = Candide; Bob = Persuasion; Claire = Middlemarch.\nBob has Persuasion, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 6,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

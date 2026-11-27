@@ -1,0 +1,17 @@
+{
+  "id": "train-counting_and_probability-35",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Cities $A$, $B$, $C$, $D$, and $E$ are connected by roads $\\widetilde{AB}$, $\\widetilde{AD}$, $\\widetilde{AE}$, $\\widetilde{BC}$, $\\widetilde{BD}$, $\\widetilde{CD}$, and $\\widetilde{DE}$. How many different routes are there from $A$ to $B$ that use each road exactly once? (Such a route will necessarily visit some cities more than once.) [asy]\nsize(5cm);\n\npair A=(1,0), B=(4.24,0), C=(5.24,3.08), D=(2.62,4.98), E=(0,3.08);\n\ndot (A);\n\ndot (B);\n\ndot (C);\n\ndot (D);\n\ndot (E);\n\nlabel(\"$A$\",A,S);\n\nlabel(\"$B$\",B,SE);\n\nlabel(\"$C$\",C,E);\n\nlabel(\"$D$\",D,N);\n\nlabel(\"$E$\",E,W);\n\nguide squiggly(path g, real stepsize, real slope=45)\n\n{\n\nreal len = arclength(g);\n\nreal step = len / round(len / stepsize);\n\nguide squig;\n\nfor (real u = 0; u < len; u += step){\n\nreal a = arctime(g, u);\n\nreal b = arctime(g, u + step / 2);\n\npair p = point(g, a);\n\npair q = point(g, b);\n\npair np = unit( rotate(slope) * dir(g,a));\n\npair nq = unit( rotate(0 - slope) * dir(g,b));\n\nsquig = squig .. p{np} .. q{nq};\n\n}\n\nsquig = squig .. point(g, length(g)){unit(rotate(slope)*dir(g,length(g)))};\n\nreturn squig;\n\n}\n\npen pp = defaultpen + 2.718;\n\ndraw(squiggly(A--B, 4.04, 30), pp);\n\ndraw(squiggly(A--D, 7.777, 20), pp);\n\ndraw(squiggly(A--E, 5.050, 15), pp);\n\ndraw(squiggly(B--C, 5.050, 15), pp);\n\ndraw(squiggly(B--D, 4.04, 20), pp);\n\ndraw(squiggly(C--D, 2.718, 20), pp);\n\ndraw(squiggly(D--E, 2.718, -60), pp);[/asy]",
+  "answer": "16",
+  "solution": "Neither C nor E is an endpoint, and each has only two roads. Thus passing through C forces the segment B–C–D or its reverse; similarly E forces A–E–D or its reverse. Compressing these segments leaves two distinguishable A–D links, two distinguishable B–D links, and one A–B link.\n\nFirst ignore the distinction between parallel links. If the route starts A–B, it must then go to D, visit A and return to D before ending at B (returning immediately to B would strand the A–D links). This gives A–B–D–A–D–B.\n\nIf it starts A–D–A, only A–B remains at A, giving A–D–A–B–D–B. If it starts A–D–B, the next move is to A or D, after which the rest is forced: A–D–B–A–D–B or A–D–B–D–A–B. These exhaust the four compressed sequences.\n\nFor each sequence, the direct A–D link can be used on either of the two A–D traversals, and independently the direct B–D link on either B–D traversal. Hence there are 4·2·2 = 16 routes.\nFinal answer: 16",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 79,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "16",
+    "correct": true
+  }
+}

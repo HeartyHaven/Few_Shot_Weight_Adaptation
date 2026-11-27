@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-756",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "The hexagon with the R is colored red.  Each hexagon is colored either red, yellow or green, such that no two hexagons with a common side are  colored the same color.  In how many  different ways can the figure be colored?\n\n[asy]\npath a=(0,0)--(10,0)--(15,8.7)--(10,17.3)--(0,17.3)--(-5,8.7)--cycle;\ndraw(a);\ndraw(shift((15,8.7))*a);\ndraw(shift((15,-8.7))*a);\ndraw(shift((30,17.3))*a);\ndraw(shift((30,0))*a);\ndraw(shift((30,-17.3))*a);\ndraw(shift((45,26))*a);\ndraw(shift((45,8.7))*a);\ndraw(shift((45,-8.7))*a);\ndraw(shift((60,17.3))*a);\ndraw(shift((60,0))*a);\ndraw(shift((60,-17.3))*a);\ndraw(shift((75,8.7))*a);\ndraw(shift((75,-8.7))*a);\nlabel(\"$R$\",(5,10),S);\n[/asy]",
+  "answer": "2",
+  "prompt_tokens": 306,
+  "solution": "Read the figure in vertical columns from left to right. The two hexagons in the second column touch each other and the initial red hexagon, so they must be yellow and green, in either order.\n\nSuppose the upper one is yellow. In each new column, first fill any hexagon touching two hexagons of the preceding column: it must take their missing color. Any remaining hexagon touches a newly filled one and one in the preceding column, so its color is forced too. For example, in column three the middle is red (between yellow and green), forcing green above and yellow below. Continuing gives these columns, each listed top to bottom:\nR | YG | GRY | RYG | GRY | YG.\n\nThis coloring has different colors on every shared side. Swapping yellow and green gives the other initial order, and every step after that choice was forced.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1379,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "2",
+    "correct": true
+  }
+}

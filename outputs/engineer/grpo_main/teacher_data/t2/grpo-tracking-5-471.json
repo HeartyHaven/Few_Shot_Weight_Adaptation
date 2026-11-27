@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-471",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Priya, Bob is dancing with Stefan, Claire is dancing with Nadia, Dave is dancing with Tara, and Eve is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Dave and Eve switch partners. Then, Dave and Eve switch partners. Then, Alice and Claire switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Priya\n(B) Stefan\n(C) Nadia\n(D) Tara\n(E) Vera",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Priya",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Tara",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Stefan",
+      "Claire": "Priya",
+      "Dave": "Tara",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Stefan",
+      "Claire": "Priya",
+      "Dave": "Vera",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Stefan",
+      "Claire": "Priya",
+      "Dave": "Tara",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Stefan",
+      "Claire": "Nadia",
+      "Dave": "Tara",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Stefan",
+      "Claire": "Priya",
+      "Dave": "Tara",
+      "Eve": "Vera"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial: Priya | Stefan | Nadia | Tara | Vera\n1. Claire ↔ Alice: Nadia | Stefan | Priya | Tara | Vera\n2. Dave ↔ Eve: Nadia | Stefan | Priya | Vera | Tara\n3. Dave ↔ Eve: Nadia | Stefan | Priya | Tara | Vera\n4. Alice ↔ Claire: Priya | Stefan | Nadia | Tara | Vera\n5. Claire ↔ Alice: Nadia | Stefan | Priya | Tara | Vera\nEve's final partner is Vera, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1236,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

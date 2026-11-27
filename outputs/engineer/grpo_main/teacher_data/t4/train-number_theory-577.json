@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-577",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "A $150\\times 324\\times 375$ rectangular solid is made by gluing together $1\\times 1\\times 1$ cubes. An internal diagonal of this solid passes through the interiors of how many of the $1\\times 1\\times 1$ cubes?\n",
+  "answer": "768",
+  "prompt_tokens": 96,
+  "solution": "Parameterize the diagonal by (150t, 324t, 375t) for 0 ≤ t ≤ 1. It starts in one cube and enters one new cube at each distinct interior time when any coordinate is an integer, even if several coordinates become integers together.\n\nFor a side of length d, the crossing times are k/d for 1 ≤ k < d. For sides d and e, a time is shared exactly when its reduced denominator divides both d and e, so there are gcd(d,e) − 1 shared interior times. The same reasoning applies to all three sides. The pairwise gcds are gcd(150,324) = 6, gcd(150,375) = 75, and gcd(324,375) = 3; the triple gcd is 3.\n\nBy inclusion-exclusion, adding the starting cube to the count of distinct crossings gives 1 + (149 + 323 + 374) − (5 + 74 + 2) + 2 = 768 cubes.\nFinal answer: 768",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "768",
+    "correct": true
+  }
+}

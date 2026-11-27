@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-565",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Dune, and Claire gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Alice and Claire swap books. Finally, Bob and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) The Hobbit\n(B) Dune\n(C) Emma",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dune",
+      "Claire": "Emma"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Dune"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "The Hobbit",
+      "Claire": "Emma"
+    }
+  ],
+  "prompt_tokens": 140,
+  "solution": "Book order: (Alice, Bob, Claire).\nInitial: (The Hobbit, Dune, Emma)\n1. Bob and Claire swap: (The Hobbit, Emma, Dune)\n2. Alice and Claire swap: (Dune, Emma, The Hobbit)\n3. Bob and Claire swap: (Dune, The Hobbit, Emma)\nAlice has Dune, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1156,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

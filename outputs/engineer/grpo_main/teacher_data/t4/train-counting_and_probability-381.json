@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-381",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "A jar has $10$ red candies and $10$ blue candies. Terry picks two candies at random, then Mary picks two of the remaining candies at random. Given that the probability that they get the same color combination, irrespective of order, is $m/n,$ where $m$ and $n$ are relatively prime positive integers, find $m+n.$\n",
+  "answer": "441",
+  "prompt_tokens": 105,
+  "solution": "Treat the candies as distinct. There are \\(\\binom{20}{2}\\binom{18}{2}=190\\cdot153\\) equally likely ways to choose Terry's unordered pair and then Mary's.\nIf both pairs are red, there are \\(\\binom{10}{2}\\binom{8}{2}=45\\cdot28\\) ways, since Terry leaves 8 reds for Mary. Both pairs being blue gives the same count. If both pairs are mixed, Terry has \\(10\\cdot10\\) choices of one red and one blue, leaving Mary \\(9\\cdot9\\) choices.\nThe probability is therefore \\((2\\cdot45\\cdot28+100\\cdot81)/(190\\cdot153)=10620/29070=118/323\\). This is reduced since \\(118=2\\cdot59\\) and \\(323=17\\cdot19\\). Thus \\(m+n=118+323=441\\).\nFinal answer: 441",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1384,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "441",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-4434",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 5-year-old male is brought to the pediatrician with complaints of a painful mouth/gums, and vesicular lesions on the lips and buccal mucosa for the past 4 days. The patient has not been able to eat or drink due to the pain and has been irritable. The patient also reports muscle aches. His vital signs are as follows: T 39.1, HR 110, BP 90/62, RR 18, SpO2 99%. Physical examination is significant for vesicular lesions noted on the tongue, gingiva, and lips, with some vesicles having ruptured and ulcerated, as well as palpable cervical and submandibular lymphadenopathy.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 20,
+  "prompt_tokens": 221,
+  "solution": "Use the age-adjusted Centor (McIsaac) score, which adds an age adjustment to the four pharyngitis findings.\n- Temperature >38 °C: 39.1 °C → 1.\n- Absence of cough: no cough reported; counted as absent → 1.\n- Tender anterior cervical nodes: cervical and submandibular nodes are palpable, but anterior cervical tenderness is not documented → 0.\n- Tonsillar swelling or exudate: neither is described; oral vesicles and ulcers do not qualify → 0.\n- Age: 5 years (3–14) → 1.\nSum: 1 + 1 + 0 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 857,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

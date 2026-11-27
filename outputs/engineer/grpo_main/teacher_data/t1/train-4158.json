@@ -1,0 +1,22 @@
+{
+  "id": "train-4158",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 33-year old African–American female presented to the emergency room with a 2-day history of progressively worsening nausea, vomiting, and severe abdominal pain. The patient denied any cardiovascular, respiratory, or urinary symptoms nor had she been around any sick contacts. The patient denied any abdominal surgeries or prior history of gallstones, dyslipidemia or pancreatitis. She denied any alcohol, cigarette use, or illicit drug use. She had a history of diabetes mellitus, hypertension and hypothyroidism; however, there was no family history of autoimmune conditions or AP. Her home medications included long-term metformin and levothyroxine. In addition, the patient recently began canagliflozin therapy 2 weeks prior to her admission.\nIn the emergency department, she was found to be hypotensive with a blood pressure of 79/36, heart rate of 118 bpm, and a respiratory rate of 27. Her temperature was 40.3 degrees Celsius. Serum chemistries revealed leukocytosis with a white blood cell count of 23.6×103/mm3, creatinine of 3.19 mg/dL, calcium of 9.3 mg/dL, amylase 535 IU/L, and lipase 373 IU/L. HbA1c was recorded as 13.5% and her triglyceride level was within normal limits. Additionally, she displayed an elevated anion gap of 19 and acidosis with a pH of 6.89 with blood glucose level of 563 mg/dL and positive urine ketones (beta-hydroxybutyrate: 2.90). Subsequent arterial blood gas revealed PCO2 of 48.8 and FiO2 of 100. Maximum blood alcohol was negative. She was initially diagnosed with diabetic ketoacidosis (DKA) and given several liters of normal saline followed by a bicarbonate and insulin drip. Urine and blood cultures were drawn and she was started on broad-spectrum antibiotics for her fever and leukocytosis. A computerized tomography (CT) scan of the abdomen was obtained due to the elevated pancreatic enzymes and it showed evidence of AP with peripancreatic inflammation and ascites (). Chest X-ray additionally revealed bilateral pleural effusions. Echocardiogram though was unremarkable.\nDespite aggressive fluid resuscitation, the patient became progressively more hypotensive and became unresponsive. She was started on a norepinephrine drip, intubated and admitted to the intensive care unit. Her renal function deteriorated with decreased urine output and increasing serum creatinine reaching 4.26 (pre-morbid creatinine: 1.0) with persistent acidemia requiring continuous renal replacement therapy. In the intensive care unit, an APACHE (Acute Physiology and Chronic Health Evaluation) II score was calculated for the patient and revealed an estimated mortality rate of 97.2%.\nDespite the poor prognosis the patient’s condition remarkably improved and vasopressors were discontinued and she was successfully extubated after 4 days. The source of leukocytosis was indeterminate as cultures of blood, urine, and mini bronchoalveolar lavage were all negative. After excluding all other causes for her symptoms and given the chronology of her presentation, it was determined that canagliflozin was likely the source of her illness. Canagliflozin was discontinued and the patient has remained stable since discharge.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 810,
+  "solution": "HEART assesses suspected acute coronary syndrome (ACS) using History, ECG, Age, Risk factors, and Troponin, each scored 0–2.\n- History: abdominal pain and vomiting without cardiovascular symptoms; low suspicion for ACS = 0.\n- ECG: not reported. If normal, this component is 0.\n- Age: 33 years (<45) = 0.\n- Risk factors: hypertension and diabetes are two documented coronary risk factors; the 1–2 risk-factor band = 1.\n- Troponin: not reported. If at or below the assay's upper reference limit, this component is 0.\nThe score cannot be confirmed without ECG and troponin results. Assuming both unreported components are normal, the total is 0 + 0 + 0 + 1 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 862,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

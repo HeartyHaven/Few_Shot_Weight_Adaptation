@@ -1,0 +1,22 @@
+{
+  "id": "train-4235",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 54-year-old male patient without relevant medical history was referred to the emergency department (ED) due to dyspnoea with an oxygen saturation of 85%, tachypnoea, and tachycardia. He reported a general fatigue, increased stress at work as a salesman, a single episode of angina, and a flight journey of 1.25 h 7 days prior to admission. The electrocardiogram (ECG) showed new T-wave inversions in the anterior leads (V1–V5). Laboratory analysis indicated global respiratory insufficiency, troponinemia (high sensitive troponin T of 77.3 ng/L, cut-off <14.0 ng/L), elevation of the N-terminal fragment of pro-brain natriuretic peptide (NT-proBNP), and D-Dimer. Consecutive thoracic computer tomography (CT) revealed the presence of subsegmental PE, but no pathological masses. Aetiological clarification revealed multiple DVT and elevated factor VIII in thrombophilia screening.\nFor cardiac assessment and additional clarification of newly observed T negativities, TTE showed a left ventricular ejection fraction of 50%, with hypokinesia, but no signs of intraventricular masses. Coronary angiography showed normal coronary arteries.\nTo clarify ECG and laboratory abnormalities and considering also inflammatory causes and myocarditis as aetiology, we conducted a CMR, which did not show any Gadolinium enhancement nor oedema or other abnormalities in the myocardium. As an incidental finding, a partially fixed and partially floating mass measuring 32 mm × 11 mm () at the lateral wall of the right ventricle was detected. It showed hyperintense characteristics in T1w and T2w compared to the myocardium, absent mass perfusion at first-pass perfusion and no uptake of contrast with homogeneous signal suppression within the mass at EGE and LGE (), thus, according to the criteria of standardized CMR tissue characterization, indicating thrombotic nature of the mass., Hyperintense appearance of this thrombus in T1w and T2w sequences indicated its recent character.\nConsidering the stable cardiopulmonary condition and morphology of the thrombus, we waived surgical embolectomy, thrombolysis or percutaneous retrieval, and continued anticoagulation instead. Follow-up CMR after 3 months showed complete resolution of the thrombus.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 18,
+  "prompt_tokens": 576,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, coronary Risk factors, and Troponin. Use the admission findings:\n- History: slight, moderate, or high suspicion for acute coronary syndrome scores 0, 1, or 2. A single episode of angina with dyspnea as the dominant symptom is moderately suspicious → 1.\n- ECG: normal = 0, repolarization abnormality = 1, significant ST depression = 2. New anterior T-wave inversions without reported ST depression → 1.\n- Age: <45 = 0, 45–64 = 1, ≥65 = 2. Age 54 → 1.\n- Risk factors: none = 0, 1–2 = 1, ≥3 or known atherosclerotic disease = 2. No coronary risk factors or atherosclerotic disease documented → 0.\n- Troponin: at or below the upper reference limit = 0, above the limit but ≤3 times the limit = 1, >3 times = 2. Admission troponin T is 77.3/14 ≈ 5.5 times the limit → 2.\nTotal = 1 + 1 + 1 + 0 + 2 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 791,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

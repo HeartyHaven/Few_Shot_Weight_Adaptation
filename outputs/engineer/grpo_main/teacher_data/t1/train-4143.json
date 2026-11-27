@@ -1,0 +1,22 @@
+{
+  "id": "train-4143",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 52-year-old Thai man presented with acute chest tightness and palpitation while rubber farming for 1 week. He had a history of hypertension and heavy smoking for 10 years. He was admitted at a local hospital, and the results of the complete blood count and lipid profile showed within normal limits. His electrocardiogram showed a normal sinus rhythm with Wolff-Parkinson-White syndrome, and his clinical signs did not improve, so he was referred to our hospital. His clinical condition was suspected to be due to coronary arterial disease by a cardiologist. However, his exercise stress test was inconclusive, so he was further investigated by CTCA.\nThe 64-slice CTCA findings showed no calcified coronary artery walls, and the calcium score was zero. A completely absent LCx was observed, which was associated with multiple enlarged diagonal branches of the left anterior descending artery (LAD) to supply the lateral wall of the left ventricle (). Also seen was the superdominant RCA with its posterolateral branch continuing into the territory of the LCx (Figures and ). No significant stenosis was detected. The patient was treated with antiarrhythmic drug (amlodipine 2.5 mg/day) and scheduled for follow-up visits at his district hospital.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 335,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, coronary risk factors, and troponin.\n- History: chest tightness during physical work prompted concern for coronary disease, but anginal features are incompletely described; moderately suspicious → 1.\n- ECG: sinus rhythm with pre-excitation. No ST depression or nonspecific repolarization change is described; assigning points only for reported ST-T findings → 0.\n- Age: 52, in the 45–64 bracket → 1.\n- Risk factors: hypertension and smoking are two risk factors; one or two earn 1 point → 1.\n- Troponin: not reported. A normal blood count and lipid profile do not establish a normal troponin. If troponin was at or below the assay upper limit → 0.\nConditional total = 1 + 0 + 1 + 1 + 0 = 3. The later CT findings do not determine the admission score.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 825,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

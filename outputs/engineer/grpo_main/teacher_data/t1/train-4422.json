@@ -1,0 +1,22 @@
+{
+  "id": "train-4422",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 22-year-old female college student presents to student health with a chief complaint of fatigue. She states that she has been excessively tired since returning from a hiking trip with her sorority to celebrate their victory over a rival college in a rugby tournament. The patient's past medical history includes depression, anxiety, two prior suicide attempts, and three bouts of an \"STD\" that was treated with ceftriaxone and doxycycline. She has no known drug allergies and is currently taking fluoxetine daily and ibuprofen as needed. On physical exam, she is a young and fatigued woman in no acute distress. Examination of the oropharynx reveals tonsillar exudates and cervical lymphadenopathy. Her temperature is 101 °F, her pulse is 100/minute, and respirations are 17/minute. She is prescribed antibiotics and sent home. She returns one day later stating she feels slightly better after taking a day off from school. On exam you note the findings in Figure A. Her vitals and the remainder of her physical exam are similar to her first visit.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 20,
+  "prompt_tokens": 301,
+  "solution": "Apply the four Centor criteria at the first visit, before antibiotics:\n- Fever >38°C: 101°F is approximately 38.3°C, so 1 point.\n- Tonsillar exudates are present: 1 point.\n- Tender anterior cervical nodes: cervical lymphadenopathy is noted, but neither tenderness nor anterior location is specified, so 0 points.\n- Absence of cough: no cough is reported; treating it as absent gives 1 point.\nAge 22 adds 0 if using the modified Centor score. Total = 1 + 1 + 0 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 721,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

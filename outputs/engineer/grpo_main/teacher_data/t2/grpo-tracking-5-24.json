@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-24",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing benchwarmer, Bob is playing center midfielder, Claire is playing right midfielder, Dave is playing sweeper, and Eve is playing left back.\nAs the game progresses, pairs of players occasionally swap positions. First, Alice and Eve trade positions. Then, Eve and Dave trade positions. Then, Dave and Bob trade positions. Then, Claire and Bob trade positions. Finally, Bob and Claire trade positions. At the end of the match, Claire is playing\nOptions:\n(A) benchwarmer\n(B) center midfielder\n(C) right midfielder\n(D) sweeper\n(E) left back",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "benchwarmer",
+      "Bob": "center midfielder",
+      "Claire": "right midfielder",
+      "Dave": "sweeper",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "center midfielder",
+      "Claire": "right midfielder",
+      "Dave": "sweeper",
+      "Eve": "benchwarmer"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "center midfielder",
+      "Claire": "right midfielder",
+      "Dave": "benchwarmer",
+      "Eve": "sweeper"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "benchwarmer",
+      "Claire": "right midfielder",
+      "Dave": "center midfielder",
+      "Eve": "sweeper"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "right midfielder",
+      "Claire": "benchwarmer",
+      "Dave": "center midfielder",
+      "Eve": "sweeper"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "benchwarmer",
+      "Claire": "right midfielder",
+      "Dave": "center midfielder",
+      "Eve": "sweeper"
+    }
+  ],
+  "prompt_tokens": 188,
+  "solution": "Positions in each row are listed in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: benchwarmer, center midfielder, right midfielder, sweeper, left back.\n1. Alice and Eve swap: left back, center midfielder, right midfielder, sweeper, benchwarmer.\n2. Eve and Dave swap: left back, center midfielder, right midfielder, benchwarmer, sweeper.\n3. Dave and Bob swap: left back, benchwarmer, right midfielder, center midfielder, sweeper.\n4. Claire and Bob swap: left back, right midfielder, benchwarmer, center midfielder, sweeper.\n5. Bob and Claire swap again: left back, benchwarmer, right midfielder, center midfielder, sweeper.\nClaire is playing right midfielder, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1347,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

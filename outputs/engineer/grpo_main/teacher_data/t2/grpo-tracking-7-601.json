@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-601",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Walden, Claire gets Beloved, Dave gets Middlemarch, Eve gets Dune, Fred gets Jane Eyre, and Gertrude gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Claire and Bob swap books. Then, Dave and Fred swap books. Then, Claire and Fred swap books. Then, Gertrude and Dave swap books. Then, Gertrude and Dave swap books. Finally, Dave and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) The Hobbit\n(B) Walden\n(C) Beloved\n(D) Middlemarch\n(E) Dune\n(F) Jane Eyre\n(G) Hamlet",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "Middlemarch",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Hobbit",
+      "Claire": "Beloved",
+      "Dave": "Middlemarch",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "The Hobbit",
+      "Dave": "Middlemarch",
+      "Eve": "Dune",
+      "Fred": "Jane Eyre",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "The Hobbit",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "Middlemarch",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch",
+      "Dave": "Hamlet",
+      "Eve": "Dune",
+      "Fred": "The Hobbit",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch",
+      "Dave": "Jane Eyre",
+      "Eve": "Dune",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Middlemarch",
+      "Dave": "Beloved",
+      "Eve": "Dune",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists the books in person order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: The Hobbit | Walden | Beloved | Middlemarch | Dune | Jane Eyre | Hamlet\n1. Bob–Alice: Walden | The Hobbit | Beloved | Middlemarch | Dune | Jane Eyre | Hamlet\n2. Claire–Bob: Walden | Beloved | The Hobbit | Middlemarch | Dune | Jane Eyre | Hamlet\n3. Dave–Fred: Walden | Beloved | The Hobbit | Jane Eyre | Dune | Middlemarch | Hamlet\n4. Claire–Fred: Walden | Beloved | Middlemarch | Jane Eyre | Dune | The Hobbit | Hamlet\n5. Gertrude–Dave: Walden | Beloved | Middlemarch | Hamlet | Dune | The Hobbit | Jane Eyre\n6. Gertrude–Dave: Walden | Beloved | Middlemarch | Jane Eyre | Dune | The Hobbit | Hamlet\n7. Dave–Bob: Walden | Jane Eyre | Middlemarch | Beloved | Dune | The Hobbit | Hamlet\nBob has Jane Eyre, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1077,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-5881",
+  "task": "t1",
+  "group": "FeverPAIN Score for Strep Pharyngitis",
+  "question": "Patient note:\nA 17-year-old young man presented to the pediatric emergency department with intermittent high-grade fever for two days in August 2015. This was associated with myalgia, headache, rhinorrhea, sore throat, productive cough and abdominal pain. Physical examination showed a congested oropharynx and soft abdomen with hyperactive bowel sounds. Laboratory tests showed a WBC of 3.06×109/L, a HCT of 38.6% and a platelet count of 151×109/L. Throat swab tested negative for influenza quick test and negative for beta-hemolytic streptococcus and nasopharyngeal swab was positive for DENV-2. His stool was negative for adenovirus (Adenolex test, Orion Diagnostica, Finland, as text in S1). He was treated for acute bacterial tonsillitis with oral amoxicillin and followed up in the pediatric clinic 2 days after, with marked improvement of symptoms.\n\nQuestion: What is the patient's FeverPAIN score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 33,
+  "prompt_tokens": 283,
+  "solution": "FeverPAIN assigns 1 point per criterion at presentation:\n- Fever in the past 24 hours: ongoing intermittent high fever over the preceding 2 days → 1.\n- Purulence: no tonsillar pus reported → 0.\n- Attendance within 3 days of symptom onset: presented after 2 days → 1.\n- Severely inflamed tonsils: oropharyngeal congestion was noted, but severe tonsillar inflammation was not → 0.\n- No cough or coryza: both productive cough and rhinorrhea were present → 0.\nSum: 1 + 0 + 1 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 758,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

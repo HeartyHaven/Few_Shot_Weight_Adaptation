@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-476",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Vera, Claire is dancing with Oscar, Dave is dancing with Wade, and Eve is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Eve and Alice switch partners. Then, Claire and Bob switch partners. Then, Claire and Alice switch partners. Then, Eve and Alice switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Yuki\n(B) Vera\n(C) Oscar\n(D) Wade\n(E) Umar",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Vera",
+      "Claire": "Oscar",
+      "Dave": "Wade",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Vera",
+      "Claire": "Oscar",
+      "Dave": "Wade",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Vera",
+      "Dave": "Wade",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Oscar",
+      "Claire": "Umar",
+      "Dave": "Wade",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Oscar",
+      "Claire": "Umar",
+      "Dave": "Wade",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Yuki",
+      "Dave": "Wade",
+      "Eve": "Vera"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Yuki, Vera, Oscar, Wade, Umar\n1. Eve and Alice: Umar, Vera, Oscar, Wade, Yuki\n2. Claire and Bob: Umar, Oscar, Vera, Wade, Yuki\n3. Claire and Alice: Vera, Oscar, Umar, Wade, Yuki\n4. Eve and Alice: Yuki, Oscar, Umar, Wade, Vera\n5. Claire and Alice: Umar, Oscar, Yuki, Wade, Vera\nEve is dancing with Vera, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1142,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "id": "dev-7-29",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Candide, Claire gets The Trial, Dave gets Persuasion, Eve gets Jane Eyre, Fred gets The Hobbit, and Gertrude gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Dave and Eve swap books. Then, Claire and Alice swap books. Then, Dave and Eve swap books. Then, Claire and Fred swap books. Then, Fred and Claire swap books. Then, Alice and Fred swap books. Finally, Eve and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) Walden\n(B) Candide\n(C) The Trial\n(D) Persuasion\n(E) Jane Eyre\n(F) The Hobbit\n(G) Hamlet",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Persuasion",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Jane Eyre",
+      "Eve": "Persuasion",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "The Hobbit",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "Walden",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Candide",
+      "Claire": "Walden",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "The Trial",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Jane Eyre",
+      "Claire": "Walden",
+      "Dave": "Persuasion",
+      "Eve": "Candide",
+      "Fred": "The Trial",
+      "Gertrude": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Each row lists books in person order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Walden, Candide, The Trial, Persuasion, Jane Eyre, The Hobbit, Hamlet\n1. Dave ↔ Eve: Walden, Candide, The Trial, Jane Eyre, Persuasion, The Hobbit, Hamlet\n2. Claire ↔ Alice: The Trial, Candide, Walden, Jane Eyre, Persuasion, The Hobbit, Hamlet\n3. Dave ↔ Eve: The Trial, Candide, Walden, Persuasion, Jane Eyre, The Hobbit, Hamlet\n4. Claire ↔ Fred: The Trial, Candide, The Hobbit, Persuasion, Jane Eyre, Walden, Hamlet\n5. Fred ↔ Claire: The Trial, Candide, Walden, Persuasion, Jane Eyre, The Hobbit, Hamlet\n6. Alice ↔ Fred: The Hobbit, Candide, Walden, Persuasion, Jane Eyre, The Trial, Hamlet\n7. Eve ↔ Bob: The Hobbit, Jane Eyre, Walden, Persuasion, Candide, The Trial, Hamlet\nAlice has The Hobbit, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

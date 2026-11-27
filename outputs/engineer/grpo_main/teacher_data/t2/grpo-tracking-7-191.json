@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-191",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets The Hobbit, Claire gets Jane Eyre, Dave gets Dune, Eve gets Walden, Fred gets Candide, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Fred and Bob swap books. Then, Dave and Eve swap books. Then, Alice and Eve swap books. Then, Gertrude and Eve swap books. Then, Fred and Gertrude swap books. Then, Eve and Claire swap books. Finally, Gertrude and Dave swap books. At the end of the semester, Fred has\nOptions:\n(A) Hamlet\n(B) The Hobbit\n(C) Jane Eyre\n(D) Dune\n(E) Walden\n(F) Candide\n(G) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Walden",
+      "Fred": "Candide",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Dune",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Dune",
+      "Fred": "The Hobbit",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Hamlet",
+      "Fred": "The Hobbit",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Beloved",
+      "Fred": "The Hobbit",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Beloved",
+      "Fred": "Hamlet",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre",
+      "Fred": "Hamlet",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Jane Eyre",
+      "Fred": "Hamlet",
+      "Gertrude": "Walden"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude), in that order.\nInitial: (Hamlet, The Hobbit, Jane Eyre, Dune, Walden, Candide, Beloved)\n1. Fred ↔ Bob: (Hamlet, Candide, Jane Eyre, Dune, Walden, The Hobbit, Beloved)\n2. Dave ↔ Eve: (Hamlet, Candide, Jane Eyre, Walden, Dune, The Hobbit, Beloved)\n3. Alice ↔ Eve: (Dune, Candide, Jane Eyre, Walden, Hamlet, The Hobbit, Beloved)\n4. Gertrude ↔ Eve: (Dune, Candide, Jane Eyre, Walden, Beloved, The Hobbit, Hamlet)\n5. Fred ↔ Gertrude: (Dune, Candide, Jane Eyre, Walden, Beloved, Hamlet, The Hobbit)\n6. Eve ↔ Claire: (Dune, Candide, Beloved, Walden, Jane Eyre, Hamlet, The Hobbit)\n7. Gertrude ↔ Dave: (Dune, Candide, Beloved, The Hobbit, Jane Eyre, Hamlet, Walden)\nFred holds Hamlet, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1048,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

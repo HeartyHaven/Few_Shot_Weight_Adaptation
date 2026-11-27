@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-980",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a teal present, Bob has a red present, Claire has a silver present, Dave has a green present, and Eve has a pink present.\nAs the event progresses, pairs of people swap gifts. First, Eve and Claire swap their gifts. Then, Claire and Dave swap their gifts. Then, Bob and Alice swap their gifts. Then, Bob and Alice swap their gifts. Finally, Bob and Alice swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) teal present\n(B) red present\n(C) silver present\n(D) green present\n(E) pink present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "teal",
+      "Bob": "red",
+      "Claire": "silver",
+      "Dave": "green",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "red",
+      "Claire": "pink",
+      "Dave": "green",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "red",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "red",
+      "Bob": "teal",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "red",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "red",
+      "Bob": "teal",
+      "Claire": "green",
+      "Dave": "pink",
+      "Eve": "silver"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Present colors in order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (teal, red, silver, green, pink).\n1. Eve ↔ Claire: (teal, red, pink, green, silver).\n2. Claire ↔ Dave: (teal, red, green, pink, silver).\n3. Bob ↔ Alice: (red, teal, green, pink, silver).\n4. Bob ↔ Alice: (teal, red, green, pink, silver).\n5. Bob ↔ Alice: (red, teal, green, pink, silver).\nBob has the teal present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1018,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

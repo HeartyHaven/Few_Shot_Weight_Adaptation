@@ -1,0 +1,87 @@
+{
+  "id": "dev-5-1",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets Dracula, Claire gets Beloved, Dave gets Emma, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Alice and Dave swap books. Then, Dave and Alice swap books. Then, Dave and Bob swap books. Then, Bob and Eve swap books. Finally, Bob and Alice swap books. At the end of the semester, Alice has\nOptions:\n(A) Jane Eyre\n(B) Dracula\n(C) Beloved\n(D) Emma\n(E) Hamlet",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Jane Eyre",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "Dracula",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Dracula",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "Dracula",
+      "Eve": "Emma"
+    }
+  ],
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Jane Eyre, Dracula, Beloved, Emma, Hamlet)\n1. Alice ↔ Dave: (Emma, Dracula, Beloved, Jane Eyre, Hamlet)\n2. Dave ↔ Alice: (Jane Eyre, Dracula, Beloved, Emma, Hamlet)\n3. Dave ↔ Bob: (Jane Eyre, Emma, Beloved, Dracula, Hamlet)\n4. Bob ↔ Eve: (Jane Eyre, Hamlet, Beloved, Dracula, Emma)\n5. Bob ↔ Alice: (Hamlet, Jane Eyre, Beloved, Dracula, Emma)\nAlice has Hamlet, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 18,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

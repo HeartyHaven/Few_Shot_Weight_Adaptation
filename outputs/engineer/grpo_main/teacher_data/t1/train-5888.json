@@ -1,0 +1,22 @@
+{
+  "id": "train-5888",
+  "task": "t1",
+  "group": "FeverPAIN Score for Strep Pharyngitis",
+  "question": "Patient note:\nA 72-year-old male attended the otorhinolaryngology outpatient department with complaints of right ear discharge over 2 years. He had no other constitutional symptoms. The patient had undergone left side myringoplasty 5 years previously for chronic suppurative otitis media. His chronic ear discharge was not resolved after ear surgery. The ear discharge was sent for bacterial culture which showed no growth. The patient was taking topical ciprofloxacin ear drops, without any resolution of the symptoms.\nOn examination of the ear, it revealed mild myringitis, thickening of the posterior ear canal, and active purulent discharge. There was some pinkish-to-pale colored granulation tissue at the posterosuperior quadrant of the tympanic membrane ().\nThe tympanic membrane was intact. The patient was concerned about malignancy and we took tissue from the granulations at the ear canal and sent it for histopathological examination. Histopathological examination showed squamous epithelium with granulo- matous inflammation. The acid-fast bacilli stain was positive for acid-fast bacilli ().\nThere were no fungal hyphae on Grocott’s methenamine silver stain and no evidence of any malignancy. Real-time polymerase chain reaction (PCR) of the formalin-fixed paraffin-embedded tissue was positive for Myco-bacterium tuberculosis, which was surprising.\nThe patient was then properly evaluated by chest physicians, and denied any fever, cough, weight loss, or hemoptysis. He had no past history of exposure to tuberculosis. The patient’s routine laboratory findings including complete blood count, liver function tests, erythrocyte sedimentation rate (ESR), and serum creatinine were normal. However, QuantiFERON-TB Gold was positive. A computed tomography (CT) scan of the both sides of the temporal bone was performed, which showed narrowing of the left external auditory canal ().\nThis lesion was treated for extrapulmonary tuberculosis, including rifampicin (600 mg daily), isoniazid (300 mg daily), pyrazinamide (2,000 mg) daily, and ethambutol (1600 mg) daily for 2 months. The isoniazid and rifampicin were continued for the next 8 months. The patient’s otorrhea was resolved within 1 month after starting the antitubercular therapy (ATT). Examination of the external auditory canal and tympanic membrane were normal after 6 months of treatment.\n\nQuestion: What is the patient's FeverPAIN score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 33,
+  "prompt_tokens": 589,
+  "solution": "FeverPAIN assigns one point per feature in acute sore throat. Applying its items to the presentation highlights a limitation:\n- Fever in the preceding 24 hours: denied, 0.\n- Purulence: there is purulent ear discharge, but the criterion is tonsillar pus. Counting the ear finding as a proxy gives +1; it is not a validated substitution.\n- Attendance within 3 days of symptom onset: symptoms lasted 2 years, 0.\n- Severely inflamed tonsils: not documented, 0.\n- No cough or coryza: cough denied and no coryza reported; assuming coryza was absent, +1.\nProxy sum: 0 + 1 + 0 + 0 + 1 = 2. This is not a clinically valid FeverPAIN assessment for isolated ear disease.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 623,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

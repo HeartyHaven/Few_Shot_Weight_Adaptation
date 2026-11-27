@@ -1,0 +1,22 @@
+{
+  "id": "train-6401",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 74-year-old man with a history of diabetes mellitus and chronic obstructive pulmonary disease suffered cervicalgia and a stiff shoulder after engaging in farm work. He was a chicken farmer and produced a fertilizer that utilized cow and poultry manure. He went to a nearby clinic 2 days after the onset of symptoms as he experienced difficulty swallowing. Tetanus was strongly suspected from his clinical condition, and he was transferred to the emergency room 3 days after the initial symptoms began. His vital signs were as follows: Glasgow Coma Scale score, 15 (E4V5M6); blood pressure, 144/63 mmHg; heart rate, 79 b.p.m.; respiratory rate, 24 breaths/min; and body temperature, 36.5°C. The level of oxygen saturation showed 96%. Painful contracture of the neck was observed. Trismus, risus sardonicus, and strong muscle spasms in the platysma and sternocleidomastoideus were observed (Fig. ). Laboratory tests revealed slight inflammation and rhabdomyolysis (white blood cell count, 12,600 cells/mm3; C-reactive protein, 0.04 mg/dL; lactase dehydrogenase, 276 U/L; creatine kinase, 340 IU/L; blood urea nitrogen, 25.5 mg/dL). A computed tomography scan showed emphysematous bulla in the lung and patchy pneumonia in the right upper lobe. Tetanus was clinically diagnosed and he was admitted into the intensive care unit (Fig. ). Polyethylene glycol-treated human anti-tetanus immunoglobulin (3,000 units) was injected and benzylpenicillin potassium (8,000,000 units/day) was administered. Both KT (7.5 g/day) and SKT (7.5 g/day) were given by nasogastric tube to release muscle tension. One to three packages of each Kampo extract was dissolved in tap water (20 mL). Trismus and generalized convulsions were temporarily improved 30 min after treatment with KT and SKT (Fig. B). Fluctuation of systolic blood pressure (100–170 mmHg) was observed for the first 3 days of hospitalization. It was most severe on day 1 (70–180 mmHg). On day 3 of hospitalization, mechanical ventilation was introduced to treat the complications of pneumonia. Blood gas analysis revealed pH 7.47, PaO2 87 mmHg, PaCO2 41 mmHg, base excess (BE) 5.6 mEq/L (FIO2 0.6, synchronized intermittent mandatory ventilaton (SIMV) 13/min, pressure control (PC) 10 cmH2O, pressure support (PS) 8 cmH2O, positive end-expiratory pressure (PEEP) 4 cmH2O). After 11 days of hospitalization, doses of KT and SKT were reduced to 5.0 g/day, as the tetanic convulsions were controlled without the use of muscle relaxants. After 17 days of hospitalization, the patient was weaned from the ventilator. The patient was discharged from the intensive care unit after 25 days; after 27 days, treatment with all Kampo medicines was terminated. After 30 days of hospitalization, he was discharged from the hospital without sequelae.\nThe blood culture at the time of the patient's admission showed negative results; however, on day 4 of hospitalization, Klebsiella oxytoca was detected from the sputum culture.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 872,
+  "solution": "CURB-65 assigns 1 point per pneumonia severity criterion. Use the initial emergency-room findings:\n- Confusion: GCS 15, with no confusion reported → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN 25.5 mg/dL → 1.\n- Respiratory rate ≥30/min: 24/min → 0.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: initial BP 144/63 mmHg → 0. Later BP fluctuations do not count.\n- Age ≥65 years: age 74 → 1.\nSum: 0 + 1 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 613,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

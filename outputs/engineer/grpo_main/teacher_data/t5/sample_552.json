@@ -1,0 +1,20 @@
+{
+  "id": "sample_552",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(d):\n    result = {}\n    for k, v in d.items():\n        if isinstance(k, float):\n            for i in v:\n                result[i] = k\n        else:\n            result[k] = v\n    return result\n```\n\nInput: f({2: 0.76, 5: [3, 6, 9, 12]})",
+  "answer": "{2: 0.76, 5: [3, 6, 9, 12]}",
+  "prompt_tokens": 141,
+  "solution": "Start with result = {}. For k = 2 and v = 0.76, the key is an int, not a float, so result[2] = 0.76 gives {2: 0.76}. For k = 5 and v = [3, 6, 9, 12], the key is also an int, so result[5] is set to the whole list. The inner loop never runs. Return result.\nFinal answer: {2: 0.76, 5: [3, 6, 9, 12]}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "{2: 0.76, 5: [3, 6, 9, 12]}",
+    "correct": true
+  }
+}

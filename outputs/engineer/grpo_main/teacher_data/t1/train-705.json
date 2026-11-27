@@ -1,0 +1,22 @@
+{
+  "id": "train-705",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 66-year old man comes to the physician because of fatigue for 6 months. He says that he wakes up every morning feeling tired. Most days of the week he feels sleepy during the day and often takes an afternoon nap for an hour. His wife says he snores in the middle of the night. He has a history of heart failure and atrial fibrillation. His medications include aspirin, atorvastatin, lisinopril, metoprolol, and warfarin. He drinks 1–2 glasses of wine daily with dinner; he does not smoke. He is 175 cm (5 ft 9 in) tall and weighs 96 kg (212 lb); BMI is 31.3 kg/m2. His blood pressure is 142/88 mm Hg, pulse is 98/min, and respirations are 22/min. Examination of the oral cavity shows a low-lying palate. Cardiac examination shows an irregularly irregular rhythm and no murmurs. The remainder of the examination shows no abnormalities.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 299,
+  "solution": "The CHA₂DS₂-VASc score estimates stroke risk in atrial fibrillation. Score each risk factor at presentation:\n- Congestive heart failure (1): documented → 1.\n- Hypertension (1): no established diagnosis or documented treatment specifically for hypertension; one reading of 142/88 mm Hg does not establish it → 0.\n- Age (1 for 65–74, 2 for ≥75): age 66 → 1.\n- Diabetes mellitus (1): none reported → 0.\n- Prior stroke, TIA, or systemic embolism (2): none reported → 0.\n- Vascular disease, such as prior MI, peripheral arterial disease, or aortic plaque (1): none reported → 0.\n- Female sex (1): male → 0.\nTotal = 1 + 0 + 1 + 0 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 796,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

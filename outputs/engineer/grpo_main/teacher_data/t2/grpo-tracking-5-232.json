@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-232",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Rosa, Bob is dancing with Umar, Claire is dancing with Lena, Dave is dancing with Priya, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Eve and Dave switch partners. Then, Dave and Claire switch partners. Then, Claire and Dave switch partners. Then, Claire and Alice switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Rosa\n(B) Umar\n(C) Lena\n(D) Priya\n(E) Wade",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Rosa",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Wade",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Umar",
+      "Claire": "Wade",
+      "Dave": "Lena",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Wade",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Umar",
+      "Claire": "Rosa",
+      "Dave": "Wade",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Umar",
+      "Claire": "Lena",
+      "Dave": "Wade",
+      "Eve": "Priya"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists partners in the order (Alice, Bob, Claire, Dave, Eve).\nInitial: (Rosa, Umar, Lena, Priya, Wade)\n1. Eve and Dave switch: (Rosa, Umar, Lena, Wade, Priya)\n2. Dave and Claire switch: (Rosa, Umar, Wade, Lena, Priya)\n3. Claire and Dave switch: (Rosa, Umar, Lena, Wade, Priya)\n4. Claire and Alice switch: (Lena, Umar, Rosa, Wade, Priya)\n5. Claire and Alice switch: (Rosa, Umar, Lena, Wade, Priya)\nAlice is dancing with Rosa, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 997,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1059",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 85-year-old man presented to our institution complaining of recurrent fever and a mitral regurgitation murmur. He has a past history significant for atrial fibrillation being treated with apixaban status post leadless pacemaker implantation and AV nodal ablation 15 days ago, hypertension, hyperlipidemia, obstructive sleep apnea on continuous positive airway pressure, diverticulosis and diverticulitis, dental caries, melanoma in situ, and persistent pulmonary coccidioidomycosis on fluconazole.\nHe underwent a transthoracic echocardiogram which showed normal left ventricular size and no wall motion abnormalities, LVEF of 56%, severe mitral regurgitation due to incomplete coaptation of the mitral valve leaflets (Figures and ), mild right ventricular enlargement, systolic dysfunction with visible apical right ventricular lead, mild tricuspid regurgitation, and no pericardial effusion. A transesophageal echocardiogram confirmed restricted mitral valve leaflets resulting in incomplete coaptation and severe mitral regurgitation (Figures and ). No vegetations were seen. Blood cultures ruled out endocarditis as the cause of fever, and he was later found to have non-Hodgkin's lymphoma.\nHis cardiac history is notable for atrial fibrillation diagnosed 10 years ago which was treated with atenolol and warfarin. Despite this treatment, he had recurrent episodes of paroxysmal symptomatic atrial fibrillation with a rapid rate requiring multiple emergency department visits and hospital admissions (). Given difficulty to control the rate, he underwent AV nodal ablation and leadless pacemaker insertion 15 days prior to current presentation with resultant LBBB on his electrocardiogram (ECG) post implantation (). His echocardiogram days before pacemaker insertion revealed only mild mitral regurgitation and normal coaptation of the mitral valve leaflets ().\nGiven the absence of degenerative mitral valve abnormality and no evidence of cardiomyopathy, his diagnosis of new-onset severe mitral regurgitation is the direct result of abnormal electrical conduction related to iatrogenic LBBB due to AV nodal ablation and single-chamber paced rhythm.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 551,
+  "solution": "Apply CHA2DS2-VASc for this patient with atrial fibrillation:\n- Congestive heart failure or significant LV systolic dysfunction (1 point): no clinical heart failure documented; LVEF 56%. Severe mitral regurgitation alone does not qualify → 0.\n- Hypertension (1 point): documented history → 1.\n- Age 65–74 (1 point) or ≥75 (2 points): age 85 → 2.\n- Diabetes mellitus (1 point): none documented → 0.\n- Prior stroke, TIA, or systemic thromboembolism (2 points): none documented → 0.\n- Vascular disease (1 point): no documented myocardial infarction, peripheral arterial disease, or aortic plaque; hyperlipidemia alone does not qualify → 0.\n- Female sex (1 point): male → 0.\nSum: 0 + 1 + 2 + 0 + 0 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 932,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-6608",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 21-year-old female patient with no significant past medical history presented to the emergency department with presyncope. Three weeks prior to her presentation, she tested positive for COVID-19 infection after developing symptoms of shortness of breath and chest pain. She was quarantined at her home and treated symptomatically with improvement. She never required hospitalization for her symptoms nor medications. She denied smoking and alcohol or illicit drug use along with any other medication that could cause QT interval prolongation. Upon her presentation, her physical examination was noted to be significant for bradycardia. Her vitals were blood pressure of 118/63 mmHg, a heart rate of 45 bpm, a temperature of 98.3 °F, and a respiratory rate of 18 sating 100% on room air. Her electrocardiogram showed 45 bpm with narrow QRS complex and premature atrial complexes.\nSignificant laboratory results included a WBC of 18.24 k/μL (3.60–9.50), troponin negative at <0.03 ng/mL (≤0.04), normal TSH at 3.79 uIU/mL (0.34–5.60), CRP at 27.00 mg/L (≤10.00), ESR at 51 mm/h (0–20), procalcitonin at <0.02 ng/mL (0.00–0.10), a COVID-19 PCR positive, BNP at 160 pg/mL (≤100), lactate at 1.2 mmol/L (0.5–2.2), and a negative urine drug screen. The chest X-ray showed no acute events. The transthoracic echocardiogram was normal with an EF of 60%. The patient was walked on treadmill and her junctional heart rhythm increased to 91 bpm; she was given 1 mg of atropine IV over a period of 5 min, in which her sinus rate increased to >100 bpm. Given the improvement in the patient’s symptoms, there was no indication for a dual chamber pacemaker. Hence, she was started on theophylline 200 mg oral dose daily with follow up within 1 week at the clinic (A,B). Upon her follow up, she had a heart rate of 90 bpm while on theophylline and no side effects were reported. Later, at her 5-week follow up visit, a complete resolution of her symptoms was reported and theophylline use was discontinued.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 51,
+  "prompt_tokens": 633,
+  "solution": "SIRS assigns one point for each of four criteria, using presentation values:\n- Temperature >38°C or <36°C: 98.3°F is about 36.8°C (0).\n- Heart rate >90/min: 45/min (0). The later treadmill and atropine responses do not count.\n- Respiratory rate >20/min or PaCO₂ <32 mmHg: rate was 18/min, with no low PaCO₂ reported (0).\n- WBC >12 or <4 × 10³/µL, or >10% bands: WBC was 18.24 × 10³/µL (1).\nTotal = 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 786,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

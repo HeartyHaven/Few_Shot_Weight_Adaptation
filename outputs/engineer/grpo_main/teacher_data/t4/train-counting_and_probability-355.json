@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-355",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "The nine horizontal and nine vertical lines on an $8\\times8$ checkerboard form $r$ rectangles, of which $s$ are squares. The number $s/r$ can be written in the form $m/n,$ where $m$ and $n$ are relatively prime positive integers. Find $m + n.$\n",
+  "answer": "125",
+  "prompt_tokens": 97,
+  "solution": "A rectangle is determined by choosing two horizontal and two vertical boundary lines, so $r=\\binom{9}{2}^2=36^2=1296$.\n\nA square of side length $k$ cells has $9-k$ possible starting positions in each direction. Thus $s=\\sum_{k=1}^{8}(9-k)^2=1^2+2^2+\\cdots+8^2=8\\cdot9\\cdot17/6=204$. Reducing gives $s/r=204/1296=17/108$. Since $17$ does not divide $108$, the fraction is in lowest terms, and $m+n=17+108=125$.\nFinal answer: 125",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "125",
+    "correct": true
+  }
+}

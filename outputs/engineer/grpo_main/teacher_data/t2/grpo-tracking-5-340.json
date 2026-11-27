@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-340",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a yellow present, Bob has a blue present, Claire has a teal present, Dave has a purple present, and Eve has a silver present.\nAs the event progresses, pairs of people swap gifts. First, Claire and Bob swap their gifts. Then, Alice and Dave swap their gifts. Then, Claire and Bob swap their gifts. Then, Eve and Claire swap their gifts. Finally, Alice and Dave swap their gifts. At the end of the event, Alice has the\nOptions:\n(A) yellow present\n(B) blue present\n(C) teal present\n(D) purple present\n(E) silver present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "yellow",
+      "Bob": "blue",
+      "Claire": "teal",
+      "Dave": "purple",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "teal",
+      "Claire": "blue",
+      "Dave": "purple",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "teal",
+      "Claire": "blue",
+      "Dave": "yellow",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "teal",
+      "Dave": "yellow",
+      "Eve": "silver"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "blue",
+      "Claire": "silver",
+      "Dave": "yellow",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "blue",
+      "Claire": "silver",
+      "Dave": "purple",
+      "Eve": "teal"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Holder order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial: yellow | blue | teal | purple | silver\n1. Claire ↔ Bob: yellow | teal | blue | purple | silver\n2. Alice ↔ Dave: purple | teal | blue | yellow | silver\n3. Claire ↔ Bob: purple | blue | teal | yellow | silver\n4. Eve ↔ Claire: purple | blue | silver | yellow | teal\n5. Alice ↔ Dave: yellow | blue | silver | purple | teal\nAlice has the yellow present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1265,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

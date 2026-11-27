@@ -1,0 +1,22 @@
+{
+  "id": "train-957",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 68-year-old woman underwent LADG with partial omentectomy and D1+ β lymph node dissection for early gastric cancer localized in the submucosa (T1bN1M0). Her past medical history was atrial fibrillation and Parkinson's disease for several years and these maladies were controlled with medication. This patient was thin with a BMI 19.7 kg/m2 (the initial weight of 50.4 kg and a height of 160 cm). On postoperative day 10, she developed localized right upper quadrant pain with leukocytosis of 17,090/mm3. She had no fever, chills or gastrointestinal symptoms such as nausea, vomiting or diarrhea other than the right upper quadrant pain.\nContrast enhanced abdominal CT was performed to differentiate the causes of her acute abdominal pain. The enhanced CT scan revealed a 4 cm sized heterogeneous fat density mass with a peripheral enhancing rim and streaky infiltration in the omentum at the anterior to the pancreas head, which was a reasonable finding of omental infarction (). She improved after administration of anti-inflammatory agents and analgesics. After five days, her symptoms disappeared completely and she was discharged from the hospital.\nAfter five months, she was followed up with CT and F18-FDG PET-CT. The previously noted lesions had almost resolved and there was no abnormal FDG uptake except only mild omental haziness ().\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 374,
+  "solution": "CHA₂DS₂-VASc uses the following risk factors in a patient with atrial fibrillation:\n- Congestive heart failure or LV dysfunction: not documented, 0.\n- Hypertension: not documented, 0.\n- Age: 68 years falls in the 65–74 band, +1 (age ≥75 would score 2 instead).\n- Diabetes: not documented, 0.\n- Prior stroke, TIA, or systemic embolism: not documented at admission, 0. The omental infarction occurred postoperatively.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): not documented, 0.\n- Female sex: +1.\nSum: 0 + 0 + 1 + 0 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 698,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

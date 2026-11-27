@@ -1,0 +1,17 @@
+{
+  "id": "sample_200",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, value):\n    length = len(text)\n    index = 0\n    while length > 0:\n        value = text[index] + value\n        length -= 1\n        index += 1\n    return value\n```\n\nInput: f('jao mt', 'house')",
+  "answer": "'tm oajhouse'",
+  "solution": "Start with (index, length, value) = (0, 6, 'house'). Each iteration prepends text[index], decreases length by 1, and increases index by 1. The updated states are:\n'j' → (1, 5, 'jhouse')\n'a' → (2, 4, 'ajhouse')\n'o' → (3, 3, 'oajhouse')\n' ' → (4, 2, ' oajhouse')\n'm' → (5, 1, 'm oajhouse')\n't' → (6, 0, 'tm oajhouse')\nlength is now 0, so the loop stops and returns value.\nFinal answer: 'tm oajhouse'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 72,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'tm oajhouse'",
+    "correct": true
+  }
+}

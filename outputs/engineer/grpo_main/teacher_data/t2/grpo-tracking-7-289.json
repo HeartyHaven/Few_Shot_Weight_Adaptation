@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-289",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Emma, Claire gets Beloved, Dave gets Persuasion, Eve gets Jane Eyre, Fred gets Siddhartha, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Fred and Claire swap books. Then, Eve and Dave swap books. Then, Fred and Eve swap books. Then, Fred and Gertrude swap books. Then, Fred and Alice swap books. Then, Gertrude and Claire swap books. Finally, Eve and Bob swap books. At the end of the semester, Fred has\nOptions:\n(A) Ivanhoe\n(B) Emma\n(C) Beloved\n(D) Persuasion\n(E) Jane Eyre\n(F) Siddhartha\n(G) Candide",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Alice"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "Beloved",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Persuasion",
+      "Fred": "Beloved",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Beloved",
+      "Fred": "Persuasion",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Beloved",
+      "Fred": "Candide",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Beloved",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Jane Eyre",
+      "Eve": "Beloved",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Beloved",
+      "Claire": "Persuasion",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Ivanhoe, Emma, Beloved, Persuasion, Jane Eyre, Siddhartha, Candide\n1. Fred and Claire: Ivanhoe, Emma, Siddhartha, Persuasion, Jane Eyre, Beloved, Candide\n2. Eve and Dave: Ivanhoe, Emma, Siddhartha, Jane Eyre, Persuasion, Beloved, Candide\n3. Fred and Eve: Ivanhoe, Emma, Siddhartha, Jane Eyre, Beloved, Persuasion, Candide\n4. Fred and Gertrude: Ivanhoe, Emma, Siddhartha, Jane Eyre, Beloved, Candide, Persuasion\n5. Fred and Alice: Candide, Emma, Siddhartha, Jane Eyre, Beloved, Ivanhoe, Persuasion\n6. Gertrude and Claire: Candide, Emma, Persuasion, Jane Eyre, Beloved, Ivanhoe, Siddhartha\n7. Eve and Bob: Candide, Beloved, Persuasion, Jane Eyre, Emma, Ivanhoe, Siddhartha\nFred has Ivanhoe, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1069,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

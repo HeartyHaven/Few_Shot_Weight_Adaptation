@@ -1,0 +1,22 @@
+{
+  "id": "train-831",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 71-year-old woman presents with a transient episode of right arm and hand weakness that resolved in approximately one hour. Her symptoms started while she was gardening. Her past medical history is notable for hypertension, diabetes, anxiety, and dyslipidemia. Her current medications include insulin, metformin, and fluoxetine. Examination reveals a left carotid bruit. Ultrasound duplex of her carotid arteries demonstrates right and left carotid stenosis of 35% and 50%, respectively.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 180,
+  "solution": "CHA₂DS₂-VASc at presentation:\n- Heart failure (1 if present): none reported = 0.\n- Hypertension: documented = 1.\n- Age (1 for 65–74; 2 for ≥75): 71 = 1.\n- Diabetes: documented and treated = 1.\n- Stroke/TIA/systemic embolism (2 if present): sudden focal right arm and hand weakness resolving in about an hour is consistent with a TIA = 2.\n- Vascular disease: counting duplex-confirmed carotid stenosis as atherosclerotic vascular disease = 1. Narrower definitions limited to prior MI, peripheral artery disease or aortic plaque may exclude carotid stenosis.\n- Female sex = 1.\nSum: 0 + 1 + 1 + 1 + 2 + 1 + 1 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 849,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

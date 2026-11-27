@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-604",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing center midfielder, Bob is playing sweeper, Claire is playing right winger, Dave is playing left winger, and Eve is playing right midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Dave and Claire trade positions. Then, Claire and Eve trade positions. Then, Bob and Eve trade positions. Then, Eve and Dave trade positions. Finally, Bob and Claire trade positions. At the end of the match, Eve is playing\nOptions:\n(A) center midfielder\n(B) sweeper\n(C) right winger\n(D) left winger\n(E) right midfielder",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "center midfielder",
+      "Bob": "sweeper",
+      "Claire": "right winger",
+      "Dave": "left winger",
+      "Eve": "right midfielder"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "sweeper",
+      "Claire": "left winger",
+      "Dave": "right winger",
+      "Eve": "right midfielder"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "sweeper",
+      "Claire": "right midfielder",
+      "Dave": "right winger",
+      "Eve": "left winger"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "left winger",
+      "Claire": "right midfielder",
+      "Dave": "right winger",
+      "Eve": "sweeper"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "left winger",
+      "Claire": "right midfielder",
+      "Dave": "sweeper",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "right midfielder",
+      "Claire": "left winger",
+      "Dave": "sweeper",
+      "Eve": "right winger"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: center midfielder | sweeper | right winger | left winger | right midfielder\n1. Dave and Claire swap: center midfielder | sweeper | left winger | right winger | right midfielder\n2. Claire and Eve swap: center midfielder | sweeper | right midfielder | right winger | left winger\n3. Bob and Eve swap: center midfielder | left winger | right midfielder | right winger | sweeper\n4. Eve and Dave swap: center midfielder | left winger | right midfielder | sweeper | right winger\n5. Bob and Claire swap: center midfielder | right midfielder | left winger | sweeper | right winger\nEve is playing right winger, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1149,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

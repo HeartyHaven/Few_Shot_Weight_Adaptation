@@ -1,0 +1,22 @@
+{
+  "id": "train-1028",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 60-year-old man comes to the clinic with the complaint of knee pain for the past few weeks. The pain is located in the left knee, associated with morning stiffness for about an hour, and improves with activities throughout the day. He also has a history of diabetes mellitus, hypertension, peptic ulcer disease, and ischemic heart disease. He underwent angioplasty last year for a STEMI. The patient takes metformin, aspirin, clopidogrel, atorvastatin, ramipril, omeprazole, and bisoprolol. He used to smoke one pack of cigarettes a day for the last 45 years but stopped smoking for the past one year following his heart attack. He drinks alcohol socially. His father has Alzheimer’s disease and is in adult home care, and his mother died of breast cancer when she was 55. His temperature is 37.6°C (99.8°F), blood pressure is 132/65 mm Hg, pulse is 90/min, respirations are 14/min, and BMI is 22 kg/m2. On examination, his left knee is swollen, warm, tender to touch, and has decreased range of movement due to pain. Cardiopulmonary and abdominal examinations are negative.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 346,
+  "solution": "CHA₂DS₂-VASc assigns 1 point each for heart failure, hypertension, diabetes, vascular disease, and female sex; 2 for prior stroke/TIA/systemic embolism; and either 1 for age 65–74 or 2 for age ≥75.\n- Heart failure: not documented = 0.\n- Hypertension: established diagnosis = 1, even though admission BP is 132/65 mm Hg.\n- Age: 60 years = 0.\n- Diabetes mellitus: present = 1.\n- Stroke/TIA/systemic embolism: none documented = 0.\n- Vascular disease: prior STEMI = 1. Angioplasty does not add a separate point.\n- Sex: male = 0.\nTotal = 0 + 1 + 0 + 1 + 0 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 701,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

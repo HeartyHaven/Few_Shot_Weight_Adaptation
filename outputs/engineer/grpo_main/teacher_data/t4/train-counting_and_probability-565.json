@@ -1,0 +1,19 @@
+{
+  "id": "train-counting_and_probability-565",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Matt will arrange four identical, dotless dominoes (shaded 1 by 2 rectangles) on the 5 by 4 grid below so that a path is formed from the upper left-hand corner $A$ to the lower righthand corner $B$. In a path, consecutive dominoes must touch at their sides and not just their corners. No domino may be placed diagonally; each domino covers exactly two of the unit squares shown on the grid. One arrangement is shown. How many distinct arrangements are possible, including the one shown?\n\n[asy]\nsize(101);\nreal w = 1; picture q;\nfilldraw(q,(1/10,0)--(19/10,0)..(2,1/10)--(2,9/10)..(19/10,1)--(1/10,1)..(0,9/10)--(0,1/10)..cycle,gray(.6),linewidth(.6));\nadd(shift(4*up)*q); add(shift(3*up)*shift(3*right)*rotate(90)*q); add(shift(1*up)*shift(3*right)*rotate(90)*q); add(shift(4*right)*rotate(90)*q);\npair A = (0,5); pair B = (4,0);\nfor(int i = 0; i<5; ++i)\n{draw((i,0)--(A+(i,0))); draw((0,i)--(B+(0,i)));}\ndraw(A--(A+B));\nlabel(\"$A$\",A,NW,fontsize(8pt)); label(\"$B$\",B,SE,fontsize(8pt));\n[/asy]",
+  "answer": "35",
+  "prompt_tokens": 396,
+  "solution": "From the upper-left cell to the lower-right cell, a side-to-side path needs at least 3 moves right and 4 moves down. Thus it must visit at least 8 distinct cells. The four dominoes cover exactly 8 cells, so the path uses them all and makes exactly those 7 moves, with no backtracking.\n\nConversely, any ordering of the 3 right moves and 4 down moves gives a path of 8 cells. Pair cells 1–2, 3–4, 5–6, and 7–8 to form the dominoes. This pairing is forced: nonconsecutive cells of a monotone path are never side-adjacent, so the first unpaired cell must pair with the next. The covered cells also determine their path order, since the distance from the starting cell increases by 1 at each move.\n\nThus arrangements correspond exactly to choices of the 3 right-move positions among 7, giving (7 × 6 × 5)/(3 × 2 × 1) = 35.\nFinal answer: 35",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1388,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "35",
+    "correct": true
+  }
+}

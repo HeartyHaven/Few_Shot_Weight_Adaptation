@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-16",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Vera, Claire is dancing with Nadia, Dave is dancing with Karl, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Claire and Dave switch partners. Then, Bob and Eve switch partners. Then, Bob and Claire switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Yuki\n(B) Vera\n(C) Nadia\n(D) Karl\n(E) Wade",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Vera",
+      "Claire": "Nadia",
+      "Dave": "Karl",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Vera",
+      "Claire": "Nadia",
+      "Dave": "Karl",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Vera",
+      "Claire": "Karl",
+      "Dave": "Nadia",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Yuki",
+      "Claire": "Karl",
+      "Dave": "Nadia",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Karl",
+      "Claire": "Yuki",
+      "Dave": "Nadia",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Wade",
+      "Claire": "Yuki",
+      "Dave": "Nadia",
+      "Eve": "Vera"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partners are listed in dancer order: Alice, Bob, Claire, Dave, Eve.\nInitial: (Yuki, Vera, Nadia, Karl, Wade)\n1. Alice and Eve swap: (Wade, Vera, Nadia, Karl, Yuki)\n2. Claire and Dave swap: (Wade, Vera, Karl, Nadia, Yuki)\n3. Bob and Eve swap: (Wade, Yuki, Karl, Nadia, Vera)\n4. Bob and Claire swap: (Wade, Karl, Yuki, Nadia, Vera)\n5. Alice and Bob swap: (Karl, Wade, Yuki, Nadia, Vera)\nDave is dancing with Nadia, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

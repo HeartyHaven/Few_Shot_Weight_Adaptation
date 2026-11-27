@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-217",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Jane Eyre, Claire gets Emma, Dave gets The Trial, Eve gets Middlemarch, Fred gets Hamlet, and Gertrude gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Eve and Alice swap books. Then, Alice and Fred swap books. Then, Claire and Gertrude swap books. Then, Fred and Gertrude swap books. Then, Gertrude and Claire swap books. Finally, Gertrude and Fred swap books. At the end of the semester, Claire has\nOptions:\n(A) Ivanhoe\n(B) Jane Eyre\n(C) Emma\n(D) The Trial\n(E) Middlemarch\n(F) Hamlet\n(G) Candide",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Middlemarch",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Hamlet",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Middlemarch",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Middlemarch",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Emma",
+      "Gertrude": "Candide"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Middlemarch",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Books in order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude):\nInitial: (Ivanhoe, Jane Eyre, Emma, The Trial, Middlemarch, Hamlet, Candide)\nAfter Alice and Bob swap: (Jane Eyre, Ivanhoe, Emma, The Trial, Middlemarch, Hamlet, Candide)\nAfter Eve and Alice swap: (Middlemarch, Ivanhoe, Emma, The Trial, Jane Eyre, Hamlet, Candide)\nAfter Alice and Fred swap: (Hamlet, Ivanhoe, Emma, The Trial, Jane Eyre, Middlemarch, Candide)\nAfter Claire and Gertrude swap: (Hamlet, Ivanhoe, Candide, The Trial, Jane Eyre, Middlemarch, Emma)\nAfter Fred and Gertrude swap: (Hamlet, Ivanhoe, Candide, The Trial, Jane Eyre, Emma, Middlemarch)\nAfter Gertrude and Claire swap: (Hamlet, Ivanhoe, Middlemarch, The Trial, Jane Eyre, Emma, Candide)\nAfter Gertrude and Fred swap: (Hamlet, Ivanhoe, Middlemarch, The Trial, Jane Eyre, Candide, Emma)\nClaire has Middlemarch, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1211,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

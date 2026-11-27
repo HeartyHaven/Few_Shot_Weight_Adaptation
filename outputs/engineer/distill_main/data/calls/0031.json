@@ -1,0 +1,39 @@
+{
+  "task": "t4",
+  "ids": [
+    "train-number_theory-258",
+    "train-number_theory-651",
+    "train-number_theory-60",
+    "train-number_theory-565",
+    "train-number_theory-588"
+  ],
+  "attempt": 1,
+  "teacher": "gpt-6.2-astra",
+  "started": 1795690346.7729502,
+  "request": "Write worked solutions for distillation into a small language model. These are authorized training examples, not evaluation questions. The gold answer is provided to check your work; do not mention it was provided. Use English, concise steps, preferably under 650 tokens per solution (up to 1400 if necessary). Each solution MUST end with exactly one line \"Final answer: ...\", matching the provided gold answer. Explain the mathematical method and every essential algebraic/counting step. Give a concise, checkable worked solution, not merely a restatement of the answer.\nReturn ONLY a JSON array of objects with exactly the fields \"id\" and \"solution\". Preserve each id. No tools, external retrieval or additional problems.\n\n[{\"id\": \"train-number_theory-258\", \"question\": \"What is the largest four-digit negative integer congruent to $1 \\\\pmod{23}?$\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"-1011\"}, {\"id\": \"train-number_theory-651\", \"question\": \"What is the greatest integer less than or equal to\\\\[\\\\frac{3^{100}+2^{100}}{3^{96}+2^{96}}?\\\\]\\n$\\\\textbf{(A) }80\\\\qquad \\\\textbf{(B) }81 \\\\qquad \\\\textbf{(C) }96 \\\\qquad \\\\textbf{(D) }97 \\\\qquad \\\\textbf{(E) }625\\\\qquad$\\n\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"80\"}, {\"id\": \"train-number_theory-60\", \"question\": \"A positive number is called $n$-primable if it is divisible by $n$ and each of its digits is a one-digit prime number. How many 3-primable positive integers are there that are less than 1000?\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"28\"}, {\"id\": \"train-number_theory-565\", \"question\": \"One of Euler's conjectures was disproved in the 1960s by three American mathematicians when they showed there was a positive integer such that $133^5+110^5+84^5+27^5=n^{5}$. Find the value of $n$.\\n\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"144\"}, {\"id\": \"train-number_theory-588\", \"question\": \"In a rectangular array of points, with 5 rows and $N$ columns, the points are numbered consecutively from left to right beginning with the top row. Thus the top row is numbered 1 through $N,$ the second row is numbered $N + 1$ through $2N,$ and so forth. Five points, $P_1, P_2, P_3, P_4,$ and $P_5,$ are selected so that each $P_i$ is in row $i.$ Let $x_i$ be the number associated with $P_i.$ Now renumber the array consecutively from top to bottom, beginning with the first column. Let $y_i$ be the number associated with $P_i$ after the renumbering. It is found that $x_1 = y_2,$ $x_2 = y_1,$ $x_3 = y_4,$ $x_4 = y_5,$ and $x_5 = y_3.$ Find the smallest possible value of $N.$\\n\\n\\nWork step by step, then finish with a line 'Final answer: <answer>'.\", \"gold_answer\": \"149\"}]",
+  "response": "[\n  {\n    \"id\": \"train-number_theory-258\",\n    \"solution\": \"Every integer congruent to 1 modulo 23 has the form 1 − 23k for an integer k. To get the largest four-digit negative integer of this form, choose the smallest k with 1 − 23k ≤ −1000, or 23k ≥ 1001. Since 23·43 = 989 and 23·44 = 1012, this gives k = 44. The resulting integer is 1 − 1012 = −1011.\\nFinal answer: -1011\"\n  },\n  {\n    \"id\": \"train-number_theory-651\",\n    \"solution\": \"Using 3⁴ = 81 and 2⁴ = 16, rewrite the quotient as\\n(81·3⁹⁶ + 16·2⁹⁶)/(3⁹⁶ + 2⁹⁶) = 81 − 65/((3/2)⁹⁶ + 1).\\nThe subtracted fraction is positive and less than 1: indeed, (3/2)² > 2, so (3/2)⁹⁶ > (3/2)¹² > 2⁶ = 64. Thus the quotient lies strictly between 80 and 81, and its floor is 80.\\nFinal answer: 80\"\n  },\n  {\n    \"id\": \"train-number_theory-60\",\n    \"solution\": \"Divisibility by 3 requires the digit sum to be 0 modulo 3. Among the allowed digits, the residue classes 0, 1, 2 contain {3}, {7}, {2,5}, respectively.\\nOne digit: only 3 works, giving 1 number.\\nTwo digits: the ordered residue pairs are (0,0), (1,2), (2,1), giving 1 + 2 + 2 = 5 numbers.\\nThree digits: a sum of 0 modulo 3 requires either three equal residues or three distinct residues (if two residues equal r, the third must be −2r ≡ r). Equal residues give 1³ + 1³ + 2³ = 10 numbers. Distinct residues give 3! orders and 1·1·2 digit choices per order, hence 12 numbers.\\nAll digits are nonzero, so the total below 1000 is 1 + 5 + 10 + 12 = 28.\\nFinal answer: 28\"\n  },\n  {\n    \"id\": \"train-number_theory-565\",\n    \"solution\": \"The sum exceeds 133⁵ but is less than 4·133⁵. Since (3/2)⁵ > 4, this gives 133 < n < (3/2)·133 < 200.\\nEvery integer's fifth power has the same last digit as the integer (check digits 0 through 9). Thus n ends in the last digit of 3 + 0 + 4 + 7 = 14, namely 4.\\nModulo 7, the bases 133, 110, 84, 27 are congruent to 0, −2, 0, −1. Hence n⁵ ≡ (−2)⁵ + (−1)⁵ = −33 ≡ 2 modulo 7. Since 7 does not divide n, Fermat's little theorem gives 1 ≡ n⁶ ≡ 2n modulo 7, so n ≡ 4 modulo 7.\\nNow n − 4 is divisible by both 10 and 7, hence by 70. The only number of the form 4 + 70k strictly between 133 and 200 is 144.\\nFinal answer: 144\"\n  },\n  {\n    \"id\": \"train-number_theory-588\",\n    \"solution\": \"Let aᵢ be the column index of Pᵢ counted from 0, so 0 ≤ aᵢ < N. Then xᵢ = (i−1)N + aᵢ + 1 and yᵢ = 5aᵢ + i.\\nThe first two equalities give a₁ = 5a₂ + 1 and N + a₂ = 5a₁. Substitution yields N = 24a₂ + 5.\\nThe last three equalities give 5a₄ = a₃ + 2N − 3, 5a₅ = a₄ + 3N − 4, and 5a₃ = a₅ + 4N − 2. Multiplying the second by 5 and substituting the first gives 25a₅ = a₃ + 17N − 23. Multiplying the third by 25 and substituting this result gives 125a₃ = a₃ + 117N − 73. Thus\\n124a₃ = 117N − 73 = 2808a₂ + 512.\\nDividing by 4 gives 31a₃ = 702a₂ + 128, so 20a₂ + 4 ≡ 0 modulo 31. Since 20·6 + 4 = 124 and 20 is coprime to 31, a₂ ≡ 6 modulo 31. The smallest nonnegative candidate is a₂ = 6, giving N = 149.\\nAt N = 149, the equations give a₁ = 31, a₃ = (117·149 − 73)/124 = 140, a₄ = (140 + 298 − 3)/5 = 87, and a₅ = (87 + 447 − 4)/5 = 106. These satisfy the closing equation 5·140 = 106 + 4·149 − 2, and all five indices lie between 0 and 148, so the minimum is attained.\\nFinal answer: 149\"\n  }\n]",
+  "finish_reason": "stop",
+  "returned_model": "gpt-6.2-astra",
+  "usage": {
+    "completion_tokens": 2145,
+    "prompt_tokens": 810,
+    "total_tokens": 2955,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": null,
+      "audio_tokens": null,
+      "reasoning_tokens": 845,
+      "rejected_prediction_tokens": null,
+      "text_tokens": null
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": null,
+      "cache_write_tokens": 0,
+      "cached_tokens": 0,
+      "image_tokens": null,
+      "text_tokens": null,
+      "cached_creation_tokens": 0
+    }
+  },
+  "kept": 5,
+  "seconds": 54.77
+}

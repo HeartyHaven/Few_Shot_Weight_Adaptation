@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-24",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets The Hobbit, Claire gets Emma, Dave gets The Trial, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Bob and Eve swap books. Then, Eve and Dave swap books. Then, Dave and Claire swap books. Finally, Eve and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Dracula\n(B) The Hobbit\n(C) Emma\n(D) The Trial\n(E) Hamlet",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "The Hobbit",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Dracula",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Dracula",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "Emma",
+      "Eve": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Dracula, The Hobbit, Emma, The Trial, Hamlet)\n1. Alice ↔ Bob: (The Hobbit, Dracula, Emma, The Trial, Hamlet)\n2. Bob ↔ Eve: (The Hobbit, Hamlet, Emma, The Trial, Dracula)\n3. Eve ↔ Dave: (The Hobbit, Hamlet, Emma, Dracula, The Trial)\n4. Dave ↔ Claire: (The Hobbit, Hamlet, Dracula, Emma, The Trial)\n5. Eve ↔ Alice: (The Trial, Hamlet, Dracula, Emma, The Hobbit)\nBob has Hamlet, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

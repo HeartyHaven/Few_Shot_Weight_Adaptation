@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-889",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Beloved, Claire gets Ivanhoe, Dave gets Emma, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Bob and Alice swap books. Then, Alice and Bob swap books. Then, Claire and Bob swap books. Then, Dave and Alice swap books. Finally, Eve and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) The Hobbit\n(B) Beloved\n(C) Ivanhoe\n(D) Emma\n(E) Jane Eyre",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Beloved",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "The Hobbit",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Beloved",
+      "Claire": "Ivanhoe",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: The Hobbit, Beloved, Ivanhoe, Emma, Jane Eyre\n1. Bob and Alice: Beloved, The Hobbit, Ivanhoe, Emma, Jane Eyre\n2. Alice and Bob: The Hobbit, Beloved, Ivanhoe, Emma, Jane Eyre\n3. Claire and Bob: The Hobbit, Ivanhoe, Beloved, Emma, Jane Eyre\n4. Dave and Alice: Emma, Ivanhoe, Beloved, The Hobbit, Jane Eyre\n5. Eve and Bob: Emma, Jane Eyre, Beloved, The Hobbit, Ivanhoe\nAlice has Emma, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1069,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1044",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nNine days after being treated for a perforated gastric ulcer and sepsis, a 78-year-old woman develops decreased urinary output and malaise. She required emergency laparotomy and was subsequently treated in the intensive care unit for sepsis. Blood cultures grew Pseudomonas aeruginosa. The patient was treated with ceftazidime and gentamicin. She has type 2 diabetes mellitus, arterial hypertension, and osteoarthritis of the hips. Prior to admission, her medications were insulin, ramipril, and ibuprofen. Her temperature is 37.3°C (99.1°F), pulse is 80/min, and blood pressure is 115/75 mm Hg. Examination shows a healing surgical incision in the upper abdomen. Laboratory studies show:\nHemoglobin count 14 g/dL\nLeukocyte count 16,400 mm3\nSegmented neutrophils 60%\nEosinophils 2%\nLymphocytes 30%\nMonocytes 6%\nPlatelet count 260,000 mm3\nSerum\nNa+ 137 mEq/L\nCl- 102 mEq/L\nK+ 5.1 mEq/L\nUrea nitrogen 25 mg/dL\nCreatinine 4.2 mg/dL\nFractional excretion of sodium is 2.1%.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 376,
+  "solution": "Apply CHA₂DS₂-VASc to baseline history:\n- Congestive heart failure: none reported, 0.\n- Hypertension: 1, regardless of the current blood pressure.\n- Age 78: 2 for age ≥75; do not also count age 65–74.\n- Type 2 diabetes: 1.\n- Prior stroke, TIA, or systemic embolism: none reported, 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): none reported, 0.\n- Female sex: 1.\nSepsis and acute kidney injury are not criteria. Total = 0 + 1 + 2 + 1 + 0 + 0 + 1 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 869,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

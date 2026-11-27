@@ -1,0 +1,20 @@
+{
+  "id": "sample_338",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(my_dict):\n    result = {v: k for k, v in my_dict.items()}\n    return result\n```\n\nInput: f({'a': 1, 'b': 2, 'c': 3, 'd': 2})",
+  "answer": "{1: 'a', 2: 'd', 3: 'c'}",
+  "prompt_tokens": 113,
+  "solution": "The comprehension reads each (k, v) in insertion order and assigns result[v] = k.\n('a', 1) gives {1: 'a'}.\n('b', 2) gives {1: 'a', 2: 'b'}.\n('c', 3) gives {1: 'a', 2: 'b', 3: 'c'}.\n('d', 2) overwrites 'b' with 'd' at key 2 without changing the key's position.\nFinal answer: {1: 'a', 2: 'd', 3: 'c'}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "{1: 'a', 2: 'd', 3: 'c'}",
+    "correct": true
+  }
+}

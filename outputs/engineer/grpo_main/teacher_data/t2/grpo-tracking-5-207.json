@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-207",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Dracula, Claire gets Ivanhoe, Dave gets Walden, and Eve gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Eve and Claire swap books. Then, Alice and Bob swap books. Then, Eve and Claire swap books. Then, Eve and Claire swap books. Finally, Bob and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) Candide\n(B) Dracula\n(C) Ivanhoe\n(D) Walden\n(E) Beloved",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Candide",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Beloved",
+      "Claire": "Candide",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists books in person order: Alice, Bob, Claire, Dave, Eve.\nInitial: Candide, Dracula, Ivanhoe, Walden, Beloved\n1. Eve ↔ Claire: Candide, Dracula, Beloved, Walden, Ivanhoe\n2. Alice ↔ Bob: Dracula, Candide, Beloved, Walden, Ivanhoe\n3. Eve ↔ Claire: Dracula, Candide, Ivanhoe, Walden, Beloved\n4. Eve ↔ Claire: Dracula, Candide, Beloved, Walden, Ivanhoe\n5. Bob ↔ Claire: Dracula, Beloved, Candide, Walden, Ivanhoe\nDave has Walden, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1121,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

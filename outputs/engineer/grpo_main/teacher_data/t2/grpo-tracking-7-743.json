@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-743",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Ivanhoe, Claire gets Emma, Dave gets Dune, Eve gets The Trial, Fred gets Persuasion, and Gertrude gets Walden.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Alice and Fred swap books. Then, Bob and Claire swap books. Then, Claire and Bob swap books. Then, Dave and Fred swap books. Then, Alice and Gertrude swap books. Finally, Gertrude and Alice swap books. At the end of the semester, Eve has\nOptions:\n(A) Dracula\n(B) Ivanhoe\n(C) Emma\n(D) Dune\n(E) The Trial\n(F) Persuasion\n(G) Walden",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma",
+      "Dave": "Dune",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Persuasion",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Dracula",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Emma",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Dracula",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Ivanhoe",
+      "Eve": "The Trial",
+      "Fred": "Dracula",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Emma",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Walden"
+    }
+  ],
+  "prompt_tokens": 228,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Dracula, Ivanhoe, Emma, Dune, The Trial, Persuasion, Walden\n1. Dave and Bob: Dracula, Dune, Emma, Ivanhoe, The Trial, Persuasion, Walden\n2. Alice and Fred: Persuasion, Dune, Emma, Ivanhoe, The Trial, Dracula, Walden\n3. Bob and Claire: Persuasion, Emma, Dune, Ivanhoe, The Trial, Dracula, Walden\n4. Claire and Bob: Persuasion, Dune, Emma, Ivanhoe, The Trial, Dracula, Walden\n5. Dave and Fred: Persuasion, Dune, Emma, Dracula, The Trial, Ivanhoe, Walden\n6. Alice and Gertrude: Walden, Dune, Emma, Dracula, The Trial, Ivanhoe, Persuasion\n7. Gertrude and Alice: Persuasion, Dune, Emma, Dracula, The Trial, Ivanhoe, Walden\nEve has The Trial, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 995,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

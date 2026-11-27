@@ -1,0 +1,22 @@
+{
+  "id": "train-4165",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 23-year-old man comes to the emergency department following an episode of syncope.  He was working out when he felt dizzy and passed out without head injury.  He has had 3 other episodes of light-headedness over the last year, all happening during physical activity. He never had this experience while resting. He has no other medical conditions.  The patient does not use tobacco, alcohol, or illicit drugs.  His father died suddenly at age 35.  Vital signs are within normal limits.  On physical examination, the patient has a harsh systolic murmur.  The lungs are clear with no peripheral edema. Echocardiography shows asymmetric interventricular septal hypertrophy.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 217,
+  "solution": "HEART scores history, ECG, age, coronary risk factors, and troponin from 0 to 2 each. It assesses suspected acute coronary syndrome, not the risk of exertional syncope.\n- History: no chest pain; the murmur and asymmetric septal hypertrophy suggest hypertrophic cardiomyopathy rather than coronary ischemia → 0.\n- ECG: not reported; assume a normal ECG for this estimate → 0.\n- Age: 23 years (<45) → 0.\n- Risk factors: if the father's sudden death at 35 is counted as premature coronary disease, this is one risk factor → 1. Its coronary cause is not established.\n- Troponin: not reported; assume a value at or below the upper reference limit → 0.\nConditional total = 0 + 0 + 0 + 1 + 0 = 1. Without the missing findings, a definitive HEART score cannot be assigned.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 774,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

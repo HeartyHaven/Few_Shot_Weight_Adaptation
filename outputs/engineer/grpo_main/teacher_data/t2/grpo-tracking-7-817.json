@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-817",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Middlemarch, Claire gets Walden, Dave gets Dune, Eve gets Candide, Fred gets Persuasion, and Gertrude gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Eve and Dave swap books. Then, Alice and Gertrude swap books. Then, Eve and Gertrude swap books. Then, Fred and Bob swap books. Then, Eve and Claire swap books. Finally, Claire and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) The Hobbit\n(B) Middlemarch\n(C) Walden\n(D) Dune\n(E) Candide\n(F) Persuasion\n(G) Dracula",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Fred",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Middlemarch",
+      "Claire": "Walden",
+      "Dave": "Dune",
+      "Eve": "Candide",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Dune",
+      "Eve": "Candide",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Dune",
+      "Fred": "Persuasion",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Dune",
+      "Fred": "Persuasion",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Middlemarch",
+      "Fred": "Persuasion",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Persuasion",
+      "Claire": "Walden",
+      "Dave": "Candide",
+      "Eve": "Middlemarch",
+      "Fred": "The Hobbit",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Persuasion",
+      "Claire": "Middlemarch",
+      "Dave": "Candide",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Middlemarch",
+      "Claire": "Persuasion",
+      "Dave": "Candide",
+      "Eve": "Walden",
+      "Fred": "The Hobbit",
+      "Gertrude": "Dune"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Book owners in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: The Hobbit, Middlemarch, Walden, Dune, Candide, Persuasion, Dracula\n1. Alice and Bob: Middlemarch, The Hobbit, Walden, Dune, Candide, Persuasion, Dracula\n2. Eve and Dave: Middlemarch, The Hobbit, Walden, Candide, Dune, Persuasion, Dracula\n3. Alice and Gertrude: Dracula, The Hobbit, Walden, Candide, Dune, Persuasion, Middlemarch\n4. Eve and Gertrude: Dracula, The Hobbit, Walden, Candide, Middlemarch, Persuasion, Dune\n5. Fred and Bob: Dracula, Persuasion, Walden, Candide, Middlemarch, The Hobbit, Dune\n6. Eve and Claire: Dracula, Persuasion, Middlemarch, Candide, Walden, The Hobbit, Dune\n7. Claire and Bob: Dracula, Middlemarch, Persuasion, Candide, Walden, The Hobbit, Dune\nAlice has Dracula, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1251,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

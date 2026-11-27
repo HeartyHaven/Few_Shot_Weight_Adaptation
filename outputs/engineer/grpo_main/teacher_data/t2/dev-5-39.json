@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-39",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a red present, Bob has a yellow present, Claire has a gold present, Dave has a orange present, and Eve has a white present.\nAs the event progresses, pairs of people swap gifts. First, Alice and Eve swap their gifts. Then, Bob and Claire swap their gifts. Then, Eve and Claire swap their gifts. Then, Bob and Eve swap their gifts. Finally, Alice and Eve swap their gifts. At the end of the event, Claire has the\nOptions:\n(A) red present\n(B) yellow present\n(C) gold present\n(D) orange present\n(E) white present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "red",
+      "Bob": "yellow",
+      "Claire": "gold",
+      "Dave": "orange",
+      "Eve": "white"
+    },
+    {
+      "Alice": "white",
+      "Bob": "yellow",
+      "Claire": "gold",
+      "Dave": "orange",
+      "Eve": "red"
+    },
+    {
+      "Alice": "white",
+      "Bob": "gold",
+      "Claire": "yellow",
+      "Dave": "orange",
+      "Eve": "red"
+    },
+    {
+      "Alice": "white",
+      "Bob": "gold",
+      "Claire": "red",
+      "Dave": "orange",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "white",
+      "Bob": "yellow",
+      "Claire": "red",
+      "Dave": "orange",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "yellow",
+      "Claire": "red",
+      "Dave": "orange",
+      "Eve": "white"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Present colors in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (red, yellow, gold, orange, white)\n1. Alice ↔ Eve: (white, yellow, gold, orange, red)\n2. Bob ↔ Claire: (white, gold, yellow, orange, red)\n3. Eve ↔ Claire: (white, gold, red, orange, yellow)\n4. Bob ↔ Eve: (white, yellow, red, orange, gold)\n5. Alice ↔ Eve: (gold, yellow, red, orange, white)\nClaire has the red present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

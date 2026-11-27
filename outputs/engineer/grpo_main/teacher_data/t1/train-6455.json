@@ -1,0 +1,22 @@
+{
+  "id": "train-6455",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 72-year-old male visited the hospital with a recent history of cough, phlegm and increased focal opacity in of left lower lung field (LLLF) on CXR (Fig. b-Pre). On admission, BP was 120/70 mmHg, PR was 90/min, RR was 20/min, and BT was 36.6 °C. Chest CT showed consolidation in the LLLF (Fig. b). The leukocyte count was 4700/uL (neutrophils, 58%), Hb was 12.6 g/dL, ESR was 26 mm/hr., CRP was 5.3 mg/L, procalcitonin was 0.03 ng/mL, Na was 139 mEq/L, BUN was 15.1 mg/dL, Cr was 0.8 mg/dL, and albumin was 2.8 g/dL. An anti-HIV antibody screening test was negative. To confirm the cause of pneumonia, TBLB and bronchoalveolar lavage (BAL) were performed under R-EBUS. The lung biopsy results suggested OP (Fig. b). AFB stain of bronchial wash fluid was negative, but the MTB PCR was positive. Since the biopsy and radiologic examination results did not show findings appropriate for TB, the MTB PCR result was determined to be a false-positive. Therefore, he received corticosteroid treatment while maintaining antibiotic treatment. CXR showed that LLLF infiltration improved after steroids, but 3 weeks later M. tuberculosis was confirmed on AFB culture of BAL fluid. Therefore, the steroid was discontinued and anti-tuberculosis treatment was started. The microbe was sensitive to all anti-tuberculosis drugs and CXR revealed that all lesions improved thereafter (Fig. b-Post).\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 465,
+  "solution": "CURB-65 assigns 1 point per pneumonia severity criterion present on admission:\n- New confusion: not documented → 0.\n- Urea >7 mmol/L (equivalent to BUN >19.6 mg/dL): BUN 15.1 mg/dL → 0.\n- Respiratory rate ≥30/min: 20/min → 0.\n- Systolic BP <90 mmHg or diastolic BP ≤60 mmHg: 120/70 mmHg → 0.\n- Age ≥65 years: 72 years → 1.\nTotal = 0 + 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 949,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

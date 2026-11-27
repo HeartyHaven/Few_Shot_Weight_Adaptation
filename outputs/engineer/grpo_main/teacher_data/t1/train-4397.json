@@ -1,0 +1,22 @@
+{
+  "id": "train-4397",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 7-year-old girl is brought to the emergency department with a 10-day history of fever and sore throat that acutely worsened over the past 2 days. Her sore throat is worse on the right side. She has difficulty swallowing and opening her mouth due to pain. She has also noticed a change in the quality of her voice over the last day. Her temperature is 38.2°C (100.8°F), pulse is 86/min, respirations are 18/min, and blood pressure is 110/75 mm Hg . Examination shows cervical lymphadenopathy. Oropharyngeal examination shows erythematous tonsils and swelling of the right tonsillar pillar. The uvula is deviated to the left.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 20,
+  "prompt_tokens": 229,
+  "solution": "Use the age-adjusted Centor (McIsaac) score. Fever >38 °C, tonsillar swelling or exudate, tender anterior cervical nodes, and absence of cough each score 1. Age 3–14 adds 1, age 15–44 adds 0, and age ≥45 subtracts 1.\n- Temperature 38.2 °C → 1.\n- Right tonsillar pillar swelling → 1.\n- Tender anterior cervical nodes: cervical lymphadenopathy is noted, but neither tenderness nor anterior location is specified → no point assigned.\n- Absence of cough: no cough is mentioned → 1 if the history is taken to indicate no cough.\n- Age 7 → 1.\nUnder that cough assumption, total = 1 + 1 + 0 + 1 + 1 = 4. Uvular deviation and difficulty opening the mouth do not add points.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 782,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

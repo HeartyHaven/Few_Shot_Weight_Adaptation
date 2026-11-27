@@ -1,0 +1,86 @@
+{
+  "name": "GRPO_100__t5__Qwen3-4B__s1",
+  "task": "t5",
+  "student": "Qwen/Qwen3-4B",
+  "seed": 1,
+  "baseline": "grpo_100",
+  "teacher": null,
+  "dtype": "bfloat16",
+  "engine": "vllm",
+  "max_new_tokens": 2048,
+  "gsm8k_max_new_tokens": 512,
+  "enable_thinking": false,
+  "test_fingerprints": {
+    "_secret/t5/test.jsonl": "e6b98a41473933237c8869e02757649b8f7ab1475a854413722baa1c0b492c0c"
+  },
+  "grader_sha256": "4518d21bd6f70e77e12984145e631e576981d0c90d191291d24ab95e781f52a6",
+  "evaluator_sha256": "ad7bf2e18d9e8b57e70e16cca4ef07034143e0951c0b8dd3b579d8e104b11dd5",
+  "worker_sha256": "f8cd98429a3c82fb07d2408c071f2f9b486d0814a4b0f556be4734b71fca4817",
+  "worker_loaded_sha256": "f8cd98429a3c82fb07d2408c071f2f9b486d0814a4b0f556be4734b71fca4817",
+  "gpu": "2",
+  "evaluation_protocol": 2,
+  "kv_cache_gib": 16,
+  "max_num_seqs": 64,
+  "max_num_batched_tokens": 8192,
+  "wall_seconds": 215.71,
+  "finished": 1795701451.6664524,
+  "data_sha256": "253658addbb13abcfe0fee0341cbd7c57dbe563b3fc0f38516ded41d339ab3d1",
+  "adapter_sha256": "3482fdd66a982c73ebc92ab04c389725cc4630b56f3ca09d17fb07be9a5d45ba",
+  "results": {
+    "test": {
+      "free": {
+        "acc": 0.7727,
+        "lo": 0.7382,
+        "hi": 0.8073,
+        "n": 550
+      },
+      "no_final_answer_rate": 0.0073,
+      "mean_output_chars": 1220,
+      "sec": 96,
+      "forward_tokens": 297847,
+      "by_group": {
+        "all": {
+          "free": {
+            "acc": 0.7727,
+            "lo": 0.7382,
+            "hi": 0.8073,
+            "n": 550
+          }
+        }
+      }
+    },
+    "retention": {
+      "ppl_generic": 10.2876,
+      "arc_challenge": {
+        "acc": 0.85,
+        "lo": 0.81,
+        "hi": 0.89,
+        "n": 300
+      },
+      "hellaswag": {
+        "acc": 0.81,
+        "lo": 0.7667,
+        "hi": 0.8533,
+        "n": 300
+      },
+      "arithmetic": {
+        "acc": 0.775,
+        "lo": 0.715,
+        "hi": 0.83,
+        "n": 200
+      },
+      "mmlu": {
+        "acc": 0.6605,
+        "lo": 0.6325,
+        "hi": 0.686,
+        "n": 1140
+      },
+      "gsm8k": {
+        "acc": 0.922,
+        "lo": 0.898,
+        "hi": 0.946,
+        "n": 500
+      }
+    }
+  }
+}

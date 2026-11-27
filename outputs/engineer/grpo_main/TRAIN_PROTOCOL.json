@@ -1,0 +1,165 @@
+{
+  "created": 1795696584.6099994,
+  "grpo_k": {
+    "algorithm": "GRPO",
+    "implementation": "trl==0.25.1",
+    "loss_type": "grpo",
+    "epochs": 1,
+    "num_generations": 8,
+    "prompts_per_update": 8,
+    "completions_per_update": 64,
+    "learning_rate": 1e-05,
+    "beta": 0.04,
+    "epsilon": 0.2,
+    "num_iterations": 1,
+    "scale_rewards": "group",
+    "reward": "correct final answer=1; otherwise=0; existing task grader",
+    "max_prompt_length": 4096,
+    "max_completion_length": 2048,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.0,
+    "dtype": "bfloat16",
+    "mask_truncated_completions": true,
+    "vllm_importance_sampling_correction": true,
+    "vllm_importance_sampling_cap": 2.0,
+    "reference": "original base model, adapters disabled",
+    "selection": "final fixed-budget checkpoint; no hidden validation/test selection"
+  },
+  "grpo_100": {
+    "algorithm": "GRPO",
+    "implementation": "trl==0.25.1",
+    "loss_type": "grpo",
+    "epochs": 1,
+    "num_generations": 8,
+    "prompts_per_update": 4,
+    "completions_per_update": 32,
+    "learning_rate": 1e-05,
+    "beta": 0.04,
+    "epsilon": 0.2,
+    "num_iterations": 1,
+    "scale_rewards": "group",
+    "reward": "correct final answer=1; otherwise=0; existing task grader",
+    "max_prompt_length": 4096,
+    "max_completion_length": 2048,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": -1,
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.0,
+    "dtype": "bfloat16",
+    "mask_truncated_completions": true,
+    "vllm_importance_sampling_correction": true,
+    "vllm_importance_sampling_cap": 2.0,
+    "reference": "original base model, adapters disabled",
+    "selection": "final fixed-budget checkpoint; no hidden validation/test selection"
+  },
+  "distill_k": {
+    "teacher": "gpt-6.2-astra",
+    "effort": "high",
+    "epochs": 5,
+    "lr": 0.0002,
+    "batch": 8,
+    "rank": 16,
+    "alpha": 32,
+    "dropout": 0.05,
+    "dtype": "bfloat16",
+    "loss": "reply-only token-normalized",
+    "max_length": 8192,
+    "initialization": "original Base"
+  },
+  "comparison": "Exact question pairing within each size; original 100 nested in K; data-matched, not compute-matched",
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "models": [
+    "Qwen3-1.7B",
+    "Qwen3-4B",
+    "Qwen3-14B"
+  ],
+  "tasks": [
+    "t1",
+    "t2",
+    "t4",
+    "t5"
+  ],
+  "gpus": [
+    2,
+    4,
+    5,
+    6,
+    7
+  ],
+  "evaluation_protocol": 2,
+  "base_reuse": 12,
+  "versions": {
+    "torch": "2.8.0",
+    "transformers": "4.57.1",
+    "trl": "0.25.1",
+    "vllm": "0.11.0",
+    "peft": "0.17.1"
+  },
+  "selection": "Only fixed-budget final checkpoints. No hidden test/validation tuning.",
+  "code_sha256": {
+    "common.py": "f015c42374acc354ab6fc4d67b4baf3ebecda3caf2218522289ed6dd93b0ac90",
+    "prepare.py": "ad66c57a7aec6329dcd3e87af23f6893ebb33df144e87b44226a1f5efc6f3807",
+    "grpo_training.py": "3e0a44a6268967c4631ae994bdfa9939eb33494d22680a7c19ee5d972bc31e9c",
+    "worker.py": "f8cd98429a3c82fb07d2408c071f2f9b486d0814a4b0f556be4734b71fca4817",
+    "collect.py": "595816d4c1d115031a08cde3804dbdce42dd1ce9a7218b8fb34be5235bdb2fd3",
+    "watchdog.py": "eee549ad15a05ec91730092631ad1a6a540544ad44540ceb94ff6f11b75d9cb7",
+    "supervisor.py": "9f01a9735bb72df44f7412e57ff2edb14bc27e86c457b6f776dccf805c817b5a",
+    "distill_training.py": "588bdd32b93833aa77a9267319421f8f7981e2f68b5c43f9349b3b64c120b937",
+    "generate.py": "23b1b4520369d0f3301b5d19048decf8a28348805330fa5bbb5ac363b078adde",
+    "validate_data.py": "074e01e2dbf8f3de21f9823a8146b680b60834d2986d410bc98193b2f7eab300"
+  },
+  "runtime_revision": {
+    "time": 1795696956.3771787,
+    "changes": [
+      "Per-worker ephemeral MASTER_PORT fixes simultaneous TRL startup collision",
+      "Cache SHA256 by file identity and stat metadata",
+      "Zero-gradient groups may yield an unchanged policy; formal completion does not require nonzero update"
+    ],
+    "code_sha256": {
+      "common.py": "f1d800861cdbd1cb437c46be553604cc5a20dea5e5bb08139ddb39f12b954180",
+      "prepare.py": "ad66c57a7aec6329dcd3e87af23f6893ebb33df144e87b44226a1f5efc6f3807",
+      "grpo_training.py": "b2d33ff0e65c828714e464245ba671615cc5e798ce0917d44df361851aa9a2cd",
+      "worker.py": "f8cd98429a3c82fb07d2408c071f2f9b486d0814a4b0f556be4734b71fca4817",
+      "collect.py": "595816d4c1d115031a08cde3804dbdce42dd1ce9a7218b8fb34be5235bdb2fd3",
+      "watchdog.py": "4136abf3a0ea0c20bc967f38f452b360911acb1b1b90251601432f13a637a4ca",
+      "supervisor.py": "9f01a9735bb72df44f7412e57ff2edb14bc27e86c457b6f776dccf805c817b5a",
+      "distill_training.py": "588bdd32b93833aa77a9267319421f8f7981e2f68b5c43f9349b3b64c120b937",
+      "generate.py": "23b1b4520369d0f3301b5d19048decf8a28348805330fa5bbb5ac363b078adde",
+      "validate_data.py": "074e01e2dbf8f3de21f9823a8146b680b60834d2986d410bc98193b2f7eab300",
+      "status.py": "1d62c24d43a4dacbff6fce0822dcc2b486c67108e843c907c63bdfeedb67573e"
+    }
+  },
+  "runtime_revisions": [
+    {
+      "time": 1795698976.1066568,
+      "resource_policy_version": 2,
+      "changes": [
+        "Resource-aware packing; up to two trainers/three workers per authorized GPU; 8 GiB headroom and foreign-process accounting",
+        "New GRPO worker allocator caps and recorded compact microbatch profile; effective batches and scientific protocol unchanged",
+        "Preserve legacy worker reservations during restart/adoption; all five original workers retained",
+        "Two priority lanes for the long 14B queue; OOM exclusive retry and smaller microbatch",
+        "Five-second inter-check delay and continuous utilization, power, memory, training-throughput telemetry"
+      ],
+      "validation": "resource_validation.json",
+      "recovery": "packing_reload_check.json",
+      "code_sha256": {
+        "watchdog.py": "cc55cc2b2e930ea1c08230397365f6d66c7ba42b1906e961c80e4c7a198a09e3",
+        "resource_policy.py": "750de1e05b4914fec2a6b859a20c003e089b85bf495466b0f8b1977f78b63af7",
+        "grpo_training.py": "8d9485dd526b7a129d97ae269e5d6dc80a7296d073b7dff6b31efc054696135f",
+        "validate_resources.py": "ce3062651fc52ee34c87efde5ed39cc6a3f72a48d55b1419d56e4ccbf9dac0e5",
+        "status.py": "021639f65806757f48879ab722a26c6f46ac332b36e30cc846ff5a00224e4ac8",
+        "sample_utilization.py": "5d7c761bb53ff7672be28125ef182c2686298f4b588d157ffdb57e88b859506c"
+      }
+    }
+  ]
+}

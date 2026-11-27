@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-646",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Quinn, Claire is dancing with Karl, Dave is dancing with Vera, and Eve is dancing with Oscar.\nThroughout the song, the dancers often trade partners. First, Alice and Bob switch partners. Then, Dave and Bob switch partners. Then, Alice and Claire switch partners. Then, Bob and Eve switch partners. Finally, Bob and Dave switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Stefan\n(B) Quinn\n(C) Karl\n(D) Vera\n(E) Oscar",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Quinn",
+      "Claire": "Karl",
+      "Dave": "Vera",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Stefan",
+      "Claire": "Karl",
+      "Dave": "Vera",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Vera",
+      "Claire": "Karl",
+      "Dave": "Stefan",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Vera",
+      "Claire": "Quinn",
+      "Dave": "Stefan",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Oscar",
+      "Claire": "Quinn",
+      "Dave": "Stefan",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Quinn",
+      "Dave": "Oscar",
+      "Eve": "Vera"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partner order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial: Stefan | Quinn | Karl | Vera | Oscar\n1. Alice swaps with Bob: Quinn | Stefan | Karl | Vera | Oscar\n2. Dave swaps with Bob: Quinn | Vera | Karl | Stefan | Oscar\n3. Alice swaps with Claire: Karl | Vera | Quinn | Stefan | Oscar\n4. Bob swaps with Eve: Karl | Oscar | Quinn | Stefan | Vera\n5. Bob swaps with Dave: Karl | Stefan | Quinn | Oscar | Vera\nClaire's partner is Quinn, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1179,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

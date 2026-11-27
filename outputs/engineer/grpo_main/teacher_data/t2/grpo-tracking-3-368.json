@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-368",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "balls",
+  "question": "Alice, Bob, and Claire are playing a game. At the start of the game, they are each holding a ball: Alice has a gold ball, Bob has a black ball, and Claire has a orange ball.\nAs the game progresses, pairs of players trade balls. First, Alice and Claire swap balls. Then, Bob and Claire swap balls. Finally, Alice and Bob swap balls. At the end of the game, Claire has the\nOptions:\n(A) gold ball\n(B) black ball\n(C) orange ball",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "gold",
+      "Bob": "black",
+      "Claire": "orange"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "black",
+      "Claire": "gold"
+    },
+    {
+      "Alice": "orange",
+      "Bob": "gold",
+      "Claire": "black"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "orange",
+      "Claire": "black"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Each row lists ball colors in this order: Alice, Bob, Claire.\nInitial: gold, black, orange.\n1. Alice ↔ Claire: orange, black, gold.\n2. Bob ↔ Claire: orange, gold, black.\n3. Alice ↔ Bob: gold, orange, black.\nClaire has the black ball, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1007,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

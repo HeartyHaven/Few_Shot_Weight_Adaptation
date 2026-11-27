@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-491",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets The Hobbit, Claire gets Emma, Dave gets Persuasion, Eve gets Candide, Fred gets Siddhartha, and Gertrude gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Alice and Fred swap books. Then, Bob and Fred swap books. Then, Gertrude and Dave swap books. Then, Eve and Fred swap books. Then, Fred and Eve swap books. Then, Claire and Eve swap books. Finally, Eve and Alice swap books. At the end of the semester, Fred has\nOptions:\n(A) Hamlet\n(B) The Hobbit\n(C) Emma\n(D) Persuasion\n(E) Candide\n(F) Siddhartha\n(G) Beloved",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Emma",
+      "Dave": "Persuasion",
+      "Eve": "Candide",
+      "Fred": "Siddhartha",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Hobbit",
+      "Claire": "Emma",
+      "Dave": "Persuasion",
+      "Eve": "Candide",
+      "Fred": "Hamlet",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Persuasion",
+      "Eve": "Candide",
+      "Fred": "The Hobbit",
+      "Gertrude": "Beloved"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Candide",
+      "Fred": "The Hobbit",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "Candide",
+      "Fred": "The Hobbit",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Emma",
+      "Fred": "The Hobbit",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha",
+      "Fred": "The Hobbit",
+      "Gertrude": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Read each book list in the order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (Hamlet, The Hobbit, Emma, Persuasion, Candide, Siddhartha, Beloved)\n1. Alice and Fred swap: (Siddhartha, The Hobbit, Emma, Persuasion, Candide, Hamlet, Beloved)\n2. Bob and Fred swap: (Siddhartha, Hamlet, Emma, Persuasion, Candide, The Hobbit, Beloved)\n3. Gertrude and Dave swap: (Siddhartha, Hamlet, Emma, Beloved, Candide, The Hobbit, Persuasion)\n4. Eve and Fred swap: (Siddhartha, Hamlet, Emma, Beloved, The Hobbit, Candide, Persuasion)\n5. Fred and Eve swap: (Siddhartha, Hamlet, Emma, Beloved, Candide, The Hobbit, Persuasion)\n6. Claire and Eve swap: (Siddhartha, Hamlet, Candide, Beloved, Emma, The Hobbit, Persuasion)\n7. Eve and Alice swap: (Emma, Hamlet, Candide, Beloved, Siddhartha, The Hobbit, Persuasion)\nFred's final book is The Hobbit, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1296,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

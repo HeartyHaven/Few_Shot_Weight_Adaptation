@@ -1,0 +1,22 @@
+{
+  "id": "train-828",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 74-year-old Japanese man with hypertension, type 2 diabetes mellitus, ischemic heart failure, and nonvalvular atrial fibrillation (NVAF) presented at our hospital after the sudden onset of right hemiplasia and dysarthria. On admission, his National Institutes of Health Stroke Scale (NIHSS) score was three. The plasma level of the thrombin-antithrombin complex was 21.7 ng/ml (normal range: 0-3.0 ng/ml). Axial diffusion-weighted magnetic resonance images and magnetic resonance angiography images showed hyperintense signals in the left front-parietal cerebral cortex without any intracranial stenotic lesions, and acute cardioembolic stroke associated with NVAF was diagnosed.\nTransesophageal echocardiography (TEE) performed on day 3 after admission revealed a mobile thrombus (1.0 × 2.2 cm) in the left atrial appendage (fig. ), and dabigatran therapy (110 mg b.i.d.) was initiated to prevent stroke recurrence. Activated partial thromboplastin time (APTT) was 31 s before dabigatran and 33 s 3 h after 110 mg dabigatran. TEE performed on day 9 after admission revealed that the size of the thrombus had increased to 1.5 × 3.0 cm (fig. ). Medication was changed from dabigatran to warfarin with a target prothrombin time/international normalized ratio of between 2.0 and 3.0. TEE performed on day 23 after admission revealed that the size of the thrombus had decreased (fig. ), and TEE performed on day 42 after admission revealed that the thrombus had disappeared (fig. ). The patient did not have a recurrent stroke and was discharged from hospital on day 43 with an NIHSS score of zero and a modified Rankin Scale grade of zero.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 492,
+  "solution": "CHA2DS2-VASc assesses thromboembolic risk in atrial fibrillation. Using the diagnoses established at presentation:\n- Congestive heart failure: ischemic heart failure = 1.\n- Hypertension: present = 1.\n- Age: 74 falls in the 65–74 band = 1, rather than the 2 points for age ≥75.\n- Diabetes mellitus: type 2 diabetes = 1.\n- Stroke, TIA, or systemic embolism: the presenting cardioembolic stroke was confirmed = 2.\n- Vascular disease: counting the ischemic etiology of his heart failure as evidence of coronary artery disease = 1.\n- Sex category: male = 0.\nTotal = 1 + 1 + 1 + 1 + 2 + 1 + 0 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 615,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

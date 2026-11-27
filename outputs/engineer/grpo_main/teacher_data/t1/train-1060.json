@@ -1,0 +1,22 @@
+{
+  "id": "train-1060",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nThe patient was a 73 years old female who was leucodermic and who had a known personal history of arterial hypertension, type 2 diabetes mellitus treated with insulin, dyslipidemia, and cerebrovascular disease. The patient denied known drug allergies. She visited the emergency department for productive cough with purulent sputum and fever (38.1°C) with 5 days of evolution. The increase in inflammatory parameters determined analytically and the condensation of the left lower lobe determined by radiology favored the diagnosis of community-acquired pneumonia. She was prescribed amoxicillin/clavulanic acid, and the first administration was by the intravenous route in the emergency department. Approximately one minute after the drug was injected, the patient exhibited a generalized skin rash and an altered state of consciousness, with peripheral oxygen saturation in room air of 67%, blood pressure 87×50 mmHg, and heart rate of 110bpm. She was treated with 2mg clemastine and 200mg hydrocortisone and unfavorably progressed to cardiorespiratory arrest, with subsequent pulse recovery after advanced life support, orotracheal intubation and mechanical ventilation. Electrocardiography showed evidence of ST segment elevation in the inferior territory (). Urgent coronarography was performed, revealing diffuse atherosclerotic disease, with the absence of obstructive lesions (). Spontaneous resolution of ST-T segment elevation was also observed in the hemodynamic room. The following laboratory results were obtained: troponin I peak, 2,046µg/L; total creatine kinase (CK), 647U/L; and CK-MB, 55U/L. After contact, the family mentioned a previous allergy to penicillin, which the patient was unaware of. In the first 6 hours after shock, the tryptase level was 132ng/mL (strongly positive). Considering the context of being administered amoxicillin/clavulanic acid, the patient was diagnosed with Kounis syndrome type 2. The patient remained under mechanical ventilation for 29 hours, with good subsequent clinical evolution. She was discharged with a recommendation to avoid beta-lactam antibiotics and was referred for immunotherapy.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 548,
+  "solution": "CHA₂DS₂-VASc scores the following baseline factors:\n- Congestive heart failure: none documented = 0.\n- Hypertension: known diagnosis = 1.\n- Age: 73 years falls in the 65–74 band = 1; the ≥75 band does not apply.\n- Diabetes mellitus: insulin-treated type 2 diabetes = 1.\n- Prior stroke, TIA or systemic embolism: interpreting her cerebrovascular history as a prior ischemic stroke or TIA = 2. The note does not specify the event.\n- Vascular disease: counting the diffuse coronary atherosclerosis seen on angiography as pre-existing vascular disease = 1, not counting the post-injection cardiac event as a prior MI.\n- Sex category: female = 1.\nUnder those interpretations, the sum is 0 + 1 + 1 + 1 + 2 + 1 + 1 = 7.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 853,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

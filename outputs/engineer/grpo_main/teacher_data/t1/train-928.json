@@ -1,0 +1,22 @@
+{
+  "id": "train-928",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nPatient 2 was an 80-year-old male, diabetic, hypertensive, with history of operated cancer colon in 2011 and chronic renal impairment. COVID-19 for this patient was in April 2021 for which he received corticosteroids. The patient presented 30 days later in May 2021 with hard palate sluggish ulcer 1 cm diameter, blackish, and painless not communicating with nasal cavity, with accompanied decrease in visual acuity in the right eye to the degree of seeing objects at 2 m.\nPCR for COVID-19 was negative; CBC showed normal leukocyte count 8.2 × 103/mm3 with relative neutrophilia 84.1% (range 40.0–80.0) and relative lymphopenia 6.7% (range 20–40), CRP 35 (negative < 6.0), HbA1C 9.5, serum creatinine 2.1, and Na 117 mmol/L (range 136–145).\nMRI paranasal sinuses performed prior admission at 3 Tesla high field MRI unit revealed near pan sinusitis especially along bilateral frontal, ethmoidal, maxillary sinuses, and left sphenoid. Both ethmoid sinuses show predominantly fungal sinusitis with bacterial sinusitis, while the left maxillary show more bacterial but with fungal component. No abnormal extension of the inflammatory process towards the cavernous sinus regions was noted. Both orbits had normal appearance except for mild form of the left optic neuritis that needed post intravenous contrast study that was inapplicable secondary to renal impairment (Figs. and ).\nThe patient was planned for evacuation and drainage of the sinuses under general anesthesia after correcting his hyponatremia.\nBroad spectrum antibiotics and systemic amphotericin B were administered. Steroid therapy for optic neuritis was considered yet not initiated upon relative request, and the patient was discharged against medical will.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 495,
+  "solution": "CHA₂DS₂-VASc sums the following admission risk factors:\n- Congestive heart failure: Not documented → 0.\n- Hypertension: Present → 1.\n- Age: 80 years → 2 for age ≥75; the 65–74 age point is not added.\n- Diabetes mellitus: Present → 1.\n- Prior stroke, TIA, or systemic embolism: Not documented → 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): Not documented → 0.\n- Sex category: Male → 0.\nTotal = 0 + 1 + 2 + 1 + 0 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 895,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

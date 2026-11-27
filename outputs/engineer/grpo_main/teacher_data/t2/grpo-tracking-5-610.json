@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-610",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a blue ball, Bob has a brown ball, Claire has a teal ball, Dave has a silver ball, and Eve has a black ball.\nAs the game progresses, pairs of players trade balls. First, Claire and Eve swap balls. Then, Dave and Alice swap balls. Then, Eve and Claire swap balls. Then, Eve and Bob swap balls. Finally, Alice and Claire swap balls. At the end of the game, Dave has the\nOptions:\n(A) blue ball\n(B) brown ball\n(C) teal ball\n(D) silver ball\n(E) black ball",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "blue",
+      "Bob": "brown",
+      "Claire": "teal",
+      "Dave": "silver",
+      "Eve": "black"
+    },
+    {
+      "Alice": "blue",
+      "Bob": "brown",
+      "Claire": "black",
+      "Dave": "silver",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "brown",
+      "Claire": "black",
+      "Dave": "blue",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "brown",
+      "Claire": "teal",
+      "Dave": "blue",
+      "Eve": "black"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "black",
+      "Claire": "teal",
+      "Dave": "blue",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "black",
+      "Claire": "silver",
+      "Dave": "blue",
+      "Eve": "brown"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors are listed for Alice, Bob, Claire, Dave, Eve, in that order.\nInitial: blue, brown, teal, silver, black.\n1. Claire ↔ Eve: blue, brown, black, silver, teal.\n2. Dave ↔ Alice: silver, brown, black, blue, teal.\n3. Eve ↔ Claire: silver, brown, teal, blue, black.\n4. Eve ↔ Bob: silver, black, teal, blue, brown.\n5. Alice ↔ Claire: teal, black, silver, blue, brown.\nDave has the blue ball, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1283,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

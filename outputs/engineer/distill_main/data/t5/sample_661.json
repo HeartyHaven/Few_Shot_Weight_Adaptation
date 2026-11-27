@@ -1,0 +1,17 @@
+{
+  "id": "sample_661",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(letters, maxsplit):\n    return ''.join(letters.split()[-maxsplit:])\n```\n\nInput: f('elrts,SS ee', 6)",
+  "answer": "'elrts,SSee'",
+  "solution": "letters.split() splits on whitespace, giving ['elrts,SS', 'ee']; the comma stays in the first string. With maxsplit = 6, the slice [-6:] starts at the beginning because the list has only two elements. ''.join(...) concatenates both strings without a separator.\nFinal answer: 'elrts,SSee'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 12,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'elrts,SSee'",
+    "correct": true
+  }
+}

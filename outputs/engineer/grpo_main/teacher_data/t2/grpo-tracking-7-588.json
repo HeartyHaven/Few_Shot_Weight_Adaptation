@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-588",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Persuasion, Bob gets Dracula, Claire gets Dune, Dave gets Siddhartha, Eve gets Walden, Fred gets Ivanhoe, and Gertrude gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Dave and Alice swap books. Then, Fred and Eve swap books. Then, Claire and Alice swap books. Then, Claire and Bob swap books. Then, Dave and Eve swap books. Finally, Eve and Bob swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Persuasion\n(B) Dracula\n(C) Dune\n(D) Siddhartha\n(E) Walden\n(F) Ivanhoe\n(G) The Hobbit",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Siddhartha",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Siddhartha",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Persuasion",
+      "Eve": "Walden",
+      "Fred": "Ivanhoe",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe",
+      "Fred": "Walden",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe",
+      "Fred": "Walden",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "Dune",
+      "Dave": "Persuasion",
+      "Eve": "Ivanhoe",
+      "Fred": "Walden",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "Walden",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Persuasion",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha",
+      "Fred": "Walden",
+      "Gertrude": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Persuasion, Dracula, Dune, Siddhartha, Walden, Ivanhoe, The Hobbit\n1. Bob–Claire: Persuasion, Dune, Dracula, Siddhartha, Walden, Ivanhoe, The Hobbit\n2. Dave–Alice: Siddhartha, Dune, Dracula, Persuasion, Walden, Ivanhoe, The Hobbit\n3. Fred–Eve: Siddhartha, Dune, Dracula, Persuasion, Ivanhoe, Walden, The Hobbit\n4. Claire–Alice: Dracula, Dune, Siddhartha, Persuasion, Ivanhoe, Walden, The Hobbit\n5. Claire–Bob: Dracula, Siddhartha, Dune, Persuasion, Ivanhoe, Walden, The Hobbit\n6. Dave–Eve: Dracula, Siddhartha, Dune, Ivanhoe, Persuasion, Walden, The Hobbit\n7. Eve–Bob: Dracula, Persuasion, Dune, Ivanhoe, Siddhartha, Walden, The Hobbit\nGertrude has The Hobbit, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1004,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}

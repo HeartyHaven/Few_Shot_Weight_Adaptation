@@ -1,0 +1,17 @@
+{
+  "id": "sample_201",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text):\n    chars = []\n    for c in text:\n        if c.isdigit():\n            chars.append(c)\n    return ''.join(chars[::-1])\n```\n\nInput: f('--4yrw 251-//4 6p')",
+  "answer": "'641524'",
+  "solution": "chars starts as []. Scanning left to right, the loop skips '--', appends '4', and skips 'yrw '. The matched digits '2', '5', and '1' grow chars from ['4'] to ['4', '2'], then ['4', '2', '5'], then ['4', '2', '5', '1']. The loop skips '-//', appends '4', skips a space, appends '6', and skips 'p'. Now chars is ['4', '2', '5', '1', '4', '6']. The slice chars[::-1] is ['6', '4', '1', '5', '2', '4'], which is joined without separators.\nFinal answer: '641524'",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 80,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "'641524'",
+    "correct": true
+  }
+}

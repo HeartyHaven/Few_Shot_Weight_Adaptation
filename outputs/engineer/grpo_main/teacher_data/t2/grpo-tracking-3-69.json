@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-69",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Beloved, and Claire gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Alice and Claire swap books. Finally, Bob and Alice swap books. At the end of the semester, Alice has\nOptions:\n(A) Hamlet\n(B) Beloved\n(C) Siddhartha",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Beloved",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Hamlet",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Hamlet",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Beloved"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Book order in every row: (Alice, Bob, Claire).\nInitial: (Hamlet, Beloved, Siddhartha)\n1. Alice and Bob swap: (Beloved, Hamlet, Siddhartha)\n2. Alice and Claire swap: (Siddhartha, Hamlet, Beloved)\n3. Bob and Alice swap: (Hamlet, Siddhartha, Beloved)\nAlice has Hamlet, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1074,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

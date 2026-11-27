@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-583",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Dune, Claire gets Dracula, Dave gets Middlemarch, and Eve gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Dave and Eve swap books. Then, Eve and Bob swap books. Then, Dave and Eve swap books. Finally, Alice and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) The Trial\n(B) Dune\n(C) Dracula\n(D) Middlemarch\n(E) Persuasion",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Dune",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "Middlemarch",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "The Trial",
+      "Claire": "Dracula",
+      "Dave": "Persuasion",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Middlemarch",
+      "Claire": "Dracula",
+      "Dave": "Persuasion",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Middlemarch",
+      "Claire": "Dracula",
+      "Dave": "The Trial",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Middlemarch",
+      "Claire": "Dune",
+      "Dave": "The Trial",
+      "Eve": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: The Trial, Dune, Dracula, Middlemarch, Persuasion.\n1. Alice ↔ Bob: Dune, The Trial, Dracula, Middlemarch, Persuasion.\n2. Dave ↔ Eve: Dune, The Trial, Dracula, Persuasion, Middlemarch.\n3. Eve ↔ Bob: Dune, Middlemarch, Dracula, Persuasion, The Trial.\n4. Dave ↔ Eve: Dune, Middlemarch, Dracula, The Trial, Persuasion.\n5. Alice ↔ Claire: Dracula, Middlemarch, Dune, The Trial, Persuasion.\nDave's book is The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1257,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

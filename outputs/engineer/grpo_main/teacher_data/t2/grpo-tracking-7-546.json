@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-546",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Jane Eyre, Claire gets Emma, Dave gets Dune, Eve gets The Trial, Fred gets The Hobbit, and Gertrude gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Fred and Claire swap books. Then, Bob and Gertrude swap books. Then, Eve and Dave swap books. Then, Gertrude and Alice swap books. Then, Bob and Dave swap books. Then, Bob and Alice swap books. Finally, Alice and Dave swap books. At the end of the semester, Gertrude has\nOptions:\n(A) Middlemarch\n(B) Jane Eyre\n(C) Emma\n(D) Dune\n(E) The Trial\n(F) The Hobbit\n(G) Siddhartha",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "Dune",
+      "Eve": "The Trial",
+      "Fred": "The Hobbit",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "Dune",
+      "Eve": "The Trial",
+      "Fred": "Emma",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Siddhartha",
+      "Claire": "The Hobbit",
+      "Dave": "Dune",
+      "Eve": "The Trial",
+      "Fred": "Emma",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Siddhartha",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Siddhartha",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Trial",
+      "Claire": "The Hobbit",
+      "Dave": "Siddhartha",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "Siddhartha",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Jane Eyre",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Dune",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Middlemarch | Jane Eyre | Emma | Dune | The Trial | The Hobbit | Siddhartha\n1. Fred and Claire swap: Middlemarch | Jane Eyre | The Hobbit | Dune | The Trial | Emma | Siddhartha\n2. Bob and Gertrude swap: Middlemarch | Siddhartha | The Hobbit | Dune | The Trial | Emma | Jane Eyre\n3. Eve and Dave swap: Middlemarch | Siddhartha | The Hobbit | The Trial | Dune | Emma | Jane Eyre\n4. Gertrude and Alice swap: Jane Eyre | Siddhartha | The Hobbit | The Trial | Dune | Emma | Middlemarch\n5. Bob and Dave swap: Jane Eyre | The Trial | The Hobbit | Siddhartha | Dune | Emma | Middlemarch\n6. Bob and Alice swap: The Trial | Jane Eyre | The Hobbit | Siddhartha | Dune | Emma | Middlemarch\n7. Alice and Dave swap: Siddhartha | Jane Eyre | The Hobbit | The Trial | Dune | Emma | Middlemarch\nGertrude has Middlemarch, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1163,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

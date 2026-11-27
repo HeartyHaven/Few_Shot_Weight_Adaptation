@@ -1,0 +1,22 @@
+{
+  "id": "train-945",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 54-year-old right-handed woman was admitted to our hospital presenting with diplopia, slurred speech, and slightly distal numbness of the left upper limb for four days. Her medical history was notable for hypertension, type 2 diabetes mellitus, hysteromyomectomy and ischemic stroke without significant consequences. In the neurological examination, the following symptoms were found: dysarthria, bilateral seventh nerve palsy, right conjugate gaze palsy, loss of adduction of the right eye. Besides, horizontal nystagmus on abduction of the left eye was also observed. In addition, the patient showed slightly limited abduction of left eye (Fig. A). Brain MRI showed the infarctions including the bilateral pontine tegmentum and a narrow lesion along the midline in the right of the pons, which run through the pontine tegmentum to the ventral side (Fig. ). After admission, the patient received treatments such as antiplatelet aggregation, plaque stabilization, free radicals elimination, circulation improvement, nerves nourishment, and other symptomatic treatments.\nIn the period of 2 months of follow-up, the patient's slurred speech improved definitely. And her ocular movement recovered basically. Besides the bilateral facial paresis was also improved (Fig. H).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 4,
+  "prompt_tokens": 336,
+  "solution": "CHA₂DS₂-VASc assigns points for the following admission risk factors:\n- Congestive heart failure (1 if present): not documented → 0.\n- Hypertension (1): documented → 1.\n- Age (1 for 65–74; 2 for ≥75): age 54 → 0.\n- Diabetes mellitus (1): type 2 diabetes → 1.\n- Prior stroke, TIA, or systemic arterial embolism (2): prior ischemic stroke → 2, even without residual deficits.\n- Vascular disease such as prior MI, peripheral artery disease, or aortic plaque (1): none documented → 0.\n- Female sex (1): woman → 1.\nTotal = 0 + 1 + 0 + 1 + 2 + 0 + 1 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 690,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

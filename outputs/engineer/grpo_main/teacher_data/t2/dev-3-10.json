@@ -1,0 +1,60 @@
+{
+  "id": "dev-3-10",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Emma, and Claire gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Bob and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Bob has\nOptions:\n(A) Ivanhoe\n(B) Emma\n(C) Dune",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Emma",
+      "Claire": "Dune"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Emma"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Ivanhoe",
+      "Claire": "Emma"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 138,
+  "solution": "Initial books: Alice = Ivanhoe, Bob = Emma, Claire = Dune.\n1. Claire and Bob swap: Alice = Ivanhoe, Bob = Dune, Claire = Emma.\n2. Bob and Alice swap: Alice = Dune, Bob = Ivanhoe, Claire = Emma.\n3. Bob and Claire swap: Alice = Dune, Bob = Emma, Claire = Ivanhoe.\nBob has Emma, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

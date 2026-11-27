@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-447",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Nadia, and Claire is dancing with Quinn.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Bob and Claire switch partners. Finally, Claire and Bob switch partners. At the end of the dance, Alice is dancing with\nOptions:\n(A) Tara\n(B) Nadia\n(C) Quinn",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Nadia",
+      "Claire": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Quinn"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Quinn",
+      "Claire": "Tara"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Tara",
+      "Claire": "Quinn"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Each row lists the partners in this order: Alice, Bob, Claire.\nInitial: Tara, Nadia, Quinn\n1. Bob ↔ Alice: Nadia, Tara, Quinn\n2. Bob ↔ Claire: Nadia, Quinn, Tara\n3. Claire ↔ Bob: Nadia, Tara, Quinn\nAlice is dancing with Nadia, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1132,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "name": "B3_BASE__t5__Qwen3-1.7B",
+  "task": "t5",
+  "student": "Qwen/Qwen3-1.7B",
+  "seed": null,
+  "baseline": "Base-matched",
+  "teacher": null,
+  "dtype": "bfloat16",
+  "engine": "vllm",
+  "max_new_tokens": 2048,
+  "gsm8k_max_new_tokens": 512,
+  "enable_thinking": false,
+  "test_fingerprints": {
+    "_secret/t5/test.jsonl": "e6b98a41473933237c8869e02757649b8f7ab1475a854413722baa1c0b492c0c"
+  },
+  "grader_sha256": "4518d21bd6f70e77e12984145e631e576981d0c90d191291d24ab95e781f52a6",
+  "evaluator_sha256": "ad7bf2e18d9e8b57e70e16cca4ef07034143e0951c0b8dd3b579d8e104b11dd5",
+  "worker_sha256": "3babb908d5016dc3def948d9314159927d627c61dc5492a0d44a1d6800c68f0f",
+  "gpu": "2",
+  "evaluation_protocol": 2,
+  "kv_cache_gib": 16,
+  "max_num_seqs": 64,
+  "max_num_batched_tokens": 8192,
+  "wall_seconds": 96.45,
+  "finished": 1795691842.3862207,
+  "results": {
+    "test": {
+      "free": {
+        "acc": 0.5509,
+        "lo": 0.5109,
+        "hi": 0.5928,
+        "n": 550
+      },
+      "no_final_answer_rate": 0.0091,
+      "mean_output_chars": 1021,
+      "sec": 31,
+      "forward_tokens": 263953,
+      "by_group": {
+        "all": {
+          "free": {
+            "acc": 0.5509,
+            "lo": 0.5109,
+            "hi": 0.5928,
+            "n": 550
+          }
+        }
+      }
+    },
+    "retention": {
+      "ppl_generic": 12.1199,
+      "arc_challenge": {
+        "acc": 0.7367,
+        "lo": 0.6833,
+        "hi": 0.7833,
+        "n": 300
+      },
+      "hellaswag": {
+        "acc": 0.56,
+        "lo": 0.5033,
+        "hi": 0.62,
+        "n": 300
+      },
+      "arithmetic": {
+        "acc": 0.5,
+        "lo": 0.435,
+        "hi": 0.57,
+        "n": 200
+      },
+      "mmlu": {
+        "acc": 0.5482,
+        "lo": 0.5219,
+        "hi": 0.5781,
+        "n": 1140
+      },
+      "gsm8k": {
+        "acc": 0.782,
+        "lo": 0.746,
+        "hi": 0.818,
+        "n": 500
+      }
+    }
+  }
+}

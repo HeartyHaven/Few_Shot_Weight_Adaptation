@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-555",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Siddhartha, Claire gets Hamlet, Dave gets Beloved, Eve gets Dracula, Fred gets Emma, and Gertrude gets Middlemarch.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Fred and Gertrude swap books. Then, Eve and Claire swap books. Then, Eve and Fred swap books. Then, Gertrude and Fred swap books. Then, Bob and Eve swap books. Finally, Eve and Gertrude swap books. At the end of the semester, Fred has\nOptions:\n(A) Walden\n(B) Siddhartha\n(C) Hamlet\n(D) Beloved\n(E) Dracula\n(F) Emma\n(G) Middlemarch",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "Dracula",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Dracula",
+      "Fred": "Emma",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Walden",
+      "Dave": "Beloved",
+      "Eve": "Dracula",
+      "Fred": "Middlemarch",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Walden",
+      "Fred": "Middlemarch",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Middlemarch",
+      "Fred": "Walden",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Siddhartha",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Middlemarch",
+      "Fred": "Emma",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Middlemarch",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Siddhartha",
+      "Fred": "Emma",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Middlemarch",
+      "Claire": "Dracula",
+      "Dave": "Beloved",
+      "Eve": "Walden",
+      "Fred": "Emma",
+      "Gertrude": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Walden | Siddhartha | Hamlet | Beloved | Dracula | Emma | Middlemarch\n1. Claire ↔ Alice: Hamlet | Siddhartha | Walden | Beloved | Dracula | Emma | Middlemarch\n2. Fred ↔ Gertrude: Hamlet | Siddhartha | Walden | Beloved | Dracula | Middlemarch | Emma\n3. Eve ↔ Claire: Hamlet | Siddhartha | Dracula | Beloved | Walden | Middlemarch | Emma\n4. Eve ↔ Fred: Hamlet | Siddhartha | Dracula | Beloved | Middlemarch | Walden | Emma\n5. Gertrude ↔ Fred: Hamlet | Siddhartha | Dracula | Beloved | Middlemarch | Emma | Walden\n6. Bob ↔ Eve: Hamlet | Middlemarch | Dracula | Beloved | Siddhartha | Emma | Walden\n7. Eve ↔ Gertrude: Hamlet | Middlemarch | Dracula | Beloved | Walden | Emma | Siddhartha\nFred has Emma, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1116,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

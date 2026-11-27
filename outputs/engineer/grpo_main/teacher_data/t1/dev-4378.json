@@ -1,0 +1,24 @@
+{
+  "id": "dev-4378",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "calc_id": 20,
+  "question": "Patient note:\nA 17-year-old boy is admitted to the emergency department with a history of fatigue, fever of 40.0°C (104.0°F), sore throat, and enlarged cervical lymph nodes. On physical examination, his spleen and liver are not palpable. A complete blood count is remarkable for atypical reactive T cells. An examination of his tonsils is shown in the image below.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "explanation": "The criteria listed in the Centor Score formula are listed below:\n\n1. Age: 3-14 years = +1 point, 15-44 years = 0 points, ≥45 years = -1 point\n2. Exudate or swelling on tonsils: No = 0 points, Yes = +1 point\n3. Tender/swollen anterior cervical lymph nodes: No = 0 points, Yes = +1 point\n4. Temperature >38°C (100.4°F): No = 0 points, Yes = +1 point\n5. Cough: Cough present = 0 points, Cough absent = +1 point\n\nThe Centor score is calculated by summing the points for each criterion.\n    \nThe current Centor score is 0.\nThe patient is 17 years old. Because the age is in between 15 and 44 years, the score does not change, keeping the score at 0.\nThe patient's temperature is 40.0 degrees celsius. The patient's temperature is greater than 38 degrees Celsius, and so we add one point to the score, making the current score 0 + 1 = 1.\nThe patient note report reports that the patient is coughing and so we do not change the score, keeping the current score at 1.\nThe patient note reports 'tender/swollen anterior cervical lymph nodes' as present for the patient. Hence, we increase the score by 1, making the current score 1 + 1 = 2.\nThe patient note reports 'exudate or swelling on tonsils' as absent for the patient. Hence, we do not change the score, keeping the current score at 2.\nHence, the Centor score for the patient is 2.",
+  "prompt_tokens": 151,
+  "solution": "Apply the age-adjusted Centor (McIsaac) score at admission:\n- Age 17 years: within the 15–44-year band, 0.\n- Temperature 40.0°C: above 38°C, +1.\n- Absence of cough: not established, 0.\n- Tender or swollen anterior cervical nodes: the enlarged cervical nodes are counted for this criterion, +1.\n- Tonsillar swelling or exudate: neither finding is described in the text, 0.\nSum: 0 + 1 + 0 + 1 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "reused_from": "outputs/engineer/distill_main/data/t1.jsonl",
+  "reused_source_sha256": "986c157b1c67e1e15f790a8591252e01848729b0d9e5eaec2af974849a7ae226",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

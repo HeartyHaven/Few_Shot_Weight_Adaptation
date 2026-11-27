@@ -1,0 +1,87 @@
+{
+  "id": "dev-5-15",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a brown ball, Bob has a red ball, Claire has a white ball, Dave has a black ball, and Eve has a yellow ball.\nAs the game progresses, pairs of players trade balls. First, Dave and Claire swap balls. Then, Eve and Dave swap balls. Then, Eve and Dave swap balls. Then, Alice and Bob swap balls. Finally, Bob and Eve swap balls. At the end of the game, Dave has the\nOptions:\n(A) brown ball\n(B) red ball\n(C) white ball\n(D) black ball\n(E) yellow ball",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "brown",
+      "Bob": "red",
+      "Claire": "white",
+      "Dave": "black",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "red",
+      "Claire": "black",
+      "Dave": "white",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "red",
+      "Claire": "black",
+      "Dave": "yellow",
+      "Eve": "white"
+    },
+    {
+      "Alice": "brown",
+      "Bob": "red",
+      "Claire": "black",
+      "Dave": "white",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "red",
+      "Bob": "brown",
+      "Claire": "black",
+      "Dave": "white",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "red",
+      "Bob": "yellow",
+      "Claire": "black",
+      "Dave": "white",
+      "Eve": "brown"
+    }
+  ],
+  "solution": "Ball colors are listed in player order: Alice, Bob, Claire, Dave, Eve.\nInitial: (brown, red, white, black, yellow)\n1. Dave and Claire swap: (brown, red, black, white, yellow)\n2. Eve and Dave swap: (brown, red, black, yellow, white)\n3. Eve and Dave swap: (brown, red, black, white, yellow)\n4. Alice and Bob swap: (red, brown, black, white, yellow)\n5. Bob and Eve swap: (red, yellow, black, white, brown)\nDave has the white ball, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 30,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

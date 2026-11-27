@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-29",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing fullback, Bob is playing center midfielder, and Claire is playing benchwarmer.\nAs the game progresses, pairs of players occasionally swap positions. First, Alice and Claire trade positions. Then, Alice and Claire trade positions. Finally, Alice and Bob trade positions. At the end of the match, Alice is playing\nOptions:\n(A) fullback\n(B) center midfielder\n(C) benchwarmer",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "fullback",
+      "Bob": "center midfielder",
+      "Claire": "benchwarmer"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "center midfielder",
+      "Claire": "fullback"
+    },
+    {
+      "Alice": "fullback",
+      "Bob": "center midfielder",
+      "Claire": "benchwarmer"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "fullback",
+      "Claire": "benchwarmer"
+    }
+  ],
+  "prompt_tokens": 146,
+  "solution": "Positions in each row are listed in order: Alice, Bob, Claire.\nInitial: fullback, center midfielder, benchwarmer\n1. Alice ↔ Claire: benchwarmer, center midfielder, fullback\n2. Alice ↔ Claire: fullback, center midfielder, benchwarmer\n3. Alice ↔ Bob: center midfielder, fullback, benchwarmer\nAlice is playing center midfielder, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1182,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

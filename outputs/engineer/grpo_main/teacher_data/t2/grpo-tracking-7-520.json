@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-520",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Hamlet, Claire gets Siddhartha, Dave gets Middlemarch, Eve gets The Hobbit, Fred gets Beloved, and Gertrude gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Bob and Dave swap books. Then, Gertrude and Dave swap books. Then, Dave and Fred swap books. Then, Bob and Eve swap books. Then, Gertrude and Fred swap books. Finally, Dave and Gertrude swap books. At the end of the semester, Alice has\nOptions:\n(A) Dune\n(B) Hamlet\n(C) Siddhartha\n(D) Middlemarch\n(E) The Hobbit\n(F) Beloved\n(G) Ivanhoe",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Hamlet",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "The Hobbit",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Hamlet",
+      "Eve": "The Hobbit",
+      "Fred": "Beloved",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Ivanhoe",
+      "Eve": "The Hobbit",
+      "Fred": "Beloved",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "Dune",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha",
+      "Dave": "Beloved",
+      "Eve": "Dune",
+      "Fred": "Hamlet",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha",
+      "Dave": "Ivanhoe",
+      "Eve": "Dune",
+      "Fred": "Hamlet",
+      "Gertrude": "Beloved"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Dune, Hamlet, Siddhartha, Middlemarch, The Hobbit, Beloved, Ivanhoe\n1. Dave ↔ Alice: Middlemarch, Hamlet, Siddhartha, Dune, The Hobbit, Beloved, Ivanhoe\n2. Bob ↔ Dave: Middlemarch, Dune, Siddhartha, Hamlet, The Hobbit, Beloved, Ivanhoe\n3. Gertrude ↔ Dave: Middlemarch, Dune, Siddhartha, Ivanhoe, The Hobbit, Beloved, Hamlet\n4. Dave ↔ Fred: Middlemarch, Dune, Siddhartha, Beloved, The Hobbit, Ivanhoe, Hamlet\n5. Bob ↔ Eve: Middlemarch, The Hobbit, Siddhartha, Beloved, Dune, Ivanhoe, Hamlet\n6. Gertrude ↔ Fred: Middlemarch, The Hobbit, Siddhartha, Beloved, Dune, Hamlet, Ivanhoe\n7. Dave ↔ Gertrude: Middlemarch, The Hobbit, Siddhartha, Ivanhoe, Dune, Hamlet, Beloved\nAlice has Middlemarch, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1360,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "sample_158",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(arr):\n    n = [item for item in arr if item%2 == 0]\n    m = n+arr\n    for i in m:\n        if m.index(i) >= len(n):\n            m.remove(i)\n    return m\n```\n\nInput: f([3, 6, 4, -2, 5])",
+  "answer": "[6, 4, -2, 6, 4, -2]",
+  "prompt_tokens": 132,
+  "solution": "Filtering for even items gives n = [6, 4, -2], so len(n) = 3 and m = [6, 4, -2, 3, 6, 4, -2, 5]. The loop first visits 6, 4, -2. Their first indices are 0, 1, 2, all below 3, so nothing is removed.\nAt index 3, i = 3 has first index 3, so it is removed. Now m = [6, 4, -2, 6, 4, -2, 5]. The second 6 shifts to index 3 and is skipped because iteration advances to index 4. The next items are 4 and -2; their first indices are still 1 and 2, so both stay. Finally, 5 has first index 6, so it is removed and the loop ends.\nFinal answer: [6, 4, -2, 6, 4, -2]",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "[6, 4, -2, 6, 4, -2]",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1078",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 78-year-old female presented to an outside hospital with one-week history of diffuse abdominal pain with associated nausea, vomiting, and diarrhea. Her past medical history was significant for factor V Leiden, deep vein thrombosis, pulmonary embolism, hypertension, diabetes mellitus, morbid obesity, atrial fibrillation, heart failure with preserved ejection fraction, and chronic obstructive pulmonary disease on 2 liters home oxygen. She was on warfarin and had an inferior vena cava filter in place for her history of venous thromboembolic disease and thrombophilia. Her vital signs were significant for tachycardia. Abdominal examination was soft, non-distended, minimally tender to palpation in the epigastrium without rebound or guarding. Initial laboratory studies were significant for a white blood cell count (WBC) of 21,600 cells/μL, serum creatinine of 2.18 mg/dL, lactate of 2.7 mmol/L, and international normalized ratio (INR) of 5.36. Her INR was corrected with vitamin K and fresh frozen plasma and the patient was transitioned to an intravenous unfractionated heparin infusion. CT scan of the abdomen without contrast was obtained to evaluate her abdominal pain and revealed gastric distension with gastric pneumatosis (). She was treated for EG with nasogastric tube (NGT) decompression, intravenous fluid resuscitation, nil per os (NPO), antibiotics (vancomycin, cefepime, metronidazole, and fluconazole), and proton pump inhibitor (PPI). Two days after admission, she developed bloody output through her NGT and dropped her hemoglobin from 11.2 to 7.8 g/dL. Her heparin infusion was stopped. At this point, she was transferred to our medical intensive care unit for escalation of care. On arrival the patient was hemodynamically stable with coffee-ground output from her NGT. She reported that her abdominal pain had improved significantly. Laboratory studies eventually revealed a normalization of her WBC count, serum creatinine, and lactic acid. Her hemoglobin stabilized without further need for transfusion. Decision was made to not pursue an esophagogastroduodenoscopy (EGD) given no further evidence of bleeding and improvement in her pain. General surgery was consulted and recommended non-operative management. After four days from the first CT scan, a CT angiography of the abdomen with contrast was obtained to evaluate for vascular patency which revealed patent celiac trunk and resolution of her gastric pneumatosis (). The NGT was then removed and the patient tolerated an oral diet. She completed a total of seven days of antibiotics. She was discharged home on PPI therapy and warfarin was restarted.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "8",
+  "lower": 8.0,
+  "upper": 8.0,
+  "calc_id": 4,
+  "prompt_tokens": 665,
+  "solution": "Apply CHA₂DS₂-VASc to the admission history of atrial fibrillation:\n- Congestive heart failure: documented heart failure with preserved ejection fraction → 1.\n- Hypertension: present → 1.\n- Age: 78 years (≥75) → 2; do not also award the point for age 65–74.\n- Diabetes mellitus: present → 1.\n- Prior stroke, TIA, or thromboembolism: counting her prior pulmonary embolism under a definition that includes PE → 2. Definitions restricted to systemic arterial embolism would not award these points for PE.\n- Vascular disease: no prior MI, peripheral arterial disease, or aortic plaque reported; DVT does not qualify here → 0.\n- Sex category: female → 1.\nTotal using the PE-inclusive definition = 1 + 1 + 2 + 1 + 2 + 0 + 1 = 8.\nFinal answer: 8",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 859,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 8.0,
+    "correct": true
+  }
+}

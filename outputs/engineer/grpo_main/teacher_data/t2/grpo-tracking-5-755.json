@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-755",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Wade, Claire is dancing with Yuki, Dave is dancing with Stefan, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Dave and Claire switch partners. Then, Dave and Claire switch partners. Then, Eve and Claire switch partners. Finally, Eve and Dave switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Marco\n(B) Wade\n(C) Yuki\n(D) Stefan\n(E) Karl",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Wade",
+      "Claire": "Yuki",
+      "Dave": "Stefan",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Marco",
+      "Claire": "Yuki",
+      "Dave": "Stefan",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Yuki",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Marco",
+      "Claire": "Yuki",
+      "Dave": "Stefan",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Marco",
+      "Claire": "Karl",
+      "Dave": "Stefan",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Marco",
+      "Claire": "Karl",
+      "Dave": "Yuki",
+      "Eve": "Stefan"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial: Marco | Wade | Yuki | Stefan | Karl\n1. Bob and Alice swap: Wade | Marco | Yuki | Stefan | Karl\n2. Dave and Claire swap: Wade | Marco | Stefan | Yuki | Karl\n3. Dave and Claire swap: Wade | Marco | Yuki | Stefan | Karl\n4. Eve and Claire swap: Wade | Marco | Karl | Stefan | Yuki\n5. Eve and Dave swap: Wade | Marco | Karl | Yuki | Stefan\nClaire is dancing with Karl, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1105,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

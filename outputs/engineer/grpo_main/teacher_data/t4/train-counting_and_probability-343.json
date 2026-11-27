@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-343",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "In a shooting match, eight clay targets are arranged in two hanging columns of three targets each and one column of two targets. A marksman is to break all the targets according to the following rules:\n1) The marksman first chooses a column from which a target is to be broken.\n2) The marksman must then break the lowest remaining target in the chosen column.\nIf the rules are followed, in how many different orders can the eight targets be broken?\n",
+  "answer": "560",
+  "prompt_tokens": 122,
+  "solution": "Label the columns A, B, C, with sizes 3, 3, 2. A sequence of column labels uniquely determines the targets broken because the lowest remaining target in each chosen column must be next. Conversely, every sequence with three A's, three B's, and two C's gives a valid order. Choose the three A positions in \\(\\binom{8}{3}=56\\) ways and the three B positions in \\(\\binom{5}{3}=10\\) ways. The last two positions are forced to be C, giving 56·10 = 560 orders.\nFinal answer: 560",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "560",
+    "correct": true
+  }
+}

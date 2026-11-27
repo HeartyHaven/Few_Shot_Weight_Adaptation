@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1090",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Ivanhoe, Claire gets The Trial, Dave gets Persuasion, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Claire and Eve swap books. Then, Eve and Alice swap books. Then, Claire and Eve swap books. Finally, Eve and Dave swap books. At the end of the semester, Eve has\nOptions:\n(A) Dracula\n(B) Ivanhoe\n(C) The Trial\n(D) Persuasion\n(E) Jane Eyre",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Ivanhoe",
+      "Claire": "Persuasion",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Book order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial: Dracula | Ivanhoe | The Trial | Persuasion | Jane Eyre\n1. Dave and Alice swap: Persuasion | Ivanhoe | The Trial | Dracula | Jane Eyre\n2. Claire and Eve swap: Persuasion | Ivanhoe | Jane Eyre | Dracula | The Trial\n3. Eve and Alice swap: The Trial | Ivanhoe | Jane Eyre | Dracula | Persuasion\n4. Claire and Eve swap: The Trial | Ivanhoe | Persuasion | Dracula | Jane Eyre\n5. Eve and Dave swap: The Trial | Ivanhoe | Persuasion | Jane Eyre | Dracula\nEve has Dracula, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1070,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

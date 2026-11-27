@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-845",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a brown ball, Bob has a grey ball, Claire has a pink ball, Dave has a purple ball, and Eve has a teal ball.\nAs the game progresses, pairs of players trade balls. First, Eve and Alice swap balls. Then, Alice and Claire swap balls. Then, Bob and Alice swap balls. Then, Bob and Eve swap balls. Finally, Claire and Dave swap balls. At the end of the game, Alice has the\nOptions:\n(A) brown ball\n(B) grey ball\n(C) pink ball\n(D) purple ball\n(E) teal ball",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "brown",
+      "Bob": "grey",
+      "Claire": "pink",
+      "Dave": "purple",
+      "Eve": "teal"
+    },
+    {
+      "Alice": "teal",
+      "Bob": "grey",
+      "Claire": "pink",
+      "Dave": "purple",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "pink",
+      "Bob": "grey",
+      "Claire": "teal",
+      "Dave": "purple",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "pink",
+      "Claire": "teal",
+      "Dave": "purple",
+      "Eve": "brown"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "brown",
+      "Claire": "teal",
+      "Dave": "purple",
+      "Eve": "pink"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "brown",
+      "Claire": "purple",
+      "Dave": "teal",
+      "Eve": "pink"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors are listed in order: Alice, Bob, Claire, Dave, Eve.\nInitial: brown, grey, pink, purple, teal.\n1. Eve–Alice: teal, grey, pink, purple, brown.\n2. Alice–Claire: pink, grey, teal, purple, brown.\n3. Bob–Alice: grey, pink, teal, purple, brown.\n4. Bob–Eve: grey, brown, teal, purple, pink.\n5. Claire–Dave: grey, brown, purple, teal, pink.\nAlice has the grey ball, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1249,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

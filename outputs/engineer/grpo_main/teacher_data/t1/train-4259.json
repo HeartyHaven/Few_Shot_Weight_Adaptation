@@ -1,0 +1,22 @@
+{
+  "id": "train-4259",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 69 year old Hispanic female with past medical history of hyperthyroidism (Graves' Disease), heart failure with ejection fraction 45%, was presented to the emergency department with intermittent chest pain and palpitations. Chest pain was substernal, dull aching type, 5/10 in intensity and non-radiating.\nVital signs were stable with a blood pressure of 126/70 mmHg, pulse rate of 135 bpm, respiratory rate of 16 breaths per minute and temperature of 36.7 °C. On physical exam, pupils were equal, reactive to light and accommodation and notable for arcus senilis. There was no JVD present. Lungs were clear to auscultation bilaterally with no wheezing. Cardiovascular exam was notable for a grade 3/6, holosystolic murmur at the apex and irregularly irregular rhythm. Abdomen was soft, non-tender, non-distended with normal bowel sounds in all four quadrants. Pulses were intact bilaterally in upper and lower extremities with no edema.\nLaboratory findings were as follows: WBC 7.5 K/ul, Hb 12.1 g/dl, Hct 36.8 %, Platelets 212 K/ul. Electrolyte panel findings were as follows: Na 143 mmol/L, K 4.0 mmol/L, bicarbonate 20 mmol/L, chloride 113 mmol/L, BUN 21 mg/dl, Cr 0.8 mg/dl, Glucose: 96 mg/dl. Other labs included: TSH 1.86 MIU/ml, Digoxin level < 0.1 ng/ml.\nEKG showed atrial fibrillation with Rapid Ventricular Response at 135 bpm ().\nTransthoracic Echocardiogram (TTE) showed EF 45%, severe mitral regurgitation and a large mass in the left atrium, attached to interatrial septum, filling the whole chamber with slight protrusion into the anterior mitral valve leaflet and left ventricle during diastole (). It measured 16 cm2. Mitral valve diastolic velocity was increased to 2.5 m/s.\nA diagnosis of left atrial myxoma was made and the case was referred to another hospital for surgical intervention. Patient was promptly transferred the next day and underwent resection of the left atrium myxoma and left atrial wall with pericardial reconstruction, mitral valve repair with # 24 Medtronic CG Future annuloplasty ring, left-sided modified MAZE RF atrial fibrillation ablation and amputation of left atrial appendage.\nPost-operatively EKG showed Normal Sinus Rhythm at 80 bpm TTE showed no intracardiac mass and a normal left ventricle ejection fraction of 60%. Patient was started on anticoagulation and is being monitored in the outpatient clinic.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 18,
+  "prompt_tokens": 721,
+  "solution": "The HEART score for acute chest pain assigns 0–2 points each for History, ECG, Age, Risk factors, and Troponin.\n- History (slightly/moderately/highly suspicious = 0/1/2): dull, nonradiating discomfort with palpitations during rapid atrial fibrillation, without a described exertional pattern, is slightly suspicious for acute coronary syndrome = 0.\n- ECG (no repolarization abnormality/nonspecific changes/significant ST depression = 0/1/2): atrial fibrillation alone does not score, and no ST-T abnormality is reported = 0 on the available description.\n- Age (<45/45–64/≥65 = 0/1/2): age 69 = 2.\n- Risk factors (none/1–2/≥3 or known atherosclerotic disease = 0/1/2): no qualifying factors documented; heart failure and myxoma do not count = 0.\n- Troponin (≤1, >1–3, or >3 times the upper reference limit = 0/1/2): not reported. Assigning 0 requires assuming a normal admission value.\nUnder that assumption, the sum is 0 + 0 + 2 + 0 + 0 = 2; the complete score cannot be confirmed without troponin.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 684,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

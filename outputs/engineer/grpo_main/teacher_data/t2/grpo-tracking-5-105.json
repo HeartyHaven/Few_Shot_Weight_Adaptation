@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-105",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a yellow present, Bob has a silver present, Claire has a red present, Dave has a white present, and Eve has a gold present.\nAs the event progresses, pairs of people swap gifts. First, Claire and Eve swap their gifts. Then, Alice and Claire swap their gifts. Then, Eve and Claire swap their gifts. Then, Eve and Dave swap their gifts. Finally, Alice and Claire swap their gifts. At the end of the event, Eve has the\nOptions:\n(A) yellow present\n(B) silver present\n(C) red present\n(D) white present\n(E) gold present",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "yellow",
+      "Bob": "silver",
+      "Claire": "red",
+      "Dave": "white",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "yellow",
+      "Bob": "silver",
+      "Claire": "gold",
+      "Dave": "white",
+      "Eve": "red"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "silver",
+      "Claire": "yellow",
+      "Dave": "white",
+      "Eve": "red"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "silver",
+      "Claire": "red",
+      "Dave": "white",
+      "Eve": "yellow"
+    },
+    {
+      "Alice": "gold",
+      "Bob": "silver",
+      "Claire": "red",
+      "Dave": "yellow",
+      "Eve": "white"
+    },
+    {
+      "Alice": "red",
+      "Bob": "silver",
+      "Claire": "gold",
+      "Dave": "yellow",
+      "Eve": "white"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Present colors are listed in order: Alice, Bob, Claire, Dave, Eve.\nInitial: (yellow, silver, red, white, gold)\n1. Claire and Eve swap: (yellow, silver, gold, white, red)\n2. Alice and Claire swap: (gold, silver, yellow, white, red)\n3. Eve and Claire swap: (gold, silver, red, white, yellow)\n4. Eve and Dave swap: (gold, silver, red, yellow, white)\n5. Alice and Claire swap: (red, silver, gold, yellow, white)\nEve has the white present, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1329,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

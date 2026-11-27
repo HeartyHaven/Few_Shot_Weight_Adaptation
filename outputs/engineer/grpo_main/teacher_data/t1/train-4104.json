@@ -1,0 +1,22 @@
+{
+  "id": "train-4104",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 55-year-old man presents to his primary care physician for trouble swallowing. The patient claims that he used to struggle when eating food if he did not chew it thoroughly, but now he occasionally struggles with liquids as well. He also complains of a retrosternal burning sensation whenever he eats. He also claims that he feels his throat burns when he lays down or goes to bed. Otherwise, the patient has no other complaints. The patient has a past medical history of obesity, diabetes, constipation, and anxiety. His current medications include insulin, metformin, and lisinopril. On review of systems, the patient endorses a 5 pound weight loss recently. The patient has a 22 pack-year smoking history and drinks alcohol with dinner. His temperature is 99.5°F (37.5°C), blood pressure is 177/98 mmHg, pulse is 90/min, respirations are 17/min, and oxygen saturation is 98% on room air. On physical exam, you note an overweight man in no current distress. Abdominal exam is within normal limits.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 305,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors, and troponin.\n- History: burning with meals and recumbency, accompanied by progressive dysphagia, is only slightly suspicious for acute coronary syndrome = 0.\n- ECG: not reported; assume no ischemic changes for this estimate = 0.\n- Age: 55 years falls in the 45–64 range = 1.\n- Risk factors: obesity, diabetes, and smoking meet the threshold of at least three = 2.\n- Troponin: not reported; assume a value at or below the upper reference limit = 0.\nUnder those assumptions, the total is 0 + 0 + 1 + 2 + 0 = 3. A definitive HEART score requires the ECG and troponin results.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 624,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-4414",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 24-year-old man with no significant past medical history presents to urgent care with a cough and fatigue. The patient states his symptoms have persisted for the past 48 hours and have made work difficult for him. He has been taking an antibiotic he had left over from a previous infection but states it did not improve his symptoms. His temperature is 101°F (38.3°C), blood pressure is 127/68 mmHg, pulse is 110/min, respirations are 17/min, and oxygen saturation is 97% on room air. A chest radiograph is perfomed as seen in Figure A. Physical exam is notable for obesity, gynecomastia, and the finding in Figure B as well as some erythema of the posterior oropharynx.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 20,
+  "prompt_tokens": 239,
+  "solution": "The Centor score assigns 1 point per finding:\n- Temperature >38°C: 38.3°C → 1.\n- Absence of cough: he has a cough → 0.\n- Tonsillar exudate: none documented; posterior pharyngeal erythema alone does not count → 0.\n- Tender anterior cervical nodes: none documented → 0.\nAt age 24, the modified Centor age adjustment is also 0. Total = 1 + 0 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 820,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

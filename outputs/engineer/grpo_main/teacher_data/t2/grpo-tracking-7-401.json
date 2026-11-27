@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-401",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing left winger, Bob is playing right back, Claire is playing benchwarmer, Dave is playing goalkeeper, Eve is playing left midfielder, Fred is playing cheerleader, and Gertrude is playing striker.\nAs the game progresses, pairs of players occasionally swap positions. First, Eve and Gertrude trade positions. Then, Bob and Gertrude trade positions. Then, Bob and Fred trade positions. Then, Eve and Bob trade positions. Then, Gertrude and Alice trade positions. Then, Alice and Fred trade positions. Finally, Gertrude and Eve trade positions. At the end of the match, Fred is playing\nOptions:\n(A) left winger\n(B) right back\n(C) benchwarmer\n(D) goalkeeper\n(E) left midfielder\n(F) cheerleader\n(G) striker",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "left winger",
+      "Bob": "right back",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "left midfielder",
+      "Fred": "cheerleader",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "right back",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "striker",
+      "Fred": "cheerleader",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "left midfielder",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "striker",
+      "Fred": "cheerleader",
+      "Gertrude": "right back"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "cheerleader",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "striker",
+      "Fred": "left midfielder",
+      "Gertrude": "right back"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "cheerleader",
+      "Fred": "left midfielder",
+      "Gertrude": "right back"
+    },
+    {
+      "Alice": "right back",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "cheerleader",
+      "Fred": "left midfielder",
+      "Gertrude": "left winger"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "cheerleader",
+      "Fred": "right back",
+      "Gertrude": "left winger"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "goalkeeper",
+      "Eve": "left winger",
+      "Fred": "right back",
+      "Gertrude": "cheerleader"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: left winger, right back, benchwarmer, goalkeeper, left midfielder, cheerleader, striker\nAfter Eve–Gertrude: left winger, right back, benchwarmer, goalkeeper, striker, cheerleader, left midfielder\nAfter Bob–Gertrude: left winger, left midfielder, benchwarmer, goalkeeper, striker, cheerleader, right back\nAfter Bob–Fred: left winger, cheerleader, benchwarmer, goalkeeper, striker, left midfielder, right back\nAfter Eve–Bob: left winger, striker, benchwarmer, goalkeeper, cheerleader, left midfielder, right back\nAfter Gertrude–Alice: right back, striker, benchwarmer, goalkeeper, cheerleader, left midfielder, left winger\nAfter Alice–Fred: left midfielder, striker, benchwarmer, goalkeeper, cheerleader, right back, left winger\nAfter Gertrude–Eve: left midfielder, striker, benchwarmer, goalkeeper, left winger, right back, cheerleader\nFred's final position is right back, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1060,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

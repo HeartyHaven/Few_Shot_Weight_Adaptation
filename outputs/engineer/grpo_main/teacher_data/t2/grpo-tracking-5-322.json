@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-322",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Dracula, Claire gets Siddhartha, Dave gets Dune, and Eve gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Dave and Bob swap books. Then, Eve and Claire swap books. Then, Bob and Dave swap books. Finally, Dave and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Candide\n(B) Dracula\n(C) Siddhartha\n(D) Dune\n(E) Ivanhoe",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Siddhartha",
+      "Dave": "Dune",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Dracula",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "Ivanhoe",
+      "Dave": "Dracula",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Candide",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Dracula",
+      "Claire": "Ivanhoe",
+      "Dave": "Siddhartha",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (Candide, Dracula, Siddhartha, Dune, Ivanhoe)\n1. Dave ↔ Alice: (Dune, Dracula, Siddhartha, Candide, Ivanhoe)\n2. Dave ↔ Bob: (Dune, Candide, Siddhartha, Dracula, Ivanhoe)\n3. Eve ↔ Claire: (Dune, Candide, Ivanhoe, Dracula, Siddhartha)\n4. Bob ↔ Dave: (Dune, Dracula, Ivanhoe, Candide, Siddhartha)\n5. Dave ↔ Eve: (Dune, Dracula, Ivanhoe, Siddhartha, Candide)\nAlice has Dune, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1321,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

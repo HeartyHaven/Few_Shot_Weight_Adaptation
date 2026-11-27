@@ -1,0 +1,22 @@
+{
+  "id": "train-1067",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 76-year-old male (preoperative logistic EuroSCORE 9.92%) underwent an uneventful TAVR with a 29 mm CoreValve for severe symptomatic AS in January 2012 ( and , , , , ). He had hypertension and atrial fibrillation. He also had a VVI pacemaker implanted for sick sinus syndrome in 2002. Furthermore, he suffered from ischemic heart disease which had been treated by percutaneous coronary intervention to mid-left anterior descending coronary artery 7 years before. Although the patient's logistic EuroSCORE was relatively low, he and his family strongly preferred TAVR than SAVR. Before the procedure, transthoracic echocardiography demonstrated severe AS (peak/mean gradient 90/55 mmHg, aortic valve peak velocity 4.74 m/s, aortic valve area 0.73 cm2 by continuity equation) with normal left ventricle (LV) function (ejection fraction 69%) and there was no pulmonary hypertension. He was discharged 7 days after the procedure with only mild paravalvular aortic regurgitation (AR).\nHe was readmitted 2 months after TAVR for fever, dyspnea and mild confusion. On meticulous history taking, he had periodontitis, for which incision and drainage of the abscess was performed 1 month prior to admission at a nearby hospital.\nInflammatory markers including white blood cell count (19700/mm3) and C-reactive protein level (11.54 mg/dL) were markedly elevated. Simple chest X-ray revealed bilateral pleural effusion () and electrocardiogram showed atrial fibrillation with rapid ventricular response and left bundle branch block (). Transthoracic echocardiography showed a normal sized LV with normal systolic function. However, severe mitral regurgitation was noted just beneath the strut of the bioprosthesis (, ). Transesophageal echocardiography was performed without delay, which demonstrated a large mobile vegetation attached to the anterior mitral leaflet and severe mitral regurgitation due to multiple perforations of the mitral valve leaflet. Abscess was also noted at the aortomitral continuity (, ). The bioprosthetic aortic valve function was normal.\nWe performed brain imaging studies for evaluation of altered mentality. Both intracerebral and subarachnoid hemorrhage was detected on brain computed tomography imaging (). Vancomycin, gentamicin and rifampin were started without delay under the diagnosis of IE. Streptococcus anginosus was identified on all three separate blood cultures.\nThe patient and his family members refused surgical intervention because of the high risk. The patient died 4 days after hospital admission due to refractory sepsis. The autopsy was refused.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 667,
+  "solution": "CHA₂DS₂-VASc uses the following stroke-risk factors in a patient with atrial fibrillation:\n- Congestive heart failure: no clinical heart failure documented at initial admission, and LVEF was 69%, 0.\n- Hypertension: present, 1.\n- Age: 76 meets the ≥75 threshold, 2; do not also count the 65–74 category.\n- Diabetes: not documented, 0.\n- Prior stroke, TIA, or systemic embolism: not documented at initial admission, 0. The intracranial bleeding occurred on a later admission.\n- Vascular disease: established coronary artery disease requiring LAD intervention, 1 using the definition that includes significant coronary disease.\n- Sex: male, 0.\nTotal = 0 + 1 + 2 + 0 + 0 + 1 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 914,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

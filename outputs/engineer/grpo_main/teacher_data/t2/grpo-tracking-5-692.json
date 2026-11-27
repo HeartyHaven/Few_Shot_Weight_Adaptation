@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-692",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Wade, Bob is dancing with Lena, Claire is dancing with Priya, Dave is dancing with Nadia, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Alice and Dave switch partners. Then, Eve and Claire switch partners. Then, Eve and Dave switch partners. Then, Alice and Claire switch partners. Finally, Bob and Claire switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Wade\n(B) Lena\n(C) Priya\n(D) Nadia\n(E) Marco",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Wade",
+      "Bob": "Lena",
+      "Claire": "Priya",
+      "Dave": "Nadia",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Priya",
+      "Dave": "Wade",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Marco",
+      "Dave": "Wade",
+      "Eve": "Priya"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Marco",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Lena",
+      "Claire": "Nadia",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Nadia",
+      "Claire": "Lena",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Each row lists the partners of Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Wade, Lena, Priya, Nadia, Marco\n1. Alice ↔ Dave: Nadia, Lena, Priya, Wade, Marco\n2. Eve ↔ Claire: Nadia, Lena, Marco, Wade, Priya\n3. Eve ↔ Dave: Nadia, Lena, Marco, Priya, Wade\n4. Alice ↔ Claire: Marco, Lena, Nadia, Priya, Wade\n5. Bob ↔ Claire: Marco, Nadia, Lena, Priya, Wade\nDave's final partner is Priya, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1228,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

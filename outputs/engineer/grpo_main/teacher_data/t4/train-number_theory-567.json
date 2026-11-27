@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-567",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Someone observed that $6! = 8 \\cdot 9 \\cdot 10$. Find the largest positive integer $n$ for which $n!$ can be expressed as the product of $n - 3$ consecutive positive integers.\n",
+  "answer": "23",
+  "prompt_tokens": 79,
+  "solution": "Consider two products of n − 3 consecutive integers, starting at 4 and at 5. The first is 4 · 5 ··· n = n!/6, below n!. The second is 5 · 6 ··· (n + 1) = (n + 1)!/24 = n! · (n + 1)/24.\nAt n = 23, the second product equals n!, so 23 works. For every n > 23, the second product exceeds n! while the first remains below it. For fixed n, shifting the starting integer up increases every factor, so the product strictly increases. Since 4 and 5 are consecutive starts, no product of this length can equal n! for n > 23.\nFinal answer: 23",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "23",
+    "correct": true
+  }
+}

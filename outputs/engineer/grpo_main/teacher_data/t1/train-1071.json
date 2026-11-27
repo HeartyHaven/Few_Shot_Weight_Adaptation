@@ -1,0 +1,22 @@
+{
+  "id": "train-1071",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 67-year-old Caucasian male, with previously normal kidney function [serum creatinine concentration (sCr) 1.0 mg/dL (88 μmol/L), eGFR 78 mL/min/1.73 m2 using the CKD-EPI equation, and no proteinuria on urinalysis], presented with AKI and 1 week of gross hematuria. The past medical history included coronary disease and atrial fibrillation. He denied family history of kidney disease, but did have one previous episode of ‘dark-colored urine’ 2 months prior that resolved spontaneously.\nMedications included aspirin 81 mg daily, sotalol, omeprazole, lisinopril and dabigatran 150 mg twice daily. One week prior to presentation, warfarin had been held for 3 days and then dabigatran initiated, at request of the patient. Aspirin was continued for cardioprotection. His blood pressure was 140/76 mmHg. Physical examination was unremarkable. SCr was 5.5 mg/dL (420 μmol/L) with no evidence for systemic hemolysis. The international normalized ratio (INR) was 1.6 with a prothromboplastin time of 62 s. He was initially managed with i.v. fluids, and anticoagulants were held. A serological workup, including antineutrophilic cytoplasmic antibody (ANCA), cryoglobulins, C3/C4, serum/urine protein electrophoresis, and viral serologies, was negative. Because hematuria persisted and creatinine continued to rise, he underwent kidney biopsy.\nThe biopsy showed extensive, diffuse tubular injury with nuclear dropout, sloughing of brush border membrane and cytoplasmic reabsorption droplets containing eosinophilic proteinaceous material (A). There were also several, large intratubular RBC casts. The glomeruli showed capillary congestion and mesangial matrix expansion and hypercellularity (B). The vessels were unremarkable and a Prussian-Blue stain showed focal positivity in 1–2% of tubular profiles. Immunofluorescence studies showed 2–3+ mesangial positivity for IgA (C) and 1+ mesangial positivity for C3. IgG, IgM and C1q stains were negative. There was no significant interstitial infiltrate. Ultrastructural evaluation showed segmental foot process effacement and large mesangial immune complex deposits (D). The proximal tubular epithelial cells showed cytoplasmic reabsorption droplets containing heme-proteins and intratubular granular casts (E). Immunohistochemistry revealed strong, diffuse positivity for CD163 (F).\nThe patient had previously had mild undiagnosed IgA nephropathy that was found on biopsy but in the setting of a high dose of dabigatran and aspirin he developed massive hematuria (likely predisposed by IgA nephropathy) and acute tubular necrosis from the direct toxic effect of heme pigment in the proximal tubular cells. The patient's creatinine stabilized at 6.0 mg/dL (530 μmol/L), and he was treated with normal saline to encourage diuresis. He was discharged home and his creatinine improved over a 3-month period to 1.8 mg/dL (160 μmol/L). He eventually resumed warfarin without evidence of hematuria or AKI.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 830,
+  "solution": "Apply CHA2DS2-VASc to his atrial fibrillation at presentation:\n- Congestive heart failure: none documented, 0.\n- Hypertension: +1 if lisinopril is interpreted as treatment for hypertension. Its indication is not explicit, and the single BP of 140/76 alone does not establish the diagnosis.\n- Age: 67 falls in the 65–74 range, +1, rather than the ≥75 range (+2).\n- Diabetes: none documented, 0.\n- Prior stroke, TIA, or systemic embolism: none documented, 0.\n- Vascular disease: counting the documented coronary disease, +1.\n- Sex category: male, 0.\nAKI, hematuria, and anticoagulant use do not score. With the treated-hypertension assumption, the sum is 0 + 1 + 1 + 0 + 0 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 855,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-552",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Ivanhoe, Claire gets Beloved, Dave gets Candide, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Claire and Dave swap books. Then, Claire and Dave swap books. Then, Bob and Alice swap books. Then, Dave and Claire swap books. Finally, Dave and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Hamlet\n(B) Ivanhoe\n(C) Beloved\n(D) Candide\n(E) The Trial",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Hamlet",
+      "Claire": "Beloved",
+      "Dave": "Candide",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Beloved",
+      "Claire": "Candide",
+      "Dave": "Hamlet",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books are listed in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Hamlet, Ivanhoe, Beloved, Candide, The Trial\n1. Claire ↔ Dave: Hamlet, Ivanhoe, Candide, Beloved, The Trial\n2. Claire ↔ Dave: Hamlet, Ivanhoe, Beloved, Candide, The Trial\n3. Bob ↔ Alice: Ivanhoe, Hamlet, Beloved, Candide, The Trial\n4. Dave ↔ Claire: Ivanhoe, Hamlet, Candide, Beloved, The Trial\n5. Dave ↔ Bob: Ivanhoe, Beloved, Candide, Hamlet, The Trial\nBob has Beloved, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1053,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

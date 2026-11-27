@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-634",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Beloved, Claire gets Emma, Dave gets Jane Eyre, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Dave and Claire swap books. Then, Alice and Bob swap books. Then, Dave and Eve swap books. Finally, Claire and Dave swap books. At the end of the semester, Claire has\nOptions:\n(A) Walden\n(B) Beloved\n(C) Emma\n(D) Jane Eyre\n(E) The Trial",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Beloved",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "The Trial",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books in reader order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Walden, Beloved, Emma, Jane Eyre, The Trial)\n1. Eve and Dave swap: (Walden, Beloved, Emma, The Trial, Jane Eyre)\n2. Dave and Claire swap: (Walden, Beloved, The Trial, Emma, Jane Eyre)\n3. Alice and Bob swap: (Beloved, Walden, The Trial, Emma, Jane Eyre)\n4. Dave and Eve swap: (Beloved, Walden, The Trial, Jane Eyre, Emma)\n5. Claire and Dave swap: (Beloved, Walden, Jane Eyre, The Trial, Emma)\nClaire has Jane Eyre, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1090,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

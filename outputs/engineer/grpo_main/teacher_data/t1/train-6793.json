@@ -1,0 +1,22 @@
+{
+  "id": "train-6793",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nThe patient was a 78-year-old Caucasian woman, with a medical history including type 2 diabetes mellitus, hypertension and gout, who presented to the emergency department with disoriented speech, a temperature of 40°C (104°F), hypertension and tachycardic. There was an initial concern for heat stroke when she was admitted to the hospital considering the high temperature and humidity outside. She was admitted to the general medical floor where she rapidly deteriorated and developed respiratory distress with oxygen saturation declining to 86%. She was placed on non-invasive positive pressure ventilation (NIPPV) and transferred to the critical care unit (CCU). On CCU arrival, the patient’s vital signs showed a temperature of 39°C (102.3°F) with her blood pressure spiking to 204/74 mm Hg. She remained in sinus tachycardia at a rate of 124 beats/min and respiratory rate of 23 while on NIPPV. Physical exam findings revealed worsening mental status, severe nuchal rigidity and positive Brudzinski’s sign (forced flexion of neck causes reflex hip flexion) and Kernig’s sign (flexing at the hip and knee at 90° and subsequent knee extension is painful and patient resists).\nOn initial CCU history and chart review, it was found that she had no recent history of trauma or illness. She was taking amlodipine, atorvastatin, benazepril, calcium carbonate, glipizide, sitagliptin/metformin, insulin glargine and lisinopril at home. Her initial lab values showed multiple abnormalities, including hypokalaemia with a potassium of 3.3 mmol/L, glucose of 11.4 mmol/L mg/dL, Blood Urea Nitrogen (BUN) of 13.57 mmol/L, serum creatinine of 214.86 μmol/L, magnesium 0.64 mmol/L, phosphorus of 0.484 mmol/L, platelets at 86×109/L and a white blood cell (WBC) at 12.44×109/L.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 51,
+  "prompt_tokens": 548,
+  "solution": "The systemic inflammatory response syndrome (SIRS) count assigns 1 point for each of four criteria:\n- Temperature >38°C or <36°C: 40°C on presentation → 1.\n- Heart rate >90/min: tachycardia on presentation, quantified at 124/min on CCU arrival → 1.\n- Respiratory rate >20/min or PaCO₂ <32 mm Hg: earliest reported respiratory rate was 23/min → 1.\n- WBC >12 or <4 × 10⁹/L, or >10% bands: initial WBC 12.44 × 10⁹/L → 1.\nTotal using the earliest available measurements = 1 + 1 + 1 + 1 = 4. The respiratory rate was recorded on NIPPV, so a strictly pretreatment respiratory rate cannot be verified.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 888,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-976",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Hamlet, Claire gets Persuasion, Dave gets Dracula, Eve gets Jane Eyre, Fred gets Siddhartha, and Gertrude gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Dave and Claire swap books. Then, Claire and Alice swap books. Then, Claire and Eve swap books. Then, Bob and Fred swap books. Then, Gertrude and Alice swap books. Finally, Alice and Gertrude swap books. At the end of the semester, Eve has\nOptions:\n(A) The Trial\n(B) Hamlet\n(C) Persuasion\n(D) Dracula\n(E) Jane Eyre\n(F) Siddhartha\n(G) Dune",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Dracula",
+      "Dave": "Persuasion",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Hamlet",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Hamlet",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Siddhartha",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Hamlet",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Hamlet",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "The Trial",
+      "Fred": "Hamlet",
+      "Gertrude": "Dune"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Reader order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: The Trial, Hamlet, Persuasion, Dracula, Jane Eyre, Siddhartha, Dune.\n1. Dave and Claire swap: The Trial, Hamlet, Dracula, Persuasion, Jane Eyre, Siddhartha, Dune.\n2. Dave and Claire swap: The Trial, Hamlet, Persuasion, Dracula, Jane Eyre, Siddhartha, Dune.\n3. Claire and Alice swap: Persuasion, Hamlet, The Trial, Dracula, Jane Eyre, Siddhartha, Dune.\n4. Claire and Eve swap: Persuasion, Hamlet, Jane Eyre, Dracula, The Trial, Siddhartha, Dune.\n5. Bob and Fred swap: Persuasion, Siddhartha, Jane Eyre, Dracula, The Trial, Hamlet, Dune.\n6. Gertrude and Alice swap: Dune, Siddhartha, Jane Eyre, Dracula, The Trial, Hamlet, Persuasion.\n7. Alice and Gertrude swap: Persuasion, Siddhartha, Jane Eyre, Dracula, The Trial, Hamlet, Dune.\nEve has The Trial, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1219,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

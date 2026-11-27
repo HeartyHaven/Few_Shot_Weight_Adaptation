@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-537",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Siddhartha, and Claire gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Bob and Claire swap books. Finally, Claire and Bob swap books. At the end of the semester, Alice has\nOptions:\n(A) The Hobbit\n(B) Siddhartha\n(C) Persuasion",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Siddhartha",
+      "Claire": "Persuasion"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "The Hobbit"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "The Hobbit",
+      "Claire": "Siddhartha"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Siddhartha",
+      "Claire": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 146,
+  "solution": "Each row lists the books held by Alice, Bob, and Claire, in that order.\nInitial: The Hobbit, Siddhartha, Persuasion.\n1. Alice ↔ Claire: Persuasion, Siddhartha, The Hobbit.\n2. Bob ↔ Claire: Persuasion, The Hobbit, Siddhartha.\n3. Claire ↔ Bob: Persuasion, Siddhartha, The Hobbit.\nAlice holds Persuasion, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1147,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

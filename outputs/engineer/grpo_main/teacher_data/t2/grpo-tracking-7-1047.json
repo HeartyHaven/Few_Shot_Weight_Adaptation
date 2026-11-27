@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1047",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing sweeper, Bob is playing goalkeeper, Claire is playing benchwarmer, Dave is playing fullback, Eve is playing left back, Fred is playing center midfielder, and Gertrude is playing left midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Eve trade positions. Then, Bob and Claire trade positions. Then, Fred and Claire trade positions. Then, Fred and Eve trade positions. Then, Gertrude and Fred trade positions. Then, Dave and Fred trade positions. Finally, Gertrude and Alice trade positions. At the end of the match, Bob is playing\nOptions:\n(A) sweeper\n(B) goalkeeper\n(C) benchwarmer\n(D) fullback\n(E) left back\n(F) center midfielder\n(G) left midfielder",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Fred",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "sweeper",
+      "Bob": "goalkeeper",
+      "Claire": "benchwarmer",
+      "Dave": "fullback",
+      "Eve": "left back",
+      "Fred": "center midfielder",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "left back",
+      "Claire": "benchwarmer",
+      "Dave": "fullback",
+      "Eve": "goalkeeper",
+      "Fred": "center midfielder",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "benchwarmer",
+      "Claire": "left back",
+      "Dave": "fullback",
+      "Eve": "goalkeeper",
+      "Fred": "center midfielder",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "benchwarmer",
+      "Claire": "center midfielder",
+      "Dave": "fullback",
+      "Eve": "goalkeeper",
+      "Fred": "left back",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "benchwarmer",
+      "Claire": "center midfielder",
+      "Dave": "fullback",
+      "Eve": "left back",
+      "Fred": "goalkeeper",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "benchwarmer",
+      "Claire": "center midfielder",
+      "Dave": "fullback",
+      "Eve": "left back",
+      "Fred": "left midfielder",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "benchwarmer",
+      "Claire": "center midfielder",
+      "Dave": "left midfielder",
+      "Eve": "left back",
+      "Fred": "fullback",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "benchwarmer",
+      "Claire": "center midfielder",
+      "Dave": "left midfielder",
+      "Eve": "left back",
+      "Fred": "fullback",
+      "Gertrude": "sweeper"
+    }
+  ],
+  "prompt_tokens": 236,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: sweeper, goalkeeper, benchwarmer, fullback, left back, center midfielder, left midfielder\n1. Bob ↔ Eve: sweeper, left back, benchwarmer, fullback, goalkeeper, center midfielder, left midfielder\n2. Bob ↔ Claire: sweeper, benchwarmer, left back, fullback, goalkeeper, center midfielder, left midfielder\n3. Fred ↔ Claire: sweeper, benchwarmer, center midfielder, fullback, goalkeeper, left back, left midfielder\n4. Fred ↔ Eve: sweeper, benchwarmer, center midfielder, fullback, left back, goalkeeper, left midfielder\n5. Gertrude ↔ Fred: sweeper, benchwarmer, center midfielder, fullback, left back, left midfielder, goalkeeper\n6. Dave ↔ Fred: sweeper, benchwarmer, center midfielder, left midfielder, left back, fullback, goalkeeper\n7. Gertrude ↔ Alice: goalkeeper, benchwarmer, center midfielder, left midfielder, left back, fullback, sweeper\nBob is the benchwarmer, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1351,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

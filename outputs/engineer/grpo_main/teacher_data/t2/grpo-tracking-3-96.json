@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-96",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "soccer",
+  "question": "Alice, Bob, and Claire are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing striker, Bob is playing goalkeeper, and Claire is playing left midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Bob and Alice trade positions. Then, Claire and Alice trade positions. Finally, Bob and Alice trade positions. At the end of the match, Claire is playing\nOptions:\n(A) striker\n(B) goalkeeper\n(C) left midfielder",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "striker",
+      "Bob": "goalkeeper",
+      "Claire": "left midfielder"
+    },
+    {
+      "Alice": "goalkeeper",
+      "Bob": "striker",
+      "Claire": "left midfielder"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "striker",
+      "Claire": "goalkeeper"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "left midfielder",
+      "Claire": "goalkeeper"
+    }
+  ],
+  "prompt_tokens": 140,
+  "solution": "Positions in each row are ordered by player: Alice | Bob | Claire.\nInitial: striker | goalkeeper | left midfielder\n1. Bob ↔ Alice: goalkeeper | striker | left midfielder\n2. Claire ↔ Alice: left midfielder | striker | goalkeeper\n3. Bob ↔ Alice: striker | left midfielder | goalkeeper\nClaire is playing goalkeeper, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1185,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

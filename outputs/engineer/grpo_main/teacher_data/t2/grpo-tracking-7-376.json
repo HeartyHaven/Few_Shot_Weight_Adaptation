@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-376",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Ivanhoe, Claire gets Beloved, Dave gets The Hobbit, Eve gets Walden, Fred gets Dracula, and Gertrude gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Eve and Alice swap books. Then, Alice and Bob swap books. Then, Gertrude and Eve swap books. Then, Claire and Eve swap books. Then, Dave and Eve swap books. Then, Bob and Gertrude swap books. Finally, Dave and Alice swap books. At the end of the semester, Eve has\nOptions:\n(A) Dune\n(B) Ivanhoe\n(C) Beloved\n(D) The Hobbit\n(E) Walden\n(F) Dracula\n(G) Hamlet",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Gertrude"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Walden",
+      "Fred": "Dracula",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Ivanhoe",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Dune",
+      "Fred": "Dracula",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Dune",
+      "Fred": "Dracula",
+      "Gertrude": "Hamlet"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "The Hobbit",
+      "Eve": "Beloved",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Beloved",
+      "Eve": "The Hobbit",
+      "Fred": "Dracula",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dune",
+      "Claire": "Hamlet",
+      "Dave": "Ivanhoe",
+      "Eve": "The Hobbit",
+      "Fred": "Dracula",
+      "Gertrude": "Walden"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Each row lists books in order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Dune, Ivanhoe, Beloved, The Hobbit, Walden, Dracula, Hamlet.\nAfter Eve–Alice: Walden, Ivanhoe, Beloved, The Hobbit, Dune, Dracula, Hamlet.\nAfter Alice–Bob: Ivanhoe, Walden, Beloved, The Hobbit, Dune, Dracula, Hamlet.\nAfter Gertrude–Eve: Ivanhoe, Walden, Beloved, The Hobbit, Hamlet, Dracula, Dune.\nAfter Claire–Eve: Ivanhoe, Walden, Hamlet, The Hobbit, Beloved, Dracula, Dune.\nAfter Dave–Eve: Ivanhoe, Walden, Hamlet, Beloved, The Hobbit, Dracula, Dune.\nAfter Bob–Gertrude: Ivanhoe, Dune, Hamlet, Beloved, The Hobbit, Dracula, Walden.\nAfter Dave–Alice: Beloved, Dune, Hamlet, Ivanhoe, The Hobbit, Dracula, Walden.\nEve has The Hobbit, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1188,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

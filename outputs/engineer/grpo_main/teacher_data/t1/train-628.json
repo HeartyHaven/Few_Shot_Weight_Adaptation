@@ -1,0 +1,22 @@
+{
+  "id": "train-628",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 77-year-old Dutch Caucasian woman presented with a 2-day history of slight headache and progressive walking problems. No recent head trauma had occurred. Past medical history was extended including diabetes, ischemic stroke, hypertension and heart failure. She had been using among others an oral anticoagulant agent because of atrial fibrillation and mitral valve replacement. Neurological examination was unremarkable except for a disturbed heel to shin coordination test and an inability to walk without support. Results of laboratory studies revealed no significant abnormalities and an International Normalized Ratio of 2.6. Computed tomography of the brain showed a 5 mm thick linear hyperdense lesion extending along the right side of the interhemispheric fissure (). Because of the stable neurological condition the patient was admitted for observation and treated conservatively. The anticoagulant agent was stopped and gradual improvement was noticed in a few days. Five days after admission she was able to walk without assistance and she was discharged from the hospital. Two weeks later the patient was in excellent condition. Computed tomography of the brain revealed no signs of a rebleed and showed a hypodense lesion representing the known interhemispheric subdural hematoma of older age ().\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "8",
+  "lower": 8.0,
+  "upper": 8.0,
+  "calc_id": 4,
+  "prompt_tokens": 324,
+  "solution": "CHA₂DS₂-VASc assigns points for the following stroke risk factors in atrial fibrillation:\n- Congestive heart failure: documented → 1.\n- Hypertension: documented → 1.\n- Age: 77 years → 2 for age ≥75; the 65–74 age point is not added.\n- Diabetes mellitus: documented → 1.\n- Prior stroke, TIA or systemic embolism: prior ischemic stroke → 2.\n- Vascular disease: no prior myocardial infarction, peripheral artery disease or aortic plaque reported → 0. Mitral valve replacement does not qualify.\n- Sex category: female → 1.\nTotal: 1 + 1 + 2 + 1 + 2 + 0 + 1 = 8.\nFinal answer: 8",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 673,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 8.0,
+    "correct": true
+  }
+}

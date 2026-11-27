@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1029",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets The Hobbit, Claire gets Candide, Dave gets Jane Eyre, and Eve gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Bob and Claire swap books. Then, Alice and Eve swap books. Then, Bob and Claire swap books. Then, Claire and Eve swap books. Finally, Eve and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Hamlet\n(B) The Hobbit\n(C) Candide\n(D) Jane Eyre\n(E) Persuasion",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Jane Eyre",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "The Hobbit",
+      "Dave": "Jane Eyre",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "The Hobbit",
+      "Dave": "Jane Eyre",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "The Hobbit",
+      "Claire": "Candide",
+      "Dave": "Jane Eyre",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "The Hobbit",
+      "Claire": "Hamlet",
+      "Dave": "Jane Eyre",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Candide",
+      "Claire": "Hamlet",
+      "Dave": "Jane Eyre",
+      "Eve": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, and Eve, in that order.\nInitial: Hamlet, The Hobbit, Candide, Jane Eyre, Persuasion.\n1. Bob swaps with Claire: Hamlet, Candide, The Hobbit, Jane Eyre, Persuasion.\n2. Alice swaps with Eve: Persuasion, Candide, The Hobbit, Jane Eyre, Hamlet.\n3. Bob swaps with Claire: Persuasion, The Hobbit, Candide, Jane Eyre, Hamlet.\n4. Claire swaps with Eve: Persuasion, The Hobbit, Hamlet, Jane Eyre, Candide.\n5. Eve swaps with Bob: Persuasion, Candide, Hamlet, Jane Eyre, The Hobbit.\nBob has Candide, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1291,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

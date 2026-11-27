@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-32",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Oscar, Bob is dancing with Quinn, and Claire is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Claire and Bob switch partners. Then, Alice and Claire switch partners. Finally, Alice and Bob switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Oscar\n(B) Quinn\n(C) Vera",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Oscar",
+      "Bob": "Quinn",
+      "Claire": "Vera"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Vera",
+      "Claire": "Quinn"
+    },
+    {
+      "Alice": "Quinn",
+      "Bob": "Vera",
+      "Claire": "Oscar"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Quinn",
+      "Claire": "Oscar"
+    }
+  ],
+  "prompt_tokens": 135,
+  "solution": "Each row lists the partners of Alice, Bob, and Claire, in that order.\nInitial: Oscar | Quinn | Vera\n1. Claire swaps with Bob: Oscar | Vera | Quinn\n2. Alice swaps with Claire: Quinn | Vera | Oscar\n3. Alice swaps with Bob: Vera | Quinn | Oscar\nClaire's final partner is Oscar, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1046,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

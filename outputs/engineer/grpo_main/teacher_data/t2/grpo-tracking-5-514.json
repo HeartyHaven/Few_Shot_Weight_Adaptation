@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-514",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Wade, Bob is dancing with Priya, Claire is dancing with Lena, Dave is dancing with Quinn, and Eve is dancing with Marco.\nThroughout the song, the dancers often trade partners. First, Bob and Alice switch partners. Then, Eve and Dave switch partners. Then, Bob and Alice switch partners. Then, Dave and Alice switch partners. Finally, Bob and Dave switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Wade\n(B) Priya\n(C) Lena\n(D) Quinn\n(E) Marco",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Wade",
+      "Bob": "Priya",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Wade",
+      "Claire": "Lena",
+      "Dave": "Quinn",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Wade",
+      "Claire": "Lena",
+      "Dave": "Marco",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Priya",
+      "Claire": "Lena",
+      "Dave": "Marco",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Priya",
+      "Claire": "Lena",
+      "Dave": "Wade",
+      "Eve": "Quinn"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Wade",
+      "Claire": "Lena",
+      "Dave": "Priya",
+      "Eve": "Quinn"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Wade, Priya, Lena, Quinn, Marco)\n1. Bob and Alice swap: (Priya, Wade, Lena, Quinn, Marco)\n2. Eve and Dave swap: (Priya, Wade, Lena, Marco, Quinn)\n3. Bob and Alice swap: (Wade, Priya, Lena, Marco, Quinn)\n4. Dave and Alice swap: (Marco, Priya, Lena, Wade, Quinn)\n5. Bob and Dave swap: (Marco, Wade, Lena, Priya, Quinn)\nClaire's partner is Lena, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1189,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

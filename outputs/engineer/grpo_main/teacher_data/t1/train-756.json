@@ -1,0 +1,22 @@
+{
+  "id": "train-756",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 86-year-old male presented to our emergency department (ED) with complaints of shortness of breath (SOB) and dyspnea on minimal exertion. The patient had a past medical history significant for chronic obstructive pulmonary disease (COPD), congestive heart failure with preserved ejection fraction, and atrial fibrillation on anticoagulation with warfarin, hypertension, dyslipidemia, a cerebrovascular accident without any residual deficits, seizures, benign prostatic hyperplasia (BPH), and a recently diagnosed left lower extremity DVT. The patient presented via EMS to our emergency department from home as a “CPAP alert.” The patient was placed on CPAP en route to the hospital because, at home, he had a SpO2 of 77% on room air and was notably short of breath. The patient’s respiratory status rapidly improved with CPAP and upon arrival to the ED, he was placed on supplemental oxygen via nasal cannula at 4 liters per minute and was saturating well with SpO2 of 98%. Upon further history, the patient endorsed dyspnea, in addition to left leg pain and swelling for the past month. He did not seek earlier medical care secondary to other issues at home. He also reported intermittent abdominal pain associated with eating as well as watery diarrhea for the past month. He denied fever, chest pain, nausea, vomiting, syncope, or any other complaints on review of systems.\nIn the ED, the patient was found to have a left lower extremity DVT, bilateral pulmonary embolism diagnosed by CTPA, as well as a left atrial appendage thrombus (Figures -).\nLabs were significant for a supratherapeutic INR of 7.5 and an elevated activated partial thromboplastin time (aPTT) of 54.7 seconds. Also, N-terminal proBNP levels were elevated at 2831 pg/ml, troponin-I was not elevated. Twelve-lead ECG showed atrial fibrillation with a normal rate. A cardiologist was consulted, who recommended initiation of subcutaneous enoxaparin despite a supratherapeutic INR and vitamin K reversal with oral phytonadione. The plan included transitioning the patient to a direct oral anticoagulant (DOAC), such as apixaban, prior to discharge. Hematology was consulted to weigh in on the evaluation of this hypercoagulable state despite being appropriately anticoagulated with warfarin. The patient was admitted to the cardiovascular ICU in stable but guarded condition.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "7",
+  "lower": 7.0,
+  "upper": 7.0,
+  "calc_id": 4,
+  "prompt_tokens": 609,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. Using the broad vascular-disease definition that includes venous thrombosis:\n- Congestive heart failure, despite preserved ejection fraction = 1.\n- Hypertension = 1.\n- Age 86 (≥75) = 2; the 65–74 age point is not added.\n- Diabetes not documented = 0.\n- Prior stroke = 2, even without residual deficits.\n- Vascular disease: documented lower-extremity DVT = 1 under the broad definition. The PE does not add a separate point.\n- Sex category: male = 0.\nTotal = 1 + 1 + 2 + 0 + 2 + 1 + 0 = 7. With the narrower vascular criterion limited to prior MI, peripheral arterial disease, or aortic plaque, the score would be 6.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 624,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 7.0,
+    "correct": true
+  }
+}

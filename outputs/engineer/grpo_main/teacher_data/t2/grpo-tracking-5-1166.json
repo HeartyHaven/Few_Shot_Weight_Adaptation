@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1166",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Hamlet, Claire gets Candide, Dave gets Jane Eyre, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Dave and Eve swap books. Then, Bob and Alice swap books. Then, Alice and Eve swap books. Then, Alice and Claire swap books. Finally, Dave and Claire swap books. At the end of the semester, Dave has\nOptions:\n(A) Dune\n(B) Hamlet\n(C) Candide\n(D) Jane Eyre\n(E) Siddhartha",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Jane Eyre",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Siddhartha",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "Siddhartha",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Dune",
+      "Claire": "Candide",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Jane Eyre",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "Siddhartha",
+      "Dave": "Jane Eyre",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Book order in every row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Dune, Hamlet, Candide, Jane Eyre, Siddhartha)\n1. Dave ↔ Eve: (Dune, Hamlet, Candide, Siddhartha, Jane Eyre)\n2. Bob ↔ Alice: (Hamlet, Dune, Candide, Siddhartha, Jane Eyre)\n3. Alice ↔ Eve: (Jane Eyre, Dune, Candide, Siddhartha, Hamlet)\n4. Alice ↔ Claire: (Candide, Dune, Jane Eyre, Siddhartha, Hamlet)\n5. Dave ↔ Claire: (Candide, Dune, Siddhartha, Jane Eyre, Hamlet)\nDave has Jane Eyre, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1255,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

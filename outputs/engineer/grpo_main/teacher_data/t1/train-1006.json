@@ -1,0 +1,22 @@
+{
+  "id": "train-1006",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nThe 67-year-old male patient was admitted to our emergency department because of swelling in his right cheek since the previous day. He had a history of atrial fibrillation, which had been treated with dabigatran, 150 mg twice daily (last dose 15-16 hours before presentation), and suffered from chronic renal impairment due to type II diabetes mellitus and hypertension. The febrile patient was haemodynamically stable on admission. The physical examination revealed significant hot and painful right facial swelling. The laboratory results on admission were as follows: white blood count 17.7 Giga/L; C-reactive protein 234 mg/L; creatinine 165 μmol/L (GFR 36.5 mL/min); and unbound dabigatran concentration as measured with diluted thrombin time (dTT; Hyphen Hemoclot, Neuville-sur-Oise, France) 119.05 ng/mL. The activated partial thromboplastin time (aPTT) and thrombin time were prolonged (61 sec, resp., <120 sec). For a summary of coagulation tests, see . We administered 2.2 g i.v. Co-Amoxicillin and computed tomography was performed to plan abscess surgery.\nAs the patient was becoming increasingly septic and haemodynamically unstable despite volume substitution, emergency surgery was indicated.\nWe administered a 2.5 g infusion of idarucizumab, followed by a second infusion of 2.5 g idarucizumab after 10 minutes. No side effects were reported by the patient.\nImmediately after the second dose, coagulation testing was repeated and aPTT as well as thrombin time were found to be normal; dabigatran concentration was below detection limit (<30 ng/mL; see ). Thirty minutes after idarucizumab application, enoral incision of the multilocular abscess was performed, with irrigation and insertion of Penrose and Easy Flow drainage. There was no relevant blood loss and no other complications. The surgical team rated the intraoperative bleeding as being “as expected.”\nThe patient could be managed postoperatively on an ordinary surgical ward with rapid clinical improvement. Coagulation tests were repeated 24 hours after administration of idarucizumab (). Postoperative kidney function improved after treatment of infection (creatinine 115 μmol/L, GFR 56 mL/min, day 6). As there was no postoperative bleeding, dabigatran was restarted 36 hours after surgery and administration of idarucizumab. The patient was discharged from hospital without any complications.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 635,
+  "solution": "Apply CHA2DS2-VASc to the patient with atrial fibrillation using his admission history:\n- Congestive heart failure (1 if present): none documented → 0.\n- Hypertension (1): present → 1.\n- Age (1 for 65–74; 2 for ≥75): 67 years → 1.\n- Diabetes mellitus (1): type 2 diabetes → 1.\n- Prior stroke, TIA, or systemic embolism (2): none documented → 0.\n- Vascular disease, such as prior MI, peripheral arterial disease, or aortic plaque (1): none documented → 0.\n- Female sex (1): male → 0.\nRenal impairment and dabigatran use do not add points. Total = 0 + 1 + 1 + 1 + 0 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 865,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

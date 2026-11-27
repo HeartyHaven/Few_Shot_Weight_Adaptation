@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-951",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Stefan, Bob is dancing with Karl, Claire is dancing with Oscar, Dave is dancing with Lena, Eve is dancing with Yuki, Fred is dancing with Priya, and Gertrude is dancing with Nadia.\nThroughout the song, the dancers often trade partners. First, Alice and Fred switch partners. Then, Bob and Alice switch partners. Then, Claire and Eve switch partners. Then, Bob and Fred switch partners. Then, Dave and Fred switch partners. Then, Eve and Claire switch partners. Finally, Claire and Fred switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Stefan\n(B) Karl\n(C) Oscar\n(D) Lena\n(E) Yuki\n(F) Priya\n(G) Nadia",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Stefan",
+      "Bob": "Karl",
+      "Claire": "Oscar",
+      "Dave": "Lena",
+      "Eve": "Yuki",
+      "Fred": "Priya",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Karl",
+      "Claire": "Oscar",
+      "Dave": "Lena",
+      "Eve": "Yuki",
+      "Fred": "Stefan",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Priya",
+      "Claire": "Oscar",
+      "Dave": "Lena",
+      "Eve": "Yuki",
+      "Fred": "Stefan",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Priya",
+      "Claire": "Yuki",
+      "Dave": "Lena",
+      "Eve": "Oscar",
+      "Fred": "Stefan",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Lena",
+      "Eve": "Oscar",
+      "Fred": "Priya",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Yuki",
+      "Dave": "Priya",
+      "Eve": "Oscar",
+      "Fred": "Lena",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Oscar",
+      "Dave": "Priya",
+      "Eve": "Yuki",
+      "Fred": "Lena",
+      "Gertrude": "Nadia"
+    },
+    {
+      "Alice": "Karl",
+      "Bob": "Stefan",
+      "Claire": "Lena",
+      "Dave": "Priya",
+      "Eve": "Yuki",
+      "Fred": "Oscar",
+      "Gertrude": "Nadia"
+    }
+  ],
+  "prompt_tokens": 225,
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Stefan, Karl, Oscar, Lena, Yuki, Priya, Nadia\n1. Alice ↔ Fred: Priya, Karl, Oscar, Lena, Yuki, Stefan, Nadia\n2. Bob ↔ Alice: Karl, Priya, Oscar, Lena, Yuki, Stefan, Nadia\n3. Claire ↔ Eve: Karl, Priya, Yuki, Lena, Oscar, Stefan, Nadia\n4. Bob ↔ Fred: Karl, Stefan, Yuki, Lena, Oscar, Priya, Nadia\n5. Dave ↔ Fred: Karl, Stefan, Yuki, Priya, Oscar, Lena, Nadia\n6. Eve ↔ Claire: Karl, Stefan, Oscar, Priya, Yuki, Lena, Nadia\n7. Claire ↔ Fred: Karl, Stefan, Lena, Priya, Yuki, Oscar, Nadia\nClaire is dancing with Lena, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1253,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

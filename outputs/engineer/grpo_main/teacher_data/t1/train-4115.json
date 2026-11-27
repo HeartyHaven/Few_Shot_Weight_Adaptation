@@ -1,0 +1,22 @@
+{
+  "id": "train-4115",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nSudden onset chest pain.\nA previously healthy 33-year-old Hispanic female with no significant medical history presented to the emergency room with sudden onset of chest pain while she was cooking dinner. The pain originated in the neck area on the left side and mid-back region, radiated to the anterior chest, was 10/10 intensity, pressure-like, lasted for 15 min, and resolved with aspirin. Chest pain was associated with nausea, vomiting, diaphoresis, shortness of breath, and lightheadedness. A month ago, she delivered her third child by normal vaginal delivery at 37 wk of gestation. The review of systems was otherwise unremarkable.\nThe patient had no prior history of coronary artery disease, aortic dissection, or pulmonary embolism.\nShe had no significant social history including smoking, alcohol or recreational substance use. She denied use of any over the counter medicines and denied use of any hormonal contraceptives before. Her only medications included prenatal vitamins and iron supplements. There was no history of sudden cardiac death or early myocardial infarction in the family.\nHer physical examination was unremarkable. Blood pressure was 104/56 mmHg and heart rate was 82 beats per minute. Equal intensity pulses were palpable in both arms. There were no cardiac murmurs, jugular venous distension, crackles on auscultatory lung areas, and pedal edema.\nLaboratory markers showed low hemoglobin of 11.6 g/dL (normal 12-15.5 g/dL) , white blood cell count of 6 × 109 cells/L, creatinine of 0.6 mg/dL, ESR of 16 mm/h (normal range, 0-20 mm/h) and CRP of 2.7 mg/L (normal range, 0-10 mg/L). Serial Troponins (Troponin T) were abnormal and trended up from 0.01 ng/mL and peaked at 15.5 ng/mL.\nHer initial electrocardiogram (EKG) was normal. Subsequent EKGs showed dynamic T wave inversions. Chest radiography did not reveal mediastinal widening or any fractures and dislocations. Transthoracic echocardiogram revealed 48% LVEF, moderate-sized apical wall motion abnormality with akinesia of the anteroseptal segments.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 584,
+  "solution": "The HEART score assigns 0–2 points each for history, ECG, age, risk factors, and troponin.\n- History: pressure-like chest pain with diaphoresis, vomiting, and dyspnea is highly suspicious for ischemia = 2.\n- ECG: initial tracing normal = 0. The T-wave inversions appeared later.\n- Age: 33 years (<45) = 0.\n- Risk factors: no documented standard coronary risk factors or established atherosclerotic disease = 0.\n- Troponin: the peak troponin T of 15.5 ng/mL is markedly elevated (>3 times the upper reference limit) = 2.\nUsing the peak troponin, the sum is 2 + 0 + 0 + 0 + 2 = 4. This is not a verified admission-only total: the initial troponin was 0.01 ng/mL, and its assay-specific upper reference limit is not stated. If the initial value was normal, the admission score was 2.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 804,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

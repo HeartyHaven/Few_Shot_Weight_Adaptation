@@ -1,0 +1,22 @@
+{
+  "id": "train-4189",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nA 77-year-old man with a history of long-standing rheumatoid arthritis with possible lung involvement, chronic obstructive pulmonary disease, asbestos-related pleuropulmonary disease, traumatic hydropneumothorax, controlled type-1 diabetes mellitus, and coronary artery bypass grafting (25 years ago), presented with two days of purulent drainage from his distal sternum. He reported having had a persistent dry cough and left-sided chest pain for over a year. Multiple computed tomograms (CTs) of the chest had shown stable left-sided pulmonary nodules with fibrotic changes and a post-traumatic hydropneumothorax. His pulmonary signs/symptoms and imaging findings had been attributed to rheumatoid lung disease and remote trauma. The patient had received rituximab for the past eight months but had previously also been treated with etanercept, methotrexate, leflunomide, and intermittent courses of corticosteroids. He denied fever, weight loss, or joint pain. The patient lived in Minnesota during the summer and Arizona during the winter. He denied any other travel, exposure to mold or dust, or pet ownership.\nOn presentation, vital signs were normal. The only notable physical findings were a fluctuant swelling over the distal sternum, with a small sinus tract that drained copious amounts of cloudy brown fluid, and faint pre-sternal erythema. His white blood cell count was 7,300 cells/µL, alkaline phosphatase level 296 IU/L, C-reactive protein level 98 mg/L, and erythrocyte sedimentation rate >130 mm/h. A chest CT showed new bony destruction of the left sixth rib, with an adjacent parasternal fluid collection, but otherwise stable left-sided pleuropulmonary changes (Figure ).\nThe patient received vancomycin and piperacillin/tazobactam, and the following day underwent surgical debridement. Histopathological examination of the rib cartilage showed septate fungal hyphae with acute-angle branching consistent with Aspergillus spp. (Figure ), and culture of the tissue yielded A. fumigatus (Figure ).\nThe antibiotics and immunosuppressive therapy for rheumatoid arthritis were stopped, and the patient received oral voriconazole and underwent aggressive debridement of bone and soft tissues. After four months of voriconazole therapy, the sternal wound was healing, and repeat chest CT showed stable pulmonary and bone changes. Unfortunately, shortly thereafter, the patient died of unknown causes.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 18,
+  "prompt_tokens": 604,
+  "solution": "The HEART score rates History, ECG, Age, Risk factors, and Troponin from 0 to 2 points each.\n- History: year-long chest pain with a draining sternal lesion and adjacent rib destruction is only slightly suspicious for acute coronary syndrome = 0.\n- ECG: no admission tracing is reported; assume no qualifying abnormality for this calculation = 0.\n- Age: 77 meets the ≥65 threshold = 2.\n- Risk factors: prior CABG establishes atherosclerotic coronary disease = 2. Diabetes does not increase this component beyond 2.\n- Troponin: no result is reported; assume a value at or below the reference limit for this calculation = 0.\nTotal under those assumptions = 0 + 0 + 2 + 2 + 0 = 4. Without ECG and troponin results, this is a minimum rather than a confirmed complete score.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 944,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

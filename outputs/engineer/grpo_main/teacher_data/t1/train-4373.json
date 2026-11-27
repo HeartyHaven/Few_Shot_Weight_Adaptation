@@ -1,0 +1,22 @@
+{
+  "id": "train-4373",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nA 5-year-old boy presents to your office with his mother. The boy has been complaining of a sore throat and headache for the past 2 days. His mother states that he had a fever of 39.3°C (102.7°F) and had difficulty eating. On examination, the patient has cervical lymphadenopathy and erythematous tonsils with exudates. A streptococcal rapid antigen detection test is negative.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 20,
+  "prompt_tokens": 162,
+  "solution": "Use the age-adjusted Centor (McIsaac) score for the presenting sore throat:\n- Fever >38°C: reported temperature 39.3°C → 1.\n- Absence of cough: no cough is reported; treating it as absent → 1.\n- Tonsillar swelling or exudate: exudates are present → 1.\n- Tender anterior cervical nodes: cervical lymphadenopathy is present, but neither tenderness nor anterior location is specified → 0.\n- Age adjustment (3–14 years: +1; 15–44: 0; ≥45: −1): age 5 → 1.\nThe rapid antigen result is not a scoring criterion. Total = 1 + 1 + 1 + 0 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 874,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

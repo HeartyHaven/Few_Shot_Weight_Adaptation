@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1025",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Trial, Bob gets Dracula, Claire gets Jane Eyre, Dave gets Walden, Eve gets Ivanhoe, Fred gets Candide, and Gertrude gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Fred and Dave swap books. Then, Bob and Alice swap books. Then, Gertrude and Fred swap books. Then, Gertrude and Bob swap books. Then, Dave and Fred swap books. Then, Eve and Claire swap books. Finally, Claire and Alice swap books. At the end of the semester, Fred has\nOptions:\n(A) The Trial\n(B) Dracula\n(C) Jane Eyre\n(D) Walden\n(E) Ivanhoe\n(F) Candide\n(G) Siddhartha",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "The Trial",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe",
+      "Fred": "Candide",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Dracula",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe",
+      "Fred": "Walden",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe",
+      "Fred": "Walden",
+      "Gertrude": "Siddhartha"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe",
+      "Fred": "Siddhartha",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Candide",
+      "Eve": "Ivanhoe",
+      "Fred": "Siddhartha",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Siddhartha",
+      "Eve": "Ivanhoe",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Siddhartha",
+      "Eve": "Jane Eyre",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Siddhartha",
+      "Eve": "Jane Eyre",
+      "Fred": "Candide",
+      "Gertrude": "The Trial"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (The Trial, Dracula, Jane Eyre, Walden, Ivanhoe, Candide, Siddhartha)\n1. Fred swaps with Dave: (The Trial, Dracula, Jane Eyre, Candide, Ivanhoe, Walden, Siddhartha)\n2. Bob swaps with Alice: (Dracula, The Trial, Jane Eyre, Candide, Ivanhoe, Walden, Siddhartha)\n3. Gertrude swaps with Fred: (Dracula, The Trial, Jane Eyre, Candide, Ivanhoe, Siddhartha, Walden)\n4. Gertrude swaps with Bob: (Dracula, Walden, Jane Eyre, Candide, Ivanhoe, Siddhartha, The Trial)\n5. Dave swaps with Fred: (Dracula, Walden, Jane Eyre, Siddhartha, Ivanhoe, Candide, The Trial)\n6. Eve swaps with Claire: (Dracula, Walden, Ivanhoe, Siddhartha, Jane Eyre, Candide, The Trial)\n7. Claire swaps with Alice: (Ivanhoe, Walden, Dracula, Siddhartha, Jane Eyre, Candide, The Trial)\nFred has Candide, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1136,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

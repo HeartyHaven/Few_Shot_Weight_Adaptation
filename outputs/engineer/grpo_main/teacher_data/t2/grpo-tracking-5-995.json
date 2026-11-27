@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-995",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing sweeper, Bob is playing cheerleader, Claire is playing right midfielder, Dave is playing left back, and Eve is playing left midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Eve and Dave trade positions. Then, Alice and Dave trade positions. Then, Dave and Alice trade positions. Then, Claire and Alice trade positions. Finally, Claire and Bob trade positions. At the end of the match, Alice is playing\nOptions:\n(A) sweeper\n(B) cheerleader\n(C) right midfielder\n(D) left back\n(E) left midfielder",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "sweeper",
+      "Bob": "cheerleader",
+      "Claire": "right midfielder",
+      "Dave": "left back",
+      "Eve": "left midfielder"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "cheerleader",
+      "Claire": "right midfielder",
+      "Dave": "left midfielder",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "left midfielder",
+      "Bob": "cheerleader",
+      "Claire": "right midfielder",
+      "Dave": "sweeper",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "cheerleader",
+      "Claire": "right midfielder",
+      "Dave": "left midfielder",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "cheerleader",
+      "Claire": "sweeper",
+      "Dave": "left midfielder",
+      "Eve": "left back"
+    },
+    {
+      "Alice": "right midfielder",
+      "Bob": "sweeper",
+      "Claire": "cheerleader",
+      "Dave": "left midfielder",
+      "Eve": "left back"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Each row lists the positions in player order: Alice, Bob, Claire, Dave, Eve.\nInitial: sweeper, cheerleader, right midfielder, left back, left midfielder\n1. Eve ↔ Dave: sweeper, cheerleader, right midfielder, left midfielder, left back\n2. Alice ↔ Dave: left midfielder, cheerleader, right midfielder, sweeper, left back\n3. Dave ↔ Alice: sweeper, cheerleader, right midfielder, left midfielder, left back\n4. Claire ↔ Alice: right midfielder, cheerleader, sweeper, left midfielder, left back\n5. Claire ↔ Bob: right midfielder, sweeper, cheerleader, left midfielder, left back\nAlice plays right midfielder, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1343,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

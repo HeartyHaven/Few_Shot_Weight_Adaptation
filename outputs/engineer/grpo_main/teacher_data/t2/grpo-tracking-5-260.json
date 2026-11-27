@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-260",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Yuki, Bob is dancing with Marco, Claire is dancing with Priya, Dave is dancing with Vera, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Claire and Alice switch partners. Then, Claire and Alice switch partners. Then, Dave and Claire switch partners. Then, Bob and Eve switch partners. Finally, Eve and Alice switch partners. At the end of the dance, Dave is dancing with\nOptions:\n(A) Yuki\n(B) Marco\n(C) Priya\n(D) Vera\n(E) Wade",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Priya",
+      "Dave": "Vera",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Priya",
+      "Bob": "Marco",
+      "Claire": "Yuki",
+      "Dave": "Vera",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Priya",
+      "Dave": "Vera",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Marco",
+      "Claire": "Vera",
+      "Dave": "Priya",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Wade",
+      "Claire": "Vera",
+      "Dave": "Priya",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Wade",
+      "Claire": "Vera",
+      "Dave": "Priya",
+      "Eve": "Yuki"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Yuki, Marco, Priya, Vera, Wade.\n1. Claire ↔ Alice: Priya, Marco, Yuki, Vera, Wade.\n2. Claire ↔ Alice: Yuki, Marco, Priya, Vera, Wade.\n3. Dave ↔ Claire: Yuki, Marco, Vera, Priya, Wade.\n4. Bob ↔ Eve: Yuki, Wade, Vera, Priya, Marco.\n5. Eve ↔ Alice: Marco, Wade, Vera, Priya, Yuki.\nDave's partner is Priya, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1005,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

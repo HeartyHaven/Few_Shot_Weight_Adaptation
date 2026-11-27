@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-241",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Middlemarch, and Claire gets Beloved.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Alice and Bob swap books. Finally, Alice and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Walden\n(B) Middlemarch\n(C) Beloved",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Middlemarch",
+      "Claire": "Walden"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire.\nInitial: Walden, Middlemarch, Beloved\n1. Alice swaps with Bob: Middlemarch, Walden, Beloved\n2. Alice swaps with Bob: Walden, Middlemarch, Beloved\n3. Alice swaps with Claire: Beloved, Middlemarch, Walden\nClaire's final book is Walden, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1019,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "train-counting_and_probability-408",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Ed has five identical green marbles, and a large supply of identical red marbles. He arranges the green marbles and some of the red ones in a row and finds that the number of marbles whose right hand neighbor is the same color as themselves is equal to the number of marbles whose right hand neighbor is the other color. An example of such an arrangement is GGRRRGGRG. Let $m$ be the maximum number of red marbles for which such an arrangement is possible, and let $N$ be the number of ways he can arrange the $m+5$ marbles to satisfy the requirement. Find the remainder when $N$ is divided by $1000$.\n",
+  "answer": "3",
+  "solution": "With $r$ red marbles, the row has $r+4$ adjacent pairs. Exactly half must be color changes. Each change touches one green marble, and each of the five green marbles can touch at most two changes, so $(r+4)/2\\le 10$. Thus $r\\le 16$.\n\nFor $r=16$, all ten changes are needed, so each green marble must have a red marble on both sides. This means the five greens separate six nonempty red runs. Conversely, any such row has ten changes among twenty adjacent pairs, so the bound is attained and $m=16$.\n\nTo count these rows, choose five of the fifteen gaps between sixteen reds and insert one green in each chosen gap. Hence $N=\\binom{15}{5}=3003$, whose remainder modulo $1000$ is $3$.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 71,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "3",
+    "correct": true
+  }
+}

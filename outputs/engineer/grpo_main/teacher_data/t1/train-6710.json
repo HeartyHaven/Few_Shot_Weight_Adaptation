@@ -1,0 +1,22 @@
+{
+  "id": "train-6710",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 78-year-old woman living in New Jersey is brought to the emergency department in July with a fever for 5 days. Lethargy is present. She has had bloody urine over the last 48 hours but denies any nausea, vomiting, or abdominal pain. She has no history of serious illness and takes no medications. She has not traveled anywhere outside her city for the past several years. She appears ill. The temperature is 40.8℃ (105.4℉), the pulse is 108/min, the respiration rate is 20/min, and the blood pressure is 105/50 mm Hg. The abdominal exam reveals hepatosplenomegaly. Lymphadenopathy is absent. Petechiae are seen on the lower extremities. Laboratory studies show the following:\nLaboratory test\nHemoglobin 8 g/dL\nMean corpuscular volume (MCV) 98 µm3\nLeukocyte count 4,200/mm3\nSegmented neutrophils 32%\nLymphocytes 58%\nPlatelet count 108,000/mm3\nBilirubin, total 5.0 mg/dL\nDirect 0.7 mg/dL\nAspartate aminotransferase (AST) 51 U/L\nAlanine aminotransferase (ALT) 56 U/L\nAlkaline phosphatase 180 U/L\nLactate dehydrogenase (LDH) 640 U/L (N = 140–280 U/L)\nHaptoglobin 20 mg/dL (N = 30–200 mg/dL)\nUrine\nHemoglobin +\nUrobilinogen +\nProtein +\nA peripheral blood smear is shown (see image).\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 51,
+  "prompt_tokens": 469,
+  "solution": "The systemic inflammatory response syndrome (SIRS) count assigns one point per criterion met at presentation:\n- Temperature >38°C or <36°C: 40.8°C → 1.\n- Heart rate >90/min: 108/min → 1.\n- Respiratory rate >20/min or PaCO₂ <32 mm Hg: exactly 20/min, with no PaCO₂ reported → 0.\n- Leukocytes >12,000/mm³ or <4,000/mm³, or >10% bands: 4,200/mm³ falls between the thresholds, and no elevated band fraction is reported → 0.\nTotal = 1 + 1 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 736,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

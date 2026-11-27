@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-288",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Walden, Claire gets The Hobbit, Dave gets Dracula, and Eve gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Dave and Bob swap books. Then, Bob and Eve swap books. Then, Claire and Eve swap books. Then, Eve and Bob swap books. Finally, Dave and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Candide\n(B) Walden\n(C) The Hobbit\n(D) Dracula\n(E) Persuasion",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "The Hobbit",
+      "Dave": "Dracula",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "The Hobbit",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "The Hobbit",
+      "Dave": "Walden",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Persuasion",
+      "Claire": "Dracula",
+      "Dave": "Walden",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Dracula",
+      "Dave": "Walden",
+      "Eve": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Walden",
+      "Dave": "Dracula",
+      "Eve": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Candide, Walden, The Hobbit, Dracula, Persuasion).\n1. Dave and Bob swap: (Candide, Dracula, The Hobbit, Walden, Persuasion).\n2. Bob and Eve swap: (Candide, Persuasion, The Hobbit, Walden, Dracula).\n3. Claire and Eve swap: (Candide, Persuasion, Dracula, Walden, The Hobbit).\n4. Eve and Bob swap: (Candide, The Hobbit, Dracula, Walden, Persuasion).\n5. Dave and Claire swap: (Candide, The Hobbit, Walden, Dracula, Persuasion).\nAlice has Candide, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1084,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

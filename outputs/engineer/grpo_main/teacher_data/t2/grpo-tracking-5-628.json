@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-628",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "gifts",
+  "question": "Alice, Bob, Claire, Dave, and Eve are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a purple present, Bob has a red present, Claire has a grey present, Dave has a green present, and Eve has a gold present.\nAs the event progresses, pairs of people swap gifts. First, Bob and Claire swap their gifts. Then, Dave and Bob swap their gifts. Then, Alice and Dave swap their gifts. Then, Claire and Dave swap their gifts. Finally, Eve and Bob swap their gifts. At the end of the event, Claire has the\nOptions:\n(A) purple present\n(B) red present\n(C) grey present\n(D) green present\n(E) gold present",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "purple",
+      "Bob": "red",
+      "Claire": "grey",
+      "Dave": "green",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "grey",
+      "Claire": "red",
+      "Dave": "green",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "purple",
+      "Bob": "green",
+      "Claire": "red",
+      "Dave": "grey",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "green",
+      "Claire": "red",
+      "Dave": "purple",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "green",
+      "Claire": "purple",
+      "Dave": "red",
+      "Eve": "gold"
+    },
+    {
+      "Alice": "grey",
+      "Bob": "gold",
+      "Claire": "purple",
+      "Dave": "red",
+      "Eve": "green"
+    }
+  ],
+  "prompt_tokens": 191,
+  "solution": "Gift colors in each row are listed for Alice, Bob, Claire, Dave, Eve, in that order.\nInitial: purple, red, grey, green, gold.\n1. Bob swaps with Claire: purple, grey, red, green, gold.\n2. Dave swaps with Bob: purple, green, red, grey, gold.\n3. Alice swaps with Dave: grey, green, red, purple, gold.\n4. Claire swaps with Dave: grey, green, purple, red, gold.\n5. Eve swaps with Bob: grey, gold, purple, red, green.\nClaire has the purple present, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1115,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

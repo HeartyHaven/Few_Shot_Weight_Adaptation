@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-188",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $f(x) = x^2 - x + 2010$. What is the greatest common divisor of $f(100)$ and $f(101)$?",
+  "answer": "10",
+  "prompt_tokens": 70,
+  "solution": "Subtracting gives f(x+1) − f(x) = (x+1)^2 − x^2 − 1 = 2x, so f(101) − f(100) = 200. Since f(100) = 10000 − 100 + 2010 = 11910, the desired gcd is gcd(11910, 200). Apply the Euclidean algorithm:\n11910 = 59·200 + 110\n200 = 110 + 90\n110 = 90 + 20\n90 = 4·20 + 10\n20 = 2·10\nThe last nonzero remainder is 10.\nFinal answer: 10",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1387,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "10",
+    "correct": true
+  }
+}

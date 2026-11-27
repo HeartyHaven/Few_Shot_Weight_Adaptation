@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-636",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Consider the integer\\[N = 9 + 99 + 999 + 9999 + \\cdots + \\underbrace{99\\ldots 99}_\\text{321 digits}.\\]Find the sum of the digits of $N$.\n",
+  "answer": "342",
+  "prompt_tokens": 91,
+  "solution": "The term with k nines equals 10^k − 1, so adding all 321 terms gives N = (10¹ + 10² + ⋯ + 10³²¹) − 321. The sum in parentheses has a 1 in each position from 10¹ through 10³²¹ and a 0 in the units position: it is 321 ones followed by a zero.\nIts last four digits are 1110. Since 1110 − 321 = 789, those four digits become 0789, with no borrowing from the preceding 321 − 3 = 318 ones. Hence the digit sum is 318 + 0 + 7 + 8 + 9 = 342.\nFinal answer: 342",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "342",
+    "correct": true
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "sample_35",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(pattern, items):\n    result = []\n    for text in items:\n        pos = text.rfind(pattern)\n        if pos >= 0:\n            result.append(pos)\n\n    return result\n```\n\nInput: f(\" B \", [\" bBb \", \" BaB \", \" bB\", \" bBbB \", \" bbb\"])",
+  "answer": "[]",
+  "solution": "Start with result = []. The pattern ' B ' requires an uppercase B with a space immediately on each side. For ' bBb ', the B is between lowercase letters. In ' BaB ', both Bs touch 'a'. In ' bB', the B is at the end. In ' bBbB ', each B has a lowercase b on its left. In ' bbb', there is no uppercase B. Thus pos is -1 on each iteration, so the append never runs. Return result unchanged.\nFinal answer: []",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 20,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "[]",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-4137",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nPatient 2 is a 45-year-old man treated with high insulin doses (100 UI/day) for diabetes mellitus diagnosed at 34, complicated with non-proliferative retinopathy and microalbuminuria. He also suffered from hypertriglyceridemia (from 5.46 mmol/L to 13.45 mmol/L) despite high doses of statins (Rosuvastatin 10 mg/day). Leptin was measured at 8.49 ng/mL (reference 3.3–8.7). He had a family history of diabetes mellitus (A). His mother was diabetic and died of a myocardial infarction at 44 and his father died of a brain hemorrhage at 72. On his mother’s side, diabetes mellitus was described for his grandparents and three uncles.\nA physical examination revealed a BMI = 26.5 kg/m², WC = 107 cm with no lipodystrophy (B). The patient complained of occasional muscular cramps. The percentage of fat mass was 31.1% with DEXA (C). The mean subcutaneous adipocyte diameter was 109.9 ± 24.3 µm (D). Abdominal CT scan revealed the presence of superficial (103 cm2) and deep (224 cm2) subcutaneous adipose tissue with excessive visceral fat accumulation (167 cm2) (E). The anti -glutamic acid decarboxylase (GAD) and anti-tyrosine phosphatase-like insulinoma antigen 2 IA-2 antibodies and Maturity Onset Diabetes of the Young (MODY) testing were negatives. An abdominal echocardiography revealed liver steatosis and hepatomegaly (right hepatic arrow at 20 cm). A myocardial evaluation showed no cardiac or coronary artery disease. The exercise stress testing was normal.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 18,
+  "prompt_tokens": 484,
+  "solution": "The HEART score for suspected acute coronary syndrome assigns 0–2 points each for History, ECG, Age, Risk factors, and Troponin.\n- History: no chest pain or other ischemic symptoms described; low suspicion → 0.\n- ECG: no admission tracing is reported. Assume no repolarization abnormality or ST depression for this estimate → 0.\n- Age: 45 years, within the 45–64 band → 1.\n- Risk factors: diabetes, treated dyslipidemia, and premature coronary disease in a first-degree relative (mother had an MI at 44). At least three risk factors → 2.\n- Troponin: not reported. Assuming a value at or below the assay upper limit → 0.\nEstimated total = 0 + 0 + 1 + 2 + 0 = 3. The normal stress test does not establish the missing admission ECG or troponin findings, so the score is conditional.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 859,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

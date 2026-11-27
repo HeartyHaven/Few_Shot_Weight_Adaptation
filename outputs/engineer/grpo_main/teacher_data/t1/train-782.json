@@ -1,0 +1,22 @@
+{
+  "id": "train-782",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 84-year-old Chinese woman was admitted to our hospital with persistent nausea and vomiting for 2 mo after an episode of community-acquired pneumonia (CAP).\nTwo months before admission, the patient had CAP. During treatment with intravenous moxifloxacin, she developed progressive nausea, vomiting, and constipation without hematemesis, heartburn or abdominal pain. Upper gastrointestinal (GI) radiography demonstrated decreased GI motility without obstruction. Gastroscopy at that time was normal. Positron emission tomography/computed tomography (PET/CT) showed no abnormalities. She was treated with nasogastric decompression and total parenteral nutrition. However, her condition deteriorated, with immediate postprandial vomiting, persistent low-grade fever, and dyspnea. She was then referred to our hospital.\nHer previous medical history was notable for renal transplantation, hypertension, and paroxysmal atrial fibrillation, all of which were well controlled with cyclosporin A, mycophenolate mofetil, amlodipine and amiodarone.\nThe patient appeared weak. Vital signs were normal except for a low fever of 37.5°C. She had normal sinus rhythm and clear respiratory sounds. The abdomen was flat and soft and no GI pattern or peristaltic wave or mass was observed. Active bowel sound was auscultated.\nComplete blood cell count, coagulation, liver and renal functions, as well as thyroid function were normal. Serum pH and electrolytes, including Na, K, Ca, Mg, Cl, and P, were well monitored during the entire disease course. C-reactive protein level was 19 mg/L (normal 0-8 mg/L). Serum carbohydrate antigen 19-9 (CA19-9) was elevated to 119 U/mL, but was gradually decreased to normal level during follow-up. Sputum cultures showed Pseudomonas aeruginosa. Other sputum pathogens, including fungi, mycobacteria and viruses, were negative. Repeated cultures of peripheral blood, stools, gastric drainage and urine, as well as serum pathogenic antibodies were also negative.\nUpper GI radiography in our hospital showed intestinal stricture in the descending duodenum, which merely allowed the passage of a nasojejunal tube (Figure ). Axial CT with intravenous contrast demonstrated postbulbar stenosis (Figure ) and a thin-walled extraluminal diverticulum distal to the stenosis, with surrounding mesenteric fat stranding (Figure ). Other features on axial CT included hiatal hernia and a slightly dilated main pancreatic duct without mass or edema (Figure ). Gastroscopy revealed annular stenosis in the descending duodenum that did not allow the passage of an endoscope. The mucosa around the stenosis was edematous without signs of ulceration, hyperplasia or other abnormalities (Figure ). Endoscopic ultrasound revealed diffuse thickening of the mucosal layer but normal submucosal muscular layer (Figure ). Biopsy and histopathological examination of the swollen mucosa around the stenotic area revealed infiltration of nonspecific inflammatory cells. Chest CT revealed bilateral pulmonary infiltration (Figure and ).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 740,
+  "solution": "Use CHA₂DS₂-VASc for the history of paroxysmal atrial fibrillation, even though she is in sinus rhythm on admission:\n- Congestive heart failure or LV dysfunction: not documented → 0.\n- Hypertension: present, even though controlled → 1.\n- Age: 84 years → 2 for age ≥75; the 1-point category for age 65–74 is mutually exclusive.\n- Diabetes: not documented → 0.\n- Prior stroke, TIA, or systemic embolism (2 points if present): not documented → 0.\n- Vascular disease (prior MI, peripheral arterial disease, or aortic plaque): not documented → 0.\n- Female sex → 1.\nTotal: 0 + 1 + 2 + 0 + 0 + 0 + 1 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 877,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

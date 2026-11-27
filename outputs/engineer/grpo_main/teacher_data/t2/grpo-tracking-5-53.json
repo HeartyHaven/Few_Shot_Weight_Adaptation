@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-53",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Nadia, Bob is dancing with Umar, Claire is dancing with Yuki, Dave is dancing with Tara, and Eve is dancing with Karl.\nThroughout the song, the dancers often trade partners. First, Bob and Eve switch partners. Then, Bob and Eve switch partners. Then, Bob and Claire switch partners. Then, Eve and Dave switch partners. Finally, Alice and Eve switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Nadia\n(B) Umar\n(C) Yuki\n(D) Tara\n(E) Karl",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Yuki",
+      "Dave": "Tara",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Karl",
+      "Claire": "Yuki",
+      "Dave": "Tara",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Umar",
+      "Claire": "Yuki",
+      "Dave": "Tara",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Yuki",
+      "Claire": "Umar",
+      "Dave": "Tara",
+      "Eve": "Karl"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Yuki",
+      "Claire": "Umar",
+      "Dave": "Karl",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Yuki",
+      "Claire": "Umar",
+      "Dave": "Karl",
+      "Eve": "Nadia"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Partners in fixed order: Alice | Bob | Claire | Dave | Eve\nInitial: Nadia | Umar | Yuki | Tara | Karl\n1. Bob ↔ Eve: Nadia | Karl | Yuki | Tara | Umar\n2. Bob ↔ Eve: Nadia | Umar | Yuki | Tara | Karl\n3. Bob ↔ Claire: Nadia | Yuki | Umar | Tara | Karl\n4. Eve ↔ Dave: Nadia | Yuki | Umar | Karl | Tara\n5. Alice ↔ Eve: Tara | Yuki | Umar | Karl | Nadia\nClaire is dancing with Umar, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1248,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

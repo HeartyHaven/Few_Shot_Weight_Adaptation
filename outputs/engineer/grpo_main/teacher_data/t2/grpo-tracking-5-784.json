@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-784",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Beloved, Claire gets Middlemarch, Dave gets Walden, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Alice and Dave swap books. Then, Bob and Alice swap books. Then, Eve and Bob swap books. Finally, Dave and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) Emma\n(B) Beloved\n(C) Middlemarch\n(D) Walden\n(E) Jane Eyre",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Beloved",
+      "Claire": "Middlemarch",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Middlemarch",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Jane Eyre",
+      "Claire": "Beloved",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists the books in holder order: Alice, Bob, Claire, Dave, Eve.\nInitial: Emma, Beloved, Middlemarch, Walden, Jane Eyre\n1. Claire–Bob: Emma, Middlemarch, Beloved, Walden, Jane Eyre\n2. Alice–Dave: Walden, Middlemarch, Beloved, Emma, Jane Eyre\n3. Bob–Alice: Middlemarch, Walden, Beloved, Emma, Jane Eyre\n4. Eve–Bob: Middlemarch, Jane Eyre, Beloved, Emma, Walden\n5. Dave–Eve: Middlemarch, Jane Eyre, Beloved, Walden, Emma\nBob has Jane Eyre, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1290,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

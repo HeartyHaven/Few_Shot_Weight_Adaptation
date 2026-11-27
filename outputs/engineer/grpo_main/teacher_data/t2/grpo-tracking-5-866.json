@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-866",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Siddhartha, Claire gets The Hobbit, Dave gets The Trial, and Eve gets Hamlet.\nAs the semester proceeds, they start trading around the new books. First, Bob and Eve swap books. Then, Alice and Claire swap books. Then, Dave and Eve swap books. Then, Eve and Alice swap books. Finally, Eve and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Emma\n(B) Siddhartha\n(C) The Hobbit\n(D) The Trial\n(E) Hamlet",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Siddhartha",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "The Trial",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "Emma",
+      "Dave": "Siddhartha",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Hamlet",
+      "Claire": "The Hobbit",
+      "Dave": "Siddhartha",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Emma, Siddhartha, The Hobbit, The Trial, Hamlet\n1. Bob and Eve swap: Emma, Hamlet, The Hobbit, The Trial, Siddhartha\n2. Alice and Claire swap: The Hobbit, Hamlet, Emma, The Trial, Siddhartha\n3. Dave and Eve swap: The Hobbit, Hamlet, Emma, Siddhartha, The Trial\n4. Eve and Alice swap: The Trial, Hamlet, Emma, Siddhartha, The Hobbit\n5. Eve and Claire swap: The Trial, Hamlet, The Hobbit, Siddhartha, Emma\nClaire has The Hobbit, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1284,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

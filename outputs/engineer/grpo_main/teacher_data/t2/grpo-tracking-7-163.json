@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-163",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Ivanhoe, Claire gets The Hobbit, Dave gets Emma, Eve gets Dune, Fred gets Dracula, and Gertrude gets Persuasion.\nAs the semester proceeds, they start trading around the new books. First, Eve and Bob swap books. Then, Alice and Fred swap books. Then, Gertrude and Eve swap books. Then, Gertrude and Dave swap books. Then, Claire and Bob swap books. Then, Dave and Fred swap books. Finally, Dave and Eve swap books. At the end of the semester, Claire has\nOptions:\n(A) Candide\n(B) Ivanhoe\n(C) The Hobbit\n(D) Emma\n(E) Dune\n(F) Dracula\n(G) Persuasion",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Gertrude",
+      "Eve"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Ivanhoe",
+      "Claire": "The Hobbit",
+      "Dave": "Emma",
+      "Eve": "Dune",
+      "Fred": "Dracula",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "Emma",
+      "Eve": "Ivanhoe",
+      "Fred": "Dracula",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "Emma",
+      "Eve": "Ivanhoe",
+      "Fred": "Candide",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "Emma",
+      "Eve": "Persuasion",
+      "Fred": "Candide",
+      "Gertrude": "Ivanhoe"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Dune",
+      "Claire": "The Hobbit",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Ivanhoe",
+      "Eve": "Persuasion",
+      "Fred": "Candide",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Persuasion",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Emma"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Hobbit",
+      "Claire": "Dune",
+      "Dave": "Persuasion",
+      "Eve": "Candide",
+      "Fred": "Ivanhoe",
+      "Gertrude": "Emma"
+    }
+  ],
+  "prompt_tokens": 230,
+  "solution": "Books are listed in reader order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Candide, Ivanhoe, The Hobbit, Emma, Dune, Dracula, Persuasion.\n1. Eve and Bob swap: Candide, Dune, The Hobbit, Emma, Ivanhoe, Dracula, Persuasion.\n2. Alice and Fred swap: Dracula, Dune, The Hobbit, Emma, Ivanhoe, Candide, Persuasion.\n3. Gertrude and Eve swap: Dracula, Dune, The Hobbit, Emma, Persuasion, Candide, Ivanhoe.\n4. Gertrude and Dave swap: Dracula, Dune, The Hobbit, Ivanhoe, Persuasion, Candide, Emma.\n5. Claire and Bob swap: Dracula, The Hobbit, Dune, Ivanhoe, Persuasion, Candide, Emma.\n6. Dave and Fred swap: Dracula, The Hobbit, Dune, Candide, Persuasion, Ivanhoe, Emma.\n7. Dave and Eve swap: Dracula, The Hobbit, Dune, Persuasion, Candide, Ivanhoe, Emma.\nClaire has Dune, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1201,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

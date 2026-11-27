@@ -1,0 +1,22 @@
+{
+  "id": "train-4139",
+  "task": "t1",
+  "group": "HEART Score for Major Cardiac Events",
+  "question": "Patient note:\nThis is a 53 year-old African American male, with no significant past medical history who presented with a one-day history of right arm swelling. He woke up with a swollen arm and dull, aching pain in the right upper extremity. Our patient, a retired office manager, reported exercising daily over the prior week with a new “vibrating device” (Figure ). Patient denies any past interventions to the right upper extremity.\nPatient denied: known malignancy, personal or family history of DVT, trauma, intravenous therapy, and drug abuse. Physical examination was unremarkable except for extensive right upper extremity swelling.\nSee Additional file .\nLaboratory testing revealed CBC, CMP, PT/INR and aPTT all within normal limits.\nA venous doppler study revealed an occlusive thrombus in the right axillary, proximal brachial and basilic veins. Access via a forearm vein was achieved and venography confirmed extensive occlusion of the right axillary, proximal brachial and basilic veins (Figure ).\nAn infusion catheter was positioned to allow tPA infusion of the thrombus throughout its entire length over the ensuing 24 hours. The following day, a venogram revealed the presence of a small residual thrombus and a 50% stricture in the right axillary vein (Figure ). Mechanical thrombectomy using an angiojet device, followed by balloon angioplasty and deployment of a 12 × 6 mm stent resolved the residual thrombosis and stenosis. Completion angiography showed complete resolution of the stricture and thrombus (Figure ).\nThe patient was discharged the following day on warfarin and aspirin. There were no adverse or unanticipated events.\n\nQuestion: What is the patient's score of the HEART Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 18,
+  "prompt_tokens": 425,
+  "solution": "The HEART score assigns 0–2 points each for History, ECG, Age, coronary Risk factors, and Troponin.\n- History: isolated arm pain and swelling with an identified venous thrombus, not a history suggestive of acute coronary syndrome = 0.\n- ECG: no admission tracing reported; 0 only if assumed normal.\n- Age: 53 years (45–64) = 1.\n- Risk factors: no coronary risk factors or known atherosclerotic disease documented = 0. Venous thrombosis is not atherosclerotic disease.\n- Troponin: not reported; 0 only if assumed at or below the assay's upper reference limit. A normal CBC and CMP do not establish this.\nConditional total: 0 + 0 + 1 + 0 + 0 = 1. The complete score cannot be verified without the ECG and troponin.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 695,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

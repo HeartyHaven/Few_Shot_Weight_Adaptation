@@ -1,0 +1,22 @@
+{
+  "id": "train-4423",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "question": "Patient note:\nAn 11-year-old boy presents to his pediatrician with his mother for a sore throat. His symptoms began approximately a few days ago after attending a birthday party with his friends. His symptoms are accompanied by nausea, vomiting, and a mild headache. He also has mild discomfort in his throat when eating food or drinking water. The patient denies rhinorrhea, conjunctivitis, cough, myalgias, or a rash. His mother said his temperature last night was 101°F (38.3°C). On physical exam, the patient has tender and enlarged anterior cervical lymph nodes. Upon oral inspection, there is pharyngeal inflammation and exudates with petechial lesions on the soft palate.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "5",
+  "lower": 5.0,
+  "upper": 5.0,
+  "calc_id": 20,
+  "prompt_tokens": 216,
+  "solution": "Use the age-adjusted Centor (McIsaac) score. Each qualifying clinical finding adds one point:\n- Fever >38°C: temperature was 38.3°C the night before presentation → 1.\n- Absence of cough: he denies cough → 1.\n- Tender anterior cervical nodes: present on examination → 1.\n- Tonsillar swelling or exudate: exudates are described on throat examination → 1.\n- Age adjustment: age 11 falls in the 3–14-year group → +1.\nTotal = 1 + 1 + 1 + 1 + 1 = 5.\nFinal answer: 5",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 635,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 5.0,
+    "correct": true
+  }
+}

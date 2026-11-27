@@ -1,0 +1,17 @@
+{
+  "id": "train-number_theory-148",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "A rectangular array of chairs is an arrangement of the chairs in rows and columns such that each row contains the same number of chairs as every other row and each column contains the same number of chairs as every other column.  If there must be at least two chairs in every row and column and all of the chairs in the room must be included, how many arrays are possible in a classroom containing $36$ chairs? Note that $12$ rows of $3$ chairs is different from $3$ rows of $12$ chairs.",
+  "answer": "7",
+  "solution": "If there are r rows, each row has 36/r chairs, so r must divide 36. Since 36 = 2² · 3², each divisor is formed by choosing an exponent from 0 through 2 for each prime. This gives 3 · 3 = 9 possible row counts before restrictions.\nExclude r = 1 (only one chair per column) and r = 36 (only one chair per row). Each remaining row count determines one array, with swapped dimensions counted separately when unequal. Thus there are 9 − 2 = 7 arrays.\nFinal answer: 7",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 3,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "7",
+    "correct": true
+  }
+}

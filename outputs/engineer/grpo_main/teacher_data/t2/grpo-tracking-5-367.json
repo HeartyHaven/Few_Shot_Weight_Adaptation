@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-367",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Emma, Claire gets The Hobbit, Dave gets Dracula, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Alice and Claire swap books. Then, Eve and Claire swap books. Then, Bob and Alice swap books. Then, Alice and Bob swap books. Finally, Alice and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Beloved\n(B) Emma\n(C) The Hobbit\n(D) Dracula\n(E) Jane Eyre",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Beloved",
+      "Dave": "Dracula",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Hobbit",
+      "Claire": "Jane Eyre",
+      "Dave": "Dracula",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Beloved | Emma | The Hobbit | Dracula | Jane Eyre\n1. Alice ↔ Claire: The Hobbit | Emma | Beloved | Dracula | Jane Eyre\n2. Eve ↔ Claire: The Hobbit | Emma | Jane Eyre | Dracula | Beloved\n3. Bob ↔ Alice: Emma | The Hobbit | Jane Eyre | Dracula | Beloved\n4. Alice ↔ Bob: The Hobbit | Emma | Jane Eyre | Dracula | Beloved\n5. Alice ↔ Bob: Emma | The Hobbit | Jane Eyre | Dracula | Beloved\nBob has The Hobbit, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1055,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

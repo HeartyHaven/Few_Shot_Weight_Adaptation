@@ -1,0 +1,22 @@
+{
+  "id": "train-631",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 65-year-old male with past medical history of diabetes mellitus, deep venous thrombosis on apixaban, myocardial infarction, hypertension, atrial fibrillation, hypoalbuminemia, emphysema, and morbid obesity presented to the emergency department from a nursing home. The patient complained of abdominal pain, nausea, vomiting, and diarrhea for 24 hours. The patient mentioned an inability to tolerate solid food for approximately one year. The physical examination showed no acute distress, no respiratory distress, atrial fibrillation with rapid ventricular response, and the abdomen was obese and non-tender, without rebound or guarding. An NG tube was placed. His vital signs revealed a temperature of 36.5 °C, blood pressure 143/119 mmHg , pulse 163 beats/minute, respiratory rate 19 breaths/minute, and oxygen saturation 99%. Laboratory evaluation showed WBC count of 26 k/μL with 90% neutrophils, albumin 1.4 mmol/L, BNP 2,300 pg/mL, international normalized ratio 1.4, BUN 22 mg/dL, and creatinine 1.1 mg/dL. A CT scan of the abdomen and pelvis with intravenous contrast showed severe distention of the stomach and duodenum with extensive gas in the wall of the dependent portion of the stomach and extension of gas into the adjacent gastric veins, portal vein, and portal vein branches within the liver [Figure ].\nThe branches of the celiac artery and SMA were patent. The patient was resuscitated with crystalloids, given broad-spectrum antibiotics, NG tube for gastric decompression, diltiazem infusion for atrial fibrillation, and admitted to the ICU. The patient declined any surgical intervention.\nOn the second day in the hospital, the patient showed improvement with his abdominal pain, now a 4/10 down from 10/10 on admission. The patient remained on a diltiazem drip for his atrial fibrillation with rapid ventricular response. His abdomen was soft and non-tender; however, his NG tube output was approximately 1 L of bilious fluid. On the third day, the NG tube output was 900 mL of bilious fluid overnight and he had no bowel movement since admission. The WBC reduced to 12,000/μL and he had a benign abdominal examination. CT scan was done with enteral and intravenous contrast to assess for bowel obstruction. It showed that the stomach was now decompressed and there was decreased air within the wall of the stomach and the previously seen air within the left gastric vein and the gastroepiploic veins had resolved [Figure ].\nThe small intestines, appendix, and colon appeared normal. The patient’s diet was progressed as he tolerated and he was discharged back to the skilled nursing facility on the tenth day.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 692,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. At admission:\n- Congestive heart failure or LV dysfunction: not documented; elevated BNP alone does not establish it = 0.\n- Hypertension: present = 1.\n- Age: 65 years = 1 for age 65–74, not 2 for age ≥75.\n- Diabetes: present = 1.\n- Prior stroke, TIA, or systemic arterial embolism: none documented = 0 under the arterial definition. The reported DVT was venous.\n- Vascular disease: prior myocardial infarction = 1.\n- Sex category: male = 0.\nWith the arterial definition, the sum is 0 + 1 + 1 + 1 + 0 + 1 + 0 = 4. Under a broader thromboembolism convention that counts prior DVT for 2 points, the sum is 0 + 1 + 1 + 1 + 2 + 1 + 0 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 838,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

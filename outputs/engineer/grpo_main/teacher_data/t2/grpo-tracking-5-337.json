@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-337",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Candide, Bob gets Walden, Claire gets The Trial, Dave gets Emma, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Eve and Claire swap books. Then, Eve and Bob swap books. Then, Dave and Claire swap books. Then, Alice and Claire swap books. Finally, Claire and Eve swap books. At the end of the semester, Alice has\nOptions:\n(A) Candide\n(B) Walden\n(C) The Trial\n(D) Emma\n(E) Jane Eyre",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Emma",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "Jane Eyre",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Trial",
+      "Claire": "Walden",
+      "Dave": "Jane Eyre",
+      "Eve": "Candide"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists books in order: Alice | Bob | Claire | Dave | Eve.\nInitial: Candide | Walden | The Trial | Emma | Jane Eyre\n1. Eve swaps with Claire: Candide | Walden | Jane Eyre | Emma | The Trial\n2. Eve swaps with Bob: Candide | The Trial | Jane Eyre | Emma | Walden\n3. Dave swaps with Claire: Candide | The Trial | Emma | Jane Eyre | Walden\n4. Alice swaps with Claire: Emma | The Trial | Candide | Jane Eyre | Walden\n5. Claire swaps with Eve: Emma | The Trial | Walden | Jane Eyre | Candide\nAlice has Emma, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1270,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

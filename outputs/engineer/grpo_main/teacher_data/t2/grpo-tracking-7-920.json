@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-920",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Walden, Claire gets Candide, Dave gets Persuasion, Eve gets The Hobbit, Fred gets Dracula, and Gertrude gets Dune.\nAs the semester proceeds, they start trading around the new books. First, Dave and Alice swap books. Then, Fred and Gertrude swap books. Then, Claire and Fred swap books. Then, Dave and Gertrude swap books. Then, Gertrude and Dave swap books. Then, Gertrude and Bob swap books. Finally, Gertrude and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Middlemarch\n(B) Walden\n(C) Candide\n(D) Persuasion\n(E) The Hobbit\n(F) Dracula\n(G) Dune",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Dave"
+    ],
+    [
+      "Gertrude",
+      "Bob"
+    ],
+    [
+      "Gertrude",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Persuasion",
+      "Eve": "The Hobbit",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Dracula",
+      "Gertrude": "Dune"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Candide",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Dune",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Dracula",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Middlemarch"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Walden",
+      "Claire": "Dune",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Dracula"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Walden"
+    },
+    {
+      "Alice": "Persuasion",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit",
+      "Fred": "Candide",
+      "Gertrude": "Dune"
+    }
+  ],
+  "prompt_tokens": 240,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Middlemarch | Walden | Candide | Persuasion | The Hobbit | Dracula | Dune\n1. Dave ↔ Alice: Persuasion | Walden | Candide | Middlemarch | The Hobbit | Dracula | Dune\n2. Fred ↔ Gertrude: Persuasion | Walden | Candide | Middlemarch | The Hobbit | Dune | Dracula\n3. Claire ↔ Fred: Persuasion | Walden | Dune | Middlemarch | The Hobbit | Candide | Dracula\n4. Dave ↔ Gertrude: Persuasion | Walden | Dune | Dracula | The Hobbit | Candide | Middlemarch\n5. Gertrude ↔ Dave: Persuasion | Walden | Dune | Middlemarch | The Hobbit | Candide | Dracula\n6. Gertrude ↔ Bob: Persuasion | Dracula | Dune | Middlemarch | The Hobbit | Candide | Walden\n7. Gertrude ↔ Claire: Persuasion | Dracula | Walden | Middlemarch | The Hobbit | Candide | Dune\nAlice has Persuasion, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1288,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

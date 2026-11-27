@@ -1,0 +1,17 @@
+{
+  "id": "sample_727",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(numbers, prefix):\n    return sorted(n[len(prefix):] if (len(n) > len(prefix) and n.startswith(prefix)) else n\n                  for n in numbers)\n```\n\nInput: f(['ix', 'dxh', 'snegi', 'wiubvu'], '')",
+  "answer": "['dxh', 'ix', 'snegi', 'wiubvu']",
+  "solution": "len(prefix) is 0. Each string is nonempty and starts with '', so each iteration yields n[0:], the whole string. In order, the generator yields 'ix', 'dxh', 'snegi', and 'wiubvu'. sorted places them in lexicographic order by their distinct first letters: d, i, s, w.\nFinal answer: ['dxh', 'ix', 'snegi', 'wiubvu']",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "4b82399e6f35e04cf55b2af409cc5a7867d385f6fbc125388edf664bc69e6c1b",
+  "call_id": 52,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "['dxh', 'ix', 'snegi', 'wiubvu']",
+    "correct": true
+  }
+}

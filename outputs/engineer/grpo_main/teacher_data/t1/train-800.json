@@ -1,0 +1,22 @@
+{
+  "id": "train-800",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 60-year-old female with a history of hypertension and dyslipidemia visited the emergency department due to recurrent episodes of progressive, effort-related angina for the past two months. Physical examination revealed a mild systolic murmur best heart at the apex and her blood pressure was 150/85 mm Hg. Electrocardiogram (ECG) showed T wave inversion in leads I, AVL, V4–V6. The levels of cardiac enzymes were between normal ranges. Two-dimensional echocardiography showed hypokinesis of the inferoposterior and lateral wall with ejection fraction of 50% and mitral regurgitation (grade I/IV). The patient was admitted in hospital and treated with aspirin 325 mg, oral nitrates and clopidogrel 75 mg × 1.\nA non-elective diagnostic coronary angiogram (CAG) was performed with standard 6 F 4 Judkins (Cordis, Johnson&Johnson, Miami, FL, USA) catheters via a right femoral approach. Contrast injection revealed two stenotic lesions of 70% and 80%, at the proximal and middle segment respectively, of a right coronary artery (RCA), with significant tortuosity (Figure ). Coronary angioplasty of the right coronary artery was decided. After an unsuccessful attempt with a 0.014-inch Hi-torque Extra Suport (Guidant Corporation; Santa Clara, USA) guidewire to cross the lesions, a 0.014-inch Hi-torque Cross-IT (Guidant Corporation; Santa Clara, CA, USA), intermediate guidewire was advanced across the stenoses and balloon dilatation was performed with a 2 × 10 mm balloon (Flash, Bolton Medical, USA) at 12 atm. The tortuous proximal segments were completely straightened by this technique and after the balloon was removed, angiographic control exposed slit like multiple filling defects along the longitudinal axis of the RCA, an appearance of stenoses strongly suggesting the accordion effect or dissection, and vasospasm (Figure ). Isosorbide dinitrate was administrated intracoronary in order to clarify the possibility of coronary spasm but the angiographic appearance of the RCA did not change. The patient had severe chest pain with ECG changes (ST elevation on leads II, III, aVF) and a drop of blood pressure at critical levels (90/60 mmHg). As the deformity of the artery persisted and in view of patient's symptoms stenting was performed. A 2.75 mm × 14 mm stent (Apollo Cordynamic, Bionert, Barcelona, Spain) was delivered with little resistance at the middle segment lesion expanded at 16 atm. A second 3 mm × 14 mm stent (Apollo, Cordynamic, Bionert, Barcelona, Spain) was deployed at the proximal lesion which was expanded at 18 Atm (Figure and ). Angiography following stenting showed residual stenosis at the edges of both stents (Figure ). Although coronary spasm was highly suspected, several intracoronary administrations of isosorbide dinitrate could not relieve of this narrowing. The appearance of newly developed lesion was thought as a repeated accordion phenomenon. Thus, the guidewire was withdrawn and this resulted in resolution of the new stenosis and resumption of previous proximal tortuosity of the artery (Figure ). The final outcome was excellent. The patient had an uneventful recovery and was discharged after 24 hours.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 4,
+  "prompt_tokens": 823,
+  "solution": "CHA₂DS₂-VASc uses the following admission risk factors:\n- Congestive heart failure or significant LV systolic dysfunction (1): no clinical heart failure documented; EF is 50% → 0.\n- Hypertension (1): established history, with admission BP 150/85 mm Hg → 1.\n- Age 65–74 (1) or ≥75 (2): age 60 → 0.\n- Diabetes (1): none documented → 0.\n- Prior stroke, TIA, or systemic embolism (2): none documented → 0.\n- Vascular disease (1): despite angina, there is no documented prior MI, peripheral arterial disease, or aortic plaque under the original score definition → 0.\n- Female sex (1): female → 1.\nTotal = 0 + 1 + 0 + 0 + 0 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 841,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

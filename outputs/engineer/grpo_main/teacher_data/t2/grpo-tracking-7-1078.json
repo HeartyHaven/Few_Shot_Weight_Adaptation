@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1078",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Oscar, Claire is dancing with Vera, Dave is dancing with Yuki, Eve is dancing with Nadia, Fred is dancing with Marco, and Gertrude is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Dave and Gertrude switch partners. Then, Alice and Fred switch partners. Then, Alice and Dave switch partners. Then, Dave and Gertrude switch partners. Then, Bob and Alice switch partners. Then, Fred and Gertrude switch partners. Finally, Bob and Claire switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Tara\n(B) Oscar\n(C) Vera\n(D) Yuki\n(E) Nadia\n(F) Marco\n(G) Umar",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Alice",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Fred",
+      "Gertrude"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Oscar",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Oscar",
+      "Claire": "Vera",
+      "Dave": "Umar",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Yuki"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Oscar",
+      "Claire": "Vera",
+      "Dave": "Umar",
+      "Eve": "Nadia",
+      "Fred": "Tara",
+      "Gertrude": "Yuki"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Vera",
+      "Dave": "Marco",
+      "Eve": "Nadia",
+      "Fred": "Tara",
+      "Gertrude": "Yuki"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Oscar",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Nadia",
+      "Fred": "Tara",
+      "Gertrude": "Marco"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Nadia",
+      "Fred": "Tara",
+      "Gertrude": "Marco"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Umar",
+      "Claire": "Vera",
+      "Dave": "Yuki",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Tara"
+    },
+    {
+      "Alice": "Oscar",
+      "Bob": "Vera",
+      "Claire": "Umar",
+      "Dave": "Yuki",
+      "Eve": "Nadia",
+      "Fred": "Marco",
+      "Gertrude": "Tara"
+    }
+  ],
+  "prompt_tokens": 231,
+  "solution": "Partners are listed in the fixed dancer order (Alice, Bob, Claire, Dave, Eve, Fred, Gertrude).\nInitial: (Tara, Oscar, Vera, Yuki, Nadia, Marco, Umar).\n1. Dave and Gertrude switch: (Tara, Oscar, Vera, Umar, Nadia, Marco, Yuki).\n2. Alice and Fred switch: (Marco, Oscar, Vera, Umar, Nadia, Tara, Yuki).\n3. Alice and Dave switch: (Umar, Oscar, Vera, Marco, Nadia, Tara, Yuki).\n4. Dave and Gertrude switch: (Umar, Oscar, Vera, Yuki, Nadia, Tara, Marco).\n5. Bob and Alice switch: (Oscar, Umar, Vera, Yuki, Nadia, Tara, Marco).\n6. Fred and Gertrude switch: (Oscar, Umar, Vera, Yuki, Nadia, Marco, Tara).\n7. Bob and Claire switch: (Oscar, Vera, Umar, Yuki, Nadia, Marco, Tara).\nBob is dancing with Vera, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1103,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

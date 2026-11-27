@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-116",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Middlemarch, Bob gets Siddhartha, Claire gets Ivanhoe, Dave gets Persuasion, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Eve and Claire swap books. Then, Bob and Dave swap books. Then, Alice and Eve swap books. Finally, Alice and Eve swap books. At the end of the semester, Bob has\nOptions:\n(A) Middlemarch\n(B) Siddhartha\n(C) Ivanhoe\n(D) Persuasion\n(E) The Trial",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Siddhartha",
+      "Claire": "Ivanhoe",
+      "Dave": "Persuasion",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Siddhartha",
+      "Claire": "Middlemarch",
+      "Dave": "Persuasion",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Persuasion",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Siddhartha",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Persuasion",
+      "Claire": "The Trial",
+      "Dave": "Siddhartha",
+      "Eve": "Middlemarch"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Books in order: Alice, Bob, Claire, Dave, Eve.\nInitial: Middlemarch, Siddhartha, Ivanhoe, Persuasion, The Trial\n1. Claire and Alice swap: Ivanhoe, Siddhartha, Middlemarch, Persuasion, The Trial\n2. Eve and Claire swap: Ivanhoe, Siddhartha, The Trial, Persuasion, Middlemarch\n3. Bob and Dave swap: Ivanhoe, Persuasion, The Trial, Siddhartha, Middlemarch\n4. Alice and Eve swap: Middlemarch, Persuasion, The Trial, Siddhartha, Ivanhoe\n5. Alice and Eve swap again: Ivanhoe, Persuasion, The Trial, Siddhartha, Middlemarch\nBob has Persuasion, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1361,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

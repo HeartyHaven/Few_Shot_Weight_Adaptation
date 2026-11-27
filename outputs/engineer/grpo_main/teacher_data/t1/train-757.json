@@ -1,0 +1,22 @@
+{
+  "id": "train-757",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 88-year-old man presented with a 6-month history of dysphagia for solid foods and significant weight loss. He denied any symptoms of odynophagia. He denied any hoarseness of the voice, neck pain or breathlessness. There was no change in bowel habit or blood in the stools. His calorific intake was solely dependent on protein supplement drinks. His previous medical history was of type 2 diabetes, hypercholesterolaemia, hypertension, atrial fibrillation and glaucoma.\nOn examination he was cachetic and pale. His weight was 54 kg. The rest of his physical examination was unremarkable. His full blood count showed a normocytic anaemia (10.3 g/dl) with a normal ferritin level. Liver function was normal apart from an albumin of 28 g/l. Erythrocyte sedimentation rate and thyroid stimulating hormone were normal. An endoscopy was performed to exclude an intrinsic cause for the patient's symptoms. This showed chronic atrophic gastritis but no cause for the dysphagia. Video fluoroscopy was performed which showed a bony prominence impeding swallow at the level of C3. A lateral cervical spine radiograph showed anterior osteophyte formation, most marked at the C3/C4 vertebrae and consistent with DISH (Figure ).\nHe was commenced on nasogastric feeding, as there was evidence of aspiration on video fluoroscopy. He was referred to the spinal surgeons but they did not feel surgery was appropriate due to the patient's frail condition and comorbidities. A percutaneous endoscopic gastrostomy tube was placed 3 weeks later. The patient died 6 weeks after admission, from complications secondary to an unrelated septic arthritis of the shoulder.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "4",
+  "lower": 4.0,
+  "upper": 4.0,
+  "calc_id": 4,
+  "prompt_tokens": 444,
+  "solution": "CHA₂DS₂-VASc scores thromboembolic risk in atrial fibrillation. Apply each criterion to the admission history:\n- Congestive heart failure/LV dysfunction (1 if present): not documented → 0.\n- Hypertension (1): present → 1.\n- Age (2 if ≥75, 1 if 65–74): age 88 → 2.\n- Diabetes mellitus (1): known type 2 diabetes → 1.\n- Prior stroke, TIA, or systemic embolism (2): none documented → 0.\n- Vascular disease (1): no documented myocardial infarction, peripheral artery disease, or aortic plaque; hypercholesterolemia alone does not qualify → 0.\n- Female sex (1): male → 0.\nTotal = 0 + 1 + 2 + 1 + 0 + 0 + 0 = 4.\nFinal answer: 4",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 707,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 4.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-999",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets The Hobbit, Bob gets Emma, Claire gets Candide, Dave gets Beloved, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Claire and Bob swap books. Then, Dave and Bob swap books. Then, Eve and Bob swap books. Finally, Alice and Dave swap books. At the end of the semester, Claire has\nOptions:\n(A) The Hobbit\n(B) Emma\n(C) Candide\n(D) Beloved\n(E) The Trial",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "The Hobbit",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Emma",
+      "Claire": "The Hobbit",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Hobbit",
+      "Claire": "Emma",
+      "Dave": "Beloved",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Beloved",
+      "Claire": "Emma",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "The Hobbit",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Candide",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Each row lists the books held by (Alice, Bob, Claire, Dave, Eve), in that order.\nInitial: (The Hobbit, Emma, Candide, Beloved, The Trial)\n1. Claire and Alice swap: (Candide, Emma, The Hobbit, Beloved, The Trial)\n2. Claire and Bob swap: (Candide, The Hobbit, Emma, Beloved, The Trial)\n3. Dave and Bob swap: (Candide, Beloved, Emma, The Hobbit, The Trial)\n4. Eve and Bob swap: (Candide, The Trial, Emma, The Hobbit, Beloved)\n5. Alice and Dave swap: (The Hobbit, The Trial, Emma, Candide, Beloved)\nClaire has Emma, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1318,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

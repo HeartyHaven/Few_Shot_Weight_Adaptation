@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-3",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "balls",
+  "question": "Alice, Bob, Claire, Dave, and Eve are playing a game. At the start of the game, they are each holding a ball: Alice has a yellow ball, Bob has a black ball, Claire has a orange ball, Dave has a teal ball, and Eve has a white ball.\nAs the game progresses, pairs of players trade balls. First, Bob and Alice swap balls. Then, Alice and Eve swap balls. Then, Eve and Alice swap balls. Then, Bob and Claire swap balls. Finally, Eve and Bob swap balls. At the end of the game, Dave has the\nOptions:\n(A) yellow ball\n(B) black ball\n(C) orange ball\n(D) teal ball\n(E) white ball",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "yellow",
+      "Bob": "black",
+      "Claire": "orange",
+      "Dave": "teal",
+      "Eve": "white"
+    },
+    {
+      "Alice": "black",
+      "Bob": "yellow",
+      "Claire": "orange",
+      "Dave": "teal",
+      "Eve": "white"
+    },
+    {
+      "Alice": "white",
+      "Bob": "yellow",
+      "Claire": "orange",
+      "Dave": "teal",
+      "Eve": "black"
+    },
+    {
+      "Alice": "black",
+      "Bob": "yellow",
+      "Claire": "orange",
+      "Dave": "teal",
+      "Eve": "white"
+    },
+    {
+      "Alice": "black",
+      "Bob": "orange",
+      "Claire": "yellow",
+      "Dave": "teal",
+      "Eve": "white"
+    },
+    {
+      "Alice": "black",
+      "Bob": "white",
+      "Claire": "yellow",
+      "Dave": "teal",
+      "Eve": "orange"
+    }
+  ],
+  "prompt_tokens": 179,
+  "solution": "Ball colors in order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (yellow, black, orange, teal, white)\n1. Bob ↔ Alice: (black, yellow, orange, teal, white)\n2. Alice ↔ Eve: (white, yellow, orange, teal, black)\n3. Eve ↔ Alice: (black, yellow, orange, teal, white)\n4. Bob ↔ Claire: (black, orange, yellow, teal, white)\n5. Eve ↔ Bob: (black, white, yellow, teal, orange)\nDave has the teal ball, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

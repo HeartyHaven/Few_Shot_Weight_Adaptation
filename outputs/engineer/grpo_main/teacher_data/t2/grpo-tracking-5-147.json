@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-147",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right back, Bob is playing fullback, Claire is playing benchwarmer, Dave is playing left winger, and Eve is playing right winger.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Alice trade positions. Then, Dave and Bob trade positions. Then, Bob and Alice trade positions. Then, Eve and Bob trade positions. Finally, Bob and Alice trade positions. At the end of the match, Bob is playing\nOptions:\n(A) right back\n(B) fullback\n(C) benchwarmer\n(D) left winger\n(E) right winger",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "right back",
+      "Bob": "fullback",
+      "Claire": "benchwarmer",
+      "Dave": "left winger",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "fullback",
+      "Claire": "right back",
+      "Dave": "left winger",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "benchwarmer",
+      "Bob": "left winger",
+      "Claire": "right back",
+      "Dave": "fullback",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "benchwarmer",
+      "Claire": "right back",
+      "Dave": "fullback",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "right winger",
+      "Claire": "right back",
+      "Dave": "fullback",
+      "Eve": "benchwarmer"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "left winger",
+      "Claire": "right back",
+      "Dave": "fullback",
+      "Eve": "benchwarmer"
+    }
+  ],
+  "prompt_tokens": 188,
+  "solution": "Positions in each row are ordered by player: Alice, Bob, Claire, Dave, Eve.\nInitial: (right back, fullback, benchwarmer, left winger, right winger)\n1. Claire ↔ Alice: (benchwarmer, fullback, right back, left winger, right winger)\n2. Dave ↔ Bob: (benchwarmer, left winger, right back, fullback, right winger)\n3. Bob ↔ Alice: (left winger, benchwarmer, right back, fullback, right winger)\n4. Eve ↔ Bob: (left winger, right winger, right back, fullback, benchwarmer)\n5. Bob ↔ Alice: (right winger, left winger, right back, fullback, benchwarmer)\nBob is playing left winger, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1064,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

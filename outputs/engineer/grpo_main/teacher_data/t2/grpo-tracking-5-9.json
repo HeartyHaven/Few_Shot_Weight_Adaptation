@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-9",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Emma, Claire gets Siddhartha, Dave gets Candide, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Eve and Dave swap books. Then, Alice and Dave swap books. Then, Bob and Alice swap books. Finally, Dave and Claire swap books. At the end of the semester, Claire has\nOptions:\n(A) Dune\n(B) Emma\n(C) Siddhartha\n(D) Candide\n(E) The Trial",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Siddhartha",
+      "Dave": "Candide",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "Siddhartha",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "The Trial",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Emma",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Trial",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Candide",
+      "Eve": "Siddhartha"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Book order: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Dune, Emma, Siddhartha, Candide, The Trial).\n1. Dave and Claire swap: (Dune, Emma, Candide, Siddhartha, The Trial).\n2. Eve and Dave swap: (Dune, Emma, Candide, The Trial, Siddhartha).\n3. Alice and Dave swap: (The Trial, Emma, Candide, Dune, Siddhartha).\n4. Bob and Alice swap: (Emma, The Trial, Candide, Dune, Siddhartha).\n5. Dave and Claire swap: (Emma, The Trial, Dune, Candide, Siddhartha).\nClaire has Dune, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1331,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

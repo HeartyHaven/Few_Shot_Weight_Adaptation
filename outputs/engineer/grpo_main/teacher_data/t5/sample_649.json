@@ -1,0 +1,20 @@
+{
+  "id": "sample_649",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(text, tabsize):\n    return '\\n'.join([\n    \tt.expandtabs(tabsize)\n        for t in text.split('\\n')\n    ])\n```\n\nInput: f(\"\\tf9\\n\\tldf9\\n\\tadf9!\\n\\tf9?\", 1)",
+  "answer": "' f9\\n ldf9\\n adf9!\\n f9?'",
+  "prompt_tokens": 117,
+  "solution": "Splitting at '\\n' gives ['\\tf9', '\\tldf9', '\\tadf9!', '\\tf9?']. Each iteration starts with a tab at column 0. With tabsize = 1, that tab expands to one space, yielding ' f9', ' ldf9', ' adf9!', and ' f9?' in order. join inserts a newline between consecutive results.\nFinal answer: ' f9\\n ldf9\\n adf9!\\n f9?'",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "' f9\\n ldf9\\n adf9!\\n f9?'",
+    "correct": true
+  }
+}

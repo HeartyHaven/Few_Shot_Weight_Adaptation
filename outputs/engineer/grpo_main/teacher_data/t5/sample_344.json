@@ -1,0 +1,20 @@
+{
+  "id": "sample_344",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(list, operation):\n    new_list = list[:]\n    new_list.sort()\n    operation(new_list)\n    return list\n```\n\nInput: f([6, 4, 2, 8, 15], (lambda x: x.reverse()))",
+  "answer": "[6, 4, 2, 8, 15]",
+  "prompt_tokens": 113,
+  "solution": "Slicing with list[:] creates a separate new_list containing [6, 4, 2, 8, 15]. Sorting changes new_list to [2, 4, 6, 8, 15]. The lambda reverses new_list in place to [15, 8, 6, 4, 2]. The function returns list, the unchanged original.\nFinal answer: [6, 4, 2, 8, 15]",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "[6, 4, 2, 8, 15]",
+    "correct": true
+  }
+}

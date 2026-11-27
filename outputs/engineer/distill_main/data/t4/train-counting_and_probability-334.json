@@ -1,0 +1,17 @@
+{
+  "id": "train-counting_and_probability-334",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Let $A$, $B$, $C$ and $D$ be the vertices of a regular tetrahedron each of whose edges measures 1 meter. A bug, starting from vertex $A$, observes the following rule: at each vertex it chooses one of the three edges meeting at that vertex, each edge being equally likely to be chosen, and crawls along that edge to the vertex at its opposite end. Let $p = \\frac n{729}$ be the probability that the bug is at vertex $A$ when it has crawled exactly 7 meters. Find the value of $n$.\n",
+  "answer": "182",
+  "solution": "Each edge is 1 meter, so 7 meters corresponds to 7 moves. Let p_k be the probability of being at A after k moves, with p_0 = 1. From A the bug must leave, whereas from any other vertex exactly one of its three choices leads to A. Thus p_(k+1) = (1 − p_k)/3. Applying this in order gives p_1 = 0, p_2 = 1/3, p_3 = 2/9, p_4 = 7/27, p_5 = 20/81, and p_6 = 61/243. Therefore p_7 = (1 − 61/243)/3 = 182/729, so n = 182.\nFinal answer: 182",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "6bd868e219b0dd6a070e364841b6dbfb9242fc8d9b8d6c8bad820dd56b7a28be",
+  "call_id": 55,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "182",
+    "correct": true
+  }
+}

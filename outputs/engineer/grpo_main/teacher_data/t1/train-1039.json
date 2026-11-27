@@ -1,0 +1,22 @@
+{
+  "id": "train-1039",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 68-year-old male presented with a two-year history of a cystic nodule on the radial aspect of the P1 (proximal) phalanx of the left third finger. The cyst had been progressively increasing in size over the last two years and became painful a few months prior to the presentation. He had no other associated symptoms. His past medical history was significant for HIV (well controlled, last CD4 700-900), chronic atrial fibrillation on dabigatran, diabetes mellitus type 2, essential hypertension and hyperlipidemia. Physical exam showed a 12 mm x 11 mm, nontender, mobile subcutaneous cystic lesion at the dorsal aspect of the left distal phalanx of the third finger. Complete blood counts, renal function, basic electrolytes and liver function were unremarkable. Given the location and clinical characteristics of the lesion, ganglion cyst, arteriovenous malformation, hemangioma, lipoma and fibroma were initially considered in the differential diagnosis. The patient opted for excision of the nodule. On macroscopic examination, the tumor was a well-circumscribed tan-pink nodular mass measuring 0.7 x 0.7 x 0.5 cm. Microscopic examination showed a solid type tumor with well-circumscribed closely packed smooth muscle fascicles with moderately low cellularity surrounding vascular lumina (Figures , ).\nThere was no evidence of atypia, hemorrhage, necrosis, mitosis or calcifications. Immunohistochemical staining with CD34 and smooth muscle actin were positive (Figures , ). Testing for S100 (a neural tissue marker) was negative and desmin (a myogenic marker) was noncontributory. Diagnosis of angioleiomyoma was made after the histopathological exam. The patient recovered well from the procedure, and there was no recurrence after nine months of follow-up.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 480,
+  "solution": "CHA₂DS₂-VASc estimates stroke risk in atrial fibrillation. At admission:\n- Congestive heart failure or LV dysfunction: not documented = 0.\n- Hypertension: present = 1.\n- Age: 68 years falls in the 65–74 band = 1 (age ≥75 would score 2 instead).\n- Diabetes mellitus: type 2 diabetes = 1.\n- Prior stroke, TIA, or systemic embolism (2 if present): not documented = 0.\n- Vascular disease: not documented = 0. Hyperlipidemia alone does not qualify.\n- Sex category: male = 0.\nSum: 0 + 1 + 1 + 1 + 0 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 804,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

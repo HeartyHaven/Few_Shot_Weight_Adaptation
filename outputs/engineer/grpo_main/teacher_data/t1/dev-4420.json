@@ -1,0 +1,24 @@
+{
+  "id": "dev-4420",
+  "task": "t1",
+  "group": "Centor Score (Modified/McIsaac) for Strep Pharyngitis",
+  "calc_id": 20,
+  "question": "Patient note:\nAn eight years old girl has presented to pediatric emergency with a recent history of febrile odynophagie subsequently complicated by a torticollis that has settled 5days after. Clinical examination has found a febrile child at 39°C and a bulging anterior pillar of the right tonsil without rash or conjunctival hyperemia. CT scan was performed and has revealed right peritonsillar and parapharyngeal abscess (). At laboratory tests we found a white blood cell count (WBC) of 14000/mm3 and C - reactive protein (CRP) of 102mg / l. The child underwent a trans-oral drainage of the abscess under general anesthesia and airway protection. The bacteriological sampling objectified mixed unspecific flora sensitive to amoxicillin-clavulanic acid with no evidence of mycobacterium tuberculosis. Antibiotherapy was prescribed based on amoxicilline- clavulanic acid (80mg/kg a day) and aminoglycoside (3mg/kg a day for 5 days). The child was apyretic 48 hours after, and C- reactive protein 72 hours later was at 45 mg/l. Cervical spine traction was not necessary since the torticollis has been resolved after 5 days.\n\nQuestion: What is the patient's Centor Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "explanation": "The criteria listed in the Centor Score formula are listed below:\n\n1. Age: 3-14 years = +1 point, 15-44 years = 0 points, ≥45 years = -1 point\n2. Exudate or swelling on tonsils: No = 0 points, Yes = +1 point\n3. Tender/swollen anterior cervical lymph nodes: No = 0 points, Yes = +1 point\n4. Temperature >38°C (100.4°F): No = 0 points, Yes = +1 point\n5. Cough: Cough present = 0 points, Cough absent = +1 point\n\nThe Centor score is calculated by summing the points for each criterion.\n    \nThe current Centor score is 0.\nThe patient is 8 years old. Because the age is between 3 and 14 years, we add one point to the score making current score 0 + 1 = 1.\nThe patient's temperature is 39.0 degrees celsius. The patient's temperature is greater than 38 degrees Celsius, and so we add one point to the score, making the current score 1 + 1 = 2.\nThe patient note report reports that the patient is coughing and so we do not change the score, keeping the current score at 2.\nThe patient note reports 'tender/swollen anterior cervical lymph nodes' as absent for the patient. Hence, we do not change the score, keeping the current score at 2.\nThe patient note reports 'exudate or swelling on tonsils' as present for the patient. Hence, we increase the score by 1, making the current score 2 + 1 = 3.\nHence, the Centor score for the patient is 3.",
+  "prompt_tokens": 348,
+  "solution": "Modified Centor (McIsaac) score at presentation:\n- Age adjustment: age 8 is in the 3–14 group → +1.\n- Temperature >38°C: 39°C → +1.\n- Tonsillar swelling or exudate: the bulging right tonsillar pillar supports swelling → +1.\n- Tender anterior cervical nodes: not documented → 0.\n- Absence of cough: not established in the note → 0.\nSum: 1 + 1 + 1 + 0 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "reused_from": "outputs/engineer/distill_main/data/t1.jsonl",
+  "reused_source_sha256": "986c157b1c67e1e15f790a8591252e01848729b0d9e5eaec2af974849a7ae226",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

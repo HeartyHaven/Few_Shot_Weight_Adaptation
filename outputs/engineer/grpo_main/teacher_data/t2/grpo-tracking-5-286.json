@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-286",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Siddhartha, Bob gets Walden, Claire gets The Trial, Dave gets Ivanhoe, and Eve gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Bob and Dave swap books. Then, Bob and Claire swap books. Then, Eve and Claire swap books. Then, Eve and Claire swap books. Finally, Claire and Bob swap books. At the end of the semester, Dave has\nOptions:\n(A) Siddhartha\n(B) Walden\n(C) The Trial\n(D) Ivanhoe\n(E) Emma",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "The Trial",
+      "Dave": "Ivanhoe",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Ivanhoe"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Ivanhoe",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Book order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Siddhartha | Walden | The Trial | Ivanhoe | Emma\n1. Bob ↔ Dave: Siddhartha | Ivanhoe | The Trial | Walden | Emma\n2. Bob ↔ Claire: Siddhartha | The Trial | Ivanhoe | Walden | Emma\n3. Eve ↔ Claire: Siddhartha | The Trial | Emma | Walden | Ivanhoe\n4. Eve ↔ Claire: Siddhartha | The Trial | Ivanhoe | Walden | Emma\n5. Claire ↔ Bob: Siddhartha | Ivanhoe | The Trial | Walden | Emma\nDave has Walden, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1030,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-725",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Quinn, Claire is dancing with Umar, Dave is dancing with Karl, and Eve is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Alice and Eve switch partners. Then, Claire and Bob switch partners. Then, Bob and Eve switch partners. Then, Bob and Alice switch partners. Finally, Eve and Bob switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Tara\n(B) Quinn\n(C) Umar\n(D) Karl\n(E) Wade",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Quinn",
+      "Claire": "Umar",
+      "Dave": "Karl",
+      "Eve": "Wade"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Quinn",
+      "Claire": "Umar",
+      "Dave": "Karl",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Umar",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Tara"
+    },
+    {
+      "Alice": "Wade",
+      "Bob": "Tara",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Wade",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Umar",
+      "Claire": "Quinn",
+      "Dave": "Karl",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partners in order: Alice | Bob | Claire | Dave | Eve\nInitial: Tara | Quinn | Umar | Karl | Wade\n1. Alice swaps with Eve: Wade | Quinn | Umar | Karl | Tara\n2. Claire swaps with Bob: Wade | Umar | Quinn | Karl | Tara\n3. Bob swaps with Eve: Wade | Tara | Quinn | Karl | Umar\n4. Bob swaps with Alice: Tara | Wade | Quinn | Karl | Umar\n5. Eve swaps with Bob: Tara | Umar | Quinn | Karl | Wade\nEve dances with Wade, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1150,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-597",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Emma, Bob gets Hamlet, and Claire gets Dracula.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Alice and Bob swap books. Finally, Claire and Bob swap books. At the end of the semester, Bob has\nOptions:\n(A) Emma\n(B) Hamlet\n(C) Dracula",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Emma",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Hamlet",
+      "Claire": "Dracula"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Dracula",
+      "Claire": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 138,
+  "solution": "Each row lists the books in this order: Alice, Bob, Claire.\nInitial: Emma, Hamlet, Dracula\n1. Alice ↔ Bob: Hamlet, Emma, Dracula\n2. Alice ↔ Bob: Emma, Hamlet, Dracula\n3. Claire ↔ Bob: Emma, Dracula, Hamlet\nBob has Dracula, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1132,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

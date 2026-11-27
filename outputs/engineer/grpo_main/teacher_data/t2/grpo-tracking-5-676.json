@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-676",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Candide, Claire gets The Trial, Dave gets Dune, and Eve gets Jane Eyre.\nAs the semester proceeds, they start trading around the new books. First, Eve and Alice swap books. Then, Dave and Alice swap books. Then, Alice and Claire swap books. Then, Alice and Bob swap books. Finally, Eve and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Dracula\n(B) Candide\n(C) The Trial\n(D) Dune\n(E) Jane Eyre",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Dune",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Candide",
+      "Claire": "The Trial",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Candide",
+      "Claire": "Dune",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "The Trial",
+      "Claire": "Dune",
+      "Dave": "Jane Eyre",
+      "Eve": "Dracula"
+    },
+    {
+      "Alice": "Candide",
+      "Bob": "Dracula",
+      "Claire": "Dune",
+      "Dave": "Jane Eyre",
+      "Eve": "The Trial"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Book order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial: Dracula | Candide | The Trial | Dune | Jane Eyre\n1. Eve swaps with Alice: Jane Eyre | Candide | The Trial | Dune | Dracula\n2. Dave swaps with Alice: Dune | Candide | The Trial | Jane Eyre | Dracula\n3. Alice swaps with Claire: The Trial | Candide | Dune | Jane Eyre | Dracula\n4. Alice swaps with Bob: Candide | The Trial | Dune | Jane Eyre | Dracula\n5. Eve swaps with Bob: Candide | Dracula | Dune | Jane Eyre | The Trial\nClaire's book is Dune, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1179,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

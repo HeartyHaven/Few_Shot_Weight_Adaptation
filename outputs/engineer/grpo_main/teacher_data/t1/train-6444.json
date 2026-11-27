@@ -1,0 +1,22 @@
+{
+  "id": "train-6444",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nAn 18-year-old man was brought to the emergency department (ED) because of altered mental status. Family reported that he had nausea and vomiting before presenting to the ED. Past medical history was significant for diabetes, diabetic ketoacidosis (DKA), and hypothyroidism. Past surgical and social histories were unremarkable. Home medication was insulin glargine.\nPhysical exam revealed a lethargic patient. Vitals were blood pressure 130/70 mmHg, pulse 96/minute, respiration 28/minute, temperature was normal. Lung auscultation showed left basal crackles.\nChest radiograph (CXR) showed lower lobe infiltrates and pneumomediastinum (PM). Laboratory results: Arterial blood gas: PH 6.930 (7.350–7.450), PCO2 16 mmHg (35–45), PO2 138 mmHg (81–110), and serum bicarbonate 3 mmol/L (22–26); serum electrolytes: sodium 129 mmol/L (136–144), potassium 6.4 mmol/L (3.3–5.1), and chloride 100 mmol/L (101–111); glucose 1087 mg/dL (60–250), blood urea nitrogen 40 mg/dL (8–26), and creatine 2.68 mg/dL (0.70–1.20). Blood counts were normal.\nThe patient was intubated for airway protection because of altered mental status. A postintubation CXR showed PM, lower lobe infiltrates, and an air-filled distended stomach. An oral-gastric (OG) tube was placed easily, to decompress the air-filled distended stomach after bagging prior to intubation and in view of nausea and vomiting. A chest computed tomography scan showed multilobar infiltrates suggestive of aspiration pneumonia, PM, and the tip of the OG tube to be in the right hemithorax. The patient underwent a right thoracotomy with the intention to repair the esophageal rupture. Intraoperatively, the tip of the OG tube was found to be retracted into the esophageal lumen. Inspection of the esophagus did not reveal a clear rupture. An OG tube was placed intraoperatively, and a chest tube was placed into the right pleural space.\nThe patient was given intravenous (IV) fluid for hydration, IV insulin drip, IV metronidazole, and IV levofloxacin. Serial CXRs showed clearing of pneumonic infiltrates and PM. The chest tube was discontinued, and the patient was successfully extubated. After extubation, an esophagogram was performed and showed no extravasation of contrast.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 45,
+  "prompt_tokens": 690,
+  "solution": "CURB-65 assigns 1 point for each pneumonia severity criterion present on admission:\n- New confusion or altered mental status: brought to the ED with acute altered mental status and lethargy = 1.\n- Urea >7 mmol/L (BUN >19 mg/dL): BUN 40 mg/dL = 1.\n- Respiratory rate ≥30/min: 28/min = 0.\n- Systolic BP <90 or diastolic BP ≤60 mmHg: BP 130/70 mmHg = 0.\n- Age ≥65: age 18 = 0.\nSum = 1 + 1 + 0 + 0 + 0 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 785,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

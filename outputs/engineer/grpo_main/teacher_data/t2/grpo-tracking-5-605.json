@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-605",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Jane Eyre, Claire gets Persuasion, Dave gets Walden, and Eve gets Emma.\nAs the semester proceeds, they start trading around the new books. First, Alice and Eve swap books. Then, Eve and Alice swap books. Then, Eve and Bob swap books. Then, Eve and Alice swap books. Finally, Bob and Claire swap books. At the end of the semester, Alice has\nOptions:\n(A) Beloved\n(B) Jane Eyre\n(C) Persuasion\n(D) Walden\n(E) Emma",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ]
+  ],
+  "asked": "Alice",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Emma",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Jane Eyre",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Emma"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Emma",
+      "Claire": "Persuasion",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "Persuasion",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "Beloved"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Beloved, Jane Eyre, Persuasion, Walden, Emma\n1. Alice ↔ Eve: Emma, Jane Eyre, Persuasion, Walden, Beloved\n2. Eve ↔ Alice: Beloved, Jane Eyre, Persuasion, Walden, Emma\n3. Eve ↔ Bob: Beloved, Emma, Persuasion, Walden, Jane Eyre\n4. Eve ↔ Alice: Jane Eyre, Emma, Persuasion, Walden, Beloved\n5. Bob ↔ Claire: Jane Eyre, Persuasion, Emma, Walden, Beloved\nAlice has Jane Eyre, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1173,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

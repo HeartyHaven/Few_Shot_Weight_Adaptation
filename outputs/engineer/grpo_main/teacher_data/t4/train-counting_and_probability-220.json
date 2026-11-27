@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-220",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Each of five, standard, six-sided dice is rolled once. What is the probability that there is at least one pair but not a three-of-a-kind (that is, there are two dice showing the same value, but no three dice show the same value)?",
+  "answer": "\\frac{25}{36}",
+  "prompt_tokens": 82,
+  "solution": "The five dice have \\(6^5\\) equally likely ordered outcomes. With at least one pair and no triple, the multiplicities are either \\(2,1,1,1\\) or \\(2,2,1\\).\n\nFor \\((2,1,1,1)\\), choose the paired value in 6 ways and the three single values in \\(\\binom{5}{3}\\) ways. Their arrangements give \\(6\\binom{5}{3}(5!/2!)=3600\\) outcomes.\n\nFor \\((2,2,1)\\), choose the two paired values in \\(\\binom{6}{2}\\) ways and the single value in 4 ways. Their arrangements give \\(\\binom{6}{2}\\cdot4\\cdot5!/(2!2!)=1800\\) outcomes.\n\nThe probability is \\((3600+1800)/6^5=5400/7776=25/36\\).\nFinal answer: \\frac{25}{36}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "\\frac{25}{36}",
+    "correct": true
+  }
+}

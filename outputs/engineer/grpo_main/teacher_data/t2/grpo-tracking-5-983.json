@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-983",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, and Eve are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing sweeper, Bob is playing goalkeeper, Claire is playing right winger, Dave is playing benchwarmer, and Eve is playing striker.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Dave trade positions. Then, Bob and Eve trade positions. Then, Bob and Eve trade positions. Then, Dave and Eve trade positions. Finally, Eve and Bob trade positions. At the end of the match, Eve is playing\nOptions:\n(A) sweeper\n(B) goalkeeper\n(C) right winger\n(D) benchwarmer\n(E) striker",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "sweeper",
+      "Bob": "goalkeeper",
+      "Claire": "right winger",
+      "Dave": "benchwarmer",
+      "Eve": "striker"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "goalkeeper",
+      "Claire": "benchwarmer",
+      "Dave": "right winger",
+      "Eve": "striker"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "striker",
+      "Claire": "benchwarmer",
+      "Dave": "right winger",
+      "Eve": "goalkeeper"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "goalkeeper",
+      "Claire": "benchwarmer",
+      "Dave": "right winger",
+      "Eve": "striker"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "goalkeeper",
+      "Claire": "benchwarmer",
+      "Dave": "striker",
+      "Eve": "right winger"
+    },
+    {
+      "Alice": "sweeper",
+      "Bob": "right winger",
+      "Claire": "benchwarmer",
+      "Dave": "striker",
+      "Eve": "goalkeeper"
+    }
+  ],
+  "prompt_tokens": 184,
+  "solution": "Player order in every row: Alice | Bob | Claire | Dave | Eve.\nInitial: sweeper | goalkeeper | right winger | benchwarmer | striker\n1. Claire and Dave swap: sweeper | goalkeeper | benchwarmer | right winger | striker\n2. Bob and Eve swap: sweeper | striker | benchwarmer | right winger | goalkeeper\n3. Bob and Eve swap again: sweeper | goalkeeper | benchwarmer | right winger | striker\n4. Dave and Eve swap: sweeper | goalkeeper | benchwarmer | striker | right winger\n5. Eve and Bob swap: sweeper | right winger | benchwarmer | striker | goalkeeper\nEve is playing goalkeeper, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1070,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

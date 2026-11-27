@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-30",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Tara, Bob is dancing with Lena, Claire is dancing with Oscar, Dave is dancing with Nadia, and Eve is dancing with Rosa.\nThroughout the song, the dancers often trade partners. First, Dave and Alice switch partners. Then, Dave and Alice switch partners. Then, Eve and Bob switch partners. Then, Bob and Eve switch partners. Finally, Alice and Dave switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Tara\n(B) Lena\n(C) Oscar\n(D) Nadia\n(E) Rosa",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Tara",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Tara",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Rosa",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Rosa"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Lena",
+      "Claire": "Oscar",
+      "Dave": "Tara",
+      "Eve": "Rosa"
+    }
+  ],
+  "prompt_tokens": 177,
+  "solution": "Partner order in each row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Tara, Lena, Oscar, Nadia, Rosa)\n1. Dave and Alice swap: (Nadia, Lena, Oscar, Tara, Rosa)\n2. Dave and Alice swap: (Tara, Lena, Oscar, Nadia, Rosa)\n3. Eve and Bob swap: (Tara, Rosa, Oscar, Nadia, Lena)\n4. Bob and Eve swap: (Tara, Lena, Oscar, Nadia, Rosa)\n5. Alice and Dave swap: (Nadia, Lena, Oscar, Tara, Rosa)\nEve's final partner is Rosa, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

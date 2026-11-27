@@ -1,0 +1,20 @@
+{
+  "id": "train-number_theory-762",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Sherlock Holmes and Dr. Watson recover a suitcase with a three-digit combination lock from a mathematician turned criminal. Embedded in the suitcase above the lock is the cryptic message \"AT SEA BASE. SEAS EBB SEA: BASS. \"\n\nDr. Watson comments, \"This probably isn't about ocean fish. Perhaps it is an encrypted message. The colon suggests the addition problem $SEAS + EBB + SEA = BASS$, where each letter represents a distinct digit, and the word 'BASE' implies that the problem is in a different base.\"\n\nHolmes calmly turns the combination lock and opens the suitcase. While Dr. Watson gapes in surprise, Holmes replies, \"You were indeed right, and the answer was just the value of the word $SEA$, interpreted as decimal digits.\" What was the lock combination?",
+  "answer": "871",
+  "prompt_tokens": 196,
+  "solution": "Let b be the base. In the units column, S + B + A ends in S, so B + A is a multiple of b. Since B is nonzero and B + A < 2b, we get B + A = b and carry 1. The tens column then totals A + B + E + 1 = b + E + 1. Since the resulting digit S is nonzero, E + 1 cannot equal b; thus S = E + 1 and the carry is 1.\n\nLet c be the carry from hundreds to thousands. The thousands column gives B = S + c. Since B differs from S and adding three digits with carry 1 produces a carry of at most 2, c is 1 or 2. If c = 1, then B = S + 1, and the hundreds equation E + E + S + 1 = A + b becomes 2E + B = A + b. Substituting b = A + B gives E = A, impossible.\n\nHence c = 2, so B = E + 3 and A = b − E − 3. The hundreds equation is now 3E + 2 = A + 2b, giving 3b = 4E + 5. Thus E ≡ 1 (mod 3). Because S = E + 1 must be a decimal lock digit, E ≤ 8, leaving E = 1, 4, or 7. These give b = 3, 7, or 11 respectively. The first two violate B = E + 3 < b. For E = 7 we get b = 11, B = 10, S = 8, and A = 1, all distinct valid digits. Reading SEA as lock digits gives 871.\nFinal answer: 871",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "871",
+    "correct": true
+  }
+}

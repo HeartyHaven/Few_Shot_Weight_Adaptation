@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-659",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "Let $S$ be a subset of $\\{1,2,3,...,50\\}$ such that no pair of distinct elements in $S$ has a sum divisible by $7$. What is the maximum number of elements in $S$?\n$\\text{(A) } 6\\quad \\text{(B) } 7\\quad \\text{(C) } 14\\quad \\text{(D) } 22\\quad \\text{(E) } 23$\n",
+  "answer": "23",
+  "prompt_tokens": 134,
+  "solution": "Group the numbers by their residues modulo 7. Since $50=7\\cdot7+1$, residue 1 occurs 8 times and every other residue occurs 7 times.\nThe nonzero residues form three complementary pairs: $(1,6)$, $(2,5)$, and $(3,4)$. Taking a number from each side of any pair would give a sum divisible by 7, so these pairs contribute at most 8, 7, and 7 elements, respectively. At most one multiple of 7 is allowed, giving an upper bound of $8+7+7+1=23$.\nThis bound is attained by taking all numbers with residues 1, 2, or 3, together with 7: no two selected elements have residues summing to 0 modulo 7.\nFinal answer: 23",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1428,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "23",
+    "correct": true
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-492",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Each page number of a 488-page book is printed one time in the book.  The first page is page 1 and the last page is page 488. When printing all of the page numbers, how many more 4's are printed than 8's?",
+  "answer": "90",
+  "prompt_tokens": 88,
+  "solution": "From 1 through 399, the units and tens positions each contribute equally many 4's and 8's: in each complete block of 100 numbers, each digit occurs 10 times in each position. We may include 0 and pad with leading zeros since neither affects these counts. No hundreds digit is 4 or 8 in this range.\nFrom 400 through 488, the hundreds position contributes 488 − 400 + 1 = 89 more 4's than 8's. The tens position contributes ten 4's (440–449) and nine 8's (480–488), an excess of one 4. In the units position, each complete decade from 400 through 479 has one of each, and 480–488 also has one of each. Thus the total excess is 89 + 1 = 90.\nFinal answer: 90",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "90",
+    "correct": true
+  }
+}

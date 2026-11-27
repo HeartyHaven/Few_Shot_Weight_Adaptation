@@ -1,0 +1,22 @@
+{
+  "id": "train-975",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 71-year-old man comes to the physician for a health maintenance examination. Aside from occasional lower back pain in the last couple of years, he feels well. He had a right-sided myocardial infarction 4 years ago. Currently, he has no shortness of breath and has no anginal symptoms. He has a 30 pack-year history of smoking but stopped smoking 10 years ago and does not drink alcohol. His pulse is 59/min, and his blood pressure is 135/75 mm Hg. Physical examination reveals 1+ lower extremity edema. Cardiac and pulmonary auscultation show no abnormalities. There is no lymphadenopathy. His laboratory studies show a hemoglobin of 13.2 g/dL and serum protein of 10.1 g/dL. ECG shows known Q wave abnormalities unchanged since the last ECG one year ago. A serum protein electrophoresis with immunofixation is shown.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 278,
+  "solution": "CHA₂DS₂-VASc assigns points for heart failure, hypertension, age, diabetes, prior stroke/TIA/systemic embolism, vascular disease and female sex.\n- Heart failure or LV dysfunction: 1 if the leg edema after a right-sided MI is attributed to clinical heart failure. Edema alone does not establish this diagnosis.\n- Hypertension: no diagnosis or treatment reported; BP 135/75 mm Hg does not establish it for this score = 0.\n- Age: 71 is in the 65–74 band = 1, rather than the 2 points for age ≥75.\n- Diabetes = 0; prior stroke/TIA/systemic embolism = 0; neither is reported.\n- Vascular disease: prior MI = 1.\n- Sex: male = 0.\nThe documented age and MI contribute 2. If heart failure is assumed, the sum is 1 + 0 + 1 + 0 + 0 + 1 + 0 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 880,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

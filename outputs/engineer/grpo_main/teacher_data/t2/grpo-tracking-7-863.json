@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-863",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing striker, Bob is playing left back, Claire is playing sweeper, Dave is playing benchwarmer, Eve is playing center midfielder, Fred is playing fullback, and Gertrude is playing goalkeeper.\nAs the game progresses, pairs of players occasionally swap positions. First, Eve and Gertrude trade positions. Then, Claire and Eve trade positions. Then, Bob and Dave trade positions. Then, Claire and Eve trade positions. Then, Dave and Claire trade positions. Then, Gertrude and Alice trade positions. Finally, Eve and Dave trade positions. At the end of the match, Eve is playing\nOptions:\n(A) striker\n(B) left back\n(C) sweeper\n(D) benchwarmer\n(E) center midfielder\n(F) fullback\n(G) goalkeeper",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Eve",
+      "Gertrude"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Gertrude",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "striker",
+      "Bob": "left back",
+      "Claire": "sweeper",
+      "Dave": "benchwarmer",
+      "Eve": "center midfielder",
+      "Fred": "fullback",
+      "Gertrude": "goalkeeper"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "left back",
+      "Claire": "sweeper",
+      "Dave": "benchwarmer",
+      "Eve": "goalkeeper",
+      "Fred": "fullback",
+      "Gertrude": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "left back",
+      "Claire": "goalkeeper",
+      "Dave": "benchwarmer",
+      "Eve": "sweeper",
+      "Fred": "fullback",
+      "Gertrude": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "benchwarmer",
+      "Claire": "goalkeeper",
+      "Dave": "left back",
+      "Eve": "sweeper",
+      "Fred": "fullback",
+      "Gertrude": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "benchwarmer",
+      "Claire": "sweeper",
+      "Dave": "left back",
+      "Eve": "goalkeeper",
+      "Fred": "fullback",
+      "Gertrude": "center midfielder"
+    },
+    {
+      "Alice": "striker",
+      "Bob": "benchwarmer",
+      "Claire": "left back",
+      "Dave": "sweeper",
+      "Eve": "goalkeeper",
+      "Fred": "fullback",
+      "Gertrude": "center midfielder"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "benchwarmer",
+      "Claire": "left back",
+      "Dave": "sweeper",
+      "Eve": "goalkeeper",
+      "Fred": "fullback",
+      "Gertrude": "striker"
+    },
+    {
+      "Alice": "center midfielder",
+      "Bob": "benchwarmer",
+      "Claire": "left back",
+      "Dave": "goalkeeper",
+      "Eve": "sweeper",
+      "Fred": "fullback",
+      "Gertrude": "striker"
+    }
+  ],
+  "prompt_tokens": 234,
+  "solution": "Player order in every row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: striker, left back, sweeper, benchwarmer, center midfielder, fullback, goalkeeper.\n1. Eve ↔ Gertrude: striker, left back, sweeper, benchwarmer, goalkeeper, fullback, center midfielder.\n2. Claire ↔ Eve: striker, left back, goalkeeper, benchwarmer, sweeper, fullback, center midfielder.\n3. Bob ↔ Dave: striker, benchwarmer, goalkeeper, left back, sweeper, fullback, center midfielder.\n4. Claire ↔ Eve: striker, benchwarmer, sweeper, left back, goalkeeper, fullback, center midfielder.\n5. Dave ↔ Claire: striker, benchwarmer, left back, sweeper, goalkeeper, fullback, center midfielder.\n6. Gertrude ↔ Alice: center midfielder, benchwarmer, left back, sweeper, goalkeeper, fullback, striker.\n7. Eve ↔ Dave: center midfielder, benchwarmer, left back, goalkeeper, sweeper, fullback, striker.\nEve's final position is sweeper, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1357,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

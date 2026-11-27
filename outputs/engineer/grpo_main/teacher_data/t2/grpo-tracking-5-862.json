@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-862",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Vera, Bob is dancing with Yuki, Claire is dancing with Oscar, Dave is dancing with Nadia, and Eve is dancing with Umar.\nThroughout the song, the dancers often trade partners. First, Alice and Dave switch partners. Then, Claire and Eve switch partners. Then, Bob and Eve switch partners. Then, Bob and Eve switch partners. Finally, Bob and Alice switch partners. At the end of the dance, Claire is dancing with\nOptions:\n(A) Vera\n(B) Yuki\n(C) Oscar\n(D) Nadia\n(E) Umar",
+  "answer": "(E)",
+  "swaps": [
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Vera",
+      "Bob": "Yuki",
+      "Claire": "Oscar",
+      "Dave": "Nadia",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Yuki",
+      "Claire": "Oscar",
+      "Dave": "Vera",
+      "Eve": "Umar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Yuki",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Oscar",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Yuki"
+    },
+    {
+      "Alice": "Nadia",
+      "Bob": "Yuki",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Yuki",
+      "Bob": "Nadia",
+      "Claire": "Umar",
+      "Dave": "Vera",
+      "Eve": "Oscar"
+    }
+  ],
+  "prompt_tokens": 181,
+  "solution": "Partner order in every row: Alice, Bob, Claire, Dave, Eve.\nInitial: Vera, Yuki, Oscar, Nadia, Umar\n1. Alice ↔ Dave: Nadia, Yuki, Oscar, Vera, Umar\n2. Claire ↔ Eve: Nadia, Yuki, Umar, Vera, Oscar\n3. Bob ↔ Eve: Nadia, Oscar, Umar, Vera, Yuki\n4. Bob ↔ Eve: Nadia, Yuki, Umar, Vera, Oscar\n5. Bob ↔ Alice: Yuki, Nadia, Umar, Vera, Oscar\nClaire's partner is Umar, option (E).\nFinal answer: (E)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1114,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(E)",
+    "correct": true
+  }
+}

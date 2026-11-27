@@ -1,0 +1,22 @@
+{
+  "id": "train-6676",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nA 69-year-old female presented to our emergency department with chief complaint of neck swelling, sore throat and difficulty swallowing for the past two days. She also complained of fever and voice hoarseness. Flexion and extension of the neck made the pain worse. She denied difficulty breathing, nausea, vomiting, or chest pain. She reported a non-productive cough. She stated that her daughter and grandchildren were sick with a cough and cold. She took diphenhydramine, acetaminophen and some old amoxicillin at home. Her past medical history was significant for salivary gland cancer nine years prior that was treated with chemotherapy and radiation.\nHer vital signs were: pulse 103, blood pressure 120/62 mmHg, temperature 37.6°C, respirations 18/min, and room air pulse oximetry 100%. Laboratory analyses revealed an elevated white blood cell count of 33 K/mm3, and an elevated procalcitonin level of 23.67 ng/mL. Radiograph of the soft tissues of the neck revealed an enlarged epiglottis and aryepiglottic folds, consistent with epiglottitis. In addition, subglottic narrowing of the airway is demonstrated (Figure ). The patient received intravenous ampicillin-sulbactam, methylprednisolone and diphenhydramine in the emergency department with some improvement. The patient was initially admitted to the intensive care unit and evaluated by the otolaryngology service using a flexible nasopharyngoscope. The patient was gradually weaned off of intravenous medications and discharged on hospital day three. Blood and throat cultures were negative.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "2",
+  "lower": 2.0,
+  "upper": 2.0,
+  "calc_id": 51,
+  "prompt_tokens": 431,
+  "solution": "Count one point for each SIRS criterion met before treatment:\n- Temperature >38°C or <36°C: measured 37.6°C → 0, despite the reported fever.\n- Heart rate >90/min: pulse 103/min → 1.\n- Respiratory rate >20/min or PaCO₂ <32 mmHg: rate 18/min, with no qualifying PaCO₂ reported → 0.\n- WBC >12,000/mm³, <4,000/mm³, or >10% immature bands: WBC 33,000/mm³ → 1.\nTotal = 0 + 1 + 0 + 1 = 2.\nFinal answer: 2",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 780,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 2.0,
+    "correct": true
+  }
+}

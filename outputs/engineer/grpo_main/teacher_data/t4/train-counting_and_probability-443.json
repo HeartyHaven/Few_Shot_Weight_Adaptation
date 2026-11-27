@@ -1,0 +1,20 @@
+{
+  "id": "train-counting_and_probability-443",
+  "task": "t4",
+  "group": "Counting & Probability",
+  "question": "Let $\\star (x)$ be the sum of the digits of a positive integer $x$. $\\mathcal{S}$ is the set of positive integers such that for all elements $n$ in $\\mathcal{S}$, we have that $\\star (n)=12$ and $0\\le n< 10^{7}$. If $m$ is the number of elements in $\\mathcal{S}$, compute $\\star(m)$.\n",
+  "answer": "26",
+  "prompt_tokens": 124,
+  "solution": "Pad each number below 10^7 with leading zeros to obtain a unique seven-digit string. Its digits must sum to 12, which automatically excludes zero.\nIgnoring the digit upper bound, distributing 12 units among seven positions takes 12 stars and six separators, giving C(18,6) = 18564 arrangements. If a specified position contains at least 10 units, subtract 10 there. The remaining 2 units can be distributed among the seven positions in C(8,6) = 28 ways. Two positions cannot both contain 10 units because the sum is only 12, so the seven invalid cases do not overlap.\nThus m = 18564 − 7 × 28 = 18368, whose digit sum is 1 + 8 + 3 + 6 + 8 = 26.\nFinal answer: 26",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "reused_from": "outputs/engineer/distill_main/data/t4.jsonl",
+  "reused_source_sha256": "1cc365e587f9ac478078bdd1256d713d37c14733ff8e550177c2b5321652a2a3",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "26",
+    "correct": true
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "id": "dev-5-14",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lena, Bob is dancing with Oscar, Claire is dancing with Marco, Dave is dancing with Yuki, and Eve is dancing with Stefan.\nThroughout the song, the dancers often trade partners. First, Bob and Dave switch partners. Then, Claire and Dave switch partners. Then, Claire and Dave switch partners. Then, Dave and Eve switch partners. Finally, Eve and Claire switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Lena\n(B) Oscar\n(C) Marco\n(D) Yuki\n(E) Stefan",
+  "answer": "(D)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Lena",
+      "Bob": "Oscar",
+      "Claire": "Marco",
+      "Dave": "Yuki",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Marco",
+      "Dave": "Oscar",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Oscar",
+      "Dave": "Marco",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Marco",
+      "Dave": "Oscar",
+      "Eve": "Stefan"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Marco",
+      "Dave": "Stefan",
+      "Eve": "Oscar"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Yuki",
+      "Claire": "Oscar",
+      "Dave": "Stefan",
+      "Eve": "Marco"
+    }
+  ],
+  "solution": "Each row lists partners in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Lena, Oscar, Marco, Yuki, Stefan.\n1. Bob and Dave swap: Lena, Yuki, Marco, Oscar, Stefan.\n2. Claire and Dave swap: Lena, Yuki, Oscar, Marco, Stefan.\n3. Claire and Dave swap again: Lena, Yuki, Marco, Oscar, Stefan.\n4. Dave and Eve swap: Lena, Yuki, Marco, Stefan, Oscar.\n5. Eve and Claire swap: Lena, Yuki, Oscar, Stefan, Marco.\nBob is dancing with Yuki, option (D).\nFinal answer: (D)",
+  "teacher": "gpt-6.2-astra",
+  "input_sha256": "9d0ac00f427e4c827c6da5687ab65fdece1afaab2eb5ed430e06af7fa3e7ed4f",
+  "call_id": 26,
+  "source": "dev",
+  "kept": true,
+  "grade": {
+    "pred": "(D)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-82",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Walden, Bob gets Siddhartha, Claire gets The Trial, Dave gets Dracula, and Eve gets Candide.\nAs the semester proceeds, they start trading around the new books. First, Claire and Bob swap books. Then, Alice and Dave swap books. Then, Claire and Bob swap books. Then, Dave and Eve swap books. Finally, Eve and Alice swap books. At the end of the semester, Bob has\nOptions:\n(A) Walden\n(B) Siddhartha\n(C) The Trial\n(D) Dracula\n(E) Candide",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Dracula",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Dracula",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Walden",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Walden",
+      "Eve": "Candide"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Siddhartha",
+      "Claire": "The Trial",
+      "Dave": "Candide",
+      "Eve": "Dracula"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Reader order in every row: Alice | Bob | Claire | Dave | Eve\nInitial: Walden | Siddhartha | The Trial | Dracula | Candide\n1. Claire ↔ Bob: Walden | The Trial | Siddhartha | Dracula | Candide\n2. Alice ↔ Dave: Dracula | The Trial | Siddhartha | Walden | Candide\n3. Claire ↔ Bob: Dracula | Siddhartha | The Trial | Walden | Candide\n4. Dave ↔ Eve: Dracula | Siddhartha | The Trial | Candide | Walden\n5. Eve ↔ Alice: Walden | Siddhartha | The Trial | Candide | Dracula\nBob has Siddhartha, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1012,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

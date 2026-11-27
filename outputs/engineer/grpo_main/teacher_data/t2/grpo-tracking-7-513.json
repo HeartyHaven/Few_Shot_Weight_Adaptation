@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-513",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right winger, Bob is playing left winger, Claire is playing sweeper, Dave is playing left back, Eve is playing cheerleader, Fred is playing left midfielder, and Gertrude is playing right midfielder.\nAs the game progresses, pairs of players occasionally swap positions. First, Claire and Fred trade positions. Then, Alice and Eve trade positions. Then, Alice and Bob trade positions. Then, Alice and Bob trade positions. Then, Claire and Gertrude trade positions. Then, Gertrude and Fred trade positions. Finally, Claire and Gertrude trade positions. At the end of the match, Claire is playing\nOptions:\n(A) right winger\n(B) left winger\n(C) sweeper\n(D) left back\n(E) cheerleader\n(F) left midfielder\n(G) right midfielder",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Gertrude",
+      "Fred"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "right winger",
+      "Bob": "left winger",
+      "Claire": "sweeper",
+      "Dave": "left back",
+      "Eve": "cheerleader",
+      "Fred": "left midfielder",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "right winger",
+      "Bob": "left winger",
+      "Claire": "left midfielder",
+      "Dave": "left back",
+      "Eve": "cheerleader",
+      "Fred": "sweeper",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "left winger",
+      "Claire": "left midfielder",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "left winger",
+      "Bob": "cheerleader",
+      "Claire": "left midfielder",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "left winger",
+      "Claire": "left midfielder",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "right midfielder"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "left winger",
+      "Claire": "right midfielder",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "sweeper",
+      "Gertrude": "left midfielder"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "left winger",
+      "Claire": "right midfielder",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "left midfielder",
+      "Gertrude": "sweeper"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "left winger",
+      "Claire": "sweeper",
+      "Dave": "left back",
+      "Eve": "right winger",
+      "Fred": "left midfielder",
+      "Gertrude": "right midfielder"
+    }
+  ],
+  "prompt_tokens": 238,
+  "solution": "Player order in every row: Alice | Bob | Claire | Dave | Eve | Fred | Gertrude.\nInitial: right winger | left winger | sweeper | left back | cheerleader | left midfielder | right midfielder\n1. Claire ↔ Fred: right winger | left winger | left midfielder | left back | cheerleader | sweeper | right midfielder\n2. Alice ↔ Eve: cheerleader | left winger | left midfielder | left back | right winger | sweeper | right midfielder\n3. Alice ↔ Bob: left winger | cheerleader | left midfielder | left back | right winger | sweeper | right midfielder\n4. Alice ↔ Bob: cheerleader | left winger | left midfielder | left back | right winger | sweeper | right midfielder\n5. Claire ↔ Gertrude: cheerleader | left winger | right midfielder | left back | right winger | sweeper | left midfielder\n6. Gertrude ↔ Fred: cheerleader | left winger | right midfielder | left back | right winger | left midfielder | sweeper\n7. Claire ↔ Gertrude: cheerleader | left winger | sweeper | left back | right winger | left midfielder | right midfielder\nClaire's final position is sweeper, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1265,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-780",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Stefan, Claire is dancing with Wade, Dave is dancing with Lena, and Eve is dancing with Vera.\nThroughout the song, the dancers often trade partners. First, Dave and Alice switch partners. Then, Claire and Bob switch partners. Then, Alice and Eve switch partners. Then, Eve and Dave switch partners. Finally, Bob and Eve switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Marco\n(B) Stefan\n(C) Wade\n(D) Lena\n(E) Vera",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ],
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Eve"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Stefan",
+      "Claire": "Wade",
+      "Dave": "Lena",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Stefan",
+      "Claire": "Wade",
+      "Dave": "Marco",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Wade",
+      "Claire": "Stefan",
+      "Dave": "Marco",
+      "Eve": "Vera"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Stefan",
+      "Dave": "Marco",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Wade",
+      "Claire": "Stefan",
+      "Dave": "Lena",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Vera",
+      "Bob": "Marco",
+      "Claire": "Stefan",
+      "Dave": "Lena",
+      "Eve": "Wade"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Each row lists the partners in dancer order: Alice, Bob, Claire, Dave, Eve.\nInitial: (Marco, Stefan, Wade, Lena, Vera)\n1. Dave and Alice swap: (Lena, Stefan, Wade, Marco, Vera)\n2. Claire and Bob swap: (Lena, Wade, Stefan, Marco, Vera)\n3. Alice and Eve swap: (Vera, Wade, Stefan, Marco, Lena)\n4. Eve and Dave swap: (Vera, Wade, Stefan, Lena, Marco)\n5. Bob and Eve swap: (Vera, Marco, Stefan, Lena, Wade)\nBob is dancing with Marco, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1192,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-28",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "books",
+  "question": "Alice, Bob, and Claire are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Jane Eyre, Bob gets The Trial, and Claire gets Ivanhoe.\nAs the semester proceeds, they start trading around the new books. First, Claire and Alice swap books. Then, Claire and Alice swap books. Finally, Alice and Bob swap books. At the end of the semester, Claire has\nOptions:\n(A) Jane Eyre\n(B) The Trial\n(C) Ivanhoe",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Bob"
+    ]
+  ],
+  "asked": "Claire",
+  "trace": [
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "The Trial",
+      "Claire": "Jane Eyre"
+    },
+    {
+      "Alice": "Jane Eyre",
+      "Bob": "The Trial",
+      "Claire": "Ivanhoe"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Jane Eyre",
+      "Claire": "Ivanhoe"
+    }
+  ],
+  "prompt_tokens": 142,
+  "solution": "Each row lists books in the order (Alice, Bob, Claire).\nInitial: (Jane Eyre, The Trial, Ivanhoe)\n1. Claire and Alice swap: (Ivanhoe, The Trial, Jane Eyre)\n2. Claire and Alice swap: (Jane Eyre, The Trial, Ivanhoe)\n3. Alice and Bob swap: (The Trial, Jane Eyre, Ivanhoe)\nClaire has Ivanhoe, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1152,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "train-1110",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nAn 84-year-old Italian woman presented to our hospital with a stroke and was referred to our cardiology unit for cardiologic evaluation. She had a history of hypertension, dyslipidemia, and pulmonary embolism and was using warfarin for pulmonary embolism during our evaluation: international normalized ratio (INR) 2.3; time in therapeutic range (TTR) >63%. She reported palpitations and dyspnea that started 1 week before our evaluation. An electrocardiogram showed AF with a heart rate of 96 beats per minute. Transthoracic echocardiography revealed normal left ventricle (LV) diameters and volume, left ventricular ejection fraction of approximately 60%, and a dilated left atrium (LA) with dense spontaneous echo contrast. Transesophageal echocardiography (TEE) showed a round, partially mobile, disorganized and weakly hypoechogenic mass (12 × 12 mm) that resembled a thrombus in the LAA (Fig. a). We examined the following in regard to thrombophilia: prothrombin time, activated partial thromboplastin time, fibrinogen, activated protein C resistance, factor V Leiden, prothrombin G20210A mutation, homocysteine, ATIII, protein C, protein S, antiphospholipid antibodies (lupus-like anticoagulant), anti-beta 2 glycoprotein I antibodies, anti-cardiolipin antibodies, factor VIII, and methylenetetrahydrofolate reductase C677T mutation. Testing revealed heterozygosity for both factor V Leiden and methylenetetrahydrofolate reductase C677T mutation, which created resistance to activated protein C [].\nWe started anticoagulant treatment with unfractionated heparin administered intravenously. After 1 week of therapy, we performed a second TEE that showed that the LAA thrombus remained unchanged (Fig. b). Her treatment was then switched to rivaroxaban 20 mg once daily for long-term treatment and stroke prevention []. A third TEE performed at the 3-month follow-up visit revealed no thrombotic mass (Fig. c). No major or clinically relevant bleeding occurred during follow-up. At the 6-month and 12-month follow-up visits, she continued to be in good clinical condition. After thrombus resolution, because our patient was at high risk for thromboembolism and had a history of pulmonary embolism, we recommended LAA percutaneous occlusion; however, she refused this option.\nFor rate control, because our patient had a first diagnosed AF with mean ventricular response, we treated her with a beta blocker (bisoprolol) at low dosages (1.25 mg twice daily).\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 677,
+  "solution": "CHA₂DS₂-VASc scores the following factors in this patient with atrial fibrillation at admission:\n- Heart failure/LV dysfunction (1 if present): no documented heart failure; EF approximately 60% → 0.\n- Hypertension (1): established history → 1.\n- Age (1 for 65–74; 2 for ≥75): 84 years → 2.\n- Diabetes (1): not documented → 0.\n- Stroke/TIA/systemic arterial embolism (2): stroke was already present at admission → 2.\n- Vascular disease (1): no documented MI, peripheral arterial disease, or aortic plaque. Pulmonary embolism is venous thromboembolism and does not qualify → 0.\n- Female sex (1): present → 1.\nTotal = 0 + 1 + 2 + 0 + 2 + 0 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 974,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

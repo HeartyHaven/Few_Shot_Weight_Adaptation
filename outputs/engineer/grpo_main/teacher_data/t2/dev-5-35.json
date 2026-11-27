@@ -1,0 +1,90 @@
+{
+  "id": "dev-5-35",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dune, Bob gets Walden, Claire gets Emma, Dave gets Jane Eyre, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Dave and Claire swap books. Then, Bob and Claire swap books. Then, Claire and Dave swap books. Then, Dave and Eve swap books. Finally, Alice and Eve swap books. At the end of the semester, Eve has\nOptions:\n(A) Dune\n(B) Walden\n(C) Emma\n(D) Jane Eyre\n(E) The Trial",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Eve"
+    ],
+    [
+      "Alice",
+      "Eve"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Emma",
+      "Dave": "Jane Eyre",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Walden",
+      "Claire": "Jane Eyre",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Jane Eyre",
+      "Claire": "Walden",
+      "Dave": "Emma",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "Walden",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "Dune",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Walden"
+    },
+    {
+      "Alice": "Walden",
+      "Bob": "Jane Eyre",
+      "Claire": "Emma",
+      "Dave": "The Trial",
+      "Eve": "Dune"
+    }
+  ],
+  "prompt_tokens": 180,
+  "solution": "Books in order (Alice, Bob, Claire, Dave, Eve):\nInitial: (Dune, Walden, Emma, Jane Eyre, The Trial)\n1. Dave ↔ Claire: (Dune, Walden, Jane Eyre, Emma, The Trial)\n2. Bob ↔ Claire: (Dune, Jane Eyre, Walden, Emma, The Trial)\n3. Claire ↔ Dave: (Dune, Jane Eyre, Emma, Walden, The Trial)\n4. Dave ↔ Eve: (Dune, Jane Eyre, Emma, The Trial, Walden)\n5. Alice ↔ Eve: (Walden, Jane Eyre, Emma, The Trial, Dune)\nEve has Dune, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

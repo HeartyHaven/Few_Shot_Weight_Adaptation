@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-1141",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "dance",
+  "question": "Alice, Bob, Claire, Dave, and Eve are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Marco, Bob is dancing with Rosa, Claire is dancing with Stefan, Dave is dancing with Tara, and Eve is dancing with Lena.\nThroughout the song, the dancers often trade partners. First, Bob and Dave switch partners. Then, Eve and Alice switch partners. Then, Dave and Claire switch partners. Then, Bob and Alice switch partners. Finally, Alice and Claire switch partners. At the end of the dance, Eve is dancing with\nOptions:\n(A) Marco\n(B) Rosa\n(C) Stefan\n(D) Tara\n(E) Lena",
+  "answer": "(A)",
+  "swaps": [
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Marco",
+      "Bob": "Rosa",
+      "Claire": "Stefan",
+      "Dave": "Tara",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Marco",
+      "Bob": "Tara",
+      "Claire": "Stefan",
+      "Dave": "Rosa",
+      "Eve": "Lena"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Tara",
+      "Claire": "Stefan",
+      "Dave": "Rosa",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Tara",
+      "Claire": "Rosa",
+      "Dave": "Stefan",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Tara",
+      "Bob": "Lena",
+      "Claire": "Rosa",
+      "Dave": "Stefan",
+      "Eve": "Marco"
+    },
+    {
+      "Alice": "Rosa",
+      "Bob": "Lena",
+      "Claire": "Tara",
+      "Dave": "Stefan",
+      "Eve": "Marco"
+    }
+  ],
+  "prompt_tokens": 175,
+  "solution": "Partners are listed in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Marco, Rosa, Stefan, Tara, Lena.\n1. Bob and Dave swap: Marco, Tara, Stefan, Rosa, Lena.\n2. Eve and Alice swap: Lena, Tara, Stefan, Rosa, Marco.\n3. Dave and Claire swap: Lena, Tara, Rosa, Stefan, Marco.\n4. Bob and Alice swap: Tara, Lena, Rosa, Stefan, Marco.\n5. Alice and Claire swap: Rosa, Lena, Tara, Stefan, Marco.\nEve's partner is the fifth entry: Marco, option (A).\nFinal answer: (A)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1356,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(A)",
+    "correct": true
+  }
+}

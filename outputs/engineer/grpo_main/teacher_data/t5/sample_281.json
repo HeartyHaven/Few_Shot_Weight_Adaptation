@@ -1,0 +1,20 @@
+{
+  "id": "sample_281",
+  "task": "t5",
+  "group": "all",
+  "question": "Here is a Python function and an input. Predict the exact value that the function returns for this input.\n\n```python\ndef f(c, index, value):\n    c[index] = value\n    if value >= 3:\n        c.update({'message' : 'xcrWt'})\n    else: \n        del c['message']\n    return c\n```\n\nInput: f({1: 2, 3: 4, 5: 6, 'message': 'qrTHo'}, 8, 2)",
+  "answer": "{1: 2, 3: 4, 5: 6, 8: 2}",
+  "prompt_tokens": 145,
+  "solution": "index = 8 and value = 2, so c[index] = value adds 8: 2. Now c is {1: 2, 3: 4, 5: 6, 'message': 'qrTHo', 8: 2}.\nSince 2 >= 3 is False, the else branch deletes 'message'. The remaining entries stay in their original order.\nFinal answer: {1: 2, 3: 4, 5: 6, 8: 2}",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "d7aa36899d24af278a3a5e5f80805d280cebbe2b37e59457511ea48e6dff8612",
+  "reused_from": "outputs/engineer/distill_main/data/t5.jsonl",
+  "reused_source_sha256": "0d531eb0406ec957275c43882014515790d371def78abfff105352130ab1ea30",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "{1: 2, 3: 4, 5: 6, 8: 2}",
+    "correct": true
+  }
+}

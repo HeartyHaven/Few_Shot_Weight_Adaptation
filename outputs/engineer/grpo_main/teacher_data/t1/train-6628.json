@@ -1,0 +1,22 @@
+{
+  "id": "train-6628",
+  "task": "t1",
+  "group": "SIRS Criteria",
+  "question": "Patient note:\nIn late June, a 51-year-old male presented to the ED with a chief complaint of shortness of breath. The patient reported sporadic fevers and chills at home over the past two weeks, but denied current fever, nausea, vomiting, diarrhea, abdominal pain, headache, or any urinary symptoms. The patient reported no past medical history and was not on any medications. His son, however, was diagnosed with COVID-19 two weeks prior, with a cough, fever, and typical viral syndrome type symptoms. The patient reported that he did not quarantine from his son even after the positive COVID-19 diagnosis, as they lived in the same house.\nThe patient’s vital signs were temperature 99.1°F, blood pressure 111/76 mmHg, pulse rate 87 beats per minute, respiration rate 18 breaths per minute, and oxygen saturation of 94% on room air. Physical examination revealed significantly decreased breath sounds bilaterally. The remainder of physical examination was unremarkable, including cardiovascular and neurological examination. Laboratory analysis showed signs of leukopenia (white blood cell count of 3,000 per cubic mm) but was negative for neutrophilia or lymphocytopenia. All electrolytes were within normal limits. The D-dimer count was elevated at 2.05 mg/L. Radiological examination included a chest x-ray that demonstrated scattered opacities throughout both lungs suggestive of multifocal atypical pneumonia (Figure ).\nChest CT showed multifocal ground glass opacities (GGO) throughout both lungs typical of underlying SARS-CoV-2 infection. There was no evidence for pulmonary embolism (Figure ).\nHe appeared well throughout the remainder of his stay in the ED with stable vitals. The patient was ambulated in the ED with no decrease in oxygen saturation noted. Although the patient had imaging findings typical of COVID-19 pneumonia and a corroborating history of present illness, the patient was nonetheless treated with 500 mg intravenous azithromycin and 1 g of ceftriaxone as empiric treatment for community-acquired pneumonia. Given that the patient had no other comorbidities, and wanted to go home, he was discharged home with a course of oral antibiotics. During a telephone follow-up three days after being discharged, the patient reported that he continued to feel better while at home.\n\nQuestion: What are the number of SIRS critiera met by the patient? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 51,
+  "prompt_tokens": 570,
+  "solution": "Count 1 point for each SIRS criterion met at ED presentation:\n- Temperature >38°C or <36°C: 99.1°F is about 37.3°C, so 0. Reported fevers at home do not change the admission measurement.\n- Heart rate >90/min: 87/min, 0.\n- Respiratory rate >20/min or PaCO₂ <32 mmHg: rate 18/min, with no qualifying PaCO₂ documented, 0.\n- WBC >12,000/mm³, <4,000/mm³, or >10% immature bands: WBC 3,000/mm³ meets the low-count threshold, +1.\nTotal = 0 + 0 + 0 + 1 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 973,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "id": "train-number_theory-47",
+  "task": "t4",
+  "group": "Number Theory",
+  "question": "When $11^4$ is written out in base 10, the sum of its digits is $16=2^4$. What is the largest base $b$ such that the base-$b$ digits of $11^4$ do not add up to $2^4$?  (Note: here, $11^4$ in base $b$ means that the base-$b$ number $11$ is raised to the fourth power.)",
+  "answer": "6",
+  "prompt_tokens": 129,
+  "solution": "In base $b$, the numeral $11$ equals $b+1$. Expanding gives $(b+1)^4=b^4+4b^3+6b^2+4b+1$. For every $b\\ge7$, all coefficients are valid digits, so no carrying occurs and the digit sum is $1+4+6+4+1=16$.\nFor $b=6$, the term $6b^2$ equals $b^3$. Carrying it into the next place gives digits $1,5,0,4,1$, whose sum is $11\\ne16$. Thus base $6$ fails while every larger base works.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "bbd3b07f521fec7440205e8c86a6c98e7cfe26903363753995754f970d19f42e",
+  "call_id": 1392,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "6",
+    "correct": true
+  }
+}

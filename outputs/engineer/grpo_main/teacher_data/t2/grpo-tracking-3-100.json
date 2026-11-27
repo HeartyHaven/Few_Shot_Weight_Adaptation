@@ -1,0 +1,59 @@
+{
+  "id": "grpo-tracking-3-100",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "dance",
+  "question": "Alice, Bob, and Claire are dancers at a square dance. At the start of a song, they each have a partner: Alice is dancing with Lena, Bob is dancing with Umar, and Claire is dancing with Wade.\nThroughout the song, the dancers often trade partners. First, Bob and Claire switch partners. Then, Claire and Alice switch partners. Finally, Claire and Alice switch partners. At the end of the dance, Bob is dancing with\nOptions:\n(A) Lena\n(B) Umar\n(C) Wade",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "Lena",
+      "Bob": "Umar",
+      "Claire": "Wade"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Wade",
+      "Claire": "Umar"
+    },
+    {
+      "Alice": "Umar",
+      "Bob": "Wade",
+      "Claire": "Lena"
+    },
+    {
+      "Alice": "Lena",
+      "Bob": "Wade",
+      "Claire": "Umar"
+    }
+  ],
+  "prompt_tokens": 137,
+  "solution": "Partner order: (Alice, Bob, Claire).\nInitial: (Lena, Umar, Wade).\n1. Bob and Claire swap: (Lena, Wade, Umar).\n2. Claire and Alice swap: (Umar, Wade, Lena).\n3. Claire and Alice swap again: (Lena, Wade, Umar).\nBob is dancing with Wade, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1036,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

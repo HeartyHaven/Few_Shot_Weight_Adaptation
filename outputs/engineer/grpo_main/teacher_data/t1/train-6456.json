@@ -1,0 +1,22 @@
+{
+  "id": "train-6456",
+  "task": "t1",
+  "group": "CURB-65 Score for Pneumonia Severity",
+  "question": "Patient note:\nA 58-year-old man visited our hospital with cough, purulent sputum, and dyspnea since a month prior. The patient presented no medical history except a 30 pack-year smoking history.\nOn admission, the patient's vital signs were as follows: blood pressure 100/70 mm Hg, pulse rate 92 beats per minute, body temperature 37.4℃, and respiratory rate 35 breaths per minute. Auscultation of lungs revealed coarse breathing sounds with crackle and wheezing on both lower lung fields. The oxygen saturation was 94%, pH 7.48, PaO2 63.0 mm Hg, and PaCO2 32.0 mm Hg while the patient was breathing ambient air. A complete blood count showed a white blood cell (WBC) count of 6,920/mm3 (neutrophils 70.9%, lymphocytes 21.9%, monocytes 20.9%, and eosinophils 9.8%), a hemoglobin of 12.4 g/dL, and platelets 198,000/mm3. Serum chemistry showed blood urea nitrogen 18.6 mg/dL, creatinine 1.0 mg/dL, aspartate aminotransferase 158 IU/L, alanine aminotransferase 439 IU/L, alkaline phosphatase level of 386 IU/L, and a C-reactive protein 7.0 mg/dL. The following day, WBC increased to 19,220/mm3 with neutrophil 91.4%; and C-reactive protein increased to 8.5 mg/dL. An electrocardiogram revealed normal sinus rhythm and cardiac enzyme within was normal range.\nPlain chest radiography on admission showed cardiomegaly and consolidation on both lung fields (). Contrast-enhanced chest computed tomography demonstrated diffuse ground glass opacity and consolidation in both lungs. Underlying emphysematous and bullous changes were also noted predominantly in the lower lobes (). An echocardiography showed an ejection fraction of 10% and severe left ventricular systolic dysfunction with no regional wall motion abnormality.\nInitially, we suspected bacterial pneumonia and heart failure consequent to pulmonary edema. Empirically, levofloxacin, piperacillin-tazobactam, and diuretics were started intravenously. At 7 days follow-up after admission, 2 sputum cultures showed R. planticola with showed sensitivity to most antibiotics except for ampicillin and ciprofloxacin; no different bacteria were detected. Blood cultures were sterile. We diagnosed a pneumonia caused by R. planticola. We stopped levofloxacin based on the sputum result and continued piperacillin-tazobactam treatment.\nSeven days after hospitalization, dyspnea had improved and cough and sputum production was reduced. Fifteen days after admission, laboratory analysis was as follows: a WBC count of 5,420/mm3 (neutrophils 55.9%) and C-reactive protein 0.26 mg/dL. At 3 weeks follow-up after admission, chest radiography showed decrease in both ground glass opacity and consolidation in both lung fields; in addition, contrast-enhanced chest computed tomography showed improvement of pneumonia (). The patient continued antibiotic therapy for 4 weeks and was discharged. Since discharge, he has been followed up at an outpatient clinic without evidence of recurrence.\n\nQuestion: What is the patient's CURB-65 score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "1",
+  "lower": 1.0,
+  "upper": 1.0,
+  "calc_id": 45,
+  "prompt_tokens": 831,
+  "solution": "CURB-65 assigns 1 point per criterion for pneumonia severity. At admission:\n- Confusion: none reported → 0.\n- Urea >7 mmol/L (BUN >19.6 mg/dL): BUN 18.6 mg/dL → 0.\n- Respiratory rate ≥30/min: 35/min → 1.\n- Systolic BP <90 or diastolic BP ≤60 mm Hg: BP 100/70 mm Hg → 0.\n- Age ≥65 years: age 58 → 0.\nSum: 0 + 0 + 1 + 0 + 0 = 1.\nFinal answer: 1",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 675,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 1.0,
+    "correct": true
+  }
+}

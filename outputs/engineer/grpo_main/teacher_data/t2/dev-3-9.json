@@ -1,0 +1,60 @@
+{
+  "id": "dev-3-9",
+  "task": "t2",
+  "group": "3obj",
+  "n_objects": 3,
+  "n_swaps": 3,
+  "theme": "gifts",
+  "question": "Alice, Bob, and Claire are holding a white elephant gift exchange. At the start of the event, they are each holding a present of a different color: Alice has a white present, Bob has a silver present, and Claire has a purple present.\nAs the event progresses, pairs of people swap gifts. First, Claire and Bob swap their gifts. Then, Alice and Claire swap their gifts. Finally, Alice and Claire swap their gifts. At the end of the event, Bob has the\nOptions:\n(A) white present\n(B) silver present\n(C) purple present",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Claire"
+    ]
+  ],
+  "asked": "Bob",
+  "trace": [
+    {
+      "Alice": "white",
+      "Bob": "silver",
+      "Claire": "purple"
+    },
+    {
+      "Alice": "white",
+      "Bob": "purple",
+      "Claire": "silver"
+    },
+    {
+      "Alice": "silver",
+      "Bob": "purple",
+      "Claire": "white"
+    },
+    {
+      "Alice": "white",
+      "Bob": "purple",
+      "Claire": "silver"
+    }
+  ],
+  "prompt_tokens": 147,
+  "solution": "Initial: Alice = white present; Bob = silver present; Claire = purple present.\n1. Claire and Bob swap: Alice = white present; Bob = purple present; Claire = silver present.\n2. Alice and Claire swap: Alice = silver present; Bob = purple present; Claire = white present.\n3. Alice and Claire swap: Alice = white present; Bob = purple present; Claire = silver present.\nBob has the purple present, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "reused_from": "outputs/engineer/distill_main/data/t2.jsonl",
+  "reused_source_sha256": "3a2ab9735da9db774e5ecdcc997f55a8fa5fb1179c1193a35c233d9ae42a1a38",
+  "source": "visible_dev_reused",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

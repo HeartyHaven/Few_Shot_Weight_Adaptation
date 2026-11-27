@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-38",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Ivanhoe, Bob gets Candide, Claire gets Middlemarch, Dave gets Hamlet, Eve gets Dracula, Fred gets Dune, and Gertrude gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Eve and Dave swap books. Then, Eve and Alice swap books. Then, Claire and Bob swap books. Then, Dave and Bob swap books. Then, Fred and Dave swap books. Then, Dave and Fred swap books. Finally, Eve and Bob swap books. At the end of the semester, Fred has\nOptions:\n(A) Ivanhoe\n(B) Candide\n(C) Middlemarch\n(D) Hamlet\n(E) Dracula\n(F) Dune\n(G) The Hobbit",
+  "answer": "(F)",
+  "swaps": [
+    [
+      "Eve",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Dave",
+      "Bob"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ]
+  ],
+  "asked": "Fred",
+  "trace": [
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Candide",
+      "Claire": "Middlemarch",
+      "Dave": "Hamlet",
+      "Eve": "Dracula",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Ivanhoe",
+      "Bob": "Candide",
+      "Claire": "Middlemarch",
+      "Dave": "Dracula",
+      "Eve": "Hamlet",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Candide",
+      "Claire": "Middlemarch",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Middlemarch",
+      "Claire": "Candide",
+      "Dave": "Dracula",
+      "Eve": "Ivanhoe",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Candide",
+      "Dave": "Middlemarch",
+      "Eve": "Ivanhoe",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Candide",
+      "Dave": "Dune",
+      "Eve": "Ivanhoe",
+      "Fred": "Middlemarch",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Candide",
+      "Dave": "Middlemarch",
+      "Eve": "Ivanhoe",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Ivanhoe",
+      "Claire": "Candide",
+      "Dave": "Middlemarch",
+      "Eve": "Dracula",
+      "Fred": "Dune",
+      "Gertrude": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 228,
+  "solution": "Book order in each row: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: Ivanhoe, Candide, Middlemarch, Hamlet, Dracula, Dune, The Hobbit\n1. Eve and Dave swap: Ivanhoe, Candide, Middlemarch, Dracula, Hamlet, Dune, The Hobbit\n2. Eve and Alice swap: Hamlet, Candide, Middlemarch, Dracula, Ivanhoe, Dune, The Hobbit\n3. Claire and Bob swap: Hamlet, Middlemarch, Candide, Dracula, Ivanhoe, Dune, The Hobbit\n4. Dave and Bob swap: Hamlet, Dracula, Candide, Middlemarch, Ivanhoe, Dune, The Hobbit\n5. Fred and Dave swap: Hamlet, Dracula, Candide, Dune, Ivanhoe, Middlemarch, The Hobbit\n6. Dave and Fred swap: Hamlet, Dracula, Candide, Middlemarch, Ivanhoe, Dune, The Hobbit\n7. Eve and Bob swap: Hamlet, Ivanhoe, Candide, Middlemarch, Dracula, Dune, The Hobbit\nFred has Dune, option (F).\nFinal answer: (F)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1229,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(F)",
+    "correct": true
+  }
+}

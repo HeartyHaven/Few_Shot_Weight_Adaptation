@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-121",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Beloved, Bob gets Hamlet, Claire gets Candide, Dave gets Dracula, Eve gets Middlemarch, Fred gets Persuasion, and Gertrude gets The Hobbit.\nAs the semester proceeds, they start trading around the new books. First, Dave and Fred swap books. Then, Fred and Dave swap books. Then, Fred and Claire swap books. Then, Bob and Dave swap books. Then, Eve and Bob swap books. Then, Claire and Gertrude swap books. Finally, Eve and Fred swap books. At the end of the semester, Eve has\nOptions:\n(A) Beloved\n(B) Hamlet\n(C) Candide\n(D) Dracula\n(E) Middlemarch\n(F) Persuasion\n(G) The Hobbit",
+  "answer": "(C)",
+  "swaps": [
+    [
+      "Dave",
+      "Fred"
+    ],
+    [
+      "Fred",
+      "Dave"
+    ],
+    [
+      "Fred",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Gertrude"
+    ],
+    [
+      "Eve",
+      "Fred"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Beloved",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Dracula",
+      "Eve": "Middlemarch",
+      "Fred": "Persuasion",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Persuasion",
+      "Eve": "Middlemarch",
+      "Fred": "Dracula",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Hamlet",
+      "Claire": "Candide",
+      "Dave": "Dracula",
+      "Eve": "Middlemarch",
+      "Fred": "Persuasion",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Hamlet",
+      "Claire": "Persuasion",
+      "Dave": "Dracula",
+      "Eve": "Middlemarch",
+      "Fred": "Candide",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Dracula",
+      "Claire": "Persuasion",
+      "Dave": "Hamlet",
+      "Eve": "Middlemarch",
+      "Fred": "Candide",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Middlemarch",
+      "Claire": "Persuasion",
+      "Dave": "Hamlet",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "The Hobbit"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Middlemarch",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "Dracula",
+      "Fred": "Candide",
+      "Gertrude": "Persuasion"
+    },
+    {
+      "Alice": "Beloved",
+      "Bob": "Middlemarch",
+      "Claire": "The Hobbit",
+      "Dave": "Hamlet",
+      "Eve": "Candide",
+      "Fred": "Dracula",
+      "Gertrude": "Persuasion"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists the books held by Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude, in that order.\nInitial: Beloved, Hamlet, Candide, Dracula, Middlemarch, Persuasion, The Hobbit\n1. Dave and Fred swap: Beloved, Hamlet, Candide, Persuasion, Middlemarch, Dracula, The Hobbit\n2. Fred and Dave swap: Beloved, Hamlet, Candide, Dracula, Middlemarch, Persuasion, The Hobbit\n3. Fred and Claire swap: Beloved, Hamlet, Persuasion, Dracula, Middlemarch, Candide, The Hobbit\n4. Bob and Dave swap: Beloved, Dracula, Persuasion, Hamlet, Middlemarch, Candide, The Hobbit\n5. Eve and Bob swap: Beloved, Middlemarch, Persuasion, Hamlet, Dracula, Candide, The Hobbit\n6. Claire and Gertrude swap: Beloved, Middlemarch, The Hobbit, Hamlet, Dracula, Candide, Persuasion\n7. Eve and Fred swap: Beloved, Middlemarch, The Hobbit, Hamlet, Candide, Dracula, Persuasion\nEve holds Candide, option (C).\nFinal answer: (C)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1183,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(C)",
+    "correct": true
+  }
+}

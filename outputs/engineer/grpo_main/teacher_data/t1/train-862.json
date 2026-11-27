@@ -1,0 +1,22 @@
+{
+  "id": "train-862",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nA 76-year old obese woman presented to the intensive care unit for acute NSTEMI. Her medical history included poorly-controlled insulin-dependent diabetes and systemic hypertension. Two hours before the admission, pain in the substernal area developed suddenly. The first electrocardiogram obtained showed normal sinus rhythm with a rate of 85 beats per minute and ST-segment depression of 3 mm in the inferior leads. Serum levels of hematocrit, creatinine and electrolytes were all within the normal range. The troponin I level was 6.4 ng per milliliter (normal range < 0.05 ng per milliliter). Nitroglycerin, morphine, loop diuretics, unfractioned heparin and tirofiban IV were administered and the patient became asymptomatic shortly thereafter. Oral therapy with clopidogrel 75 mg, simvastatin 20 mg and metoprolol 50 mg bid was added.\nTrans-thoracic echocardiography showed a normal left ventricular ejection fraction of 55% in the absence of segmental wall motion abnormalities, mild hypertrophy of the left ventricle, mild left atrial enlargement (transverse diameter 4.4 cm) and moderate mitral regurgitation.\nContinuous ECG monitoring showed multiple episodes of sustained, self-terminating paroxysmal AF () symptomatic for dizziness, hypotension and palpitations. All AF episodes were triggered by short-coupled (280 msec coupling interval) ventricular monomorphic couplets with 1:1 ventriculo-atrial (VA) retrograde conduction. The ventricular ectopic beats showed left bundle-branch block (LBBB) morphology with inferior axis (, arrows) and retro-conducted P waves were detectable in aVL and inferior leads (, arrows). Intravenous metoprolol (5 mg) and amiodarone (900 mg) were administered and in one hour stable sinus rhythm was achieved.\nThe day after a coronary angiography was performed, which showed severe right coronary ostial stenosis. Balloon angioplasty of the lesion was performed and a bare-metal stent was successfully deployed.\nThe patient was discharged home four days later in therapy with acetyl-salicylic acid 100 mg, clopidogrel 75 mg, furosemide 25 mg, metoprolol 50 mg bid, enalapril 20 mg, atorvastatin 80 mg and insulin. A pre-discharge echocardiography was unchanged. At 1 month follow-up visit she was in stable NYHA functional class II, asymptomatic for angina and palpitations and in sinus rhythm.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "6",
+  "lower": 6.0,
+  "upper": 6.0,
+  "calc_id": 4,
+  "prompt_tokens": 648,
+  "solution": "CHA2DS2-VASc estimates stroke risk in atrial fibrillation. Using admission findings:\n- Congestive heart failure or LV systolic dysfunction (1 point): no heart failure documented; LVEF 55% → 0.\n- Hypertension (1): known systemic hypertension → 1.\n- Age (1 for 65–74, 2 for ≥75): age 76 → 2.\n- Diabetes mellitus (1): insulin-dependent diabetes → 1.\n- Prior stroke, TIA, or systemic embolism (2): none documented → 0.\n- Vascular disease (1): NSTEMI was present on admission → 1.\n- Female sex (1): woman → 1.\nSum: 0 + 1 + 2 + 1 + 0 + 1 + 1 = 6.\nFinal answer: 6",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 613,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 6.0,
+    "correct": true
+  }
+}

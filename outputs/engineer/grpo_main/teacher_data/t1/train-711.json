@@ -1,0 +1,22 @@
+{
+  "id": "train-711",
+  "task": "t1",
+  "group": "CHA2DS2-VASc Score for Atrial Fibrillation Stroke Risk",
+  "question": "Patient note:\nHere, we reported a 41-year-old female with a medical history of obesity and diabetes type 2, who underwent surgical resection of a frontal parasagittal with no intraoperative surgical and anesthetic complications and developed complete blindness on awakening as a complication. Postoperative ophthalmological examination revealed bilateral mydriasis and non-reactive to light in both eyes, although bilateral mydriasis can occur after general anesthesia.[] Fluorescein angiography showed adequate choroidal filling in both eyes with delayed arterial phase and all subsequent phases; as well as, in late phases an absence of bilateral optic nerve staining occurred, confirming a bilateral CRAO []. The photopic and scotopic electroretinogram showed a prolonged latency and decreased extent of the a and b waves. Postoperative digital subtraction angiography was performed showing adequate blood flow through both OAs and a significant decrease in bilateral choroidal blush []. The echocardiography performed did not reveal vegetations or other valvular alterations. Carotid Doppler showed mild non-obstructive diffuse atheromatosis and type I atheroma plaques in both common carotids, both with biphasic flow, without stenosis and with preserved flow velocities. Whole-body vessels CTA scans were not contributory. Different hematological tests were normal. Brain MRI showed no suggestive lesions of stroke in the DWI sequence and intra-orbital segment hyperintensity in T2-weighted sequences, suggesting for bilateral optic nerve infarction []. Patient started an early treatment with hyperbaric chamber sessions, continuing with this at discharge, even if patient reported only a very slight improvement in the visual deficit, referring only shadows in her peripheral visual field.\n\nQuestion: What is the patient's CHA2DS2-VASc Score? You should use the patient's medical values and health status when they were first admitted to the hospital prior to any treatment.",
+  "answer": "3",
+  "lower": 3.0,
+  "upper": 3.0,
+  "calc_id": 4,
+  "prompt_tokens": 420,
+  "solution": "Apply the CHA₂DS₂-VASc components to preoperative status. The score is ordinarily used in atrial fibrillation, which is not documented here.\n- Heart failure/LV dysfunction: not documented → 0; hypertension: not documented → 0.\n- Age 41 (<65) → 0.\n- Type 2 diabetes → 1.\n- Prior stroke/TIA/systemic embolism: none documented on admission → 0. The retinal arterial occlusions occurred postoperatively.\n- Vascular disease: counting the bilateral carotid atheroma as pre-existing atherosclerotic vascular disease → 1. This is a broader interpretation than definitions limited to prior MI, peripheral arterial disease, or aortic plaque.\n- Female sex → 1. Obesity does not independently score.\nSum under this interpretation: 0 + 0 + 0 + 1 + 0 + 1 + 1 = 3.\nFinal answer: 3",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "0bfae123323e7eb297a88bdb5e4aaa90dc04f679b1bcdf166907a2806c976b0b",
+  "call_id": 765,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": 3.0,
+    "correct": true
+  }
+}

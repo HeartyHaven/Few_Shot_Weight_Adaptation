@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-662",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Hamlet, Bob gets Middlemarch, Claire gets Siddhartha, Dave gets The Hobbit, and Eve gets The Trial.\nAs the semester proceeds, they start trading around the new books. First, Eve and Alice swap books. Then, Bob and Alice swap books. Then, Dave and Alice swap books. Then, Eve and Alice swap books. Finally, Claire and Alice swap books. At the end of the semester, Dave has\nOptions:\n(A) Hamlet\n(B) Middlemarch\n(C) Siddhartha\n(D) The Hobbit\n(E) The Trial",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Bob",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Claire",
+      "Alice"
+    ]
+  ],
+  "asked": "Dave",
+  "trace": [
+    {
+      "Alice": "Hamlet",
+      "Bob": "Middlemarch",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "The Trial"
+    },
+    {
+      "Alice": "The Trial",
+      "Bob": "Middlemarch",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Middlemarch",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "The Hobbit",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "The Hobbit",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "The Trial",
+      "Claire": "Siddhartha",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "The Trial",
+      "Claire": "Hamlet",
+      "Dave": "Middlemarch",
+      "Eve": "The Hobbit"
+    }
+  ],
+  "prompt_tokens": 186,
+  "solution": "Book order in every row: (Alice, Bob, Claire, Dave, Eve).\nInitial: (Hamlet, Middlemarch, Siddhartha, The Hobbit, The Trial)\n1. Eve ↔ Alice: (The Trial, Middlemarch, Siddhartha, The Hobbit, Hamlet)\n2. Bob ↔ Alice: (Middlemarch, The Trial, Siddhartha, The Hobbit, Hamlet)\n3. Dave ↔ Alice: (The Hobbit, The Trial, Siddhartha, Middlemarch, Hamlet)\n4. Eve ↔ Alice: (Hamlet, The Trial, Siddhartha, Middlemarch, The Hobbit)\n5. Claire ↔ Alice: (Siddhartha, The Trial, Hamlet, Middlemarch, The Hobbit)\nDave has Middlemarch, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1107,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

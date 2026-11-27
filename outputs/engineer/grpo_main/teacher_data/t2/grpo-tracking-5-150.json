@@ -1,0 +1,89 @@
+{
+  "id": "grpo-tracking-5-150",
+  "task": "t2",
+  "group": "5obj",
+  "n_objects": 5,
+  "n_swaps": 5,
+  "theme": "books",
+  "question": "Alice, Bob, Claire, Dave, and Eve are friends and avid readers who occasionally trade books. At the start of the semester, they each buy one new book: Alice gets Dracula, Bob gets Hamlet, Claire gets Walden, Dave gets Ivanhoe, and Eve gets Siddhartha.\nAs the semester proceeds, they start trading around the new books. First, Alice and Bob swap books. Then, Claire and Bob swap books. Then, Eve and Alice swap books. Then, Dave and Claire swap books. Finally, Dave and Alice swap books. At the end of the semester, Eve has\nOptions:\n(A) Dracula\n(B) Hamlet\n(C) Walden\n(D) Ivanhoe\n(E) Siddhartha",
+  "answer": "(B)",
+  "swaps": [
+    [
+      "Alice",
+      "Bob"
+    ],
+    [
+      "Claire",
+      "Bob"
+    ],
+    [
+      "Eve",
+      "Alice"
+    ],
+    [
+      "Dave",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Eve",
+  "trace": [
+    {
+      "Alice": "Dracula",
+      "Bob": "Hamlet",
+      "Claire": "Walden",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Dracula",
+      "Claire": "Walden",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Hamlet",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Ivanhoe",
+      "Eve": "Siddhartha"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Dracula",
+      "Dave": "Ivanhoe",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Siddhartha",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Dracula",
+      "Eve": "Hamlet"
+    },
+    {
+      "Alice": "Dracula",
+      "Bob": "Walden",
+      "Claire": "Ivanhoe",
+      "Dave": "Siddhartha",
+      "Eve": "Hamlet"
+    }
+  ],
+  "prompt_tokens": 182,
+  "solution": "Each row lists books in this order: Alice, Bob, Claire, Dave, Eve.\nInitial: Dracula, Hamlet, Walden, Ivanhoe, Siddhartha\n1. Alice ↔ Bob: Hamlet, Dracula, Walden, Ivanhoe, Siddhartha\n2. Claire ↔ Bob: Hamlet, Walden, Dracula, Ivanhoe, Siddhartha\n3. Eve ↔ Alice: Siddhartha, Walden, Dracula, Ivanhoe, Hamlet\n4. Dave ↔ Claire: Siddhartha, Walden, Ivanhoe, Dracula, Hamlet\n5. Dave ↔ Alice: Dracula, Walden, Ivanhoe, Siddhartha, Hamlet\nEve has Hamlet, option (B).\nFinal answer: (B)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1253,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(B)",
+    "correct": true
+  }
+}

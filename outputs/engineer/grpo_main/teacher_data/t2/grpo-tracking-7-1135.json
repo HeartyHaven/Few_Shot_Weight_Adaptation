@@ -1,0 +1,127 @@
+{
+  "id": "grpo-tracking-7-1135",
+  "task": "t2",
+  "group": "7obj",
+  "n_objects": 7,
+  "n_swaps": 7,
+  "theme": "soccer",
+  "question": "Alice, Bob, Claire, Dave, Eve, Fred, and Gertrude are on the same team in a soccer match. At the start of the match, they are each assigned to a position: Alice is playing right back, Bob is playing center midfielder, Claire is playing left back, Dave is playing cheerleader, Eve is playing right midfielder, Fred is playing striker, and Gertrude is playing right winger.\nAs the game progresses, pairs of players occasionally swap positions. First, Alice and Claire trade positions. Then, Bob and Fred trade positions. Then, Alice and Dave trade positions. Then, Bob and Claire trade positions. Then, Alice and Dave trade positions. Then, Eve and Claire trade positions. Finally, Dave and Alice trade positions. At the end of the match, Gertrude is playing\nOptions:\n(A) right back\n(B) center midfielder\n(C) left back\n(D) cheerleader\n(E) right midfielder\n(F) striker\n(G) right winger",
+  "answer": "(G)",
+  "swaps": [
+    [
+      "Alice",
+      "Claire"
+    ],
+    [
+      "Bob",
+      "Fred"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Bob",
+      "Claire"
+    ],
+    [
+      "Alice",
+      "Dave"
+    ],
+    [
+      "Eve",
+      "Claire"
+    ],
+    [
+      "Dave",
+      "Alice"
+    ]
+  ],
+  "asked": "Gertrude",
+  "trace": [
+    {
+      "Alice": "right back",
+      "Bob": "center midfielder",
+      "Claire": "left back",
+      "Dave": "cheerleader",
+      "Eve": "right midfielder",
+      "Fred": "striker",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "center midfielder",
+      "Claire": "right back",
+      "Dave": "cheerleader",
+      "Eve": "right midfielder",
+      "Fred": "striker",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "striker",
+      "Claire": "right back",
+      "Dave": "cheerleader",
+      "Eve": "right midfielder",
+      "Fred": "center midfielder",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "striker",
+      "Claire": "right back",
+      "Dave": "left back",
+      "Eve": "right midfielder",
+      "Fred": "center midfielder",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "right back",
+      "Claire": "striker",
+      "Dave": "left back",
+      "Eve": "right midfielder",
+      "Fred": "center midfielder",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "right back",
+      "Claire": "striker",
+      "Dave": "cheerleader",
+      "Eve": "right midfielder",
+      "Fred": "center midfielder",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "left back",
+      "Bob": "right back",
+      "Claire": "right midfielder",
+      "Dave": "cheerleader",
+      "Eve": "striker",
+      "Fred": "center midfielder",
+      "Gertrude": "right winger"
+    },
+    {
+      "Alice": "cheerleader",
+      "Bob": "right back",
+      "Claire": "right midfielder",
+      "Dave": "left back",
+      "Eve": "striker",
+      "Fred": "center midfielder",
+      "Gertrude": "right winger"
+    }
+  ],
+  "prompt_tokens": 232,
+  "solution": "Each row lists positions in this order: Alice, Bob, Claire, Dave, Eve, Fred, Gertrude.\nInitial: right back, center midfielder, left back, cheerleader, right midfielder, striker, right winger\n1. Alice ↔ Claire: left back, center midfielder, right back, cheerleader, right midfielder, striker, right winger\n2. Bob ↔ Fred: left back, striker, right back, cheerleader, right midfielder, center midfielder, right winger\n3. Alice ↔ Dave: cheerleader, striker, right back, left back, right midfielder, center midfielder, right winger\n4. Bob ↔ Claire: cheerleader, right back, striker, left back, right midfielder, center midfielder, right winger\n5. Alice ↔ Dave: left back, right back, striker, cheerleader, right midfielder, center midfielder, right winger\n6. Eve ↔ Claire: left back, right back, right midfielder, cheerleader, striker, center midfielder, right winger\n7. Dave ↔ Alice: cheerleader, right back, right midfielder, left back, striker, center midfielder, right winger\nGertrude is playing right winger, option (G).\nFinal answer: (G)",
+  "teacher": "gpt-6.2-astra",
+  "effort": "high",
+  "input_sha256": "8075a1d1862c5312ccb9b106f4ad512efdf701cd81c226cb797728a06aa198ff",
+  "call_id": 1305,
+  "source": "frozen_K_training",
+  "kept": true,
+  "grade": {
+    "pred": "(G)",
+    "correct": true
+  }
+}
